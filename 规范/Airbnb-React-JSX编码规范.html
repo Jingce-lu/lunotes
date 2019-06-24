@@ -1,0 +1,951 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Airbnb-React-JSX编码规范 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="vue编码规范.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">git</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../git/git基本使用.html">
+            
+                <a href="../git/git基本使用.html">
+            
+                    
+                    git基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../git/git分支管理策略.html">
+            
+                <a href="../git/git分支管理策略.html">
+            
+                    
+                    git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">规范</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="分支开发规范.html">
+            
+                <a href="分支开发规范.html">
+            
+                    
+                    分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="es6编码规范.html">
+            
+                <a href="es6编码规范.html">
+            
+                    
+                    ES6编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="vue编码规范.html">
+            
+                <a href="vue编码规范.html">
+            
+                    
+                    vue编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.4" data-path="Airbnb-React-JSX编码规范.html">
+            
+                <a href="Airbnb-React-JSX编码规范.html">
+            
+                    
+                    Airbnb-React-JSX编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Airbnb-React-JSX编码规范</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="airbnb-reactjsx-&#x7F16;&#x7801;&#x89C4;&#x8303;">Airbnb React/JSX &#x7F16;&#x7801;&#x89C4;&#x8303;</h1>
+<p><em>&#x7B97;&#x662F;&#x6700;&#x5408;&#x7406;&#x7684;React/JSX&#x7F16;&#x7801;&#x89C4;&#x8303;&#x4E4B;&#x4E00;&#x4E86;</em></p>
+<p>&#x6B64;&#x7F16;&#x7801;&#x89C4;&#x8303;&#x4E3B;&#x8981;&#x57FA;&#x4E8E;&#x76EE;&#x524D;&#x6D41;&#x884C;&#x7684;JavaScript&#x6807;&#x51C6;&#xFF0C;&#x5C3D;&#x7BA1;&#x67D0;&#x4E9B;&#x5176;&#x4ED6;&#x7EA6;&#x5B9A;(&#x5982;async/await&#xFF0C;&#x9759;&#x6001;class&#x5C5E;&#x6027;)&#x53EF;&#x80FD;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x88AB;&#x5F15;&#x5165;&#x6216;&#x8005;&#x88AB;&#x7981;&#x7528;&#x3002;&#x76EE;&#x524D;&#x7684;&#x72B6;&#x6001;&#x662F;&#x4EFB;&#x4F55;stage-3&#x4E4B;&#x524D;&#x7684;&#x89C4;&#x8303;&#x90FD;&#x4E0D;&#x5305;&#x62EC;&#x4E5F;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x3002;</p>
+<h2 id="&#x5185;&#x5BB9;&#x76EE;&#x5F55;">&#x5185;&#x5BB9;&#x76EE;&#x5F55;</h2>
+<ol>
+<li><a href="#basic-rules-&#x57FA;&#x672C;&#x89C4;&#x8303;">&#x57FA;&#x672C;&#x89C4;&#x8303;</a></li>
+<li><a href="#&#x521B;&#x5EFA;&#x6A21;&#x5757;">Class vs React.createClass vs stateless</a></li>
+<li><a href="#mixins">Mixins</a></li>
+<li><a href="#naming-&#x547D;&#x540D;">&#x547D;&#x540D;</a></li>
+<li><a href="#declaration-&#x58F0;&#x660E;&#x6A21;&#x5757;">&#x58F0;&#x660E;&#x6A21;&#x5757;</a></li>
+<li><a href="#alignment-&#x4EE3;&#x7801;&#x5BF9;&#x9F50;">&#x4EE3;&#x7801;&#x5BF9;&#x9F50;</a></li>
+<li><a href="#quotes-&#x5355;&#x5F15;&#x53F7;&#x8FD8;&#x662F;&#x53CC;&#x5F15;&#x53F7;">&#x5355;&#x5F15;&#x53F7;&#x8FD8;&#x662F;&#x53CC;&#x5F15;&#x53F7;</a></li>
+<li><a href="#spacing-&#x7A7A;&#x683C;">&#x7A7A;&#x683C;</a></li>
+<li><a href="#props-&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</a></li>
+<li><a href="#refs">Refs&#x5F15;&#x7528;</a></li>
+<li><a href="#parentheses-&#x62EC;&#x53F7;">&#x62EC;&#x53F7;</a></li>
+<li><a href="#tags-&#x6807;&#x7B7E;">&#x6807;&#x7B7E;</a></li>
+<li><a href="#methods-&#x51FD;&#x6570;">&#x51FD;&#x6570;/&#x65B9;&#x6CD5;</a></li>
+<li><a href="#ordering-react-&#x6A21;&#x5757;&#x751F;&#x547D;&#x5468;&#x671F;">&#x6A21;&#x5757;&#x751F;&#x547D;&#x5468;&#x671F;</a></li>
+<li><a href="#ismounted">isMounted</a></li>
+</ol>
+<h2 id="basic-rules-&#x57FA;&#x672C;&#x89C4;&#x8303;">Basic Rules &#x57FA;&#x672C;&#x89C4;&#x8303;</h2>
+<ul>
+<li>&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x53EA;&#x5199;&#x4E00;&#x4E2A;&#x6A21;&#x5757;.<ul>
+<li>&#x4F46;&#x662F;&#x591A;&#x4E2A;<a href="https://facebook.github.io/react/docs/reusable-components.html#stateless-functions" target="_blank">&#x65E0;&#x72B6;&#x6001;&#x6A21;&#x5757;</a>&#x53EF;&#x4EE5;&#x653E;&#x5728;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless" target="_blank"><code>react/no-multi-comp</code></a>.</li>
+</ul>
+</li>
+<li>&#x63A8;&#x8350;&#x4F7F;&#x7528;JSX&#x8BED;&#x6CD5;.</li>
+<li>&#x4E0D;&#x8981;&#x4F7F;&#x7528; <code>React.createElement</code>&#xFF0C;&#x9664;&#x975E;&#x4ECE;&#x4E00;&#x4E2A;&#x975E;JSX&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x521D;&#x59CB;&#x5316;&#x4F60;&#x7684;app.</li>
+</ul>
+<h2 id="&#x521B;&#x5EFA;&#x6A21;&#x5757;">&#x521B;&#x5EFA;&#x6A21;&#x5757;</h2>
+<p>   Class vs React.createClass vs stateless  </p>
+<ul>
+<li><p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x6A21;&#x5757;&#x6709;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x6216;&#x8005;&#x662F;<code>refs</code>, &#x63A8;&#x8350;&#x4F7F;&#x7528; <code>class extends React.Component</code> &#x800C;&#x4E0D;&#x662F; <code>React.createClass</code>.
+eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md" target="_blank"><code>react/prefer-es6-class</code></a> <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md" target="_blank"><code>react/prefer-stateless-function</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> Listing = React.createClass({
+  <span class="hljs-comment">// ...</span>
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{this.state.hello}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+  }
+});
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Listing</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-comment">// ...</span>
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{this.state.hello}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+  }
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x6A21;&#x5757;&#x6CA1;&#x6709;&#x72B6;&#x6001;&#x6216;&#x662F;&#x6CA1;&#x6709;&#x5F15;&#x7528;<code>refs</code>&#xFF0C; &#x63A8;&#x8350;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x51FD;&#x6570;&#xFF08;&#x975E;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#xFF09;&#x800C;&#x4E0D;&#x662F;&#x7C7B;:</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Listing</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{this.props.hello}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+  }
+}
+
+<span class="hljs-comment">// bad (relying on function name inference is discouraged)</span>
+<span class="hljs-keyword">const</span> Listing = ({ hello }) =&gt; (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{hello}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+);
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Listing</span>(<span class="hljs-params">{ hello }</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{hello}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="mixins">Mixins</h2>
+<ul>
+<li><p><a href="https://facebook.github.io/react/blog/2016/07/13/mixins-considered-harmful.html" target="_blank">&#x4E0D;&#x8981;&#x4F7F;&#x7528; mixins</a>.</p>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;? Mixins &#x4F1A;&#x589E;&#x52A0;&#x9690;&#x5F0F;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x5BFC;&#x81F4;&#x547D;&#x540D;&#x51B2;&#x7A81;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x4EE5;&#x96EA;&#x7403;&#x5F0F;&#x589E;&#x52A0;&#x590D;&#x6742;&#x5EA6;&#x3002;&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;Mixins&#x53EF;&#x4EE5;&#x88AB;&#x66F4;&#x597D;&#x7684;&#x65B9;&#x6CD5;&#x66FF;&#x4EE3;&#xFF0C;&#x5982;&#xFF1A;&#x7EC4;&#x4EF6;&#x5316;&#xFF0C;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#xFF0C;&#x5DE5;&#x5177;&#x6A21;&#x5757;&#x7B49;&#x3002;</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="naming-&#x547D;&#x540D;">Naming &#x547D;&#x540D;</h2>
+<ul>
+<li><p><strong>&#x6269;&#x5C55;&#x540D;</strong>: React&#x6A21;&#x5757;&#x4F7F;&#x7528; <code>.jsx</code> &#x6269;&#x5C55;&#x540D;.</p>
+</li>
+<li><p><strong>&#x6587;&#x4EF6;&#x540D;</strong>: &#x6587;&#x4EF6;&#x540D;&#x4F7F;&#x7528;&#x5E15;&#x65AF;&#x5361;&#x547D;&#x540D;. &#x5982;, <code>ReservationCard.jsx</code>.</p>
+</li>
+<li><p><strong>&#x5F15;&#x7528;&#x547D;&#x540D;</strong>: React&#x6A21;&#x5757;&#x540D;&#x4F7F;&#x7528;&#x5E15;&#x65AF;&#x5361;&#x547D;&#x540D;&#xFF0C;&#x5B9E;&#x4F8B;&#x4F7F;&#x7528;&#x9A86;&#x9A7C;&#x5F0F;&#x547D;&#x540D;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md" target="_blank"><code>react/jsx-pascal-case</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">import</span> reservationCard <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./ReservationCard&apos;</span>;
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">import</span> ReservationCard <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./ReservationCard&apos;</span>;
+
+<span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> ReservationItem = &lt;ReservationCard /&gt;;
+
+// good
+const reservationItem = &lt;ReservationCard /&gt;;
+</code></pre>
+</li>
+<li><p><strong>&#x6A21;&#x5757;&#x547D;&#x540D;</strong>: &#x6A21;&#x5757;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x540D;&#x4E00;&#x6837;&#x7684;&#x540D;&#x79F0;. &#x6BD4;&#x5982; <code>ReservationCard.jsx</code> &#x5E94;&#x8BE5;&#x5305;&#x542B;&#x540D;&#x4E3A; <code>ReservationCard</code>&#x7684;&#x6A21;&#x5757;. &#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x662F;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x4F7F;&#x7528; <code>index.js</code>&#x4F5C;&#x4E3A;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <code>index.js</code> &#x6216;&#x8005;&#x6587;&#x4EF6;&#x5939;&#x540D;&#x4F5C;&#x4E3A;&#x6A21;&#x5757;&#x7684;&#x540D;&#x79F0;:</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">import</span> Footer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Footer/Footer&apos;</span>;
+
+<span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">import</span> Footer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Footer/index&apos;</span>;
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">import</span> Footer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Footer&apos;</span>;
+</code></pre>
+</li>
+<li><p><strong>&#x9AD8;&#x9636;&#x6A21;&#x5757;&#x547D;&#x540D;</strong>: &#x5BF9;&#x4E8E;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x6A21;&#x5757;&#x540D; <code>displayName</code> &#x5E94;&#x8BE5;&#x4E3A;&#x9AD8;&#x9636;&#x6A21;&#x5757;&#x540D;&#x548C;&#x4F20;&#x5165;&#x6A21;&#x5757;&#x540D;&#x7684;&#x7EC4;&#x5408;. &#x4F8B;&#x5982;, &#x9AD8;&#x9636;&#x6A21;&#x5757; <code>withFoo()</code>, &#x5F53;&#x4F20;&#x5165;&#x4E00;&#x4E2A; <code>Bar</code> &#x6A21;&#x5757;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x751F;&#x6210;&#x7684;&#x6A21;&#x5757;&#x540D; <code>displayName</code> &#x5E94;&#x8BE5;&#x4E3A; <code>withFoo(Bar)</code>.</p>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x7684; <code>displayName</code> &#x53EF;&#x80FD;&#x4F1A;&#x5728;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x6216;&#x8005;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x4E2D;&#x4F7F;&#x7528;&#x5230;&#xFF0C;&#x56E0;&#x6B64;&#x6709;&#x4E00;&#x4E2A;&#x80FD;&#x6E05;&#x695A;&#x7684;&#x8868;&#x8FBE;&#x8FD9;&#x5C42;&#x5173;&#x7CFB;&#x7684;&#x503C;&#x80FD;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x66F4;&#x597D;&#x7684;&#x7406;&#x89E3;&#x6A21;&#x5757;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#xFF0C;&#x66F4;&#x597D;&#x7684;Debug.</p>
+</blockquote>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withFoo</span>(<span class="hljs-params">WrappedComponent</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">WithFoo</span>(<span class="hljs-params">props</span>) </span>{
+    <span class="hljs-keyword">return</span> &lt;WrappedComponent {...props} foo /&gt;;
+  }
+}
+
+// good
+export default function withFoo(WrappedComponent) {
+  function WithFoo(props) {
+    return &lt;WrappedComponent {...props} foo /&gt;;
+  }
+
+  const wrappedComponentName = WrappedComponent.displayName
+    || WrappedComponent.name
+    || &apos;Component&apos;;
+
+  WithFoo.displayName = `withFoo(${wrappedComponentName})`;
+  return WithFoo;
+}
+</code></pre>
+</li>
+<li><p><strong>&#x5C5E;&#x6027;&#x547D;&#x540D;</strong>: &#x907F;&#x514D;&#x4F7F;&#x7528;DOM&#x76F8;&#x5173;&#x7684;&#x5C5E;&#x6027;&#x6765;&#x7528;&#x4F5C;&#x5176;&#x4ED6;&#x7684;&#x7528;&#x9014;&#x3002;</p>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;&#x5BF9;&#x4E8E;<code>style</code> &#x548C; <code>className</code>&#x8FD9;&#x6837;&#x7684;&#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x4F1A;&#x9ED8;&#x8BA4;&#x5B83;&#x4EEC;&#x4EE3;&#x8868;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x5982;&#x5143;&#x7D20;&#x7684;&#x6837;&#x5F0F;&#xFF0C;CSS class&#x7684;&#x540D;&#x79F0;&#x3002;&#x5728;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x6765;&#x8868;&#x793A;&#x5176;&#x4ED6;&#x7684;&#x542B;&#x4E49;&#x4F1A;&#x4F7F;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x96BE;&#x9605;&#x8BFB;&#xFF0C;&#x66F4;&#x96BE;&#x7EF4;&#x62A4;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x4F1A;&#x5F15;&#x8D77;bug&#x3002;</p>
+</blockquote>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;MyComponent style=<span class="hljs-string">&quot;fancy&quot;</span> /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;MyComponent variant=<span class="hljs-string">&quot;fancy&quot;</span> /&gt;
+</code></pre>
+</li>
+</ul>
+<h2 id="declaration-&#x58F0;&#x660E;&#x6A21;&#x5757;">Declaration &#x58F0;&#x660E;&#x6A21;&#x5757;</h2>
+<ul>
+<li><p>&#x4E0D;&#x8981;&#x4F7F;&#x7528; <code>displayName</code> &#x6765;&#x547D;&#x540D;React&#x6A21;&#x5757;&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;&#x5F15;&#x7528;&#x6765;&#x547D;&#x540D;&#x6A21;&#x5757;&#xFF0C; &#x5982; class &#x540D;&#x79F0;.</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> React.createClass({
+  displayName: <span class="hljs-string">&apos;ReservationCard&apos;</span>,
+  <span class="hljs-comment">// stuff goes here</span>
+});
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReservationCard</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="alignment-&#x4EE3;&#x7801;&#x5BF9;&#x9F50;">Alignment &#x4EE3;&#x7801;&#x5BF9;&#x9F50;</h2>
+<ul>
+<li><p>&#x9075;&#x5FAA;&#x4EE5;&#x4E0B;&#x7684;JSX&#x8BED;&#x6CD5;&#x7F29;&#x8FDB;/&#x683C;&#x5F0F;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md" target="_blank"><code>react/jsx-closing-bracket-location</code></a> <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md" target="_blank"><code>react/jsx-closing-tag-location</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo superLongParam=<span class="hljs-string">&quot;bar&quot;</span>
+     anotherSuperLongParam=<span class="hljs-string">&quot;baz&quot;</span> /&gt;
+
+<span class="hljs-comment">// good, &#x6709;&#x591A;&#x884C;&#x5C5E;&#x6027;&#x7684;&#x8BDD;, &#x65B0;&#x5EFA;&#x4E00;&#x884C;&#x5173;&#x95ED;&#x6807;&#x7B7E;</span>
+&lt;Foo
+  superLongParam=<span class="hljs-string">&quot;bar&quot;</span>
+  anotherSuperLongParam=<span class="hljs-string">&quot;baz&quot;</span>
+/&gt;
+
+<span class="hljs-comment">// &#x82E5;&#x80FD;&#x5728;&#x4E00;&#x884C;&#x4E2D;&#x663E;&#x793A;, &#x76F4;&#x63A5;&#x5199;&#x6210;&#x4E00;&#x884C;</span>
+&lt;Foo bar=<span class="hljs-string">&quot;bar&quot;</span> /&gt;
+
+<span class="hljs-comment">// &#x5B50;&#x5143;&#x7D20;&#x6309;&#x7167;&#x5E38;&#x89C4;&#x65B9;&#x5F0F;&#x7F29;&#x8FDB;</span>
+&lt;Foo
+  superLongParam=<span class="hljs-string">&quot;bar&quot;</span>
+  anotherSuperLongParam=<span class="hljs-string">&quot;baz&quot;</span>
+&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Quux</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Foo</span>&gt;</span></span>
+</code></pre>
+</li>
+</ul>
+<h2 id="quotes-&#x5355;&#x5F15;&#x53F7;&#x8FD8;&#x662F;&#x53CC;&#x5F15;&#x53F7;">Quotes &#x5355;&#x5F15;&#x53F7;&#x8FD8;&#x662F;&#x53CC;&#x5F15;&#x53F7;</h2>
+<ul>
+<li><p>&#x5BF9;&#x4E8E;JSX&#x5C5E;&#x6027;&#x503C;&#x603B;&#x662F;&#x4F7F;&#x7528;&#x53CC;&#x5F15;&#x53F7;(<code>&quot;</code>), &#x5176;&#x4ED6;&#x5747;&#x4F7F;&#x7528;&#x5355;&#x5F15;&#x53F7;(<code>&apos;</code>). eslint: <a href="http://eslint.org/docs/rules/jsx-quotes" target="_blank"><code>jsx-quotes</code></a></p>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;? HTML&#x5C5E;&#x6027;&#x4E5F;&#x662F;&#x7528;&#x53CC;&#x5F15;&#x53F7;, &#x56E0;&#x6B64;JSX&#x7684;&#x5C5E;&#x6027;&#x4E5F;&#x9075;&#x5FAA;&#x6B64;&#x7EA6;&#x5B9A;.</p>
+</blockquote>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo bar=<span class="hljs-string">&apos;bar&apos;</span> /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo bar=<span class="hljs-string">&quot;bar&quot;</span> /&gt;
+</code></pre>
+</li>
+</ul>
+<h2 id="spacing-&#x7A7A;&#x683C;">Spacing &#x7A7A;&#x683C;</h2>
+<ul>
+<li><p>&#x603B;&#x662F;&#x5728;&#x81EA;&#x52A8;&#x5173;&#x95ED;&#x7684;&#x6807;&#x7B7E;&#x524D;&#x52A0;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#xFF0C;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x6362;&#x884C;. eslint: <a href="http://eslint.org/docs/rules/no-multi-spaces" target="_blank"><code>no-multi-spaces</code></a>, <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md" target="_blank"><code>react/jsx-tag-spacing</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo/&gt;
+
+<span class="hljs-comment">// very bad</span>
+&lt;Foo                 /&gt;
+
+<span class="hljs-comment">// bad</span>
+&lt;Foo
+ /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo /&gt;
+</code></pre>
+</li>
+<li><p>&#x4E0D;&#x8981;&#x5728;JSX <code>{}</code> &#x5F15;&#x7528;&#x62EC;&#x53F7;&#x91CC;&#x4E24;&#x8FB9;&#x52A0;&#x7A7A;&#x683C;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md" target="_blank"><code>react/jsx-curly-spacing</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo bar={ baz } /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo bar={baz} /&gt;
+</code></pre>
+</li>
+</ul>
+<h2 id="props-&#x5C5E;&#x6027;">Props &#x5C5E;&#x6027;</h2>
+<ul>
+<li><p>JSX&#x5C5E;&#x6027;&#x540D;&#x4F7F;&#x7528;&#x9A86;&#x9A7C;&#x5F0F;&#x98CE;&#x683C;<code>camelCase</code>.</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo
+  UserName=<span class="hljs-string">&quot;hello&quot;</span>
+  phone_number={<span class="hljs-number">12345678</span>}
+/&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo
+  userName=<span class="hljs-string">&quot;hello&quot;</span>
+  phoneNumber={<span class="hljs-number">12345678</span>}
+/&gt;
+</code></pre>
+</li>
+<li><p>&#x5982;&#x679C;&#x5C5E;&#x6027;&#x503C;&#x4E3A; <code>true</code>, &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7701;&#x7565;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md" target="_blank"><code>react/jsx-boolean-value</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo
+  hidden={<span class="hljs-literal">true</span>}
+/&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo
+  hidden
+/&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo hidden /&gt;
+</code></pre>
+</li>
+<li><p><code>&lt;img&gt;</code> &#x6807;&#x7B7E;&#x603B;&#x662F;&#x6DFB;&#x52A0; <code>alt</code> &#x5C5E;&#x6027;. &#x5982;&#x679C;&#x56FE;&#x7247;&#x4EE5;presentation(&#x611F;&#x89C9;&#x662F;&#x4EE5;&#x7C7B;&#x4F3C;PPT&#x65B9;&#x5F0F;&#x663E;&#x793A;?)&#x65B9;&#x5F0F;&#x663E;&#x793A;&#xFF0C;<code>alt</code> &#x53EF;&#x4E3A;&#x7A7A;, &#x6216;&#x8005;<code>&lt;img&gt;</code> &#x8981;&#x5305;&#x542B;<code>role=&quot;presentation&quot;</code>. eslint: <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md" target="_blank"><code>jsx-a11y/alt-text</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;img src=<span class="hljs-string">&quot;hello.jpg&quot;</span> /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;img src=<span class="hljs-string">&quot;hello.jpg&quot;</span> alt=<span class="hljs-string">&quot;Me waving hello&quot;</span> /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;img src=<span class="hljs-string">&quot;hello.jpg&quot;</span> alt=<span class="hljs-string">&quot;&quot;</span> /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;img src=<span class="hljs-string">&quot;hello.jpg&quot;</span> role=<span class="hljs-string">&quot;presentation&quot;</span> /&gt;
+</code></pre>
+</li>
+<li><p>&#x4E0D;&#x8981;&#x5728; <code>alt</code> &#x503C;&#x91CC;&#x4F7F;&#x7528;&#x5982; &quot;image&quot;, &quot;photo&quot;, or &quot;picture&quot;&#x5305;&#x62EC;&#x56FE;&#x7247;&#x542B;&#x4E49;&#x8FD9;&#x6837;&#x7684;&#x8BCD;&#xFF0C; &#x4E2D;&#x6587;&#x4E5F;&#x4E00;&#x6837;. eslint: <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md" target="_blank"><code>jsx-a11y/img-redundant-alt</code></a></p>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;? &#x5C4F;&#x5E55;&#x52A9;&#x8BFB;&#x5668;&#x5DF2;&#x7ECF;&#x628A; <code>img</code> &#x6807;&#x7B7E;&#x6807;&#x6CE8;&#x4E3A;&#x56FE;&#x7247;&#x4E86;, &#x6240;&#x4EE5;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x518D;&#x5728; <code>alt</code> &#x91CC;&#x8BF4;&#x660E;&#x4E86;.</p>
+</blockquote>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;img src=<span class="hljs-string">&quot;hello.jpg&quot;</span> alt=<span class="hljs-string">&quot;Picture of me waving hello&quot;</span> /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;img src=<span class="hljs-string">&quot;hello.jpg&quot;</span> alt=<span class="hljs-string">&quot;Me waving hello&quot;</span> /&gt;
+</code></pre>
+</li>
+<li><p>&#x4F7F;&#x7528;&#x6709;&#x6548;&#x6B63;&#x786E;&#x7684; aria <code>role</code>&#x5C5E;&#x6027;&#x503C; <a href="https://www.w3.org/TR/wai-aria/roles#usage_intro" target="_blank">ARIA roles</a>. eslint: <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md" target="_blank"><code>jsx-a11y/aria-role</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad - not an ARIA role</span>
+&lt;div role=<span class="hljs-string">&quot;datepicker&quot;</span> /&gt;
+
+<span class="hljs-comment">// bad - abstract ARIA role</span>
+&lt;div role=<span class="hljs-string">&quot;range&quot;</span> /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;div role=<span class="hljs-string">&quot;button&quot;</span> /&gt;
+</code></pre>
+</li>
+<li><p>&#x4E0D;&#x8981;&#x5728;&#x6807;&#x7B7E;&#x4E0A;&#x4F7F;&#x7528; <code>accessKey</code> &#x5C5E;&#x6027;. eslint: <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md" target="_blank"><code>jsx-a11y/no-access-key</code></a></p>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;? &#x5C4F;&#x5E55;&#x52A9;&#x8BFB;&#x5668;&#x5728;&#x952E;&#x76D8;&#x5FEB;&#x6377;&#x952E;&#x4E0E;&#x952E;&#x76D8;&#x547D;&#x4EE4;&#x65F6;&#x9020;&#x6210;&#x7684;&#x4E0D;&#x7EDF;&#x4E00;&#x6027;&#x4F1A;&#x5BFC;&#x81F4;&#x9605;&#x8BFB;&#x6027;&#x66F4;&#x52A0;&#x590D;&#x6742;.</p>
+</blockquote>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;div accessKey=<span class="hljs-string">&quot;h&quot;</span> /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;div /&gt;
+</code></pre>
+</li>
+<li><p>&#x907F;&#x514D;&#x4F7F;&#x7528;&#x6570;&#x7EC4;&#x7684;index&#x6765;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;<code>key</code>&#x7684;&#x503C;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x552F;&#x4E00;ID. (<a href="https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318" target="_blank">&#x4E3A;&#x4EC0;&#x4E48;?</a>)</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+{todos.map((todo, index) =&gt;
+&lt;Todo
+  {...todo}
+  key={index}
+/&gt;
+)}
+
+// good
+{todos.map(todo =&gt; (
+&lt;Todo
+  {...todo}
+  key={todo.id}
+/&gt;
+))}
+</code></pre>
+</li>
+<li><p>&#x5BF9;&#x4E8E;&#x6240;&#x6709;&#x975E;&#x5FC5;&#x987B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x603B;&#x662F;&#x624B;&#x52A8;&#x53BB;&#x5B9A;&#x4E49;<code>defaultProps</code>&#x5C5E;&#x6027;.</p>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;? propTypes &#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x6A21;&#x5757;&#x7684;&#x6587;&#x6863;&#x8BF4;&#x660E;, &#x5E76;&#x4E14;&#x58F0;&#x660E; defaultProps &#x7684;&#x8BDD;&#x610F;&#x5473;&#x7740;&#x9605;&#x8BFB;&#x4EE3;&#x7801;&#x7684;&#x4EBA;&#x4E0D;&#x9700;&#x8981;&#x53BB;&#x5047;&#x8BBE;&#x4E00;&#x4E9B;&#x9ED8;&#x8BA4;&#x503C;&#x3002;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;, &#x663E;&#x793A;&#x7684;&#x58F0;&#x660E;&#x9ED8;&#x8BA4;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x7684;&#x6A21;&#x5757;&#x8DF3;&#x8FC7;&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#x7684;&#x68C0;&#x67E5;.</p>
+</blockquote>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SFC</span>(<span class="hljs-params">{ foo, bar, children }</span>) </span>{
+<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{foo}{bar}{children}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+}
+SFC.propTypes = {
+foo: PropTypes.number.isRequired,
+bar: PropTypes.string,
+children: PropTypes.node,
+};
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SFC</span>(<span class="hljs-params">{ foo, bar, children }</span>) </span>{
+<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{foo}{bar}{children}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+}
+SFC.propTypes = {
+foo: PropTypes.number.isRequired,
+bar: PropTypes.string,
+children: PropTypes.node,
+};
+SFC.defaultProps = {
+bar: <span class="hljs-string">&apos;&apos;</span>,
+children: <span class="hljs-literal">null</span>,
+};
+</code></pre>
+</li>
+<li><p>&#x5C3D;&#x53EF;&#x80FD;&#x5C11;&#x5730;&#x4F7F;&#x7528;&#x6269;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;    </p>
+<blockquote>
+<p> &#x4E3A;&#x4EC0;&#x4E48;? &#x9664;&#x975E;&#x4F60;&#x5F88;&#x60F3;&#x4F20;&#x9012;&#x4E00;&#x4E9B;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5BF9;&#x4E8E;React v15.6.1&#x548C;&#x66F4;&#x65E9;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;<a href="https://doc.react-china.org/blog/2017/09/08/dom-attributes-in-react-16.html" target="_blank">&#x7ED9;DOM&#x4F20;&#x9012;&#x4E00;&#x4E9B;&#x65E0;&#x6548;&#x7684;HTML&#x5C5E;&#x6027;</a>        </p>
+</blockquote>
+<p>&#x4F8B;&#x5916;&#x60C5;&#x51B5;:  </p>
+</li>
+<li><p>&#x4F7F;&#x7528;&#x4E86;&#x53D8;&#x91CF;&#x63D0;&#x5347;&#x7684;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;   </p>
+<pre><code class="lang-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">HOC</span>(<span class="hljs-params">WrappedComponent</span>) </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Proxy</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+ <span class="hljs-built_in">Proxy</span>.propTypes = {
+   text: PropTypes.string,
+   isLoading: PropTypes.bool
+ };
+
+ render() {
+   <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">WrappedComponent</span> {<span class="hljs-attr">...this.props</span>} /&gt;</span>
+ }
+}
+}
+</span></code></pre>
+</li>
+<li><p>&#x53EA;&#x6709;&#x5728;&#x6E05;&#x695A;&#x660E;&#x767D;&#x6269;&#x5C55;&#x5BF9;&#x8C61;&#x65F6;&#x624D;&#x4F7F;&#x7528;&#x6269;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;&#x3002;&#x8FD9;&#x975E;&#x5E38;&#x6709;&#x7528;&#x5C24;&#x5176;&#x662F;&#x5728;&#x4F7F;&#x7528;Mocha&#x6D4B;&#x8BD5;&#x7EC4;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x3002;   </p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Foo</span> </span>{
+<span class="hljs-keyword">const</span> props = {
+ text: <span class="hljs-string">&apos;&apos;</span>,
+ isPublished: <span class="hljs-literal">false</span>
+}
+
+<span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> {<span class="hljs-attr">...props</span>} /&gt;</span>);
+}
+</span></code></pre>
+<p>&#x7279;&#x522B;&#x63D0;&#x9192;&#xFF1A;&#x5C3D;&#x53EF;&#x80FD;&#x5730;&#x7B5B;&#x9009;&#x51FA;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;<a href="https://www.npmjs.com/package/prop-types-exact" target="_blank">prop-types-exact</a>&#x6765;&#x9884;&#x9632;&#x95EE;&#x9898;&#x51FA;&#x73B0;&#x3002;  </p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// good</span>
+render() {
+<span class="hljs-keyword">const</span> { irrelevantProp, ...relevantProps  } = <span class="hljs-keyword">this</span>.props;
+<span class="hljs-keyword">return</span> &lt;WrappedComponent {...relevantProps} /&gt;
+}
+
+// bad
+render() {
+const { irrelevantProp, ...relevantProps  } = this.props;
+return &lt;WrappedComponent {...this.props} /&gt;
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><p>&#x603B;&#x662F;&#x5728;Refs&#x91CC;&#x4F7F;&#x7528;&#x56DE;&#x8C03;&#x51FD;&#x6570;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md" target="_blank"><code>react/no-string-refs</code></a>  </p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo
+  ref=<span class="hljs-string">&quot;myRef&quot;</span>
+/&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo
+  ref={(ref) =&gt; { <span class="hljs-keyword">this</span>.myRef = ref; }}
+/&gt;
+</code></pre>
+</li>
+</ul>
+<h2 id="parentheses-&#x62EC;&#x53F7;">Parentheses &#x62EC;&#x53F7;</h2>
+<ul>
+<li><p>&#x5C06;&#x591A;&#x884C;&#x7684;JSX&#x6807;&#x7B7E;&#x5199;&#x5728; <code>()</code>&#x91CC;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md" target="_blank"><code>react/jsx-wrap-multilines</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+render() {
+  <span class="hljs-keyword">return</span> &lt;MyComponent className=&quot;long body&quot; foo=&quot;bar&quot;&gt;
+           &lt;MyChild /&gt;
+         &lt;/MyComponent&gt;;
+}
+
+// good
+render() {
+  return (
+    &lt;MyComponent className=&quot;long body&quot; foo=&quot;bar&quot;&gt;
+      &lt;MyChild /&gt;
+    &lt;/MyComponent&gt;
+  );
+}
+
+// good, &#x5355;&#x884C;&#x53EF;&#x4EE5;&#x4E0D;&#x9700;&#x8981;
+render() {
+  const body = &lt;div&gt;hello&lt;/div&gt;;
+  return &lt;MyComponent&gt;{body}&lt;/MyComponent&gt;;
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="tags-&#x6807;&#x7B7E;">Tags &#x6807;&#x7B7E;</h2>
+<ul>
+<li><p>&#x5BF9;&#x4E8E;&#x6CA1;&#x6709;&#x5B50;&#x5143;&#x7D20;&#x7684;&#x6807;&#x7B7E;&#x6765;&#x8BF4;&#x603B;&#x662F;&#x81EA;&#x5DF1;&#x5173;&#x95ED;&#x6807;&#x7B7E;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md" target="_blank"><code>react/self-closing-comp</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo className=<span class="hljs-string">&quot;stuff&quot;</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">Foo</span>&gt;</span></span>
+
+<span class="hljs-comment">// good</span>
+&lt;Foo className=<span class="hljs-string">&quot;stuff&quot;</span> /&gt;
+</code></pre>
+</li>
+<li><p>&#x5982;&#x679C;&#x6A21;&#x5757;&#x6709;&#x591A;&#x884C;&#x7684;&#x5C5E;&#x6027;&#xFF0C; &#x5173;&#x95ED;&#x6807;&#x7B7E;&#x65F6;&#x65B0;&#x5EFA;&#x4E00;&#x884C;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md" target="_blank"><code>react/jsx-closing-bracket-location</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+&lt;Foo
+  bar=<span class="hljs-string">&quot;bar&quot;</span>
+  baz=<span class="hljs-string">&quot;baz&quot;</span> /&gt;
+
+<span class="hljs-comment">// good</span>
+&lt;Foo
+  bar=<span class="hljs-string">&quot;bar&quot;</span>
+  baz=<span class="hljs-string">&quot;baz&quot;</span>
+/&gt;
+</code></pre>
+</li>
+</ul>
+<h2 id="methods-&#x51FD;&#x6570;">Methods &#x51FD;&#x6570;</h2>
+<ul>
+<li><p>&#x4F7F;&#x7528;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x6765;&#x83B7;&#x53D6;&#x672C;&#x5730;&#x53D8;&#x91CF;.</p>
+<pre><code class="lang-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ItemList</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      {props.items.map((item, index) =&gt; (
+        <span class="hljs-tag">&lt;<span class="hljs-name">Item</span>
+          <span class="hljs-attr">key</span>=<span class="hljs-string">{item.key}</span>
+          <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> doSomethingWith(item.name, index)}
+        /&gt;
+      ))}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  );
+}
+</span></code></pre>
+</li>
+<li><p>&#x5F53;&#x5728; <code>render()</code> &#x91CC;&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x63D0;&#x524D;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CC;&#x628A; <code>this</code> &#x7ED1;&#x5B9A;&#x4E0A;&#x53BB;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md" target="_blank"><code>react/jsx-no-bind</code></a></p>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;? &#x5728;&#x6BCF;&#x6B21; <code>render</code> &#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C; &#x518D;&#x8C03;&#x7528; <code>bind</code> &#x90FD;&#x4F1A;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x6D6A;&#x8D39;&#x8D44;&#x6E90;.</p>
+</blockquote>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  onClickDiv() {
+    <span class="hljs-comment">// do stuff</span>
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> &lt;div onClick={this.onClickDiv.bind(this)} /&gt;;
+  }
+}
+
+// good
+class extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.onClickDiv = this.onClickDiv.bind(this);
+  }
+
+  onClickDiv() {
+    // do stuff
+  }
+
+  render() {
+    return &lt;div onClick={this.onClickDiv} /&gt;;
+  }
+}
+</code></pre>
+</li>
+<li><p>&#x5728;React&#x6A21;&#x5757;&#x4E2D;&#xFF0C;&#x4E0D;&#x8981;&#x7ED9;&#x6240;&#x8C13;&#x7684;&#x79C1;&#x6709;&#x51FD;&#x6570;&#x6DFB;&#x52A0; <code>_</code> &#x524D;&#x7F00;&#xFF0C;&#x672C;&#x8D28;&#x4E0A;&#x5B83;&#x5E76;&#x4E0D;&#x662F;&#x79C1;&#x6709;&#x7684;.</p>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;<code>_</code> &#x4E0B;&#x5212;&#x7EBF;&#x524D;&#x7F00;&#x5728;&#x67D0;&#x4E9B;&#x8BED;&#x8A00;&#x4E2D;&#x901A;&#x5E38;&#x88AB;&#x7528;&#x6765;&#x8868;&#x793A;&#x79C1;&#x6709;&#x53D8;&#x91CF;&#x6216;&#x8005;&#x51FD;&#x6570;&#x3002;&#x4F46;&#x662F;&#x4E0D;&#x50CF;&#x5176;&#x4ED6;&#x7684;&#x4E00;&#x4E9B;&#x8BED;&#x8A00;&#xFF0C;&#x5728;JS&#x4E2D;&#x6CA1;&#x6709;&#x539F;&#x751F;&#x652F;&#x6301;&#x6240;&#x8C13;&#x7684;&#x79C1;&#x6709;&#x53D8;&#x91CF;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x53D8;&#x91CF;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x5171;&#x6709;&#x7684;&#x3002;&#x5C3D;&#x7BA1;&#x4F60;&#x7684;&#x610F;&#x56FE;&#x662F;&#x4F7F;&#x5B83;&#x79C1;&#x6709;&#x5316;&#xFF0C;&#x5728;&#x4E4B;&#x524D;&#x52A0;&#x4E0A;&#x4E0B;&#x5212;&#x7EBF;&#x5E76;&#x4E0D;&#x4F1A;&#x4F7F;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x79C1;&#x6709;&#x5316;&#xFF0C;&#x5E76;&#x4E14;&#x6240;&#x6709;&#x7684;&#x5C5E;&#x6027;&#xFF08;&#x5305;&#x62EC;&#x6709;&#x4E0B;&#x5212;&#x7EBF;&#x524D;&#x7F00;&#x53CA;&#x6CA1;&#x6709;&#x524D;&#x7F00;&#x7684;&#xFF09;&#x90FD;&#x5E94;&#x8BE5;&#x88AB;&#x89C6;&#x4E3A;&#x662F;&#x5171;&#x6709;&#x7684;&#x3002;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x8BE6;&#x60C5;&#x8BF7;&#x67E5;&#x770B;Issue <a href="https://github.com/airbnb/javascript/issues/1024" target="_blank">#1024</a>, &#x548C; <a href="https://github.com/airbnb/javascript/issues/490" target="_blank">#490</a> &#x3002;</p>
+</blockquote>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+React.createClass({
+  _onClickSubmit() {
+    <span class="hljs-comment">// do stuff</span>
+  },
+
+  <span class="hljs-comment">// other stuff</span>
+});
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  onClickSubmit() {
+    <span class="hljs-comment">// do stuff</span>
+  }
+
+  <span class="hljs-comment">// other stuff</span>
+}
+</code></pre>
+</li>
+<li><p>&#x5728; <code>render</code> &#x65B9;&#x6CD5;&#x4E2D;&#x603B;&#x662F;&#x786E;&#x4FDD; <code>return</code> &#x8FD4;&#x56DE;&#x503C;. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md" target="_blank"><code>react/require-render-return</code></a></p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// bad</span>
+render() {
+  (&lt;div /&gt;);
+}
+
+// good
+render() {
+  return (&lt;div /&gt;);
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="ordering-react-&#x6A21;&#x5757;&#x751F;&#x547D;&#x5468;&#x671F;">Ordering React &#x6A21;&#x5757;&#x751F;&#x547D;&#x5468;&#x671F;</h2>
+<ul>
+<li><p><code>class extends React.Component</code> &#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x51FD;&#x6570;:</p>
+</li>
+<li><p>&#x53EF;&#x9009;&#x7684; <code>static</code> &#x65B9;&#x6CD5;</p>
+</li>
+<li><code>constructor</code> &#x6784;&#x9020;&#x51FD;&#x6570;</li>
+<li><code>getChildContext</code> &#x83B7;&#x53D6;&#x5B50;&#x5143;&#x7D20;&#x5185;&#x5BB9;</li>
+<li><code>componentWillMount</code> &#x6A21;&#x5757;&#x6E32;&#x67D3;&#x524D;</li>
+<li><code>componentDidMount</code> &#x6A21;&#x5757;&#x6E32;&#x67D3;&#x540E;</li>
+<li><code>componentWillReceiveProps</code> &#x6A21;&#x5757;&#x5C06;&#x63A5;&#x53D7;&#x65B0;&#x7684;&#x6570;&#x636E;</li>
+<li><code>shouldComponentUpdate</code> &#x5224;&#x65AD;&#x6A21;&#x5757;&#x9700;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x6E32;&#x67D3;</li>
+<li><code>componentWillUpdate</code> &#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE; <code>true</code>&#xFF0C; &#x6A21;&#x5757;&#x5C06;&#x91CD;&#x65B0;&#x6E32;&#x67D3;</li>
+<li><code>componentDidUpdate</code> &#x6A21;&#x5757;&#x6E32;&#x67D3;&#x7ED3;&#x675F;</li>
+<li><code>componentWillUnmount</code> &#x6A21;&#x5757;&#x5C06;&#x4ECE;DOM&#x4E2D;&#x6E05;&#x9664;, &#x505A;&#x4E00;&#x4E9B;&#x6E05;&#x7406;&#x4EFB;&#x52A1;</li>
+<li><em>&#x70B9;&#x51FB;&#x56DE;&#x8C03;&#x6216;&#x8005;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;</em> &#x5982; <code>onClickSubmit()</code> &#x6216; <code>onChangeDescription()</code></li>
+<li><em><code>render</code> &#x91CC;&#x7684; getter &#x65B9;&#x6CD5;</em> &#x5982; <code>getSelectReason()</code> &#x6216; <code>getFooterContent()</code></li>
+<li><em>&#x53EF;&#x9009;&#x7684; render &#x65B9;&#x6CD5;</em> &#x5982; <code>renderNavigation()</code> &#x6216; <code>renderProfilePicture()</code></li>
+<li><p><code>render</code> render() &#x65B9;&#x6CD5;</p>
+</li>
+<li><p>&#x5982;&#x4F55;&#x5B9A;&#x4E49; <code>propTypes</code>, <code>defaultProps</code>, <code>contextTypes</code>, &#x7B49;&#x7B49;&#x5176;&#x4ED6;&#x5C5E;&#x6027;...</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;prop-types&apos;</span>;
+
+<span class="hljs-keyword">const</span> propTypes = {
+  id: PropTypes.number.isRequired,
+  url: PropTypes.string.isRequired,
+  text: PropTypes.string,
+};
+
+<span class="hljs-keyword">const</span> defaultProps = {
+  text: <span class="hljs-string">&apos;Hello World&apos;</span>,
+};
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Link</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">static</span> methodsAreOk() {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">{this.props.url}</span> <span class="hljs-attr">data-id</span>=<span class="hljs-string">{this.props.id}</span>&gt;</span>{this.props.text}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>;
+  }
+}
+
+Link.propTypes = propTypes;
+Link.defaultProps = defaultProps;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Link;
+</code></pre>
+</li>
+<li><p><code>React.createClass</code> &#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x51FD;&#x6570;&#xFF0C;&#x4E0E;&#x4F7F;&#x7528;class&#x7A0D;&#x6709;&#x4E0D;&#x540C;: eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md" target="_blank"><code>react/sort-comp</code></a></p>
+</li>
+<li><p><code>displayName</code> &#x8BBE;&#x5B9A;&#x6A21;&#x5757;&#x540D;&#x79F0;</p>
+</li>
+<li><code>propTypes</code> &#x8BBE;&#x7F6E;&#x5C5E;&#x6027;&#x7684;&#x7C7B;&#x578B;</li>
+<li><code>contextTypes</code> &#x8BBE;&#x7F6E;&#x4E0A;&#x4E0B;&#x6587;&#x7C7B;&#x578B;</li>
+<li><code>childContextTypes</code> &#x8BBE;&#x7F6E;&#x5B50;&#x5143;&#x7D20;&#x4E0A;&#x4E0B;&#x6587;&#x7C7B;&#x578B;</li>
+<li><code>mixins</code> &#x6DFB;&#x52A0;&#x4E00;&#x4E9B;mixins</li>
+<li><code>statics</code></li>
+<li><code>defaultProps</code> &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x7684;&#x5C5E;&#x6027;&#x503C;</li>
+<li><code>getDefaultProps</code> &#x83B7;&#x53D6;&#x9ED8;&#x8BA4;&#x5C5E;&#x6027;&#x503C;</li>
+<li><code>getInitialState</code> &#x6216;&#x8005;&#x521D;&#x59CB;&#x72B6;&#x6001;</li>
+<li><code>getChildContext</code></li>
+<li><code>componentWillMount</code></li>
+<li><code>componentDidMount</code></li>
+<li><code>componentWillReceiveProps</code></li>
+<li><code>shouldComponentUpdate</code></li>
+<li><code>componentWillUpdate</code></li>
+<li><code>componentDidUpdate</code></li>
+<li><code>componentWillUnmount</code></li>
+<li><em>clickHandlers or eventHandlers</em> like <code>onClickSubmit()</code> or <code>onChangeDescription()</code></li>
+<li><em>getter methods for <code>render</code></em> like <code>getSelectReason()</code> or <code>getFooterContent()</code></li>
+<li><em>Optional render methods</em> like <code>renderNavigation()</code> or <code>renderProfilePicture()</code></li>
+<li><code>render</code></li>
+</ul>
+<h2 id="ismounted">isMounted</h2>
+<ul>
+<li><p>&#x4E0D;&#x8981;&#x518D;&#x4F7F;&#x7528; <code>isMounted</code>. eslint: <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md" target="_blank"><code>react/no-is-mounted</code></a></p>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;? <a href="https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html" target="_blank"><code>isMounted</code> &#x53CD;&#x4EBA;&#x7C7B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;:()</a>, &#x5728; ES6 classes &#x4E2D;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#xFF0C; &#x5B98;&#x65B9;&#x5C06;&#x5728;&#x672A;&#x6765;&#x7684;&#x7248;&#x672C;&#x91CC;&#x5220;&#x9664;&#x6B64;&#x65B9;&#x6CD5;.</p>
+</blockquote>
+</li>
+</ul>
+<p><strong><a href="#&#x5185;&#x5BB9;&#x76EE;&#x5F55;">&#x2B06; &#x56DE;&#x5230;&#x9876;&#x90E8;</a></strong></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="vue编码规范.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: vue编码规范">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Airbnb-React-JSX编码规范","level":"3.4","depth":1,"previous":{"title":"vue编码规范","level":"3.3","depth":1,"path":"规范/vue编码规范.md","ref":"规范/vue编码规范.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"规范/Airbnb-React-JSX编码规范.md","mtime":"2018-08-24T06:26:03.020Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-24T07:14:30.150Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

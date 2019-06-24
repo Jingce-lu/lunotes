@@ -1,0 +1,864 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ES6编码规范 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="vue编码规范.html" />
+    
+    
+    <link rel="prev" href="分支开发规范.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">git</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../git/git基本使用.html">
+            
+                <a href="../git/git基本使用.html">
+            
+                    
+                    git基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../git/git分支管理策略.html">
+            
+                <a href="../git/git分支管理策略.html">
+            
+                    
+                    git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">规范</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="分支开发规范.html">
+            
+                <a href="分支开发规范.html">
+            
+                    
+                    分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="es6编码规范.html">
+            
+                <a href="es6编码规范.html">
+            
+                    
+                    ES6编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="vue编码规范.html">
+            
+                <a href="vue编码规范.html">
+            
+                    
+                    vue编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Airbnb-React-JSX编码规范.html">
+            
+                <a href="Airbnb-React-JSX编码规范.html">
+            
+                    
+                    Airbnb-React-JSX编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ES6编码规范</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="es6&#x7F16;&#x7801;&#x89C4;&#x8303;">es6&#x7F16;&#x7801;&#x89C4;&#x8303;</h1>
+<p><a href="https://www.w3cschool.cn/rtuhtw/v7q3jozt.html" target="_blank">Airbnb JavaScript &#x4EE3;&#x7801;&#x89C4;&#x8303;&#xFF08;ES6&#xFF09;</a></p>
+<h3 id="1&#xFF1A;&#x5173;&#x952E;&#x5B57;import">1&#xFF1A;&#x5173;&#x952E;&#x5B57;import</h3>
+<pre><code class="lang-javascript"><span class="hljs-comment">// ES5  </span>
+<span class="hljs-keyword">var</span> MyComponent = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./MyComponent.js&apos;</span>);
+<span class="hljs-comment">// ES6  </span>
+<span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./MyComponent&apos;</span>;
+</code></pre>
+<h3 id="2&#xFF1A;&#x5173;&#x952E;&#x5B57;exports">2&#xFF1A;&#x5173;&#x952E;&#x5B57;exports</h3>
+<pre><code class="lang-javascript"><span class="hljs-comment">// ES5  </span>
+
+<span class="hljs-keyword">var</span> Mycomponent = React.createClass({});
+<span class="hljs-built_in">module</span>.exports = MyComponent;
+
+<span class="hljs-comment">// ES6,&#x7528;export default&#x6765;&#x5B9E;&#x73B0;&#x76F8;&#x540C;&#x7684;&#x529F;&#x80FD;  </span>
+<span class="hljs-comment">// ES6  </span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{}
+</code></pre>
+<h3 id="3&#xFF1A;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;">3&#xFF1A;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;</h3>
+<pre><code class="lang-javascript"><span class="hljs-comment">// ES5  </span>
+<span class="hljs-keyword">var</span> Phono = {
+    name,
+    age,
+    getAge: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> age
+    }
+}
+
+<span class="hljs-comment">// ES6  </span>
+<span class="hljs-comment">//&#x540D;&#x5B57;&#xFF1A;function() &#x7684;&#x5199;&#x6CD5;&#x4E86;&#xFF0C;&#x800C;&#x662F;&#x76F4;&#x63A5;&#x4F7F;&#x7528; &#x540D;&#x5B57;()&#xFF0C;&#x5728;&#x65B9;&#x6CD5;&#x7684;&#x6700;&#x540E;&#x4E5F;&#x4E0D;&#x80FD;&#x5728;&#x6709;&#x9017;&#x53F7;&#x4E86;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Photo</span> </span>{
+    name
+    age
+    getAge() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.age
+    }
+    getName() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;
+    }
+}
+</code></pre>
+<h3 id="4&#xFF1A;&#x7BAD;&#x5934;&#x51FD;&#x6570;-arrow-function">4&#xFF1A;&#x7BAD;&#x5934;&#x51FD;&#x6570; arrow function</h3>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x4E2D;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;arguments&#x5BF9;&#x8C61;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-comment">//ES5&#x4E0E;ES6&#x5BF9;&#x6BD4;</span>
+<span class="hljs-comment">//ES5&#xFF1A; function name(&#x53C2;&#x6570;) {&#x8FD0;&#x7B97;&#x8868;&#x8FBE;&#x5F0F;;return &#x8868;&#x8FBE;&#x5F0F;}</span>
+<span class="hljs-comment">//ES6&#xFF1A; (&#x53C2;&#x6570;) =&gt; {&#x8FD0;&#x7B97;&#x8868;&#x8FBE;&#x5F0F;;return &#x8868;&#x8FBE;&#x5F0F;}</span>
+
+<span class="hljs-comment">// &#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7684;&#x4F8B;&#x5B50;  </span>
+() =&gt; <span class="hljs-number">1</span>;
+v =&gt; v + <span class="hljs-number">1</span>;
+(a, b) =&gt; a + b;
+() =&gt; {
+    alert(<span class="hljs-string">&quot;foo&quot;</span>);
+}
+e =&gt; {
+    <span class="hljs-keyword">if</span> (e == <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1000</span> / e;
+}
+
+
+<span class="hljs-comment">//&#x4F8B;&#x5982;</span>
+(x, y) =&gt; {
+    x++;
+    y--;
+    <span class="hljs-keyword">return</span> x + y
+}
+<span class="hljs-comment">// &#x7B49;&#x540C;&#x4E8E;</span>
+s = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) </span>{
+    x++;
+    y--;
+    <span class="hljs-keyword">return</span> x + y;
+};
+<span class="hljs-comment">//&#x4F8B;&#x5982;</span>
+f = v =&gt; v;
+<span class="hljs-comment">//&#x4E0A;&#x9762;&#x7684;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7B49;&#x540C;&#x4E8E;&#xFF1A;</span>
+f = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v</span>) </span>{
+    <span class="hljs-keyword">return</span> v;
+};
+
+f = () =&gt; <span class="hljs-number">5</span>;
+<span class="hljs-comment">// &#x7B49;&#x540C;&#x4E8E;</span>
+f = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-number">5</span> };
+
+sum = (num1, num2) =&gt; num1 + num2;
+
+<span class="hljs-comment">// &#x7B49;&#x540C;&#x4E8E;</span>
+sum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">num1, num2</span>) </span>{
+    <span class="hljs-keyword">return</span> num1 + num2;
+};
+<span class="hljs-comment">//&#x5982;&#x679C;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x90E8;&#x5206;&#x591A;&#x4E8E;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#xFF0C;&#x5C31;&#x8981;&#x4F7F;&#x7528;&#x5927;&#x62EC;&#x53F7;&#x5C06;&#x5B83;&#x4EEC;&#x62EC;&#x8D77;&#x6765;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;return&#x8BED;&#x53E5;&#x8FD4;&#x56DE;&#x3002;</span>
+sum = (num1, num2) =&gt; { <span class="hljs-keyword">return</span> num1 + num2; }
+    <span class="hljs-comment">//&#x7531;&#x4E8E;&#x5927;&#x62EC;&#x53F7;&#x88AB;&#x89E3;&#x91CA;&#x4E3A;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x5BF9;&#x8C61;&#x5916;&#x9762;&#x52A0;&#x4E0A;&#x62EC;&#x53F7;&#x3002;</span>
+getTempItem = id =&gt; ({ id: id, name: <span class="hljs-string">&quot;Temp&quot;</span> });
+<span class="hljs-comment">//&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x4E0E;&#x53D8;&#x91CF;&#x89E3;&#x6784;&#x7ED3;&#x5408;&#x4F7F;&#x7528;</span>
+<span class="hljs-keyword">const</span> full = ({ first, last }) =&gt; first + <span class="hljs-string">&apos; &apos;</span> + last;
+
+<span class="hljs-comment">// &#x7B49;&#x540C;&#x4E8E;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">full</span>(<span class="hljs-params">person</span>) </span>{
+    <span class="hljs-keyword">return</span> person.first + <span class="hljs-string">&apos; &apos;</span> + person.last;
+}
+<span class="hljs-comment">//click</span>
+clickBtn = (event) =&gt; { event.stopPropagation() }
+$(<span class="hljs-string">&apos;btn&apos;</span>).on(<span class="hljs-string">&apos;click&apos;</span>, (event =&gt; event.stopPropagation()))
+$(<span class="hljs-string">&apos;btn&apos;</span>).on(<span class="hljs-string">&apos;click&apos;</span>, (event) =&gt; {
+    <span class="hljs-keyword">return</span> event.stopPropagation()
+})
+</code></pre>
+<h3 id="5&#xFF1A;class-extends&#x548C;super">5&#xFF1A;class, extends&#x548C;super</h3>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span> </span>{
+    <span class="hljs-keyword">constructor</span>() {
+        <span class="hljs-keyword">this</span>.type = <span class="hljs-string">&apos;animal&apos;</span>
+    }
+    says(say) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.type + <span class="hljs-string">&apos; says &apos;</span> + say)
+    }
+}
+
+<span class="hljs-keyword">let</span> animal = <span class="hljs-keyword">new</span> Animal()
+animal.says(<span class="hljs-string">&apos;hello&apos;</span>) <span class="hljs-comment">//animal says hello</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span> </span>{
+    <span class="hljs-keyword">constructor</span>() {
+        <span class="hljs-comment">//super&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x5B83;&#x6307;&#x4EE3;&#x7236;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF08;&#x5373;&#x7236;&#x7C7B;&#x7684;this&#x5BF9;&#x8C61;&#xFF09;&#x3002;&#x5B50;&#x7C7B;&#x5FC5;&#x987B;&#x5728;constructor&#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;super&#x65B9;&#x6CD5;&#xFF0C;&#x5426;&#x5219;&#x65B0;&#x5EFA;&#x5B9E;&#x4F8B;&#x65F6;&#x4F1A;&#x62A5;&#x9519;&#x3002;</span>
+        <span class="hljs-comment">//ES6&#x7684;&#x7EE7;&#x627F;&#x673A;&#x5236;&#xFF0C;&#x5B9E;&#x8D28;&#x662F;&#x5148;&#x521B;&#x9020;&#x7236;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;this&#xFF08;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x5148;&#x8C03;&#x7528;super&#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x7528;&#x5B50;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4FEE;&#x6539;this&#x3002;</span>
+        <span class="hljs-keyword">super</span>()
+        <span class="hljs-keyword">this</span>.type = <span class="hljs-string">&apos;cat&apos;</span>
+    }
+}
+
+<span class="hljs-keyword">let</span> cat = <span class="hljs-keyword">new</span> Cat()
+cat.says(<span class="hljs-string">&apos;hello&apos;</span>) <span class="hljs-comment">//cat says hello</span>
+</code></pre>
+<blockquote>
+<p>&#x5B9A;&#x4E49;&#x7C7B;&#x65F6;&#xFF0C;&#x65B9;&#x6CD5;&#x7684;&#x987A;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A; </p>
+</blockquote>
+<ul>
+<li>constructor</li>
+<li>public get/set &#x516C;&#x7528;&#x8BBF;&#x95EE;&#x5668;&#xFF0C;set&#x53EA;&#x80FD;&#x4F20;&#x4E00;&#x4E2A;&#x53C2;&#x6570;</li>
+<li>public methods &#x516C;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x51FD;&#x6570;&#x547D;&#x540D;&#x533A;&#x5206;&#xFF0C;&#x4E0D;&#x5E26;&#x4E0B;&#x5212;&#x7EBF;</li>
+<li>private get/set &#x79C1;&#x6709;&#x8BBF;&#x95EE;&#x5668;&#xFF0C;&#x79C1;&#x6709;&#x76F8;&#x5173;&#x547D;&#x540D;&#x5E94;&#x52A0;&#x4E0A;&#x4E0B;&#x5212;&#x7EBF;_&#x4E3A;&#x524D;&#x7F00;</li>
+<li>private methods &#x79C1;&#x6709;&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeClass</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-comment">// constructor</span>
+  }
+
+  get aval() {
+    <span class="hljs-comment">// public getter</span>
+  }
+
+  set aval(val) {
+    <span class="hljs-comment">// public setter</span>
+  }
+
+  doSth() {
+    <span class="hljs-comment">// &#x516C;&#x7528;&#x65B9;&#x6CD5;</span>
+  }
+
+  get _aval() {
+    <span class="hljs-comment">// private getter</span>
+  }
+
+  set _aval() {
+    <span class="hljs-comment">// private setter</span>
+  }
+
+  _doSth() {
+    <span class="hljs-comment">// &#x79C1;&#x6709;&#x65B9;&#x6CD5;</span>
+  }
+}
+</code></pre>
+<h3 id="6-&#xFF1A;&#x58F0;&#x660E;&#x53D8;&#x91CF;">6 &#xFF1A;&#x58F0;&#x660E;&#x53D8;&#x91CF;</h3>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x53EF;&#x4EE5;&#x521D;&#x59CB;&#x5316;&#x53D8;&#x91CF;</span>
+<span class="hljs-keyword">let</span> a = obj || {}
+</code></pre>
+<h3 id="7-&#xFF1A;for&#x5FAA;&#x73AF;">7 &#xFF1A;for&#x5FAA;&#x73AF;</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-string">&apos;val1&apos;</span>, <span class="hljs-string">&apos;val2&apos;</span>, <span class="hljs-string">&apos;val3&apos;</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+    <span class="hljs-built_in">console</span>.log(arr[i]);
+    <span class="hljs-built_in">console</span>.log(i);
+    <span class="hljs-built_in">console</span>.log(arr);
+}
+
+<span class="hljs-comment">//&#x63A8;&#x8350;</span>
+arr.map((val, index, array) =&gt; {
+    <span class="hljs-built_in">console</span>.log(val);
+    <span class="hljs-built_in">console</span>.log(index);
+    <span class="hljs-built_in">console</span>.log(array);
+})
+arr.forEach((val, index, array) =&gt; {
+    <span class="hljs-built_in">console</span>.log(val);
+    <span class="hljs-built_in">console</span>.log(index);
+    <span class="hljs-built_in">console</span>.log(array);
+})
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; allImgs.length; i++)
+<span class="hljs-comment">//&#x63A8;&#x8350;</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index <span class="hljs-keyword">in</span> allImgs)
+</code></pre>
+<h3 id="8-&#xFF1A;&#x8D4B;&#x503C;&#x7684;&#x65B9;&#x6CD5;">8 &#xFF1A;&#x8D4B;&#x503C;&#x7684;&#x65B9;&#x6CD5;</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">this</span>.str = <span class="hljs-string">&quot;CH&quot;</span>;
+<span class="hljs-keyword">var</span> str = <span class="hljs-keyword">this</span>.str &amp;&amp; <span class="hljs-keyword">this</span>.str.toLowerCase(); <span class="hljs-comment">//&#x8F93;&#x51FA;  &quot;ch&quot;</span>
+<span class="hljs-keyword">this</span>.str = <span class="hljs-literal">null</span>;
+<span class="hljs-keyword">var</span> str = <span class="hljs-keyword">this</span>.str &amp;&amp; <span class="hljs-keyword">this</span>.str.toLowerCase(); <span class="hljs-comment">//&#x8F93;&#x51FA;  null</span>
+<span class="hljs-comment">//&#x76F8;&#x5F53;&#x4E8E;</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.str) { <span class="hljs-comment">//&#x5F53;this.str&#x5B57;&#x7B26;&#x4E32;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x628A;&#x4ED6;&#x8F6C;&#x4E3A;&#x5C0F;&#x5199;&#x8D4B;&#x503C;&#x7ED9;str</span>
+    str = <span class="hljs-keyword">this</span>.str.toLowerCase();
+} <span class="hljs-keyword">else</span> { <span class="hljs-comment">//&#x5426;&#x5219;&#x628A;&#x4ED6;&#x81EA;&#x5DF1;&#x8D4B;&#x503C;&#x7ED9;str</span>
+    str = <span class="hljs-keyword">this</span>.str;
+}
+
+<span class="hljs-keyword">if</span> (a == <span class="hljs-number">1</span>) {
+    b()
+}
+<span class="hljs-comment">//&#x53EF;&#x4EE5;&#x5199;&#x6210;</span>
+a == <span class="hljs-number">1</span> &amp;&amp; b()
+
+
+<span class="hljs-comment">// ES5  </span>
+<span class="hljs-keyword">var</span> a = arr[<span class="hljs-number">0</span>],
+    b = arr[<span class="hljs-number">1</span>],
+    c = arr[<span class="hljs-number">2</span>];
+
+
+<span class="hljs-comment">// ES6</span>
+<span class="hljs-keyword">let</span> [a,b,c]=arr;
+</code></pre>
+<blockquote>
+<p>&#x5D4C;&#x5957;&#x6570;&#x7EC4;&#x89E3;&#x6784;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> arr = [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]], <span class="hljs-number">5</span>, <span class="hljs-number">6</span>];
+<span class="hljs-keyword">var</span> [[d, e, [f, g]], h, i] = arr;
+<span class="hljs-built_in">console</span>.log(d);<span class="hljs-comment">//1</span>
+<span class="hljs-built_in">console</span>.log(f);<span class="hljs-comment">//3</span>
+<span class="hljs-built_in">console</span>.log(i);<span class="hljs-comment">//6</span>
+</code></pre>
+<blockquote>
+<p>&#x51FD;&#x6570;&#x4F20;&#x53C2;&#x89E3;&#x6784;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-string">&apos;this is a string&apos;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn1</span>(<span class="hljs-params">[a, b, c]</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(a);
+    <span class="hljs-built_in">console</span>.log(b);
+    <span class="hljs-built_in">console</span>.log(c);
+}
+
+fn1(arr);
+<span class="hljs-comment">//this is a string</span>
+<span class="hljs-comment">//2</span>
+<span class="hljs-comment">//3</span>
+</code></pre>
+<blockquote>
+<p>for&#x5FAA;&#x73AF;&#x89E3;&#x6784;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> arr = [[<span class="hljs-number">11</span>, <span class="hljs-number">12</span>], [<span class="hljs-number">21</span>, <span class="hljs-number">22</span>], [<span class="hljs-number">31</span>, <span class="hljs-number">32</span>]];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> [a, b] <span class="hljs-keyword">of</span> arr) {
+    <span class="hljs-built_in">console</span>.log(a);
+    <span class="hljs-built_in">console</span>.log(b);
+}
+<span class="hljs-comment">//11</span>
+<span class="hljs-comment">//12</span>
+<span class="hljs-comment">//21</span>
+<span class="hljs-comment">//22</span>
+<span class="hljs-comment">//31</span>
+<span class="hljs-comment">//32</span>
+</code></pre>
+<blockquote>
+<p>&#x5BF9;&#x8C61;&#x8D4B;&#x503C;&#x89E3;&#x6784;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> obj = {
+    name: <span class="hljs-string">&apos;chris&apos;</span>,
+    sex: <span class="hljs-string">&apos;male&apos;</span>,
+    age: <span class="hljs-number">26</span>,
+    son: {
+        sonname: <span class="hljs-string">&apos;&#x5927;&#x718A;&apos;</span>,
+        sonsex: <span class="hljs-string">&apos;male&apos;</span>,
+        sonage: <span class="hljs-number">1</span>
+    }
+};
+
+<span class="hljs-keyword">var</span> {name, sex, age, son} = obj;
+<span class="hljs-built_in">console</span>.log(name + <span class="hljs-string">&apos; &apos;</span> + sex + <span class="hljs-string">&apos; &apos;</span> + age); <span class="hljs-comment">//chris male 26</span>
+<span class="hljs-built_in">console</span>.log(son); <span class="hljs-comment">// { sonname: &apos;&#x5927;&#x718A;&apos;, sonsex: &apos;male&apos;, sonage: 1 }</span>
+</code></pre>
+<blockquote>
+<p>&#x5BF9;&#x8C61;&#x4F20;&#x53C2;&#x89E3;&#x6784;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> obj = {
+    name: <span class="hljs-string">&apos;chris&apos;</span>,
+    sex: <span class="hljs-string">&apos;male&apos;</span>,
+    age: <span class="hljs-number">26</span>,
+    son: {
+        sonname: <span class="hljs-string">&apos;&#x5927;&#x718A;&apos;</span>,
+        sonsex: <span class="hljs-string">&apos;male&apos;</span>,
+        sonage: <span class="hljs-number">1</span>
+    }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn2</span>(<span class="hljs-params">{sex, age, name}</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(name + <span class="hljs-string">&apos; &apos;</span> + sex + <span class="hljs-string">&apos; &apos;</span> + age);
+}
+
+fn2(obj);
+<span class="hljs-comment">//chris male 26</span>
+</code></pre>
+<blockquote>
+<p>&#x53D8;&#x91CF;&#x540D;&#x4E0E;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x540D;&#x4E0D;&#x4E00;&#x81F4;&#x89E3;&#x6784;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> obj = {
+    name: <span class="hljs-string">&apos;chris&apos;</span>,
+    sex: <span class="hljs-string">&apos;male&apos;</span>,
+    age: <span class="hljs-number">26</span>
+};
+<span class="hljs-keyword">var</span> {name: nickname, age: howold} = obj;
+<span class="hljs-built_in">console</span>.log(nickname + <span class="hljs-string">&apos; &apos;</span> + howold); <span class="hljs-comment">//chris 26</span>
+</code></pre>
+<blockquote>
+<p>&#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#x89E3;&#x6784;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> obj = {
+    name: <span class="hljs-string">&apos;chris&apos;</span>,
+    sex: <span class="hljs-string">&apos;male&apos;</span>,
+    age: <span class="hljs-number">26</span>,
+    son: {
+        sonname: <span class="hljs-string">&apos;&#x5927;&#x718A;&apos;</span>,
+        sonsex: <span class="hljs-string">&apos;male&apos;</span>,
+        sonage: <span class="hljs-number">1</span>
+    }
+};
+<span class="hljs-keyword">var</span> {name, sex, age, son: {sonname, sonsex, sonage}} = obj;
+<span class="hljs-built_in">console</span>.log(sonname + <span class="hljs-string">&apos; &apos;</span> + sonsex + <span class="hljs-string">&apos; &apos;</span> + sonage);
+<span class="hljs-comment">//&#x5927;&#x718A; male 1</span>
+
+<span class="hljs-comment">//Babel&#x6682;&#x4E0D;&#x652F;&#x6301;&#x8FD9;&#x79CD;&#x5D4C;&#x5957;&#x89E3;&#x6784;</span>
+obj = {
+    name: <span class="hljs-string">&apos;chris&apos;</span>,
+    sex: <span class="hljs-string">&apos;male&apos;</span>,
+    age: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+}
+
+{name, sex, age: [a, b, c]} = obj;
+<span class="hljs-built_in">console</span>.log(c);
+</code></pre>
+<blockquote>
+<p>&#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x91CD;&#x540D;&#xFF0C;&#x89E3;&#x6784;&#x65F6;&#x9700;&#x8981;&#x66F4;&#x6539;&#x53D8;&#x91CF;&#x540D;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> obj = {
+    name: <span class="hljs-string">&apos;chris&apos;</span>,
+    sex: <span class="hljs-string">&apos;male&apos;</span>,
+    age: <span class="hljs-number">26</span>,
+    son: {
+        name: <span class="hljs-string">&apos;&#x5927;&#x718A;&apos;</span>,
+        sex: <span class="hljs-string">&apos;male&apos;</span>,
+        age: <span class="hljs-number">1</span>
+    }
+};
+<span class="hljs-comment">//&#x8D4B;&#x503C;&#x89E3;&#x6784;</span>
+<span class="hljs-keyword">var</span> {name: fathername, son: {name, sex, age}} = obj;
+<span class="hljs-built_in">console</span>.log(fathername); <span class="hljs-comment">//chris</span>
+<span class="hljs-built_in">console</span>.log(name); <span class="hljs-comment">//&#x5927;&#x718A;</span>
+
+<span class="hljs-comment">//&#x4F20;&#x53C2;&#x89E3;&#x6784;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn3</span>(<span class="hljs-params">{sex, age, name, son: {name: sonname}}</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(name + <span class="hljs-string">&apos; &apos;</span> + sex + <span class="hljs-string">&apos; &apos;</span> + age + <span class="hljs-string">&apos; &apos;</span> + sonname);
+}
+
+fn3(obj);
+<span class="hljs-comment">//chris male 26 &#x5927;&#x718A;</span>
+</code></pre>
+<blockquote>
+<p>&#x5FAA;&#x73AF;&#x89E3;&#x6784;&#x5BF9;&#x8C61;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> arr = [{name: <span class="hljs-string">&apos;chris&apos;</span>, age: <span class="hljs-number">26</span>}, {name: <span class="hljs-string">&apos;jack&apos;</span>,    age: <span class="hljs-number">27</span>}, {name: <span class="hljs-string">&apos;peter&apos;</span>,age: <span class="hljs-number">28</span>}];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> {age, name} <span class="hljs-keyword">of</span> arr) {
+    <span class="hljs-built_in">console</span>.log(name + <span class="hljs-string">&apos; &apos;</span> + age);
+}
+<span class="hljs-comment">//chris 26</span>
+<span class="hljs-comment">//jack 27</span>
+<span class="hljs-comment">//peter 28</span>
+</code></pre>
+<blockquote>
+<p>&#x89E3;&#x6784;&#x7684;&#x7279;&#x6B8A;&#x5E94;&#x7528;&#x573A;&#x666F;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x53D8;&#x91CF;&#x4E92;&#x6362;</span>
+<span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>,
+    y = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">var</span> [x, y] = [y, x];
+<span class="hljs-built_in">console</span>.log(x); <span class="hljs-comment">//2</span>
+<span class="hljs-built_in">console</span>.log(y); <span class="hljs-comment">//1</span>
+
+<span class="hljs-comment">//&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6784;</span>
+<span class="hljs-keyword">var</span> str = <span class="hljs-string">&apos;love&apos;</span>;
+<span class="hljs-keyword">var</span> [a, b, c, d] = str;
+<span class="hljs-built_in">console</span>.log(a);<span class="hljs-comment">//l</span>
+<span class="hljs-built_in">console</span>.log(b);<span class="hljs-comment">//o</span>
+<span class="hljs-built_in">console</span>.log(c);<span class="hljs-comment">//v</span>
+<span class="hljs-built_in">console</span>.log(d);<span class="hljs-comment">//e</span>
+</code></pre>
+<h3 id="9&#xFF1A;&#x77ED;&#x8DEF;&#x6C42;&#x503C;&#x7B80;&#x5199;&#x65B9;&#x5F0F;">9&#xFF1A;&#x77ED;&#x8DEF;&#x6C42;&#x503C;&#x7B80;&#x5199;&#x65B9;&#x5F0F;</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (variable1 !== <span class="hljs-literal">null</span> || variable1 !== <span class="hljs-literal">undefined</span> || variable1 !== <span class="hljs-string">&apos;&apos;</span>) {
+    <span class="hljs-keyword">let</span> variable2 = variable1;
+}
+<span class="hljs-keyword">const</span> variable2 = variable1 || <span class="hljs-string">&apos;new&apos;</span>;
+</code></pre>
+<h3 id="10&#xFF1A;-if&#x5B58;&#x5728;&#x6761;&#x4EF6;&#x7B80;&#x5199;&#x65B9;&#x6CD5;">10&#xFF1A; if&#x5B58;&#x5728;&#x6761;&#x4EF6;&#x7B80;&#x5199;&#x65B9;&#x6CD5;</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (likeJavaScript === <span class="hljs-literal">true</span>) {}
+<span class="hljs-comment">//&#x7B80;&#x5199;&#xFF1A;</span>
+<span class="hljs-keyword">if</span> (likeJavaScript) {}
+<span class="hljs-keyword">let</span> a;
+<span class="hljs-keyword">if</span> (a !== <span class="hljs-literal">true</span>) {
+    <span class="hljs-comment">// do something...</span>
+}
+<span class="hljs-comment">//&#x7B80;&#x5199;&#xFF1A;</span>
+<span class="hljs-keyword">let</span> a;
+<span class="hljs-keyword">if</span> (!a) {
+    <span class="hljs-comment">// do something...</span>
+}
+</code></pre>
+<h3 id="11&#xFF1A;-&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x503C;">11&#xFF1A; &#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x503C;</h3>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">volume</span>(<span class="hljs-params">l, w, h</span>) </span>{
+    <span class="hljs-keyword">if</span> (w === <span class="hljs-literal">undefined</span>)
+        w = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">if</span> (h === <span class="hljs-literal">undefined</span>)
+        h = <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">return</span> l * w * h;
+}
+<span class="hljs-comment">//&#x7B80;&#x5199;&#xFF1A;</span>
+volume = (l, w = <span class="hljs-number">3</span>, h = <span class="hljs-number">4</span>) =&gt; (l * w * h);
+volume(<span class="hljs-number">2</span>) <span class="hljs-comment">//output: 24</span>
+</code></pre>
+<h3 id="12&#xFF1A;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;">12&#xFF1A;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> welcome = <span class="hljs-string">&apos;You have logged in as &apos;</span> + first + <span class="hljs-string">&apos; &apos;</span> + last + <span class="hljs-string">&apos;.&apos;</span>
+<span class="hljs-keyword">const</span> db = <span class="hljs-string">&apos;http://&apos;</span> + host + <span class="hljs-string">&apos;:&apos;</span> + port + <span class="hljs-string">&apos;/&apos;</span> + database;
+<span class="hljs-comment">//&#x63A8;&#x8350;</span>
+<span class="hljs-keyword">const</span> welcome = <span class="hljs-string">`You have logged in as <span class="hljs-subst">${first}</span> <span class="hljs-subst">${last}</span>`</span>;
+
+<span class="hljs-keyword">const</span> db = <span class="hljs-string">`http://<span class="hljs-subst">${host}</span>:<span class="hljs-subst">${port}</span>/<span class="hljs-subst">${database}</span>`</span>;
+</code></pre>
+<h3 id="13&#xFF1A;&#x6269;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;&#x7B80;&#x5199;">13&#xFF1A;&#x6269;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;&#x7B80;&#x5199;</h3>
+<pre><code class="lang-javascript"><span class="hljs-comment">// joining arrays</span>
+<span class="hljs-keyword">const</span> odd = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">const</span> nums = [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>].concat(odd);
+
+<span class="hljs-comment">// cloning arrays</span>
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">const</span> arr2 = arr.slice()
+    <span class="hljs-comment">//&#x7B80;&#x5199;&#xFF1A;</span>
+    <span class="hljs-comment">// joining arrays</span>
+<span class="hljs-keyword">const</span> odd = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">const</span> nums = [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, ...odd];
+<span class="hljs-built_in">console</span>.log(nums); <span class="hljs-comment">// [ 2, 4, 6, 1, 3, 5 ]</span>
+
+<span class="hljs-comment">// cloning arrays</span>
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">const</span> arr2 = [...arr];
+<span class="hljs-comment">//&#x4E0D;&#x50CF;concat()&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6269;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;&#x6765;&#x5728;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#x4EFB;&#x610F;&#x5904;&#x63D2;&#x5165;&#x53E6;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;</span>
+<span class="hljs-keyword">const</span> odd = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">const</span> nums = [<span class="hljs-number">2</span>, ...odd, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>];
+<span class="hljs-comment">//&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6269;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;&#x89E3;&#x6784;&#xFF1A;</span>
+<span class="hljs-keyword">const</span> { a, b, ...z } = { a: <span class="hljs-number">1</span>, b: <span class="hljs-number">2</span>, c: <span class="hljs-number">3</span>, d: <span class="hljs-number">4</span> };
+<span class="hljs-built_in">console</span>.log(a) <span class="hljs-comment">// 1</span>
+<span class="hljs-built_in">console</span>.log(b) <span class="hljs-comment">// 2</span>
+<span class="hljs-built_in">console</span>.log(z) <span class="hljs-comment">// { c: 3, d: 4 }</span>
+</code></pre>
+<h3 id="14-&#xFF1A;&#x5F3A;&#x5236;&#x53C2;&#x6570;&#x7B80;&#x5199;">14 &#xFF1A;&#x5F3A;&#x5236;&#x53C2;&#x6570;&#x7B80;&#x5199;</h3>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">bar</span>) </span>{
+    <span class="hljs-keyword">if</span> (bar === <span class="hljs-literal">undefined</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Missing parameter!&apos;</span>);
+    }
+    <span class="hljs-keyword">return</span> bar;
+}
+<span class="hljs-comment">//&#x7B80;&#x5199;&#xFF1A;</span>
+mandatory = () =&gt; {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Missing parameter!&apos;</span>);
+}
+
+foo = (bar = mandatory()) =&gt; {
+    <span class="hljs-keyword">return</span> bar;
+}
+</code></pre>
+<h3 id="15&#xFF1A;-arrayfind&#x7B80;&#x5199;">15&#xFF1A; Array.find&#x7B80;&#x5199;</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> pets = [
+    { type: <span class="hljs-string">&apos;Dog&apos;</span>, name: <span class="hljs-string">&apos;Max&apos;</span> },
+    { type: <span class="hljs-string">&apos;Cat&apos;</span>, name: <span class="hljs-string">&apos;Karl&apos;</span> },
+    { type: <span class="hljs-string">&apos;Dog&apos;</span>, name: <span class="hljs-string">&apos;Tommy&apos;</span> },
+]
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findDog</span>(<span class="hljs-params">name</span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; pets.length; ++i) {
+        <span class="hljs-keyword">if</span> (pets[i].type === <span class="hljs-string">&apos;Dog&apos;</span> &amp;&amp; pets[i].name === name) {
+            <span class="hljs-keyword">return</span> pets[i];
+        }
+    }
+}
+
+<span class="hljs-comment">//&#x7B80;&#x5199;&#xFF1A;</span>
+pet = pets.find(pet =&gt; pet.type === <span class="hljs-string">&apos;Dog&apos;</span> &amp;&amp; pet.name === <span class="hljs-string">&apos;Tommy&apos;</span>);
+</code></pre>
+<h3 id="16-&#xFF1A;objectkey&#x7B80;&#x5199;">16 &#xFF1A;Object[key]&#x7B80;&#x5199;</h3>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x8003;&#x8651;&#x4E00;&#x4E2A;&#x9A8C;&#x8BC1;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validate</span>(<span class="hljs-params">values</span>) </span>{
+    <span class="hljs-keyword">if</span> (!values.first)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">if</span> (!values.last)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-built_in">console</span>.log(validate({ first: <span class="hljs-string">&apos;Bruce&apos;</span>, last: <span class="hljs-string">&apos;Wayne&apos;</span> })); <span class="hljs-comment">// true</span>
+<span class="hljs-comment">//&#x5047;&#x8BBE;&#x5F53;&#x9700;&#x8981;&#x4E0D;&#x540C;&#x57DF;&#x548C;&#x89C4;&#x5219;&#x6765;&#x9A8C;&#x8BC1;&#xFF0C;&#x80FD;&#x5426;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x51FD;&#x6570;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x786E;&#x8BA4;&#xFF1F;</span>
+<span class="hljs-comment">// &#x5BF9;&#x8C61;&#x9A8C;&#x8BC1;&#x89C4;&#x5219;</span>
+<span class="hljs-keyword">const</span> schema = {
+    first: {
+        required: <span class="hljs-literal">true</span>
+    },
+    last: {
+        required: <span class="hljs-literal">true</span>
+    }
+}
+
+<span class="hljs-comment">// &#x901A;&#x7528;&#x9A8C;&#x8BC1;&#x51FD;&#x6570;</span>
+<span class="hljs-keyword">const</span> validate = (schema, values) =&gt; {
+    <span class="hljs-keyword">for</span> (field <span class="hljs-keyword">in</span> schema) {
+        <span class="hljs-keyword">if</span> (schema[field].required) {
+            <span class="hljs-keyword">if</span> (!values[field]) {
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+
+<span class="hljs-built_in">console</span>.log(validate(schema, { first: <span class="hljs-string">&apos;Bruce&apos;</span> })); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(validate(schema, { first: <span class="hljs-string">&apos;Bruce&apos;</span>, last: <span class="hljs-string">&apos;Wayne&apos;</span> })); <span class="hljs-comment">// true</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="分支开发规范.html" class="navigation navigation-prev " aria-label="Previous page: 分支开发规范">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="vue编码规范.html" class="navigation navigation-next " aria-label="Next page: vue编码规范">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ES6编码规范","level":"3.2","depth":1,"next":{"title":"vue编码规范","level":"3.3","depth":1,"path":"规范/vue编码规范.md","ref":"规范/vue编码规范.md","articles":[]},"previous":{"title":"分支开发规范","level":"3.1","depth":1,"path":"规范/分支开发规范.md","ref":"规范/分支开发规范.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"规范/es6编码规范.md","mtime":"2018-08-24T06:26:03.020Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-24T07:14:30.150Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

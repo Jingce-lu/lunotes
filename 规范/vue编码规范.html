@@ -1,0 +1,472 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>vue编码规范 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Airbnb-React-JSX编码规范.html" />
+    
+    
+    <link rel="prev" href="es6编码规范.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">git</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../git/git基本使用.html">
+            
+                <a href="../git/git基本使用.html">
+            
+                    
+                    git基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../git/git分支管理策略.html">
+            
+                <a href="../git/git分支管理策略.html">
+            
+                    
+                    git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">规范</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="分支开发规范.html">
+            
+                <a href="分支开发规范.html">
+            
+                    
+                    分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="es6编码规范.html">
+            
+                <a href="es6编码规范.html">
+            
+                    
+                    ES6编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="vue编码规范.html">
+            
+                <a href="vue编码规范.html">
+            
+                    
+                    vue编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Airbnb-React-JSX编码规范.html">
+            
+                <a href="Airbnb-React-JSX编码规范.html">
+            
+                    
+                    Airbnb-React-JSX编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >vue编码规范</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="vue&#x7EC4;&#x4EF6;&#x7F16;&#x7801;&#x89C4;&#x8303;">VUE&#x7EC4;&#x4EF6;&#x7F16;&#x7801;&#x89C4;&#x8303;</h1>
+<h3 id="&#x76F8;&#x5173;&#x6587;&#x6863;">&#x76F8;&#x5173;&#x6587;&#x6863;</h3>
+<ul>
+<li>vue 1.x: [<a href="http://v1.vuejs.org/api/" target="_blank">http://v1.vuejs.org/api/</a>]</li>
+<li>vue-ressource 1.x: [<a href="https://github.com/pagekit/vue-resource/blob/develop/docs/http.md" target="_blank">https://github.com/pagekit/vue-resource/blob/develop/docs/http.md</a>]</li>
+<li>vue-router 0.x: [<a href="https://github.com/vuejs/vue-router/tree/1.0/docs/zh-cn" target="_blank">https://github.com/vuejs/vue-router/tree/1.0/docs/zh-cn</a>]</li>
+</ul>
+<p><code>&#x8BF7;&#x6CE8;&#x610F;&#x533A;&#x5206;&#x9879;&#x76EE;&#x4F7F;&#x7528;&#x7684;&#x5E93;&#x7248;&#x672C;&#x53CA;&#x76F8;&#x5173;&#x6587;&#x6863;&#xFF0C;&#x4EE5;&#x4E0A;&#x4E09;&#x4E2A;&#x5305;&#x90FD;&#x5728;vue.dll.js&#x4F9D;&#x8D56;&#x5305;&#x91CC;</code></p>
+<h3 id="&#x9879;&#x76EE;&#x901A;&#x8FC7;&#x7EC4;&#x4EF6;&#x6765;&#x89C4;&#x5212;">&#x9879;&#x76EE;&#x901A;&#x8FC7;&#x7EC4;&#x4EF6;&#x6765;&#x89C4;&#x5212;</h3>
+<pre><code> // &#x793A;&#x4F8B;&#x9879;&#x76EE;aaa
+ aaa/
+     components/ : &#x9879;&#x76EE;&#x5185;&#x7EC4;&#x4EF6;
+     pages/ : &#x9879;&#x76EE;&#x89C6;&#x56FE;&#x5B58;&#x653E;&#x76EE;&#x5F55;
+     html/: &#x9879;&#x76EE;&#x9875;&#x9762;&#x5B58;&#x653E;&#x76EE;&#x5F55;
+         index.hbs 
+     index.js: &#x9879;&#x76EE;&#x5165;&#x53E3;&#x6587;&#x4EF6;
+
+ // index.hbs , &#x5C3D;&#x91CF;&#x53EA;&#x7528;&#x4E00;&#x4E2A;&#x6807;&#x8BB0;&#xFF0C;&#x65E0;&#x5176;&#x4ED6;&#x5185;&#x5BB9;
+     &lt;div id=&quot;main&quot;&gt;
+         // &#x5982;&#x679C;&#x6709;seo&#x76F8;&#x5173;&#x5185;&#x5BB9;&#xFF0C;&#x51E1;&#x5728;&#x91CC;&#x9762;&#xFF0C;&#x4F5C;&#x4E3A;slot&#x63D2;&#x5165;&#x7EC4;&#x4EF6;&#x5185;
+         &lt;div class=&quot;banner&quot; slot=&quot;banner&quot;&gt;&lt;/div&gt;
+     &lt;/div&gt;
+
+ // index.js
+ // &#x82E5;&#x9879;&#x76EE;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x4F7F;&#x7528;template
+     new Vue({
+         el: &apos;#main&apos;,
+         template: `
+             &lt;component-a&gt;&lt;/component-a&gt;
+             &lt;component-b&gt;&lt;/component-b&gt;
+             &lt;component-c&gt;&lt;/component-c&gt;
+         `,
+         components: {componentA,componentB,componentC}
+     })
+ // &#x76F8;&#x5BF9;&#x590D;&#x6742;&#x7684;&#x9879;&#x76EE;&#x6216;&#x4F7F;&#x7528;&#x8DEF;&#x7531;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x5EFA;&#x7ACB;&#x9875;&#x9762;&#x7EA7;&#x522B;&#x7684;&#x7EC4;&#x4EF6;
+     new Vue({
+         el : &apos;#main&apos;,
+         template: `&lt;index&gt;&lt;/index&gt;`,
+         components: {Index}
+     })
+ // pages/index.vue
+ &lt;template&gt;
+     &lt;component-a&gt;&lt;/component-a&gt;
+     &lt;component-b&gt;&lt;/component-b&gt;
+      &lt;component-c&gt;&lt;/component-c&gt;
+ &lt;template&gt;
+ &lt;script&gt;
+ export default {
+     name: &apos;index&apos;
+ }
+ &lt;/script&gt;
+</code></pre><h3 id="&#x76EE;&#x5F55;&#x5212;&#x5206;">&#x76EE;&#x5F55;&#x5212;&#x5206;</h3>
+<ul>
+<li>libs/vue-components &#xFF1A; &#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5168;&#x9879;&#x76EE;&#x516C;&#x7528;&#x7684;vue&#x7EC4;&#x4EF6;</li>
+<li>xxx/components: &#x6BD4;&#x5982;xinche.m/components, &#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5355;&#x4E00;&#x9879;&#x76EE;&#x516C;&#x7528;&#x7684;vue&#x7EC4;&#x4EF6;, &#x6216;&#x8DDF;&#x6B64;&#x5355;&#x4E00;&#x9879;&#x76EE;&#x4E1A;&#x52A1;&#x5F3A;&#x76F8;&#x5173;&#x7684;vue&#x7EC4;&#x4EF6;</li>
+<li>xxx/yyy/components: &#x6BD4;&#x5982;xinche.m/about/components, &#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5B50;&#x9879;&#x76EE;&#x81EA;&#x5DF1;&#x4F7F;&#x7528;&#x7684;vue&#x7EC4;&#x4EF6;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x63D0;&#x4F9B;&#x7ED9;&#x5916;&#x90E8;&#x5176;&#x4ED6;&#x9879;&#x76EE;&#x4F7F;&#x7528;</li>
+</ul>
+<h3 id="&#x516C;&#x7528;&#x7EC4;&#x4EF6;&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x516C;&#x7528;&#x7EC4;&#x4EF6;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h3>
+<pre><code> xxx/
+     index.vue : &#x4E3B;&#x7EC4;&#x4EF6;&#x6587;&#x4EF6;
+     *.png/*.gif : &#x7EC4;&#x4EF6;&#x4F7F;&#x7528;&#x7684;&#x56FE;&#x7247;&#xFF08;&#x516C;&#x7528;&#x7EC4;&#x4EF6;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x5927;&#x4E8E;10k&#x7684;&#x56FE;&#x7247;&#xFF09;
+     README.md: &#x7EC4;&#x4EF6;&#x4F7F;&#x7528;&#x8BF4;&#x660E;&#x6587;&#x6863;
+</code></pre><h3 id="&#x7EC4;&#x4EF6;&#x547D;&#x540D;">&#x7EC4;&#x4EF6;&#x547D;&#x540D;</h3>
+<ul>
+<li>&#x6709;&#x610F;&#x4E49;&#x7684;&#xFF0C; &#x7B80;&#x77ED;&#xFF0C;&#x5177;&#x6709;&#x53EF;&#x8BFB;&#x6027;&#x3002;2-3&#x4E2A;&#x5355;&#x8BCD;</li>
+<li>&#x7B26;&#x5408;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x7D20;&#x89C4;&#x8303;&#xFF0C;&#x4F7F;&#x7528;-&#x8FDE;&#x5B57;&#x7B26;&#x5206;&#x9694;&#x5355;&#x8BCD;&#xFF0C; &#x5982;app-header</li>
+</ul>
+<h3 id="&#x7EC4;&#x4EF6;&#x5355;&#x4E00;&#x539F;&#x5219;">&#x7EC4;&#x4EF6;&#x5355;&#x4E00;&#x539F;&#x5219;</h3>
+<ul>
+<li>&#x6BCF;&#x4E00;&#x4E2A;vue&#x7EC4;&#x4EF6;&#x4E13;&#x6CE8;&#x4E8E;&#x89E3;&#x51B3;&#x5355;&#x4E00;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x72EC;&#x7ACB;&#xFF0C;&#x53EF;&#x590D;&#x7528;</li>
+<li>&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x8D85;&#x8FC7;100&#x884C;&#xFF0C;&#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x592A;&#x81C3;&#x80BF;&#xFF0C;&#x9700;&#x8981;&#x62C6;&#x5206;&#x6210;&#x66F4;&#x5C0F;&#x7684;&#x7EC4;&#x4EF6;</li>
+</ul>
+<h3 id="props&#x539F;&#x5B50;&#x5316;">props&#x539F;&#x5B50;&#x5316;</h3>
+<p>&#x7EC4;&#x4EF6;&#x7684;props&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x590D;&#x6742;&#x5BF9;&#x8C61;</p>
+<pre><code> // &#x4E0D;&#x9002;&#x7528;&#x590D;&#x6742;&#x5BF9;&#x8C61;
+ const option = {title:&apos;xxx&apos;, inApp: true}
+ &lt;app-header :option=&quot;option&quot;&gt;&lt;/app-header&gt;
+
+  // &#x4F7F;&#x7528;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;
+  // &#x6CE8;&#x610F;inApp&#x9A7C;&#x5CF0;&#x7684;props&#x4E66;&#x5199;&#x5728;&#x7EC4;&#x4EF6;&#x6807;&#x8BB0;&#x5185;&#x9700;&#x8981;&#x6539;&#x6210;in-app&#x7C7B;&#x578B;
+  // &#x6CE8;&#x610F;props&#x503C;&#x4F20;&#x5165;&#x7684;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x9700;&#x8981;v-bind:props&#x6765;&#x7ED1;&#x5B9A;
+  &lt;app-header title=&quot;xxx&quot; :in-app=&quot;true&quot;&gt;&lt;/app-header&gt;
+</code></pre><h3 id="&#x9A8C;&#x8BC1;&#x7EC4;&#x4EF6;&#x7684;props">&#x9A8C;&#x8BC1;&#x7EC4;&#x4EF6;&#x7684;props</h3>
+<pre><code> // &#x5C3D;&#x91CF;&#x4E0D;&#x4F7F;&#x7528;&#x7B80;&#x5199;props
+ export default {
+  props: [&apos;title&apos;, &apos;isApp&apos;]
+ }
+
+ // &#x9A8C;&#x8BC1;props
+  export default {
+     props: {
+         title: {
+             type: String,
+             default: ,
+             required: true
+         },
+         isApp: {
+             type: Boolean,
+             default: false
+         }
+     }
+ }
+</code></pre><h3 id="&#x5408;&#x7406;&#x4F7F;&#x7528;this">&#x5408;&#x7406;&#x4F7F;&#x7528;this</h3>
+<pre><code> // &#x7EC4;&#x4EF6;&#x5185;&#x4E0D;&#x8981;&#x51FA;&#x73B0;&#x5982;&#x4E0B;&#x4E4B;&#x7C7B;
+ const self = this
+ // &#x5145;&#x5206;&#x5229;&#x7528;es6&#x7279;&#x6027;&#xFF0C;&#x4F7F;&#x7528;this
+ created(){
+     this.title = 123
+ }
+</code></pre><h3 id="&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;name">&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;name</h3>
+<pre><code> // &#x5355;&#x4E00;&#x7EC4;&#x4EF6;&#x7684;&#x5BFC;&#x51FA;&#x4E0D;&#x5EFA;&#x8BAE;&#x6307;&#x5B9A;&#x540D;&#x79F0;, &#x76F4;&#x63A5;&#x4F7F;&#x7528;default&#x5BFC;&#x51FA;
+ export default {}
+ // &#x7EC4;&#x4EF6;&#x5EFA;&#x8BAE;&#x6DFB;&#x52A0;name&#x5C5E;&#x6027;
+ export default {
+     name: &apos;appHeader&quot;
+ }
+</code></pre><h3 id="&#x7EC4;&#x4EF6;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;props">&#x7EC4;&#x4EF6;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;props</h3>
+<pre><code> // &#x4E0D;&#x8981;&#x4F7F;&#x7528;.sync&#x7C7B;&#x578B;&#x7684;props
+ &lt;app-header :title.sync=&quot;title&quot;&gt;&lt;/app-header&gt;
+ export default {
+     props: {
+         type: String,
+         twoway: true
+     }
+ }
+ // &#x5B50;&#x7EC4;&#x4EF6;&#x901A;&#x77E5;&#x7236;&#x7EA7;&#x6570;&#x636E;&#x53D8;&#x66F4;&#xFF0C;&#x5E94;&#x91C7;&#x7528;&#x8C03;&#x7528;&#x7236;&#x7EA7;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x578B;props&#x56DE;&#x8C03;&#xFF0C;&#x6216;&#x8005;&#x4E8B;&#x4EF6;&#x901A;&#x77E5;&#x7684;&#x65B9;&#x5F0F;
+</code></pre><h3 id="&#x907F;&#x514D;&#x4F7F;&#x7528;thisparent">&#x907F;&#x514D;&#x4F7F;&#x7528;this.$parent</h3>
+<p>&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x4E0A;&#x4E0B;&#x6587;&#x964D;&#x4F4E;&#x4E86;&#x7EC4;&#x5EFA;&#x7684;&#x590D;&#x7528;&#x6027;&#xFF0C;&#x5E94;&#x907F;&#x514D;&#x4F7F;&#x7528;&#xFF0C;&#x5C3D;&#x91CF;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x901A;&#x77E5;</p>
+<h3 id="&#x5C3D;&#x91CF;&#x4F7F;&#x7528;thishttp&#x800C;&#x4E0D;&#x662F;jqueryajax">&#x5C3D;&#x91CF;&#x4F7F;&#x7528;this.$http&#x800C;&#x4E0D;&#x662F;jquery.ajax</h3>
+<pre><code>vue&#x7EC4;&#x4EF6;&#x5E94;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x81EA;&#x5DF1;&#x7684;resource&#x63D2;&#x4EF6;&#xFF0C;&#x7B26;&#x5408;promise&#x89C4;&#x8303;
+ // &#x6700;&#x5916;&#x5C42;&#x9700;&#x8981;&#x5C06;&#x63D2;&#x4EF6;&#x5F15;&#x5165;
+ import Vue from &apos;vue&apos;
+ import VueResource from &apos;vue-resource&apos;
+ Vue.use(VueResource)
+</code></pre><h3 id="&#x7EC4;&#x4EF6;&#x5185;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x76F4;&#x63A5;&#x4F7F;&#x7528;window&#x4E0A;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;">&#x7EC4;&#x4EF6;&#x5185;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x76F4;&#x63A5;&#x4F7F;&#x7528;window&#x4E0A;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;</h3>
+<pre><code> // &#x4E0D;&#x8981;&#x4F7F;&#x7528;window&#x4E0A;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x964D;&#x4F4E;&#x7EC4;&#x4EF6;&#x590D;&#x7528;&#x6027;&#x548C;&#x589E;&#x52A0;&#x7EF4;&#x62A4;&#x6210;&#x672C;
+ this.$http.get(APIURL, {})
+
+ // &#x901A;&#x8FC7;props&#x4F20;&#x5165;&#x7EC4;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x5916;&#x90E8;&#x4F9D;&#x8D56;
+ &lt;app-header api=&quot;xxx/yyy/to/path&quot;&gt;&lt;/app-header&gt;
+ this.$http.get(this.api, {})
+</code></pre><h3 id="props&#x5411;&#x4E0B;&#x4F20;&#x9012;&#xFF0C;&#x4E8B;&#x4EF6;&#x5411;&#x4E0A;&#x4F20;&#x9012;">props&#x5411;&#x4E0B;&#x4F20;&#x9012;&#xFF0C;&#x4E8B;&#x4EF6;&#x5411;&#x4E0A;&#x4F20;&#x9012;</h3>
+<h3 id="&#x5F53;&#x5FC5;&#x987B;&#x8981;&#x64CD;&#x4F5C;dom&#x65F6;&#xFF0C;&#x624D;&#x4F7F;&#x7528;thisrefs-&#x800C;&#x4E0D;&#x662F;jquery">&#x5F53;&#x5FC5;&#x987B;&#x8981;&#x64CD;&#x4F5C;dom&#x65F6;&#xFF0C;&#x624D;&#x4F7F;&#x7528;this.$refs, &#x800C;&#x4E0D;&#x662F;jQuery</h3>
+<h3 id="&#x7EC4;&#x4EF6;&#x9876;&#x7EA7;class&#x89C4;&#x8303;&#x5316;&#xFF0C;&#x5EFA;&#x8BAE;component-xxx&#x5F00;&#x5934;&#x547D;&#x540D;">&#x7EC4;&#x4EF6;&#x9876;&#x7EA7;class&#x89C4;&#x8303;&#x5316;&#xFF0C;&#x5EFA;&#x8BAE;component-xxx&#x5F00;&#x5934;&#x547D;&#x540D;</h3>
+<pre><code> &lt;template&gt;
+     &lt;div class=&quot;component-xxx&quot;&gt;
+         xxx
+     &lt;/div&gt;
+ &lt;/template&gt;
+</code></pre><h3 id="&#x63D0;&#x4F9B;api&#x6587;&#x6863;">&#x63D0;&#x4F9B;api&#x6587;&#x6863;</h3>
+<p>&#x5EFA;&#x8BAE;&#x7EC4;&#x4EF6;api&#x6587;&#x6863;&#x5199;&#x5230;&#x7EC4;&#x4EF6;&#x540C;&#x76EE;&#x5F55;README.md&#x91CC;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="es6编码规范.html" class="navigation navigation-prev " aria-label="Previous page: ES6编码规范">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Airbnb-React-JSX编码规范.html" class="navigation navigation-next " aria-label="Next page: Airbnb-React-JSX编码规范">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"vue编码规范","level":"3.3","depth":1,"next":{"title":"Airbnb-React-JSX编码规范","level":"3.4","depth":1,"path":"规范/Airbnb-React-JSX编码规范.md","ref":"规范/Airbnb-React-JSX编码规范.md","articles":[]},"previous":{"title":"ES6编码规范","level":"3.2","depth":1,"path":"规范/es6编码规范.md","ref":"规范/es6编码规范.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"规范/vue编码规范.md","mtime":"2018-08-24T06:26:03.020Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-24T07:14:30.150Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
