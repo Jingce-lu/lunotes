@@ -42,3 +42,17 @@ $ git commit -m "Publish book"
 $ git push -u origin gh-pages
 ```
 
+
+### 部署到 gh-pages 分支
+这个步骤我使用了 `gh-pages` 这个工具，它可以将文件夹一键发布到 GitHub 项目下的 `gh-pages` 分支中（其他分支也可以发布，但是在本文下用到的就是 `gh-pages` 这个分支）
+
+安装 `gh-pages` 工具
+```bash
+$ npm install -g gh-pages
+```
+
+输入以下指令
+```bash 
+$ gh-pages -d _book
+```
+然后 _book 下的所有文档都会部署到 gh-pages 分支
