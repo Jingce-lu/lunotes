@@ -12,3 +12,7 @@
 * [ES6编码规范](规范/es6编码规范.md)
 * [vue编码规范](规范/vue编码规范.md)
 * [Airbnb-React-JSX编码规范](规范/Airbnb-React-JSX编码规范.md)
+
+
+### 其它
+* [Emoji表情](other/Emoji表情.md)
