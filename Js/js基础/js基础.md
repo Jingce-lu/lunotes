@@ -27,3 +27,22 @@ function getRandomColor(){
 	return '#' + rgb.join('');
 }
 ```
+
+## 利用 Object.defineProperty 侦测对象的变化，最简单的可以写出这样的代码
+```javascript
+function defineReactive (data, key, val) {
+    Object.defineProperty(data, key, {
+        enumerable: true,
+        configurable: true,
+        get: function () {
+            return val
+        },
+        set: function (newVal) {
+            if(val === newVal){
+                return
+            }
+            val = newVal
+        }
+    })
+}
+```
