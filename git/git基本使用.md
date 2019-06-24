@@ -9,6 +9,8 @@
     - [分支命名](#分支命名)
     - [注意事项](#注意事项)
     - [alias 别名](#alias-别名)
+    - [git合并一个分支上改动的部分文件到另外一个分支](#git合并一个分支上改动的部分文件到另外一个分支)
+    - [git远程分支强制覆盖本地文件](#git远程分支强制覆盖本地文件)
 
 <!-- /TOC -->
 
@@ -67,4 +69,15 @@ git config --global user.email xxx
      cleanup = git config --global alias.cleanup "git branch --merged | grep -v '*' | xargs git branch -d"
      remotes = remote -v
      lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+```
+
+### git合并一个分支上改动的部分文件到另外一个分支
+```bash
+$ git checkeout master
+$ git checkout --path branchXX file
+```
+
+### git远程分支强制覆盖本地文件
+```bash
+$ git reset --hard origin/master
 ```

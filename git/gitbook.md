@@ -56,3 +56,23 @@ $ npm install -g gh-pages
 $ gh-pages -d _book
 ```
 然后 _book 下的所有文档都会部署到 gh-pages 分支
+
+### GitHub Pages 的静态资源支持下面 3 个来源：
+1. master 分支
+2. master 分支的 /docs 目录
+3. gh-pages 分支
+
+执行下面命令，将 _book 目录推送到 GitHub 仓库的 gh-pages 分支。
+```bash
+$ git subtree push --prefix=_book origin gh-pages
+```
+
+或者在生成静态网页时，将保存的目录指定为 ./docs
+```bash
+$ gitbook build ./ ./docs
+```
+
+然后直接推送到 GitHub 仓库的
+```bash
+git push origin master
+```
