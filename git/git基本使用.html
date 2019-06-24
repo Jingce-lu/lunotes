@@ -282,6 +282,8 @@
 <li><a href="#&#x5206;&#x652F;&#x547D;&#x540D;">&#x5206;&#x652F;&#x547D;&#x540D;</a></li>
 <li><a href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</a></li>
 <li><a href="#alias-&#x522B;&#x540D;">alias &#x522B;&#x540D;</a></li>
+<li><a href="#git&#x5408;&#x5E76;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4E0A;&#x6539;&#x52A8;&#x7684;&#x90E8;&#x5206;&#x6587;&#x4EF6;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5206;&#x652F;">git&#x5408;&#x5E76;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4E0A;&#x6539;&#x52A8;&#x7684;&#x90E8;&#x5206;&#x6587;&#x4EF6;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5206;&#x652F;</a></li>
+<li><a href="#git&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x5F3A;&#x5236;&#x8986;&#x76D6;&#x672C;&#x5730;&#x6587;&#x4EF6;">git&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x5F3A;&#x5236;&#x8986;&#x76D6;&#x672C;&#x5730;&#x6587;&#x4EF6;</a></li>
 </ul>
 </li>
 </ul>
@@ -340,7 +342,14 @@ git config --global user.email xxx
      cleanup = git config --global alias.cleanup &quot;git branch --merged | grep -v &apos;*&apos; | xargs git branch -d&quot;
      remotes = remote -v
      lg = log --color --graph --pretty=format:&apos;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&apos; --abbrev-commit --
+</code></pre><h3 id="git&#x5408;&#x5E76;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4E0A;&#x6539;&#x52A8;&#x7684;&#x90E8;&#x5206;&#x6587;&#x4EF6;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5206;&#x652F;">git&#x5408;&#x5E76;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4E0A;&#x6539;&#x52A8;&#x7684;&#x90E8;&#x5206;&#x6587;&#x4EF6;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5206;&#x652F;</h3>
+<pre><code class="lang-bash">$ git checkeout master
+$ git checkout --path branchXX file
 </code></pre>
+<h3 id="git&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x5F3A;&#x5236;&#x8986;&#x76D6;&#x672C;&#x5730;&#x6587;&#x4EF6;">git&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x5F3A;&#x5236;&#x8986;&#x76D6;&#x672C;&#x5730;&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-bash">$ git reset --hard origin/master
+</code></pre>
+
                                 
                                 </section>
                             
@@ -383,7 +392,7 @@ git config --global user.email xxx
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git基本使用","level":"2.1","depth":1,"next":{"title":"git分支管理策略","level":"2.2","depth":1,"path":"git/git分支管理策略.md","ref":"git/git分支管理策略.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/git基本使用.md","mtime":"2019-06-24T09:32:25.710Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-24T09:33:29.929Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"git基本使用","level":"2.1","depth":1,"next":{"title":"git分支管理策略","level":"2.2","depth":1,"path":"git/git分支管理策略.md","ref":"git/git分支管理策略.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/git基本使用.md","mtime":"2019-06-24T11:35:15.112Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-24T11:36:18.242Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
