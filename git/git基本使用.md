@@ -11,6 +11,8 @@
     - [alias 别名](#alias-别名)
     - [git合并一个分支上改动的部分文件到另外一个分支](#git合并一个分支上改动的部分文件到另外一个分支)
     - [git远程分支强制覆盖本地文件](#git远程分支强制覆盖本地文件)
+    - [公共远程分支版本回退的方法](#公共远程分支版本回退的方法)
+  - [6. 附：](#6-附)
 
 <!-- /TOC -->
 
@@ -32,16 +34,20 @@ git config --global user.email xxx
 * git add . : 添加所有未跟踪的文件到暂存区
 * git log : 日志
 
+* git reflog
+* git reset --hard 139dcfaa
+* git push -f -u origin master
+
 ### 使用合并流程
 1. [master下]创建分支: `git checkout -b xxx`
 2. [分支下] 开发代码并不断commit, 开发完毕
 3. [分支下] 切换到master: `git checkout master`
-3. [master下] 更新代码: `git pull`
-4. [master下] 切换到分支xxx: `git checkout xxx`
-5. [分支下] 合并master到分支： `git merge master`
-6. [分支下] 切换master: `git checkout master`
-7. [master下] 合并分支xxx到master: `git merge xxx`
-8. [master下] 更新到远端 `git push`
+4. [master下] 更新代码: `git pull`
+5. [master下] 切换到分支xxx: `git checkout xxx`
+6. [分支下] 合并master到分支： `git merge master`
+7. [分支下] 切换master: `git checkout master`
+8. [master下] 合并分支xxx到master: `git merge xxx`
+9. [master下] 更新到远端 `git push`
 
 ### 分支命名
 建议采用git-flow规范：
@@ -80,4 +86,43 @@ $ git checkout --path branchXX file
 ### git远程分支强制覆盖本地文件
 ```bash
 $ git reset --hard origin/master
+```
+
+### 公共远程分支版本回退的方法
+```bash
+$ git revert HEAD       # 撤销最近一次提交
+$ git revert HEAD~1     # 撤销上上次的提交，注意：数字从0开始
+$ git revert 0ffaacc    # 撤销0ffaacc这次提交
+```
+
+`git revert` 命令意思是撤销某次提交。它会产生一个新的提交，虽然代码回退了，但是版本依然是向前的，所以,当你用revert回退之后，所有人pull之后，他们的代码也自动的回退了。   
+但是，要注意以下几点：
+*  revert 是撤销一次提交，所以后面的commit id是你需要回滚到的版本的前一次提交
+*  使用revert HEAD是撤销最近的一次提交，如果你最近一次提交是用revert命令产生的，那么你再执行一次，就相当于撤销了上次的撤销操作，换句话说，你连续执行两次revert HEAD命令，就跟没执行是一样的
+*  使用revert HEAD~1 表示撤销最近2次提交，这个数字是从0开始的，如果你之前撤销过产生了commi id，那么也会计算在内的。
+*  如果使用 revert 撤销的不是最近一次提交，那么一定会有代码冲突，需要你合并代码，合并代码只需要把当前的代码全部去掉，保留之前版本的代码就可以了.
+
+自己的分支回滚直接用reset  
+公共分支回滚用revert  
+
+## 6. 附：
+git配置，供参考（~/.gitconfig）
+```
+[user]
+     name = Lu jingce
+     email = lujingce@163.com
+[alias]
+     st = status
+     br = branch
+     bra = branch -a
+     cm = commit -m
+     cam = commit -a -m
+     co = checkout
+     cf = checkout -f
+     diffn = diff --numstat
+     diffs = diff --shortstat
+     diffd = diff --dirstat
+     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[push]
+     default = simple
 ```
