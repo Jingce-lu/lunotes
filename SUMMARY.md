@@ -2,6 +2,9 @@
 
 * [Introduction](README.md)
 
+### JS
+* [正则表达式不要背](js/正则表达式不要背.md)
+
 ### git
 * [git基本使用](git/git基本使用.md)
 * [git分支管理策略](git/git分支管理策略.md)
