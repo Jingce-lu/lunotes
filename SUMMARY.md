@@ -5,6 +5,7 @@
 ### git
 * [git基本使用](git/git基本使用.md)
 * [git分支管理策略](git/git分支管理策略.md)
+* [gitbook](git/gitbook.md)
 
 
 ### 规范
