@@ -1,0 +1,580 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>vueRouter使用query和params传参的使用和区别 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../git/git基本使用.html" />
+    
+    
+    <link rel="prev" href="../../React/dva/React+DvaJS之hook路由权限控制.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">JS</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    JS 基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../Js/js基础/js基础.html">
+            
+                <a href="../../Js/js基础/js基础.html">
+            
+                    
+                    Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    正则
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../Js/正则/正则表达式不要背.html">
+            
+                <a href="../../Js/正则/正则表达式不要背.html">
+            
+                    
+                    正则表达式不要背
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Node</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    node基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../Node/node基础/node命令.html">
+            
+                <a href="../../Node/node基础/node命令.html">
+            
+                    
+                    node命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">React</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    React基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../React/React基础/react基础.html">
+            
+                <a href="../../React/React基础/react基础.html">
+            
+                    
+                    React基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    Dva
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../../React/dva/React+DvaJS之hook路由权限控制.html">
+            
+                <a href="../../React/dva/React+DvaJS之hook路由权限控制.html">
+            
+                    
+                    React+DvaJS 之 hook 路由权限控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Vue</li>
+        
+        
+    
+        <li class="chapter active" data-level="5.1" data-path="vueRouter使用query和params传参的使用和区别.html">
+            
+                <a href="vueRouter使用query和params传参的使用和区别.html">
+            
+                    
+                    vueRouter使用query和params传参的使用和区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">git</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../git/git基本使用.html">
+            
+                <a href="../../git/git基本使用.html">
+            
+                    
+                    git基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../../git/git分支管理策略.html">
+            
+                <a href="../../git/git分支管理策略.html">
+            
+                    
+                    git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../../git/gitbook.html">
+            
+                <a href="../../git/gitbook.html">
+            
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">规范</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../规范/分支开发规范.html">
+            
+                <a href="../../规范/分支开发规范.html">
+            
+                    
+                    分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../规范/es6编码规范.html">
+            
+                <a href="../../规范/es6编码规范.html">
+            
+                    
+                    ES6编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../规范/vue编码规范.html">
+            
+                <a href="../../规范/vue编码规范.html">
+            
+                    
+                    vue编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                <a href="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                    
+                    Airbnb-React-JSX编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其它</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../../other/Emoji表情.html">
+            
+                <a href="../../other/Emoji表情.html">
+            
+                    
+                    Emoji表情
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >vueRouter使用query和params传参的使用和区别</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="vuerouter&#x4F7F;&#x7528;query&#x548C;params&#x4F20;&#x53C2;&#x7684;&#x4F7F;&#x7528;&#x548C;&#x533A;&#x522B;">vueRouter&#x4F7F;&#x7528;query&#x548C;params&#x4F20;&#x53C2;&#x7684;&#x4F7F;&#x7528;&#x548C;&#x533A;&#x522B;</h1>
+<h2 id="&#x57FA;&#x7840;">&#x57FA;&#x7840;</h2>
+<pre><code class="lang-js">&lt;router-link :to=&quot;{ name:&apos;router1&apos;,params: { id: status ,id2: status3},query: { queryId: status2 }}&quot; &gt;
+  router-link&#x8DF3;&#x8F6C;router1
+&lt;/router-link&gt;
+</code></pre>
+<ul>
+<li>params&#xFF1A;/router1/:id &#xFF0C;/router1/123&#xFF0C;/router1/789 ,&#x8FD9;&#x91CC;&#x7684;id&#x53EB;&#x505A;params</li>
+<li>query&#xFF1A;/router1?id=123 ,/router1?id=456 ,&#x8FD9;&#x91CC;&#x7684;id&#x53EB;&#x505A;query&#x3002;</li>
+</ul>
+<h2 id="params&#x4F20;&#x53C2;&#x548C;query&#x4F20;&#x53C2;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF1A;">params&#x4F20;&#x53C2;&#x548C;query&#x4F20;&#x53C2;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF1A;</h2>
+<ol>
+<li>&#x7528;&#x6CD5;&#x4E0A;&#x7684;<br>&#x521A;query&#x8981;&#x7528;path&#x6765;&#x5F15;&#x5165;&#xFF0C;params&#x8981;&#x7528;name&#x6765;&#x5F15;&#x5165;&#xFF0C;&#x63A5;&#x6536;&#x53C2;&#x6570;&#x90FD;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x5206;&#x522B;&#x662F;this.$route.query.name&#x548C;this.$route.params.name&#x3002;<br>&#x6CE8;&#x610F;&#x63A5;&#x6536;&#x53C2;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5DF2;&#x7ECF;&#x662F;$route&#x800C;&#x4E0D;&#x662F;$router&#x4E86;&#x54E6;&#xFF01;&#xFF01;</li>
+<li>&#x5C55;&#x793A;&#x4E0A;&#x7684;<br>query&#x66F4;&#x52A0;&#x7C7B;&#x4F3C;&#x4E8E;&#x6211;&#x4EEC;ajax&#x4E2D;get&#x4F20;&#x53C2;&#xFF0C;params&#x5219;&#x7C7B;&#x4F3C;&#x4E8E;post&#xFF0C;&#x8BF4;&#x7684;&#x518D;&#x7B80;&#x5355;&#x4E00;&#x70B9;&#xFF0C;&#x524D;&#x8005;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x5730;&#x5740;&#x680F;&#x4E2D;&#x663E;&#x793A;&#x53C2;&#x6570;&#xFF0C;&#x540E;&#x8005;&#x5219;&#x4E0D;&#x663E;&#x793A;</li>
+<li>params&#x662F;&#x8DEF;&#x7531;&#x7684;&#x4E00;&#x90E8;&#x5206;,&#x5FC5;&#x987B;&#x8981;&#x6709;&#x3002;query&#x662F;&#x62FC;&#x63A5;&#x5728;url&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x6CA1;&#x6709;&#x4E5F;&#x6CA1;&#x5173;&#x7CFB;&#x3002;<br>params&#x4E00;&#x65E6;&#x8BBE;&#x7F6E;&#x5728;&#x8DEF;&#x7531;&#xFF0C;params&#x5C31;&#x662F;&#x8DEF;&#x7531;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x8DEF;&#x7531;&#x6709;params&#x4F20;&#x53C2;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8DF3;&#x8F6C;&#x7684;&#x65F6;&#x5019;&#x6CA1;&#x6709;&#x4F20;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x8DF3;&#x8F6C;&#x5931;&#x8D25;&#x6216;&#x8005;&#x9875;&#x9762;&#x4F1A;&#x6CA1;&#x6709;&#x5185;&#x5BB9;&#x3002;
+&#x6BD4;&#x5982;&#xFF1A;&#x8DF3;&#x8F6C;/router1/:id<pre><code class="lang-js"> &lt;router-link :to=&quot;{ name:&apos;router1&apos;,params: { id: status}}&quot; &gt;&#x6B63;&#x786E;&lt;/router-link&gt;
+ &lt;router-link :to=&quot;{ name:&apos;router1&apos;,params: { id2: status}}&quot;&gt;&#x9519;&#x8BEF;&lt;/router-link&gt;
+</code></pre>
+</li>
+<li>params&#x3001;query&#x4E0D;&#x8BBE;&#x7F6E;&#x4E5F;&#x53EF;&#x4EE5;&#x4F20;&#x53C2;&#xFF0C;params&#x4E0D;&#x8BBE;&#x7F6E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5237;&#x65B0;&#x9875;&#x9762;&#x6216;&#x8005;&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#x4F1A;&#x4E22;&#x5931;&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x7684;&#x5728;&#x4E0A;&#x9762;&#x8BF4;&#x8FC7;&#x4E86;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../../React/dva/React+DvaJS之hook路由权限控制.html" class="navigation navigation-prev " aria-label="Previous page: React+DvaJS 之 hook 路由权限控制">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../git/git基本使用.html" class="navigation navigation-next " aria-label="Next page: git基本使用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"vueRouter使用query和params传参的使用和区别","level":"5.1","depth":1,"next":{"title":"git基本使用","level":"6.1","depth":1,"path":"git/git基本使用.md","ref":"git/git基本使用.md","articles":[]},"previous":{"title":"React+DvaJS 之 hook 路由权限控制","level":"4.2.1","depth":2,"path":"React/dva/React+DvaJS之hook路由权限控制.md","ref":"React/dva/React+DvaJS之hook路由权限控制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue/VueRouter/vueRouter使用query和params传参的使用和区别.md","mtime":"2019-06-25T01:14:44.882Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-25T02:35:31.258Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
