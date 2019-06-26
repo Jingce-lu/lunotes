@@ -1,0 +1,65 @@
+{
+  "author": "Lu jingce <lujingce@163.com>",
+  "description": "世路如今已惯, 此心到处悠然",
+  "language": "zh-hans",
+  "gitbook": "3.2.3",
+  "keywords": [
+    "gitbook",
+    "summary"
+  ],
+  "links": {
+    "sidebar": {
+      "路小二": "https://ailjc.com/lunotes"
+    }
+  },
+  "plugins": [
+    "code",
+    "splitter",
+    "-search",
+    "search-pro",
+    "-sharing",
+    "notocjk"
+  ],
+  "pluginsConfig": {
+    "code": {
+      "copyButtons": true
+    },
+    "sharing": {
+      "douban": false,
+      "facebook": true,
+      "google": false,
+      "hatenaBookmark": false,
+      "instapaper": false,
+      "line": false,
+      "linkedin": false,
+      "messenger": false,
+      "pocket": false,
+      "qq": true,
+      "qzone": false,
+      "stumbleupon": false,
+      "twitter": true,
+      "viber": false,
+      "vk": false,
+      "weibo": true,
+      "whatsapp": false,
+      "all": [
+        "douban",
+        "facebook",
+        "google",
+        "instapaper",
+        "line",
+        "linkedin",
+        "messenger",
+        "pocket",
+        "qq",
+        "qzone",
+        "stumbleupon",
+        "twitter",
+        "viber",
+        "vk",
+        "weibo",
+        "whatsapp"
+      ]
+    }
+  }
+}
