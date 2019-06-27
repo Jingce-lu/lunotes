@@ -1,29 +1,49 @@
 # Summary
+
 * [Introduction](README.md)
 ## Part I - Introduction
+
+
 ## JS
-* JS 基础
-    * [Js基础](Js/js基础/js基础.md)
-* 正则
+* 1.JS 基础
+    * [1.1 Js基础](Js/js基础/js基础.md)
+    * [1.2 ljc-Js](Js/js基础/ljc-Js.md)
+    * [1.3 moveJs](Js/js基础/moveJs.md)
+    * [1.4 移动web](Js/js基础/移动web.md)
+    * [1.5 ICD](Js/js基础/ICD.md)
+* 2.正则
     * [正则表达式不要背](Js/正则/正则表达式不要背.md)
+  
+* 3.面向对象
+  * [面向对象之组件开发之弹窗](Js/面向对象/面向对象之组件开发之弹窗.md)
+  * [面向对象的微博登录提示邮箱](Js/面向对象/面向对象的微博登录提示邮箱.md)
 
 
 ## Node
-* node基础
+* 1.node基础
     * [node命令](Node/node基础/node命令.md)
 
 ## Part 2 - Advanced
 ## React
-* React基础
+* 1.React基础
     * [React基础](React/React基础/react基础.md)
-* Dva
+* 2.Dva
     * [React+DvaJS 之 hook 路由权限控制](React/dva/React+DvaJS之hook路由权限控制.md)
 
 ## Vue
 * [vueRouter使用query和params传参的使用和区别](Vue/VueRouter/vueRouter使用query和params传参的使用和区别.md)
 
 
+## 面试↑↑↑↑
+- 1.综合
+    - [综合1](面试/综合1.md)
+    - [综合2](面试/综合2.md)
+    - [综合3](面试/综合3.md)
+    - [综合4](面试/综合4-vue.md)
+    - [综合5](面试/综合5.md)
+    - [综合6](面试/综合6.md)
 
+## Part 3 - other
 ## git
 * [git基本使用](git/git基本使用.md)
 * [git分支管理策略](git/git分支管理策略.md)
