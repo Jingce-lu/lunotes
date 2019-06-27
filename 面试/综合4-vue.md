@@ -21,10 +21,10 @@ vue的生命周期总共分为8个阶段：创建前/后，载入前/后，更�
 - 销毁前/后：在执行destoryed方法后，对data的改变不会再触发周期函数，说明此时vue实例已经解除了事件监听以及和dom的绑定，但是dom结构依然存在。
 
 ## 2. vue 生命周期图
-<div align="center"><img src='../assets/0128vue1.png'/></div>
+<div align="center"><img src='../resource/assets/0128vue1.png'/></div>
 
 实例代码：
-<div align="center"><img src='../assets/0128vue2.png'/></div>
+<div align="center"><img src='../resource/assets/0128vue2.png'/></div>
 
 
 ## 3. 谈谈你对vue的双向数据绑定的原理的理解

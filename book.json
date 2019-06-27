@@ -15,7 +15,6 @@
   "plugins": [
     "code",
     "splitter",
-    "-search",
     "search-pro",
     "-sharing"
   ],
@@ -23,5 +22,8 @@
     "code": {
       "copyButtons": true
     }
+  },
+  "styles": {
+    "website": "resource/styles/website.css"
   }
 }
