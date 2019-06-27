@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>git分支管理策略 · GitBook</title>
+        <title>4.如何渲染几万条数据并不卡住界面 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="gitbook.html" />
     
-    
-    <link rel="prev" href="git基本使用.html" />
+    <link rel="prev" href="../安全/性能.html" />
     
 
     </head>
@@ -498,9 +496,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.4" data-path="../面试/如何渲染几万条数据并不卡住界面.html">
+        <li class="chapter active" data-level="7.4" data-path="如何渲染几万条数据并不卡住界面.html">
             
-                <a href="../面试/如何渲染几万条数据并不卡住界面.html">
+                <a href="如何渲染几万条数据并不卡住界面.html">
             
                     
                     4.如何渲染几万条数据并不卡住界面
@@ -525,9 +523,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="7.5.1" data-path="../面试/综合1.html">
+        <li class="chapter " data-level="7.5.1" data-path="综合1.html">
             
-                <a href="../面试/综合1.html">
+                <a href="综合1.html">
             
                     
                     综合1
@@ -538,9 +536,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.5.2" data-path="../面试/综合2.html">
+        <li class="chapter " data-level="7.5.2" data-path="综合2.html">
             
-                <a href="../面试/综合2.html">
+                <a href="综合2.html">
             
                     
                     综合2
@@ -551,9 +549,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.5.3" data-path="../面试/综合3.html">
+        <li class="chapter " data-level="7.5.3" data-path="综合3.html">
             
-                <a href="../面试/综合3.html">
+                <a href="综合3.html">
             
                     
                     综合3
@@ -564,9 +562,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.5.4" data-path="../面试/综合4-vue.html">
+        <li class="chapter " data-level="7.5.4" data-path="综合4-vue.html">
             
-                <a href="../面试/综合4-vue.html">
+                <a href="综合4-vue.html">
             
                     
                     综合4
@@ -577,9 +575,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.5.5" data-path="../面试/综合5.html">
+        <li class="chapter " data-level="7.5.5" data-path="综合5.html">
             
-                <a href="../面试/综合5.html">
+                <a href="综合5.html">
             
                     
                     综合5
@@ -590,9 +588,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.5.6" data-path="../面试/综合6.html">
+        <li class="chapter " data-level="7.5.6" data-path="综合6.html">
             
-                <a href="../面试/综合6.html">
+                <a href="综合6.html">
             
                     
                     综合6
@@ -622,9 +620,9 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="git基本使用.html">
+        <li class="chapter " data-level="9.1" data-path="../git/git基本使用.html">
             
-                <a href="git基本使用.html">
+                <a href="../git/git基本使用.html">
             
                     
                     git基本使用
@@ -635,9 +633,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="9.2" data-path="git分支管理策略.html">
+        <li class="chapter " data-level="9.2" data-path="../git/git分支管理策略.html">
             
-                <a href="git分支管理策略.html">
+                <a href="../git/git分支管理策略.html">
             
                     
                     git分支管理策略
@@ -648,9 +646,9 @@
             
         </li>
     
-        <li class="chapter " data-level="9.3" data-path="gitbook.html">
+        <li class="chapter " data-level="9.3" data-path="../git/gitbook.html">
             
-                <a href="gitbook.html">
+                <a href="../git/gitbook.html">
             
                     
                     gitbook
@@ -803,7 +801,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >git分支管理策略</a>
+        <a href=".." >4.如何渲染几万条数据并不卡住界面</a>
     </h1>
 </div>
 
@@ -821,23 +819,53 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git&#x5DE5;&#x4F5C;&#x6D41;">git&#x5DE5;&#x4F5C;&#x6D41;</h1>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;">&#x5DE5;&#x4F5C;&#x6D41;</h3>
-<p>&#x57FA;&#x4E8E;gitflow, &#x7B80;&#x5316;&#x7248;&#x672C;</p>
-<p>&#x53C2;&#x8003;&#x6587;&#x6863;: <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
-<p>&#x533A;&#x522B;&#xFF1A; &#x4E0D;&#x8BBE;<code>release</code>, <code>develop</code>&#x5206;&#x652F;&#xFF0C; &#x6682;&#x4E0D;&#x6253;tag&#xFF0C; &#x4FDD;&#x7559;<code>master</code>, <code>feature/*</code>, <code>hotfix/*</code></p>
-<h3 id="&#x9879;&#x76EE;">&#x9879;&#x76EE;</h3>
-<p><code>feprogram/taoche</code>&#x7B49;&#x9879;&#x76EE;&#x9501;&#x5B9A;master, &#x4E0D;&#x5141;&#x8BB8;&#x76F4;&#x63A5;&#x5728;master&#x4E0B;&#x6539;&#x52A8;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4EA4;merge request&#x8FDB;&#x884C;review</p>
-<p><code>act</code>&#x7B49;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x654F;&#x6377;&#x5F00;&#x53D1;, &#x4E0D;&#x9501;&#x5B9A;master, &#x5206;&#x652F;&#x81EA;&#x884C;&#x7BA1;&#x7406;</p>
-<p><code>crm</code>&#x7B49;&#x9879;&#x76EE;&#x8BBE;&#x7ACB;develop&#x5206;&#x652F;&#xFF0C;&#x7279;&#x6027;&#x5206;&#x652F;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x540E;&#x5408;&#x5E76;&#x5165;develop, master&#x5206;&#x652F;&#x4ECE;develop&#x5355;&#x5411;merge</p>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
-<ol>
-<li>&#x57FA;&#x4E8E;&#x6700;&#x65B0;master&#x5EFA;&#x7ACB;&#x5206;&#x652F;&#xFF0C;&#x529F;&#x80FD;&#x5206;&#x652F;<code>feature/xxx</code> &#x6216; &#x7EBF;&#x4E0A;bug&#x4FEE;&#x590D;&#x5206;&#x652F; <code>hotfix/xxx</code></li>
-<li>&#x5728;&#x5206;&#x652F;&#x4E0B;&#x5F00;&#x53D1;</li>
-<li>&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#xFF0C; merge master&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;&#xFF0C;release&#x7070;&#x5EA6;/&#x4E0A;&#x7EBF;&#x3002;</li>
-</ol>
-<h3 id="&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
-<p>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF1B;<br>pull&#x6700;&#x65B0;&#x4EE3;&#x7801;&#xFF1B;<br>&#x5EFA;&#x7ACB;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF08;&#x65B0;&#x529F;&#x80FD;&#x5F00;&#x53D1;&#x3001;&#x5FEB;&#x901F;&#x9A8C;&#x8BC1;&#xFF0C;bug&#x4FEE;&#x590D;&#x5EFA;&#x8BAE;&#x90FD;&#x5EFA;&#x5206;&#x652F;&#xFF09;&#xFF1A;<code>git checkout -b dev_xmli</code>&#xFF1B;<br>&#x6216;&#x8005;&#x521B;&#x5EFA;&#x5F00;&#x53D1;&#x540C;&#x4E00;&#x529F;&#x80FD;&#x51E0;&#x4E2A;&#x4EBA;&#x516C;&#x7528;&#x7684;&#x5206;&#x652F;(&#x5982;&#xFF1A;dev-insurance, change-price)&#xFF1B;<br>&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5206;&#x652F;&#x4E0A;&#x63D0;&#x4EA4;&#xFF08;commit&#xFF09;&#xFF1B;<br>&#x5F00;&#x53D1;&#x5B8C;&#x6BD5;&#xFF0C;&#x505A;&#x6D4B;&#x8BD5;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF0C;pull;<br>&#x5207;&#x6362;&#x5230;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF0C;merge&#x4EE3;&#x7801;&#xFF1A; g<code>it merge release</code>&#xFF0C;&#x5408;&#x5E76;&#x7EBF;&#x4E0A;&#x6700;&#x65B0;&#x66F4;&#x6539;&#xFF0C;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release, &#x7136;&#x540E; git merge dev_xmli&#xFF0C;&#x628A;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#x5408;&#x5E76;&#x5230;&#x7EBF;&#x4E0A;&#x5206;&#x652F;&#xFF1B;<br>&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x5230;&#x670D;&#x52A1;&#x5668;-- git push;<br>&#x5982;&#x6709;&#x5FC5;&#x8981;&#x544A;&#x77E5;&#x5176;&#x4ED6;&#x540C;&#x4E8B;&#x66F4;&#x65B0;&#x4EE3;&#x7801;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7684;&#x6539;&#x52A8;&#xFF1B;<br>&#x5982;&#x679C;&#x662F;&#x53D1;&#x5E03;&#x7684;release&#xFF0C;&#x6253;tag&#xFF1B;<br><code>git tag -a v1.8.0</code><br>&#x63D0;&#x4EA4;tag:<br><code>git push --tags</code> </p>
+                                <h1 id="&#x5982;&#x4F55;&#x6E32;&#x67D3;&#x51E0;&#x4E07;&#x6761;&#x6570;&#x636E;&#x5E76;&#x4E0D;&#x5361;&#x4F4F;&#x754C;&#x9762;">&#x5982;&#x4F55;&#x6E32;&#x67D3;&#x51E0;&#x4E07;&#x6761;&#x6570;&#x636E;&#x5E76;&#x4E0D;&#x5361;&#x4F4F;&#x754C;&#x9762;</h1>
+<p>&#x8FD9;&#x9053;&#x9898;&#x8003;&#x5BDF;&#x4E86;&#x5982;&#x4F55;&#x5728;&#x4E0D;&#x5361;&#x4F4F;&#x9875;&#x9762;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6E32;&#x67D3;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x4E0D;&#x80FD;&#x4E00;&#x6B21;&#x6027;&#x5C06;&#x51E0;&#x4E07;&#x6761;&#x90FD;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#xFF0C;&#x800C;&#x5E94;&#x8BE5;&#x4E00;&#x6B21;&#x6E32;&#x67D3;&#x90E8;&#x5206; DOM&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>requestAnimationFrame</code> &#x6765;&#x6BCF; 16 ms &#x5237;&#x65B0;&#x4E00;&#x6B21;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      &#x63A7;&#x4EF6;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+      setTimeout(() =&gt; {
+        <span class="hljs-comment">// &#x63D2;&#x5165;&#x5341;&#x4E07;&#x6761;&#x6570;&#x636E;</span>
+        <span class="hljs-keyword">const</span> total = <span class="hljs-number">100000</span>
+        <span class="hljs-comment">// &#x4E00;&#x6B21;&#x63D2;&#x5165; 20 &#x6761;&#xFF0C;&#x5982;&#x679C;&#x89C9;&#x5F97;&#x6027;&#x80FD;&#x4E0D;&#x597D;&#x5C31;&#x51CF;&#x5C11;</span>
+        <span class="hljs-keyword">const</span> once = <span class="hljs-number">20</span>
+        <span class="hljs-comment">// &#x6E32;&#x67D3;&#x6570;&#x636E;&#x603B;&#x5171;&#x9700;&#x8981;&#x51E0;&#x6B21;</span>
+        <span class="hljs-keyword">const</span> loopCount = total / once
+        <span class="hljs-keyword">let</span> countOfRender = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">let</span> ul = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ul&apos;</span>)
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"></span>) </span>{
+          <span class="hljs-comment">// &#x4F18;&#x5316;&#x6027;&#x80FD;&#xFF0C;&#x63D2;&#x5165;&#x4E0D;&#x4F1A;&#x9020;&#x6210;&#x56DE;&#x6D41;</span>
+          <span class="hljs-keyword">const</span> fragment = <span class="hljs-built_in">document</span>.createDocumentFragment()
+          <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; once; i++) {
+            <span class="hljs-keyword">const</span> li = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;li&apos;</span>)
+            li.innerText = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * total)
+            fragment.appendChild(li)
+          }
+          ul.appendChild(fragment)
+          countOfRender += <span class="hljs-number">1</span>
+          loop()
+        }
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span>(<span class="hljs-params"></span>) </span>{
+          <span class="hljs-keyword">if</span> (countOfRender &lt; loopCount) {
+            <span class="hljs-built_in">window</span>.requestAnimationFrame(add)
+          }
+        }
+        loop()
+      }, <span class="hljs-number">0</span>)
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -881,14 +909,10 @@
 
             
                 
-                <a href="git基本使用.html" class="navigation navigation-prev " aria-label="Previous page: git基本使用">
+                <a href="../安全/性能.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 3.性能">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="gitbook.html" class="navigation navigation-next " aria-label="Next page: gitbook">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -897,7 +921,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git分支管理策略","level":"9.2","depth":1,"next":{"title":"gitbook","level":"9.3","depth":1,"path":"git/gitbook.md","ref":"git/gitbook.md","articles":[]},"previous":{"title":"git基本使用","level":"9.1","depth":1,"path":"git/git基本使用.md","ref":"git/git基本使用.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"code":{"copyButtons":true},"splitter":{},"search-pro":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"git/git分支管理策略.md","mtime":"2019-06-24T11:47:02.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-27T12:01:22.439Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.如何渲染几万条数据并不卡住界面","level":"7.4","depth":1,"next":{"title":"5.综合","level":"7.5","depth":1,"ref":"","articles":[{"title":"综合1","level":"7.5.1","depth":2,"path":"面试/综合1.md","ref":"面试/综合1.md","articles":[]},{"title":"综合2","level":"7.5.2","depth":2,"path":"面试/综合2.md","ref":"面试/综合2.md","articles":[]},{"title":"综合3","level":"7.5.3","depth":2,"path":"面试/综合3.md","ref":"面试/综合3.md","articles":[]},{"title":"综合4","level":"7.5.4","depth":2,"path":"面试/综合4-vue.md","ref":"面试/综合4-vue.md","articles":[]},{"title":"综合5","level":"7.5.5","depth":2,"path":"面试/综合5.md","ref":"面试/综合5.md","articles":[]},{"title":"综合6","level":"7.5.6","depth":2,"path":"面试/综合6.md","ref":"面试/综合6.md","articles":[]}]},"previous":{"title":"3.性能","level":"7.3","depth":1,"path":"安全/性能.md","ref":"安全/性能.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"code":{"copyButtons":true},"splitter":{},"search-pro":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"面试/如何渲染几万条数据并不卡住界面.md","mtime":"2019-06-27T11:38:34.308Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-27T12:01:22.439Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
