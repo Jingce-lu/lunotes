@@ -42,6 +42,8 @@
 * 6.NodeJs
   - [node命令](Node/node基础/node命令.md)
   - [搭建一个私有的npm仓库](Node/node基础/搭建一个私有的npm仓库.md)
+  - [AnyProxy](Node/node基础/AnyProxy.md)
+  - [Node进程管理器PM2](Node/node基础/Node进程管理器PM2.md)
 
 ## Part 2 - Advanced
 
