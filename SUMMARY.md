@@ -16,6 +16,7 @@
     * [fetch](Js/js基础/fetch.md)
     * [Js判断字符串中是否包含某个字符串](Js/js基础/Js判断字符串中是否包含某个字符串.md)
     * [三种js类的实现方法(es5和es6)](Js/js基础/三种js类的实现方法(es5和es6).md)
+    * [async await](Js/js基础/async-await.md)
 
 * 2.正则
     * [正则表达式不要背](Js/正则/正则表达式不要背.md)
@@ -32,8 +33,11 @@
   * [存储](浏览器/存储.md)
   * [渲染机制](浏览器/渲染机制.md)
 
-* 5.NodeJs
-    * [node命令](Node/node基础/node命令.md)
+* 5.小程序
+  - [性能更优越的小程序图片懒加载方式](Js/小程序/性能更优越的小程序图片懒加载方式.md)
+
+* 6.NodeJs
+  - [node命令](Node/node基础/node命令.md)
 
 ## Part 2 - Advanced
 
