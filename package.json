@@ -1,0 +1,34 @@
+{
+  "name": "lunotes",
+  "version": "1.0.0",
+  "description": "世路如今已惯,此心到处悠然",
+  "main": "index.js",
+  "dependencies": {
+    "gitbook-plugin-code": "^0.1.0",
+    "gitbook-plugin-notocjk": "0.0.5",
+    "gitbook-plugin-search-pro": "^2.0.2",
+    "gitbook-plugin-sharing-plus": "^0.0.2",
+    "gitbook-plugin-splitter": "^0.0.8",
+    "gitbook-plugin-toggle-chapters": "0.0.3"
+  },
+  "devDependencies": {
+    "gitbook-plugin-expandable-chapters": "^0.2.0",
+    "gitbook-plugin-multipart": "^0.3.0",
+    "gitbook-plugin-styles-sass-fix": "^1.1.2",
+    "gitbook-plugin-theme-gestalt": "^1.0.7",
+    "gitbook-plugin-theme-itheima": "^1.1.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jingce-lu/lunotes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jingce-lu/lunotes/issues"
+  },
+  "homepage": "https://github.com/Jingce-lu/lunotes#readme"
+}

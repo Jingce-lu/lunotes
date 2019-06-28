@@ -1,0 +1,1492 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Redux源码分析 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Lu jingce <lujingce@163.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../resource/styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ailjc.com/lunotes" target="_blank" class="custom-link">路小二</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    1.JS 基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../Js/js基础/js基础.html">
+            
+                <a href="../../Js/js基础/js基础.html">
+            
+                    
+                    1.1 Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Js/js基础/ljc-Js.html">
+            
+                <a href="../../Js/js基础/ljc-Js.html">
+            
+                    
+                    1.2 ljc-Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../Js/js基础/moveJs.html">
+            
+                <a href="../../Js/js基础/moveJs.html">
+            
+                    
+                    1.3 moveJs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../Js/js基础/移动web.html">
+            
+                <a href="../../Js/js基础/移动web.html">
+            
+                    
+                    1.4 移动web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../Js/js基础/ICD.html">
+            
+                <a href="../../Js/js基础/ICD.html">
+            
+                    
+                    1.5 ICD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    2.正则
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../Js/正则/正则表达式不要背.html">
+            
+                <a href="../../Js/正则/正则表达式不要背.html">
+            
+                    
+                    正则表达式不要背
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    3.面向对象
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../Js/面向对象/面向对象之组件开发之弹窗.html">
+            
+                <a href="../../Js/面向对象/面向对象之组件开发之弹窗.html">
+            
+                    
+                    面向对象之组件开发之弹窗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../Js/面向对象/面向对象的微博登录提示邮箱.html">
+            
+                <a href="../../Js/面向对象/面向对象的微博登录提示邮箱.html">
+            
+                    
+                    面向对象的微博登录提示邮箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    4.浏览器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../浏览器/事件机制.html">
+            
+                <a href="../../浏览器/事件机制.html">
+            
+                    
+                    事件机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../浏览器/跨域.html">
+            
+                <a href="../../浏览器/跨域.html">
+            
+                    
+                    跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../浏览器/Event-loop.html">
+            
+                <a href="../../浏览器/Event-loop.html">
+            
+                    
+                    Event loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../浏览器/存储.html">
+            
+                <a href="../../浏览器/存储.html">
+            
+                    
+                    存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../浏览器/渲染机制.html">
+            
+                <a href="../../浏览器/渲染机制.html">
+            
+                    
+                    渲染机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    5.NodeJs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../Node/node基础/node命令.html">
+            
+                <a href="../../Node/node基础/node命令.html">
+            
+                    
+                    node命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2 - Advanced</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    1.框架通识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../框架通识/MVVM.html">
+            
+                <a href="../../框架通识/MVVM.html">
+            
+                    
+                    MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../框架通识/VirtualDom.html">
+            
+                <a href="../../框架通识/VirtualDom.html">
+            
+                    
+                    Virtual Dom
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../安全/安全.html">
+            
+                <a href="../../安全/安全.html">
+            
+                    
+                    2.安全XSS-CSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../安全/性能.html">
+            
+                <a href="../../安全/性能.html">
+            
+                    
+                    3.性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                <a href="../../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                    
+                    4.如何渲染几万条数据并不卡住界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    5.综合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../面试/综合1.html">
+            
+                <a href="../../面试/综合1.html">
+            
+                    
+                    综合1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../面试/综合2.html">
+            
+                <a href="../../面试/综合2.html">
+            
+                    
+                    综合2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../面试/综合3.html">
+            
+                <a href="../../面试/综合3.html">
+            
+                    
+                    综合3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../../面试/综合4-vue.html">
+            
+                <a href="../../面试/综合4-vue.html">
+            
+                    
+                    综合4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../../面试/综合5.html">
+            
+                <a href="../../面试/综合5.html">
+            
+                    
+                    综合5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../../面试/综合6.html">
+            
+                <a href="../../面试/综合6.html">
+            
+                    
+                    综合6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">React</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    1.React基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../React基础/react基础.html">
+            
+                <a href="../React基础/react基础.html">
+            
+                    
+                    React基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    2.Dva
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../dva/React+DvaJS之hook路由权限控制.html">
+            
+                <a href="../dva/React+DvaJS之hook路由权限控制.html">
+            
+                    
+                    React+DvaJS 之 hook 路由权限控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    3.源码分析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.3.1" data-path="Redux源码分析.html">
+            
+                <a href="Redux源码分析.html">
+            
+                    
+                    Redux源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Vue</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    vueRouter
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../Vue/VueRouter/vueRouter使用query和params传参的使用和区别.html">
+            
+                <a href="../../Vue/VueRouter/vueRouter使用query和params传参的使用和区别.html">
+            
+                    
+                    vueRouter使用query和params传参的使用和区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3 - other</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    1.git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../git/git基本使用.html">
+            
+                <a href="../../git/git基本使用.html">
+            
+                    
+                    git基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../git/git分支管理策略.html">
+            
+                <a href="../../git/git分支管理策略.html">
+            
+                    
+                    git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../git/publish脚本.html">
+            
+                <a href="../../git/publish脚本.html">
+            
+                    
+                    publish脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../git/gitbook.html">
+            
+                <a href="../../git/gitbook.html">
+            
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    2.规范
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../规范/分支开发规范.html">
+            
+                <a href="../../规范/分支开发规范.html">
+            
+                    
+                    分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../../规范/es6编码规范.html">
+            
+                <a href="../../规范/es6编码规范.html">
+            
+                    
+                    ES6编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../../规范/vue编码规范.html">
+            
+                <a href="../../规范/vue编码规范.html">
+            
+                    
+                    vue编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                <a href="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                    
+                    Airbnb-React-JSX编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    3.其它
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="../../other/Emoji表情.html">
+            
+                <a href="../../other/Emoji表情.html">
+            
+                    
+                    Emoji表情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" >
+            
+                <span>
+            
+                    
+                    deep
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    世路如今已惯,此心到处悠然
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Redux源码分析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="redux-&#x6E90;&#x7801;&#x5206;&#x6790;">Redux &#x6E90;&#x7801;&#x5206;&#x6790;</h1>
+<p>&#x9996;&#x5148;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E0B; <code>combineReducers</code> &#x51FD;&#x6570;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x4F20;&#x5165;&#x4E00;&#x4E2A; object</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">combineReducers</span>(<span class="hljs-params">reducers</span>) </span>{
+  <span class="hljs-comment">// &#x83B7;&#x53D6;&#x8BE5; Object &#x7684; key &#x503C;</span>
+  <span class="hljs-keyword">const</span> reducerKeys = <span class="hljs-built_in">Object</span>.keys(reducers)
+  <span class="hljs-comment">// &#x8FC7;&#x6EE4;&#x540E;&#x7684; reducers</span>
+  <span class="hljs-keyword">const</span> finalReducers = {}
+  <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6BCF;&#x4E00;&#x4E2A; key &#x5BF9;&#x5E94;&#x7684; value</span>
+  <span class="hljs-comment">// &#x5728;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4E0B;&#x5224;&#x65AD;&#x503C;&#x662F;&#x5426;&#x4E3A; undefined</span>
+  <span class="hljs-comment">// &#x7136;&#x540E;&#x5C06;&#x503C;&#x7C7B;&#x578B;&#x662F;&#x51FD;&#x6570;&#x7684;&#x503C;&#x653E;&#x5165; finalReducers</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; reducerKeys.length; i++) {
+    <span class="hljs-keyword">const</span> key = reducerKeys[i]
+
+    <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> reducers[key] === <span class="hljs-string">&apos;undefined&apos;</span>) {
+        warning(<span class="hljs-string">`No reducer provided for key &quot;<span class="hljs-subst">${key}</span>&quot;`</span>)
+      }
+    }
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> reducers[key] === <span class="hljs-string">&apos;function&apos;</span>) {
+      finalReducers[key] = reducers[key]
+    }
+  }
+  <span class="hljs-comment">// &#x62FF;&#x5230;&#x8FC7;&#x6EE4;&#x540E;&#x7684; reducers &#x7684; key &#x503C;</span>
+  <span class="hljs-keyword">const</span> finalReducerKeys = <span class="hljs-built_in">Object</span>.keys(finalReducers)
+
+  <span class="hljs-comment">// &#x5728;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4E0B;&#x5224;&#x65AD;&#xFF0C;&#x4FDD;&#x5B58;&#x4E0D;&#x671F;&#x671B; key &#x7684;&#x7F13;&#x5B58;&#x7528;&#x4EE5;&#x4E0B;&#x9762;&#x505A;&#x8B66;&#x544A;</span>
+  <span class="hljs-keyword">let</span> unexpectedKeyCache
+  <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+    unexpectedKeyCache = {}
+  }
+
+  <span class="hljs-keyword">let</span> shapeAssertionError
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">// &#x8BE5;&#x51FD;&#x6570;&#x89E3;&#x6790;&#x5728;&#x4E0B;&#x9762;</span>
+    assertReducerShape(finalReducers)
+  } <span class="hljs-keyword">catch</span> (e) {
+    shapeAssertionError = e
+  }
+  <span class="hljs-comment">// combineReducers &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5408;&#x5E76;&#x540E;&#x7684; reducer &#x51FD;&#x6570;</span>
+  <span class="hljs-comment">// &#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x603B;&#x7684; state</span>
+  <span class="hljs-comment">// &#x5E76;&#x4E14;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;&#x95ED;&#x5305;&#xFF0C;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x4F7F;&#x7528;&#x5230;&#x4E86;&#x5916;&#x9762;&#x7684;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">combination</span>(<span class="hljs-params">state = {}, action</span>) </span>{
+    <span class="hljs-keyword">if</span> (shapeAssertionError) {
+      <span class="hljs-keyword">throw</span> shapeAssertionError
+    }
+    <span class="hljs-comment">// &#x8BE5;&#x51FD;&#x6570;&#x89E3;&#x6790;&#x5728;&#x4E0B;&#x9762;</span>
+    <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+      <span class="hljs-keyword">const</span> warningMessage = getUnexpectedStateShapeWarningMessage(
+        state,
+        finalReducers,
+        action,
+        unexpectedKeyCache
+      )
+      <span class="hljs-keyword">if</span> (warningMessage) {
+        warning(warningMessage)
+      }
+    }
+    <span class="hljs-comment">// state &#x662F;&#x5426;&#x6539;&#x53D8;</span>
+    <span class="hljs-keyword">let</span> hasChanged = <span class="hljs-literal">false</span>
+    <span class="hljs-comment">// &#x6539;&#x53D8;&#x540E;&#x7684; state</span>
+    <span class="hljs-keyword">const</span> nextState = {}
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; finalReducerKeys.length; i++) {
+      <span class="hljs-comment">// &#x62FF;&#x5230;&#x76F8;&#x5E94;&#x7684; key</span>
+      <span class="hljs-keyword">const</span> key = finalReducerKeys[i]
+      <span class="hljs-comment">// &#x83B7;&#x5F97; key &#x5BF9;&#x5E94;&#x7684; reducer &#x51FD;&#x6570;</span>
+      <span class="hljs-keyword">const</span> reducer = finalReducers[key]
+      <span class="hljs-comment">// state &#x6811;&#x4E0B;&#x7684; key &#x662F;&#x4E0E; finalReducers &#x4E0B;&#x7684; key &#x76F8;&#x540C;&#x7684;</span>
+      <span class="hljs-comment">// &#x6240;&#x4EE5;&#x4F60;&#x5728; combineReducers &#x4E2D;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x7684; key &#x5373;&#x4EE3;&#x8868;&#x4E86; &#x5404;&#x4E2A; reducer &#x4E5F;&#x4EE3;&#x8868;&#x4E86;&#x5404;&#x4E2A; state</span>
+      <span class="hljs-keyword">const</span> previousStateForKey = state[key]
+      <span class="hljs-comment">// &#x7136;&#x540E;&#x6267;&#x884C; reducer &#x51FD;&#x6570;&#x83B7;&#x5F97;&#x8BE5; key &#x503C;&#x5BF9;&#x5E94;&#x7684; state</span>
+      <span class="hljs-keyword">const</span> nextStateForKey = reducer(previousStateForKey, action)
+      <span class="hljs-comment">// &#x5224;&#x65AD; state &#x7684;&#x503C;&#xFF0C;undefined &#x7684;&#x8BDD;&#x5C31;&#x62A5;&#x9519;</span>
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> nextStateForKey === <span class="hljs-string">&apos;undefined&apos;</span>) {
+        <span class="hljs-keyword">const</span> errorMessage = getUndefinedStateErrorMessage(key, action)
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(errorMessage)
+      }
+      <span class="hljs-comment">// &#x7136;&#x540E;&#x5C06; value &#x585E;&#x8FDB;&#x53BB;</span>
+      nextState[key] = nextStateForKey
+      <span class="hljs-comment">// &#x5982;&#x679C; state &#x6539;&#x53D8;</span>
+      hasChanged = hasChanged || nextStateForKey !== previousStateForKey
+    }
+    <span class="hljs-comment">// state &#x53EA;&#x8981;&#x6539;&#x53D8;&#x8FC7;&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;&#x65B0;&#x7684; state</span>
+    <span class="hljs-keyword">return</span> hasChanged ? nextState : state
+  }
+}
+</code></pre>
+<p><code>combineReducers</code> &#x51FD;&#x6570;&#x603B;&#x7684;&#x6765;&#x8BF4;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x603B;&#x7ED3;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5C06;&#x53C2;&#x6570;&#x8FC7;&#x6EE4;&#x540E;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x8FC7;&#x6EE4;&#x53C2;&#x6570;&#x540E;&#x7684;&#x5BF9;&#x8C61; finalReducers&#xFF0C;&#x904D;&#x5386;&#x8BE5;&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A; reducer &#x51FD;&#x6570;&#xFF0C;&#x6700;&#x540E;&#x5C06;&#x65B0;&#x7684; state &#x8FD4;&#x56DE;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B; combinrReducers &#x4E2D;&#x7528;&#x5230;&#x7684;&#x4E24;&#x4E2A;&#x51FD;&#x6570;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x8FD9;&#x662F;&#x6267;&#x884C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x629B;&#x9519;&#x7684;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">assertReducerShape</span>(<span class="hljs-params">reducers</span>) </span>{
+  <span class="hljs-comment">// &#x5C06; combineReducers &#x4E2D;&#x7684;&#x53C2;&#x6570;&#x904D;&#x5386;</span>
+  <span class="hljs-built_in">Object</span>.keys(reducers).forEach(key =&gt; {
+    <span class="hljs-keyword">const</span> reducer = reducers[key]
+    <span class="hljs-comment">// &#x7ED9;&#x4ED6;&#x4F20;&#x5165;&#x4E00;&#x4E2A; action</span>
+    <span class="hljs-keyword">const</span> initialState = reducer(<span class="hljs-literal">undefined</span>, { type: ActionTypes.INIT })
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x5F97;&#x5230;&#x7684; state &#x4E3A; undefined &#x5C31;&#x629B;&#x9519;</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> initialState === <span class="hljs-string">&apos;undefined&apos;</span>) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(
+        <span class="hljs-string">`Reducer &quot;<span class="hljs-subst">${key}</span>&quot; returned undefined during initialization. `</span> +
+          <span class="hljs-string">`If the state passed to the reducer is undefined, you must `</span> +
+          <span class="hljs-string">`explicitly return the initial state. The initial state may `</span> +
+          <span class="hljs-string">`not be undefined. If you don&apos;t want to set a value for this reducer, `</span> +
+          <span class="hljs-string">`you can use null instead of undefined.`</span>
+      )
+    }
+    <span class="hljs-comment">// &#x518D;&#x8FC7;&#x6EE4;&#x4E00;&#x6B21;&#xFF0C;&#x8003;&#x8651;&#x5230;&#x4E07;&#x4E00;&#x4F60;&#x5728; reducer &#x4E2D;&#x7ED9; ActionTypes.INIT &#x8FD4;&#x56DE;&#x4E86;&#x503C;</span>
+    <span class="hljs-comment">// &#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x7684; action &#x5224;&#x65AD;&#x503C;&#x662F;&#x5426;&#x4E3A; undefined</span>
+    <span class="hljs-keyword">const</span> type =
+      <span class="hljs-string">&apos;@@redux/PROBE_UNKNOWN_ACTION_&apos;</span> +
+      <span class="hljs-built_in">Math</span>.random()
+        .toString(<span class="hljs-number">36</span>)
+        .substring(<span class="hljs-number">7</span>)
+        .split(<span class="hljs-string">&apos;&apos;</span>)
+        .join(<span class="hljs-string">&apos;.&apos;</span>)
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> reducer(<span class="hljs-literal">undefined</span>, { type }) === <span class="hljs-string">&apos;undefined&apos;</span>) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(
+        <span class="hljs-string">`Reducer &quot;<span class="hljs-subst">${key}</span>&quot; returned undefined when probed with a random type. `</span> +
+          <span class="hljs-string">`Don&apos;t try to handle <span class="hljs-subst">${
+            ActionTypes.INIT
+          }</span> or other actions in &quot;redux/*&quot; `</span> +
+          <span class="hljs-string">`namespace. They are considered private. Instead, you must return the `</span> +
+          <span class="hljs-string">`current state for any unknown actions, unless it is undefined, `</span> +
+          <span class="hljs-string">`in which case you must return the initial state, regardless of the `</span> +
+          <span class="hljs-string">`action type. The initial state may not be undefined, but can be null.`</span>
+      )
+    }
+  })
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getUnexpectedStateShapeWarningMessage</span>(<span class="hljs-params">
+  inputState,
+  reducers,
+  action,
+  unexpectedKeyCache
+</span>) </span>{
+  <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x7684; reducers &#x5DF2;&#x7ECF;&#x662F; finalReducers</span>
+  <span class="hljs-keyword">const</span> reducerKeys = <span class="hljs-built_in">Object</span>.keys(reducers)
+  <span class="hljs-keyword">const</span> argumentName =
+    action &amp;&amp; action.type === ActionTypes.INIT
+      ? <span class="hljs-string">&apos;preloadedState argument passed to createStore&apos;</span>
+      : <span class="hljs-string">&apos;previous state received by the reducer&apos;</span>
+
+  <span class="hljs-comment">// &#x5982;&#x679C; finalReducers &#x4E3A;&#x7A7A;</span>
+  <span class="hljs-keyword">if</span> (reducerKeys.length === <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> (
+      <span class="hljs-string">&apos;Store does not have a valid reducer. Make sure the argument passed &apos;</span> +
+      <span class="hljs-string">&apos;to combineReducers is an object whose values are reducers.&apos;</span>
+    )
+  }
+  <span class="hljs-comment">// &#x5982;&#x679C;&#x4F60;&#x4F20;&#x5165;&#x7684; state &#x4E0D;&#x662F;&#x5BF9;&#x8C61;</span>
+  <span class="hljs-keyword">if</span> (!isPlainObject(inputState)) {
+    <span class="hljs-keyword">return</span> (
+      <span class="hljs-string">`The <span class="hljs-subst">${argumentName}</span> has unexpected type of &quot;`</span> +
+      {}.toString.call(inputState).match(<span class="hljs-regexp">/\s([a-z|A-Z]+)/</span>)[<span class="hljs-number">1</span>] +
+      <span class="hljs-string">`&quot;. Expected argument to be an object with the following `</span> +
+      <span class="hljs-string">`keys: &quot;<span class="hljs-subst">${reducerKeys.join(&apos;&quot;, &quot;&apos;)}</span>&quot;`</span>
+    )
+  }
+  <span class="hljs-comment">// &#x5C06;&#x53C2;&#x5165;&#x7684; state &#x4E8E; finalReducers &#x4E0B;&#x7684; key &#x505A;&#x6BD4;&#x8F83;&#xFF0C;&#x8FC7;&#x6EE4;&#x51FA;&#x591A;&#x4F59;&#x7684; key</span>
+  <span class="hljs-keyword">const</span> unexpectedKeys = <span class="hljs-built_in">Object</span>.keys(inputState).filter(
+    key =&gt; !reducers.hasOwnProperty(key) &amp;&amp; !unexpectedKeyCache[key]
+  )
+
+  unexpectedKeys.forEach(key =&gt; {
+    unexpectedKeyCache[key] = <span class="hljs-literal">true</span>
+  })
+
+  <span class="hljs-keyword">if</span> (action &amp;&amp; action.type === ActionTypes.REPLACE) <span class="hljs-keyword">return</span>
+
+  <span class="hljs-comment">// &#x5982;&#x679C; unexpectedKeys &#x6709;&#x503C;&#x7684;&#x8BDD;</span>
+  <span class="hljs-keyword">if</span> (unexpectedKeys.length &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> (
+      <span class="hljs-string">`Unexpected <span class="hljs-subst">${unexpectedKeys.length &gt; 1 ? &apos;keys&apos; : &apos;key&apos;}</span> `</span> +
+      <span class="hljs-string">`&quot;<span class="hljs-subst">${unexpectedKeys.join(&apos;&quot;, &quot;&apos;)}</span>&quot; found in <span class="hljs-subst">${argumentName}</span>. `</span> +
+      <span class="hljs-string">`Expected to find one of the known reducer keys instead: `</span> +
+      <span class="hljs-string">`&quot;<span class="hljs-subst">${reducerKeys.join(&apos;&quot;, &quot;&apos;)}</span>&quot;. Unexpected keys will be ignored.`</span>
+    )
+  }
+}
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x8BA9;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x770B; <code>compose</code> &#x51FD;&#x6570;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x8BBE;&#x8BA1;&#x7684;&#x5F88;&#x5DE7;&#x5999;&#xFF0C;&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x51FD;&#x6570;&#x5F15;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x8BA9;&#x6211;&#x4EEC;&#x5B8C;&#x6210;&#x591A;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x5D4C;&#x5957;&#x4F7F;&#x7528;&#xFF0C;&#x672F;&#x8BED;&#x53EB;&#x505A;&#x9AD8;&#x9636;&#x51FD;&#x6570;</span>
+<span class="hljs-comment">// &#x901A;&#x8FC7;&#x4F7F;&#x7528; reduce &#x51FD;&#x6570;&#x505A;&#x5230;&#x4ECE;&#x53F3;&#x81F3;&#x5DE6;&#x8C03;&#x7528;&#x51FD;&#x6570;</span>
+<span class="hljs-comment">// &#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x4F8B;&#x5B50;</span>
+compose(
+  applyMiddleware(thunkMiddleware),
+  <span class="hljs-built_in">window</span>.devToolsExtension ? <span class="hljs-built_in">window</span>.devToolsExtension() : f =&gt; f
+)
+<span class="hljs-comment">// &#x7ECF;&#x8FC7; compose &#x51FD;&#x6570;&#x53D8;&#x6210;&#x4E86; applyMiddleware(thunkMiddleware)(window.devToolsExtension()())</span>
+<span class="hljs-comment">// &#x6240;&#x4EE5;&#x5728;&#x627E;&#x4E0D;&#x5230; window.devToolsExtension &#x65F6;&#x4F60;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compose</span>(<span class="hljs-params">...funcs</span>) </span>{
+  <span class="hljs-keyword">if</span> (funcs.length === <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> arg =&gt; arg
+  }
+
+  <span class="hljs-keyword">if</span> (funcs.length === <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">return</span> funcs[<span class="hljs-number">0</span>]
+  }
+
+  <span class="hljs-keyword">return</span> funcs.reduce((a, b) =&gt; (...args) =&gt; a(b(...args)))
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x6765;&#x89E3;&#x6790; <code>createStore</code> &#x51FD;&#x6570;&#x7684;&#x90E8;&#x5206;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createStore</span>(<span class="hljs-params">reducer, preloadedState, enhancer</span>) </span>{
+  <span class="hljs-comment">// &#x4E00;&#x822C; preloadedState &#x7528;&#x7684;&#x5C11;&#xFF0C;&#x5224;&#x65AD;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x51FD;&#x6570;&#x4E14;&#x6CA1;&#x6709;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x8C03;&#x6362;&#x4F4D;&#x7F6E;</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> preloadedState === <span class="hljs-string">&apos;function&apos;</span> &amp;&amp; <span class="hljs-keyword">typeof</span> enhancer === <span class="hljs-string">&apos;undefined&apos;</span>) {
+    enhancer = preloadedState
+    preloadedState = <span class="hljs-literal">undefined</span>
+  }
+  <span class="hljs-comment">// &#x5224;&#x65AD; enhancer &#x662F;&#x5426;&#x662F;&#x51FD;&#x6570;</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> enhancer !== <span class="hljs-string">&apos;undefined&apos;</span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> enhancer !== <span class="hljs-string">&apos;function&apos;</span>) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Expected the enhancer to be a function.&apos;</span>)
+    }
+    <span class="hljs-comment">// &#x7C7B;&#x578B;&#x6CA1;&#x9519;&#x7684;&#x8BDD;&#xFF0C;&#x5148;&#x6267;&#x884C; enhancer&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6267;&#x884C; createStore &#x51FD;&#x6570;</span>
+    <span class="hljs-keyword">return</span> enhancer(createStore)(reducer, preloadedState)
+  }
+  <span class="hljs-comment">// &#x5224;&#x65AD; reducer &#x662F;&#x5426;&#x662F;&#x51FD;&#x6570;</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> reducer !== <span class="hljs-string">&apos;function&apos;</span>) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Expected the reducer to be a function.&apos;</span>)
+  }
+  <span class="hljs-comment">// &#x5F53;&#x524D; reducer</span>
+  <span class="hljs-keyword">let</span> currentReducer = reducer
+  <span class="hljs-comment">// &#x5F53;&#x524D;&#x72B6;&#x6001;</span>
+  <span class="hljs-keyword">let</span> currentState = preloadedState
+  <span class="hljs-comment">// &#x5F53;&#x524D;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x6570;&#x7EC4;</span>
+  <span class="hljs-keyword">let</span> currentListeners = []
+  <span class="hljs-comment">// &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x4E3A;&#x7684;&#x5C31;&#x662F;&#x6BCF;&#x6B21;&#x5728;&#x904D;&#x5386;&#x76D1;&#x542C;&#x5668;&#x7684;&#x65F6;&#x5019;&#x4FDD;&#x8BC1; currentListeners &#x6570;&#x7EC4;&#x4E0D;&#x53D8;</span>
+  <span class="hljs-comment">// &#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4E0B;&#x53EA;&#x5B58;&#x5728; currentListeners &#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x5728;&#x67D0;&#x4E2A; subscribe &#x4E2D;&#x518D;&#x6B21;&#x6267;&#x884C; subscribe</span>
+  <span class="hljs-comment">// &#x6216;&#x8005; unsubscribe&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x5BFC;&#x81F4;&#x5F53;&#x524D;&#x7684; currentListeners &#x6570;&#x7EC4;&#x5927;&#x5C0F;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;</span>
+  <span class="hljs-comment">// &#x7D22;&#x5F15;&#x51FA;&#x9519;</span>
+  <span class="hljs-keyword">let</span> nextListeners = currentListeners
+  <span class="hljs-comment">// reducer &#x662F;&#x5426;&#x6B63;&#x5728;&#x6267;&#x884C;</span>
+  <span class="hljs-keyword">let</span> isDispatching = <span class="hljs-literal">false</span>
+  <span class="hljs-comment">// &#x5982;&#x679C; currentListeners &#x548C; nextListeners &#x76F8;&#x540C;&#xFF0C;&#x5C31;&#x8D4B;&#x503C;&#x56DE;&#x53BB;</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ensureCanMutateNextListeners</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (nextListeners === currentListeners) {
+      nextListeners = currentListeners.slice()
+    }
+  }
+  <span class="hljs-comment">// ......</span>
+}
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5148;&#x6765;&#x4ECB;&#x7ECD; <code>applyMiddleware</code> &#x51FD;&#x6570;</p>
+<p>&#x5728;&#x8FD9;&#x4E4B;&#x524D;&#x6211;&#x9700;&#x8981;&#x5148;&#x6765;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x51FD;&#x6570;&#x67EF;&#x91CC;&#x5316;&#xFF0C;&#x67EF;&#x91CC;&#x5316;&#x662F;&#x4E00;&#x79CD;&#x5C06;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x7CFB;&#x5217;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x7684;&#x6280;&#x672F;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a,b</span>) </span>{ <span class="hljs-keyword">return</span> a + b }
+add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) =&gt; <span class="hljs-number">3</span>
+<span class="hljs-comment">// &#x5BF9;&#x4E8E;&#x4EE5;&#x4E0A;&#x51FD;&#x6570;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x67EF;&#x91CC;&#x5316;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x6539;&#x9020;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a</span>) </span>{
+    <span class="hljs-keyword">return</span> b =&gt; {
+        <span class="hljs-keyword">return</span> a + b
+    }
+}
+add(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>) =&gt; <span class="hljs-number">3</span>
+<span class="hljs-comment">// &#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7406;&#x89E3;&#x51FD;&#x6570;&#x67EF;&#x91CC;&#x5316;&#xFF0C;&#x901A;&#x8FC7;&#x95ED;&#x5305;&#x4FDD;&#x5B58;&#x4E86;&#x5916;&#x90E8;&#x7684;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;</span>
+<span class="hljs-comment">// &#x7136;&#x540E;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x8BE5;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x4FDD;&#x5B58;&#x7684;&#x53D8;&#x91CF;&#xFF0C;</span>
+<span class="hljs-comment">// &#x7136;&#x540E;&#x518D;&#x8FD4;&#x56DE;&#x503C;&#x3002;</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5E94;&#x8BE5;&#x662F;&#x6574;&#x4E2A;&#x6E90;&#x7801;&#x4E2D;&#x6700;&#x96BE;&#x7406;&#x89E3;&#x7684;&#x4E00;&#x5757;&#x4E86;</span>
+<span class="hljs-comment">// &#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x67EF;&#x91CC;&#x5316;&#x7684;&#x51FD;&#x6570;</span>
+<span class="hljs-comment">// &#x6240;&#x4EE5;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5E94;&#x8BE5;&#x8FD9;&#x6837;&#x5199; applyMiddleware(...middlewares)(createStore)(...args)</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyMiddleware</span>(<span class="hljs-params">...middlewares</span>) </span>{
+  <span class="hljs-keyword">return</span> createStore =&gt; (...args) =&gt; {
+   <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x6267;&#x884C; createStore &#x51FD;&#x6570;&#xFF0C;&#x628A; applyMiddleware &#x51FD;&#x6570;&#x6700;&#x540E;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x8FDB;&#x6765;</span>
+    <span class="hljs-keyword">const</span> store = createStore(...args)
+    <span class="hljs-keyword">let</span> dispatch = () =&gt; {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(
+        <span class="hljs-string">`Dispatching while constructing your middleware is not allowed. `</span> +
+          <span class="hljs-string">`Other middleware would not be applied to this dispatch.`</span>
+      )
+    }
+    <span class="hljs-keyword">let</span> chain = []
+    <span class="hljs-comment">// &#x6BCF;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;&#x90FD;&#x5E94;&#x8BE5;&#x6709;&#x8FD9;&#x4E24;&#x4E2A;&#x51FD;&#x6570;</span>
+    <span class="hljs-keyword">const</span> middlewareAPI = {
+      getState: store.getState,
+      dispatch: (...args) =&gt; dispatch(...args)
+    }
+    <span class="hljs-comment">// &#x628A; middlewares &#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;&#x90FD;&#x4F20;&#x5165; middlewareAPI</span>
+    chain = middlewares.map(middleware =&gt; middleware(middlewareAPI))
+    <span class="hljs-comment">// &#x548C;&#x4E4B;&#x524D;&#x4E00;&#x6837;&#xFF0C;&#x4ECE;&#x53F3;&#x81F3;&#x5DE6;&#x8C03;&#x7528;&#x6BCF;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x4F20;&#x5165; store.dispatch</span>
+    dispatch = compose(...chain)(store.dispatch)
+    <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x53EA;&#x770B;&#x8FD9;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x6709;&#x70B9;&#x62BD;&#x8C61;&#xFF0C;&#x6211;&#x8FD9;&#x91CC;&#x653E;&#x5165; redux-thunk &#x7684;&#x4EE3;&#x7801;&#x6765;&#x7ED3;&#x5408;&#x5206;&#x6790;</span>
+    <span class="hljs-comment">// createThunkMiddleware&#x8FD4;&#x56DE;&#x4E86;3&#x5C42;&#x51FD;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x5C42;&#x51FD;&#x6570;&#x63A5;&#x6536; middlewareAPI &#x53C2;&#x6570;</span>
+    <span class="hljs-comment">// &#x7B2C;&#x4E8C;&#x6B21;&#x51FD;&#x6570;&#x63A5;&#x6536; store.dispatch</span>
+    <span class="hljs-comment">// &#x7B2C;&#x4E09;&#x5C42;&#x51FD;&#x6570;&#x63A5;&#x6536; dispatch &#x4E2D;&#x7684;&#x53C2;&#x6570;</span>
+{<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createThunkMiddleware</span>(<span class="hljs-params">extraArgument</span>) </span>{
+  <span class="hljs-keyword">return</span> ({ dispatch, getState }) =&gt; next =&gt; action =&gt; {
+  <span class="hljs-comment">// &#x5224;&#x65AD; dispatch &#x4E2D;&#x7684;&#x53C2;&#x6570;&#x662F;&#x5426;&#x4E3A;&#x51FD;&#x6570;</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> action === <span class="hljs-string">&apos;function&apos;</span>) {
+    <span class="hljs-comment">// &#x662F;&#x51FD;&#x6570;&#x7684;&#x8BDD;&#x518D;&#x628A;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x4F20;&#x8FDB;&#x53BB;&#xFF0C;&#x76F4;&#x5230; action &#x4E0D;&#x4E3A;&#x51FD;&#x6570;&#xFF0C;&#x6267;&#x884C; dispatch({tyep: &apos;XXX&apos;})</span>
+      <span class="hljs-keyword">return</span> action(dispatch, getState, extraArgument);
+    }
+
+    <span class="hljs-keyword">return</span> next(action);
+  };
+}
+<span class="hljs-keyword">const</span> thunk = createThunkMiddleware();
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> thunk;}
+<span class="hljs-comment">// &#x6700;&#x540E;&#x628A;&#x7ECF;&#x8FC7;&#x4E2D;&#x95F4;&#x4EF6;&#x52A0;&#x5F3A;&#x540E;&#x7684; dispatch &#x4E8E;&#x5269;&#x4F59; store &#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x8FD4;&#x56DE;&#xFF0C;&#x8FD9;&#x6837;&#x4F60;&#x7684; dispatch</span>
+    <span class="hljs-keyword">return</span> {
+      ...store,
+      dispatch
+    }
+  }
+}
+</code></pre>
+<p>&#x597D;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x5C06;&#x56F0;&#x96BE;&#x7684;&#x90E8;&#x5206;&#x90FD;&#x653B;&#x514B;&#x4E86;&#xFF0C;&#x6765;&#x770B;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x6CA1;&#x5565;&#x597D;&#x8BF4;&#x7684;&#xFF0C;&#x5C31;&#x662F;&#x628A;&#x5F53;&#x524D;&#x7684; state &#x8FD4;&#x56DE;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x6B63;&#x5728;&#x6267;&#x884C; reducer &#x65F6;&#x4E0D;&#x80FD;&#x6267;&#x884C;&#x8BE5;&#x65B9;&#x6CD5;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getState</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (isDispatching) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(
+      <span class="hljs-string">&apos;You may not call store.getState() while the reducer is executing. &apos;</span> +
+        <span class="hljs-string">&apos;The reducer has already received the state as an argument. &apos;</span> +
+        <span class="hljs-string">&apos;Pass it down from the top reducer instead of reading it from the store.&apos;</span>
+    )
+  }
+
+  <span class="hljs-keyword">return</span> currentState
+}
+<span class="hljs-comment">// &#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53C2;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">subscribe</span>(<span class="hljs-params">listener</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> listener !== <span class="hljs-string">&apos;function&apos;</span>) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Expected listener to be a function.&apos;</span>)
+  }
+  <span class="hljs-comment">// &#x8FD9;&#x90E8;&#x5206;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x8BBE;&#x8BA1; nextListeners &#x5DF2;&#x7ECF;&#x8BB2;&#x8FC7;&#xFF0C;&#x5176;&#x4ED6;&#x57FA;&#x672C;&#x6CA1;&#x4EC0;&#x4E48;&#x597D;&#x8BF4;&#x7684;</span>
+  <span class="hljs-keyword">if</span> (isDispatching) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(
+      <span class="hljs-string">&apos;You may not call store.subscribe() while the reducer is executing. &apos;</span> +
+        <span class="hljs-string">&apos;If you would like to be notified after the store has been updated, subscribe from a &apos;</span> +
+        <span class="hljs-string">&apos;component and invoke store.getState() in the callback to access the latest state. &apos;</span> +
+        <span class="hljs-string">&apos;See http://redux.js.org/docs/api/Store.html##subscribe for more details.&apos;</span>
+    )
+  }
+
+  <span class="hljs-keyword">let</span> isSubscribed = <span class="hljs-literal">true</span>
+
+  ensureCanMutateNextListeners()
+  nextListeners.push(listener)
+
+  <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x53D6;&#x6D88;&#x8BA2;&#x9605;&#x51FD;&#x6570;</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unsubscribe</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (!isSubscribed) {
+      <span class="hljs-keyword">return</span>
+    }
+
+    <span class="hljs-keyword">if</span> (isDispatching) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(
+        <span class="hljs-string">&apos;You may not unsubscribe from a store listener while the reducer is executing. &apos;</span> +
+          <span class="hljs-string">&apos;See http://redux.js.org/docs/api/Store.html##subscribe for more details.&apos;</span>
+      )
+    }
+
+    isSubscribed = <span class="hljs-literal">false</span>
+
+    ensureCanMutateNextListeners()
+    <span class="hljs-keyword">const</span> index = nextListeners.indexOf(listener)
+    nextListeners.splice(index, <span class="hljs-number">1</span>)
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dispatch</span>(<span class="hljs-params">action</span>) </span>{
+  <span class="hljs-comment">// &#x539F;&#x751F;&#x7684; dispatch &#x4F1A;&#x5224;&#x65AD; action &#x662F;&#x5426;&#x4E3A;&#x5BF9;&#x8C61;</span>
+  <span class="hljs-keyword">if</span> (!isPlainObject(action)) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(
+      <span class="hljs-string">&apos;Actions must be plain objects. &apos;</span> +
+        <span class="hljs-string">&apos;Use custom middleware for async actions.&apos;</span>
+    )
+  }
+
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> action.type === <span class="hljs-string">&apos;undefined&apos;</span>) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(
+      <span class="hljs-string">&apos;Actions may not have an undefined &quot;type&quot; property. &apos;</span> +
+        <span class="hljs-string">&apos;Have you misspelled a constant?&apos;</span>
+    )
+  }
+  <span class="hljs-comment">// &#x6CE8;&#x610F;&#x5728; Reducers &#x4E2D;&#x662F;&#x4E0D;&#x80FD;&#x6267;&#x884C; dispatch &#x51FD;&#x6570;&#x7684;</span>
+  <span class="hljs-comment">// &#x56E0;&#x4E3A;&#x4F60;&#x4E00;&#x65E6;&#x5728; reducer &#x51FD;&#x6570;&#x4E2D;&#x6267;&#x884C; dispatch&#xFF0C;&#x4F1A;&#x5F15;&#x53D1;&#x6B7B;&#x5FAA;&#x73AF;</span>
+  <span class="hljs-keyword">if</span> (isDispatching) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Reducers may not dispatch actions.&apos;</span>)
+  }
+  <span class="hljs-comment">// &#x6267;&#x884C; combineReducers &#x7EC4;&#x5408;&#x540E;&#x7684;&#x51FD;&#x6570;</span>
+  <span class="hljs-keyword">try</span> {
+    isDispatching = <span class="hljs-literal">true</span>
+    currentState = currentReducer(currentState, action)
+  } <span class="hljs-keyword">finally</span> {
+    isDispatching = <span class="hljs-literal">false</span>
+  }
+  <span class="hljs-comment">// &#x7136;&#x540E;&#x904D;&#x5386; currentListeners&#xFF0C;&#x6267;&#x884C;&#x6570;&#x7EC4;&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x51FD;&#x6570;</span>
+  <span class="hljs-keyword">const</span> listeners = (currentListeners = nextListeners)
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; listeners.length; i++) {
+    <span class="hljs-keyword">const</span> listener = listeners[i]
+    listener()
+  }
+
+  <span class="hljs-keyword">return</span> action
+}
+<span class="hljs-comment">// &#x7136;&#x540E;&#x5728; createStore &#x672B;&#x5C3E;&#x4F1A;&#x53D1;&#x8D77;&#x4E00;&#x4E2A; action dispatch({ type: ActionTypes.INIT });</span>
+<span class="hljs-comment">// &#x7528;&#x4EE5;&#x521D;&#x59CB;&#x5316; state</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Redux源码分析","level":"3.3.1","depth":2,"next":{"title":"vueRouter","level":"4.1","depth":1,"ref":"","articles":[{"title":"vueRouter使用query和params传参的使用和区别","level":"4.1.1","depth":2,"path":"Vue/VueRouter/vueRouter使用query和params传参的使用和区别.md","ref":"Vue/VueRouter/vueRouter使用query和params传参的使用和区别.md","articles":[]}]},"previous":{"title":"3.源码分析","level":"3.3","depth":1,"ref":"","articles":[{"title":"Redux源码分析","level":"3.3.1","depth":2,"path":"React/源码分析/Redux源码分析.md","ref":"React/源码分析/Redux源码分析.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"React/源码分析/Redux源码分析.md","mtime":"2019-06-28T01:34:43.564Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T06:26:28.804Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

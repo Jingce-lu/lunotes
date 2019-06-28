@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>git分支管理策略 · GitBook</title>
+        <title>存储 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="publish脚本.html" />
+    <link rel="next" href="渲染机制.html" />
     
     
-    <link rel="prev" href="git基本使用.html" />
+    <link rel="prev" href="Event-loop.html" />
     
 
     </head>
@@ -294,9 +294,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../浏览器/事件机制.html">
+        <li class="chapter " data-level="1.5.1" data-path="事件机制.html">
             
-                <a href="../浏览器/事件机制.html">
+                <a href="事件机制.html">
             
                     
                     事件机制
@@ -307,9 +307,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../浏览器/跨域.html">
+        <li class="chapter " data-level="1.5.2" data-path="跨域.html">
             
-                <a href="../浏览器/跨域.html">
+                <a href="跨域.html">
             
                     
                     跨域
@@ -320,9 +320,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../浏览器/Event-loop.html">
+        <li class="chapter " data-level="1.5.3" data-path="Event-loop.html">
             
-                <a href="../浏览器/Event-loop.html">
+                <a href="Event-loop.html">
             
                     
                     Event loop
@@ -333,9 +333,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../浏览器/存储.html">
+        <li class="chapter active" data-level="1.5.4" data-path="存储.html">
             
-                <a href="../浏览器/存储.html">
+                <a href="存储.html">
             
                     
                     存储
@@ -346,9 +346,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../浏览器/渲染机制.html">
+        <li class="chapter " data-level="1.5.5" data-path="渲染机制.html">
             
-                <a href="../浏览器/渲染机制.html">
+                <a href="渲染机制.html">
             
                     
                     渲染机制
@@ -747,9 +747,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.1" data-path="git基本使用.html">
+        <li class="chapter " data-level="5.1.1" data-path="../git/git基本使用.html">
             
-                <a href="git基本使用.html">
+                <a href="../git/git基本使用.html">
             
                     
                     git基本使用
@@ -760,9 +760,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.1.2" data-path="git分支管理策略.html">
+        <li class="chapter " data-level="5.1.2" data-path="../git/git分支管理策略.html">
             
-                <a href="git分支管理策略.html">
+                <a href="../git/git分支管理策略.html">
             
                     
                     git分支管理策略
@@ -773,9 +773,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.3" data-path="publish脚本.html">
+        <li class="chapter " data-level="5.1.3" data-path="../git/publish脚本.html">
             
-                <a href="publish脚本.html">
+                <a href="../git/publish脚本.html">
             
                     
                     publish脚本
@@ -786,9 +786,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.4" data-path="gitbook.html">
+        <li class="chapter " data-level="5.1.4" data-path="../git/gitbook.html">
             
-                <a href="gitbook.html">
+                <a href="../git/gitbook.html">
             
                     
                     gitbook
@@ -970,7 +970,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >git分支管理策略</a>
+        <a href=".." >存储</a>
     </h1>
 </div>
 
@@ -988,23 +988,121 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git&#x5DE5;&#x4F5C;&#x6D41;">git&#x5DE5;&#x4F5C;&#x6D41;</h1>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;">&#x5DE5;&#x4F5C;&#x6D41;</h3>
-<p>&#x57FA;&#x4E8E;gitflow, &#x7B80;&#x5316;&#x7248;&#x672C;</p>
-<p>&#x53C2;&#x8003;&#x6587;&#x6863;: <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
-<p>&#x533A;&#x522B;&#xFF1A; &#x4E0D;&#x8BBE;<code>release</code>, <code>develop</code>&#x5206;&#x652F;&#xFF0C; &#x6682;&#x4E0D;&#x6253;tag&#xFF0C; &#x4FDD;&#x7559;<code>master</code>, <code>feature/*</code>, <code>hotfix/*</code></p>
-<h3 id="&#x9879;&#x76EE;">&#x9879;&#x76EE;</h3>
-<p><code>feprogram/taoche</code>&#x7B49;&#x9879;&#x76EE;&#x9501;&#x5B9A;master, &#x4E0D;&#x5141;&#x8BB8;&#x76F4;&#x63A5;&#x5728;master&#x4E0B;&#x6539;&#x52A8;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4EA4;merge request&#x8FDB;&#x884C;review</p>
-<p><code>act</code>&#x7B49;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x654F;&#x6377;&#x5F00;&#x53D1;, &#x4E0D;&#x9501;&#x5B9A;master, &#x5206;&#x652F;&#x81EA;&#x884C;&#x7BA1;&#x7406;</p>
-<p><code>crm</code>&#x7B49;&#x9879;&#x76EE;&#x8BBE;&#x7ACB;develop&#x5206;&#x652F;&#xFF0C;&#x7279;&#x6027;&#x5206;&#x652F;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x540E;&#x5408;&#x5E76;&#x5165;develop, master&#x5206;&#x652F;&#x4ECE;develop&#x5355;&#x5411;merge</p>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
-<ol>
-<li>&#x57FA;&#x4E8E;&#x6700;&#x65B0;master&#x5EFA;&#x7ACB;&#x5206;&#x652F;&#xFF0C;&#x529F;&#x80FD;&#x5206;&#x652F;<code>feature/xxx</code> &#x6216; &#x7EBF;&#x4E0A;bug&#x4FEE;&#x590D;&#x5206;&#x652F; <code>hotfix/xxx</code></li>
-<li>&#x5728;&#x5206;&#x652F;&#x4E0B;&#x5F00;&#x53D1;</li>
-<li>&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#xFF0C; merge master&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;&#xFF0C;release&#x7070;&#x5EA6;/&#x4E0A;&#x7EBF;&#x3002;</li>
-</ol>
-<h3 id="&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
-<p>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF1B;<br>pull&#x6700;&#x65B0;&#x4EE3;&#x7801;&#xFF1B;<br>&#x5EFA;&#x7ACB;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF08;&#x65B0;&#x529F;&#x80FD;&#x5F00;&#x53D1;&#x3001;&#x5FEB;&#x901F;&#x9A8C;&#x8BC1;&#xFF0C;bug&#x4FEE;&#x590D;&#x5EFA;&#x8BAE;&#x90FD;&#x5EFA;&#x5206;&#x652F;&#xFF09;&#xFF1A;<code>git checkout -b dev_xmli</code>&#xFF1B;<br>&#x6216;&#x8005;&#x521B;&#x5EFA;&#x5F00;&#x53D1;&#x540C;&#x4E00;&#x529F;&#x80FD;&#x51E0;&#x4E2A;&#x4EBA;&#x516C;&#x7528;&#x7684;&#x5206;&#x652F;(&#x5982;&#xFF1A;dev-insurance, change-price)&#xFF1B;<br>&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5206;&#x652F;&#x4E0A;&#x63D0;&#x4EA4;&#xFF08;commit&#xFF09;&#xFF1B;<br>&#x5F00;&#x53D1;&#x5B8C;&#x6BD5;&#xFF0C;&#x505A;&#x6D4B;&#x8BD5;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF0C;pull;<br>&#x5207;&#x6362;&#x5230;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF0C;merge&#x4EE3;&#x7801;&#xFF1A; g<code>it merge release</code>&#xFF0C;&#x5408;&#x5E76;&#x7EBF;&#x4E0A;&#x6700;&#x65B0;&#x66F4;&#x6539;&#xFF0C;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release, &#x7136;&#x540E; git merge dev_xmli&#xFF0C;&#x628A;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#x5408;&#x5E76;&#x5230;&#x7EBF;&#x4E0A;&#x5206;&#x652F;&#xFF1B;<br>&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x5230;&#x670D;&#x52A1;&#x5668;-- git push;<br>&#x5982;&#x6709;&#x5FC5;&#x8981;&#x544A;&#x77E5;&#x5176;&#x4ED6;&#x540C;&#x4E8B;&#x66F4;&#x65B0;&#x4EE3;&#x7801;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7684;&#x6539;&#x52A8;&#xFF1B;<br>&#x5982;&#x679C;&#x662F;&#x53D1;&#x5E03;&#x7684;release&#xFF0C;&#x6253;tag&#xFF1B;<br><code>git tag -a v1.8.0</code><br>&#x63D0;&#x4EA4;tag:<br><code>git push --tags</code> </p>
+                                <h1 id="&#x5B58;&#x50A8;">&#x5B58;&#x50A8;</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#cookielocalstoragesessionstorageindexdb">cookie&#xFF0C;localStorage&#xFF0C;sessionStorage&#xFF0C;indexDB</a></li>
+<li><a href="#service-worker">Service Worker</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="cookie&#xFF0C;localstorage&#xFF0C;sessionstorage&#xFF0C;indexdb">cookie&#xFF0C;localStorage&#xFF0C;sessionStorage&#xFF0C;indexDB</h2>
+<table>
+<thead>
+<tr>
+<th>&#x7279;&#x6027;</th>
+<th>cookie</th>
+<th>localStorage</th>
+<th>sessionStorage</th>
+<th>indexDB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x6570;&#x636E;&#x751F;&#x547D;&#x5468;&#x671F;</td>
+<td>&#x4E00;&#x822C;&#x7531;&#x670D;&#x52A1;&#x5668;&#x751F;&#x6210;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65F6;&#x95F4;</td>
+<td>&#x9664;&#x975E;&#x88AB;&#x6E05;&#x7406;&#xFF0C;&#x5426;&#x5219;&#x4E00;&#x76F4;&#x5B58;&#x5728;</td>
+<td>&#x9875;&#x9762;&#x5173;&#x95ED;&#x5C31;&#x6E05;&#x7406;</td>
+<td>&#x9664;&#x975E;&#x88AB;&#x6E05;&#x7406;&#xFF0C;&#x5426;&#x5219;&#x4E00;&#x76F4;&#x5B58;&#x5728;</td>
+</tr>
+<tr>
+<td>&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5927;&#x5C0F;</td>
+<td>4K</td>
+<td>5M</td>
+<td>5M</td>
+<td>&#x65E0;&#x9650;</td>
+</tr>
+<tr>
+<td>&#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x901A;&#x4FE1;</td>
+<td>&#x6BCF;&#x6B21;&#x90FD;&#x4F1A;&#x643A;&#x5E26;&#x5728; header &#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;&#x8BF7;&#x6C42;&#x6027;&#x80FD;&#x5F71;&#x54CD;</td>
+<td>&#x4E0D;&#x53C2;&#x4E0E;</td>
+<td>&#x4E0D;&#x53C2;&#x4E0E;</td>
+<td>&#x4E0D;&#x53C2;&#x4E0E;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4ECE;&#x4E0A;&#x8868;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;<code>cookie</code> &#x5DF2;&#x7ECF;&#x4E0D;&#x5EFA;&#x8BAE;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5927;&#x91CF;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x9700;&#x6C42;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>localStorage</code> &#x548C; <code>sessionStorage</code> &#x3002;&#x5BF9;&#x4E8E;&#x4E0D;&#x600E;&#x4E48;&#x6539;&#x53D8;&#x7684;&#x6570;&#x636E;&#x5C3D;&#x91CF;&#x4F7F;&#x7528; <code>localStorage</code> &#x5B58;&#x50A8;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x4EE5;&#x7528; <code>sessionStorage</code> &#x5B58;&#x50A8;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E; <code>cookie</code>&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x5B89;&#x5168;&#x6027;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>sessionStorage</th>
+<th>indexDB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>&#x5982;&#x679C;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x7528;&#x6237;&#x767B;&#x5F55;&#x6001;&#xFF0C;&#x5E94;&#x8BE5;&#x5C06;&#x8BE5;&#x503C;&#x52A0;&#x5BC6;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x660E;&#x6587;&#x7684;&#x7528;&#x6237;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>http-only</td>
+<td>&#x4E0D;&#x80FD;&#x901A;&#x8FC7; JS &#x8BBF;&#x95EE; Cookie&#xFF0C;&#x51CF;&#x5C11; XSS &#x653B;&#x51FB;</td>
+</tr>
+<tr>
+<td>secure</td>
+<td>&#x53EA;&#x80FD;&#x5728;&#x534F;&#x8BAE;&#x4E3A; HTTPS &#x7684;&#x8BF7;&#x6C42;&#x4E2D;&#x643A;&#x5E26;</td>
+</tr>
+<tr>
+<td>same-site</td>
+<td>&#x89C4;&#x5B9A;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x80FD;&#x5728;&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#x4E2D;&#x643A;&#x5E26; Cookie&#xFF0C;&#x51CF;&#x5C11; CSRF &#x653B;&#x51FB;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="service-worker">Service Worker</h2>
+<blockquote>
+<p>Service workers &#x672C;&#x8D28;&#x4E0A;&#x5145;&#x5F53; Web &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E;&#x6D4F;&#x89C8;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x7F51;&#x7EDC;&#x53EF;&#x7528;&#x65F6;&#x4F5C;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x7F51;&#x7EDC;&#x95F4;&#x7684;&#x4EE3;&#x7406;&#x3002;&#x5B83;&#x4EEC;&#x65E8;&#x5728;&#xFF08;&#x9664;&#x5176;&#x4ED6;&#x4E4B;&#x5916;&#xFF09;&#x4F7F;&#x5F97;&#x80FD;&#x591F;&#x521B;&#x5EFA;&#x6709;&#x6548;&#x7684;&#x79BB;&#x7EBF;&#x4F53;&#x9A8C;&#xFF0C;&#x62E6;&#x622A;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x5E76;&#x57FA;&#x4E8E;&#x7F51;&#x7EDC;&#x662F;&#x5426;&#x53EF;&#x7528;&#x4EE5;&#x53CA;&#x66F4;&#x65B0;&#x7684;&#x8D44;&#x6E90;&#x662F;&#x5426;&#x9A7B;&#x7559;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x6765;&#x91C7;&#x53D6;&#x9002;&#x5F53;&#x7684;&#x52A8;&#x4F5C;&#x3002;&#x4ED6;&#x4EEC;&#x8FD8;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;&#x63A8;&#x9001;&#x901A;&#x77E5;&#x548C;&#x540E;&#x53F0;&#x540C;&#x6B65; API&#x3002;</p>
+</blockquote>
+<p>&#x76EE;&#x524D;&#x8BE5;&#x6280;&#x672F;&#x901A;&#x5E38;&#x7528;&#x6765;&#x505A;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#xFF0C;&#x63D0;&#x9AD8;&#x9996;&#x5C4F;&#x901F;&#x5EA6;&#xFF0C;&#x53EF;&#x4EE5;&#x8BD5;&#x7740;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// index.js</span>
+<span class="hljs-keyword">if</span> (navigator.serviceWorker) {
+  navigator.serviceWorker
+    .register(<span class="hljs-string">&apos;sw.js&apos;</span>)
+    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">registration</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;service worker &#x6CE8;&#x518C;&#x6210;&#x529F;&apos;</span>)
+    })
+    .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;servcie worker &#x6CE8;&#x518C;&#x5931;&#x8D25;&apos;</span>)
+    })
+}
+<span class="hljs-comment">// sw.js</span>
+<span class="hljs-comment">// &#x76D1;&#x542C; `install` &#x4E8B;&#x4EF6;&#xFF0C;&#x56DE;&#x8C03;&#x4E2D;&#x7F13;&#x5B58;&#x6240;&#x9700;&#x6587;&#x4EF6;</span>
+self.addEventListener(<span class="hljs-string">&apos;install&apos;</span>, e =&gt; {
+  e.waitUntil(
+    caches.open(<span class="hljs-string">&apos;my-cache&apos;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cache</span>) </span>{
+      <span class="hljs-keyword">return</span> cache.addAll([<span class="hljs-string">&apos;./index.html&apos;</span>, <span class="hljs-string">&apos;./index.js&apos;</span>])
+    })
+  )
+})
+
+<span class="hljs-comment">// &#x62E6;&#x622A;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x4E8B;&#x4EF6;</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x7F13;&#x5B58;&#x4E2D;&#x5DF2;&#x7ECF;&#x6709;&#x8BF7;&#x6C42;&#x7684;&#x6570;&#x636E;&#x5C31;&#x76F4;&#x63A5;&#x7528;&#x7F13;&#x5B58;&#xFF0C;&#x5426;&#x5219;&#x53BB;&#x8BF7;&#x6C42;&#x6570;&#x636E;</span>
+self.addEventListener(<span class="hljs-string">&apos;fetch&apos;</span>, e =&gt; {
+  e.respondWith(
+    caches.match(e.request).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">response</span>) </span>{
+      <span class="hljs-keyword">if</span> (response) {
+        <span class="hljs-keyword">return</span> response
+      }
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;fetch source&apos;</span>)
+    })
+  )
+})
+</code></pre>
+<p>&#x6253;&#x5F00;&#x9875;&#x9762;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x4E2D;&#x7684; <code>Application</code> &#x770B;&#x5230; <code>Service Worker</code> &#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#x4E86;</p>
+<p><img src="../resource/assets/&#x6D4F;&#x89C8;&#x5668;/01.png" alt=""></p>
+<p>&#x5728; Cache &#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x6211;&#x4EEC;&#x6240;&#x9700;&#x7684;&#x6587;&#x4EF6;&#x5DF2;&#x88AB;&#x7F13;&#x5B58;
+<img src="../resource/assets/&#x6D4F;&#x89C8;&#x5668;/02.png" alt=""></p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x91CD;&#x65B0;&#x5237;&#x65B0;&#x9875;&#x9762;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x6211;&#x4EEC;&#x7F13;&#x5B58;&#x7684;&#x6570;&#x636E;&#x662F;&#x4ECE; Service Worker &#x4E2D;&#x8BFB;&#x53D6;&#x7684;
+<img src="../resource/assets/&#x6D4F;&#x89C8;&#x5668;/03.png" alt=""></p>
 
                                 
                                 </section>
@@ -1048,12 +1146,12 @@
 
             
                 
-                <a href="git基本使用.html" class="navigation navigation-prev " aria-label="Previous page: git基本使用">
+                <a href="Event-loop.html" class="navigation navigation-prev " aria-label="Previous page: Event loop">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="publish脚本.html" class="navigation navigation-next " aria-label="Next page: publish脚本">
+                <a href="渲染机制.html" class="navigation navigation-next " aria-label="Next page: 渲染机制">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1064,7 +1162,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git分支管理策略","level":"5.1.2","depth":2,"next":{"title":"publish脚本","level":"5.1.3","depth":2,"path":"git/publish脚本.md","ref":"git/publish脚本.md","articles":[]},"previous":{"title":"git基本使用","level":"5.1.1","depth":2,"path":"git/git基本使用.md","ref":"git/git基本使用.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"git/git分支管理策略.md","mtime":"2019-06-24T11:47:02.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T06:26:28.804Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"存储","level":"1.5.4","depth":2,"next":{"title":"渲染机制","level":"1.5.5","depth":2,"path":"浏览器/渲染机制.md","ref":"浏览器/渲染机制.md","articles":[]},"previous":{"title":"Event loop","level":"1.5.3","depth":2,"path":"浏览器/Event-loop.md","ref":"浏览器/Event-loop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"浏览器/存储.md","mtime":"2019-06-28T01:34:43.572Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T06:26:28.804Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

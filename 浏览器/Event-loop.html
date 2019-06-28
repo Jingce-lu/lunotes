@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>git分支管理策略 · GitBook</title>
+        <title>Event loop · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="publish脚本.html" />
+    <link rel="next" href="存储.html" />
     
     
-    <link rel="prev" href="git基本使用.html" />
+    <link rel="prev" href="跨域.html" />
     
 
     </head>
@@ -294,9 +294,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../浏览器/事件机制.html">
+        <li class="chapter " data-level="1.5.1" data-path="事件机制.html">
             
-                <a href="../浏览器/事件机制.html">
+                <a href="事件机制.html">
             
                     
                     事件机制
@@ -307,9 +307,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../浏览器/跨域.html">
+        <li class="chapter " data-level="1.5.2" data-path="跨域.html">
             
-                <a href="../浏览器/跨域.html">
+                <a href="跨域.html">
             
                     
                     跨域
@@ -320,9 +320,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../浏览器/Event-loop.html">
+        <li class="chapter active" data-level="1.5.3" data-path="Event-loop.html">
             
-                <a href="../浏览器/Event-loop.html">
+                <a href="Event-loop.html">
             
                     
                     Event loop
@@ -333,9 +333,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../浏览器/存储.html">
+        <li class="chapter " data-level="1.5.4" data-path="存储.html">
             
-                <a href="../浏览器/存储.html">
+                <a href="存储.html">
             
                     
                     存储
@@ -346,9 +346,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../浏览器/渲染机制.html">
+        <li class="chapter " data-level="1.5.5" data-path="渲染机制.html">
             
-                <a href="../浏览器/渲染机制.html">
+                <a href="渲染机制.html">
             
                     
                     渲染机制
@@ -747,9 +747,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.1" data-path="git基本使用.html">
+        <li class="chapter " data-level="5.1.1" data-path="../git/git基本使用.html">
             
-                <a href="git基本使用.html">
+                <a href="../git/git基本使用.html">
             
                     
                     git基本使用
@@ -760,9 +760,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.1.2" data-path="git分支管理策略.html">
+        <li class="chapter " data-level="5.1.2" data-path="../git/git分支管理策略.html">
             
-                <a href="git分支管理策略.html">
+                <a href="../git/git分支管理策略.html">
             
                     
                     git分支管理策略
@@ -773,9 +773,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.3" data-path="publish脚本.html">
+        <li class="chapter " data-level="5.1.3" data-path="../git/publish脚本.html">
             
-                <a href="publish脚本.html">
+                <a href="../git/publish脚本.html">
             
                     
                     publish脚本
@@ -786,9 +786,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.4" data-path="gitbook.html">
+        <li class="chapter " data-level="5.1.4" data-path="../git/gitbook.html">
             
-                <a href="gitbook.html">
+                <a href="../git/gitbook.html">
             
                     
                     gitbook
@@ -970,7 +970,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >git分支管理策略</a>
+        <a href=".." >Event loop</a>
     </h1>
 </div>
 
@@ -988,23 +988,179 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git&#x5DE5;&#x4F5C;&#x6D41;">git&#x5DE5;&#x4F5C;&#x6D41;</h1>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;">&#x5DE5;&#x4F5C;&#x6D41;</h3>
-<p>&#x57FA;&#x4E8E;gitflow, &#x7B80;&#x5316;&#x7248;&#x672C;</p>
-<p>&#x53C2;&#x8003;&#x6587;&#x6863;: <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
-<p>&#x533A;&#x522B;&#xFF1A; &#x4E0D;&#x8BBE;<code>release</code>, <code>develop</code>&#x5206;&#x652F;&#xFF0C; &#x6682;&#x4E0D;&#x6253;tag&#xFF0C; &#x4FDD;&#x7559;<code>master</code>, <code>feature/*</code>, <code>hotfix/*</code></p>
-<h3 id="&#x9879;&#x76EE;">&#x9879;&#x76EE;</h3>
-<p><code>feprogram/taoche</code>&#x7B49;&#x9879;&#x76EE;&#x9501;&#x5B9A;master, &#x4E0D;&#x5141;&#x8BB8;&#x76F4;&#x63A5;&#x5728;master&#x4E0B;&#x6539;&#x52A8;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4EA4;merge request&#x8FDB;&#x884C;review</p>
-<p><code>act</code>&#x7B49;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x654F;&#x6377;&#x5F00;&#x53D1;, &#x4E0D;&#x9501;&#x5B9A;master, &#x5206;&#x652F;&#x81EA;&#x884C;&#x7BA1;&#x7406;</p>
-<p><code>crm</code>&#x7B49;&#x9879;&#x76EE;&#x8BBE;&#x7ACB;develop&#x5206;&#x652F;&#xFF0C;&#x7279;&#x6027;&#x5206;&#x652F;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x540E;&#x5408;&#x5E76;&#x5165;develop, master&#x5206;&#x652F;&#x4ECE;develop&#x5355;&#x5411;merge</p>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
+                                <h1 id="event-loop">Event loop</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#event-loop">Event loop</a></li>
+<li><a href="#node-&#x4E2D;&#x7684;-event-loop">Node &#x4E2D;&#x7684; Event loop</a><ul>
+<li><a href="#timer">timer</a></li>
+<li><a href="#io">I/O</a></li>
+<li><a href="#idle-prepare">idle, prepare</a></li>
+<li><a href="#check">check</a></li>
+<li><a href="#close-callbacks">close callbacks</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h2 id="event-loop">Event loop</h2>
+<p>&#x4F17;&#x6240;&#x5468;&#x77E5; JS &#x662F;&#x95E8;&#x975E;&#x963B;&#x585E;&#x5355;&#x7EBF;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x6700;&#x521D; JS &#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x548C;&#x6D4F;&#x89C8;&#x5668;&#x4EA4;&#x4E92;&#x800C;&#x8BDE;&#x751F;&#x7684;&#x3002;&#x5982;&#x679C; JS &#x662F;&#x95E8;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x8BED;&#x8A00;&#x8BDD;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x5904;&#x7406; DOM &#x5C31;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x751F;&#x95EE;&#x9898;&#xFF08;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x65B0;&#x52A0;&#x8282;&#x70B9;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x5220;&#x9664;&#x8282;&#x70B9;&#xFF09;&#xFF0C;&#x5F53;&#x7136;&#x53EF;&#x4EE5;&#x5F15;&#x5165;&#x8BFB;&#x5199;&#x9501;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<p>JS &#x5728;&#x6267;&#x884C;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x4EA7;&#x751F;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x8FD9;&#x4E9B;&#x6267;&#x884C;&#x73AF;&#x5883;&#x4F1A;&#x88AB;&#x987A;&#x5E8F;&#x7684;&#x52A0;&#x5165;&#x5230;&#x6267;&#x884C;&#x6808;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x9047;&#x5230;&#x5F02;&#x6B65;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F1A;&#x88AB;&#x6302;&#x8D77;&#x5E76;&#x52A0;&#x5165;&#x5230; Task&#xFF08;&#x6709;&#x591A;&#x79CD; task&#xFF09; &#x961F;&#x5217;&#x4E2D;&#x3002;&#x4E00;&#x65E6;&#x6267;&#x884C;&#x6808;&#x4E3A;&#x7A7A;&#xFF0C;Event Loop &#x5C31;&#x4F1A;&#x4ECE; Task &#x961F;&#x5217;&#x4E2D;&#x62FF;&#x51FA;&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x5E76;&#x653E;&#x5165;&#x6267;&#x884C;&#x6808;&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x672C;&#x8D28;&#x4E0A;&#x6765;&#x8BF4; JS &#x4E2D;&#x7684;&#x5F02;&#x6B65;&#x8FD8;&#x662F;&#x540C;&#x6B65;&#x884C;&#x4E3A;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;script start&apos;</span>)
+
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;setTimeout&apos;</span>)
+}, <span class="hljs-number">0</span>)
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;script end&apos;</span>)
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x867D;&#x7136; <code>setTimeout</code> &#x5EF6;&#x65F6;&#x4E3A; 0&#xFF0C;&#x5176;&#x5B9E;&#x8FD8;&#x662F;&#x5F02;&#x6B65;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A; HTML5 &#x6807;&#x51C6;&#x89C4;&#x5B9A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4E0D;&#x5F97;&#x5C0F;&#x4E8E; 4 &#x6BEB;&#x79D2;&#xFF0C;&#x4E0D;&#x8DB3;&#x4F1A;&#x81EA;&#x52A8;&#x589E;&#x52A0;&#x3002;&#x6240;&#x4EE5; <code>setTimeout</code> &#x8FD8;&#x662F;&#x4F1A;&#x5728; <code>script end</code> &#x4E4B;&#x540E;&#x6253;&#x5370;&#x3002;</p>
+<p>&#x4E0D;&#x540C;&#x7684;&#x4EFB;&#x52A1;&#x6E90;&#x4F1A;&#x88AB;&#x5206;&#x914D;&#x5230;&#x4E0D;&#x540C;&#x7684; Task &#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x4EFB;&#x52A1;&#x6E90;&#x53EF;&#x4EE5;&#x5206;&#x4E3A; <strong>&#x5FAE;&#x4EFB;&#x52A1;&#xFF08;microtask&#xFF09;</strong> &#x548C; <strong>&#x5B8F;&#x4EFB;&#x52A1;&#xFF08;macrotask&#xFF09;</strong>&#x3002;&#x5728; ES6 &#x89C4;&#x8303;&#x4E2D;&#xFF0C;microtask &#x79F0;&#x4E3A; <code>jobs</code>&#xFF0C;macrotask &#x79F0;&#x4E3A; <code>task</code>&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;script start&apos;</span>)
+
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;setTimeout&apos;</span>)
+}, <span class="hljs-number">0</span>)
+
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(resolve =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Promise&apos;</span>)
+  resolve()
+})
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;promise1&apos;</span>)
+  })
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;promise2&apos;</span>)
+  })
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;script end&apos;</span>)
+<span class="hljs-comment">// script start =&gt; Promise =&gt; script end =&gt; promise1 =&gt; promise2 =&gt; setTimeout</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x867D;&#x7136; <code>setTimeout</code> &#x5199;&#x5728; <code>Promise</code> &#x4E4B;&#x524D;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A; <code>Promise</code> &#x5C5E;&#x4E8E;&#x5FAE;&#x4EFB;&#x52A1;&#x800C; <code>setTimeout</code> &#x5C5E;&#x4E8E;&#x5B8F;&#x4EFB;&#x52A1;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x6709;&#x4EE5;&#x4E0A;&#x7684;&#x6253;&#x5370;&#x3002;</p>
 <ol>
-<li>&#x57FA;&#x4E8E;&#x6700;&#x65B0;master&#x5EFA;&#x7ACB;&#x5206;&#x652F;&#xFF0C;&#x529F;&#x80FD;&#x5206;&#x652F;<code>feature/xxx</code> &#x6216; &#x7EBF;&#x4E0A;bug&#x4FEE;&#x590D;&#x5206;&#x652F; <code>hotfix/xxx</code></li>
-<li>&#x5728;&#x5206;&#x652F;&#x4E0B;&#x5F00;&#x53D1;</li>
-<li>&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#xFF0C; merge master&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;&#xFF0C;release&#x7070;&#x5EA6;/&#x4E0A;&#x7EBF;&#x3002;</li>
+<li><strong>&#x5FAE;&#x4EFB;&#x52A1;</strong>&#x5305;&#x62EC; <code>process.nextTick</code> &#xFF0C;<code>promise</code> &#xFF0C;<code>Object.observe</code> &#xFF0C;<code>MutationObserver</code></li>
+<li><strong>&#x5B8F;&#x4EFB;&#x52A1;</strong>&#x5305;&#x62EC; <code>script</code> &#xFF0C; <code>setTimeout</code> &#xFF0C;<code>setInterval</code> &#xFF0C;<code>setImmediate</code> &#xFF0C;<code>I/O</code> &#xFF0C;<code>UI rendering</code></li>
 </ol>
-<h3 id="&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
-<p>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF1B;<br>pull&#x6700;&#x65B0;&#x4EE3;&#x7801;&#xFF1B;<br>&#x5EFA;&#x7ACB;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF08;&#x65B0;&#x529F;&#x80FD;&#x5F00;&#x53D1;&#x3001;&#x5FEB;&#x901F;&#x9A8C;&#x8BC1;&#xFF0C;bug&#x4FEE;&#x590D;&#x5EFA;&#x8BAE;&#x90FD;&#x5EFA;&#x5206;&#x652F;&#xFF09;&#xFF1A;<code>git checkout -b dev_xmli</code>&#xFF1B;<br>&#x6216;&#x8005;&#x521B;&#x5EFA;&#x5F00;&#x53D1;&#x540C;&#x4E00;&#x529F;&#x80FD;&#x51E0;&#x4E2A;&#x4EBA;&#x516C;&#x7528;&#x7684;&#x5206;&#x652F;(&#x5982;&#xFF1A;dev-insurance, change-price)&#xFF1B;<br>&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5206;&#x652F;&#x4E0A;&#x63D0;&#x4EA4;&#xFF08;commit&#xFF09;&#xFF1B;<br>&#x5F00;&#x53D1;&#x5B8C;&#x6BD5;&#xFF0C;&#x505A;&#x6D4B;&#x8BD5;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF0C;pull;<br>&#x5207;&#x6362;&#x5230;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF0C;merge&#x4EE3;&#x7801;&#xFF1A; g<code>it merge release</code>&#xFF0C;&#x5408;&#x5E76;&#x7EBF;&#x4E0A;&#x6700;&#x65B0;&#x66F4;&#x6539;&#xFF0C;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release, &#x7136;&#x540E; git merge dev_xmli&#xFF0C;&#x628A;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#x5408;&#x5E76;&#x5230;&#x7EBF;&#x4E0A;&#x5206;&#x652F;&#xFF1B;<br>&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x5230;&#x670D;&#x52A1;&#x5668;-- git push;<br>&#x5982;&#x6709;&#x5FC5;&#x8981;&#x544A;&#x77E5;&#x5176;&#x4ED6;&#x540C;&#x4E8B;&#x66F4;&#x65B0;&#x4EE3;&#x7801;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7684;&#x6539;&#x52A8;&#xFF1B;<br>&#x5982;&#x679C;&#x662F;&#x53D1;&#x5E03;&#x7684;release&#xFF0C;&#x6253;tag&#xFF1B;<br><code>git tag -a v1.8.0</code><br>&#x63D0;&#x4EA4;tag:<br><code>git push --tags</code> </p>
+<p>&#x5F88;&#x591A;&#x4EBA;&#x6709;&#x4E2A;&#x8BEF;&#x533A;&#xFF0C;&#x8BA4;&#x4E3A;&#x5FAE;&#x4EFB;&#x52A1;&#x5FEB;&#x4E8E;&#x5B8F;&#x4EFB;&#x52A1;&#xFF0C;&#x5176;&#x5B9E;&#x662F;&#x9519;&#x8BEF;&#x7684;&#x3002;&#x56E0;&#x4E3A;&#x5B8F;&#x4EFB;&#x52A1;&#x4E2D;&#x5305;&#x62EC;&#x4E86; script &#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5148;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x5B8F;&#x4EFB;&#x52A1;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6709;&#x5F02;&#x6B65;&#x4EE3;&#x7801;&#x7684;&#x8BDD;&#x5C31;&#x5148;&#x6267;&#x884C;&#x5FAE;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x6B63;&#x786E;&#x7684;&#x4E00;&#x6B21; Event loop &#x987A;&#x5E8F;&#x662F;&#x8FD9;&#x6837;&#x7684;</p>
+<ol>
+<li>&#x6267;&#x884C;&#x540C;&#x6B65;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x5C5E;&#x4E8E;&#x5B8F;&#x4EFB;&#x52A1;</li>
+<li>&#x6267;&#x884C;&#x6808;&#x4E3A;&#x7A7A;&#xFF0C;&#x67E5;&#x8BE2;&#x662F;&#x5426;&#x6709;&#x5FAE;&#x4EFB;&#x52A1;&#x9700;&#x8981;&#x6267;&#x884C;</li>
+<li>&#x6267;&#x884C;&#x6240;&#x6709;&#x5FAE;&#x4EFB;&#x52A1;</li>
+<li>&#x5FC5;&#x8981;&#x7684;&#x8BDD;&#x6E32;&#x67D3; UI</li>
+<li>&#x7136;&#x540E;&#x5F00;&#x59CB;&#x4E0B;&#x4E00;&#x8F6E; Event loop&#xFF0C;&#x6267;&#x884C;&#x5B8F;&#x4EFB;&#x52A1;&#x4E2D;&#x7684;&#x5F02;&#x6B65;&#x4EE3;&#x7801;</li>
+</ol>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x8FF0;&#x7684; Event loop &#x987A;&#x5E8F;&#x53EF;&#x77E5;&#xFF0C;&#x5982;&#x679C;&#x5B8F;&#x4EFB;&#x52A1;&#x4E2D;&#x7684;&#x5F02;&#x6B65;&#x4EE3;&#x7801;&#x6709;&#x5927;&#x91CF;&#x7684;&#x8BA1;&#x7B97;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x64CD;&#x4F5C; DOM &#x7684;&#x8BDD;&#xFF0C;&#x4E3A;&#x4E86;&#x66F4;&#x5FEB;&#x7684; &#x754C;&#x9762;&#x54CD;&#x5E94;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x64CD;&#x4F5C; DOM &#x653E;&#x5165;&#x5FAE;&#x4EFB;&#x52A1;&#x4E2D;&#x3002;</p>
+<h2 id="node-&#x4E2D;&#x7684;-event-loop">Node &#x4E2D;&#x7684; Event loop</h2>
+<p>Node &#x4E2D;&#x7684; Event loop &#x548C;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x4E0D;&#x76F8;&#x540C;&#x3002;</p>
+<p>Node &#x7684; Event loop &#x5206;&#x4E3A; 6 &#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x6309;&#x7167;&#x987A;&#x5E8F;&#x53CD;&#x590D;&#x8FD0;&#x884C;</p>
+<pre><code>&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;
+&#x250C;&#x2500;&gt;&#x2502;        timers         &#x2502;
+&#x2502;  &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;
+&#x2502;  &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;
+&#x2502;  &#x2502;     I/O callbacks     &#x2502;
+&#x2502;  &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;
+&#x2502;  &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;
+&#x2502;  &#x2502;     idle, prepare     &#x2502;
+&#x2502;  &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;      &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;
+&#x2502;  &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;      &#x2502;   incoming:   &#x2502;
+&#x2502;  &#x2502;         poll          &#x2502;&lt;&#x2500;&#x2500;connections&#x2500;&#x2500;&#x2500;     &#x2502;
+&#x2502;  &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;      &#x2502;   data, etc.  &#x2502;
+&#x2502;  &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;      &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;
+&#x2502;  &#x2502;        check          &#x2502;
+&#x2502;  &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x252C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;
+&#x2502;  &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;
+&#x2514;&#x2500;&#x2500;&#x2524;    close callbacks    &#x2502;
+   &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;
+</code></pre><h3 id="timer">timer</h3>
+<p>timers &#x9636;&#x6BB5;&#x4F1A;&#x6267;&#x884C; <code>setTimeout</code> &#x548C; <code>setInterval</code></p>
+<p>&#x4E00;&#x4E2A; <code>timer</code> &#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x5E76;&#x4E0D;&#x662F;&#x51C6;&#x786E;&#x65F6;&#x95F4;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x8FBE;&#x5230;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x540E;&#x5C3D;&#x5FEB;&#x6267;&#x884C;&#x56DE;&#x8C03;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x56E0;&#x4E3A;&#x7CFB;&#x7EDF;&#x6B63;&#x5728;&#x6267;&#x884C;&#x522B;&#x7684;&#x4E8B;&#x52A1;&#x800C;&#x5EF6;&#x8FDF;&#x3002;</p>
+<p>&#x4E0B;&#x9650;&#x7684;&#x65F6;&#x95F4;&#x6709;&#x4E00;&#x4E2A;&#x8303;&#x56F4;&#xFF1A;<code>[1, 2147483647]</code> &#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x4E0D;&#x5728;&#x8FD9;&#x4E2A;&#x8303;&#x56F4;&#xFF0C;&#x5C06;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; 1&#x3002;</p>
+<h3 id="io">I/O</h3>
+<p>I/O &#x9636;&#x6BB5;&#x4F1A;&#x6267;&#x884C;&#x9664;&#x4E86; close &#x4E8B;&#x4EF6;&#xFF0C;&#x5B9A;&#x65F6;&#x5668;&#x548C; <code>setImmediate</code> &#x7684;&#x56DE;&#x8C03;</p>
+<h3 id="idle-prepare">idle, prepare</h3>
+<p>poll &#x9636;&#x6BB5;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x8FD9;&#x4E00;&#x9636;&#x6BB5;&#x4E2D;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x505A;&#x4E24;&#x4EF6;&#x4E8B;&#x60C5;</p>
+<ol>
+<li>&#x6267;&#x884C;&#x5230;&#x70B9;&#x7684;&#x5B9A;&#x65F6;&#x5668;</li>
+<li>&#x6267;&#x884C; poll &#x961F;&#x5217;&#x4E2D;&#x7684;&#x4E8B;&#x4EF6;</li>
+</ol>
+<p>&#x5E76;&#x4E14;&#x5F53; poll &#x4E2D;&#x6CA1;&#x6709;&#x5B9A;&#x65F6;&#x5668;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x4EE5;&#x4E0B;&#x4E24;&#x4EF6;&#x4E8B;&#x60C5;</p>
+<ul>
+<li>&#x5982;&#x679C; poll &#x961F;&#x5217;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x4F1A;&#x904D;&#x5386;&#x56DE;&#x8C03;&#x961F;&#x5217;&#x5E76;&#x540C;&#x6B65;&#x6267;&#x884C;&#xFF0C;&#x76F4;&#x5230;&#x961F;&#x5217;&#x4E3A;&#x7A7A;&#x6216;&#x8005;&#x7CFB;&#x7EDF;&#x9650;&#x5236;</li>
+<li>&#x5982;&#x679C; poll &#x961F;&#x5217;&#x4E3A;&#x7A7A;&#xFF0C;&#x4F1A;&#x6709;&#x4E24;&#x4EF6;&#x4E8B;&#x53D1;&#x751F;<ul>
+<li>&#x5982;&#x679C;&#x6709; setImmediate &#x9700;&#x8981;&#x6267;&#x884C;&#xFF0C;poll &#x9636;&#x6BB5;&#x4F1A;&#x505C;&#x6B62;&#x5E76;&#x4E14;&#x8FDB;&#x5165;&#x5230; check &#x9636;&#x6BB5;&#x6267;&#x884C; setImmediate</li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709; setImmediate &#x9700;&#x8981;&#x6267;&#x884C;&#xFF0C;&#x4F1A;&#x7B49;&#x5F85;&#x56DE;&#x8C03;&#x88AB;&#x52A0;&#x5165;&#x5230;&#x961F;&#x5217;&#x4E2D;&#x5E76;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x56DE;&#x8C03;</li>
+</ul>
+</li>
+</ul>
+<p>&#x5982;&#x679C;&#x6709;&#x522B;&#x7684;&#x5B9A;&#x65F6;&#x5668;&#x9700;&#x8981;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x4F1A;&#x56DE;&#x5230; timer &#x9636;&#x6BB5;&#x6267;&#x884C;&#x56DE;&#x8C03;&#x3002;</p>
+<h3 id="check">check</h3>
+<p>check &#x9636;&#x6BB5;&#x6267;&#x884C; <code>setImmediate</code></p>
+<h3 id="close-callbacks">close callbacks</h3>
+<p>close callbacks &#x9636;&#x6BB5;&#x6267;&#x884C; close &#x4E8B;&#x4EF6;</p>
+<p>&#x5E76;&#x4E14;&#x5728; Node &#x4E2D;&#xFF0C;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x5B9A;&#x65F6;&#x5668;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x662F;&#x968F;&#x673A;&#x7684;</p>
+<pre><code class="lang-js">setTimeout(() =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;setTimeout&apos;</span>)
+}, <span class="hljs-number">0</span>)
+setImmediate(() =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;setImmediate&apos;</span>)
+})
+<span class="hljs-comment">// &#x8FD9;&#x91CC;&#x53EF;&#x80FD;&#x4F1A;&#x8F93;&#x51FA; setTimeout&#xFF0C;setImmediate</span>
+<span class="hljs-comment">// &#x53EF;&#x80FD;&#x4E5F;&#x4F1A;&#x76F8;&#x53CD;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x8FD9;&#x53D6;&#x51B3;&#x4E8E;&#x6027;&#x80FD;</span>
+<span class="hljs-comment">// &#x56E0;&#x4E3A;&#x53EF;&#x80FD;&#x8FDB;&#x5165; event loop &#x7528;&#x4E86;&#x4E0D;&#x5230; 1 &#x6BEB;&#x79D2;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x4F1A;&#x6267;&#x884C; setImmediate</span>
+<span class="hljs-comment">// &#x5426;&#x5219;&#x4F1A;&#x6267;&#x884C; setTimeout</span>
+</code></pre>
+<p>&#x5F53;&#x7136;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x662F;&#x76F8;&#x540C;&#x7684;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>)
+
+fs.readFile(__filename, () =&gt; {
+  setTimeout(() =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timeout&apos;</span>)
+  }, <span class="hljs-number">0</span>)
+  setImmediate(() =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;immediate&apos;</span>)
+  })
+})
+<span class="hljs-comment">// &#x56E0;&#x4E3A; readFile &#x7684;&#x56DE;&#x8C03;&#x5728; poll &#x4E2D;&#x6267;&#x884C;</span>
+<span class="hljs-comment">// &#x53D1;&#x73B0;&#x6709; setImmediate &#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x7ACB;&#x5373;&#x8DF3;&#x5230; check &#x9636;&#x6BB5;&#x6267;&#x884C;&#x56DE;&#x8C03;</span>
+<span class="hljs-comment">// &#x518D;&#x53BB; timer &#x9636;&#x6BB5;&#x6267;&#x884C; setTimeout</span>
+<span class="hljs-comment">// &#x6240;&#x4EE5;&#x4EE5;&#x4E0A;&#x8F93;&#x51FA;&#x4E00;&#x5B9A;&#x662F; setImmediate&#xFF0C;setTimeout</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;&#x7684;&#x90FD;&#x662F; macrotask &#x7684;&#x6267;&#x884C;&#x60C5;&#x51B5;&#xFF0C;microtask &#x4F1A;&#x5728;&#x4EE5;&#x4E0A;&#x6BCF;&#x4E2A;&#x9636;&#x6BB5;&#x5B8C;&#x6210;&#x540E;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x3002;</p>
+<pre><code class="lang-js">setTimeout(() =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timer1&apos;</span>)
+
+  <span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;promise1&apos;</span>)
+  })
+}, <span class="hljs-number">0</span>)
+
+setTimeout(() =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timer2&apos;</span>)
+
+  <span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;promise2&apos;</span>)
+  })
+}, <span class="hljs-number">0</span>)
+
+<span class="hljs-comment">// &#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x548C; node &#x4E2D;&#x6253;&#x5370;&#x60C5;&#x51B5;&#x662F;&#x4E0D;&#x540C;&#x7684;</span>
+<span class="hljs-comment">// &#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4E00;&#x5B9A;&#x6253;&#x5370; timer1, promise1, timer2, promise2</span>
+<span class="hljs-comment">// node &#x4E2D;&#x53EF;&#x80FD;&#x6253;&#x5370; timer1, timer2, promise1, promise2</span>
+<span class="hljs-comment">// &#x4E5F;&#x53EF;&#x80FD;&#x6253;&#x5370; timer1, promise1, timer2, promise2</span>
+</code></pre>
+<p>Node &#x4E2D;&#x7684; process.nextTick &#x4F1A;&#x5148;&#x4E8E;&#x5176;&#x4ED6; microtask &#x6267;&#x884C;&#x3002;</p>
+<pre><code class="lang-js">setTimeout(() =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;timer1&apos;</span>)
+
+  <span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;promise1&apos;</span>)
+  })
+}, <span class="hljs-number">0</span>)
+
+process.nextTick(() =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;nextTick&apos;</span>)
+})
+<span class="hljs-comment">// nextTick, timer1, promise1</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1048,12 +1204,12 @@
 
             
                 
-                <a href="git基本使用.html" class="navigation navigation-prev " aria-label="Previous page: git基本使用">
+                <a href="跨域.html" class="navigation navigation-prev " aria-label="Previous page: 跨域">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="publish脚本.html" class="navigation navigation-next " aria-label="Next page: publish脚本">
+                <a href="存储.html" class="navigation navigation-next " aria-label="Next page: 存储">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1064,7 +1220,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git分支管理策略","level":"5.1.2","depth":2,"next":{"title":"publish脚本","level":"5.1.3","depth":2,"path":"git/publish脚本.md","ref":"git/publish脚本.md","articles":[]},"previous":{"title":"git基本使用","level":"5.1.1","depth":2,"path":"git/git基本使用.md","ref":"git/git基本使用.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"git/git分支管理策略.md","mtime":"2019-06-24T11:47:02.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T06:26:28.804Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Event loop","level":"1.5.3","depth":2,"next":{"title":"存储","level":"1.5.4","depth":2,"path":"浏览器/存储.md","ref":"浏览器/存储.md","articles":[]},"previous":{"title":"跨域","level":"1.5.2","depth":2,"path":"浏览器/跨域.md","ref":"浏览器/跨域.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"浏览器/Event-loop.md","mtime":"2019-06-28T01:34:43.571Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T06:26:28.804Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

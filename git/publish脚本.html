@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>git分支管理策略 · GitBook</title>
+        <title>publish脚本 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="publish脚本.html" />
+    <link rel="next" href="gitbook.html" />
     
     
-    <link rel="prev" href="git基本使用.html" />
+    <link rel="prev" href="git分支管理策略.html" />
     
 
     </head>
@@ -760,7 +760,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.1.2" data-path="git分支管理策略.html">
+        <li class="chapter " data-level="5.1.2" data-path="git分支管理策略.html">
             
                 <a href="git分支管理策略.html">
             
@@ -773,7 +773,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.3" data-path="publish脚本.html">
+        <li class="chapter active" data-level="5.1.3" data-path="publish脚本.html">
             
                 <a href="publish脚本.html">
             
@@ -970,7 +970,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >git分支管理策略</a>
+        <a href=".." >publish脚本</a>
     </h1>
 </div>
 
@@ -988,23 +988,61 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git&#x5DE5;&#x4F5C;&#x6D41;">git&#x5DE5;&#x4F5C;&#x6D41;</h1>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;">&#x5DE5;&#x4F5C;&#x6D41;</h3>
-<p>&#x57FA;&#x4E8E;gitflow, &#x7B80;&#x5316;&#x7248;&#x672C;</p>
-<p>&#x53C2;&#x8003;&#x6587;&#x6863;: <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
-<p>&#x533A;&#x522B;&#xFF1A; &#x4E0D;&#x8BBE;<code>release</code>, <code>develop</code>&#x5206;&#x652F;&#xFF0C; &#x6682;&#x4E0D;&#x6253;tag&#xFF0C; &#x4FDD;&#x7559;<code>master</code>, <code>feature/*</code>, <code>hotfix/*</code></p>
-<h3 id="&#x9879;&#x76EE;">&#x9879;&#x76EE;</h3>
-<p><code>feprogram/taoche</code>&#x7B49;&#x9879;&#x76EE;&#x9501;&#x5B9A;master, &#x4E0D;&#x5141;&#x8BB8;&#x76F4;&#x63A5;&#x5728;master&#x4E0B;&#x6539;&#x52A8;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4EA4;merge request&#x8FDB;&#x884C;review</p>
-<p><code>act</code>&#x7B49;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x654F;&#x6377;&#x5F00;&#x53D1;, &#x4E0D;&#x9501;&#x5B9A;master, &#x5206;&#x652F;&#x81EA;&#x884C;&#x7BA1;&#x7406;</p>
-<p><code>crm</code>&#x7B49;&#x9879;&#x76EE;&#x8BBE;&#x7ACB;develop&#x5206;&#x652F;&#xFF0C;&#x7279;&#x6027;&#x5206;&#x652F;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x540E;&#x5408;&#x5E76;&#x5165;develop, master&#x5206;&#x652F;&#x4ECE;develop&#x5355;&#x5411;merge</p>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
-<ol>
-<li>&#x57FA;&#x4E8E;&#x6700;&#x65B0;master&#x5EFA;&#x7ACB;&#x5206;&#x652F;&#xFF0C;&#x529F;&#x80FD;&#x5206;&#x652F;<code>feature/xxx</code> &#x6216; &#x7EBF;&#x4E0A;bug&#x4FEE;&#x590D;&#x5206;&#x652F; <code>hotfix/xxx</code></li>
-<li>&#x5728;&#x5206;&#x652F;&#x4E0B;&#x5F00;&#x53D1;</li>
-<li>&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#xFF0C; merge master&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;&#xFF0C;release&#x7070;&#x5EA6;/&#x4E0A;&#x7EBF;&#x3002;</li>
-</ol>
-<h3 id="&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
-<p>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF1B;<br>pull&#x6700;&#x65B0;&#x4EE3;&#x7801;&#xFF1B;<br>&#x5EFA;&#x7ACB;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF08;&#x65B0;&#x529F;&#x80FD;&#x5F00;&#x53D1;&#x3001;&#x5FEB;&#x901F;&#x9A8C;&#x8BC1;&#xFF0C;bug&#x4FEE;&#x590D;&#x5EFA;&#x8BAE;&#x90FD;&#x5EFA;&#x5206;&#x652F;&#xFF09;&#xFF1A;<code>git checkout -b dev_xmli</code>&#xFF1B;<br>&#x6216;&#x8005;&#x521B;&#x5EFA;&#x5F00;&#x53D1;&#x540C;&#x4E00;&#x529F;&#x80FD;&#x51E0;&#x4E2A;&#x4EBA;&#x516C;&#x7528;&#x7684;&#x5206;&#x652F;(&#x5982;&#xFF1A;dev-insurance, change-price)&#xFF1B;<br>&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5206;&#x652F;&#x4E0A;&#x63D0;&#x4EA4;&#xFF08;commit&#xFF09;&#xFF1B;<br>&#x5F00;&#x53D1;&#x5B8C;&#x6BD5;&#xFF0C;&#x505A;&#x6D4B;&#x8BD5;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF0C;pull;<br>&#x5207;&#x6362;&#x5230;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF0C;merge&#x4EE3;&#x7801;&#xFF1A; g<code>it merge release</code>&#xFF0C;&#x5408;&#x5E76;&#x7EBF;&#x4E0A;&#x6700;&#x65B0;&#x66F4;&#x6539;&#xFF0C;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release, &#x7136;&#x540E; git merge dev_xmli&#xFF0C;&#x628A;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#x5408;&#x5E76;&#x5230;&#x7EBF;&#x4E0A;&#x5206;&#x652F;&#xFF1B;<br>&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x5230;&#x670D;&#x52A1;&#x5668;-- git push;<br>&#x5982;&#x6709;&#x5FC5;&#x8981;&#x544A;&#x77E5;&#x5176;&#x4ED6;&#x540C;&#x4E8B;&#x66F4;&#x65B0;&#x4EE3;&#x7801;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7684;&#x6539;&#x52A8;&#xFF1B;<br>&#x5982;&#x679C;&#x662F;&#x53D1;&#x5E03;&#x7684;release&#xFF0C;&#x6253;tag&#xFF1B;<br><code>git tag -a v1.8.0</code><br>&#x63D0;&#x4EA4;tag:<br><code>git push --tags</code> </p>
+                                <p>&#x4E3A;&#x4E86;&#x6BCF;&#x6B21;&#x81EA;&#x52A8;&#x53D1;&#x5E03;gitbook&#x4E66;&#x7C4D;&#x5230;github.io&#x4E0A;&#x53BB;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x811A;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash
+</span>
+<span class="hljs-built_in">cd</span> doc
+
+<span class="hljs-comment"># gitbook install</span>
+<span class="hljs-comment"># install the plugins and build the static site</span>
+gitbook build
+
+<span class="hljs-built_in">cd</span> ..
+
+<span class="hljs-comment"># checkout to the gh-pages branch</span>
+git checkout gh-pages
+
+<span class="hljs-comment"># pull the latest updates</span>
+git pull origin gh-pages
+
+
+<span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;$?&quot;</span> != <span class="hljs-string">&quot;0&quot;</span> ]]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">exit</span> 1
+<span class="hljs-keyword">fi</span>
+<span class="hljs-comment"># copy the static site files into the current directory.</span>
+\cp -Rf doc/_book/* .
+
+<span class="hljs-comment"># remove &apos;node_modules&apos; and &apos;_book&apos; directory</span>
+<span class="hljs-comment"># git clean -fx gitbook/node_modules</span>
+<span class="hljs-comment"># git clean -fx gitbook/_book</span>
+rm -rf doc/_book/
+
+<span class="hljs-comment"># remove website css files, except last one</span>
+ccount=`ls website-* | wc -w`
+<span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$ccount</span>&quot;</span> &gt; 1 ]];<span class="hljs-keyword">then</span>
+    allcss=($(ls website-*))
+    c=0
+    <span class="hljs-keyword">for</span> css <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">${allcss[@]}</span>&quot;</span>; <span class="hljs-keyword">do</span>
+       <span class="hljs-built_in">let</span> <span class="hljs-string">&quot;c=c+1&quot;</span>
+       <span class="hljs-keyword">if</span> [[ <span class="hljs-variable">$c</span> -ge <span class="hljs-variable">$ccount</span> ]]; <span class="hljs-keyword">then</span>
+           <span class="hljs-built_in">break</span>;
+       <span class="hljs-keyword">fi</span>
+       rm <span class="hljs-_">-f</span> <span class="hljs-variable">$css</span>
+    <span class="hljs-keyword">done</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># add all files</span>
+git add --all
+
+<span class="hljs-comment"># commit</span>
+git commit <span class="hljs-_">-a</span> -m <span class="hljs-string">&quot;Update docs&quot;</span>
+
+<span class="hljs-comment"># push to the origin</span>
+git push origin gh-pages
+
+<span class="hljs-comment"># checkout to the master branch</span>
+git checkout master
+</code></pre>
 
                                 
                                 </section>
@@ -1048,12 +1086,12 @@
 
             
                 
-                <a href="git基本使用.html" class="navigation navigation-prev " aria-label="Previous page: git基本使用">
+                <a href="git分支管理策略.html" class="navigation navigation-prev " aria-label="Previous page: git分支管理策略">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="publish脚本.html" class="navigation navigation-next " aria-label="Next page: publish脚本">
+                <a href="gitbook.html" class="navigation navigation-next " aria-label="Next page: gitbook">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1064,7 +1102,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git分支管理策略","level":"5.1.2","depth":2,"next":{"title":"publish脚本","level":"5.1.3","depth":2,"path":"git/publish脚本.md","ref":"git/publish脚本.md","articles":[]},"previous":{"title":"git基本使用","level":"5.1.1","depth":2,"path":"git/git基本使用.md","ref":"git/git基本使用.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"git/git分支管理策略.md","mtime":"2019-06-24T11:47:02.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T06:26:28.804Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"publish脚本","level":"5.1.3","depth":2,"next":{"title":"gitbook","level":"5.1.4","depth":2,"path":"git/gitbook.md","ref":"git/gitbook.md","articles":[]},"previous":{"title":"git分支管理策略","level":"5.1.2","depth":2,"path":"git/git分支管理策略.md","ref":"git/git分支管理策略.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"git/publish脚本.md","mtime":"2019-06-28T02:36:56.549Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T06:26:28.804Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

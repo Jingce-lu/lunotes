@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>git分支管理策略 · GitBook</title>
+        <title>渲染机制 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="publish脚本.html" />
     
-    
-    <link rel="prev" href="git基本使用.html" />
+    <link rel="prev" href="存储.html" />
     
 
     </head>
@@ -294,9 +292,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../浏览器/事件机制.html">
+        <li class="chapter " data-level="1.5.1" data-path="事件机制.html">
             
-                <a href="../浏览器/事件机制.html">
+                <a href="事件机制.html">
             
                     
                     事件机制
@@ -307,9 +305,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../浏览器/跨域.html">
+        <li class="chapter " data-level="1.5.2" data-path="跨域.html">
             
-                <a href="../浏览器/跨域.html">
+                <a href="跨域.html">
             
                     
                     跨域
@@ -320,9 +318,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../浏览器/Event-loop.html">
+        <li class="chapter " data-level="1.5.3" data-path="Event-loop.html">
             
-                <a href="../浏览器/Event-loop.html">
+                <a href="Event-loop.html">
             
                     
                     Event loop
@@ -333,9 +331,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../浏览器/存储.html">
+        <li class="chapter " data-level="1.5.4" data-path="存储.html">
             
-                <a href="../浏览器/存储.html">
+                <a href="存储.html">
             
                     
                     存储
@@ -346,9 +344,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../浏览器/渲染机制.html">
+        <li class="chapter active" data-level="1.5.5" data-path="渲染机制.html">
             
-                <a href="../浏览器/渲染机制.html">
+                <a href="渲染机制.html">
             
                     
                     渲染机制
@@ -747,9 +745,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.1" data-path="git基本使用.html">
+        <li class="chapter " data-level="5.1.1" data-path="../git/git基本使用.html">
             
-                <a href="git基本使用.html">
+                <a href="../git/git基本使用.html">
             
                     
                     git基本使用
@@ -760,9 +758,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.1.2" data-path="git分支管理策略.html">
+        <li class="chapter " data-level="5.1.2" data-path="../git/git分支管理策略.html">
             
-                <a href="git分支管理策略.html">
+                <a href="../git/git分支管理策略.html">
             
                     
                     git分支管理策略
@@ -773,9 +771,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.3" data-path="publish脚本.html">
+        <li class="chapter " data-level="5.1.3" data-path="../git/publish脚本.html">
             
-                <a href="publish脚本.html">
+                <a href="../git/publish脚本.html">
             
                     
                     publish脚本
@@ -786,9 +784,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.4" data-path="gitbook.html">
+        <li class="chapter " data-level="5.1.4" data-path="../git/gitbook.html">
             
-                <a href="gitbook.html">
+                <a href="../git/gitbook.html">
             
                     
                     gitbook
@@ -970,7 +968,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >git分支管理策略</a>
+        <a href=".." >渲染机制</a>
     </h1>
 </div>
 
@@ -988,23 +986,111 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git&#x5DE5;&#x4F5C;&#x6D41;">git&#x5DE5;&#x4F5C;&#x6D41;</h1>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;">&#x5DE5;&#x4F5C;&#x6D41;</h3>
-<p>&#x57FA;&#x4E8E;gitflow, &#x7B80;&#x5316;&#x7248;&#x672C;</p>
-<p>&#x53C2;&#x8003;&#x6587;&#x6863;: <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
-<p>&#x533A;&#x522B;&#xFF1A; &#x4E0D;&#x8BBE;<code>release</code>, <code>develop</code>&#x5206;&#x652F;&#xFF0C; &#x6682;&#x4E0D;&#x6253;tag&#xFF0C; &#x4FDD;&#x7559;<code>master</code>, <code>feature/*</code>, <code>hotfix/*</code></p>
-<h3 id="&#x9879;&#x76EE;">&#x9879;&#x76EE;</h3>
-<p><code>feprogram/taoche</code>&#x7B49;&#x9879;&#x76EE;&#x9501;&#x5B9A;master, &#x4E0D;&#x5141;&#x8BB8;&#x76F4;&#x63A5;&#x5728;master&#x4E0B;&#x6539;&#x52A8;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4EA4;merge request&#x8FDB;&#x884C;review</p>
-<p><code>act</code>&#x7B49;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x654F;&#x6377;&#x5F00;&#x53D1;, &#x4E0D;&#x9501;&#x5B9A;master, &#x5206;&#x652F;&#x81EA;&#x884C;&#x7BA1;&#x7406;</p>
-<p><code>crm</code>&#x7B49;&#x9879;&#x76EE;&#x8BBE;&#x7ACB;develop&#x5206;&#x652F;&#xFF0C;&#x7279;&#x6027;&#x5206;&#x652F;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x540E;&#x5408;&#x5E76;&#x5165;develop, master&#x5206;&#x652F;&#x4ECE;develop&#x5355;&#x5411;merge</p>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
+                                <h1 id="&#x6E32;&#x67D3;&#x673A;&#x5236;">&#x6E32;&#x67D3;&#x673A;&#x5236;</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x6E32;&#x67D3;&#x673A;&#x5236;">&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x6E32;&#x67D3;&#x673A;&#x5236;</a></li>
+<li><a href="#load-&#x548C;-domcontentloaded-&#x533A;&#x522B;">Load &#x548C; DOMContentLoaded &#x533A;&#x522B;</a></li>
+<li><a href="#&#x56FE;&#x5C42;">&#x56FE;&#x5C42;</a></li>
+<li><a href="#&#x91CD;&#x7ED8;repaint&#x548C;&#x56DE;&#x6D41;reflow">&#x91CD;&#x7ED8;&#xFF08;Repaint&#xFF09;&#x548C;&#x56DE;&#x6D41;&#xFF08;Reflow&#xFF09;</a></li>
+<li><a href="#&#x51CF;&#x5C11;&#x91CD;&#x7ED8;&#x548C;&#x56DE;&#x6D41;">&#x51CF;&#x5C11;&#x91CD;&#x7ED8;&#x548C;&#x56DE;&#x6D41;</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x6E32;&#x67D3;&#x673A;&#x5236;">&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x6E32;&#x67D3;&#x673A;&#x5236;</h2>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x6E32;&#x67D3;&#x673A;&#x5236;&#x4E00;&#x822C;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6B65;&#x9AA4;</p>
 <ol>
-<li>&#x57FA;&#x4E8E;&#x6700;&#x65B0;master&#x5EFA;&#x7ACB;&#x5206;&#x652F;&#xFF0C;&#x529F;&#x80FD;&#x5206;&#x652F;<code>feature/xxx</code> &#x6216; &#x7EBF;&#x4E0A;bug&#x4FEE;&#x590D;&#x5206;&#x652F; <code>hotfix/xxx</code></li>
-<li>&#x5728;&#x5206;&#x652F;&#x4E0B;&#x5F00;&#x53D1;</li>
-<li>&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#xFF0C; merge master&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;&#xFF0C;release&#x7070;&#x5EA6;/&#x4E0A;&#x7EBF;&#x3002;</li>
+<li>&#x5904;&#x7406; HTML &#x5E76;&#x6784;&#x5EFA; DOM &#x6811;&#x3002;</li>
+<li>&#x5904;&#x7406; CSS &#x6784;&#x5EFA; CSSOM &#x6811;&#x3002;</li>
+<li>&#x5C06; DOM &#x4E0E; CSSOM &#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x6E32;&#x67D3;&#x6811;&#x3002;</li>
+<li>&#x6839;&#x636E;&#x6E32;&#x67D3;&#x6811;&#x6765;&#x5E03;&#x5C40;&#xFF0C;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</li>
+<li>&#x8C03;&#x7528; GPU &#x7ED8;&#x5236;&#xFF0C;&#x5408;&#x6210;&#x56FE;&#x5C42;&#xFF0C;&#x663E;&#x793A;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x3002;</li>
 </ol>
-<h3 id="&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
-<p>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF1B;<br>pull&#x6700;&#x65B0;&#x4EE3;&#x7801;&#xFF1B;<br>&#x5EFA;&#x7ACB;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF08;&#x65B0;&#x529F;&#x80FD;&#x5F00;&#x53D1;&#x3001;&#x5FEB;&#x901F;&#x9A8C;&#x8BC1;&#xFF0C;bug&#x4FEE;&#x590D;&#x5EFA;&#x8BAE;&#x90FD;&#x5EFA;&#x5206;&#x652F;&#xFF09;&#xFF1A;<code>git checkout -b dev_xmli</code>&#xFF1B;<br>&#x6216;&#x8005;&#x521B;&#x5EFA;&#x5F00;&#x53D1;&#x540C;&#x4E00;&#x529F;&#x80FD;&#x51E0;&#x4E2A;&#x4EBA;&#x516C;&#x7528;&#x7684;&#x5206;&#x652F;(&#x5982;&#xFF1A;dev-insurance, change-price)&#xFF1B;<br>&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5206;&#x652F;&#x4E0A;&#x63D0;&#x4EA4;&#xFF08;commit&#xFF09;&#xFF1B;<br>&#x5F00;&#x53D1;&#x5B8C;&#x6BD5;&#xFF0C;&#x505A;&#x6D4B;&#x8BD5;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF0C;pull;<br>&#x5207;&#x6362;&#x5230;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF0C;merge&#x4EE3;&#x7801;&#xFF1A; g<code>it merge release</code>&#xFF0C;&#x5408;&#x5E76;&#x7EBF;&#x4E0A;&#x6700;&#x65B0;&#x66F4;&#x6539;&#xFF0C;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release, &#x7136;&#x540E; git merge dev_xmli&#xFF0C;&#x628A;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#x5408;&#x5E76;&#x5230;&#x7EBF;&#x4E0A;&#x5206;&#x652F;&#xFF1B;<br>&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x5230;&#x670D;&#x52A1;&#x5668;-- git push;<br>&#x5982;&#x6709;&#x5FC5;&#x8981;&#x544A;&#x77E5;&#x5176;&#x4ED6;&#x540C;&#x4E8B;&#x66F4;&#x65B0;&#x4EE3;&#x7801;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7684;&#x6539;&#x52A8;&#xFF1B;<br>&#x5982;&#x679C;&#x662F;&#x53D1;&#x5E03;&#x7684;release&#xFF0C;&#x6253;tag&#xFF1B;<br><code>git tag -a v1.8.0</code><br>&#x63D0;&#x4EA4;tag:<br><code>git push --tags</code> </p>
+<p><img src="../resource/assets/&#x6D4F;&#x89C8;&#x5668;/04.png" alt=""></p>
+<p>&#x5728;&#x6784;&#x5EFA; CSSOM &#x6811;&#x65F6;&#xFF0C;&#x4F1A;&#x963B;&#x585E;&#x6E32;&#x67D3;&#xFF0C;&#x76F4;&#x81F3; CSSOM &#x6811;&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#x3002;&#x5E76;&#x4E14;&#x6784;&#x5EFA; CSSOM &#x6811;&#x662F;&#x4E00;&#x4E2A;&#x5341;&#x5206;&#x6D88;&#x8017;&#x6027;&#x80FD;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x6240;&#x4EE5;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x4FDD;&#x8BC1;&#x5C42;&#x7EA7;&#x6241;&#x5E73;&#xFF0C;&#x51CF;&#x5C11;&#x8FC7;&#x5EA6;&#x5C42;&#x53E0;&#xFF0C;&#x8D8A;&#x662F;&#x5177;&#x4F53;&#x7684; CSS &#x9009;&#x62E9;&#x5668;&#xFF0C;&#x6267;&#x884C;&#x901F;&#x5EA6;&#x8D8A;&#x6162;&#x3002;</p>
+<p>&#x5F53; HTML &#x89E3;&#x6790;&#x5230; script &#x6807;&#x7B7E;&#x65F6;&#xFF0C;&#x4F1A;&#x6682;&#x505C;&#x6784;&#x5EFA; DOM&#xFF0C;&#x5B8C;&#x6210;&#x540E;&#x624D;&#x4F1A;&#x4ECE;&#x6682;&#x505C;&#x7684;&#x5730;&#x65B9;&#x91CD;&#x65B0;&#x5F00;&#x59CB;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x9996;&#x5C4F;&#x6E32;&#x67D3;&#x7684;&#x8D8A;&#x5FEB;&#xFF0C;&#x5C31;&#x8D8A;&#x4E0D;&#x5E94;&#x8BE5;&#x5728;&#x9996;&#x5C4F;&#x5C31;&#x52A0;&#x8F7D; JS &#x6587;&#x4EF6;&#x3002;&#x5E76;&#x4E14; CSS &#x4E5F;&#x4F1A;&#x5F71;&#x54CD; JS &#x7684;&#x6267;&#x884C;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x89E3;&#x6790;&#x5B8C;&#x6837;&#x5F0F;&#x8868;&#x624D;&#x4F1A;&#x6267;&#x884C; JS&#xFF0C;&#x6240;&#x4EE5;&#x4E5F;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;CSS &#x4E5F;&#x4F1A;&#x6682;&#x505C;&#x6784;&#x5EFA; DOM&#x3002;</p>
+<p><img src="../resource/assets/&#x6D4F;&#x89C8;&#x5668;/05.png" alt=""></p>
+<h2 id="load-&#x548C;-domcontentloaded-&#x533A;&#x522B;">Load &#x548C; DOMContentLoaded &#x533A;&#x522B;</h2>
+<p>Load &#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4EE3;&#x8868;&#x9875;&#x9762;&#x4E2D;&#x7684; DOM&#xFF0C;CSS&#xFF0C;JS&#xFF0C;&#x56FE;&#x7247;&#x5DF2;&#x7ECF;&#x5168;&#x90E8;&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#x3002;</p>
+<p>DOMContentLoaded &#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4EE3;&#x8868;&#x521D;&#x59CB;&#x7684; HTML &#x88AB;&#x5B8C;&#x5168;&#x52A0;&#x8F7D;&#x548C;&#x89E3;&#x6790;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x7B49;&#x5F85; CSS&#xFF0C;JS&#xFF0C;&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x3002;</p>
+<h2 id="&#x56FE;&#x5C42;">&#x56FE;&#x5C42;</h2>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x666E;&#x901A;&#x6587;&#x6863;&#x6D41;&#x770B;&#x6210;&#x4E00;&#x4E2A;&#x56FE;&#x5C42;&#x3002;&#x7279;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x56FE;&#x5C42;&#x3002;<strong>&#x4E0D;&#x540C;&#x7684;&#x56FE;&#x5C42;&#x6E32;&#x67D3;&#x4E92;&#x4E0D;&#x5F71;&#x54CD;</strong>&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x67D0;&#x4E9B;&#x9891;&#x7E41;&#x9700;&#x8981;&#x6E32;&#x67D3;&#x7684;&#x5EFA;&#x8BAE;&#x5355;&#x72EC;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x56FE;&#x5C42;&#xFF0C;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3002;<strong>&#x4F46;&#x4E5F;&#x4E0D;&#x80FD;&#x751F;&#x6210;&#x8FC7;&#x591A;&#x7684;&#x56FE;&#x5C42;&#xFF0C;&#x4F1A;&#x5F15;&#x8D77;&#x53CD;&#x4F5C;&#x7528;</strong>&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x65B0;&#x56FE;&#x5C42;</p>
+<ul>
+<li>3D &#x53D8;&#x6362;&#xFF1A;<code>translate3d</code>&#x3001;<code>translateZ</code></li>
+<li><code>will-change</code></li>
+<li><code>video</code>&#x3001;<code>iframe</code> &#x6807;&#x7B7E;</li>
+<li>&#x901A;&#x8FC7;&#x52A8;&#x753B;&#x5B9E;&#x73B0;&#x7684; <code>opacity</code> &#x52A8;&#x753B;&#x8F6C;&#x6362;</li>
+<li><code>position: fixed</code></li>
+</ul>
+<h2 id="&#x91CD;&#x7ED8;&#xFF08;repaint&#xFF09;&#x548C;&#x56DE;&#x6D41;&#xFF08;reflow&#xFF09;">&#x91CD;&#x7ED8;&#xFF08;Repaint&#xFF09;&#x548C;&#x56DE;&#x6D41;&#xFF08;Reflow&#xFF09;</h2>
+<p>&#x91CD;&#x7ED8;&#x548C;&#x56DE;&#x6D41;&#x662F;&#x6E32;&#x67D3;&#x6B65;&#x9AA4;&#x4E2D;&#x7684;&#x4E00;&#x5C0F;&#x8282;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E24;&#x4E2A;&#x6B65;&#x9AA4;&#x5BF9;&#x4E8E;&#x6027;&#x80FD;&#x5F71;&#x54CD;&#x5F88;&#x5927;&#x3002;</p>
+<ul>
+<li>&#x91CD;&#x7ED8;&#x662F;&#x5F53;&#x8282;&#x70B9;&#x9700;&#x8981;&#x66F4;&#x6539;&#x5916;&#x89C2;&#x800C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5E03;&#x5C40;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x6539;&#x53D8; color &#x5C31;&#x53EB;&#x79F0;&#x4E3A;&#x91CD;&#x7ED8;</li>
+<li>&#x56DE;&#x6D41;&#x662F;&#x5E03;&#x5C40;&#x6216;&#x8005;&#x51E0;&#x4F55;&#x5C5E;&#x6027;&#x9700;&#x8981;&#x6539;&#x53D8;&#x5C31;&#x79F0;&#x4E3A;&#x56DE;&#x6D41;&#x3002;</li>
+</ul>
+<p>&#x56DE;&#x6D41;&#x5FC5;&#x5B9A;&#x4F1A;&#x53D1;&#x751F;&#x91CD;&#x7ED8;&#xFF0C;&#x91CD;&#x7ED8;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x5F15;&#x53D1;&#x56DE;&#x6D41;&#x3002;&#x56DE;&#x6D41;&#x6240;&#x9700;&#x7684;&#x6210;&#x672C;&#x6BD4;&#x91CD;&#x7ED8;&#x9AD8;&#x7684;&#x591A;&#xFF0C;&#x6539;&#x53D8;&#x6DF1;&#x5C42;&#x6B21;&#x7684;&#x8282;&#x70B9;&#x5F88;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x7236;&#x8282;&#x70B9;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x56DE;&#x6D41;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x52A8;&#x4F5C;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF1A;</p>
+<ul>
+<li>&#x6539;&#x53D8; window &#x5927;&#x5C0F;</li>
+<li>&#x6539;&#x53D8;&#x5B57;&#x4F53;</li>
+<li>&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x6837;&#x5F0F;</li>
+<li>&#x6587;&#x5B57;&#x6539;&#x53D8;</li>
+<li>&#x5B9A;&#x4F4D;&#x6216;&#x8005;&#x6D6E;&#x52A8;</li>
+<li>&#x76D2;&#x6A21;&#x578B;</li>
+</ul>
+<p>&#x5F88;&#x591A;&#x4EBA;&#x4E0D;&#x77E5;&#x9053;&#x7684;&#x662F;&#xFF0C;&#x91CD;&#x7ED8;&#x548C;&#x56DE;&#x6D41;&#x5176;&#x5B9E;&#x548C; Event loop &#x6709;&#x5173;&#x3002;</p>
+<ol>
+<li>&#x5F53; Event loop &#x6267;&#x884C;&#x5B8C; Microtasks &#x540E;&#xFF0C;&#x4F1A;&#x5224;&#x65AD; document &#x662F;&#x5426;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x3002;&#x56E0;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x662F; 60Hz &#x7684;&#x5237;&#x65B0;&#x7387;&#xFF0C;&#x6BCF; 16ms &#x624D;&#x4F1A;&#x66F4;&#x65B0;&#x4E00;&#x6B21;&#x3002;</li>
+<li>&#x7136;&#x540E;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709; resize &#x6216;&#x8005; scroll &#xFF0C;&#x6709;&#x7684;&#x8BDD;&#x4F1A;&#x53BB;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5; resize &#x548C; scroll &#x4E8B;&#x4EF6;&#x4E5F;&#x662F;&#x81F3;&#x5C11; 16ms &#x624D;&#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#xFF0C;&#x5E76;&#x4E14;&#x81EA;&#x5E26;&#x8282;&#x6D41;&#x529F;&#x80FD;&#x3002;</li>
+<li>&#x5224;&#x65AD;&#x662F;&#x5426;&#x89E6;&#x53D1;&#x4E86; media query</li>
+<li>&#x66F4;&#x65B0;&#x52A8;&#x753B;&#x5E76;&#x4E14;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;</li>
+<li>&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x5168;&#x5C4F;&#x64CD;&#x4F5C;&#x4E8B;&#x4EF6;</li>
+<li>&#x6267;&#x884C; requestAnimationFrame &#x56DE;&#x8C03;</li>
+<li>&#x6267;&#x884C; IntersectionObserver &#x56DE;&#x8C03;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x5143;&#x7D20;&#x662F;&#x5426;&#x53EF;&#x89C1;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x61D2;&#x52A0;&#x8F7D;&#x4E0A;&#xFF0C;&#x4F46;&#x662F;&#x517C;&#x5BB9;&#x6027;&#x4E0D;&#x597D;</li>
+<li>&#x66F4;&#x65B0;&#x754C;&#x9762;</li>
+<li>&#x4EE5;&#x4E0A;&#x5C31;&#x662F;&#x4E00;&#x5E27;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x3002;&#x5982;&#x679C;&#x5728;&#x4E00;&#x5E27;&#x4E2D;&#x6709;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#xFF0C;&#x5C31;&#x4F1A;&#x53BB;&#x6267;&#x884C; requestIdleCallback &#x56DE;&#x8C03;&#x3002;</li>
+</ol>
+<h2 id="&#x51CF;&#x5C11;&#x91CD;&#x7ED8;&#x548C;&#x56DE;&#x6D41;">&#x51CF;&#x5C11;&#x91CD;&#x7ED8;&#x548C;&#x56DE;&#x6D41;</h2>
+<ol>
+<li><p>&#x4F7F;&#x7528; <code>translate</code> &#x66FF;&#x4EE3; <code>top</code></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+ <span class="hljs-selector-class">.test</span> {
+   <span class="hljs-attribute">position</span>: absolute;
+   <span class="hljs-attribute">top</span>: <span class="hljs-number">10px</span>;
+   <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+   <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+   <span class="hljs-attribute">background</span>: red;
+ }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+ setTimeout(() =&gt; {
+   <span class="hljs-comment">// &#x5F15;&#x8D77;&#x56DE;&#x6D41;</span>
+   <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;.test&apos;</span>).style.top = <span class="hljs-string">&apos;100px&apos;</span>
+ }, <span class="hljs-number">1000</span>)
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x4F7F;&#x7528; <code>visibility</code> &#x66FF;&#x6362;<code>display: none</code> &#xFF0C;&#x56E0;&#x4E3A;&#x524D;&#x8005;&#x53EA;&#x4F1A;&#x5F15;&#x8D77;&#x91CD;&#x7ED8;&#xFF0C;&#x540E;&#x8005;&#x4F1A;&#x5F15;&#x53D1;&#x56DE;&#x6D41;&#xFF08;&#x6539;&#x53D8;&#x4E86;&#x5E03;&#x5C40;&#xFF09;</p>
+</li>
+<li><p>&#x628A; DOM &#x79BB;&#x7EBF;&#x540E;&#x4FEE;&#x6539;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x5148;&#x628A; DOM &#x7ED9; <code>display:none</code> (&#x6709;&#x4E00;&#x6B21; Reflow)&#xFF0C;&#x7136;&#x540E;&#x4F60;&#x4FEE;&#x6539; 100 &#x6B21;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x628A;&#x5B83;&#x663E;&#x793A;&#x51FA;&#x6765;</p>
+</li>
+<li><p>&#x4E0D;&#x8981;&#x628A; DOM &#x7ED3;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x91CC;&#x5F53;&#x6210;&#x5FAA;&#x73AF;&#x91CC;&#x7684;&#x53D8;&#x91CF;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) {
+ <span class="hljs-comment">// &#x83B7;&#x53D6; offsetTop &#x4F1A;&#x5BFC;&#x81F4;&#x56DE;&#x6D41;&#xFF0C;&#x56E0;&#x4E3A;&#x9700;&#x8981;&#x53BB;&#x83B7;&#x53D6;&#x6B63;&#x786E;&#x7684;&#x503C;</span>
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;.test&apos;</span>).style.offsetTop)
+}
+</code></pre>
+</li>
+<li><p>&#x4E0D;&#x8981;&#x4F7F;&#x7528; table &#x5E03;&#x5C40;&#xFF0C;&#x53EF;&#x80FD;&#x5F88;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;&#x5C0F;&#x6539;&#x52A8;&#x4F1A;&#x9020;&#x6210;&#x6574;&#x4E2A; table &#x7684;&#x91CD;&#x65B0;&#x5E03;&#x5C40;</p>
+</li>
+<li><p>&#x52A8;&#x753B;&#x5B9E;&#x73B0;&#x7684;&#x901F;&#x5EA6;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x52A8;&#x753B;&#x901F;&#x5EA6;&#x8D8A;&#x5FEB;&#xFF0C;&#x56DE;&#x6D41;&#x6B21;&#x6570;&#x8D8A;&#x591A;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4F7F;&#x7528; <code>requestAnimationFrame</code></p>
+</li>
+<li><p>CSS &#x9009;&#x62E9;&#x7B26;&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#x5339;&#x914D;&#x67E5;&#x627E;&#xFF0C;&#x907F;&#x514D; DOM &#x6DF1;&#x5EA6;&#x8FC7;&#x6DF1;</p>
+</li>
+<li><p>&#x5C06;&#x9891;&#x7E41;&#x8FD0;&#x884C;&#x7684;&#x52A8;&#x753B;&#x53D8;&#x4E3A;&#x56FE;&#x5C42;&#xFF0C;&#x56FE;&#x5C42;&#x80FD;&#x591F;&#x963B;&#x6B62;&#x8BE5;&#x8282;&#x70B9;&#x56DE;&#x6D41;&#x5F71;&#x54CD;&#x522B;&#x7684;&#x5143;&#x7D20;&#x3002;&#x6BD4;&#x5982;&#x5BF9;&#x4E8E; <code>video</code> &#x6807;&#x7B7E;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x8BE5;&#x8282;&#x70B9;&#x53D8;&#x4E3A;&#x56FE;&#x5C42;&#x3002;</p>
+</li>
+</ol>
 
                                 
                                 </section>
@@ -1048,14 +1134,10 @@
 
             
                 
-                <a href="git基本使用.html" class="navigation navigation-prev " aria-label="Previous page: git基本使用">
+                <a href="存储.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 存储">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="publish脚本.html" class="navigation navigation-next " aria-label="Next page: publish脚本">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -1064,7 +1146,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git分支管理策略","level":"5.1.2","depth":2,"next":{"title":"publish脚本","level":"5.1.3","depth":2,"path":"git/publish脚本.md","ref":"git/publish脚本.md","articles":[]},"previous":{"title":"git基本使用","level":"5.1.1","depth":2,"path":"git/git基本使用.md","ref":"git/git基本使用.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"git/git分支管理策略.md","mtime":"2019-06-24T11:47:02.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T06:26:28.804Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"渲染机制","level":"1.5.5","depth":2,"next":{"title":"5.NodeJs","level":"1.6","depth":1,"ref":"","articles":[{"title":"node命令","level":"1.6.1","depth":2,"path":"Node/node基础/node命令.md","ref":"Node/node基础/node命令.md","articles":[]}]},"previous":{"title":"存储","level":"1.5.4","depth":2,"path":"浏览器/存储.md","ref":"浏览器/存储.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"浏览器/渲染机制.md","mtime":"2019-06-28T01:34:43.572Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T06:26:28.804Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>git分支管理策略 · GitBook</title>
+        <title>跨域 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="publish脚本.html" />
+    <link rel="next" href="Event-loop.html" />
     
     
-    <link rel="prev" href="git基本使用.html" />
+    <link rel="prev" href="事件机制.html" />
     
 
     </head>
@@ -294,9 +294,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../浏览器/事件机制.html">
+        <li class="chapter " data-level="1.5.1" data-path="事件机制.html">
             
-                <a href="../浏览器/事件机制.html">
+                <a href="事件机制.html">
             
                     
                     事件机制
@@ -307,9 +307,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../浏览器/跨域.html">
+        <li class="chapter active" data-level="1.5.2" data-path="跨域.html">
             
-                <a href="../浏览器/跨域.html">
+                <a href="跨域.html">
             
                     
                     跨域
@@ -320,9 +320,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../浏览器/Event-loop.html">
+        <li class="chapter " data-level="1.5.3" data-path="Event-loop.html">
             
-                <a href="../浏览器/Event-loop.html">
+                <a href="Event-loop.html">
             
                     
                     Event loop
@@ -333,9 +333,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../浏览器/存储.html">
+        <li class="chapter " data-level="1.5.4" data-path="存储.html">
             
-                <a href="../浏览器/存储.html">
+                <a href="存储.html">
             
                     
                     存储
@@ -346,9 +346,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../浏览器/渲染机制.html">
+        <li class="chapter " data-level="1.5.5" data-path="渲染机制.html">
             
-                <a href="../浏览器/渲染机制.html">
+                <a href="渲染机制.html">
             
                     
                     渲染机制
@@ -747,9 +747,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.1" data-path="git基本使用.html">
+        <li class="chapter " data-level="5.1.1" data-path="../git/git基本使用.html">
             
-                <a href="git基本使用.html">
+                <a href="../git/git基本使用.html">
             
                     
                     git基本使用
@@ -760,9 +760,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.1.2" data-path="git分支管理策略.html">
+        <li class="chapter " data-level="5.1.2" data-path="../git/git分支管理策略.html">
             
-                <a href="git分支管理策略.html">
+                <a href="../git/git分支管理策略.html">
             
                     
                     git分支管理策略
@@ -773,9 +773,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.3" data-path="publish脚本.html">
+        <li class="chapter " data-level="5.1.3" data-path="../git/publish脚本.html">
             
-                <a href="publish脚本.html">
+                <a href="../git/publish脚本.html">
             
                     
                     publish脚本
@@ -786,9 +786,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.4" data-path="gitbook.html">
+        <li class="chapter " data-level="5.1.4" data-path="../git/gitbook.html">
             
-                <a href="gitbook.html">
+                <a href="../git/gitbook.html">
             
                     
                     gitbook
@@ -970,7 +970,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >git分支管理策略</a>
+        <a href=".." >跨域</a>
     </h1>
 </div>
 
@@ -988,23 +988,62 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git&#x5DE5;&#x4F5C;&#x6D41;">git&#x5DE5;&#x4F5C;&#x6D41;</h1>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;">&#x5DE5;&#x4F5C;&#x6D41;</h3>
-<p>&#x57FA;&#x4E8E;gitflow, &#x7B80;&#x5316;&#x7248;&#x672C;</p>
-<p>&#x53C2;&#x8003;&#x6587;&#x6863;: <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
-<p>&#x533A;&#x522B;&#xFF1A; &#x4E0D;&#x8BBE;<code>release</code>, <code>develop</code>&#x5206;&#x652F;&#xFF0C; &#x6682;&#x4E0D;&#x6253;tag&#xFF0C; &#x4FDD;&#x7559;<code>master</code>, <code>feature/*</code>, <code>hotfix/*</code></p>
-<h3 id="&#x9879;&#x76EE;">&#x9879;&#x76EE;</h3>
-<p><code>feprogram/taoche</code>&#x7B49;&#x9879;&#x76EE;&#x9501;&#x5B9A;master, &#x4E0D;&#x5141;&#x8BB8;&#x76F4;&#x63A5;&#x5728;master&#x4E0B;&#x6539;&#x52A8;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4EA4;merge request&#x8FDB;&#x884C;review</p>
-<p><code>act</code>&#x7B49;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x654F;&#x6377;&#x5F00;&#x53D1;, &#x4E0D;&#x9501;&#x5B9A;master, &#x5206;&#x652F;&#x81EA;&#x884C;&#x7BA1;&#x7406;</p>
-<p><code>crm</code>&#x7B49;&#x9879;&#x76EE;&#x8BBE;&#x7ACB;develop&#x5206;&#x652F;&#xFF0C;&#x7279;&#x6027;&#x5206;&#x652F;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x540E;&#x5408;&#x5E76;&#x5165;develop, master&#x5206;&#x652F;&#x4ECE;develop&#x5355;&#x5411;merge</p>
-<h3 id="&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
-<ol>
-<li>&#x57FA;&#x4E8E;&#x6700;&#x65B0;master&#x5EFA;&#x7ACB;&#x5206;&#x652F;&#xFF0C;&#x529F;&#x80FD;&#x5206;&#x652F;<code>feature/xxx</code> &#x6216; &#x7EBF;&#x4E0A;bug&#x4FEE;&#x590D;&#x5206;&#x652F; <code>hotfix/xxx</code></li>
-<li>&#x5728;&#x5206;&#x652F;&#x4E0B;&#x5F00;&#x53D1;</li>
-<li>&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#xFF0C; merge master&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;&#xFF0C;release&#x7070;&#x5EA6;/&#x4E0A;&#x7EBF;&#x3002;</li>
-</ol>
-<h3 id="&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x63A8;&#x8350;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
-<p>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF1B;<br>pull&#x6700;&#x65B0;&#x4EE3;&#x7801;&#xFF1B;<br>&#x5EFA;&#x7ACB;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF08;&#x65B0;&#x529F;&#x80FD;&#x5F00;&#x53D1;&#x3001;&#x5FEB;&#x901F;&#x9A8C;&#x8BC1;&#xFF0C;bug&#x4FEE;&#x590D;&#x5EFA;&#x8BAE;&#x90FD;&#x5EFA;&#x5206;&#x652F;&#xFF09;&#xFF1A;<code>git checkout -b dev_xmli</code>&#xFF1B;<br>&#x6216;&#x8005;&#x521B;&#x5EFA;&#x5F00;&#x53D1;&#x540C;&#x4E00;&#x529F;&#x80FD;&#x51E0;&#x4E2A;&#x4EBA;&#x516C;&#x7528;&#x7684;&#x5206;&#x652F;(&#x5982;&#xFF1A;dev-insurance, change-price)&#xFF1B;<br>&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5206;&#x652F;&#x4E0A;&#x63D0;&#x4EA4;&#xFF08;commit&#xFF09;&#xFF1B;<br>&#x5F00;&#x53D1;&#x5B8C;&#x6BD5;&#xFF0C;&#x505A;&#x6D4B;&#x8BD5;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release&#x5206;&#x652F;&#xFF0C;pull;<br>&#x5207;&#x6362;&#x5230;&#x5DE5;&#x4F5C;&#x5206;&#x652F;&#xFF0C;merge&#x4EE3;&#x7801;&#xFF1A; g<code>it merge release</code>&#xFF0C;&#x5408;&#x5E76;&#x7EBF;&#x4E0A;&#x6700;&#x65B0;&#x66F4;&#x6539;&#xFF0C;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#xFF1B;<br>&#x5207;&#x6362;&#x5230;release, &#x7136;&#x540E; git merge dev_xmli&#xFF0C;&#x628A;&#x81EA;&#x5DF1;&#x7684;&#x66F4;&#x6539;&#x5408;&#x5E76;&#x5230;&#x7EBF;&#x4E0A;&#x5206;&#x652F;&#xFF1B;<br>&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x5230;&#x670D;&#x52A1;&#x5668;-- git push;<br>&#x5982;&#x6709;&#x5FC5;&#x8981;&#x544A;&#x77E5;&#x5176;&#x4ED6;&#x540C;&#x4E8B;&#x66F4;&#x65B0;&#x4EE3;&#x7801;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7684;&#x6539;&#x52A8;&#xFF1B;<br>&#x5982;&#x679C;&#x662F;&#x53D1;&#x5E03;&#x7684;release&#xFF0C;&#x6253;tag&#xFF1B;<br><code>git tag -a v1.8.0</code><br>&#x63D0;&#x4EA4;tag:<br><code>git push --tags</code> </p>
+                                <h1 id="&#x8DE8;&#x57DF;">&#x8DE8;&#x57DF;</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#jsonp">JSONP</a></li>
+<li><a href="#cors">CORS</a></li>
+<li><a href="#documentdomain">document.domain</a></li>
+<li><a href="#postmessage">postMessage</a></li>
+</ul>
+<!-- /TOC -->
+<p>&#x56E0;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x51FA;&#x4E8E;&#x5B89;&#x5168;&#x8003;&#x8651;&#xFF0C;&#x6709;&#x540C;&#x6E90;&#x7B56;&#x7565;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x534F;&#x8BAE;&#x3001;&#x57DF;&#x540D;&#x6216;&#x8005;&#x7AEF;&#x53E3;&#x6709;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x5C31;&#x662F;&#x8DE8;&#x57DF;&#xFF0C;Ajax &#x8BF7;&#x6C42;&#x4F1A;&#x5931;&#x8D25;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#x89E3;&#x51B3;&#x8DE8;&#x57DF;&#x7684;&#x95EE;&#x9898;</p>
+<h2 id="jsonp">JSONP</h2>
+<p>JSONP &#x7684;&#x539F;&#x7406;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x5229;&#x7528; <code>&lt;script&gt;</code> &#x6807;&#x7B7E;&#x6CA1;&#x6709;&#x8DE8;&#x57DF;&#x9650;&#x5236;&#x7684;&#x6F0F;&#x6D1E;&#x3002;&#x901A;&#x8FC7; <code>&lt;script&gt;</code> &#x6807;&#x7B7E;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x7684;&#x5730;&#x5740;&#x5E76;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x6765;&#x63A5;&#x6536;&#x6570;&#x636E;&#x5F53;&#x9700;&#x8981;&#x901A;&#x8BAF;&#x65F6;&#x3002;</p>
+<pre><code class="lang-js">&lt;script src=&quot;http://domain/api?param1=a&amp;param2=b&amp;callback=jsonp&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    function jsonp(data) {
+        console.log(data)
+    }
+&lt;/script&gt;
+</code></pre>
+<p><code>JSONP</code> &#x4F7F;&#x7528;&#x7B80;&#x5355;&#x4E14;&#x517C;&#x5BB9;&#x6027;&#x4E0D;&#x9519;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x9650;&#x4E8E; <code>get</code> &#x8BF7;&#x6C42;&#x3002;</p>
+<p>&#x5728;&#x5F00;&#x53D1;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x9047;&#x5230;&#x591A;&#x4E2A; JSONP &#x8BF7;&#x6C42;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x540D;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x5C01;&#x88C5;&#x4E00;&#x4E2A; JSONP&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x7B80;&#x5355;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsonp</span>(<span class="hljs-params">url, jsonpCallback, success</span>) </span>{
+  <span class="hljs-keyword">let</span> script = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;script&apos;</span>)
+  script.src = url
+  script.async = <span class="hljs-literal">true</span>
+  script.type = <span class="hljs-string">&apos;text/javascript&apos;</span>
+  <span class="hljs-built_in">window</span>[jsonpCallback] = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+    success &amp;&amp; success(data)
+  }
+  <span class="hljs-built_in">document</span>.body.appendChild(script)
+}
+jsonp(<span class="hljs-string">&apos;http://xxx&apos;</span>, <span class="hljs-string">&apos;callback&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value)
+})
+</code></pre>
+<h2 id="cors">CORS</h2>
+<p>CORS &#x9700;&#x8981;&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x540E;&#x7AEF;&#x540C;&#x65F6;&#x652F;&#x6301;&#x3002;IE 8 &#x548C; 9 &#x9700;&#x8981;&#x901A;&#x8FC7; <code>XDomainRequest</code> &#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x81EA;&#x52A8;&#x8FDB;&#x884C; CORS &#x901A;&#x4FE1;&#xFF0C;&#x5B9E;&#x73B0; CORS &#x901A;&#x4FE1;&#x7684;&#x5173;&#x952E;&#x662F;&#x540E;&#x7AEF;&#x3002;&#x53EA;&#x8981;&#x540E;&#x7AEF;&#x5B9E;&#x73B0;&#x4E86; CORS&#xFF0C;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x8DE8;&#x57DF;&#x3002;</p>
+<p>&#x670D;&#x52A1;&#x7AEF;&#x8BBE;&#x7F6E; <code>Access-Control-Allow-Origin</code> &#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x542F; <code>CORS</code>&#x3002; &#x8BE5;&#x5C5E;&#x6027;&#x8868;&#x793A;&#x54EA;&#x4E9B;&#x57DF;&#x540D;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8D44;&#x6E90;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x901A;&#x914D;&#x7B26;&#x5219;&#x8868;&#x793A;&#x6240;&#x6709;&#x7F51;&#x7AD9;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8D44;&#x6E90;&#x3002;</p>
+<h2 id="documentdomain">document.domain</h2>
+<p>&#x8BE5;&#x65B9;&#x5F0F;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x4E8C;&#x7EA7;&#x57DF;&#x540D;&#x76F8;&#x540C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6BD4;&#x5982; <code>a.test.com</code> &#x548C; <code>b.test.com</code> &#x9002;&#x7528;&#x4E8E;&#x8BE5;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x53EA;&#x9700;&#x8981;&#x7ED9;&#x9875;&#x9762;&#x6DFB;&#x52A0; <code>document.domain = &apos;test.com&apos;</code> &#x8868;&#x793A;&#x4E8C;&#x7EA7;&#x57DF;&#x540D;&#x90FD;&#x76F8;&#x540C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8DE8;&#x57DF;</p>
+<h2 id="postmessage">postMessage</h2>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x5D4C;&#x5165;&#x9875;&#x9762;&#x4E2D;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x9875;&#x9762;&#x6570;&#x636E;&#x3002;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x5224;&#x65AD;&#x6765;&#x6E90;&#x5E76;&#x63A5;&#x6536;&#x6D88;&#x606F;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x53D1;&#x9001;&#x6D88;&#x606F;&#x7AEF;</span>
+<span class="hljs-built_in">window</span>.parent.postMessage(<span class="hljs-string">&apos;message&apos;</span>, <span class="hljs-string">&apos;http://test.com&apos;</span>)
+<span class="hljs-comment">// &#x63A5;&#x6536;&#x6D88;&#x606F;&#x7AEF;</span>
+<span class="hljs-keyword">var</span> mc = <span class="hljs-keyword">new</span> MessageChannel()
+mc.addEventListener(<span class="hljs-string">&apos;message&apos;</span>, event =&gt; {
+  <span class="hljs-keyword">var</span> origin = event.origin || event.originalEvent.origin
+  <span class="hljs-keyword">if</span> (origin === <span class="hljs-string">&apos;http://test.com&apos;</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x9A8C;&#x8BC1;&#x901A;&#x8FC7;&apos;</span>)
+  }
+})
+</code></pre>
 
                                 
                                 </section>
@@ -1048,12 +1087,12 @@
 
             
                 
-                <a href="git基本使用.html" class="navigation navigation-prev " aria-label="Previous page: git基本使用">
+                <a href="事件机制.html" class="navigation navigation-prev " aria-label="Previous page: 事件机制">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="publish脚本.html" class="navigation navigation-next " aria-label="Next page: publish脚本">
+                <a href="Event-loop.html" class="navigation navigation-next " aria-label="Next page: Event loop">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1064,7 +1103,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git分支管理策略","level":"5.1.2","depth":2,"next":{"title":"publish脚本","level":"5.1.3","depth":2,"path":"git/publish脚本.md","ref":"git/publish脚本.md","articles":[]},"previous":{"title":"git基本使用","level":"5.1.1","depth":2,"path":"git/git基本使用.md","ref":"git/git基本使用.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"git/git分支管理策略.md","mtime":"2019-06-24T11:47:02.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T06:26:28.804Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"跨域","level":"1.5.2","depth":2,"next":{"title":"Event loop","level":"1.5.3","depth":2,"path":"浏览器/Event-loop.md","ref":"浏览器/Event-loop.md","articles":[]},"previous":{"title":"事件机制","level":"1.5.1","depth":2,"path":"浏览器/事件机制.md","ref":"浏览器/事件机制.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"浏览器/跨域.md","mtime":"2019-06-28T01:34:43.572Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T06:26:28.804Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
