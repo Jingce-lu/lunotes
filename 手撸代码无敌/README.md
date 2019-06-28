@@ -14,4 +14,6 @@
 - [封装Ajax和Promise](./封装Ajax和Promise.md)
 - [js-tree](./js-tree.md)
 - [js复杂判断的更优雅写法](./js复杂判断的更优雅写法.md)
+- [JavaScript优雅的实现方式](./JavaScript优雅的实现方式.md)
 - [函数式代码](./函数式代码.md)
+- [js编程黑科技](./js编程黑科技.md)
