@@ -18,6 +18,7 @@
     * [三种js类的实现方法(es5和es6)](Js/js基础/三种js类的实现方法(es5和es6).md)
     * [async await](Js/js基础/async-await.md)
     * [关于移动端,webview监听滚动条的坑](Js/js基础/关于移动端,webview监听滚动条的坑.md)
+    * [js类型转换](Js/js基础/js类型转换.md)
 
 * 2.正则
     * [正则表达式不要背](Js/正则/正则表达式不要背.md)
@@ -39,17 +40,20 @@
 
 * 6.NodeJs
   - [node命令](Node/node基础/node命令.md)
+  - [搭建一个私有的npm仓库](Node/node基础/搭建一个私有的npm仓库.md)
 
 ## Part 2 - Advanced
 
-- 1.框架通识
+* 1.框架通识
   - [MVVM](框架通识/MVVM.md)
   - [Virtual Dom](框架通识/VirtualDom.md)
+  - [Object.defineProperty方法](框架通识/Object.defineProperty方法.md)
+  - [Proxy](框架通识/Proxy.md)
 
-- [2.安全XSS-CSRF](安全/安全.md)
-- [3.性能](安全/性能.md)
-- [4.如何渲染几万条数据并不卡住界面](面试/如何渲染几万条数据并不卡住界面.md)
-- 5.综合
+* [2.安全XSS-CSRF](安全/安全.md)
+* [3.性能](安全/性能.md)
+* [4.如何渲染几万条数据并不卡住界面](面试/如何渲染几万条数据并不卡住界面.md)
+* 5.综合
   - [综合1](面试/综合1.md)
   - [综合2](面试/综合2.md)
   - [综合3](面试/综合3.md)
@@ -65,10 +69,14 @@
   - [Promise 实现](手撸代码无敌/Promise实现.md)
   - [Generator实现](手撸代码无敌/Generator实现.md)
   - [call, apply, bind](手撸代码无敌/call-apply-bind.md)
+  - [不用call和apply方法模拟实现ES5的bind方法](手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.md)
   - [curry](手撸代码无敌/curry.md)
   - [Template](手撸代码无敌/Template.md)
   - [封装Ajax和Promise](手撸代码无敌/封装Ajax和Promise.md)
   - [js-tree](手撸代码无敌/js-tree.md)
+  - [js复杂判断的更优雅写法](手撸代码无敌/js复杂判断的更优雅写法.md)
+  - [JavaScript优雅的实现方式](手撸代码无敌/JavaScript优雅的实现方式.md)
+  - [函数式代码](手撸代码无敌/函数式代码.md)
 
 * [8.设计模式]()
   - [策略设计模式和ES6的Proxy代理模式](设计模式/策略设计模式和ES6的Proxy代理模式.md)
