@@ -592,6 +592,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.3" data-path="../Node/node基础/AnyProxy.html">
+            
+                <a href="../Node/node基础/AnyProxy.html">
+            
+                    
+                    AnyProxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Node/node基础/Node进程管理器PM2.html">
+            
+                <a href="../Node/node基础/Node进程管理器PM2.html">
+            
+                    
+                    Node进程管理器PM2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1189,6 +1215,32 @@
             
         </li>
     
+        <li class="chapter " data-level="2.7.28" data-path="JS深拷贝.html">
+            
+                <a href="JS深拷贝.html">
+            
+                    
+                    Js深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.29" data-path="封装Ajax和Promise.html">
+            
+                <a href="封装Ajax和Promise.html">
+            
+                    
+                    封装Ajax和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1227,6 +1279,77 @@
             
                     
                     ES5 && ES6 实现观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" >
+            
+                <span>
+            
+                    
+                    9.算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../算法/快速排序.html">
+            
+                <a href="../算法/快速排序.html">
+            
+                    
+                    快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="../算法/Deepclone.html">
+            
+                <a href="../算法/Deepclone.html">
+            
+                    
+                    Deepclone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="../算法/数组去重.html">
+            
+                <a href="../算法/数组去重.html">
+            
+                    
+                    数组去重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.4" data-path="../算法/冒泡排序.html">
+            
+                <a href="../算法/冒泡排序.html">
+            
+                    
+                    冒泡排序
             
                 </a>
             
@@ -1697,6 +1820,12 @@
 <li><a href="#&#x8282;&#x6D41;">&#x8282;&#x6D41;</a></li>
 </ul>
 </li>
+<li><a href="#&#x624B;&#x5199;&#x9632;&#x6296;Debouncing&#x548C;&#x8282;&#x6D41;Throttling">&#x624B;&#x5199;&#x9632;&#x6296;(Debouncing)&#x548C;&#x8282;&#x6D41;(Throttling)</a><ul>
+<li><a href="#&#x9632;&#x6296;Debouncing&#x5B9E;&#x73B0;">&#x9632;&#x6296;(Debouncing)&#x5B9E;&#x73B0;</a></li>
+<li><a href="#&#x8282;&#x6D41;Throttling&#x5B9E;&#x73B0;">&#x8282;&#x6D41;(Throttling)&#x5B9E;&#x73B0;</a></li>
+<li><a href="#&#x7ED3;&#x5408;&#x5B9E;&#x8DF5;">&#x7ED3;&#x5408;&#x5B9E;&#x8DF5;</a></li>
+</ul>
+</li>
 </ul>
 <!-- /TOC -->
 <h2 id="&#x9632;&#x6296;">&#x9632;&#x6296;</h2>
@@ -1849,6 +1978,67 @@ _.throttle = <span class="hljs-function"><span class="hljs-keyword">function</sp
   };
 };
 </code></pre>
+<h1 id="&#x624B;&#x5199;&#x9632;&#x6296;debouncing&#x548C;&#x8282;&#x6D41;throttling">&#x624B;&#x5199;&#x9632;&#x6296;(Debouncing)&#x548C;&#x8282;&#x6D41;(Throttling)</h1>
+<blockquote>
+<p><code>scroll</code> &#x4E8B;&#x4EF6;&#x672C;&#x8EAB;&#x4F1A;&#x89E6;&#x53D1;&#x9875;&#x9762;&#x7684;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x540C;&#x65F6; <code>scroll</code> &#x4E8B;&#x4EF6;&#x7684; <code>handler</code> &#x53C8;&#x4F1A;&#x88AB;&#x9AD8;&#x9891;&#x5EA6;&#x7684;&#x89E6;&#x53D1;, &#x56E0;&#x6B64;&#x4E8B;&#x4EF6;&#x7684; <code>handler</code> &#x5185;&#x90E8;&#x4E0D;&#x5E94;&#x8BE5;&#x6709;&#x590D;&#x6742;&#x64CD;&#x4F5C;&#xFF0C;&#x4F8B;&#x5982; DOM &#x64CD;&#x4F5C;&#x5C31;&#x4E0D;&#x5E94;&#x8BE5;&#x653E;&#x5728;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x4E2D;&#x3002;<br>&#x9488;&#x5BF9;&#x6B64;&#x7C7B;&#x9AD8;&#x9891;&#x5EA6;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x95EE;&#x9898;&#xFF08;&#x4F8B;&#x5982;&#x9875;&#x9762; <code>scroll</code> &#xFF0C;&#x5C4F;&#x5E55; <code>resize</code>&#xFF0C;&#x76D1;&#x542C;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7B49;&#xFF09;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x5E38;&#x7528;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF0C;&#x9632;&#x6296;&#x548C;&#x8282;&#x6D41;&#x3002;</p>
+</blockquote>
+<h2 id="&#x9632;&#x6296;debouncing&#x5B9E;&#x73B0;">&#x9632;&#x6296;(Debouncing)&#x5B9E;&#x73B0;</h2>
+<p>&#x5178;&#x578B;&#x4F8B;&#x5B50;&#xFF1A;&#x9650;&#x5236; &#x9F20;&#x6807;&#x8FDE;&#x51FB; &#x89E6;&#x53D1;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x597D;&#x7684;&#x89E3;&#x91CA;&#x662F;&#xFF1A;</p>
+<blockquote>
+<p>&#x5F53;&#x4E00;&#x6B21;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x540E;&#xFF0C;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#x8981;&#x7B49;&#x4E00;&#x5B9A;&#x9608;&#x503C;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x6BB5;&#x65F6;&#x95F4;&#x8FC7;&#x53BB;&#x540E; &#x518D;&#x4E5F;&#x6CA1;&#x6709; &#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#xFF0C;&#x5C31;&#x5904;&#x7406;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x4EF6;&#x3002;&#x5047;&#x8BBE;&#x8FD8;&#x5DEE; 0.01 &#x79D2;&#x5C31;&#x5230;&#x8FBE;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#xFF0C;&#x8FD9;&#x65F6;&#x53C8;&#x6765;&#x4E86;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x4E4B;&#x524D;&#x7684;&#x7B49;&#x5F85;&#x4F5C;&#x5E9F;&#xFF0C;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x518D;&#x7B49;&#x5F85;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x9632;&#x6296;&#x52A8;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">debounce</span>(<span class="hljs-params">fn, wait = 50, immediate</span>) </span>{
+  <span class="hljs-keyword">let</span> timer;
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (immediate) {
+      fn.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>);
+    }
+    <span class="hljs-keyword">if</span> (timer) clearTimeout(timer);
+    timer = setTimeout(() =&gt; {
+      fn.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>);
+    }, wait);
+  };
+}
+</code></pre>
+<h2 id="&#x8282;&#x6D41;throttling&#x5B9E;&#x73B0;">&#x8282;&#x6D41;(Throttling)&#x5B9E;&#x73B0;</h2>
+<blockquote>
+<p>&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x4E8B;&#x4EF6;&#x5728;&#x4E00;&#x4E2A;&#x7BA1;&#x9053;&#x4E2D;&#x4F20;&#x8F93;&#xFF0C;&#x52A0;&#x4E0A;&#x8FD9;&#x4E2A;&#x8282;&#x6D41;&#x9600;&#x4EE5;&#x540E;&#xFF0C;&#x4E8B;&#x4EF6;&#x7684;&#x6D41;&#x901F;&#x5C31;&#x4F1A;&#x51CF;&#x6162;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5982;&#x6B64;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x9891;&#x7387;&#x9650;&#x5236;&#x5728;&#x4E00;&#x5B9A;&#x9608;&#x503C;&#x5185;&#xFF0C;&#x4F8B;&#x5982; 1s&#xFF0C;&#x90A3;&#x4E48; 1s &#x5185;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4E00;&#x5B9A;&#x4E0D;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x4E24;&#x6B21;</p>
+</blockquote>
+<p>&#x7B80;&#x5355;&#x7684;&#x8282;&#x6D41;&#x51FD;&#x6570;:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">throttle</span>(<span class="hljs-params">fn, wait</span>) </span>{
+    <span class="hljs-keyword">let</span> prev = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ 
+      <span class="hljs-keyword">const</span> args = <span class="hljs-built_in">arguments</span>;
+        <span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+        <span class="hljs-keyword">if</span> (now - prev &gt; wait) {
+            fn.apply(<span class="hljs-keyword">this</span>, args);
+            prev = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+        }
+  }
+}
+</code></pre>
+<h2 id="&#x7ED3;&#x5408;&#x5B9E;&#x8DF5;">&#x7ED3;&#x5408;&#x5B9E;&#x8DF5;</h2>
+<p><strong>&#x901A;&#x8FC7;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x5207;&#x6362;&#x6A21;&#x5F0F;&#x3002;</strong></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> throttle = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn, delay, isDebounce</span>) </span>{
+  <span class="hljs-keyword">let</span> timer
+  <span class="hljs-keyword">let</span> lastCall = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args</span>) </span>{
+    <span class="hljs-keyword">if</span> (isDebounce) {
+      <span class="hljs-keyword">if</span> (timer) clearTimeout(timer)
+      timer = setTimeout(() =&gt; {
+        fn(...args)
+      }, delay)
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()
+      <span class="hljs-keyword">if</span> (now - lastCall &lt; delay) <span class="hljs-keyword">return</span>
+      lastCall = now
+      fn(...args)
+    }
+  }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1908,7 +2098,7 @@ _.throttle = <span class="hljs-function"><span class="hljs-keyword">function</sp
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"防抖和节流","level":"2.7.3","depth":2,"next":{"title":"Proxy","level":"2.7.4","depth":2,"path":"手撸代码无敌/Proxy.md","ref":"手撸代码无敌/Proxy.md","articles":[]},"previous":{"title":"instanceof","level":"2.7.2","depth":2,"path":"手撸代码无敌/instanceof.md","ref":"手撸代码无敌/instanceof.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"手撸代码无敌/防抖和节流.md","mtime":"2019-06-28T09:13:42.812Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T12:49:44.327Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"防抖和节流","level":"2.7.3","depth":2,"next":{"title":"Proxy","level":"2.7.4","depth":2,"path":"手撸代码无敌/Proxy.md","ref":"手撸代码无敌/Proxy.md","articles":[]},"previous":{"title":"instanceof","level":"2.7.2","depth":2,"path":"手撸代码无敌/instanceof.md","ref":"手撸代码无敌/instanceof.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters","livereload"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"livereload":{},"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"手撸代码无敌/防抖和节流.md","mtime":"2019-06-28T16:48:10.057Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T17:51:13.682Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1935,6 +2125,10 @@ _.throttle = <span class="hljs-function"><span class="hljs-keyword">function</sp
     
         
         <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

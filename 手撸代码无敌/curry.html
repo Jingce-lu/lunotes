@@ -592,6 +592,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.3" data-path="../Node/node基础/AnyProxy.html">
+            
+                <a href="../Node/node基础/AnyProxy.html">
+            
+                    
+                    AnyProxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Node/node基础/Node进程管理器PM2.html">
+            
+                <a href="../Node/node基础/Node进程管理器PM2.html">
+            
+                    
+                    Node进程管理器PM2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1189,6 +1215,32 @@
             
         </li>
     
+        <li class="chapter " data-level="2.7.28" data-path="JS深拷贝.html">
+            
+                <a href="JS深拷贝.html">
+            
+                    
+                    Js深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.29" data-path="封装Ajax和Promise.html">
+            
+                <a href="封装Ajax和Promise.html">
+            
+                    
+                    封装Ajax和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1227,6 +1279,77 @@
             
                     
                     ES5 && ES6 实现观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" >
+            
+                <span>
+            
+                    
+                    9.算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../算法/快速排序.html">
+            
+                <a href="../算法/快速排序.html">
+            
+                    
+                    快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="../算法/Deepclone.html">
+            
+                <a href="../算法/Deepclone.html">
+            
+                    
+                    Deepclone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="../算法/数组去重.html">
+            
+                <a href="../算法/数组去重.html">
+            
+                    
+                    数组去重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.4" data-path="../算法/冒泡排序.html">
+            
+                <a href="../算法/冒泡排序.html">
+            
+                    
+                    冒泡排序
             
                 </a>
             
@@ -1698,6 +1821,9 @@
 <li><a href="#&#x67EF;&#x91CC;&#x5316;&#x901A;&#x7528;&#x5F0F;">&#x67EF;&#x91CC;&#x5316;&#x901A;&#x7528;&#x5F0F;</a></li>
 <li><a href="#&#x67EF;&#x91CC;&#x5316;&#x4E0E;bind">&#x67EF;&#x91CC;&#x5316;&#x4E0E;bind</a></li>
 <li><a href="#&#x67EF;&#x91CC;&#x5316;&#x7684;&#x7279;&#x70B9;">&#x67EF;&#x91CC;&#x5316;&#x7684;&#x7279;&#x70B9;</a></li>
+<li><a href="#--------">--------</a></li>
+<li><a href="#&#x901A;&#x7528;&#x7248;">&#x901A;&#x7528;&#x7248;</a></li>
+<li><a href="#ES6&#x9A9A;&#x5199;&#x6CD5;">ES6&#x9A9A;&#x5199;&#x6CD5;</a></li>
 </ul>
 </li>
 </ul>
@@ -1774,7 +1900,7 @@ add(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<spa
 <span class="hljs-built_in">console</span>.log(d(<span class="hljs-number">10</span>) + <span class="hljs-number">100</span>);  <span class="hljs-comment">// 120</span>
 </code></pre>
 <h2 id="&#x67EF;&#x91CC;&#x5316;&#x901A;&#x7528;&#x5F0F;">&#x67EF;&#x91CC;&#x5316;&#x901A;&#x7528;&#x5F0F;</h2>
-<pre><code class="lang-js">ar currying = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn</span>) </span>{
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> currying = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn</span>) </span>{
     <span class="hljs-keyword">var</span> args = [].slice.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-number">1</span>);
 
     <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
@@ -1811,6 +1937,45 @@ add(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<spa
 <li>&#x9700;&#x8981;&#x5229;&#x7528;call/apply&#x4E0E;arguments&#x5BF9;&#x8C61;&#x6536;&#x96C6;&#x53C2;&#x6570;&#xFF1B;</li>
 <li>&#x8FD4;&#x56DE;&#x7684;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x6B63;&#x662F;&#x7528;&#x6765;&#x5904;&#x7406;&#x6536;&#x96C6;&#x8D77;&#x6765;&#x7684;&#x53C2;&#x6570;&#x3002;</li>
 </ul>
+<h2 id="-------">--------</h2>
+<h2 id="&#x901A;&#x7528;&#x7248;">&#x901A;&#x7528;&#x7248;</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multi</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>);
+  <span class="hljs-keyword">var</span> fn = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> newArgs = args.concat(<span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>));
+    <span class="hljs-keyword">return</span> multi.apply(<span class="hljs-keyword">this</span>, newArgs);
+  }
+  fn.toString = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> args.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) </span>{
+      <span class="hljs-keyword">return</span> a * b;
+    })
+  }
+  <span class="hljs-keyword">return</span> fn;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiFn</span>(<span class="hljs-params">a, b, c</span>) </span>{
+  <span class="hljs-keyword">return</span> a * b * c;
+}
+
+<span class="hljs-keyword">var</span> multi = curry(multiFn);
+
+multi(<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)(<span class="hljs-number">4</span>);
+multi(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>);
+multi(<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>);
+multi(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)(<span class="hljs-number">4</span>);
+</code></pre>
+<h2 id="es6&#x9A9A;&#x5199;&#x6CD5;">ES6&#x9A9A;&#x5199;&#x6CD5;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> curry = (fn, arr = []) =&gt; (...args) =&gt; (
+  arg =&gt; arg.length === fn.length
+    ? fn(...arg)
+    : curry(fn, arg)
+)([...arr, ...args])
+
+<span class="hljs-keyword">let</span> curryTest=curry((a,b,c,d)=&gt;a+b+c+d)
+curryTest(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)(<span class="hljs-number">4</span>) <span class="hljs-comment">//&#x8FD4;&#x56DE;10</span>
+curryTest(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)(<span class="hljs-number">4</span>)(<span class="hljs-number">3</span>) <span class="hljs-comment">//&#x8FD4;&#x56DE;10</span>
+curryTest(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>) <span class="hljs-comment">//&#x8FD4;&#x56DE;10</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1870,7 +2035,7 @@ add(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<spa
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"curry","level":"2.7.9","depth":2,"next":{"title":"Template","level":"2.7.10","depth":2,"path":"手撸代码无敌/Template.md","ref":"手撸代码无敌/Template.md","articles":[]},"previous":{"title":"不用call和apply方法模拟实现ES5的bind方法","level":"2.7.8","depth":2,"path":"手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.md","ref":"手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"手撸代码无敌/curry.md","mtime":"2019-06-28T10:35:48.538Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T12:49:44.327Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"curry","level":"2.7.9","depth":2,"next":{"title":"Template","level":"2.7.10","depth":2,"path":"手撸代码无敌/Template.md","ref":"手撸代码无敌/Template.md","articles":[]},"previous":{"title":"不用call和apply方法模拟实现ES5的bind方法","level":"2.7.8","depth":2,"path":"手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.md","ref":"手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters","livereload"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"livereload":{},"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"手撸代码无敌/curry.md","mtime":"2019-06-28T16:24:36.080Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T17:51:13.682Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1897,6 +2062,10 @@ add(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<spa
     
         
         <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
