@@ -1,0 +1,1518 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>window.history方法总结 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Lu jingce <lujingce@163.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../resource/styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="fetch.html" />
+    
+    
+    <link rel="prev" href="require和import区别.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ailjc.com/lunotes" target="_blank" class="custom-link">路小二</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    1.JS
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="js基础.html">
+            
+                <a href="js基础.html">
+            
+                    
+                    1.1 Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="ljc-Js.html">
+            
+                <a href="ljc-Js.html">
+            
+                    
+                    1.2 ljc-Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="moveJs.html">
+            
+                <a href="moveJs.html">
+            
+                    
+                    1.3 moveJs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="移动web.html">
+            
+                <a href="移动web.html">
+            
+                    
+                    1.4 移动web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="ICD.html">
+            
+                <a href="ICD.html">
+            
+                    
+                    1.5 ICD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="js-es6-Map.html">
+            
+                <a href="js-es6-Map.html">
+            
+                    
+                    1.6 js es6 Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="ES6-数组array新增方法.html">
+            
+                <a href="ES6-数组array新增方法.html">
+            
+                    
+                    ES6-数组array新增方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="require和import区别.html">
+            
+                <a href="require和import区别.html">
+            
+                    
+                    require和import区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.9" data-path="window.history方法总结.html">
+            
+                <a href="window.history方法总结.html">
+            
+                    
+                    window.history方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="fetch.html">
+            
+                <a href="fetch.html">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="Js判断字符串中是否包含某个字符串.html">
+            
+                <a href="Js判断字符串中是否包含某个字符串.html">
+            
+                    
+                    Js判断字符串中是否包含某个字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="三种js类的实现方法(es5和es6">
+            
+                <span>
+            
+                    
+                    三种js类的实现方法(es5和es6)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    2.正则
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../正则/正则表达式不要背.html">
+            
+                <a href="../正则/正则表达式不要背.html">
+            
+                    
+                    正则表达式不要背
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../正则/RegExp.html">
+            
+                <a href="../正则/RegExp.html">
+            
+                    
+                    RegExp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    3.面向对象
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../面向对象/面向对象之组件开发之弹窗.html">
+            
+                <a href="../面向对象/面向对象之组件开发之弹窗.html">
+            
+                    
+                    面向对象之组件开发之弹窗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../面向对象/面向对象的微博登录提示邮箱.html">
+            
+                <a href="../面向对象/面向对象的微博登录提示邮箱.html">
+            
+                    
+                    面向对象的微博登录提示邮箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    4.浏览器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../浏览器/事件机制.html">
+            
+                <a href="../../浏览器/事件机制.html">
+            
+                    
+                    事件机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../浏览器/跨域.html">
+            
+                <a href="../../浏览器/跨域.html">
+            
+                    
+                    跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../浏览器/Event-loop.html">
+            
+                <a href="../../浏览器/Event-loop.html">
+            
+                    
+                    Event loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../浏览器/存储.html">
+            
+                <a href="../../浏览器/存储.html">
+            
+                    
+                    存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../浏览器/渲染机制.html">
+            
+                <a href="../../浏览器/渲染机制.html">
+            
+                    
+                    渲染机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    5.NodeJs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../Node/node基础/node命令.html">
+            
+                <a href="../../Node/node基础/node命令.html">
+            
+                    
+                    node命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2 - Advanced</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    1.框架通识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../框架通识/MVVM.html">
+            
+                <a href="../../框架通识/MVVM.html">
+            
+                    
+                    MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../框架通识/VirtualDom.html">
+            
+                <a href="../../框架通识/VirtualDom.html">
+            
+                    
+                    Virtual Dom
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../安全/安全.html">
+            
+                <a href="../../安全/安全.html">
+            
+                    
+                    2.安全XSS-CSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../安全/性能.html">
+            
+                <a href="../../安全/性能.html">
+            
+                    
+                    3.性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                <a href="../../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                    
+                    4.如何渲染几万条数据并不卡住界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    5.综合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../面试/综合1.html">
+            
+                <a href="../../面试/综合1.html">
+            
+                    
+                    综合1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../面试/综合2.html">
+            
+                <a href="../../面试/综合2.html">
+            
+                    
+                    综合2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../面试/综合3.html">
+            
+                <a href="../../面试/综合3.html">
+            
+                    
+                    综合3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../../面试/综合4-vue.html">
+            
+                <a href="../../面试/综合4-vue.html">
+            
+                    
+                    综合4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../../面试/综合5.html">
+            
+                <a href="../../面试/综合5.html">
+            
+                    
+                    综合5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../../面试/综合6.html">
+            
+                <a href="../../面试/综合6.html">
+            
+                    
+                    综合6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../面试/Js基础.html">
+            
+                <a href="../../面试/Js基础.html">
+            
+                    
+                    6.JS基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../手撸代码无敌/">
+            
+                <a href="../../手撸代码无敌/">
+            
+                    
+                    7.手撸代码无敌
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../../手撸代码无敌/new.html">
+            
+                <a href="../../手撸代码无敌/new.html">
+            
+                    
+                    new
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../../手撸代码无敌/instanceof.html">
+            
+                <a href="../../手撸代码无敌/instanceof.html">
+            
+                    
+                    instanceof
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../../手撸代码无敌/防抖和节流.html">
+            
+                <a href="../../手撸代码无敌/防抖和节流.html">
+            
+                    
+                    防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../../手撸代码无敌/Proxy.html">
+            
+                <a href="../../手撸代码无敌/Proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../../手撸代码无敌/Promise实现.html">
+            
+                <a href="../../手撸代码无敌/Promise实现.html">
+            
+                    
+                    Promise 实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../../手撸代码无敌/Generator实现.html">
+            
+                <a href="../../手撸代码无敌/Generator实现.html">
+            
+                    
+                    Generator实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.7" data-path="../../手撸代码无敌/call-apply-bind.html">
+            
+                <a href="../../手撸代码无敌/call-apply-bind.html">
+            
+                    
+                    call, apply, bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.8" data-path="../../手撸代码无敌/curry.html">
+            
+                <a href="../../手撸代码无敌/curry.html">
+            
+                    
+                    curry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.9" data-path="../../手撸代码无敌/Template.html">
+            
+                <a href="../../手撸代码无敌/Template.html">
+            
+                    
+                    Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.10" data-path="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                <a href="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                    
+                    封装Ajax和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.11" data-path="../../手撸代码无敌/js-tree.html">
+            
+                <a href="../../手撸代码无敌/js-tree.html">
+            
+                    
+                    js-tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">React</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    1.React基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../React/React基础/react基础.html">
+            
+                <a href="../../React/React基础/react基础.html">
+            
+                    
+                    React基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../React/React基础/React生命周期分析.html">
+            
+                <a href="../../React/React基础/React生命周期分析.html">
+            
+                    
+                    React生命周期分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../React/React基础/setState.html">
+            
+                <a href="../../React/React基础/setState.html">
+            
+                    
+                    setState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    2.Dva
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../React/dva/React+DvaJS之hook路由权限控制.html">
+            
+                <a href="../../React/dva/React+DvaJS之hook路由权限控制.html">
+            
+                    
+                    React+DvaJS 之 hook 路由权限控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    3.源码分析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../React/源码分析/Redux源码分析.html">
+            
+                <a href="../../React/源码分析/Redux源码分析.html">
+            
+                    
+                    Redux源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Vue</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../Vue/vueRouter使用query和params传参的使用和区别.html">
+            
+                <a href="../../Vue/vueRouter使用query和params传参的使用和区别.html">
+            
+                    
+                    vueRouter使用query和params传参的使用和区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../Vue/NextTick原理分析.html">
+            
+                <a href="../../Vue/NextTick原理分析.html">
+            
+                    
+                    NextTick原理分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../Vue/Vue生命周期.html">
+            
+                <a href="../../Vue/Vue生命周期.html">
+            
+                    
+                    Vue生命周期分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../Vue/VueRouter源码分析.html">
+            
+                <a href="../../Vue/VueRouter源码分析.html">
+            
+                    
+                    VueRouter源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3 - other</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    1.git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../git/git基本使用.html">
+            
+                <a href="../../git/git基本使用.html">
+            
+                    
+                    git基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../git/git分支管理策略.html">
+            
+                <a href="../../git/git分支管理策略.html">
+            
+                    
+                    git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../git/publish脚本.html">
+            
+                <a href="../../git/publish脚本.html">
+            
+                    
+                    publish脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../git/gitbook.html">
+            
+                <a href="../../git/gitbook.html">
+            
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    2.规范
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../规范/分支开发规范.html">
+            
+                <a href="../../规范/分支开发规范.html">
+            
+                    
+                    分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../../规范/es6编码规范.html">
+            
+                <a href="../../规范/es6编码规范.html">
+            
+                    
+                    ES6编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../../规范/vue编码规范.html">
+            
+                <a href="../../规范/vue编码规范.html">
+            
+                    
+                    vue编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                <a href="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                    
+                    Airbnb-React-JSX编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    3.其它
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="../../other/Emoji表情.html">
+            
+                <a href="../../other/Emoji表情.html">
+            
+                    
+                    Emoji表情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" >
+            
+                <span>
+            
+                    
+                    deep
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    世路如今已惯,此心到处悠然
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >window.history方法总结</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="windowhistory-&#x65B9;&#x6CD5;&#x603B;&#x7ED3;">window.history &#x65B9;&#x6CD5;&#x603B;&#x7ED3;</h1>
+<h3 id="&#x4E00;&#x3001;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x6982;&#x89C8;">&#x4E00;&#x3001;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x6982;&#x89C8;</h3>
+<pre><code class="lang-js"><span class="hljs-built_in">window</span>.history.back();
+<span class="hljs-built_in">window</span>.history.forward();
+
+<span class="hljs-built_in">window</span>.history.go(<span class="hljs-number">-1</span>);
+<span class="hljs-built_in">window</span>.history.go(<span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">var</span> numberOfEntries = <span class="hljs-built_in">window</span>.history.length;
+</code></pre>
+<h3 id="&#x4E8C;&#x3001;&#x6DFB;&#x52A0;&#x548C;&#x4FEE;&#x6539;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x6761;&#x76EE;&#xFF1A;">&#x4E8C;&#x3001;&#x6DFB;&#x52A0;&#x548C;&#x4FEE;&#x6539;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x6761;&#x76EE;&#xFF1A;</h3>
+<pre><code class="lang-js"><span class="hljs-number">1</span>&#x3001;history.pushState();               
+<span class="hljs-number">2</span>&#x3001;history.replaceState();
+</code></pre>
+<p>&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x90FD;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;&#x548C;&#x66F4;&#x65B0;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x76F8;&#x540C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x6570;&#x91CF;&#x76F8;&#x540C;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x65B9;&#x6CD5;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x6709;popstate&#x4E8B;&#x4EF6;&#x3002;&#x5728;&#x540E;&#x6587;&#x4E2D;&#x5C06;&#x4ECB;&#x7ECD;&#x600E;&#x4E48;&#x4F7F;&#x7528;&#x548C;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F7F;&#x7528;popstate&#x4E8B;&#x4EF6;&#x3002;</p>
+<p>pushState()&#x548C;replaceState()&#x53C2;&#x6570;&#x4E00;&#x6837;&#xFF0C;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>1&#x3001;state&#xFF1A;&#x5B58;&#x50A8;JSON&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x5728;popstate&#x4E8B;&#x4EF6;&#x4E2D;&#x3002;</p>
+<p>2&#x3001;title&#xFF1A;&#x73B0;&#x5728;&#x5927;&#x591A;&#x6570;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301;&#x6216;&#x8005;&#x5FFD;&#x7565;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x6700;&#x597D;&#x7528;null&#x4EE3;&#x66FF;</p>
+<p>3&#x3001;url&#xFF1A;&#x4EFB;&#x610F;&#x6709;&#x6548;&#x7684;URL&#xFF0C;&#x7528;&#x4E8E;&#x66F4;&#x65B0;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5730;&#x5740;&#x680F;&#xFF0C;&#x5E76;&#x4E0D;&#x5728;&#x4E4E;URL&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x5730;&#x5740;&#x5217;&#x8868;&#x4E2D;&#x3002;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x5B83;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x9875;&#x9762;&#x3002;</p>
+</blockquote>
+<p>&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x4E3B;&#x8981;&#x533A;&#x522B;&#x5C31;&#x662F;&#xFF1A;pushState()&#x662F;&#x5728;history&#x6808;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6761;&#x76EE;&#xFF0C;replaceState()&#x662F;&#x66FF;&#x6362;&#x5F53;&#x524D;&#x7684;&#x8BB0;&#x5F55;&#x503C;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ol>
+<li>onpopstate</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-built_in">window</span>.onpopstate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+  alert(<span class="hljs-string">&quot;location: &quot;</span> + <span class="hljs-built_in">document</span>.location + <span class="hljs-string">&quot;, state: &quot;</span> + <span class="hljs-built_in">JSON</span>.stringify(event.state));
+};
+<span class="hljs-comment">//&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;. </span>
+history.pushState({page: <span class="hljs-number">1</span>}, <span class="hljs-string">&quot;title 1&quot;</span>, <span class="hljs-string">&quot;?page=1&quot;</span>);    
+<span class="hljs-comment">//&#x6DFB;&#x52A0;&#x5E76;&#x6FC0;&#x6D3B;&#x4E00;&#x4E2A;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x6761;&#x76EE; http://example.com/example.html?page=1,&#x6761;&#x76EE;&#x7D22;&#x5F15;&#x4E3A;1</span>
+
+
+history.pushState({page: <span class="hljs-number">2</span>}, <span class="hljs-string">&quot;title 2&quot;</span>, <span class="hljs-string">&quot;?page=2&quot;</span>);    
+<span class="hljs-comment">//&#x6DFB;&#x52A0;&#x5E76;&#x6FC0;&#x6D3B;&#x4E00;&#x4E2A;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x6761;&#x76EE; http://example.com/example.html?page=2,&#x6761;&#x76EE;&#x7D22;&#x5F15;&#x4E3A;2</span>
+
+
+history.replaceState({page: <span class="hljs-number">3</span>}, <span class="hljs-string">&quot;title 3&quot;</span>, <span class="hljs-string">&quot;?page=3&quot;</span>); 
+<span class="hljs-comment">//&#x4FEE;&#x6539;&#x5F53;&#x524D;&#x6FC0;&#x6D3B;&#x7684;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x6761;&#x76EE; http://ex..?page=2 &#x53D8;&#x4E3A; http://ex..?page=3,&#x6761;&#x76EE;&#x7D22;&#x5F15;&#x4E3A;3</span>
+
+
+history.back(); <span class="hljs-comment">// &#x5F39;&#x51FA; &quot;location: http://example.com/example.html?page=1, state: {&quot;page&quot;:1}&quot;</span>
+history.back(); <span class="hljs-comment">// &#x5F39;&#x51FA; &quot;location: http://example.com/example.html, state: null</span>
+history.go(<span class="hljs-number">2</span>);  <span class="hljs-comment">// &#x5F39;&#x51FA; &quot;location: http://example.com/example.html?page=3, state: {&quot;page&quot;:3}</span>
+</code></pre>
+<ol>
+<li>pushState</li>
+</ol>
+<p>&#x5728;history&#x6808;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6761;&#x76EE;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> stateObj = { foo: <span class="hljs-string">&quot;bar&quot;</span> };
+history.pushState(stateObj, <span class="hljs-string">&quot;page 2&quot;</span>, <span class="hljs-string">&quot;bar.html&quot;</span>);
+</code></pre>
+<ol>
+<li>replaceState</li>
+</ol>
+<p>&#x66FF;&#x6362;&#x5F53;&#x524D;&#x7684;&#x8BB0;&#x5F55;&#x503C;</p>
+<pre><code class="lang-js">history.replaceState(stateObj, <span class="hljs-string">&quot;page 2&quot;</span>, <span class="hljs-string">&quot;bar.html&quot;</span>);
+</code></pre>
+<ol>
+<li>&#x8BFB;&#x53D6;&#x5F53;&#x524D;&#x72B6;&#x6001;</li>
+</ol>
+<p>&#x5728;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x975E;&#x7A7A;&#x7684;&#x72B6;&#x6001;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x662F;&#x4F1A;&#x53D1;&#x751F;&#x7684;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x9875;&#x9762;&#x4E2D;&#x4F7F;&#x7528;pushState()&#x6216;replaceState()&#x65B9;&#x6CD5;&#x8BBE;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x7528;&#x6237;&#x91CD;&#x542F;&#x4E86;&#x6D4F;&#x89C8;&#x5668;&#x3002;&#x5F53;&#x9875;&#x9762;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x65F6;&#xFF0C;&#x9875;&#x9762;&#x4F1A;&#x89E6;&#x53D1;onload&#x4E8B;&#x4EF6;&#xFF0C;&#x4F46;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;popstate&#x4E8B;&#x4EF6;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x8BFB;&#x53D6; history.state &#x5C5E;&#x6027;&#xFF0C;&#x4F60;&#x4F1A;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x4E0E;  popstate &#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x65F6;&#x5F97;&#x5230;&#x7684;&#x4E00;&#x6837;&#x7684;&#x72B6;&#x6001;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BFB;&#x53D6;&#x5F53;&#x524D;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x6761;&#x76EE;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x7B49;&#x5F85;popstate&#x4E8B;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> currentState = history.state;
+</code></pre>
+<hr>
+<h2 id="&#x5FAE;&#x4FE1;&#x4E2D;&#x6253;&#x5F00;&#x5934;&#x6761;&#x65B0;&#x95FB;&#xFF0C;-&#x8FD4;&#x56DE;&#x5374;&#x5230;&#x5934;&#x6761;webapp&#x9996;&#x9875;&#x6E90;&#x7801;&#xFF0C;&#x5B9E;&#x73B0;pv&#x56DE;&#x6D41;&#x589E;&#x957F;&#xFF01;">&#x5FAE;&#x4FE1;&#x4E2D;&#x6253;&#x5F00;&#x5934;&#x6761;&#x65B0;&#x95FB;&#xFF0C; &#x8FD4;&#x56DE;&#x5374;&#x5230;&#x5934;&#x6761;webApp&#x9996;&#x9875;&#x6E90;&#x7801;&#xFF0C;&#x5B9E;&#x73B0;PV&#x56DE;&#x6D41;&#x589E;&#x957F;&#xFF01;</h2>
+<p>&#x8FD9;&#x79CD;&#x63D0;&#x9AD8;&#x7F51;&#x7AD9;&#x6D41;&#x91CF;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5404;&#x5927;&#x95E8;&#x6237;&#x7F51;&#x7AD9;&#x90FD;&#x5728;&#x4F7F;&#x7528;&#xFF0C;&#x5305;&#x62EC;&#x901A;&#x8FC7;App&#x63A8;&#x9001;push&#x7684;&#x4E00;&#x4E9B;&#x6D88;&#x606F;&#xFF0C;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5F00;&#x7684;&#x8BE6;&#x60C5;&#x9875;&#x9762;&#x90FD;&#x505A;&#x4E86;&#x8FD9;&#x79CD;&#x63AA;&#x65BD;&#x3002;</p>
+<p>&#x5B9E;&#x73B0;&#x5E76;&#x4E0D;&#x56F0;&#x96BE;&#xFF0C;&#x91CD;&#x70B9;&#x5C31;&#x5728;&#x76D1;&#x542C;&#x4E86;&#x6D4F;&#x89C8;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Goback</span>(<span class="hljs-params">url</span>)</span>{
+    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">if</span> (history.length &lt; <span class="hljs-number">3</span>) {   
+            <span class="hljs-comment">//&#x6CE8;&#x610F;&#x8FD9;&#x91CC; &#x5386;&#x53F2;&#x5217;&#x8868;&#x4E2D;URL&#x7684;&#x6570;&#x91CF;,&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#x662F;&#x9996;&#x6B21;&#x6253;&#x5F00;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4ECE;&#x9996;&#x9875;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x9875;&#x9762;&#x8DF3;&#x8F6C;&#x8FC7;&#x6765;&#x7684;&#x3002;</span>
+
+            <span class="hljs-keyword">var</span> state = {title: <span class="hljs-string">&quot;index&quot;</span>,url: url};
+            <span class="hljs-built_in">window</span>.history.pushState(state, <span class="hljs-string">&quot;index&quot;</span>, location.href);
+            state = {title: <span class="hljs-string">&quot;index&quot;</span>,url: <span class="hljs-string">&quot;&quot;</span>};
+            <span class="hljs-built_in">window</span>.history.pushState(state, <span class="hljs-string">&quot;index&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
+        }
+        <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&quot;popstate&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.history.state != <span class="hljs-literal">null</span> &amp;&amp; <span class="hljs-built_in">window</span>.history.state.url != <span class="hljs-string">&quot;&quot;</span>) {
+            location.href = <span class="hljs-built_in">window</span>.history.state.url
+            }
+        });
+    }, <span class="hljs-number">1500</span>);  
+}
+Goback(<span class="hljs-string">&quot;http://wwww.baidu.com&quot;</span>);<span class="hljs-comment">//&#x4F60;&#x60F3;&#x8FD4;&#x56DE;&#x7684;&#x9875;&#x9762;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="require和import区别.html" class="navigation navigation-prev " aria-label="Previous page: require和import区别">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="fetch.html" class="navigation navigation-next " aria-label="Next page: fetch">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"window.history方法总结","level":"1.2.9","depth":2,"next":{"title":"fetch","level":"1.2.10","depth":2,"path":"Js/js基础/fetch.md","ref":"Js/js基础/fetch.md","articles":[]},"previous":{"title":"require和import区别","level":"1.2.8","depth":2,"path":"Js/js基础/require和import区别.md","ref":"Js/js基础/require和import区别.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"Js/js基础/window.history方法总结.md","mtime":"2019-06-28T10:52:38.060Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T10:59:38.497Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
