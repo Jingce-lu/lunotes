@@ -12,7 +12,11 @@
     "gitbook-plugin-toggle-chapters": "0.0.3"
   },
   "devDependencies": {
-    "gitbook-plugin-multipart": "^0.3.0"
+    "gitbook-plugin-expandable-chapters": "^0.2.0",
+    "gitbook-plugin-multipart": "^0.3.0",
+    "gitbook-plugin-styles-sass-fix": "^1.1.2",
+    "gitbook-plugin-theme-gestalt": "^1.0.7",
+    "gitbook-plugin-theme-itheima": "^1.1.12"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

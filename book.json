@@ -16,7 +16,8 @@
     "code",
     "splitter",
     "search-pro",
-    "-sharing"
+    "-sharing",
+    "expandable-chapters"
   ],
   "pluginsConfig": {
     "code": {
