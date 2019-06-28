@@ -38,8 +38,8 @@ npm restart  [name or id] ： 重启服务。
 npm reload  [name or id] ： 和rastart功能相同，但是可以实现0s的无缝衔接；如果有nginx的使用经验，可以
 对比nginx reload指令。
 
-pm2 start app.js --max_memory_restart 1024M ： 当内存超过1024M时自动重启。 如果工程中有比较棘手的内
-存泄露问题，这个算是一个折中方案。
+pm2 start app.js --max_memory_restart 1024M ： 
+# 当内存超过1024M时自动重启。 如果工程中有比较棘手的内 存泄露问题，这个算是一个折中方案。
 
 pm2 monit ： 对服务进行监控。
 ```
@@ -56,7 +56,7 @@ cat /proc/cpuinfo| grep "cpu cores"| uniq
 # 查看逻辑CPU的个数
 cat /proc/cpuinfo| grep "processor"| wc -l
 ```
-当然可以启动多个端口，一个端口号对应一个服务，这样的话就需要nignx来做负载均衡了。 
+当然可以启动多个端口，一个端口号对应一个服务，这样的话就需要nignx来做负载均衡了。
 
 ### 3、 是否需要nginx
 nginx可以做的事情主要有两个：
@@ -66,7 +66,7 @@ nginx可以做的事情主要有两个：
 ### 4、fork与cluster启动模式
 开发环境中多以`fork`的方式启动，生产环境中多用`cluster`方式启动  
 上面的示例图中可以看一“watching”一项，这个项默认是disabled，可以通过如下命令开启
-```
+```bash
 pm2 start app.js --name m --watch
 ```
 **建议：这个适合在开发时用，可以省不少时间，生产环境下最好不要用**
@@ -105,9 +105,9 @@ pm2的监控有两种方式：
 ### 7、高级用法
 pm2支持配置文件启动：  
 pm2 ecosystem： 生成配置文件ecosystem.json  
-pm2 startOrRestart /file/path/ecosystem.json : 通过配置文件启动服务
+pm2 startOrRestart /file/path/ecosystem.json : 通过配置文件启动服务 
 
-如下是开发时ecosystem.json的内容：
+如下是开发时ecosystem.json的内容： 
 ```js
 {
   /**
@@ -198,7 +198,7 @@ PM2是一款非常优秀的Node进程管理工具，它有着丰富的特性：�
 
 
 ## 使用pm2启动Vue项目
-主要特性：
+主要特性： 
 > 内建负载均衡（使用Node cluster 集群模块）  
 > 后台运行  
 > 0秒停机重载，我理解大概意思是维护升级的时候不需要停机.  
@@ -220,7 +220,7 @@ $ pm2 list
 $ pm2 monit # 监视每个node进程的CPU和内存的使用情况
 ```
 
-### 常使用命令:
+### 常使用命令: 
 ```bash
 $ pm2 logs 显示所有进程日志
 $ pm2 stop all 停止所有进程
