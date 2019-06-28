@@ -9,8 +9,17 @@
     * [1.3 moveJs](Js/js基础/moveJs.md)
     * [1.4 移动web](Js/js基础/移动web.md)
     * [1.5 ICD](Js/js基础/ICD.md)
+    * [1.6 js es6 Map](Js/js基础/js-es6-Map.md)
+    * [ES6-数组array新增方法](Js/js基础/ES6-数组array新增方法.md)
+    * [require和import区别](Js/js基础/require和import区别.md)
+    * [window.history方法总结](Js/js基础/window.history方法总结.md)
+    * [fetch](Js/js基础/fetch.md)
+    * [Js判断字符串中是否包含某个字符串](Js/js基础/Js判断字符串中是否包含某个字符串.md)
+    * [三种js类的实现方法(es5和es6)](Js/js基础/三种js类的实现方法(es5和es6).md)
+
 * 2.正则
     * [正则表达式不要背](Js/正则/正则表达式不要背.md)
+    * [RegExp](Js/正则/RegExp.md)
   
 * 3.面向对象
   * [面向对象之组件开发之弹窗](Js/面向对象/面向对象之组件开发之弹窗.md)
@@ -51,6 +60,10 @@
   - [Promise 实现](手撸代码无敌/Promise实现.md)
   - [Generator实现](手撸代码无敌/Generator实现.md)
   - [call, apply, bind](手撸代码无敌/call-apply-bind.md)
+  - [curry](手撸代码无敌/curry.md)
+  - [Template](手撸代码无敌/Template.md)
+  - [封装Ajax和Promise](手撸代码无敌/封装Ajax和Promise.md)
+  - [js-tree](手撸代码无敌/js-tree.md)
 
 ## React
 * 1.React基础
@@ -69,7 +82,7 @@
   - [vueRouter使用query和params传参的使用和区别](Vue/vueRouter使用query和params传参的使用和区别.md)
   - [NextTick原理分析](Vue/NextTick原理分析.md)
   - [Vue生命周期分析](Vue/Vue生命周期.md)
-  - [VueRouter源码分析](Vue/VueRouter源码分析)
+  - [VueRouter源码分析](Vue/VueRouter源码分析.md)
 
 ## Part 3 - other
 - 1.git
