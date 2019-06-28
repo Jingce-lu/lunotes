@@ -17,6 +17,7 @@
     * [Js判断字符串中是否包含某个字符串](Js/js基础/Js判断字符串中是否包含某个字符串.md)
     * [三种js类的实现方法(es5和es6)](Js/js基础/三种js类的实现方法(es5和es6).md)
     * [async await](Js/js基础/async-await.md)
+    * [关于移动端,webview监听滚动条的坑](Js/js基础/关于移动端,webview监听滚动条的坑.md)
 
 * 2.正则
     * [正则表达式不要背](Js/正则/正则表达式不要背.md)
@@ -68,6 +69,10 @@
   - [Template](手撸代码无敌/Template.md)
   - [封装Ajax和Promise](手撸代码无敌/封装Ajax和Promise.md)
   - [js-tree](手撸代码无敌/js-tree.md)
+
+* [8.设计模式]()
+  - [策略设计模式和ES6的Proxy代理模式](设计模式/策略设计模式和ES6的Proxy代理模式.md)
+  - [ES5 && ES6 实现观察者模式](设计模式/ES5&&ES6实现观察者模式.md)
 
 ## React
 * 1.React基础
