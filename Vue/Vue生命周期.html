@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>事件机制 · GitBook</title>
+        <title>Vue生命周期分析 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,8 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="跨域.html" />
+    <link rel="next" href="VueRouter源码分析" />
     
+    
+    <link rel="prev" href="NextTick原理分析.html" />
     
 
     </head>
@@ -292,9 +294,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.1" data-path="事件机制.html">
+        <li class="chapter " data-level="1.5.1" data-path="../浏览器/事件机制.html">
             
-                <a href="事件机制.html">
+                <a href="../浏览器/事件机制.html">
             
                     
                     事件机制
@@ -305,9 +307,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="跨域.html">
+        <li class="chapter " data-level="1.5.2" data-path="../浏览器/跨域.html">
             
-                <a href="跨域.html">
+                <a href="../浏览器/跨域.html">
             
                     
                     跨域
@@ -318,9 +320,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="Event-loop.html">
+        <li class="chapter " data-level="1.5.3" data-path="../浏览器/Event-loop.html">
             
-                <a href="Event-loop.html">
+                <a href="../浏览器/Event-loop.html">
             
                     
                     Event loop
@@ -331,9 +333,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="存储.html">
+        <li class="chapter " data-level="1.5.4" data-path="../浏览器/存储.html">
             
-                <a href="存储.html">
+                <a href="../浏览器/存储.html">
             
                     
                     存储
@@ -344,9 +346,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="渲染机制.html">
+        <li class="chapter " data-level="1.5.5" data-path="../浏览器/渲染机制.html">
             
-                <a href="渲染机制.html">
+                <a href="../浏览器/渲染机制.html">
             
                     
                     渲染机制
@@ -750,9 +752,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../Vue/vueRouter使用query和params传参的使用和区别.html">
+        <li class="chapter " data-level="4.1" data-path="vueRouter使用query和params传参的使用和区别.html">
             
-                <a href="../Vue/vueRouter使用query和params传参的使用和区别.html">
+                <a href="vueRouter使用query和params传参的使用和区别.html">
             
                     
                     vueRouter使用query和params传参的使用和区别
@@ -763,9 +765,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../Vue/NextTick原理分析.html">
+        <li class="chapter " data-level="4.2" data-path="NextTick原理分析.html">
             
-                <a href="../Vue/NextTick原理分析.html">
+                <a href="NextTick原理分析.html">
             
                     
                     NextTick原理分析
@@ -776,9 +778,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../Vue/Vue生命周期.html">
+        <li class="chapter active" data-level="4.3" data-path="Vue生命周期.html">
             
-                <a href="../Vue/Vue生命周期.html">
+                <a href="Vue生命周期.html">
             
                     
                     Vue生命周期分析
@@ -789,7 +791,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../Vue/VueRouter源码分析">
+        <li class="chapter " data-level="4.4" data-path="VueRouter源码分析">
             
                 <span>
             
@@ -1046,7 +1048,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >事件机制</a>
+        <a href=".." >Vue生命周期分析</a>
     </h1>
 </div>
 
@@ -1064,84 +1066,116 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4E8B;&#x4EF6;&#x673A;&#x5236;">&#x4E8B;&#x4EF6;&#x673A;&#x5236;</h1>
-<!-- TOC -->
-<ul>
-<li><a href="#&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4E09;&#x9636;&#x6BB5;">&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4E09;&#x9636;&#x6BB5;</a></li>
-<li><a href="#&#x6CE8;&#x518C;&#x4E8B;&#x4EF6;">&#x6CE8;&#x518C;&#x4E8B;&#x4EF6;</a></li>
-<li><a href="#&#x4E8B;&#x4EF6;&#x4EE3;&#x7406;">&#x4E8B;&#x4EF6;&#x4EE3;&#x7406;</a></li>
-</ul>
-<!-- /TOC -->
-<h2 id="&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4E09;&#x9636;&#x6BB5;">&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4E09;&#x9636;&#x6BB5;</h2>
-<p>&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x6709;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;</p>
-<ul>
-<li><code>window</code> &#x5F80;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x5904;&#x4F20;&#x64AD;&#xFF0C;&#x9047;&#x5230;&#x6CE8;&#x518C;&#x7684;&#x6355;&#x83B7;&#x4E8B;&#x4EF6;&#x4F1A;&#x89E6;&#x53D1;</li>
-<li>&#x4F20;&#x64AD;&#x5230;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x5904;&#x65F6;&#x89E6;&#x53D1;&#x6CE8;&#x518C;&#x7684;&#x4E8B;&#x4EF6;</li>
-<li>&#x4ECE;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x5904;&#x5F80; <code>window</code> &#x4F20;&#x64AD;&#xFF0C;&#x9047;&#x5230;&#x6CE8;&#x518C;&#x7684;&#x5192;&#x6CE1;&#x4E8B;&#x4EF6;&#x4F1A;&#x89E6;&#x53D1;</li>
-</ul>
-<p>&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x4F1A;&#x6309;&#x7167;&#x4E0A;&#x9762;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x6709;&#x7279;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x7ED9;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x8282;&#x70B9;&#x540C;&#x65F6;&#x6CE8;&#x518C;&#x5192;&#x6CE1;&#x548C;&#x6355;&#x83B7;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4F1A;&#x6309;&#x7167;&#x6CE8;&#x518C;&#x7684;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x3002;</p>
-<pre><code class="lang-js"><span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x4F1A;&#x5148;&#x6253;&#x5370;&#x5192;&#x6CE1;&#x7136;&#x540E;&#x662F;&#x6355;&#x83B7;</span>
-node.addEventListener(
-  <span class="hljs-string">&apos;click&apos;</span>,
-  event =&gt; {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x5192;&#x6CE1;&apos;</span>)
-  },
-  <span class="hljs-literal">false</span>
-)
-node.addEventListener(
-  <span class="hljs-string">&apos;click&apos;</span>,
-  event =&gt; {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x6355;&#x83B7; &apos;</span>)
-  },
-  <span class="hljs-literal">true</span>
-)
+                                <h1 id="&#x751F;&#x547D;&#x5468;&#x671F;&#x5206;&#x6790;">&#x751F;&#x547D;&#x5468;&#x671F;&#x5206;&#x6790;</h1>
+<p>&#x751F;&#x547D;&#x5468;&#x671F;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x7EC4;&#x4EF6;&#x5728;&#x521D;&#x59CB;&#x5316;&#x6216;&#x8005;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x65F6;&#x4F1A;&#x89E6;&#x53D1;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x3002;</p>
+<p><img src="../resource/assets/vue/vue1.png" alt="vue&#x751F;&#x547D;&#x5468;&#x671F;"></p>
+<p>&#x5728;&#x521D;&#x59CB;&#x5316;&#x65F6;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF0C;&#x751F;&#x547D;&#x5468;&#x671F;&#x5C31;&#x662F;&#x901A;&#x8FC7; <code>callHook</code> &#x8C03;&#x7528;&#x7684;</p>
+<pre><code class="lang-js">Vue.prototype._init = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">options</span>) </span>{
+  initLifecycle(vm)
+  initEvents(vm)
+  initRender(vm)
+  callHook(vm, <span class="hljs-string">&apos;beforeCreate&apos;</span>) <span class="hljs-comment">// &#x62FF;&#x4E0D;&#x5230; props data</span>
+  initInjections(vm)
+  initState(vm)
+  initProvide(vm)
+  callHook(vm, <span class="hljs-string">&apos;created&apos;</span>)
+}
 </code></pre>
-<h2 id="&#x6CE8;&#x518C;&#x4E8B;&#x4EF6;">&#x6CE8;&#x518C;&#x4E8B;&#x4EF6;</h2>
-<p>&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x4F7F;&#x7528; <code>addEventListener</code> &#x6CE8;&#x518C;&#x4E8B;&#x4EF6;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5BF9;&#x8C61;&#x3002;&#x5BF9;&#x4E8E;&#x5E03;&#x5C14;&#x503C; <code>useCapture</code> &#x53C2;&#x6570;&#x6765;&#x8BF4;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>false</code> <code>&#x3002;useCapture</code> &#x51B3;&#x5B9A;&#x4E86;&#x6CE8;&#x518C;&#x7684;&#x4E8B;&#x4EF6;&#x662F;&#x6355;&#x83B7;&#x4E8B;&#x4EF6;&#x8FD8;&#x662F;&#x5192;&#x6CE1;&#x4E8B;&#x4EF6;&#x3002;&#x5BF9;&#x4E8E;&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#x6765;&#x8BF4;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x5C5E;&#x6027;</p>
-<ul>
-<li><code>capture</code>&#xFF0C;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x548C; <code>useCapture</code> &#x4F5C;&#x7528;&#x4E00;&#x6837;</li>
-<li><code>once</code>&#xFF0C;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x503C;&#x4E3A; <code>true</code> &#x8868;&#x793A;&#x8BE5;&#x56DE;&#x8C03;&#x53EA;&#x4F1A;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#xFF0C;&#x8C03;&#x7528;&#x540E;&#x4F1A;&#x79FB;&#x9664;&#x76D1;&#x542C;</li>
-<li><code>passive</code>&#xFF0C;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x8C03;&#x7528; <code>preventDefault</code></li>
-</ul>
-<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x5E0C;&#x671B;&#x4E8B;&#x4EF6;&#x53EA;&#x89E6;&#x53D1;&#x5728;&#x76EE;&#x6807;&#x4E0A;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>stopPropagation</code> &#x6765;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x8FDB;&#x4E00;&#x6B65;&#x4F20;&#x64AD;&#x3002;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x8BA4;&#x4E3A; <code>stopPropagation</code> &#x662F;&#x7528;&#x6765;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x5192;&#x6CE1;&#x7684;&#xFF0C;&#x5176;&#x5B9E;&#x8BE5;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x963B;&#x6B62;&#x6355;&#x83B7;&#x4E8B;&#x4EF6;&#x3002;<code>stopImmediatePropagation</code> &#x540C;&#x6837;&#x4E5F;&#x80FD;&#x5B9E;&#x73B0;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x80FD;&#x963B;&#x6B62;&#x8BE5;&#x4E8B;&#x4EF6;&#x76EE;&#x6807;&#x6267;&#x884C;&#x522B;&#x7684;&#x6CE8;&#x518C;&#x4E8B;&#x4EF6;&#x3002;</p>
-<pre><code class="lang-js">node.addEventListener(
-  <span class="hljs-string">&apos;click&apos;</span>,
-  event =&gt; {
-    event.stopImmediatePropagation()
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x5192;&#x6CE1;&apos;</span>)
-  },
-  <span class="hljs-literal">false</span>
-)
-<span class="hljs-comment">// &#x70B9;&#x51FB; node &#x53EA;&#x4F1A;&#x6267;&#x884C;&#x4E0A;&#x9762;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x4E0D;&#x4F1A;&#x6267;&#x884C;</span>
-node.addEventListener(
-  <span class="hljs-string">&apos;click&apos;</span>,
-  event =&gt; {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x6355;&#x83B7; &apos;</span>)
-  },
-  <span class="hljs-literal">true</span>
-)
+<p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x5728;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;<code>beforeCreate</code> &#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x662F;&#x83B7;&#x53D6;&#x4E0D;&#x5230; props &#x6216;&#x8005; data &#x4E2D;&#x7684;&#x6570;&#x636E;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x7684;&#x521D;&#x59CB;&#x5316;&#x90FD;&#x5728; <code>initState</code> &#x4E2D;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x4F1A;&#x6267;&#x884C;&#x6302;&#x8F7D;&#x51FD;&#x6570;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mountComponent</span> </span>{
+    callHook(vm, <span class="hljs-string">&apos;beforeMount&apos;</span>)
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">if</span> (vm.$vnode == <span class="hljs-literal">null</span>) {
+        vm._isMounted = <span class="hljs-literal">true</span>
+        callHook(vm, <span class="hljs-string">&apos;mounted&apos;</span>)
+    }
+}
 </code></pre>
-<h2 id="&#x4E8B;&#x4EF6;&#x4EE3;&#x7406;">&#x4E8B;&#x4EF6;&#x4EE3;&#x7406;</h2>
-<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x662F;&#x52A8;&#x6001;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x5B50;&#x8282;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x518C;&#x4E8B;&#x4EF6;&#x7684;&#x8BDD;&#x5E94;&#x8BE5;&#x6CE8;&#x518C;&#x5728;&#x7236;&#x8282;&#x70B9;&#x4E0A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ul&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">let</span> ul = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;##ul&apos;</span>)
-  ul.addEventListener(<span class="hljs-string">&apos;click&apos;</span>, event =&gt; {
-    <span class="hljs-built_in">console</span>.log(event.target)
-  })
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<p><code>beforeMount</code> &#x5C31;&#x662F;&#x5728;&#x6302;&#x8F7D;&#x524D;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x5F00;&#x59CB;&#x521B;&#x5EFA; VDOM &#x5E76;&#x66FF;&#x6362;&#x6210;&#x771F;&#x5B9E; DOM&#xFF0C;&#x6700;&#x540E;&#x6267;&#x884C; <code>mounted</code> &#x94A9;&#x5B50;&#x3002;&#x8FD9;&#x91CC;&#x4F1A;&#x6709;&#x4E2A;&#x5224;&#x65AD;&#x903B;&#x8F91;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5916;&#x90E8; <code>new Vue({})</code> &#x7684;&#x8BDD;&#xFF0C;&#x4E0D;&#x4F1A;&#x5B58;&#x5728; <code>$vnode</code> &#xFF0C;&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x6267;&#x884C; <code>mounted</code> &#x94A9;&#x5B50;&#x4E86;&#x3002;&#x5982;&#x679C;&#x6709;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x9012;&#x5F52;&#x6302;&#x8F7D;&#x5B50;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x6240;&#x6709;&#x5B50;&#x7EC4;&#x4EF6;&#x5168;&#x90E8;&#x6302;&#x8F7D;&#x5B8C;&#x6BD5;&#xFF0C;&#x624D;&#x4F1A;&#x6267;&#x884C;&#x6839;&#x7EC4;&#x4EF6;&#x7684;&#x6302;&#x8F7D;&#x94A9;&#x5B50;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x662F;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x65F6;&#x4F1A;&#x8C03;&#x7528;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">flushSchedulerQueue</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">for</span> (index = <span class="hljs-number">0</span>; index &lt; queue.length; index++) {
+    watcher = queue[index]
+    <span class="hljs-keyword">if</span> (watcher.before) {
+      watcher.before() <span class="hljs-comment">// &#x8C03;&#x7528; beforeUpdate</span>
+    }
+    id = watcher.id
+    has[id] = <span class="hljs-literal">null</span>
+    watcher.run()
+    <span class="hljs-comment">// in dev build, check and stop circular updates.</span>
+    <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span> &amp;&amp; has[id] != <span class="hljs-literal">null</span>) {
+      circular[id] = (circular[id] || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>
+      <span class="hljs-keyword">if</span> (circular[id] &gt; MAX_UPDATE_COUNT) {
+        warn(
+          <span class="hljs-string">&apos;You may have an infinite update loop &apos;</span> +
+            (watcher.user
+              ? <span class="hljs-string">`in watcher with expression &quot;<span class="hljs-subst">${watcher.expression}</span>&quot;`</span>
+              : <span class="hljs-string">`in a component render function.`</span>),
+          watcher.vm
+        )
+        <span class="hljs-keyword">break</span>
+      }
+    }
+  }
+  callUpdatedHooks(updatedQueue)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callUpdatedHooks</span>(<span class="hljs-params">queue</span>) </span>{
+  <span class="hljs-keyword">let</span> i = queue.length
+  <span class="hljs-keyword">while</span> (i--) {
+    <span class="hljs-keyword">const</span> watcher = queue[i]
+    <span class="hljs-keyword">const</span> vm = watcher.vm
+    <span class="hljs-keyword">if</span> (vm._watcher === watcher &amp;&amp; vm._isMounted) {
+      callHook(vm, <span class="hljs-string">&apos;updated&apos;</span>)
+    }
+  }
+}
 </code></pre>
-<p>&#x4E8B;&#x4EF6;&#x4EE3;&#x7406;&#x7684;&#x65B9;&#x5F0F;&#x76F8;&#x5BF9;&#x4E8E;&#x76F4;&#x63A5;&#x7ED9;&#x76EE;&#x6807;&#x6CE8;&#x518C;&#x4E8B;&#x4EF6;&#x6765;&#x8BF4;&#xFF0C;&#x6709;&#x4EE5;&#x4E0B;&#x4F18;&#x70B9;</p>
-<ul>
-<li>&#x8282;&#x7701;&#x5185;&#x5B58;</li>
-<li>&#x4E0D;&#x9700;&#x8981;&#x7ED9;&#x5B50;&#x8282;&#x70B9;&#x6CE8;&#x9500;&#x4E8B;&#x4EF6;</li>
-</ul>
+<p>&#x4E0A;&#x56FE;&#x8FD8;&#x6709;&#x4E24;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x6CA1;&#x6709;&#x8BF4;&#xFF0C;&#x5206;&#x522B;&#x4E3A; <code>activated</code> &#x548C; <code>deactivated</code> &#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x662F; <code>keep-alive</code> &#x7EC4;&#x4EF6;&#x72EC;&#x6709;&#x7684;&#x3002;&#x7528; <code>keep-alive</code> &#x5305;&#x88F9;&#x7684;&#x7EC4;&#x4EF6;&#x5728;&#x5207;&#x6362;&#x65F6;&#x4E0D;&#x4F1A;&#x8FDB;&#x884C;&#x9500;&#x6BC1;&#xFF0C;&#x800C;&#x662F;&#x7F13;&#x5B58;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x5E76;&#x6267;&#x884C; <code>deactivated</code> &#x94A9;&#x5B50;&#x51FD;&#x6570;&#xFF0C;&#x547D;&#x4E2D;&#x7F13;&#x5B58;&#x6E32;&#x67D3;&#x540E;&#x4F1A;&#x6267;&#x884C; <code>actived</code> &#x94A9;&#x5B50;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x5C31;&#x662F;&#x9500;&#x6BC1;&#x7EC4;&#x4EF6;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4E86;</p>
+<pre><code class="lang-js">Vue.prototype.$destroy = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+  callHook(vm, <span class="hljs-string">&apos;beforeDestroy&apos;</span>)
+  vm._isBeingDestroyed = <span class="hljs-literal">true</span>
+  <span class="hljs-comment">// remove self from parent</span>
+  <span class="hljs-keyword">const</span> parent = vm.$parent
+  <span class="hljs-keyword">if</span> (parent &amp;&amp; !parent._isBeingDestroyed &amp;&amp; !vm.$options.abstract) {
+    remove(parent.$children, vm)
+  }
+  <span class="hljs-comment">// teardown watchers</span>
+  <span class="hljs-keyword">if</span> (vm._watcher) {
+    vm._watcher.teardown()
+  }
+  <span class="hljs-keyword">let</span> i = vm._watchers.length
+  <span class="hljs-keyword">while</span> (i--) {
+    vm._watchers[i].teardown()
+  }
+  <span class="hljs-comment">// remove reference from data ob</span>
+  <span class="hljs-comment">// frozen object may not have observer.</span>
+  <span class="hljs-keyword">if</span> (vm._data.__ob__) {
+    vm._data.__ob__.vmCount--
+  }
+  <span class="hljs-comment">// call the last hook...</span>
+  vm._isDestroyed = <span class="hljs-literal">true</span>
+  <span class="hljs-comment">// invoke destroy hooks on current rendered tree</span>
+  vm.__patch__(vm._vnode, <span class="hljs-literal">null</span>)
+  <span class="hljs-comment">// fire destroyed hook</span>
+  callHook(vm, <span class="hljs-string">&apos;destroyed&apos;</span>)
+  <span class="hljs-comment">// turn off all instance listeners.</span>
+  vm.$off()
+  <span class="hljs-comment">// remove __vue__ reference</span>
+  <span class="hljs-keyword">if</span> (vm.$el) {
+    vm.$el.__vue__ = <span class="hljs-literal">null</span>
+  }
+  <span class="hljs-comment">// release circular reference (##6759)</span>
+  <span class="hljs-keyword">if</span> (vm.$vnode) {
+    vm.$vnode.parent = <span class="hljs-literal">null</span>
+  }
+}
+</code></pre>
+<p>&#x5728;&#x6267;&#x884C;&#x9500;&#x6BC1;&#x64CD;&#x4F5C;&#x524D;&#x4F1A;&#x8C03;&#x7528; <code>beforeDestroy</code> &#x94A9;&#x5B50;&#x51FD;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x9500;&#x6BC1;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x8BDD;&#xFF0C;&#x4E5F;&#x4F1A;&#x9012;&#x5F52;&#x9500;&#x6BC1;&#x5B50;&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x6709;&#x5B50;&#x7EC4;&#x4EF6;&#x90FD;&#x9500;&#x6BC1;&#x5B8C;&#x6BD5;&#x540E;&#x624D;&#x4F1A;&#x6267;&#x884C;&#x6839;&#x7EC4;&#x4EF6;&#x7684; <code>destroyed</code> &#x94A9;&#x5B50;&#x51FD;&#x6570;&#x3002;</p>
 
                                 
                                 </section>
@@ -1185,8 +1219,12 @@ node.addEventListener(
 
             
                 
+                <a href="NextTick原理分析.html" class="navigation navigation-prev " aria-label="Previous page: NextTick原理分析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="跨域.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 跨域">
+                
+                <a href="VueRouter源码分析" class="navigation navigation-next " aria-label="Next page: VueRouter源码分析">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1197,7 +1235,7 @@ node.addEventListener(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"事件机制","level":"1.5.1","depth":2,"next":{"title":"跨域","level":"1.5.2","depth":2,"path":"浏览器/跨域.md","ref":"浏览器/跨域.md","articles":[]},"previous":{"title":"4.浏览器","level":"1.5","depth":1,"ref":"","articles":[{"title":"事件机制","level":"1.5.1","depth":2,"path":"浏览器/事件机制.md","ref":"浏览器/事件机制.md","articles":[]},{"title":"跨域","level":"1.5.2","depth":2,"path":"浏览器/跨域.md","ref":"浏览器/跨域.md","articles":[]},{"title":"Event loop","level":"1.5.3","depth":2,"path":"浏览器/Event-loop.md","ref":"浏览器/Event-loop.md","articles":[]},{"title":"存储","level":"1.5.4","depth":2,"path":"浏览器/存储.md","ref":"浏览器/存储.md","articles":[]},{"title":"渲染机制","level":"1.5.5","depth":2,"path":"浏览器/渲染机制.md","ref":"浏览器/渲染机制.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"浏览器/事件机制.md","mtime":"2019-06-28T01:34:43.571Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T08:13:22.565Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vue生命周期分析","level":"4.3","depth":1,"next":{"title":"VueRouter源码分析","level":"4.4","depth":1,"path":"Vue/VueRouter源码分析","ref":"Vue/VueRouter源码分析","articles":[]},"previous":{"title":"NextTick原理分析","level":"4.2","depth":1,"path":"Vue/NextTick原理分析.md","ref":"Vue/NextTick原理分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"Vue/Vue生命周期.md","mtime":"2019-06-28T07:09:54.417Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T08:13:22.565Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
