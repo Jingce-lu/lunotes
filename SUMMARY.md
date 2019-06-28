@@ -90,10 +90,18 @@
   - [实现一个JSON.stringify](手撸代码无敌/实现一个JSON.stringify.md)
   - [实现一个JSON.parse](手撸代码无敌/实现一个JSON.parse.md)
   - [实现一个继承](手撸代码无敌/实现一个继承.md)
+  - [Js深拷贝](手撸代码无敌/JS深拷贝.md)
+  - [封装Ajax和Promise](手撸代码无敌/封装Ajax和Promise.md)
 
 * [8.设计模式]()
   - [策略设计模式和ES6的Proxy代理模式](设计模式/策略设计模式和ES6的Proxy代理模式.md)
   - [ES5 && ES6 实现观察者模式](设计模式/ES5&&ES6实现观察者模式.md)
+
+* [9.算法]()
+  - [快速排序](算法/快速排序.md)
+  - [Deepclone](算法/Deepclone.md)
+  - [数组去重](算法/数组去重.md)
+  - [冒泡排序](算法/冒泡排序.md)
 
 ## React
 * 1.React基础

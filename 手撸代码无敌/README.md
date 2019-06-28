@@ -28,3 +28,5 @@
 - [实现一个JSON.stringify](./实现一个JSON.stringify.md)
 - [实现一个JSON.parse](./实现一个JSON.parse.md)
 - [实现一个继承](./实现一个继承.md)
+- [Js深拷贝](./JS深拷贝.md)
+- [封装Ajax和Promise](./封装Ajax和Promise.md)

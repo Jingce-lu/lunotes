@@ -8,6 +8,9 @@
   - [柯里化通用式](#柯里化通用式)
   - [柯里化与bind](#柯里化与bind)
   - [柯里化的特点](#柯里化的特点)
+  - [--------](#--------)
+  - [通用版](#通用版)
+  - [ES6骚写法](#ES6骚写法)
 
 <!-- /TOC -->
 
@@ -92,7 +95,7 @@ console.log(d(10) + 100);  // 120
 
 ## 柯里化通用式
 ```js
-ar currying = function(fn) {
+var currying = function(fn) {
     var args = [].slice.call(arguments, 1);
 
     return function() {
@@ -130,3 +133,47 @@ Object.prototype.bind = function(context) {
 * 返回一个新函数，用于处理所有的想要传入的参数；
 * 需要利用call/apply与arguments对象收集参数；
 * 返回的这个函数正是用来处理收集起来的参数。
+
+--------
+--------
+## 通用版
+```js
+function multi() {
+  var args = Array.prototype.slice.call(arguments);
+  var fn = function() {
+	var newArgs = args.concat(Array.prototype.slice.call(arguments));
+    return multi.apply(this, newArgs);
+  }
+  fn.toString = function() {
+    return args.reduce(function(a, b) {
+      return a * b;
+    })
+  }
+  return fn;
+}
+
+function multiFn(a, b, c) {
+  return a * b * c;
+}
+
+var multi = curry(multiFn);
+
+multi(2)(3)(4);
+multi(2,3,4);
+multi(2)(3,4);
+multi(2,3)(4);
+```
+
+## ES6骚写法
+```js
+const curry = (fn, arr = []) => (...args) => (
+  arg => arg.length === fn.length
+    ? fn(...arg)
+    : curry(fn, arg)
+)([...arr, ...args])
+
+let curryTest=curry((a,b,c,d)=>a+b+c+d)
+curryTest(1,2,3)(4) //返回10
+curryTest(1,2)(4)(3) //返回10
+curryTest(1,2)(3,4) //返回10
+```
