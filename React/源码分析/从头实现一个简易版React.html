@@ -1,0 +1,3459 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>从头实现一个简易版React · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Lu jingce <lujingce@163.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../resource/styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="从0实现一个tiny-react.html" />
+    
+    
+    <link rel="prev" href="实现一个简易版的React.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ailjc.com/lunotes" target="_blank" class="custom-link">路小二</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    1.JS
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../Js/js基础/js基础.html">
+            
+                <a href="../../Js/js基础/js基础.html">
+            
+                    
+                    1.1 Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Js/js基础/ljc-Js.html">
+            
+                <a href="../../Js/js基础/ljc-Js.html">
+            
+                    
+                    1.2 ljc-Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../Js/js基础/moveJs.html">
+            
+                <a href="../../Js/js基础/moveJs.html">
+            
+                    
+                    1.3 moveJs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../Js/js基础/移动web.html">
+            
+                <a href="../../Js/js基础/移动web.html">
+            
+                    
+                    1.4 移动web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../Js/js基础/ICD.html">
+            
+                <a href="../../Js/js基础/ICD.html">
+            
+                    
+                    1.5 ICD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../Js/js基础/js-es6-Map.html">
+            
+                <a href="../../Js/js基础/js-es6-Map.html">
+            
+                    
+                    1.6 js es6 Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../Js/js基础/ES6-数组array新增方法.html">
+            
+                <a href="../../Js/js基础/ES6-数组array新增方法.html">
+            
+                    
+                    ES6-数组array新增方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../Js/js基础/require和import区别.html">
+            
+                <a href="../../Js/js基础/require和import区别.html">
+            
+                    
+                    require和import区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../Js/js基础/window.history方法总结.html">
+            
+                <a href="../../Js/js基础/window.history方法总结.html">
+            
+                    
+                    window.history方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../../Js/js基础/fetch.html">
+            
+                <a href="../../Js/js基础/fetch.html">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../../Js/js基础/Js判断字符串中是否包含某个字符串.html">
+            
+                <a href="../../Js/js基础/Js判断字符串中是否包含某个字符串.html">
+            
+                    
+                    Js判断字符串中是否包含某个字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../../Js/js基础/三种js类的实现方法(es5和es6">
+            
+                <span>
+            
+                    
+                    三种js类的实现方法(es5和es6)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../../Js/js基础/async-await.html">
+            
+                <a href="../../Js/js基础/async-await.html">
+            
+                    
+                    async await
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../../Js/js基础/关于移动端,webview监听滚动条的坑.html">
+            
+                <a href="../../Js/js基础/关于移动端,webview监听滚动条的坑.html">
+            
+                    
+                    关于移动端,webview监听滚动条的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../../Js/js基础/js类型转换.html">
+            
+                <a href="../../Js/js基础/js类型转换.html">
+            
+                    
+                    js类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../../Js/js基础/js事件轮询、微任务和宏任务.html">
+            
+                <a href="../../Js/js基础/js事件轮询、微任务和宏任务.html">
+            
+                    
+                    js事件轮询、微任务和宏任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    2.正则
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../Js/正则/正则表达式不要背.html">
+            
+                <a href="../../Js/正则/正则表达式不要背.html">
+            
+                    
+                    正则表达式不要背
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../Js/正则/RegExp.html">
+            
+                <a href="../../Js/正则/RegExp.html">
+            
+                    
+                    RegExp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    3.面向对象
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../Js/面向对象/面向对象之组件开发之弹窗.html">
+            
+                <a href="../../Js/面向对象/面向对象之组件开发之弹窗.html">
+            
+                    
+                    面向对象之组件开发之弹窗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../Js/面向对象/面向对象的微博登录提示邮箱.html">
+            
+                <a href="../../Js/面向对象/面向对象的微博登录提示邮箱.html">
+            
+                    
+                    面向对象的微博登录提示邮箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    4.浏览器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../浏览器/事件机制.html">
+            
+                <a href="../../浏览器/事件机制.html">
+            
+                    
+                    事件机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../浏览器/跨域.html">
+            
+                <a href="../../浏览器/跨域.html">
+            
+                    
+                    跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../浏览器/Event-loop.html">
+            
+                <a href="../../浏览器/Event-loop.html">
+            
+                    
+                    Event loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../浏览器/存储.html">
+            
+                <a href="../../浏览器/存储.html">
+            
+                    
+                    存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../浏览器/渲染机制.html">
+            
+                <a href="../../浏览器/渲染机制.html">
+            
+                    
+                    渲染机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    5.小程序
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../Js/小程序/性能更优越的小程序图片懒加载方式.html">
+            
+                <a href="../../Js/小程序/性能更优越的小程序图片懒加载方式.html">
+            
+                    
+                    性能更优越的小程序图片懒加载方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    6.基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../Js/基础/错误处理机制.html">
+            
+                <a href="../../Js/基础/错误处理机制.html">
+            
+                    
+                    错误处理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../Js/基础/HTTPS协议.html">
+            
+                <a href="../../Js/基础/HTTPS协议.html">
+            
+                    
+                    HTTPS协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../Js/基础/cookie与session.html">
+            
+                <a href="../../Js/基础/cookie与session.html">
+            
+                    
+                    cookie与session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../Js/基础/实用的60个CSS代码片段.html">
+            
+                <a href="../../Js/基础/实用的60个CSS代码片段.html">
+            
+                    
+                    实用的60个CSS代码片段
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    7.NodeJs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../Node/node基础/node命令.html">
+            
+                <a href="../../Node/node基础/node命令.html">
+            
+                    
+                    node命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../Node/node基础/搭建一个私有的npm仓库.html">
+            
+                <a href="../../Node/node基础/搭建一个私有的npm仓库.html">
+            
+                    
+                    搭建一个私有的npm仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../Node/node基础/AnyProxy.html">
+            
+                <a href="../../Node/node基础/AnyProxy.html">
+            
+                    
+                    AnyProxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../Node/node基础/Node进程管理器PM2.html">
+            
+                <a href="../../Node/node基础/Node进程管理器PM2.html">
+            
+                    
+                    Node进程管理器PM2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../../Node/node基础/DOM-Mutation-Observer-API.md">
+            
+                <span>
+            
+                    
+                    DOM Mutation Observer API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../../Node/node基础/Path对路径操作的Api.html">
+            
+                <a href="../../Node/node基础/Path对路径操作的Api.html">
+            
+                    
+                    Path对路径操作的Api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../../Node/node基础/node.html">
+            
+                <a href="../../Node/node基础/node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../../Node/node基础/babel.html">
+            
+                <a href="../../Node/node基础/babel.html">
+            
+                    
+                    Babel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../../Node/node基础/mongodb.html">
+            
+                <a href="../../Node/node基础/mongodb.html">
+            
+                    
+                    mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2 - Advanced</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    1.框架通识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../框架通识/MVVM.html">
+            
+                <a href="../../框架通识/MVVM.html">
+            
+                    
+                    MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../框架通识/VirtualDom.html">
+            
+                <a href="../../框架通识/VirtualDom.html">
+            
+                    
+                    Virtual Dom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../框架通识/Object.defineProperty方法.html">
+            
+                <a href="../../框架通识/Object.defineProperty方法.html">
+            
+                    
+                    Object.defineProperty方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../框架通识/Proxy.html">
+            
+                <a href="../../框架通识/Proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../框架通识/10分钟快速入门rollupJs(1">
+            
+                <span>
+            
+                    
+                    10分钟快速入门rollup(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../框架通识/10分钟快速入门rollupJs(2">
+            
+                <span>
+            
+                    
+                    10分钟快速入门rollup(2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../框架通识/谈谈JavaScript中的双向数据绑定.html">
+            
+                <a href="../../框架通识/谈谈JavaScript中的双向数据绑定.html">
+            
+                    
+                    谈谈JavaScript中的双向数据绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../安全/安全.html">
+            
+                <a href="../../安全/安全.html">
+            
+                    
+                    2.安全XSS-CSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    3.性能
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../安全/性能.html">
+            
+                <a href="../../安全/性能.html">
+            
+                    
+                    性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../安全/网站性能优化.html">
+            
+                <a href="../../安全/网站性能优化.html">
+            
+                    
+                    网站性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                <a href="../../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                    
+                    4.如何渲染几万条数据并不卡住界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    5.综合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../面试/综合1.html">
+            
+                <a href="../../面试/综合1.html">
+            
+                    
+                    综合1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../面试/综合2.html">
+            
+                <a href="../../面试/综合2.html">
+            
+                    
+                    综合2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../面试/综合3.html">
+            
+                <a href="../../面试/综合3.html">
+            
+                    
+                    综合3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../../面试/综合4-vue.html">
+            
+                <a href="../../面试/综合4-vue.html">
+            
+                    
+                    综合4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../../面试/综合5.html">
+            
+                <a href="../../面试/综合5.html">
+            
+                    
+                    综合5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../../面试/综合6.html">
+            
+                <a href="../../面试/综合6.html">
+            
+                    
+                    综合6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../面试/Js基础.html">
+            
+                <a href="../../面试/Js基础.html">
+            
+                    
+                    6.JS基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../手撸代码无敌/">
+            
+                <a href="../../手撸代码无敌/">
+            
+                    
+                    7.手撸代码无敌
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../../手撸代码无敌/new.html">
+            
+                <a href="../../手撸代码无敌/new.html">
+            
+                    
+                    new
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../../手撸代码无敌/instanceof.html">
+            
+                <a href="../../手撸代码无敌/instanceof.html">
+            
+                    
+                    instanceof
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../../手撸代码无敌/防抖和节流.html">
+            
+                <a href="../../手撸代码无敌/防抖和节流.html">
+            
+                    
+                    防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../../手撸代码无敌/Proxy.html">
+            
+                <a href="../../手撸代码无敌/Proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../../手撸代码无敌/Promise实现.html">
+            
+                <a href="../../手撸代码无敌/Promise实现.html">
+            
+                    
+                    Promise 实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../../手撸代码无敌/Generator实现.html">
+            
+                <a href="../../手撸代码无敌/Generator实现.html">
+            
+                    
+                    Generator实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.7" data-path="../../手撸代码无敌/call-apply-bind.html">
+            
+                <a href="../../手撸代码无敌/call-apply-bind.html">
+            
+                    
+                    call, apply, bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.8" data-path="../../手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.html">
+            
+                <a href="../../手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.html">
+            
+                    
+                    不用call和apply方法模拟实现ES5的bind方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.9" data-path="../../手撸代码无敌/curry.html">
+            
+                <a href="../../手撸代码无敌/curry.html">
+            
+                    
+                    curry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.10" data-path="../../手撸代码无敌/Template.html">
+            
+                <a href="../../手撸代码无敌/Template.html">
+            
+                    
+                    Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.11" data-path="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                <a href="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                    
+                    封装Ajax和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.12" data-path="../../手撸代码无敌/js-tree.html">
+            
+                <a href="../../手撸代码无敌/js-tree.html">
+            
+                    
+                    js-tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.13" data-path="../../手撸代码无敌/js复杂判断的更优雅写法.html">
+            
+                <a href="../../手撸代码无敌/js复杂判断的更优雅写法.html">
+            
+                    
+                    js复杂判断的更优雅写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.14" data-path="../../手撸代码无敌/JavaScript优雅的实现方式.html">
+            
+                <a href="../../手撸代码无敌/JavaScript优雅的实现方式.html">
+            
+                    
+                    JavaScript优雅的实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.15" data-path="../../手撸代码无敌/函数式代码.html">
+            
+                <a href="../../手撸代码无敌/函数式代码.html">
+            
+                    
+                    函数式代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.16" data-path="../../手撸代码无敌/js编程黑科技.html">
+            
+                <a href="../../手撸代码无敌/js编程黑科技.html">
+            
+                    
+                    js编程黑科技
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.17" data-path="../../手撸代码无敌/自己实现简单的shift(">
+            
+                <span>
+            
+                    
+                    自己实现简单的shift()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.18" data-path="../../手撸代码无敌/迭代函数与迭代函数的实现.html">
+            
+                <a href="../../手撸代码无敌/迭代函数与迭代函数的实现.html">
+            
+                    
+                    迭代函数与迭代函数的实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.19" data-path="../../手撸代码无敌/startsWith(">
+            
+                <span>
+            
+                    
+                    startsWith()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.20" data-path="../../手撸代码无敌/endsWith(">
+            
+                <span>
+            
+                    
+                    endsWith()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.21" data-path="../../手撸代码无敌/trim(">
+            
+                <span>
+            
+                    
+                    String.prototype.trim()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.22" data-path="../../手撸代码无敌/repeat(">
+            
+                <span>
+            
+                    
+                    String.prototype.repeat()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.23" data-path="../../手撸代码无敌/padStart(">
+            
+                <span>
+            
+                    
+                    String.prototype.padStart()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.24" data-path="../../手撸代码无敌/padEnd(">
+            
+                <span>
+            
+                    
+                    String.prototype.padEnd()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.25" data-path="../../手撸代码无敌/实现一个JSON.stringify.html">
+            
+                <a href="../../手撸代码无敌/实现一个JSON.stringify.html">
+            
+                    
+                    实现一个JSON.stringify
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.26" data-path="../../手撸代码无敌/实现一个JSON.parse.html">
+            
+                <a href="../../手撸代码无敌/实现一个JSON.parse.html">
+            
+                    
+                    实现一个JSON.parse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.27" data-path="../../手撸代码无敌/实现一个继承.html">
+            
+                <a href="../../手撸代码无敌/实现一个继承.html">
+            
+                    
+                    实现一个继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.28" data-path="../../手撸代码无敌/JS深拷贝.html">
+            
+                <a href="../../手撸代码无敌/JS深拷贝.html">
+            
+                    
+                    Js深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.29" data-path="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                <a href="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                    
+                    封装Ajax和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../设计模式/">
+            
+                <a href="../../设计模式/">
+            
+                    
+                    8.设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../../设计模式/单例模式.html">
+            
+                <a href="../../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../../设计模式/策略模式.html">
+            
+                <a href="../../设计模式/策略模式.html">
+            
+                    
+                    策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../../设计模式/代理模式.html">
+            
+                <a href="../../设计模式/代理模式.html">
+            
+                    
+                    代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../../设计模式/迭代器模式.html">
+            
+                <a href="../../设计模式/迭代器模式.html">
+            
+                    
+                    迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../../设计模式/发布-订阅模式(观察者模式">
+            
+                <span>
+            
+                    
+                    发布-订阅模式(观察者模式)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../../设计模式/命令模式.html">
+            
+                <a href="../../设计模式/命令模式.html">
+            
+                    
+                    命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../../设计模式/组合模式.html">
+            
+                <a href="../../设计模式/组合模式.html">
+            
+                    
+                    组合模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="../../设计模式/模板方法模式.html">
+            
+                <a href="../../设计模式/模板方法模式.html">
+            
+                    
+                    模板方法模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.9" data-path="../../设计模式/享元模式.html">
+            
+                <a href="../../设计模式/享元模式.html">
+            
+                    
+                    享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="../../设计模式/职责链模式.html">
+            
+                <a href="../../设计模式/职责链模式.html">
+            
+                    
+                    职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="../../设计模式/中介者模式.html">
+            
+                <a href="../../设计模式/中介者模式.html">
+            
+                    
+                    中介者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="../../设计模式/装饰者模式.html">
+            
+                <a href="../../设计模式/装饰者模式.html">
+            
+                    
+                    装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.13" data-path="../../设计模式/状态模式.html">
+            
+                <a href="../../设计模式/状态模式.html">
+            
+                    
+                    状态模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.14" data-path="../../设计模式/适配器模式.html">
+            
+                <a href="../../设计模式/适配器模式.html">
+            
+                    
+                    适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.15" data-path="../../设计模式/策略设计模式和ES6的Proxy代理模式.html">
+            
+                <a href="../../设计模式/策略设计模式和ES6的Proxy代理模式.html">
+            
+                    
+                    策略设计模式和ES6的Proxy代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.16" data-path="../../设计模式/ES5&&ES6实现观察者模式.html">
+            
+                <a href="../../设计模式/ES5&&ES6实现观察者模式.html">
+            
+                    
+                    ES5 && ES6 实现观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" >
+            
+                <span>
+            
+                    
+                    9.算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../../算法/快速排序.html">
+            
+                <a href="../../算法/快速排序.html">
+            
+                    
+                    快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="../../算法/Deepclone.html">
+            
+                <a href="../../算法/Deepclone.html">
+            
+                    
+                    Deepclone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="../../算法/数组去重.html">
+            
+                <a href="../../算法/数组去重.html">
+            
+                    
+                    数组去重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.4" data-path="../../算法/冒泡排序.html">
+            
+                <a href="../../算法/冒泡排序.html">
+            
+                    
+                    冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">React</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    1.React基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../React基础/react基础.html">
+            
+                <a href="../React基础/react基础.html">
+            
+                    
+                    React基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../React基础/React生命周期分析.html">
+            
+                <a href="../React基础/React生命周期分析.html">
+            
+                    
+                    React生命周期分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../React基础/setState.html">
+            
+                <a href="../React基础/setState.html">
+            
+                    
+                    setState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../React基础/webpack4+babel7+React.html">
+            
+                <a href="../React基础/webpack4+babel7+React.html">
+            
+                    
+                    webpack4+babel7+React
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    2.Dva
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../dva/React+DvaJS之hook路由权限控制.html">
+            
+                <a href="../dva/React+DvaJS之hook路由权限控制.html">
+            
+                    
+                    React+DvaJS 之 hook 路由权限控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    3.源码分析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="React-Object实现React对象.html">
+            
+                <a href="React-Object实现React对象.html">
+            
+                    
+                    React Object实现React对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="从零开始实现一个React(一">
+            
+                <span>
+            
+                    
+                    从零开始实现一个React(一)-JSX和虚拟DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="从零开始实现一个React（二）：组件和生命周期.html">
+            
+                <a href="从零开始实现一个React（二）：组件和生命周期.html">
+            
+                    
+                    从零开始实现一个React（二）：组件和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="从零开始实现一个React（三）：diff算法.html">
+            
+                <a href="从零开始实现一个React（三）：diff算法.html">
+            
+                    
+                    从零开始实现一个React（三）：diff算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="从零开始实现一个React（四）：异步的setState.html">
+            
+                <a href="从零开始实现一个React（四）：异步的setState.html">
+            
+                    
+                    从零开始实现一个React（四）：异步的setState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="85行代码实现一个React.html">
+            
+                <a href="85行代码实现一个React.html">
+            
+                    
+                    85行代码实现一个React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.7" data-path="40行代码内实现一个React.html">
+            
+                <a href="40行代码内实现一个React.html">
+            
+                    
+                    40行代码内实现一个React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.8" data-path="简易版react.html">
+            
+                <a href="简易版react.html">
+            
+                    
+                    简易版react
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.9" data-path="200行代码实现简版react.html">
+            
+                <a href="200行代码实现简版react.html">
+            
+                    
+                    200行代码实现简版react
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.10" data-path="实现Didact.html">
+            
+                <a href="实现Didact.html">
+            
+                    
+                    实现Didact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.11" data-path="实现一个简易版的React.html">
+            
+                <a href="实现一个简易版的React.html">
+            
+                    
+                    实现一个简易版的React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3.12" data-path="从头实现一个简易版React.html">
+            
+                <a href="从头实现一个简易版React.html">
+            
+                    
+                    从头实现一个简易版React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.13" data-path="从0实现一个tiny-react.html">
+            
+                <a href="从0实现一个tiny-react.html">
+            
+                    
+                    从0实现一个tiny-react
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.14" data-path="实现自己的react之简单rendering.html">
+            
+                <a href="实现自己的react之简单rendering.html">
+            
+                    
+                    实现自己的react之简单rendering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.15" data-path="Redux源码分析.html">
+            
+                <a href="Redux源码分析.html">
+            
+                    
+                    Redux源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.16" data-path="从0实现一个lu-redux.html">
+            
+                <a href="从0实现一个lu-redux.html">
+            
+                    
+                    从0实现一个lu-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.17" data-path="从0实现一个tiny-react-redux.html">
+            
+                <a href="从0实现一个tiny-react-redux.html">
+            
+                    
+                    从0实现一个tiny-react-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.18" data-path="从0开始实现react-router.html">
+            
+                <a href="从0开始实现react-router.html">
+            
+                    
+                    从0开始实现react-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                    4.React Native
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../react-native/react-native.html">
+            
+                <a href="../react-native/react-native.html">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Vue</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../Vue/Vue生命周期.html">
+            
+                <a href="../../Vue/Vue生命周期.html">
+            
+                    
+                    Vue生命周期分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../Vue/vueRouter使用query和params传参的使用和区别.html">
+            
+                <a href="../../Vue/vueRouter使用query和params传参的使用和区别.html">
+            
+                    
+                    vueRouter使用query和params传参的使用和区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../Vue/Vue组件data为什么必须是函数.html">
+            
+                <a href="../../Vue/Vue组件data为什么必须是函数.html">
+            
+                    
+                    Vue组件data为什么必须是函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../Vue/Vue组件通信的方法.html">
+            
+                <a href="../../Vue/Vue组件通信的方法.html">
+            
+                    
+                    Vue组件通信的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../../Vue/NextTick原理分析.html">
+            
+                <a href="../../Vue/NextTick原理分析.html">
+            
+                    
+                    NextTick原理分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../../Vue/从Vue.js源码看nextTick机制.html">
+            
+                <a href="../../Vue/从Vue.js源码看nextTick机制.html">
+            
+                    
+                    从Vue.js源码看nextTick机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../../Vue/VueRouter源码分析.html">
+            
+                <a href="../../Vue/VueRouter源码分析.html">
+            
+                    
+                    VueRouter源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../../Vue/Vue&&MVVM原理.html">
+            
+                <a href="../../Vue/Vue&&MVVM原理.html">
+            
+                    
+                    Vue&&MVVM原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../../Vue/撸一个简单的Vue.html">
+            
+                <a href="../../Vue/撸一个简单的Vue.html">
+            
+                    
+                    撸一个简单的Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../../Vue/剖析Vue原理&实现双向绑定MVVM.html">
+            
+                <a href="../../Vue/剖析Vue原理&实现双向绑定MVVM.html">
+            
+                    
+                    剖析Vue原理&实现双向绑定MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../../Vue/150行代码实现一个低配版的MVVM库.html">
+            
+                <a href="../../Vue/150行代码实现一个低配版的MVVM库.html">
+            
+                    
+                    150行代码实现一个低配版的MVVM库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../../Vue/160行代码仿Vue实现极简双向绑定[详细注释].html">
+            
+                <a href="../../Vue/160行代码仿Vue实现极简双向绑定[详细注释].html">
+            
+                    
+                    160行代码仿Vue实现极简双向绑定[详细注释]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../../Vue/vue-SSR-cookie问题.html">
+            
+                <a href="../../Vue/vue-SSR-cookie问题.html">
+            
+                    
+                    Vue SSR cookie问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../../Vue/理解vue-ssr原理并自己搭建简单的ssr框架.html">
+            
+                <a href="../../Vue/理解vue-ssr原理并自己搭建简单的ssr框架.html">
+            
+                    
+                    理解vue ssr原理并自己搭建简单的ssr框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="../../Vue/Vue插件开发.html">
+            
+                <a href="../../Vue/Vue插件开发.html">
+            
+                    
+                    Vue插件开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3 - other</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    1.git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../git/git基本使用.html">
+            
+                <a href="../../git/git基本使用.html">
+            
+                    
+                    git基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../git/git分支管理策略.html">
+            
+                <a href="../../git/git分支管理策略.html">
+            
+                    
+                    git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../git/publish脚本.html">
+            
+                <a href="../../git/publish脚本.html">
+            
+                    
+                    publish脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../git/gitbook.html">
+            
+                <a href="../../git/gitbook.html">
+            
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    2.规范
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../规范/分支开发规范.html">
+            
+                <a href="../../规范/分支开发规范.html">
+            
+                    
+                    分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../../规范/es6编码规范.html">
+            
+                <a href="../../规范/es6编码规范.html">
+            
+                    
+                    ES6编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../../规范/vue编码规范.html">
+            
+                <a href="../../规范/vue编码规范.html">
+            
+                    
+                    vue编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                <a href="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                    
+                    Airbnb-React-JSX编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    3.其它
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="../../other/Emoji表情.html">
+            
+                <a href="../../other/Emoji表情.html">
+            
+                    
+                    Emoji表情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" >
+            
+                <span>
+            
+                    
+                    deep
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.3" data-path="../../other/简明-Vim-练级攻略.html">
+            
+                <a href="../../other/简明-Vim-练级攻略.html">
+            
+                    
+                    简明-Vim-练级攻略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    世路如今已惯,此心到处悠然
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >从头实现一个简易版React</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;react">&#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#&#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React">&#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React</a><ul>
+<li><a href="#1-&#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React&#x4E00;">1. &#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React&#xFF08;&#x4E00;&#xFF09;</a><ul>
+<li><a href="#11-Virtual-DOM&#x7684;&#x5B9E;&#x73B0;">1.1 Virtual DOM&#x7684;&#x5B9E;&#x73B0;</a></li>
+<li><a href="#12-ReactComponent&#x7684;&#x5B9E;&#x73B0;">1.2 ReactComponent&#x7684;&#x5B9E;&#x73B0;</a></li>
+<li><a href="#13-&#x5165;&#x53E3;&#x7684;&#x5B9E;&#x73B0;">1.3 &#x5165;&#x53E3;&#x7684;&#x5B9E;&#x73B0;</a></li>
+</ul>
+</li>
+<li><a href="#2-&#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React&#x4E8C;">2. &#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React&#xFF08;&#x4E8C;&#xFF09;</a><ul>
+<li><a href="#21-ReactTextComponent">2.1 ReactTextComponent</a></li>
+<li><a href="#22-ReactDomComponent">2.2 ReactDomComponent</a></li>
+<li><a href="#23-ReactCompositComponent">2.3 ReactCompositComponent</a></li>
+<li><a href="#24-&#x603B;&#x7ED3;">2.4 &#x603B;&#x7ED3;</a></li>
+</ul>
+</li>
+<li><a href="#3-&#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React&#x4E09;">3. &#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React&#xFF08;&#x4E09;&#xFF09;</a><ul>
+<li><a href="#31-ReactCompositeComponent">3.1 ReactCompositeComponent</a></li>
+<li><a href="#32-ReactTextComponent">3.2 ReactTextComponent</a></li>
+<li><a href="#33-ReactDomComponent">3.3 ReactDomComponent</a></li>
+<li><a href="#&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</a></li>
+</ul>
+</li>
+<li><a href="#&#x4ED3;&#x5E93;">&#x4ED3;&#x5E93;</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<p>&#x7B2C;&#x4E00;&#x8282;&#x4ECB;&#x7ECD;&#x4E0B;&#x5B9E;&#x73B0;&#x7684;&#x601D;&#x8DEF;&#x4EE5;&#x53CA;&#x7ED3;&#x6784;&#xFF0C;&#x7B2C;&#x4E8C;&#x8282;&#x8BB2;&#x6E32;&#x67D3;&#xFF0C;&#x7B2C;&#x4E09;&#x8282;&#x8BB2;&#x66F4;&#x65B0;&#x3002;</p>
+<h2 id="1-&#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;react&#xFF08;&#x4E00;&#xFF09;">1. &#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React&#xFF08;&#x4E00;&#xFF09;</h2>
+<h3 id="11-virtual-dom&#x7684;&#x5B9E;&#x73B0;">1.1 Virtual DOM&#x7684;&#x5B9E;&#x73B0;</h3>
+<p><code>React</code>&#x7684;&#x4E00;&#x5207;&#x90FD;&#x57FA;&#x4E8E;<code>Virtual DOM</code>,&#x6211;&#x4EEC;&#x7B2C;&#x4E00;&#x6B65;&#x81EA;&#x7136;&#x5148;&#x5B9E;&#x73B0;&#x5B83;,&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * @param type :&#x4EE3;&#x8868;&#x5F53;&#x524D;&#x7684;&#x8282;&#x70B9;&#x5C5E;&#x6027;
+ * @param key :&#x7528;&#x6765;&#x6807;&#x8BC6;element,&#x7528;&#x4E8E;&#x4F18;&#x5316;&#x4EE5;&#x540E;&#x7684;&#x66F4;&#x65B0;
+ * @param props:&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">VDom</span>(<span class="hljs-params">type, key, props</span>) </span>{
+  <span class="hljs-keyword">this</span>.type = type
+  <span class="hljs-keyword">this</span>.key = key
+  <span class="hljs-keyword">this</span>.props = props
+}
+<span class="hljs-comment">// &#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/reactElement.js</span>
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#x4E86;vDom&#x540E;&#xFF0C;&#x7406;&#x6240;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x5C06;&#x6211;&#x4EEC;&#x5199;&#x7684;&#x5143;&#x7D20;&#x8F6C;&#x5316;&#x4E3A;vDom&#x3002;&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x90FD;&#x662F;JSX&#x6765;&#x521B;&#x5EFA;&#x5143;&#x7D20;&#x7684;&#xFF0C;&#x4F46;&#x5B83;&#x53EA;&#x4E0D;&#x8FC7;&#x662F;<code>React.createElment</code>&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x5C31;&#x662F;<code>createElement</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createElement</span>(<span class="hljs-params">type, config, ...children</span>) </span>{
+  <span class="hljs-keyword">const</span> props = {}
+
+  config = config || {}
+  <span class="hljs-comment">// &#x83B7;&#x53D6;key&#xFF0C;&#x7528;&#x6765;&#x6807;&#x8BC6;element&#xFF0C;&#x65B9;&#x4FBF;&#x4EE5;&#x540E;&#x9AD8;&#x6548;&#x7684;&#x66F4;&#x65B0;</span>
+  <span class="hljs-keyword">const</span> { key = <span class="hljs-literal">null</span> } = config
+
+  <span class="hljs-keyword">let</span> propName = <span class="hljs-string">&apos;&apos;</span>
+
+  <span class="hljs-comment">// &#x590D;&#x5236;config&#x91CC;&#x7684;&#x5185;&#x5BB9;&#x5230;props</span>
+  <span class="hljs-keyword">for</span> (propName <span class="hljs-keyword">in</span> config) {
+    <span class="hljs-keyword">if</span> (config.hasOwnProperty(propName) &amp;&amp; propName !== <span class="hljs-string">&apos;key&apos;</span>) {
+      props[propName] = config[propName]
+    }
+  }
+
+  <span class="hljs-comment">// &#x8F6C;&#x5316;children</span>
+  <span class="hljs-keyword">if</span> (children.length === <span class="hljs-number">1</span> &amp;&amp; <span class="hljs-built_in">Array</span>.isArray(children[<span class="hljs-number">0</span>])) {
+    props.children = children[<span class="hljs-number">0</span>]
+  } <span class="hljs-keyword">else</span> {
+    props.children = children
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> VDom(type, key, props)
+}
+<span class="hljs-comment">// &#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/reactElement.js</span>
+</code></pre>
+<p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E5F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;vDom</p>
+<h3 id="12-reactcomponent&#x7684;&#x5B9E;&#x73B0;">1.2 ReactComponent&#x7684;&#x5B9E;&#x73B0;</h3>
+<p>&#x6211;&#x4EEC;&#x6240;&#x521B;&#x5EFA;&#x7684;VDom&#x7C7B;&#x578B;&#x5206;&#x4E3A;3&#x79CD;&#xFF1A;</p>
+<ol>
+<li>&#x6587;&#x672C;&#x7C7B;&#x578B;</li>
+<li>&#x539F;&#x751F;DOM&#x7C7B;&#x578B;</li>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;</li>
+</ol>
+<p>&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x80AF;&#x5B9A;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x6E32;&#x67D3;&#x548C;&#x66F4;&#x65B0;&#x903B;&#x8F91;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E9B;&#x903B;&#x8F91;&#x4E0E;vDom&#x4E00;&#x8D77;&#xFF0C;&#x5C01;&#x88C5;&#x6210;&#x5BF9;&#x5E94;&#x7684;<code>ReactComponent</code>&#x7C7B;&#xFF0C;&#x901A;&#x8FC7;<code>ReactComponent</code>&#x7C7B;&#x63A7;&#x5236;vDom,&#x8FD9;&#x91CC;&#x6211;&#x628A;&#x5B83;&#x4EEC;&#x547D;&#x540D;&#x4E3A;<code>ReactTextComponent</code>,<code>ReactDomComponent</code>,<code>ReactCompositeComponent</code>,&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x662F;&#x57FA;&#x7C7B;ReactComponet&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// component&#x57FA;&#x7C7B;&#xFF0C;&#x7528;&#x6765;&#x5904;&#x7406;&#x4E0D;&#x540C;&#x7684;&#x865A;&#x62DF;dom&#x66F4;&#x65B0;&#xFF0C;&#x6E32;&#x67D3;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(element) {
+    <span class="hljs-keyword">this</span>._vDom = element
+    <span class="hljs-comment">// &#x7528;&#x6765;&#x6807;&#x8BC6;&#x5F53;&#x524D;component</span>
+    <span class="hljs-keyword">this</span>._rootNodeId = <span class="hljs-literal">null</span>
+  }
+}
+<span class="hljs-comment">// &#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/component/ReactComponent.js</span>
+</code></pre>
+<p>&#x63A5;&#x7740;&#x518D;&#x8BA9;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;component&#x7EE7;&#x627F;&#x8FD9;&#x4E2A;&#x57FA;&#x7C7B;&#xFF0C;&#x6BCF;&#x79CD;component&#x7C7B;&#x578B;&#x90FD;&#x6709;mount&#x548C;update&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x6765;&#x6267;&#x884C;&#x6E32;&#x67D3;&#x548C;&#x66F4;&#x65B0;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReactDomComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ReactComponent</span> </span>{
+    <span class="hljs-comment">// &#x6E32;&#x67D3;</span>
+  mountComponent() {}
+
+  <span class="hljs-comment">// &#x66F4;&#x65B0;</span>
+  updateComponent() {}
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReactCompositeComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ReactComponent</span> </span>{
+    <span class="hljs-comment">// &#x6E32;&#x67D3;</span>
+  mountComponent() {}
+
+  <span class="hljs-comment">// &#x66F4;&#x65B0;</span>
+  updateComponent() {}
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReactTextComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ReactComponent</span> </span>{
+    <span class="hljs-comment">// &#x6E32;&#x67D3;</span>
+  mountComponent() {}
+
+  <span class="hljs-comment">// &#x66F4;&#x65B0;</span>
+  updateComponent() {}
+}
+</code></pre>
+<h3 id="13-&#x5165;&#x53E3;&#x7684;&#x5B9E;&#x73B0;">1.3 &#x5165;&#x53E3;&#x7684;&#x5B9E;&#x73B0;</h3>
+<p>&#x5B9E;&#x73B0;&#x4E86;ReactComponent&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x81EA;&#x7136;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5165;&#x53E3;&#x53BB;&#x5F97;&#x5230;ReactComponent&#x5E76;&#x8C03;&#x7528;&#x5B83;&#x7684;mount&#x3002;&#x5728;&#x4F7F;&#x7528;React&#x65F6;&#xFF0C;&#x901A;&#x5E38;&#x90FD;&#x662F;&#x901A;&#x8FC7;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom&apos;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+}
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>, document.getElementById(&apos;root&apos;))
+</span></code></pre>
+<p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x6765;&#x5145;&#x5F53;&#x6E32;&#x67D3;&#x7684;&#x5165;&#x53E3;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x5165;&#x53E3;&#xFF0C;&#xFF08;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x8BF4;&#x660E;&#xFF0C;&#x6211;&#x628A;render&#x65B9;&#x6CD5;&#x4E5F;&#x653E;&#x5728;&#x4E86;React&#x5BF9;&#x8C61;&#x4E2D;&#xFF09;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> Component <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Component&apos;</span>
+<span class="hljs-keyword">import</span> createElement <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./ReactElement&apos;</span>
+<span class="hljs-keyword">import</span> instantiateReactComponent <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./component/util&apos;</span>
+<span class="hljs-keyword">import</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;jquery&apos;</span>
+
+<span class="hljs-keyword">const</span> React = {
+  nextReactRootIndex: <span class="hljs-number">0</span>, <span class="hljs-comment">// &#x6807;&#x8BC6;id&#xFF0C;&#x786E;&#x5B9A;&#x6BCF;&#x4E2A;vDom&#x7684;&#x552F;&#x4E00;&#x6027;</span>
+  Component, <span class="hljs-comment">// &#x6240;&#x6709;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x7684;&#x7236;&#x7C7B;</span>
+  createElement, <span class="hljs-comment">// &#x521B;&#x5EFA;vdom</span>
+
+  render(vDom, container) { <span class="hljs-comment">// &#x5165;&#x53E3;</span>
+    <span class="hljs-keyword">var</span> componentInstance = instantiateReactComponent(vDom) <span class="hljs-comment">//&#x901A;&#x8FC7;vDom&#x751F;&#x6210;Component</span>
+    <span class="hljs-keyword">var</span> markup = componentInstance.mountComponent(<span class="hljs-keyword">this</span>.nextReactRootIndex++)
+
+    container.innerHTML = markup
+    $(<span class="hljs-built_in">document</span>).trigger(<span class="hljs-string">&apos;mountReady&apos;</span>)
+  }
+}
+<span class="hljs-comment">// &#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/index.js</span>
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x6E32;&#x67D3;&#x548C;&#x66F4;&#x65B0;&#x90FD;&#x5DF2;&#x7ECF;&#x5C01;&#x88C5;&#x5728;&#x4E0D;&#x540C;&#x7684;ReactComponent&#x91CC;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;vDom&#x7C7B;&#x578B;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;ReactComponent&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C31;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// component&#x5DE5;&#x5382;&#xFF0C;&#x7528;&#x6765;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;component&#x5B9E;&#x4F8B;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">instantiateReactComponent</span>(<span class="hljs-params">node</span>) </span>{
+  <span class="hljs-comment">// &#x6587;&#x672C;&#x8282;&#x70B9;&#x7684;&#x60C5;&#x51B5;</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> node === <span class="hljs-string">&apos;string&apos;</span> || <span class="hljs-keyword">typeof</span> node === <span class="hljs-string">&apos;number&apos;</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ReactTextComponent(node)
+  }
+
+  <span class="hljs-comment">// &#x6D4F;&#x89C8;&#x5668;&#x9ED8;&#x8BA4;&#x8282;&#x70B9;&#x7684;&#x60C5;&#x51B5;</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> node === <span class="hljs-string">&apos;object&apos;</span> &amp;&amp; <span class="hljs-keyword">typeof</span> node.type === <span class="hljs-string">&apos;string&apos;</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ReactDomComponent(node)
+  }
+
+  <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5143;&#x7D20;&#x8282;&#x70B9;</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> node === <span class="hljs-string">&apos;object&apos;</span> &amp;&amp; <span class="hljs-keyword">typeof</span> node.type === <span class="hljs-string">&apos;function&apos;</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ReactCompositeComponent(node)
+  }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x518D;&#x8C03;&#x7528;&#x5165;&#x53E3;ReactComponent&#x7684;mount&#x65B9;&#x6CD5;&#xFF0C;&#x83B7;&#x53D6;&#x6E32;&#x67D3;&#x5185;&#x5BB9;&#xFF0C;&#x518D;&#x5C06;&#x5176;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#x5C31;&#x884C;&#x3002;</p>
+<div align="center"><img src="../../resource/assets/react/041301.png"></div>
+
+
+<h2 id="2-&#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;react&#xFF08;&#x4E8C;&#xFF09;">2. &#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React&#xFF08;&#x4E8C;&#xFF09;</h2>
+<p>&#x6211;&#x4EEC;&#x628A;React&#x5143;&#x7D20;&#x5206;&#x4E3A;<code>text</code>&#xFF0C;<code>basic</code>&#xFF0C;<code>custom</code>&#x4E09;&#x79CD;&#xFF0C;&#x5E76;&#x5206;&#x522B;&#x5C01;&#x88C5;&#x4E86;&#x4E09;&#x79CD;vDom&#x7684;ReactComponent&#xFF0C;&#x7528;&#x6765;&#x5904;&#x7406;&#x5404;&#x81EA;&#x7684;&#x6E32;&#x67D3;&#x548C;&#x66F4;&#x65B0;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x91CD;&#x5FC3;&#x653E;&#x5728;&#x5404;&#x81EA;<code>ReactComponet</code>&#x7684;<code>mount</code>&#x65B9;&#x6CD5;&#x4E0A;&#x3002;</p>
+<h3 id="21-reacttextcomponent">2.1 ReactTextComponent</h3>
+<p>ReactTextComponent&#x7528;&#x6765;&#x5904;&#x7406;&#x6587;&#x672C;&#x8282;&#x70B9;&#xFF0C;&#x4E3A;&#x4E86;&#x6807;&#x8BC6;&#x65B9;&#x4FBF;&#xFF0C;&#x5728;&#x8FD4;&#x56DE;&#x7684;&#x5185;&#x5BB9;&#x4E0A;&#x52A0;&#x4E86;span&#x6807;&#x7B7E;&#x3002;</p>
+<pre><code class="lang-js">
+<span class="hljs-comment">// &#x7528;&#x6765;&#x8868;&#x793A;&#x6587;&#x672C;&#x8282;&#x70B9;&#x5728;&#x6E32;&#x67D3;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x5220;&#x9664;&#x65F6;&#x5E94;&#x8BE5;&#x505A;&#x7684;&#x4E8B;&#x60C5;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReactTextComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ReactComponent</span> </span>{
+  <span class="hljs-comment">// &#x6E32;&#x67D3;</span>
+  mountComponent(rootId) {
+    <span class="hljs-keyword">this</span>._rootNodeId = rootId
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;span data-reactid=&quot;<span class="hljs-subst">${rootId}</span>&quot;&gt;<span class="hljs-subst">${this._vDom}</span>&lt;/span&gt;`</span>
+  }
+}
+<span class="hljs-comment">//&#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/component/ReactTextComponent.js</span>
+</code></pre>
+<p>ReactTextComponent&#x7684;mount&#x65B9;&#x6CD5;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x6253;&#x4E0A;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x5C06;&#x5185;&#x5BB9;&#x63D2;&#x5165;&#x6807;&#x7B7E;&#x5185;&#xFF0C;&#x5E76;&#x628A;&#x6807;&#x7B7E;&#x5185;&#x5BB9;&#x8FD4;&#x56DE;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+<h3 id="22-reactdomcomponent">2.2 ReactDomComponent</h3>
+<p>&#x8FD9;&#x4E2A;&#x7C7B;&#x7528;&#x6765;&#x5904;&#x7406;&#x539F;&#x751F;&#x8282;&#x70B9;&#x7684;vDom&#xFF0C;&#x5728;&#x5C06;vDom&#x6E32;&#x67D3;&#x4E3A;&#x539F;&#x751F;DOM&#x65F6;&#xFF0C;&#x8981;&#x8003;&#x8651;3&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x5143;&#x7D20;&#x7C7B;&#x578B;</li>
+<li>&#x62FC;&#x51D1;&#x5C5E;&#x6027;&#xFF0C;&#x5305;&#x542B;&#x666E;&#x901A;&#x5C5E;&#x6027;&#x53CA;&#x4E8B;&#x4EF6;&#x7684;&#x5904;&#x7406;</li>
+<li>&#x5B50;&#x8282;&#x70B9;&#x7684;&#x9012;&#x5F52;&#x6E32;&#x67D3;</li>
+</ol>
+<p>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x7528;&#x6765;&#x8868;&#x793A;&#x539F;&#x751F;&#x8282;&#x70B9;&#x5728;&#x6E32;&#x67D3;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x5220;&#x9664;&#x65F6;&#x5E94;&#x8BE5;&#x505A;&#x7684;&#x4E8B;&#x60C5;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReactDomComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ReactComponent</span> </span>{
+  <span class="hljs-keyword">constructor</span>(vDom) {
+    <span class="hljs-keyword">super</span>(vDom)
+    <span class="hljs-keyword">this</span>._renderedChildComponents = <span class="hljs-literal">null</span>
+  }
+
+  <span class="hljs-comment">// &#x6E32;&#x67D3;</span>
+  mountComponent(rootId) {
+    <span class="hljs-keyword">this</span>._rootNodeId = rootId
+
+    <span class="hljs-keyword">const</span> { props, type, props: { children = [] } } = <span class="hljs-keyword">this</span>._vDom,
+      childComponents = []
+
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;tag&#xFF0C;&#x52A0;&#x4E0A;&#x6807;&#x8BC6;</span>
+    <span class="hljs-keyword">let</span> tagOpen = <span class="hljs-string">`<span class="hljs-subst">${type}</span> data-reactid=<span class="hljs-subst">${this._rootNodeId}</span>`</span>,
+      tagClose = <span class="hljs-string">`/<span class="hljs-subst">${type}</span>`</span>,
+      content = <span class="hljs-string">&apos;&apos;</span>
+
+    <span class="hljs-comment">// &#x62FC;&#x51D1;&#x5C5E;&#x6027;</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> propKey <span class="hljs-keyword">in</span> props) {
+      <span class="hljs-comment">// &#x4E8B;&#x4EF6;</span>
+      <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/^on[A-Za-z]/</span>.test(propKey)) {
+        <span class="hljs-keyword">const</span> eventType = propKey.replace(<span class="hljs-string">&apos;on&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+        $(<span class="hljs-built_in">document</span>).delegate(<span class="hljs-string">`[data-reactid=&quot;<span class="hljs-subst">${this._rootNodeId}</span>&quot;]`</span>, <span class="hljs-string">`<span class="hljs-subst">${eventType}</span>.<span class="hljs-subst">${this._rootNodeId}</span>`</span>, props[propKey])
+      }
+
+      <span class="hljs-comment">// &#x666E;&#x901A;&#x5C5E;&#x6027;&#xFF0C;&#x6392;&#x9664;children&#x4E0E;&#x4E8B;&#x4EF6;</span>
+      <span class="hljs-keyword">if</span> (props[propKey] &amp;&amp; propKey !== <span class="hljs-string">&apos;children&apos;</span> &amp;&amp; !<span class="hljs-regexp">/^on[A-Za-z]/</span>.test(propKey)) {
+        tagOpen += <span class="hljs-string">` <span class="hljs-subst">${propKey}</span>=<span class="hljs-subst">${props[propKey]}</span>`</span>
+      }
+    }
+
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5B50;&#x8282;&#x70B9;&#x6E32;&#x67D3;&#x51FA;&#x7684;&#x5185;&#x5BB9;</span>
+    children.forEach((item, index) =&gt; {
+      <span class="hljs-comment">// &#x518D;&#x6B21;&#x4F7F;&#x7528;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;&#x5B50;&#x8282;&#x70B9;&#x7684;component&#xFF0C;&#x62FC;&#x63A5;&#x597D;&#x8FD4;&#x56DE;</span>
+      <span class="hljs-keyword">const</span> childComponent = instantiateReactComponent(item)
+      childComponent._mountIndex = index
+
+      childComponents.push(childComponent)
+
+      <span class="hljs-comment">// &#x5B50;&#x8282;&#x70B9;&#x7684;rootId&#x662F;&#x7236;&#x8282;&#x70B9;&#x7684;rootId&#x52A0;&#x4E0A;&#x7D22;&#x5F15;&#x62FC;&#x63A5;&#x7684;&#x503C;</span>
+      <span class="hljs-keyword">const</span> curRootId = <span class="hljs-string">`<span class="hljs-subst">${this._rootNodeId}</span>.<span class="hljs-subst">${index}</span>`</span>
+      <span class="hljs-comment">// &#x5F97;&#x5230;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x6E32;&#x67D3;&#x5185;&#x5BB9;</span>
+      <span class="hljs-keyword">const</span> childMarkup = childComponent.mountComponent(curRootId)
+      <span class="hljs-comment">// &#x62FC;&#x63A5;</span>
+      content += childMarkup
+
+      <span class="hljs-comment">// &#x4FDD;&#x5B58;&#x6240;&#x6709;&#x5B50;&#x8282;&#x70B9;&#x7684;component</span>
+      <span class="hljs-keyword">this</span>._renderedChildComponents = childComponents
+    })
+
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;<span class="hljs-subst">${tagOpen}</span>&gt;<span class="hljs-subst">${content}</span>&lt;<span class="hljs-subst">${tagClose}</span>&gt;`</span>
+  }
+}
+<span class="hljs-comment">//&#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/component/ReactDomComponent.js</span>
+</code></pre>
+<p>&#x5728;React&#x7684;&#x5B98;&#x65B9;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x5957;&#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD9;&#x91CC;&#x7528;&#x4E86;jQuery&#x7684;&#x4E8B;&#x4EF6;&#x4EE3;&#x66FF;&#x3002;</p>
+<p>&#x5728;&#x6837;&#x5F0F;&#x4E0A;&#xFF0C;&#x9700;&#x8981;&#x57FA;&#x4E8E;&#x4F20;&#x5165;&#x7684;style&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x6837;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x6682;&#x65F6;&#x5FFD;&#x7565;&#x4E86;&#x3002;</p>
+<h3 id="23-reactcompositcomponent">2.3 ReactCompositComponent</h3>
+<p>&#x5728;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x8FD9;&#x6837;&#x521B;&#x5EFA;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+
+    )
+  }
+}
+</code></pre>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x5B9E;&#x73B0;<code>Component</code>&#x8FD9;&#x4E2A;&#x7236;&#x7C7B;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x6240;&#x6709;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x7684;&#x7236;&#x7C7B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">this</span>.props = props
+  }
+
+  setState(newState) {
+    <span class="hljs-keyword">this</span>._reactInternalInstance.updateComponent(<span class="hljs-literal">null</span>, newState)
+  }
+}
+<span class="hljs-comment">//&#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/Component.js</span>
+</code></pre>
+<p>Component&#x7C7B;&#x4E0A;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x5B9E;&#x73B0;&#x4E86;setState&#x65B9;&#x6CD5;&#xFF0C;&#x81F3;&#x4E8E;&#x6709;&#x4EC0;&#x4E48;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x653E;&#x5728;&#x66F4;&#x65B0;&#x91CC;&#x8BF4;&#x3002;</p>
+<p>&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x7684;vDom&#x4E2D;&#xFF0C;type&#x4FDD;&#x5B58;&#x7684;&#x662F;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x7684;Component&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x5728;<code>ReactCompositeComponent</code>&#x7684;<code>mount</code>&#x65B9;&#x6CD5;&#x4E2D;&#x3002;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x6839;&#x636E;vDom&#x7684;type&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5728;&#x4EE5;&#x6B64;&#x8C03;&#x7528;&#x5B83;&#x521D;&#x59CB;&#x6E32;&#x67D3;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;render&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5728;render&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x8FD4;&#x56DE;&#x4E86;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x5185;&#x5BB9;&#x7684;vDom&#xFF0C;&#x6211;&#x4EEC;&#x6839;&#x636E;&#x8FD9;&#x4E2A;vDom&#x521B;&#x5EFA;&#x5B83;&#x7684;<code>ReactComponent</code>&#x5E76;&#x8C03;&#x7528;<code>mount()</code>,&#x5C31;&#x5F97;&#x5230;&#x4E86;&#x771F;&#x5B9E;&#x7684;&#x6E32;&#x67D3;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x8D34;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ReactComponent</span> </span>{
+  <span class="hljs-keyword">constructor</span>(element) {
+    <span class="hljs-keyword">super</span>(element)
+    <span class="hljs-comment">// &#x5B58;&#x653E;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;</span>
+    <span class="hljs-keyword">this</span>._instance = <span class="hljs-literal">null</span>
+    <span class="hljs-keyword">this</span>._renderedComponent = <span class="hljs-literal">null</span>
+  }
+
+  <span class="hljs-comment">// &#x6E32;&#x67D3;</span>
+  mountComponent(rootId) {
+    <span class="hljs-keyword">this</span>._rootNodeId = rootId
+    <span class="hljs-keyword">const</span> { type: Component, props } = <span class="hljs-keyword">this</span>._vDom
+
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;</span>
+    <span class="hljs-keyword">const</span> inst = <span class="hljs-keyword">new</span> Component(props)
+    <span class="hljs-keyword">this</span>._instance = inst
+
+    <span class="hljs-comment">// &#x4FDD;&#x7559;&#x5BF9;&#x5F53;&#x524D;component&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x4E0B;&#x9762;&#x66F4;&#x65B0;&#x65F6;&#x4F1A;&#x7528;&#x5230;</span>
+    inst._reactInternalInstance = <span class="hljs-keyword">this</span>
+
+    inst.componentWillMount &amp;&amp; inst.componentWillMount()
+
+    <span class="hljs-comment">// &#x8C03;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x7684;render&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Vdom</span>
+    <span class="hljs-keyword">const</span> renderedVdom = inst.render()
+
+    <span class="hljs-comment">// &#x83B7;&#x53D6;renderedComponent&#x7684;component</span>
+    <span class="hljs-keyword">const</span> renderedComponent = instantiateReactComponent(renderedVdom)
+    <span class="hljs-keyword">this</span>._renderedComponent = renderedComponent
+
+    <span class="hljs-comment">// &#x5F97;&#x5230;&#x6E32;&#x67D3;&#x4E4B;&#x540E;&#x7684;&#x5185;&#x5BB9;</span>
+    <span class="hljs-keyword">const</span> renderMarkup = renderedComponent.mountComponent(<span class="hljs-keyword">this</span>._rootNodeId)
+
+    <span class="hljs-comment">// &#x5728;React.render&#x65B9;&#x6CD5;&#x6700;&#x540E;&#x89E6;&#x53D1;&#x4E86;mountReady&#x4E8B;&#x4EF6;&#xFF0C;&#x6240;&#x5728;&#x5728;&#x8FD9;&#x91CC;&#x76D1;&#x542C;&#xFF0C;&#x5728;&#x6E32;&#x67D3;&#x5B8C;&#x6210;&#x540E;&#x89E6;&#x53D1;</span>
+    $(<span class="hljs-built_in">document</span>).on(<span class="hljs-string">&apos;mountReady&apos;</span>, () =&gt; {
+      inst.componentDidMount &amp;&amp; inst.componentDidMount()
+    })
+
+    <span class="hljs-keyword">return</span> renderMarkup
+  }
+}
+<span class="hljs-comment">// &#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/component/ReactCompositeComponent.js</span>
+</code></pre>
+<p>&#x4ECE;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x7684;<code>mount</code>&#x65B9;&#x6CD5;&#x5E76;&#x4E0D;&#x8D1F;&#x8D23;&#x5177;&#x4F53;&#x7684;&#x6E32;&#x67D3;&#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x4EA4;&#x7ED9;&#x4E86;&#x5B83;&#x7684;<code>render</code>&#xFF0C;&#x5B83;&#x628A;&#x91CD;&#x5FC3;&#x653E;&#x5728;&#x4E86;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x548C;&#x8C03;&#x7528;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E0A;&#x3002;</p>
+<h3 id="24-&#x603B;&#x7ED3;">2.4 &#x603B;&#x7ED3;</h3>
+<p>&#x6587;&#x7AE0;&#x5230;&#x8FD9;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x7B80;&#x6613;&#x7248;react&#x5DF2;&#x7ECF;&#x521D;&#x6B65;&#x5B9E;&#x73B0;&#x4E86;<code>&#x865A;&#x62DF;DOM&#x7684;&#x521B;&#x5EFA;</code>&#xFF0C;<code>&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x8C03;&#x7528;</code>&#xFF0C;<code>&#x865A;&#x62DF;DOM&#x7684;&#x9012;&#x5F52;&#x6E32;&#x67D3;</code>&#x548C;<code>&#x4E8B;&#x4EF6;&#x5904;&#x7406;</code>&#x3002;</p>
+<p>&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;vDom&#x90FD;&#x6709;ReactComponent&#x76F8;&#x5BF9;&#x5E94;&#xFF0C;&#x9012;&#x5F52;&#x6E32;&#x67D3;&#x7684;&#x672C;&#x8D28;&#x65E0;&#x975E;&#x5C31;&#x662F;&#x83B7;&#x53D6;&#x6BCF;&#x4E2A;vDom&#x7684;ReactComponent,&#x5E76;&#x8C03;&#x7528;&#x5B83;&#x7684;mount&#x65B9;&#x6CD5;&#x3002;</p>
+<h2 id="3-&#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;react&#xFF08;&#x4E09;&#xFF09;">3. &#x4ECE;&#x5934;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;React&#xFF08;&#x4E09;&#xFF09;</h2>
+<p>&#x5728;&#x8FD9;&#x4E00;&#x8282;&#x6211;&#x4EEC;&#x5C06;&#x7740;&#x91CD;&#x5B9E;&#x73B0; diff&#x7B97;&#x6CD5;&#x4EE5;&#x53CA;&#x66F4;&#x65B0;</p>
+<p>&#x540C;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5B9E;&#x73B0;&#x4E09;&#x79CD;<code>ReactComponent</code>&#x7684;<code>update</code>&#x65B9;&#x6CD5;&#x3002;&#x4E0D;&#x8FC7;&#x5728;&#x8FD9;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x60F3;&#x60F3;&#xFF0C;&#x8BE5;&#x5982;&#x4F55;&#x89E6;&#x53D1;React&#x7684;&#x66F4;&#x65B0;&#x5462;&#xFF1F;&#x6CA1;&#x9519;&#xFF0C;&#x5C31;&#x662F;<code>setState</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x6240;&#x6709;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x7684;&#x7236;&#x7C7B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">this</span>.props = props
+  }
+
+  setState(newState) {
+    <span class="hljs-keyword">this</span>._reactInternalInstance.updateComponent(<span class="hljs-literal">null</span>, newState)
+  }
+}
+<span class="hljs-comment">//&#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/Component.js</span>
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x7684;<code>reactInternalInstance</code>&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5728;&#x6E32;&#x67D3;<code>ReactCompositeComponent</code>&#x65F6;&#x4FDD;&#x5B58;&#x4E0B;&#x7684;&#x81EA;&#x8EAB;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x901A;&#x8FC7;&#x5B83;&#x8C03;&#x7528;&#x4E86;<code>ReactCompositeComponent</code>&#x7684;<code>update</code>&#x65B9;&#x6CD5;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5148;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;<code>update</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="31-reactcompositecomponent">3.1 ReactCompositeComponent</h3>
+<p>&#x8FD9;&#x91CC;&#x7684;update&#x65B9;&#x6CD5;&#x540C;mount&#x6709;&#x70B9;&#x7C7B;&#x4F3C;&#xFF0C;&#x90FD;&#x662F;&#x8C03;&#x7528;&#x751F;&#x547D;&#x5468;&#x671F;&#x548C;render&#x65B9;&#x6CD5;&#xFF0C;&#x5148;&#x4E0A;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReactCompositeComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ReactComponent</span> </span>{
+  <span class="hljs-keyword">constructor</span>(element) {
+    <span class="hljs-keyword">super</span>(element)
+    <span class="hljs-comment">// &#x5B58;&#x653E;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;</span>
+    <span class="hljs-keyword">this</span>._instance = <span class="hljs-literal">null</span>
+    <span class="hljs-keyword">this</span>._renderedComponent = <span class="hljs-literal">null</span>
+  }
+
+ mountComponent(rootId) {
+  <span class="hljs-comment">//&#x5185;&#x5BB9;&#x7565;</span>
+  }
+
+  <span class="hljs-comment">// &#x66F4;&#x65B0;</span>
+  updateComponent(nextVDom, newState) {
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x6709;&#x65B0;&#x7684;vDom,&#x5C31;&#x4F7F;&#x7528;&#x65B0;&#x7684;</span>
+    <span class="hljs-keyword">this</span>._vDom = nextVDom || <span class="hljs-keyword">this</span>._vDom
+    <span class="hljs-keyword">const</span> inst = <span class="hljs-keyword">this</span>._instance
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x65B0;&#x7684;state,props</span>
+    <span class="hljs-keyword">const</span> nextState = { ...inst.state, ...newState }
+    <span class="hljs-keyword">const</span> nextProps = <span class="hljs-keyword">this</span>._vDom.props
+
+    <span class="hljs-comment">// &#x5224;&#x65AD;shouldComponentUpdate</span>
+    <span class="hljs-keyword">if</span> (inst.shouldComponentUpdate &amp;&amp; (inst.shouldComponentUpdate(nextProps, nextState) === <span class="hljs-literal">false</span>)) <span class="hljs-keyword">return</span>
+
+    inst.componentWillUpdate &amp;&amp; inst.componentWillUpdate(nextProps, nextState)
+
+    <span class="hljs-comment">// &#x66F4;&#x6539;state,props</span>
+    inst.state = nextState
+    inst.props = nextProps
+
+    <span class="hljs-keyword">const</span> prevComponent = <span class="hljs-keyword">this</span>._renderedComponent
+
+    <span class="hljs-comment">// &#x83B7;&#x53D6;render&#x65B0;&#x65E7;&#x7684;vDom</span>
+    <span class="hljs-keyword">const</span> prevRenderVDom = prevComponent._vDom
+    <span class="hljs-keyword">const</span> nextRenderVDom = inst.render()
+
+    <span class="hljs-comment">// &#x5224;&#x65AD;&#x662F;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x8FD8;&#x662F;&#x91CD;&#x65B0;&#x6E32;&#x67D3;</span>
+    <span class="hljs-keyword">if</span> (shouldUpdateReactComponent(prevRenderVDom, nextRenderVDom)) {
+      <span class="hljs-comment">// &#x66F4;&#x65B0;</span>
+      prevComponent.updateComponent(nextRenderVDom)
+      inst.componentDidUpdate &amp;&amp; inst.componentDidUpdate()
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// &#x91CD;&#x65B0;&#x6E32;&#x67D3;</span>
+      <span class="hljs-keyword">this</span>._renderedComponent = instantiateReactComponent(nextRenderVDom)
+      <span class="hljs-comment">// &#x91CD;&#x65B0;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x5143;&#x7D20;&#x5185;&#x5BB9;</span>
+      <span class="hljs-keyword">const</span> nextMarkUp = <span class="hljs-keyword">this</span>._renderedComponent.mountComponent(<span class="hljs-keyword">this</span>._rootNodeId)
+      <span class="hljs-comment">// &#x66FF;&#x6362;&#x6574;&#x4E2A;&#x8282;&#x70B9;</span>
+      $(<span class="hljs-string">`[data-reactid=&quot;<span class="hljs-subst">${this._rootNodeId}</span>&quot;]`</span>).replaceWith(nextMarkUp)
+    }
+  }
+}
+<span class="hljs-comment">//&#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/component/ReactCompositeComponent.js</span>
+</code></pre>
+<p>&#x6709;&#x4E24;&#x70B9;&#x8981;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ol>
+<li>&#x719F;&#x6089;React&#x7684;&#x90FD;&#x77E5;&#x9053;&#xFF0C;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x7EC4;&#x4EF6;&#x7684;&#x66F4;&#x65B0;&#xFF0C;vDom&#x5E76;&#x6CA1;&#x6709;&#x53D8;&#x5316;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>shouldComponentUpdate</code>&#x8FD9;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x6765;&#x4F18;&#x5316;&#x8FD9;&#x70B9;&#xFF0C;&#x5F53;<code>shouldComponentUpdate</code>&#x4E3A;false&#x65F6;&#xFF0C;&#x76F4;&#x63A5;return&#xFF0C;&#x4E0D;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x3002;</li>
+<li>&#x5F53;&#x8C03;&#x7528;render&#x83B7;&#x53D6;&#x5230;&#x65B0;&#x7684;vDom&#x65F6;&#xFF0C;&#x5C06;&#x4F1A;&#x6BD4;&#x8F83;&#x65B0;&#x65E7;&#x7684;vDom&#x7C7B;&#x578B;&#x662F;&#x5426;&#x76F8;&#x540C;&#xFF0C;&#x8FD9;&#x4E5F;&#x5C5E;&#x4E8E;diff&#x7B97;&#x6CD5;&#x4F18;&#x5316;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x5982;&#x679C;&#x7C7B;&#x578B;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x6267;&#x884C;&#x66F4;&#x65B0;&#xFF0C;&#x53CD;&#x4E4B;&#xFF0C;&#x5C31;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x5224;&#x65AD;&#x662F;&#x66F4;&#x65B0;&#x8FD8;&#x662F;&#x6E32;&#x67D3;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shouldUpdateReactComponent</span>(<span class="hljs-params">prevVDom, nextVDom</span>) </span>{
+  <span class="hljs-keyword">if</span> (prevVDom != <span class="hljs-literal">null</span> &amp;&amp; nextVDom != <span class="hljs-literal">null</span>) {
+    <span class="hljs-keyword">const</span> prevType = <span class="hljs-keyword">typeof</span> prevVDom
+    <span class="hljs-keyword">const</span> nextType = <span class="hljs-keyword">typeof</span> nextVDom
+
+    <span class="hljs-keyword">if</span> (prevType === <span class="hljs-string">&apos;string&apos;</span> || prevType === <span class="hljs-string">&apos;number&apos;</span>) {
+      <span class="hljs-keyword">return</span> nextType === <span class="hljs-string">&apos;string&apos;</span> || nextType === <span class="hljs-string">&apos;number&apos;</span>
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> nextType === <span class="hljs-string">&apos;object&apos;</span> &amp;&amp; prevVDom.type === nextVDom.type &amp;&amp; prevVDom.key === nextVDom.key
+    }
+  }
+}
+<span class="hljs-comment">//&#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/component/util.js</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5230;&#x4E86;key&#xFF0C;&#x5F53;type&#x76F8;&#x540C;&#x65F6;&#x4F7F;&#x7528;key&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x51C6;&#x786E;&#x5F97;&#x51FA;&#x4E24;&#x4E2A;vDom&#x662F;&#x5426;&#x76F8;&#x540C;&#xFF0C;&#x8FD9;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;React&#x8981;&#x6C42;&#x6211;&#x4EEC;&#x5728;&#x5FAA;&#x73AF;&#x6E32;&#x67D3;&#x65F6;&#x5FC5;&#x987B;&#x6DFB;&#x52A0;key&#x8FD9;&#x4E2A;props&#x3002;</p>
+<h3 id="32-reacttextcomponent">3.2 ReactTextComponent</h3>
+<p>ReactTextComponent&#x7684;update&#x65B9;&#x6CD5;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x5224;&#x65AD;&#x65B0;&#x65E7;&#x6587;&#x672C;&#x662F;&#x5426;&#x76F8;&#x540C;&#xFF0C;&#x4E0D;&#x540C;&#x5219;&#x66F4;&#x65B0;&#x5185;&#x5BB9;&#xFF0C;&#x76F4;&#x63A5;&#x8D34;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReactTextComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ReactComponent</span> </span>{
+  mountComponent(rootId) {
+  <span class="hljs-comment">//&#x7701;&#x7565;</span>
+  }
+
+  <span class="hljs-comment">// &#x66F4;&#x65B0;</span>
+  updateComponent(nextVDom) {
+    <span class="hljs-keyword">const</span> nextText = <span class="hljs-string">&apos;&apos;</span> + nextVDom
+
+    <span class="hljs-keyword">if</span> (nextText !== <span class="hljs-keyword">this</span>._vDom) {
+      <span class="hljs-keyword">this</span>._vDom = nextText
+    }
+    <span class="hljs-comment">// &#x66FF;&#x6362;&#x6574;&#x4E2A;&#x8282;&#x70B9;</span>
+    $(<span class="hljs-string">`[data-reactid=&quot;<span class="hljs-subst">${this._rootNodeId}</span>&quot;]`</span>).html(<span class="hljs-keyword">this</span>._vDom)
+  }
+<span class="hljs-comment">// &#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/component/ReactTextComponent.js</span>
+}
+</code></pre>
+<h3 id="33-reactdomcomponent">3.3 ReactDomComponent</h3>
+<p><code>ReactDomComponent</code>&#x7684;<code>update</code>&#x6700;&#x590D;&#x6742;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;<code>diff&#x7684;&#x6838;&#x5FC3;</code>&#x90FD;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x672C;&#x6587;&#x7684;&#x91CD;&#x5FC3;&#x4E5F;&#x5C31;&#x653E;&#x5728;&#x8FD9;&#x3002;</p>
+<p>&#x6574;&#x4E2A;update&#x5206;&#x4E3A;&#x4E24;&#x5757;&#xFF0C;<code>props&#x7684;&#x66F4;&#x65B0;</code>&#x548C;<code>children&#x7684;&#x66F4;&#x65B0;</code>&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReactDomComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ReactComponent</span> </span>{
+  mountComponent(rootId) {
+  <span class="hljs-comment">//&#x7701;&#x7565;</span>
+  }
+
+  <span class="hljs-comment">// &#x66F4;&#x65B0;</span>
+  updateComponent(nextVDom) {
+    <span class="hljs-keyword">const</span> lastProps = <span class="hljs-keyword">this</span>._vDom.props
+    <span class="hljs-keyword">const</span> nextProps = nextVDom.props
+
+    <span class="hljs-keyword">this</span>._vDom = nextVDom
+
+    <span class="hljs-comment">// &#x66F4;&#x65B0;&#x5C5E;&#x6027;</span>
+    <span class="hljs-keyword">this</span>._updateDOMProperties(lastProps, nextProps)
+    <span class="hljs-comment">// &#x518D;&#x66F4;&#x65B0;&#x5B50;&#x8282;&#x70B9;</span>
+    <span class="hljs-keyword">this</span>._updateDOMChildren(nextVDom.props.children)
+  }
+<span class="hljs-comment">// &#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/component/ReactDomComponent.js</span>
+}
+</code></pre>
+<p>props&#x7684;&#x66F4;&#x65B0;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x65E0;&#x975E;&#x5C31;&#x662F;&#x904D;&#x5386;&#x65B0;&#x65E7;props&#xFF0C;&#x5220;&#x9664;&#x4E0D;&#x5728;&#x65B0;props&#x91CC;&#x7684;&#x8001;props&#xFF0C;&#x6DFB;&#x52A0;&#x4E0D;&#x5728;&#x8001;props&#x91CC;&#x7684;&#x65B0;props&#xFF0C;&#x66F4;&#x65B0;&#x65B0;&#x65E7;&#x90FD;&#x6709;&#x7684;props&#xFF0C;&#x4E8B;&#x4EF6;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x3002;</p>
+<pre><code class="lang-js">  _updateDOMProperties(lastProps, nextProps) {
+    <span class="hljs-keyword">let</span> propKey = <span class="hljs-string">&apos;&apos;</span>
+
+    <span class="hljs-comment">// &#x904D;&#x5386;&#xFF0C;&#x5220;&#x9664;&#x5DF2;&#x4E0D;&#x5728;&#x65B0;&#x5C5E;&#x6027;&#x96C6;&#x5408;&#x91CC;&#x7684;&#x8001;&#x5C5E;&#x6027;</span>
+    <span class="hljs-keyword">for</span> (propKey <span class="hljs-keyword">in</span> lastProps) {
+      <span class="hljs-comment">// &#x5C5E;&#x6027;&#x5728;&#x539F;&#x578B;&#x4E0A;&#x6216;&#x8005;&#x65B0;&#x5C5E;&#x6027;&#x91CC;&#x6709;&#xFF0C;&#x76F4;&#x63A5;&#x8DF3;&#x8FC7;</span>
+      <span class="hljs-keyword">if</span> (nextProps.hasOwnProperty(propKey) || !lastProps.hasOwnProperty(propKey)) {
+        <span class="hljs-keyword">continue</span>
+      }
+
+      <span class="hljs-comment">// &#x5BF9;&#x4E8E;&#x4E8B;&#x4EF6;&#x7B49;&#x7279;&#x6B8A;&#x5C5E;&#x6027;&#xFF0C;&#x9700;&#x8981;&#x5355;&#x72EC;&#x5904;&#x7406;</span>
+      <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/^on[A-Za-z]/</span>.test(propKey)) {
+        <span class="hljs-keyword">const</span> eventType = propKey.replace(<span class="hljs-string">&apos;on&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+        <span class="hljs-comment">// &#x9488;&#x5BF9;&#x5F53;&#x524D;&#x7684;&#x8282;&#x70B9;&#x53D6;&#x6D88;&#x4E8B;&#x4EF6;&#x4EE3;&#x7406;</span>
+        $(<span class="hljs-built_in">document</span>).undelegate(<span class="hljs-string">`[data-reactid=&quot;<span class="hljs-subst">${this._rootNodeId}</span>&quot;]`</span>, eventType, lastProps[propKey])
+        <span class="hljs-keyword">continue</span>
+      }
+
+    }
+
+    <span class="hljs-comment">// &#x5BF9;&#x4E8E;&#x65B0;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x9700;&#x8981;&#x5199;&#x5230;dom&#x8282;&#x70B9;&#x4E0A;</span>
+    <span class="hljs-keyword">for</span> (propKey <span class="hljs-keyword">in</span> nextProps) {
+      <span class="hljs-comment">// &#x66F4;&#x65B0;&#x4E8B;&#x4EF6;&#x5C5E;&#x6027;</span>
+      <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/^on[A-Za-z]/</span>.test(propKey)) {
+        <span class="hljs-keyword">var</span> eventType = propKey.replace(<span class="hljs-string">&apos;on&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+
+        <span class="hljs-comment">// &#x4EE5;&#x524D;&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x6709;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x53BB;&#x6389;</span>
+        lastProps[propKey] &amp;&amp; $(<span class="hljs-built_in">document</span>).undelegate(<span class="hljs-string">`[data-reactid=&quot;<span class="hljs-subst">${this._rootNodeId}</span>&quot;]`</span>, eventType, lastProps[propKey])
+
+        <span class="hljs-comment">// &#x9488;&#x5BF9;&#x5F53;&#x524D;&#x7684;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x4E8B;&#x4EF6;&#x4EE3;&#x7406;</span>
+        $(<span class="hljs-built_in">document</span>).delegate(<span class="hljs-string">`[data-reactid=&quot;<span class="hljs-subst">${this._rootNodeId}</span>&quot;]`</span>, <span class="hljs-string">`<span class="hljs-subst">${eventType}</span>.<span class="hljs-subst">${this._rootNodeId}</span>`</span>, nextProps[propKey])
+        <span class="hljs-keyword">continue</span>
+      }
+
+      <span class="hljs-keyword">if</span> (propKey === <span class="hljs-string">&apos;children&apos;</span>) <span class="hljs-keyword">continue</span>
+
+      <span class="hljs-comment">// &#x66F4;&#x65B0;&#x666E;&#x901A;&#x5C5E;&#x6027;</span>
+      $(<span class="hljs-string">`[data-reactid=&quot;<span class="hljs-subst">${this._rootNodeId}</span>&quot;]`</span>).prop(propKey, nextProps[propKey])
+    }
+  }
+<span class="hljs-comment">// &#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/component/ReactDomComponent.js</span>
+</code></pre>
+<p>children&#x7684;&#x66F4;&#x65B0;&#x5219;&#x76F8;&#x5BF9;&#x590D;&#x6742;&#x4E86;&#x5F88;&#x591A;&#xFF0C;&#x9648;&#x5C79;&#x8001;&#x5E08;&#x7684;&#x300A;&#x6DF1;&#x5165;React&#x6280;&#x672F;&#x6808;&#x300B;&#x4E2D;&#x63D0;&#x5230;&#xFF0C;diff&#x7B97;&#x6CD5;&#x5206;&#x4E3A;3&#x5757;&#xFF0C;&#x5206;&#x522B;&#x662F;</p>
+<ol>
+<li><strong>tree diff</strong></li>
+<li><strong>component diff</strong></li>
+<li><strong>element diff</strong></li>
+</ol>
+<p>&#x4E0A;&#x6587;&#x4E2D;&#x7684;<code>shouldUpdateReactComponent</code>&#x5C31;&#x5C5E;&#x4E8E;<code>component diff</code>&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x4F9D;&#x636E;&#x8FD9;&#x4E09;&#x79CD;diff&#x5B9E;&#x73B0;updateChildren&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x5168;&#x5C40;&#x7684;&#x66F4;&#x65B0;&#x6DF1;&#x5EA6;&#x6807;&#x8BC6;&#xFF0C;&#x7528;&#x6765;&#x5224;&#x5B9A;&#x89E6;&#x53D1;patch&#x7684;&#x65F6;&#x673A;</span>
+<span class="hljs-keyword">let</span> updateDepth = <span class="hljs-number">0</span>
+<span class="hljs-comment">// &#x5168;&#x5C40;&#x7684;&#x66F4;&#x65B0;&#x961F;&#x5217;</span>
+<span class="hljs-keyword">let</span> diffQueue = []
+
+ _updateDOMChildren(nextChildVDoms) {
+    updateDepth++
+
+    <span class="hljs-comment">// diff&#x7528;&#x6765;&#x9012;&#x5F52;&#x67E5;&#x627E;&#x5DEE;&#x5F02;&#xFF0C;&#x7EC4;&#x88C5;&#x5DEE;&#x5F02;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x5230;diffQueue&#x4E2D;</span>
+    <span class="hljs-keyword">this</span>._diff(diffQueue, nextChildVDoms)
+    updateDepth--
+
+    <span class="hljs-keyword">if</span> (updateDepth === <span class="hljs-number">0</span>) {
+      <span class="hljs-comment">// &#x5177;&#x4F53;&#x7684;dom&#x6E32;&#x67D3;</span>
+      <span class="hljs-keyword">this</span>._patch(diffQueue)
+      diffQueue = []
+    }
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x901A;&#x8FC7;updateDepth&#x5BF9;vDom&#x6811;&#x8FDB;&#x884C;&#x5C42;&#x7EA7;&#x63A7;&#x5236;&#xFF0C;&#x53EA;&#x4F1A;&#x5BF9;&#x76F8;&#x540C;&#x5C42;&#x7EA7;&#x7684;DOM&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x4E00;&#x68F5;DOM&#x6811;&#x5168;&#x90E8;&#x904D;&#x5386;&#x5B8C;&#xFF0C;&#x624D;&#x4F1A;&#x8C03;&#x7528;patch&#x5904;&#x7406;&#x5DEE;&#x5F02;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;tree diff&#x3002;</p>
+<p>&#x786E;&#x4FDD;&#x4E86;&#x540C;&#x5C42;&#x6B21;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5B9E;&#x73B0;_diff&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5DF2;&#x7ECF;&#x6E32;&#x67D3;&#x8FC7;&#x7684;&#x5B50;ReactComponents&#x5728;&#x8FD9;&#x91CC;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x904D;&#x5386;&#x51FA;&#x91CC;&#x9762;&#x7684;vDom&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x7275;&#x626F;&#x5230;&#x4E0A;&#x6587;&#x4E2D;&#x7684;key&#xFF0C;&#x5728;&#x6709;key&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4F18;&#x5148;&#x7528;key&#x6765;&#x83B7;&#x53D6;vDom&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x904D;&#x5386;&#x6570;&#x7EC4;&#xFF0C;&#x5C06;&#x5176;&#x8F6C;&#x4E3A;map(&#x8FD9;&#x91CC;&#x5148;&#x7528;object&#x4EE3;&#x66FF;&#xFF0C;&#x4EE5;&#x540E;&#x4F1A;&#x66F4;&#x6539;&#x6210;es6&#x7684;map)&#xFF0C;&#x5982;&#x679C;&#x6709;key&#x503C;&#x7684;&#xFF0C;&#x5C31;&#x7528;key&#x503C;&#x4F5C;&#x6807;&#x8BC6;&#xFF0C;&#x65E0;key&#x7684;&#xFF0C;&#x5C31;&#x7528;index&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;array&#x5230;map&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-js">
+<span class="hljs-comment">// &#x5C06;children&#x6570;&#x7EC4;&#x8F6C;&#x5316;&#x4E3A;map</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">arrayToMap</span>(<span class="hljs-params">array</span>) </span>{
+  array = array || []
+  <span class="hljs-keyword">const</span> childMap = {}
+
+  array.forEach((item, index) =&gt; {
+    <span class="hljs-keyword">const</span> name = item &amp;&amp; item._vDom &amp;&amp; item._vDom.key ? item._vDom.key : index.toString(<span class="hljs-number">36</span>)
+    childMap[name] = item
+  })
+  <span class="hljs-keyword">return</span> childMap
+}
+</code></pre>
+<p>&#x90E8;&#x5206;diff&#x65B9;&#x6CD5;:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x5C06;&#x4E4B;&#x524D;&#x5B50;&#x8282;&#x70B9;&#x7684;component&#x6570;&#x7EC4;&#x8F6C;&#x5316;&#x4E3A;map</span>
+<span class="hljs-keyword">const</span> prevChildComponents = arrayToMap(<span class="hljs-keyword">this</span>._renderedChildComponents)
+<span class="hljs-comment">// &#x751F;&#x6210;&#x65B0;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x7684;component&#x5BF9;&#x8C61;&#x96C6;&#x5408;</span>
+<span class="hljs-keyword">const</span> nextChildComponents = generateComponentsMap(prevChildComponents, nextChildVDoms)
+</code></pre>
+<p>&#x5C06;ReactComponent&#x6570;&#x7EC4;&#x8F6C;&#x5316;&#x4E3A;map&#x540E;&#xFF0C;&#x7528;&#x8001;&#x7684;ReactComponents&#x96C6;&#x5408;&#x548C;&#x65B0;vDoms&#x6570;&#x7EC4;&#x751F;&#x6210;&#x65B0;&#x7684;ReactComponents&#x96C6;&#x5408;&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x4F7F;&#x7528;shouldUpdateReactComponent&#x8FDB;&#x884C;component diff&#xFF0C;&#x5982;&#x679C;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x66F4;&#x65B0;&#x5373;&#x53EF;&#xFF0C;&#x53CD;&#x4E4B;&#xFF0C;&#x5C31;&#x91CD;&#x65B0;&#x751F;&#x6210;ReactComponent</p>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * &#x7528;&#x6765;&#x751F;&#x6210;&#x5B50;&#x8282;&#x70B9;&#x7684;component
+ * &#x5982;&#x679C;&#x662F;&#x66F4;&#x65B0;&#xFF0C;&#x5C31;&#x4F1A;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x4EE5;&#x524D;&#x7684;component&#xFF0C;&#x8C03;&#x7528;&#x5BF9;&#x5E94;&#x7684;updateComponent
+ * &#x5982;&#x679C;&#x662F;&#x65B0;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5C31;&#x4F1A;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;componentInstance
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">generateComponentsMap</span>(<span class="hljs-params">prevChildComponents, nextChildVDoms = []</span>) </span>{
+  <span class="hljs-keyword">const</span> nextChildComponents = {}
+
+  nextChildVDoms.forEach((item, index) =&gt; {
+    <span class="hljs-keyword">const</span> name = item.key ? item.key : index.toString(<span class="hljs-number">36</span>)
+    <span class="hljs-keyword">const</span> prevChildComponent = prevChildComponents &amp;&amp; prevChildComponents[name]
+
+    <span class="hljs-keyword">const</span> prevVdom = prevChildComponent &amp;&amp; prevChildComponent._vDom
+    <span class="hljs-keyword">const</span> nextVdom = item
+
+    <span class="hljs-comment">// &#x5224;&#x65AD;&#x662F;&#x66F4;&#x65B0;&#x8FD8;&#x662F;&#x91CD;&#x65B0;&#x6E32;&#x67D3;</span>
+    <span class="hljs-keyword">if</span> (shouldUpdateReactComponent(prevVdom, nextVdom)) {
+      <span class="hljs-comment">// &#x66F4;&#x65B0;&#x7684;&#x8BDD;&#x76F4;&#x63A5;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x5B50;&#x8282;&#x70B9;&#x7684;updateComponent</span>
+      prevChildComponent.updateComponent(nextVdom)
+      nextChildComponents[name] = prevChildComponent
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// &#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x7684;&#x8BDD;&#x91CD;&#x65B0;&#x751F;&#x6210;component</span>
+      <span class="hljs-keyword">const</span> nextChildComponent = instantiateReactComponent(nextVdom)
+      nextChildComponents[name] = nextChildComponent
+    }
+  })
+  <span class="hljs-keyword">return</span> nextChildComponents
+}
+</code></pre>
+<p>&#x7ECF;&#x5386;&#x4E86;&#x4EE5;&#x4E0A;&#x4E24;&#x6B65;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x83B7;&#x5F97;&#x4E86;&#x65B0;&#x65E7;&#x540C;&#x5C42;&#x7EA7;&#x7684;ReactComponents&#x96C6;&#x5408;&#x3002;&#x9700;&#x8981;&#x505A;&#x7684;&#xFF0C;&#x53EA;&#x662F;&#x904D;&#x5386;&#x8FD9;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#xFF0C;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x540C;&#x5C5E;&#x6027;&#x7684;&#x66F4;&#x65B0;&#x4E00;&#x6837;&#xFF0C;&#x8FDB;&#x884C;&#x79FB;&#x52A8;&#xFF0C;&#x65B0;&#x589E;&#xFF0C;&#x548C;&#x5220;&#x9664;&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4F1A;&#x5305;&#x542B;&#x6211;&#x4EEC;&#x7684;&#x7B2C;&#x4E09;&#x79CD;&#x4F18;&#x5316;&#xFF0C;element diff&#x3002;&#x5B83;&#x7684;&#x7B56;&#x7565;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;&#x9996;&#x5148;&#x5BF9;&#x65B0;&#x96C6;&#x5408;&#x7684;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x5FAA;&#x73AF;&#x904D;&#x5386;&#xFF0C;&#x901A;&#x8FC7;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x65B0;&#x8001;&#x96C6;&#x5408;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x76F8;&#x540C;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x76F8;&#x540C;&#x8282;&#x70B9;&#xFF0C;&#x5219;&#x8FDB;&#x884C;&#x79FB;&#x52A8;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x5728;&#x79FB;&#x52A8;&#x524D;&#x9700;&#x8981;&#x5C06;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x5728;&#x8001;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x4E0E; lastIndex &#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;if (prevChildComponent._mountIndex &lt; lastIndex)&#xFF0C;&#x5219;&#x8FDB;&#x884C;&#x8282;&#x70B9;&#x79FB;&#x52A8;&#x64CD;&#x4F5C;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x6267;&#x884C;&#x8BE5;&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x987A;&#x5E8F;&#x4F18;&#x5316;&#x624B;&#x6BB5;&#xFF0C;lastIndex &#x4E00;&#x76F4;&#x5728;&#x66F4;&#x65B0;&#xFF0C;&#x8868;&#x793A;&#x8BBF;&#x95EE;&#x8FC7;&#x7684;&#x8282;&#x70B9;&#x5728;&#x8001;&#x96C6;&#x5408;&#x4E2D;&#x6700;&#x53F3;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x5373;&#x6700;&#x5927;&#x7684;&#x4F4D;&#x7F6E;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x65B0;&#x96C6;&#x5408;&#x4E2D;&#x5F53;&#x524D;&#x8BBF;&#x95EE;&#x7684;&#x8282;&#x70B9;&#x6BD4; lastIndex &#x5927;&#xFF0C;&#x8BF4;&#x660E;&#x5F53;&#x524D;&#x8BBF;&#x95EE;&#x8282;&#x70B9;&#x5728;&#x8001;&#x96C6;&#x5408;&#x4E2D;&#x5C31;&#x6BD4;&#x4E0A;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x4F4D;&#x7F6E;&#x9760;&#x540E;&#xFF0C;&#x5219;&#x8BE5;&#x8282;&#x70B9;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x7528;&#x6DFB;&#x52A0;&#x5230;&#x5DEE;&#x5F02;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x5373;&#x4E0D;&#x6267;&#x884C;&#x79FB;&#x52A8;&#x64CD;&#x4F5C;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x8BBF;&#x95EE;&#x7684;&#x8282;&#x70B9;&#x6BD4; lastIndex &#x5C0F;&#x65F6;&#xFF0C;&#x624D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x79FB;&#x52A8;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x4E0A;&#x5B8C;&#x6574;&#x7684;diff&#x65B9;&#x6CD5;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x5DEE;&#x5F02;&#x66F4;&#x65B0;&#x7684;&#x51E0;&#x79CD;&#x7C7B;&#x578B;</span>
+<span class="hljs-keyword">const</span> UPDATE_TYPES = {
+  MOVE_EXISTING: <span class="hljs-number">1</span>,
+  REMOVE_NODE: <span class="hljs-number">2</span>,
+  INSERT_MARKUP: <span class="hljs-number">3</span>
+}
+
+   <span class="hljs-comment">// &#x8FFD;&#x8E2A;&#x5DEE;&#x5F02;</span>
+  _diff(diffQueue, nextChildVDoms) {
+    <span class="hljs-comment">// &#x5C06;&#x4E4B;&#x524D;&#x5B50;&#x8282;&#x70B9;&#x7684;component&#x6570;&#x7EC4;&#x8F6C;&#x5316;&#x4E3A;map</span>
+    <span class="hljs-keyword">const</span> prevChildComponents = arrayToMap(<span class="hljs-keyword">this</span>._renderedChildComponents)
+    <span class="hljs-comment">// &#x751F;&#x6210;&#x65B0;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x7684;component&#x5BF9;&#x8C61;&#x96C6;&#x5408;</span>
+    <span class="hljs-keyword">const</span> nextChildComponents = generateComponentsMap(prevChildComponents, nextChildVDoms)
+
+    <span class="hljs-comment">// &#x91CD;&#x65B0;&#x590D;&#x5236;_renderChildComponents</span>
+    <span class="hljs-keyword">this</span>._renderedChildComponents = []
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> name <span class="hljs-keyword">in</span> nextChildComponents) {
+      nextChildComponents.hasOwnProperty(name) &amp;&amp; <span class="hljs-keyword">this</span>._renderedChildComponents.push(nextChildComponents[name])
+    }
+
+    <span class="hljs-keyword">let</span> lastIndex = <span class="hljs-number">0</span> <span class="hljs-comment">// &#x4EE3;&#x8868;&#x8BBF;&#x95EE;&#x7684;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x8001;&#x7684;&#x96C6;&#x5408;&#x4F4D;&#x7F6E;</span>
+    <span class="hljs-keyword">let</span> nextIndex = <span class="hljs-number">0</span> <span class="hljs-comment">// &#x4EE3;&#x8868;&#x5230;&#x8FBE;&#x7684;&#x65B0;&#x7684;&#x8282;&#x70B9;&#x7684;index</span>
+
+    <span class="hljs-comment">// &#x901A;&#x8FC7;&#x5BF9;&#x6BD4;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x5C06;&#x5DEE;&#x5F02;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5230;&#x961F;&#x5217;&#x4E2D;</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> name <span class="hljs-keyword">in</span> nextChildComponents) {
+      <span class="hljs-keyword">if</span> (!nextChildComponents.hasOwnProperty(name)) <span class="hljs-keyword">continue</span>
+
+      <span class="hljs-keyword">const</span> prevChildComponent = prevChildComponents &amp;&amp; prevChildComponents[name]
+      <span class="hljs-keyword">const</span> nextChildComponent = nextChildComponents[name]
+
+      <span class="hljs-comment">// &#x76F8;&#x540C;&#x7684;&#x8BDD;&#xFF0C;&#x8BF4;&#x660E;&#x662F;&#x4F7F;&#x7528;&#x7684;&#x540C;&#x4E00;&#x4E2A;component&#xFF0C;&#x9700;&#x8981;&#x79FB;&#x52A8;</span>
+      <span class="hljs-keyword">if</span> (prevChildComponent === nextChildComponent) {
+        <span class="hljs-comment">// &#x6DFB;&#x52A0;&#x5DEE;&#x5F02;&#x5BF9;&#x8C61;&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;MOVE_EXISTING</span>
+        prevChildComponent._mountIndex &lt; lastIndex &amp;&amp; diffQueue.push({
+          parentId: <span class="hljs-keyword">this</span>._rootNodeId,
+          parentNode: $(<span class="hljs-string">`[data-reactid=&quot;<span class="hljs-subst">${this._rootNodeId}</span>&quot;]`</span>),
+          type: UPDATE_TYPES.MOVE_EXISTING,
+          fromIndex: prevChildComponent._mountIndex,
+          toIndex: nextIndex
+        })
+
+        lastIndex = <span class="hljs-built_in">Math</span>.max(prevChildComponent._mountIndex, lastIndex)
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x4E0D;&#x76F8;&#x540C;&#xFF0C;&#x8BF4;&#x660E;&#x662F;&#x65B0;&#x589E;&#x7684;&#x8282;&#x70B9;</span>
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x8001;&#x7684;component&#x5728;&#xFF0C;&#x9700;&#x8981;&#x628A;&#x8001;&#x7684;component&#x5220;&#x9664;</span>
+        <span class="hljs-keyword">if</span> (prevChildComponent) {
+          diffQueue.push({
+            parentId: <span class="hljs-keyword">this</span>._rootNodeId,
+            parentNode: $(<span class="hljs-string">`[data-reactid=&quot;<span class="hljs-subst">${this._rootNodeId}</span>&quot;]`</span>),
+            type: UPDATE_TYPES.REMOVE_NODE,
+            fromIndex: prevChildComponent._mountIndex,
+            toIndex: <span class="hljs-literal">null</span>
+          })
+
+          <span class="hljs-comment">// &#x53BB;&#x6389;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;</span>
+          <span class="hljs-keyword">if</span> (prevChildComponent._rootNodeId) {
+            $(<span class="hljs-built_in">document</span>).undelegate(<span class="hljs-string">`.<span class="hljs-subst">${prevChildComponent._rootNodeId}</span>`</span>)
+          }
+
+          lastIndex = <span class="hljs-built_in">Math</span>.max(prevChildComponent._mountIndex, lastIndex)
+        }
+
+        <span class="hljs-comment">// &#x65B0;&#x589E;&#x52A0;&#x7684;&#x8282;&#x70B9;</span>
+        diffQueue.push({
+          parentId: <span class="hljs-keyword">this</span>._rootNodeId,
+          parentNode: $(<span class="hljs-string">`[data-reactid=&quot;<span class="hljs-subst">${this._rootNodeId}</span>&quot;]`</span>),
+          type: UPDATE_TYPES.INSERT_MARKUP,
+          fromIndex: <span class="hljs-literal">null</span>,
+          toIndex: nextIndex,
+          markup: nextChildComponent.mountComponent(<span class="hljs-string">`<span class="hljs-subst">${this._rootNodeId}</span>.<span class="hljs-subst">${name}</span>`</span>)
+        })
+      }
+
+      <span class="hljs-comment">// &#x66F4;&#x65B0;_mountIndex</span>
+      nextChildComponent._mountIndex = nextIndex
+      nextIndex++
+    }
+
+    <span class="hljs-comment">// &#x5BF9;&#x4E8E;&#x8001;&#x7684;&#x8282;&#x70B9;&#x91CC;&#x6709;&#xFF0C;&#x65B0;&#x7684;&#x8282;&#x70B9;&#x91CC;&#x6CA1;&#x6709;&#x7684;&#xFF0C;&#x5168;&#x90E8;&#x5220;&#x9664;</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> name <span class="hljs-keyword">in</span> prevChildComponents) {
+      <span class="hljs-keyword">const</span> prevChildComponent = prevChildComponents[name]
+
+      <span class="hljs-keyword">if</span> (prevChildComponents.hasOwnProperty(name) &amp;&amp; !(nextChildComponents &amp;&amp; nextChildComponents.hasOwnProperty(name))) {
+        diffQueue.push({
+          parentId: <span class="hljs-keyword">this</span>._rootNodeId,
+          parentNode: $(<span class="hljs-string">`[data-reactid=&quot;<span class="hljs-subst">${this._rootNodeId}</span>&quot;]`</span>),
+          type: UPDATE_TYPES.REMOVE_NODE,
+          fromIndex: prevChildComponent._mountIndex,
+          toIndex: <span class="hljs-literal">null</span>
+        })
+
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x6E32;&#x67D3;&#x8FC7;&#xFF0C;&#x53BB;&#x6389;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;</span>
+        <span class="hljs-keyword">if</span> (prevChildComponent._rootNodeId) {
+          $(<span class="hljs-built_in">document</span>).undelegate(<span class="hljs-string">`.<span class="hljs-subst">${prevChildComponent._rootNodeId}</span>`</span>)
+        }
+      }
+    }
+  }
+<span class="hljs-comment">//  &#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/component/ReactDomCompoent.js</span>
+</code></pre>
+<p>&#x8C03;&#x7528;diff&#x65B9;&#x6CD5;&#x540E;&#xFF0C;&#x4F1A;&#x56DE;&#x5230;tree diff&#x90A3;&#x4E00;&#x6B65;&#xFF0C;&#x5F53;&#x4E00;&#x6574;&#x68F5;&#x6811;&#x904D;&#x5386;&#x5B8C;&#x540E;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x901A;&#x8FC7;Patch&#x5C06;&#x66F4;&#x65B0;&#x7684;&#x5185;&#x5BB9;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#x4E86;&#xFF0C;patch&#x65B9;&#x6CD5;&#x76F8;&#x5BF9;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x628A;&#x66F4;&#x65B0;&#x7684;&#x5185;&#x5BB9;&#x90FD;&#x653E;&#x5165;&#x4E86;diffQueue&#x4E2D;&#xFF0C;&#x53EA;&#x8981;&#x904D;&#x5386;&#x8FD9;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x5C31;&#x884C;&#x3002;</p>
+<pre><code class="lang-js">  <span class="hljs-comment">// &#x6E32;&#x67D3;</span>
+  _patch(updates) {
+    <span class="hljs-comment">// &#x5904;&#x7406;&#x79FB;&#x52A8;&#x548C;&#x5220;&#x9664;&#x7684;</span>
+    updates.forEach(({ type, fromIndex, toIndex, parentNode, parentId, markup }) =&gt; {
+      <span class="hljs-keyword">const</span> updatedChild = $(parentNode.children().get(fromIndex))
+
+      <span class="hljs-keyword">switch</span> (type) {
+        <span class="hljs-keyword">case</span> UPDATE_TYPES.INSERT_MARKUP:
+          insertChildAt(parentNode, $(markup), toIndex) <span class="hljs-comment">// &#x63D2;&#x5165;</span>
+          <span class="hljs-keyword">break</span>
+        <span class="hljs-keyword">case</span> UPDATE_TYPES.MOVE_EXISTING:
+          deleteChild(updatedChild) <span class="hljs-comment">// &#x5220;&#x9664;</span>
+          insertChildAt(parentNode, updatedChild, toIndex)
+          <span class="hljs-keyword">break</span>
+        <span class="hljs-keyword">case</span> UPDATE_TYPES.REMOVE_NODE:
+          deleteChild(updatedChild)
+          <span class="hljs-keyword">break</span>
+        <span class="hljs-keyword">default</span>:
+          <span class="hljs-keyword">break</span>
+      }
+    })
+  }
+<span class="hljs-comment">// &#x4EE3;&#x7801;&#x5730;&#x5740;&#xFF1A;src/react/component/ReactDomComponent.js</span>
+</code></pre>
+<h3 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h3>
+<p>&#x603B;&#x7ED3;&#x4E0B;&#x66F4;&#x65B0;&#xFF1A;</p>
+<ul>
+<li><strong>ReactCompositeComponent</strong>&#xFF1A;&#x8D1F;&#x8D23;&#x8C03;&#x7528;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x901A;&#x8FC7;component diff&#x5C06;&#x66F4;&#x65B0;&#x90FD;&#x4EA4;&#x7ED9;&#x4E86;&#x5B50;ReactComponet</li>
+<li><strong>ReactTextComponent</strong>&#xFF1A;&#x76F4;&#x63A5;&#x66F4;&#x65B0;&#x5185;&#x5BB9;</li>
+<li><strong>ReactDomComponent</strong>&#xFF1A;&#x5148;&#x66F4;&#x65B0;props&#xFF0C;&#x5728;&#x66F4;&#x65B0;children&#xFF0C;&#x66F4;&#x65B0;children&#x5206;&#x4E3A;&#x4E09;&#x6B65;&#xFF0C;tree diff&#x4FDD;&#x8BC1;&#x540C;&#x5C42;&#x7EA7;&#x6BD4;&#x8F83;&#xFF0C;&#x4F7F;&#x7528;- shouldUpdateReactComponent&#x8FDB;&#x884C;component diff,&#x6700;&#x540E;&#x5728;element diff&#x901A;&#x8FC7;lastIndex&#x987A;&#x5E8F;&#x4F18;&#x5316;</li>
+</ul>
+<h2 id="&#x4ED3;&#x5E93;">&#x4ED3;&#x5E93;</h2>
+<p><a href="https://github.com/Jingce-lu/lu-react" target="_blank">&#x4ED3;&#x5E93;&#x5730;&#x5740;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="实现一个简易版的React.html" class="navigation navigation-prev " aria-label="Previous page: 实现一个简易版的React">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="从0实现一个tiny-react.html" class="navigation navigation-next " aria-label="Next page: 从0实现一个tiny-react">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"从头实现一个简易版React","level":"3.3.12","depth":2,"next":{"title":"从0实现一个tiny-react","level":"3.3.13","depth":2,"path":"React/源码分析/从0实现一个tiny-react.md","ref":"React/源码分析/从0实现一个tiny-react.md","articles":[]},"previous":{"title":"实现一个简易版的React","level":"3.3.11","depth":2,"path":"React/源码分析/实现一个简易版的React.md","ref":"React/源码分析/实现一个简易版的React.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"React/源码分析/从头实现一个简易版React.md","mtime":"2019-06-29T13:41:37.367Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-29T13:52:32.157Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

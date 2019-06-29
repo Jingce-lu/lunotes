@@ -1,0 +1,4044 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>从0实现一个tiny-react · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Lu jingce <lujingce@163.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../resource/styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="实现自己的react之简单rendering.html" />
+    
+    
+    <link rel="prev" href="从头实现一个简易版React.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ailjc.com/lunotes" target="_blank" class="custom-link">路小二</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    1.JS
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../Js/js基础/js基础.html">
+            
+                <a href="../../Js/js基础/js基础.html">
+            
+                    
+                    1.1 Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Js/js基础/ljc-Js.html">
+            
+                <a href="../../Js/js基础/ljc-Js.html">
+            
+                    
+                    1.2 ljc-Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../Js/js基础/moveJs.html">
+            
+                <a href="../../Js/js基础/moveJs.html">
+            
+                    
+                    1.3 moveJs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../Js/js基础/移动web.html">
+            
+                <a href="../../Js/js基础/移动web.html">
+            
+                    
+                    1.4 移动web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../Js/js基础/ICD.html">
+            
+                <a href="../../Js/js基础/ICD.html">
+            
+                    
+                    1.5 ICD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../Js/js基础/js-es6-Map.html">
+            
+                <a href="../../Js/js基础/js-es6-Map.html">
+            
+                    
+                    1.6 js es6 Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../Js/js基础/ES6-数组array新增方法.html">
+            
+                <a href="../../Js/js基础/ES6-数组array新增方法.html">
+            
+                    
+                    ES6-数组array新增方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../Js/js基础/require和import区别.html">
+            
+                <a href="../../Js/js基础/require和import区别.html">
+            
+                    
+                    require和import区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../Js/js基础/window.history方法总结.html">
+            
+                <a href="../../Js/js基础/window.history方法总结.html">
+            
+                    
+                    window.history方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../../Js/js基础/fetch.html">
+            
+                <a href="../../Js/js基础/fetch.html">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../../Js/js基础/Js判断字符串中是否包含某个字符串.html">
+            
+                <a href="../../Js/js基础/Js判断字符串中是否包含某个字符串.html">
+            
+                    
+                    Js判断字符串中是否包含某个字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../../Js/js基础/三种js类的实现方法(es5和es6">
+            
+                <span>
+            
+                    
+                    三种js类的实现方法(es5和es6)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../../Js/js基础/async-await.html">
+            
+                <a href="../../Js/js基础/async-await.html">
+            
+                    
+                    async await
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../../Js/js基础/关于移动端,webview监听滚动条的坑.html">
+            
+                <a href="../../Js/js基础/关于移动端,webview监听滚动条的坑.html">
+            
+                    
+                    关于移动端,webview监听滚动条的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../../Js/js基础/js类型转换.html">
+            
+                <a href="../../Js/js基础/js类型转换.html">
+            
+                    
+                    js类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../../Js/js基础/js事件轮询、微任务和宏任务.html">
+            
+                <a href="../../Js/js基础/js事件轮询、微任务和宏任务.html">
+            
+                    
+                    js事件轮询、微任务和宏任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    2.正则
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../Js/正则/正则表达式不要背.html">
+            
+                <a href="../../Js/正则/正则表达式不要背.html">
+            
+                    
+                    正则表达式不要背
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../Js/正则/RegExp.html">
+            
+                <a href="../../Js/正则/RegExp.html">
+            
+                    
+                    RegExp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    3.面向对象
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../Js/面向对象/面向对象之组件开发之弹窗.html">
+            
+                <a href="../../Js/面向对象/面向对象之组件开发之弹窗.html">
+            
+                    
+                    面向对象之组件开发之弹窗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../Js/面向对象/面向对象的微博登录提示邮箱.html">
+            
+                <a href="../../Js/面向对象/面向对象的微博登录提示邮箱.html">
+            
+                    
+                    面向对象的微博登录提示邮箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    4.浏览器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../浏览器/事件机制.html">
+            
+                <a href="../../浏览器/事件机制.html">
+            
+                    
+                    事件机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../浏览器/跨域.html">
+            
+                <a href="../../浏览器/跨域.html">
+            
+                    
+                    跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../浏览器/Event-loop.html">
+            
+                <a href="../../浏览器/Event-loop.html">
+            
+                    
+                    Event loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../浏览器/存储.html">
+            
+                <a href="../../浏览器/存储.html">
+            
+                    
+                    存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../浏览器/渲染机制.html">
+            
+                <a href="../../浏览器/渲染机制.html">
+            
+                    
+                    渲染机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    5.小程序
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../Js/小程序/性能更优越的小程序图片懒加载方式.html">
+            
+                <a href="../../Js/小程序/性能更优越的小程序图片懒加载方式.html">
+            
+                    
+                    性能更优越的小程序图片懒加载方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    6.基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../Js/基础/错误处理机制.html">
+            
+                <a href="../../Js/基础/错误处理机制.html">
+            
+                    
+                    错误处理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../Js/基础/HTTPS协议.html">
+            
+                <a href="../../Js/基础/HTTPS协议.html">
+            
+                    
+                    HTTPS协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../Js/基础/cookie与session.html">
+            
+                <a href="../../Js/基础/cookie与session.html">
+            
+                    
+                    cookie与session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../Js/基础/实用的60个CSS代码片段.html">
+            
+                <a href="../../Js/基础/实用的60个CSS代码片段.html">
+            
+                    
+                    实用的60个CSS代码片段
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    7.NodeJs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../Node/node基础/node命令.html">
+            
+                <a href="../../Node/node基础/node命令.html">
+            
+                    
+                    node命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../Node/node基础/搭建一个私有的npm仓库.html">
+            
+                <a href="../../Node/node基础/搭建一个私有的npm仓库.html">
+            
+                    
+                    搭建一个私有的npm仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../Node/node基础/AnyProxy.html">
+            
+                <a href="../../Node/node基础/AnyProxy.html">
+            
+                    
+                    AnyProxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../Node/node基础/Node进程管理器PM2.html">
+            
+                <a href="../../Node/node基础/Node进程管理器PM2.html">
+            
+                    
+                    Node进程管理器PM2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../../Node/node基础/DOM-Mutation-Observer-API.md">
+            
+                <span>
+            
+                    
+                    DOM Mutation Observer API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../../Node/node基础/Path对路径操作的Api.html">
+            
+                <a href="../../Node/node基础/Path对路径操作的Api.html">
+            
+                    
+                    Path对路径操作的Api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../../Node/node基础/node.html">
+            
+                <a href="../../Node/node基础/node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../../Node/node基础/babel.html">
+            
+                <a href="../../Node/node基础/babel.html">
+            
+                    
+                    Babel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../../Node/node基础/mongodb.html">
+            
+                <a href="../../Node/node基础/mongodb.html">
+            
+                    
+                    mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2 - Advanced</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    1.框架通识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../框架通识/MVVM.html">
+            
+                <a href="../../框架通识/MVVM.html">
+            
+                    
+                    MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../框架通识/VirtualDom.html">
+            
+                <a href="../../框架通识/VirtualDom.html">
+            
+                    
+                    Virtual Dom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../框架通识/Object.defineProperty方法.html">
+            
+                <a href="../../框架通识/Object.defineProperty方法.html">
+            
+                    
+                    Object.defineProperty方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../框架通识/Proxy.html">
+            
+                <a href="../../框架通识/Proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../框架通识/10分钟快速入门rollupJs(1">
+            
+                <span>
+            
+                    
+                    10分钟快速入门rollup(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../框架通识/10分钟快速入门rollupJs(2">
+            
+                <span>
+            
+                    
+                    10分钟快速入门rollup(2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../框架通识/谈谈JavaScript中的双向数据绑定.html">
+            
+                <a href="../../框架通识/谈谈JavaScript中的双向数据绑定.html">
+            
+                    
+                    谈谈JavaScript中的双向数据绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../安全/安全.html">
+            
+                <a href="../../安全/安全.html">
+            
+                    
+                    2.安全XSS-CSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    3.性能
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../安全/性能.html">
+            
+                <a href="../../安全/性能.html">
+            
+                    
+                    性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../安全/网站性能优化.html">
+            
+                <a href="../../安全/网站性能优化.html">
+            
+                    
+                    网站性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                <a href="../../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                    
+                    4.如何渲染几万条数据并不卡住界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    5.综合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../面试/综合1.html">
+            
+                <a href="../../面试/综合1.html">
+            
+                    
+                    综合1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../面试/综合2.html">
+            
+                <a href="../../面试/综合2.html">
+            
+                    
+                    综合2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../面试/综合3.html">
+            
+                <a href="../../面试/综合3.html">
+            
+                    
+                    综合3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../../面试/综合4-vue.html">
+            
+                <a href="../../面试/综合4-vue.html">
+            
+                    
+                    综合4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../../面试/综合5.html">
+            
+                <a href="../../面试/综合5.html">
+            
+                    
+                    综合5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../../面试/综合6.html">
+            
+                <a href="../../面试/综合6.html">
+            
+                    
+                    综合6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../面试/Js基础.html">
+            
+                <a href="../../面试/Js基础.html">
+            
+                    
+                    6.JS基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../手撸代码无敌/">
+            
+                <a href="../../手撸代码无敌/">
+            
+                    
+                    7.手撸代码无敌
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../../手撸代码无敌/new.html">
+            
+                <a href="../../手撸代码无敌/new.html">
+            
+                    
+                    new
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../../手撸代码无敌/instanceof.html">
+            
+                <a href="../../手撸代码无敌/instanceof.html">
+            
+                    
+                    instanceof
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../../手撸代码无敌/防抖和节流.html">
+            
+                <a href="../../手撸代码无敌/防抖和节流.html">
+            
+                    
+                    防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../../手撸代码无敌/Proxy.html">
+            
+                <a href="../../手撸代码无敌/Proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../../手撸代码无敌/Promise实现.html">
+            
+                <a href="../../手撸代码无敌/Promise实现.html">
+            
+                    
+                    Promise 实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../../手撸代码无敌/Generator实现.html">
+            
+                <a href="../../手撸代码无敌/Generator实现.html">
+            
+                    
+                    Generator实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.7" data-path="../../手撸代码无敌/call-apply-bind.html">
+            
+                <a href="../../手撸代码无敌/call-apply-bind.html">
+            
+                    
+                    call, apply, bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.8" data-path="../../手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.html">
+            
+                <a href="../../手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.html">
+            
+                    
+                    不用call和apply方法模拟实现ES5的bind方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.9" data-path="../../手撸代码无敌/curry.html">
+            
+                <a href="../../手撸代码无敌/curry.html">
+            
+                    
+                    curry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.10" data-path="../../手撸代码无敌/Template.html">
+            
+                <a href="../../手撸代码无敌/Template.html">
+            
+                    
+                    Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.11" data-path="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                <a href="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                    
+                    封装Ajax和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.12" data-path="../../手撸代码无敌/js-tree.html">
+            
+                <a href="../../手撸代码无敌/js-tree.html">
+            
+                    
+                    js-tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.13" data-path="../../手撸代码无敌/js复杂判断的更优雅写法.html">
+            
+                <a href="../../手撸代码无敌/js复杂判断的更优雅写法.html">
+            
+                    
+                    js复杂判断的更优雅写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.14" data-path="../../手撸代码无敌/JavaScript优雅的实现方式.html">
+            
+                <a href="../../手撸代码无敌/JavaScript优雅的实现方式.html">
+            
+                    
+                    JavaScript优雅的实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.15" data-path="../../手撸代码无敌/函数式代码.html">
+            
+                <a href="../../手撸代码无敌/函数式代码.html">
+            
+                    
+                    函数式代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.16" data-path="../../手撸代码无敌/js编程黑科技.html">
+            
+                <a href="../../手撸代码无敌/js编程黑科技.html">
+            
+                    
+                    js编程黑科技
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.17" data-path="../../手撸代码无敌/自己实现简单的shift(">
+            
+                <span>
+            
+                    
+                    自己实现简单的shift()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.18" data-path="../../手撸代码无敌/迭代函数与迭代函数的实现.html">
+            
+                <a href="../../手撸代码无敌/迭代函数与迭代函数的实现.html">
+            
+                    
+                    迭代函数与迭代函数的实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.19" data-path="../../手撸代码无敌/startsWith(">
+            
+                <span>
+            
+                    
+                    startsWith()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.20" data-path="../../手撸代码无敌/endsWith(">
+            
+                <span>
+            
+                    
+                    endsWith()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.21" data-path="../../手撸代码无敌/trim(">
+            
+                <span>
+            
+                    
+                    String.prototype.trim()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.22" data-path="../../手撸代码无敌/repeat(">
+            
+                <span>
+            
+                    
+                    String.prototype.repeat()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.23" data-path="../../手撸代码无敌/padStart(">
+            
+                <span>
+            
+                    
+                    String.prototype.padStart()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.24" data-path="../../手撸代码无敌/padEnd(">
+            
+                <span>
+            
+                    
+                    String.prototype.padEnd()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.25" data-path="../../手撸代码无敌/实现一个JSON.stringify.html">
+            
+                <a href="../../手撸代码无敌/实现一个JSON.stringify.html">
+            
+                    
+                    实现一个JSON.stringify
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.26" data-path="../../手撸代码无敌/实现一个JSON.parse.html">
+            
+                <a href="../../手撸代码无敌/实现一个JSON.parse.html">
+            
+                    
+                    实现一个JSON.parse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.27" data-path="../../手撸代码无敌/实现一个继承.html">
+            
+                <a href="../../手撸代码无敌/实现一个继承.html">
+            
+                    
+                    实现一个继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.28" data-path="../../手撸代码无敌/JS深拷贝.html">
+            
+                <a href="../../手撸代码无敌/JS深拷贝.html">
+            
+                    
+                    Js深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.29" data-path="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                <a href="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                    
+                    封装Ajax和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../设计模式/">
+            
+                <a href="../../设计模式/">
+            
+                    
+                    8.设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../../设计模式/单例模式.html">
+            
+                <a href="../../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../../设计模式/策略模式.html">
+            
+                <a href="../../设计模式/策略模式.html">
+            
+                    
+                    策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../../设计模式/代理模式.html">
+            
+                <a href="../../设计模式/代理模式.html">
+            
+                    
+                    代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../../设计模式/迭代器模式.html">
+            
+                <a href="../../设计模式/迭代器模式.html">
+            
+                    
+                    迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../../设计模式/发布-订阅模式(观察者模式">
+            
+                <span>
+            
+                    
+                    发布-订阅模式(观察者模式)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../../设计模式/命令模式.html">
+            
+                <a href="../../设计模式/命令模式.html">
+            
+                    
+                    命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../../设计模式/组合模式.html">
+            
+                <a href="../../设计模式/组合模式.html">
+            
+                    
+                    组合模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="../../设计模式/模板方法模式.html">
+            
+                <a href="../../设计模式/模板方法模式.html">
+            
+                    
+                    模板方法模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.9" data-path="../../设计模式/享元模式.html">
+            
+                <a href="../../设计模式/享元模式.html">
+            
+                    
+                    享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="../../设计模式/职责链模式.html">
+            
+                <a href="../../设计模式/职责链模式.html">
+            
+                    
+                    职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="../../设计模式/中介者模式.html">
+            
+                <a href="../../设计模式/中介者模式.html">
+            
+                    
+                    中介者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="../../设计模式/装饰者模式.html">
+            
+                <a href="../../设计模式/装饰者模式.html">
+            
+                    
+                    装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.13" data-path="../../设计模式/状态模式.html">
+            
+                <a href="../../设计模式/状态模式.html">
+            
+                    
+                    状态模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.14" data-path="../../设计模式/适配器模式.html">
+            
+                <a href="../../设计模式/适配器模式.html">
+            
+                    
+                    适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.15" data-path="../../设计模式/策略设计模式和ES6的Proxy代理模式.html">
+            
+                <a href="../../设计模式/策略设计模式和ES6的Proxy代理模式.html">
+            
+                    
+                    策略设计模式和ES6的Proxy代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.16" data-path="../../设计模式/ES5&&ES6实现观察者模式.html">
+            
+                <a href="../../设计模式/ES5&&ES6实现观察者模式.html">
+            
+                    
+                    ES5 && ES6 实现观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" >
+            
+                <span>
+            
+                    
+                    9.算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../../算法/快速排序.html">
+            
+                <a href="../../算法/快速排序.html">
+            
+                    
+                    快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="../../算法/Deepclone.html">
+            
+                <a href="../../算法/Deepclone.html">
+            
+                    
+                    Deepclone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="../../算法/数组去重.html">
+            
+                <a href="../../算法/数组去重.html">
+            
+                    
+                    数组去重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.4" data-path="../../算法/冒泡排序.html">
+            
+                <a href="../../算法/冒泡排序.html">
+            
+                    
+                    冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">React</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    1.React基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../React基础/react基础.html">
+            
+                <a href="../React基础/react基础.html">
+            
+                    
+                    React基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../React基础/React生命周期分析.html">
+            
+                <a href="../React基础/React生命周期分析.html">
+            
+                    
+                    React生命周期分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../React基础/setState.html">
+            
+                <a href="../React基础/setState.html">
+            
+                    
+                    setState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../React基础/webpack4+babel7+React.html">
+            
+                <a href="../React基础/webpack4+babel7+React.html">
+            
+                    
+                    webpack4+babel7+React
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    2.Dva
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../dva/React+DvaJS之hook路由权限控制.html">
+            
+                <a href="../dva/React+DvaJS之hook路由权限控制.html">
+            
+                    
+                    React+DvaJS 之 hook 路由权限控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    3.源码分析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="React-Object实现React对象.html">
+            
+                <a href="React-Object实现React对象.html">
+            
+                    
+                    React Object实现React对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="从零开始实现一个React(一">
+            
+                <span>
+            
+                    
+                    从零开始实现一个React(一)-JSX和虚拟DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="从零开始实现一个React（二）：组件和生命周期.html">
+            
+                <a href="从零开始实现一个React（二）：组件和生命周期.html">
+            
+                    
+                    从零开始实现一个React（二）：组件和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="从零开始实现一个React（三）：diff算法.html">
+            
+                <a href="从零开始实现一个React（三）：diff算法.html">
+            
+                    
+                    从零开始实现一个React（三）：diff算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="从零开始实现一个React（四）：异步的setState.html">
+            
+                <a href="从零开始实现一个React（四）：异步的setState.html">
+            
+                    
+                    从零开始实现一个React（四）：异步的setState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="85行代码实现一个React.html">
+            
+                <a href="85行代码实现一个React.html">
+            
+                    
+                    85行代码实现一个React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.7" data-path="40行代码内实现一个React.html">
+            
+                <a href="40行代码内实现一个React.html">
+            
+                    
+                    40行代码内实现一个React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.8" data-path="简易版react.html">
+            
+                <a href="简易版react.html">
+            
+                    
+                    简易版react
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.9" data-path="200行代码实现简版react.html">
+            
+                <a href="200行代码实现简版react.html">
+            
+                    
+                    200行代码实现简版react
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.10" data-path="实现Didact.html">
+            
+                <a href="实现Didact.html">
+            
+                    
+                    实现Didact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.11" data-path="实现一个简易版的React.html">
+            
+                <a href="实现一个简易版的React.html">
+            
+                    
+                    实现一个简易版的React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.12" data-path="从头实现一个简易版React.html">
+            
+                <a href="从头实现一个简易版React.html">
+            
+                    
+                    从头实现一个简易版React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3.13" data-path="从0实现一个tiny-react.html">
+            
+                <a href="从0实现一个tiny-react.html">
+            
+                    
+                    从0实现一个tiny-react
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.14" data-path="实现自己的react之简单rendering.html">
+            
+                <a href="实现自己的react之简单rendering.html">
+            
+                    
+                    实现自己的react之简单rendering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.15" data-path="Redux源码分析.html">
+            
+                <a href="Redux源码分析.html">
+            
+                    
+                    Redux源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.16" data-path="从0实现一个lu-redux.html">
+            
+                <a href="从0实现一个lu-redux.html">
+            
+                    
+                    从0实现一个lu-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.17" data-path="从0实现一个tiny-react-redux.html">
+            
+                <a href="从0实现一个tiny-react-redux.html">
+            
+                    
+                    从0实现一个tiny-react-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.18" data-path="从0开始实现react-router.html">
+            
+                <a href="从0开始实现react-router.html">
+            
+                    
+                    从0开始实现react-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                    4.React Native
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../react-native/react-native.html">
+            
+                <a href="../react-native/react-native.html">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Vue</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../Vue/Vue生命周期.html">
+            
+                <a href="../../Vue/Vue生命周期.html">
+            
+                    
+                    Vue生命周期分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../Vue/vueRouter使用query和params传参的使用和区别.html">
+            
+                <a href="../../Vue/vueRouter使用query和params传参的使用和区别.html">
+            
+                    
+                    vueRouter使用query和params传参的使用和区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../Vue/Vue组件data为什么必须是函数.html">
+            
+                <a href="../../Vue/Vue组件data为什么必须是函数.html">
+            
+                    
+                    Vue组件data为什么必须是函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../Vue/Vue组件通信的方法.html">
+            
+                <a href="../../Vue/Vue组件通信的方法.html">
+            
+                    
+                    Vue组件通信的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../../Vue/NextTick原理分析.html">
+            
+                <a href="../../Vue/NextTick原理分析.html">
+            
+                    
+                    NextTick原理分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../../Vue/从Vue.js源码看nextTick机制.html">
+            
+                <a href="../../Vue/从Vue.js源码看nextTick机制.html">
+            
+                    
+                    从Vue.js源码看nextTick机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../../Vue/VueRouter源码分析.html">
+            
+                <a href="../../Vue/VueRouter源码分析.html">
+            
+                    
+                    VueRouter源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../../Vue/Vue&&MVVM原理.html">
+            
+                <a href="../../Vue/Vue&&MVVM原理.html">
+            
+                    
+                    Vue&&MVVM原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../../Vue/撸一个简单的Vue.html">
+            
+                <a href="../../Vue/撸一个简单的Vue.html">
+            
+                    
+                    撸一个简单的Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../../Vue/剖析Vue原理&实现双向绑定MVVM.html">
+            
+                <a href="../../Vue/剖析Vue原理&实现双向绑定MVVM.html">
+            
+                    
+                    剖析Vue原理&实现双向绑定MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../../Vue/150行代码实现一个低配版的MVVM库.html">
+            
+                <a href="../../Vue/150行代码实现一个低配版的MVVM库.html">
+            
+                    
+                    150行代码实现一个低配版的MVVM库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../../Vue/160行代码仿Vue实现极简双向绑定[详细注释].html">
+            
+                <a href="../../Vue/160行代码仿Vue实现极简双向绑定[详细注释].html">
+            
+                    
+                    160行代码仿Vue实现极简双向绑定[详细注释]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../../Vue/vue-SSR-cookie问题.html">
+            
+                <a href="../../Vue/vue-SSR-cookie问题.html">
+            
+                    
+                    Vue SSR cookie问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../../Vue/理解vue-ssr原理并自己搭建简单的ssr框架.html">
+            
+                <a href="../../Vue/理解vue-ssr原理并自己搭建简单的ssr框架.html">
+            
+                    
+                    理解vue ssr原理并自己搭建简单的ssr框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="../../Vue/Vue插件开发.html">
+            
+                <a href="../../Vue/Vue插件开发.html">
+            
+                    
+                    Vue插件开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3 - other</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    1.git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../git/git基本使用.html">
+            
+                <a href="../../git/git基本使用.html">
+            
+                    
+                    git基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../git/git分支管理策略.html">
+            
+                <a href="../../git/git分支管理策略.html">
+            
+                    
+                    git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../git/publish脚本.html">
+            
+                <a href="../../git/publish脚本.html">
+            
+                    
+                    publish脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../git/gitbook.html">
+            
+                <a href="../../git/gitbook.html">
+            
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    2.规范
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../规范/分支开发规范.html">
+            
+                <a href="../../规范/分支开发规范.html">
+            
+                    
+                    分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../../规范/es6编码规范.html">
+            
+                <a href="../../规范/es6编码规范.html">
+            
+                    
+                    ES6编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../../规范/vue编码规范.html">
+            
+                <a href="../../规范/vue编码规范.html">
+            
+                    
+                    vue编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                <a href="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                    
+                    Airbnb-React-JSX编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    3.其它
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="../../other/Emoji表情.html">
+            
+                <a href="../../other/Emoji表情.html">
+            
+                    
+                    Emoji表情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" >
+            
+                <span>
+            
+                    
+                    deep
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.3" data-path="../../other/简明-Vim-练级攻略.html">
+            
+                <a href="../../other/简明-Vim-练级攻略.html">
+            
+                    
+                    简明-Vim-练级攻略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    世路如今已惯,此心到处悠然
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >从0实现一个tiny-react</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny-react">&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny react</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny-react">&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny react</a><ul>
+<li><a href="#&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny-react&#x4E00;">&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny react(&#x4E00;)</a><ul>
+<li><a href="#&#x652F;&#x6301;JSX">&#x652F;&#x6301;JSX</a></li>
+<li><a href="#&#x6E32;&#x67D3;">&#x6E32;&#x67D3;</a><ul>
+<li><a href="#&#x603B;&#x7ED3;&#x4E00;&#x4E0B;">&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF1A;</a></li>
+</ul>
+</li>
+<li><a href="#props-&#x548C;-state">props &#x548C; state</a><ul>
+<li><a href="#&#x603B;&#x7ED3;&#x4E00;&#x4E0B;-1">&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF1A;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny-react&#x4E8C;">&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny react&#xFF08;&#x4E8C;&#xFF09;</a><ul>
+<li><a href="#&#x590D;&#x7528;DOM">&#x590D;&#x7528;DOM</a><ul>
+<li><a href="#&#x66F4;&#x65B0;&#x5C5E;&#x6027;">&#x66F4;&#x65B0;&#x5C5E;&#x6027;</a></li>
+<li><a href="#&#x64CD;&#x4F5C;&#x5B50;&#x8282;&#x70B9;">&#x64CD;&#x4F5C;&#x5B50;&#x8282;&#x70B9;</a></li>
+<li><a href="#&#x590D;&#x7528;&#x5B50;&#x8282;&#x70B9;---key">&#x590D;&#x7528;&#x5B50;&#x8282;&#x70B9; - <strong>key</strong></a></li>
+</ul>
+</li>
+<li><a href="#&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</a></li>
+</ul>
+</li>
+<li><a href="#&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny-react&#x4E09;&#x751F;&#x547D;&#x5468;&#x671F;">&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny react&#xFF08;&#x4E09;&#xFF09;&#x751F;&#x547D;&#x5468;&#x671F;</a><ul>
+<li><a href="#&#x590D;&#x7528;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;">&#x590D;&#x7528;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;</a></li>
+<li><a href="#&#x751F;&#x547D;&#x5468;&#x671F;">&#x751F;&#x547D;&#x5468;&#x671F;</a><ul>
+<li><a href="#componentWillMount-componentDidMount-componentDidUpdate">componentWillMount, componentDidMount, componentDidUpdate</a></li>
+<li><a href="#componentWillReceiveProps-shouldComponentUpdate-componentWillUpdate">componentWillReceiveProps&#xFF0C; shouldComponentUpdate&#xFF0C; componentWillUpdate</a></li>
+<li><a href="#componentWillUnmount">componentWillUnmount</a></li>
+</ul>
+</li>
+<li><a href="#&#x5176;&#x4ED6;">&#x5176;&#x4ED6;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h2 id="&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny-react&#x4E00;">&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny react(&#x4E00;)</h2>
+<h3 id="&#x652F;&#x6301;jsx">&#x652F;&#x6301;JSX</h3>
+<p>react&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x4E0D;&#x7528;JSX&#xFF0C; &#x7528;&#x7EAF;js&#x6765;&#x5199;&#x3002; JSX&#x8BED;&#x6CD5;&#x7ECF;&#x8FC7;babel&#x8F6C;&#x5316;&#x5C31;&#x662F;&#x7EAF;js&#x4EE3;&#x7801;&#xFF0C; &#x8B6C;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> hw = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="hljs-keyword">const</span> hw = React.createElement(<span class="hljs-string">&apos;div&apos;</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">&quot;Hello World&quot;</span>)
+</code></pre>
+<p>&#x8FD9;&#x4E24;&#x79CD;&#x662F;&#x7B49;&#x6548;&#x7684;&#x3002; babel &#x901A;&#x8FC7;<a href="https://github.com/babel/babylon" target="_blank">babylon</a> &#x6765;&#x628A;JSX&#x8F6C;&#x5316;&#x4E3A;js</p>
+<p>&#x914D;&#x7F6E;&#x5982;&#x4E0B;(<a href="http://babeljs.io/docs/plugins/transform-react-jsx/" target="_blank">transform-react-jsx</a>)&#xFF1A;</p>
+<pre><code class="lang-js">{
+  <span class="hljs-string">&quot;presets&quot;</span>: [
+    <span class="hljs-string">&quot;es2015&quot;</span>
+  ],
+  <span class="hljs-string">&quot;plugins&quot;</span>: [
+    [<span class="hljs-string">&quot;transform-react-jsx&quot;</span>, {
+      <span class="hljs-string">&quot;pragma&quot;</span>:  <span class="hljs-string">&quot;createElement&quot;</span> <span class="hljs-comment">// default pragma is React.createElement</span>
+    }]
+  ]
+}
+</code></pre>
+<p>&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;react&#x5E93;&#x672C;&#x8EAB;&#x7684;&#xFF0C; &#x662F;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3;jsx&#x8BED;&#x6CD5;&#x7684;</p>
+<h3 id="&#x6E32;&#x67D3;">&#x6E32;&#x67D3;</h3>
+<p>react &#x4E2D;<code>virtual-dom</code>&#x7684;&#x6982;&#x5FF5;&#xFF0C; &#x4F7F;&#x7528;&#x4E00;&#x4E2A; js&#x7684;&#x7ED3;&#x6784;vnode&#x6765;&#x63CF;&#x8FF0;DOM &#x8282;&#x70B9;&#x3002; &#x7136;&#x540E;&#xFF0C; &#x4ECE;vnode&#x6E32;&#x67D3;&#x51FA;DOM&#x6811;&#x3002; </p>
+<p>&#x8FD9;&#x4E2A; vnode&#x7531;3&#x4E2A;&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#xFF1A;<code>nodeName(div, Son...)</code>, <code>props</code>, <code>children(vnode &#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;)</code>, &#x6240;&#x4EE5; <code>createElement</code>&#x7684;&#x6700;&#x7B80;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createElement</span>(<span class="hljs-params">type, props, ...args</span>) </span>{
+    <span class="hljs-keyword">let</span> children = []
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i&lt; args.length;i++){
+        <span class="hljs-keyword">if</span>(args[i] <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Array</span>) {
+            children = children.concat(args[i])
+        } <span class="hljs-keyword">else</span> {
+            children.push(args[i])
+        }
+    }
+    <span class="hljs-keyword">return</span> {
+        nodeName: type,
+        props: props || {},
+        children
+    }
+}
+</code></pre>
+<p>&#x4ECE;vnode &#x600E;&#x4E48;&#x6E32;&#x67D3;&#x5230;dom? &#x5148;&#x60F3;&#x4E00;&#x4E0B;&#x6211;&#x4EEC;&#x5728;react&#x91CC;&#x9762;&#x4E66;&#x5199;&#x4E0B;&#x9762;&#x7684;&#x7EC4;&#x4EF6;&#x7684;&#x65F6;&#x5019;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Father</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    render() {
+        <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Son</span>/&gt;</span></span>) <span class="hljs-comment">// React.createElement(Son)  --&gt; {nodeName: Son, props:{}, children:[]}</span>
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Son</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    render() {
+        <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Grandson</span>/&gt;</span></span>) <span class="hljs-comment">// React.createElement(Grandson) --&gt; {nodeName: Grandson, props:{}, children:[]}</span>
+    }
+}
+
+<span class="hljs-comment">/**
+*React.createElement(
+*                &quot;div&quot;,
+*                null,
+*                &quot;i&quot;,
+*                React.createElement(
+*                    &quot;div&quot;,
+*                    null,
+*                    &quot;am&quot;
+*                ),
+*                React.createElement(GrandText, null)
+*            );
+*/</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Grandson</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{ 
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                i
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>am<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">GrandText</span>/&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        ) 
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GrandText</span> <span class="hljs-keyword">extends</span>  <span class="hljs-title">Component</span> </span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>grandson<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span> <span class="hljs-comment">// React.createElement(Grandson) </span>
+        )
+    }
+}
+
+
+render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Father</span>/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;root&apos;</span>))
+</code></pre>
+<p>&#x5728;react&#x91CC;&#xFF0C; &#x6700;&#x7EC8;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#x7684;&#x5C31;&#x662F;&#x4E00;&#x4E2A;i am grandson&#x3002;</p>
+<p>&#x6E32;&#x67D3;&#x7684;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;: <code>&#x6E32;&#x67D3;Father&#x7684;Vnode</code> -&gt; <code>&#x6E32;&#x67D3;Son&#x7684;Vnode</code> -&gt; <code>&#x6E32;&#x67D3;Grandson&#x7684;Vnode</code> -&gt;<code>&#x6E32;&#x67D3;div</code> -&gt; <code>&#x6E32;&#x67D3;i</code> -&gt; <code>&#x6E32;&#x67D3;&lt;div&gt;am&lt;/div&gt;</code> -&gt; <code>&#x6E32;&#x67D3;GrandText</code>&#x3002;</p>
+<p>&#x663E;&#x7136;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;<code>&#x9012;&#x5F52;</code>&#x7684;&#x8FC7;&#x7A0B;&#xFF1A;<strong>&#x9012;&#x5F52;&#x7684;&#x4E2D;&#x6B62;&#x6761;&#x4EF6;&#x662F; &#x6E32;&#x67D3;html&#x6807;&#x7B7E;</strong>&#x3002;</p>
+<ol>
+<li>&#x5F53; nodeName &#x662F; html&#x6807;&#x7B7E;&#xFF0C; &#x76F4;&#x63A5;&#x64CD;&#x4F5C;dom</li>
+<li>&#x5F53; nodeName &#x662F; react&#x7EC4;&#x4EF6; &#x9012;&#x5F52;&#x64CD;&#x4F5C; &#x7EC4;&#x4EF6;render&#x8FD4;&#x56DE;&#x7684;vnode</li>
+</ol>
+<p>&#x6682;&#x65F6;&#x5148;&#x4E0D;&#x8003;&#x8651; dom&#x64CD;&#x4F5C;&#xFF0C; &#x53EA;&#x8003;&#x8651;&#x8FD9;&#x4E2A;&#x9012;&#x5F52;&#x65B9;&#x6CD5;&#xFF0C; &#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderVDOM</span>(<span class="hljs-params">vnode</span>) </span>{
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode == <span class="hljs-string">&quot;string&quot;</span>) { <span class="hljs-comment">// &#x5B57;&#x7B26;&#x4E32; &quot;i an grandson&quot;</span>
+        <span class="hljs-keyword">return</span> vnode
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode.nodeName == <span class="hljs-string">&quot;string&quot;</span>) {
+        <span class="hljs-keyword">let</span> result = {
+            nodeName: vnode.nodeName,
+            props: vnode.props,
+            children: []
+        }
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; vnode.children.length; i++) {   
+            result.children.push(renderVDOM(vnode.children[i]))
+        }
+        <span class="hljs-keyword">return</span> result
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> vnode.nodeName == <span class="hljs-string">&quot;function&quot;</span>) { <span class="hljs-comment">// &#x5982;&#x679C;&#x662F;function</span>
+        <span class="hljs-keyword">let</span> func = vnode.nodeName
+        <span class="hljs-keyword">let</span> inst = <span class="hljs-keyword">new</span> func(vnode.props)
+        <span class="hljs-keyword">let</span> innerVnode = inst.render()
+        <span class="hljs-keyword">return</span> renderVDOM(innerVnode)
+    }
+}
+</code></pre>
+<p>&#x6267;&#x884C;&#x4E0A;&#x9762;&#x7684;&#x7ED3;&#x6784;&#x5C06;&#x8FD4;&#x56DE;</p>
+<pre><code class="lang-js">{
+    <span class="hljs-string">&quot;nodeName&quot;</span>: <span class="hljs-string">&quot;div&quot;</span>,
+    <span class="hljs-string">&quot;props&quot;</span>: {},
+    <span class="hljs-string">&quot;children&quot;</span>: [<span class="hljs-string">&quot;i&quot;</span>, {<span class="hljs-string">&quot;nodeName&quot;</span>: <span class="hljs-string">&quot;div&quot;</span>, <span class="hljs-string">&quot;props&quot;</span>: {}, <span class="hljs-string">&quot;children&quot;</span>: [<span class="hljs-string">&quot;am&quot;</span>]}, {
+        <span class="hljs-string">&quot;nodeName&quot;</span>: <span class="hljs-string">&quot;div&quot;</span>,
+        <span class="hljs-string">&quot;props&quot;</span>: {},
+        <span class="hljs-string">&quot;children&quot;</span>: [<span class="hljs-string">&quot;grandson&quot;</span>]
+    }]
+}
+</code></pre>
+<p>&#x52A0;&#x5165;&#x5B9E;&#x9645;DOM&#x64CD;&#x4F5C;&#xFF0C; &#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">vnode, parent</span>) </span>{
+    <span class="hljs-keyword">let</span> dom
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode == <span class="hljs-string">&quot;string&quot;</span>) {
+        dom = <span class="hljs-built_in">document</span>.createTextNode(vnode)
+        parent.appendChild(dom)
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode.nodeName == <span class="hljs-string">&quot;string&quot;</span>) {
+        dom = <span class="hljs-built_in">document</span>.createElement(vnode.nodeName)
+        setAttrs(dom, vnode.props)
+        parent.appendChild(dom)
+
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; vnode.children.length; i++) {
+            render(vnode.children[i], dom)
+        }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> vnode.nodeName == <span class="hljs-string">&quot;function&quot;</span>) {
+        <span class="hljs-keyword">let</span> func = vnode.nodeName
+
+        <span class="hljs-keyword">let</span> inst = <span class="hljs-keyword">new</span> func(vnode.props)
+        <span class="hljs-keyword">let</span> innerVnode = inst.render()
+        render(innerVnode, parent)
+    }
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setAttrs</span>(<span class="hljs-params">dom, props</span>) </span>{
+    <span class="hljs-keyword">const</span> allKeys = <span class="hljs-built_in">Object</span>.keys(props)
+    allKeys.forEach(k =&gt; {
+        <span class="hljs-keyword">const</span> v = props[k]
+
+        <span class="hljs-keyword">if</span>(k == <span class="hljs-string">&quot;className&quot;</span>) {
+            dom.setAttribute(<span class="hljs-string">&quot;class&quot;</span>, v)
+            <span class="hljs-keyword">return</span>
+        }
+
+        <span class="hljs-keyword">if</span>(k == <span class="hljs-string">&quot;style&quot;</span>) {
+            <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> v == <span class="hljs-string">&quot;string&quot;</span>) {
+                dom.style.cssText = v
+            }
+
+            <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> v == <span class="hljs-string">&quot;object&quot;</span>) {
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i <span class="hljs-keyword">in</span> v) {
+                    dom.style[i] =  v[i]
+                }
+            }
+            <span class="hljs-keyword">return</span>
+
+        }
+
+        <span class="hljs-keyword">if</span>(k[<span class="hljs-number">0</span>] == <span class="hljs-string">&quot;o&quot;</span> &amp;&amp; k[<span class="hljs-number">1</span>] == <span class="hljs-string">&quot;n&quot;</span>) {
+            <span class="hljs-keyword">const</span> capture = (k.indexOf(<span class="hljs-string">&quot;Capture&quot;</span>) != <span class="hljs-number">-1</span>)
+            dom.addEventListener(k.substring(<span class="hljs-number">2</span>).toLowerCase(), v, capture)
+            <span class="hljs-keyword">return</span>
+        }
+
+        dom.setAttribute(k, v)
+    })
+}
+</code></pre>
+<h4 id="&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF1A;">&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF1A;</h4>
+<ol>
+<li>createElement &#x65B9;&#x6CD5;&#x8D1F;&#x8D23;&#x521B;&#x5EFA; vnode</li>
+<li>render &#x65B9;&#x6CD5;&#x8D1F;&#x8D23;&#x6839;&#x636E;&#x751F;&#x6210;&#x7684;vnode&#xFF0C; &#x6E32;&#x67D3;&#x5230;&#x5B9E;&#x9645;&#x7684;dom&#x7684;&#x4E00;&#x4E2A;&#x9012;&#x5F52;&#x65B9;&#x6CD5; (&#x7531;&#x4E8E;&#x7EC4;&#x4EF6; &#x6700;&#x7EC8;&#x4E00;&#x5B9A;&#x4F1A;render html&#x7684;&#x6807;&#x7B7E;&#x3002; &#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x9012;&#x5F52;&#x4E00;&#x5B9A;&#x662F;&#x80FD;&#x591F;&#x6B63;&#x5E38;&#x8FD4;&#x56DE;&#x7684;)<ul>
+<li>vnode&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x662F;&#xFF0C; &#x521B;&#x5EFA;textNode&#x8282;&#x70B9;</li>
+<li>&#x5F53;vnode.nodeName&#x662F; &#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x521B;&#x5EFA;dom&#x8282;&#x70B9;&#xFF0C; &#x6839;&#x636E;props&#x8BBE;&#x7F6E;&#x8282;&#x70B9;&#x5C5E;&#x6027;&#xFF0C; &#x904D;&#x5386;render children</li>
+<li>&#x5F53;vnode.nodeName&#x662F; function&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x83B7;&#x53D6;render&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C; vnode&apos;&#xFF0C; &#x6267;&#x884C;render(vnode&apos;)</li>
+</ul>
+</li>
+</ol>
+<h3 id="props-&#x548C;-state">props &#x548C; state</h3>
+<p><code>v = f(props, state)</code>&#x3002; &#x7EC4;&#x4EF6;&#x7684;&#x6E32;&#x67D3;&#x7ED3;&#x679C;&#x7531; <code>render&#x65B9;&#x6CD5;</code>&#xFF0C;<code>props</code>&#xFF0C; <code>state</code>&#x5171;&#x540C;&#x51B3;&#x5B9A;&#xFF0C;&#x4E4B;&#x524D;&#x53EA;&#x662F;&#x8BA8;&#x8BBA;&#x4E86;render&#xFF0C; &#x73B0;&#x5728;&#x5F15;&#x5165; props&#xFF0C; state&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;<code>props</code>&#xFF0C; &#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#xFF0C; &#x4E0D;&#x53EF;&#x53D8;&#x3002; &#x8BBE;&#x7F6E;&#x5230;&#x5C5E;&#x6027;&#x4E0A;&#x9762;&#x3002; &#x7531;&#x57FA;&#x7C7B;Component &#x8BBE;&#x7F6E;props</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Component</span> </span>{
+    <span class="hljs-keyword">constructor</span>(props) {
+        <span class="hljs-keyword">this</span>.props = props
+    }
+}
+</code></pre>
+<p>&#x5BF9;&#x4E8E; <code>state</code>, &#x5728;&#x7EC4;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x671F;&#x5185;&#x662F;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x7684;&#xFF0C;&#x5F53;&#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x7684;<code>setState</code>&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;, <strong>&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x91CD;&#x65B0;&#x6E32;&#x67D3; &#x7528;&#x4E00;&#x4E2A;&#x65B0;DOM&#x6811;&#x66FF;&#x6362;&#x8001;&#x7684;DOM</strong>:</p>
+<pre><code class="lang-js">parent.replaceChild (newdom, olddom )
+</code></pre>
+<p>&#x6BD4;&#x5982;&#x5F53;&#x6211;&#x5728; GrandText &#x4E0A;&#x8C03;&#x7528;setState&#x3002; &#x5C31;&#x662F;&#x7236;div &#x628A;GrandText&#x6E32;&#x67D3;&#x51FA;&#x6765;&#x7684;dom &#x66FF;&#x6362;&#x4E00;&#x4E0B;&#x3002;<br>&#x6240;&#x4EE5;</p>
+<ol>
+<li>&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B; &#x5FC5;&#x987B;&#x6709;&#x673A;&#x5236;&#x83B7;&#x53D6;&#x5230; olddom</li>
+<li>&#x540C;&#x65F6; render&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F; parent&#x3002; &#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x5FC5;&#x987B;&#x6709;&#x673A;&#x5236;&#x83B7;&#x53D6;&#x5230; parentDOM</li>
+</ol>
+<p>&#x8FD9;2&#x4E2A;&#x95EE;&#x9898;&#x5176;&#x5B9E;&#x662F;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x3002; <code>parent = olddom.parentNode</code>, &#x6240;&#x4EE5; <code>olddom.parentNode.replaceChild (newdom, olddom )</code> &#x3002; &#x73B0;&#x5728;&#x7684;&#x5173;&#x952E;&#x5C31;&#x662F;&#x83B7;&#x53D6;&#x5230;olddom&#xFF0C;</p>
+<p>&#x8FD9;&#x91CC;&#x91C7;&#x7528;&#x7684;&#x673A;&#x5236;&#x662F; &#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B; &#x8BB0;&#x4F4F; &#x76F4;&#x63A5;&#x6E32;&#x67D3;&#x51FA;&#x7684;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#xFF0F;DOM&#xFF08;&#x901A;&#x8FC7;__rendered&#x5C5E;&#x6027;&#xFF09;&#x3002; &#x4E0B;&#x56FE;&#xFF1A;</p>
+<div align="center"><img src="../../resource/assets/react/041401.png"></div>
+
+<p>&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span> (<span class="hljs-params">vnode, parent, comp</span>) </span>{
+    <span class="hljs-keyword">let</span> dom
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode == <span class="hljs-string">&quot;string&quot;</span>) {
+        <span class="hljs-keyword">const</span> dom = ...  <span class="hljs-comment">// &#x521B;&#x5EFA;&#x6587;&#x672C;&#x8282;&#x70B9;</span>
+        comp &amp;&amp; (comp.__rendered = dom)
+        ...  <span class="hljs-comment">// other op</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode.nodeName == <span class="hljs-string">&quot;string&quot;</span>) {
+        <span class="hljs-keyword">const</span> dom = ... <span class="hljs-comment">// &#x521B;&#x5EFA; dom&#x8282;&#x70B9;</span>
+        comp &amp;&amp; (comp.__rendered = dom)
+        ... <span class="hljs-comment">// other op</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> vnode.nodeName == <span class="hljs-string">&quot;function&quot;</span>) {
+        <span class="hljs-keyword">const</span> inst = ... <span class="hljs-comment">// &#x521B;&#x5EFA; &#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;</span>
+        comp &amp;&amp; (comp.__rendered = inst)
+        ... <span class="hljs-comment">// other op</span>
+    }
+}
+</code></pre>
+<p>&#x5176;&#x4E2D; <code>comp</code> &#x53C2;&#x6570;&#x4EE3;&#x8868; &quot;<code>&#x6211;&#x662F;&#x88AB;&#x8C01;&#x6E32;&#x67D3;&#x7684;</code>&quot;&#x3002; &#x83B7;&#x53D6;olddom&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDOM</span>(<span class="hljs-params">comp</span>) </span>{
+    <span class="hljs-keyword">let</span> rendered = comp.__rendered
+    <span class="hljs-keyword">while</span> (rendered <span class="hljs-keyword">instanceof</span> Component) { <span class="hljs-comment">//&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x662F;dom</span>
+        rendered = rendered.__rendered
+    }
+    <span class="hljs-keyword">return</span> rendered
+}
+</code></pre>
+<p>&#x8C03;&#x7528; setState &#x4F7F;&#x7528;olddom&#x66FF;&#x6362;&#x8001;&#x7684;dom &#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">vnode, parent, comp, olddom</span>) </span>{
+    <span class="hljs-keyword">let</span> dom
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode == <span class="hljs-string">&quot;string&quot;</span>) {
+        ...
+        if(olddom) {
+            parent.replaceChild(dom, olddom)
+        } <span class="hljs-keyword">else</span> {
+            parent.appendChild(dom)
+        }
+        ...
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode.nodeName == <span class="hljs-string">&quot;string&quot;</span>) {
+        ...
+        if(olddom) {
+            parent.replaceChild(dom, olddom)
+        } <span class="hljs-keyword">else</span> {
+            parent.appendChild(dom)
+        }
+        ...
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> vnode.nodeName == <span class="hljs-string">&quot;function&quot;</span>) {
+        ...
+        render(innerVnode, parent, inst, olddom)
+    }
+}
+</code></pre>
+<p>&#x62FC;&#x51D1;&#x4E00;&#x4E0B;&#x4EE5;&#x4E0A;&#x529F;&#x80FD;&#xFF0C; &#x5B8C;&#x6574;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">///Component</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Component</span> </span>{
+    <span class="hljs-keyword">constructor</span>(props) {
+        <span class="hljs-keyword">this</span>.props = props
+    }
+
+    setState(state) {
+        setTimeout(() =&gt; {
+            <span class="hljs-keyword">this</span>.state = state
+            <span class="hljs-keyword">const</span> vnode = <span class="hljs-keyword">this</span>.render()
+            <span class="hljs-keyword">let</span> olddom = getDOM(<span class="hljs-keyword">this</span>)
+            render(vnode, olddom.parentNode, <span class="hljs-keyword">this</span>, olddom)
+        }, <span class="hljs-number">0</span>)
+    }
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDOM</span>(<span class="hljs-params">comp</span>) </span>{
+    <span class="hljs-keyword">let</span> rendered = comp.__rendered
+    <span class="hljs-keyword">while</span> (rendered <span class="hljs-keyword">instanceof</span> Component) { <span class="hljs-comment">//&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x662F;dom</span>
+        rendered = rendered.__rendered
+    }
+    <span class="hljs-keyword">return</span> rendered
+}
+
+<span class="hljs-comment">///render</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span> (<span class="hljs-params">vnode, parent, comp, olddom</span>) </span>{
+    <span class="hljs-keyword">let</span> dom
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode == <span class="hljs-string">&quot;string&quot;</span> || <span class="hljs-keyword">typeof</span> vnode == <span class="hljs-string">&quot;number&quot;</span>) {
+        dom = <span class="hljs-built_in">document</span>.createTextNode(vnode)
+        comp &amp;&amp; (comp.__rendered = dom)
+        parent.appendChild(dom)
+
+        <span class="hljs-keyword">if</span>(olddom) {
+            parent.replaceChild(dom, olddom)
+        } <span class="hljs-keyword">else</span> {
+            parent.appendChild(dom)
+        }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> vnode.nodeName == <span class="hljs-string">&quot;string&quot;</span>) {
+        dom = <span class="hljs-built_in">document</span>.createElement(vnode.nodeName)
+
+        comp &amp;&amp; (comp.__rendered = dom)
+        setAttrs(dom, vnode.props)
+
+        <span class="hljs-keyword">if</span>(olddom) {
+            parent.replaceChild(dom, olddom)
+        } <span class="hljs-keyword">else</span> {
+            parent.appendChild(dom)
+        }
+
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; vnode.children.length; i++) {
+            render(vnode.children[i], dom, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>)
+        }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> vnode.nodeName == <span class="hljs-string">&quot;function&quot;</span>) {
+        <span class="hljs-keyword">let</span> func = vnode.nodeName
+        <span class="hljs-keyword">let</span> inst = <span class="hljs-keyword">new</span> func(vnode.props)
+
+        comp &amp;&amp; (comp.__rendered = inst)
+
+        <span class="hljs-keyword">let</span> innerVnode = inst.render(inst)
+        render(innerVnode, parent, inst, olddom)
+    }
+}
+</code></pre>
+<h4 id="&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF1A;">&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF1A;</h4>
+<p>render&#x65B9;&#x6CD5;&#x8D1F;&#x8D23;&#x628A;vnode&#x6E32;&#x67D3;&#x5230;&#x5B9E;&#x9645;&#x7684;DOM&#xFF0C; &#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x7684;DOM&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C; &#x5C31;&#x66FF;&#x6362;&#xFF0C; &#x5E76;&#x4E14;&#x4FDD;&#x6301;&#x4E00;&#x4E2A; __rendered&#x7684;&#x5F15;&#x7528;&#x94FE;</p>
+<h2 id="&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny-react&#xFF08;&#x4E8C;&#xFF09;">&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny react&#xFF08;&#x4E8C;&#xFF09;</h2>
+<p>ui = f(d)&#xFF01; &#x8FD9;&#x662F;react&#x8003;&#x8651;ui&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x628A;&#x91CD;&#x5FC3;&#x653E;&#x5230;d &#x6570;&#x636E;&#x4E0A;&#x9762;&#x6765;&#x4E86;&#x3002; &#x4ECE;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BB2; d&#x4E00;&#x65E6;&#x6539;&#x53D8;&#xFF0C;react&#x5C06;&#x4F1A;&#x628A;ui&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x4F7F;&#x5176;&#x518D;&#x6B21;&#x6EE1;&#x8DB3;
+ui = f(d), &#x5F00;&#x53D1;&#x8005;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;dom&#x64CD;&#x4F5C;&#xFF0C; &#x4EA4;&#x7ED9;react&#x5C31;&#x597D;&#xFF01;&#xFF01;</p>
+<p>&#x600E;&#x4E48;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x5462;&#xFF1F; (&#x4E00;)&#x6587; &#x4E2D;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C; state&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7528;&#x65B0;&#x7684;dom&#x6811;&#x66FF;&#x6362;&#x4E00;&#x4E0B;&#x8001;&#x7684;dom&#x6811;&#xFF0C; &#x8FD9;&#x662F;&#x5B8C;&#x5168;&#x53EF;&#x884C;&#x7684;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppWithNoVDOM</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    <span class="hljs-keyword">constructor</span>(props) {
+        <span class="hljs-keyword">super</span>(props)
+    }
+
+    testApp3() {
+        <span class="hljs-keyword">let</span> result = []
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span> ; i++) {
+            result.push(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span>
+                <span class="hljs-attr">width:</span> &apos;<span class="hljs-attr">30px</span>&apos;,
+                <span class="hljs-attr">color:</span> &apos;<span class="hljs-attr">red</span>&apos;,
+                <span class="hljs-attr">fontSize:</span> &apos;<span class="hljs-attr">12px</span>&apos;,
+                <span class="hljs-attr">fontWeight:</span> <span class="hljs-attr">600</span>,
+                <span class="hljs-attr">height:</span> &apos;<span class="hljs-attr">20px</span>&apos;,
+                <span class="hljs-attr">textAlign:</span> &apos;<span class="hljs-attr">center</span>&apos;,
+                <span class="hljs-attr">margin:</span>&apos;<span class="hljs-attr">5px</span>&apos;,
+                <span class="hljs-attr">padding:</span> &apos;<span class="hljs-attr">5px</span>&apos;,
+                <span class="hljs-attr">border:</span>&apos;<span class="hljs-attr">1px</span> <span class="hljs-attr">solid</span> <span class="hljs-attr">red</span>&apos;,
+                <span class="hljs-attr">position:</span> &apos;<span class="hljs-attr">relative</span>&apos;,
+                <span class="hljs-attr">left:</span> &apos;<span class="hljs-attr">10px</span>&apos;,
+                <span class="hljs-attr">top:</span> &apos;<span class="hljs-attr">10px</span>&apos;,
+            }} <span class="hljs-attr">title</span>=<span class="hljs-string">{i}</span> &gt;</span>{i}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>)
+        }
+        <span class="hljs-keyword">return</span> result
+    }
+
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+                <span class="hljs-attr">width</span>=<span class="hljs-string">{100}</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span>  <span class="hljs-attr">onClick</span>=<span class="hljs-string">{e</span> =&gt;</span> {
+                    this.setState({})
+                }}&gt;click me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                {this.testApp3()}
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+
+<span class="hljs-keyword">const</span> startTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()
+render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span>/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;root&quot;</span>))
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;duration:&quot;</span>, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() - startTime)
+
+
+...
+setState(state) {
+    setTimeout(() =&gt; {
+        <span class="hljs-keyword">this</span>.state = state
+        <span class="hljs-keyword">const</span> vnode = <span class="hljs-keyword">this</span>.render()
+        <span class="hljs-keyword">let</span> olddom = getDOM(<span class="hljs-keyword">this</span>)
+        <span class="hljs-keyword">const</span> startTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()
+        render(vnode, olddom.parentNode, <span class="hljs-keyword">this</span>, olddom)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;duration:&quot;</span>, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() - startTime)
+    }, <span class="hljs-number">0</span>)
+}
+...
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5728; render, setState &#x8BBE;&#x7F6E;&#x4E0B;&#x65F6;&#x95F4;&#x70B9;&#x3002; &#x5728;10000&#x4E07;&#x4E2A;div&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C; &#x7B2C;&#x4E00;&#x6B21;render&#x548C;setState&#x89E6;&#x53D1;&#x7684;render &#x8017;&#x65F6;&#x5927;&#x6982;&#x5728;180ms &#xFF08;&#x53EF;&#x80FD;&#x8DDF;&#x673A;&#x5668;&#x914D;&#x7F6E;&#x6709;&#x5173;&#xFF09;
+&#x5F53;&#x70B9;&#x51FB;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x7531;&#x4E8E;&#x8C03;&#x7528;<code>this.setState({})</code>, &#x9875;&#x9762;&#x5C06;&#x4F1A;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C; &#x518D;&#x6B21;&#x5EFA;&#x7ACB;10000&#x4E07;&#x4E2A;div&#xFF0C; &#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#x8FD9;&#x91CC;&#x7684;DOM&#x4E00;&#x70B9;&#x4E5F;&#x6CA1;&#x6539;&#x3002;
+&#x5E94;&#x7528;&#x8D8A;&#x590D;&#x6742;&#xFF0C; &#x65E0;&#x7528;&#x529F;&#x8D8A;&#x591A;&#xFF0C;&#x5361;&#x987F;&#x8D8A;&#x660E;&#x663E;</p>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C; react&#x63D0;&#x51FA;&#x4E86;virtual-dom&#x7684;&#x6982;&#x5FF5;&#xFF1A;vnode(&#x7EAF;js&#x5BF9;&#x8C61;) &apos;&#x4EE3;&#x8868;&apos; dom&#xFF0C; &#x5728;&#x6E32;&#x67D3;&#x4E4B;&#x524D;&#xFF0C; &#x5148;&#x6BD4;&#x8F83;&#x51FA;oldvnode&#x548C;newvode&#x7684; &#x533A;&#x522B;&#x3002; &#x7136;&#x540E;&#x589E;&#x91CF;&#x7684;
+&#x66F4;&#x65B0;dom&#x3002; virtual-dom &#x4F7F;&#x5F97;ui=f(d) &#x5F97;&#x4EE5;&#x5728;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x4E0A;&#x4F7F;&#x7528;&#x3002; 
+&#xFF08;&#x6CE8;&#x610F;&#xFF1A; virtual-dom &#x5E76;&#x4E0D;&#x4F1A;&#x52A0;&#x5FEB;&#x5E94;&#x7528;&#x901F;&#x5EA6;&#xFF0C; &#x53EA;&#x662F;&#x8BA9;&#x5E94;&#x7528;&#x5728;&#x4E0D;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;dom&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x901A;&#x8FC7;&#x66B4;&#x529B;&#x7684;&#x6BD4;&#x8F83;&#xFF0C;&#x589E;&#x91CF;&#x66F4;&#x65B0; &#x8BA9;&#x5E94;&#x7528;&#x6CA1;&#x6709;&#x90A3;&#x4E48;&#x6162;&#xFF09;</p>
+<p>&#x5982;&#x4F55;&#x589E;&#x91CF;&#x66F4;&#x65B0;&#x5462;&#xFF1F;</p>
+<h3 id="&#x590D;&#x7528;dom">&#x590D;&#x7528;DOM</h3>
+<p>&#x56DE;&#x60F3;&#x4E00;&#x4E0B;, &#x5728;  render&#x51FD;&#x6570; &#x91CC;&#x9762;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;&#x5224;&#x5B9A;&#x4E3A; dom&#x7C7B;&#x578B;&#x7684;VDOM&#xFF0C; &#x662F;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;DOM&#xFF1A;
+```javascript 1.7
+...
+else if(typeof vnode.nodeName == &quot;string&quot;) {
+    dom = document.createElement(vnode.nodeName)
+    ...
+} 
+...</p>
+<pre><code>
+&#x4E00;&#x5B9A;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;  &#x65B0;&#x7684;DOM &#x7ED3;&#x6784;&#x5417;&#xFF1F;&lt;br/&gt;
+&#x8003;&#x8651;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;&#x5047;&#x5982;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C; &#x521D;&#x6B21;&#x6E32;&#x67D3;&#x4E3A; renderBefore&#xFF0C; &#x8C03;&#x7528;setState&#x518D;&#x6B21;&#x6E32;&#x67D3;&#x4E3A; renderAfter  &#x8C03;&#x7528;setState&#x518D;&#x518D;&#x6B21;&#x6E32;&#x67D3;&#x4E3A; renderAfterAfter&#x3002; VNODE&#x5982;&#x4E0B;
+```javascript 1.7
+const renderBefore = {
+    tagName: &apos;div&apos;,
+    props: {
+        width: &apos;20px&apos;,
+        className: &apos;xx&apos;
+    },
+    children:[vnode1, vnode2, vnode3]
+}
+const renderAfter = {
+    tagName: &apos;div&apos;,
+    props: {
+        width: &apos;30px&apos;,
+        title: &apos;yy&apos;
+    },
+    children:[vnode1, vnode2]
+}
+const renderAfterAfter = {
+    tagName: &apos;span&apos;,
+    props: {
+        className: &apos;xx&apos;
+    },
+    children:[vnode1, vnode2, vnode3]
+}
+</code></pre><p>renderBefore &#x548C;renderAfter &#x90FD;&#x662F;div&#xFF0C; &#x53EA;&#x4E0D;&#x8FC7;props&#x548C;children&#x6709;&#x90E8;&#x5206;&#x533A;&#x522B;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x662F;&#x4E0D;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4FEE;&#x6539;DOM&#x5C5E;&#x6027;&#xFF0C; &#x4FEE;&#x6539;DOM&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x628A; rederBefore &#x53D8;&#x5316;&#x4E3A;renderAfter&#x5462;&#xFF1F;&#xFF0C; &#x8FD9;&#x6837;&#x5C31;&#x907F;&#x5F00;&#x4E86;DOM&#x521B;&#x5EFA;&#x3002; &#x800C; renderAfter&#x548C;renderAfterAfter
+&#x5C5E;&#x4E8E;&#x4E0D;&#x540C;&#x7684;DOM&#x7C7B;&#x578B;&#xFF0C; &#x6D4F;&#x89C8;&#x5668;&#x8FD8;&#x6CA1;&#x63D0;&#x4F9B;&#x4FEE;&#x6539;DOM&#x7C7B;&#x578B;&#x7684;Api&#xFF0C;&#x662F;&#x65E0;&#x6CD5;&#x590D;&#x7528;&#x7684;&#xFF0C; &#x662F;&#x4E00;&#x5B9A;&#x8981;&#x521B;&#x5EFA;&#x65B0;&#x7684;DOM&#x7684;&#x3002;</p>
+<p>&#x539F;&#x5219;&#x5982;&#x4E0B;&#xFF1A; </p>
+<ul>
+<li>&#x4E0D;&#x540C;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x662F;&#x65E0;&#x6CD5;&#x590D;&#x7528;&#x7684;&#xFF0C; span &#x662F;&#x65E0;&#x6CD5;&#x53D8;&#x6210; div&#x7684;&#x3002;  </li>
+<li>&#x5BF9;&#x4E8E;&#x76F8;&#x540C;&#x5143;&#x7D20;: <ul>
+<li>&#x66F4;&#x65B0;&#x5C5E;&#x6027;&#xFF0C; </li>
+<li>&#x590D;&#x7528;&#x5B50;&#x8282;&#x70B9;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x73B0;&#x5728;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x80FD;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;
+```javascript 1.7
+...
+else if(typeof vnode.nodeName == &quot;string&quot;) {
+    if(!olddom || olddom.nodeName != vnode.nodeName.toUpperCase()) {
+        createNewDom(vnode, parent, comp, olddom)
+    } else {
+        diffDOM(vnode, parent, comp, olddom) // &#x5305;&#x62EC; &#x66F4;&#x65B0;&#x5C5E;&#x6027;&#xFF0C; &#x5B50;&#x8282;&#x70B9;&#x590D;&#x7528;
+    }
+}
+...</p>
+<pre><code>
+#### &#x66F4;&#x65B0;&#x5C5E;&#x6027;
+&#x5BF9;&#x4E8E; renderBefore =&gt; renderAfter &#x3002; &#x5C5E;&#x6027;&#x90E8;&#x5206;&#x9700;&#x8981;&#x505A;3&#x4EF6;&#x4E8B;&#x60C5;&#x3002; 
+1. renderBefore &#x548C; renderAfter &#x7684;&#x5C5E;&#x6027;&#x4EA4;&#x96C6;  &#x5982;&#x679C;&#x503C;&#x4E0D;&#x540C;&#xFF0C; &#x66F4;&#x65B0;&#x503C; updateAttr
+2. renderBefore &#x548C; renderAfter &#x7684;&#x5C5E;&#x6027;&#x5DEE;&#x96C6;  &#x7F6E;&#x7A7A;  removeAttr
+3. renderAfter &#x548C; renderBefore &#x7684;&#x5C5E;&#x6027;&#x5DEE;&#x96C6;  &#x8BBE;&#x7F6E;&#x65B0;&#x503C; setAttr
+```javascript 1.7
+const {onlyInLeft, bothIn, onlyInRight} = diffObject(newProps, oldProps)
+setAttrs(olddom, onlyInLeft)
+removeAttrs(olddom, onlyInRight)
+diffAttrs(olddom, bothIn.left, bothIn.right)
+
+function diffObject(leftProps, rightProps) {
+    const onlyInLeft = {}
+    const bothLeft = {}
+    const bothRight = {}
+    const onlyInRight = {}
+
+    for(let key in leftProps) {
+        if(rightProps[key] === undefined) {
+            onlyInLeft[key] = leftProps[key]
+        } else {
+            bothLeft[key] = leftProps[key]
+            bothRight[key] = rightProps[key]
+        }
+    }
+
+    for(let key in rightProps) {
+        if(leftProps[key] === undefined) {
+            onlyInRight[key] = rightProps[key]
+        }
+    }
+
+    return {
+        onlyInRight,
+        onlyInLeft,
+        bothIn: {
+            left: bothLeft,
+            right: bothRight
+        }
+    }
+}
+
+function setAttrs(dom, props) {
+    const allKeys = Object.keys(props)
+    allKeys.forEach(k =&gt; {
+        const v = props[k]
+
+        if(k == &quot;className&quot;) {
+            dom.setAttribute(&quot;class&quot;, v)
+            return
+        }
+
+        if(k == &quot;style&quot;) {
+            if(typeof v == &quot;string&quot;) {
+                dom.style.cssText = v //IE
+            }
+
+            if(typeof v == &quot;object&quot;) {
+                for (let i in v) {
+                    dom.style[i] =  v[i]
+                }
+            }
+            return
+
+        }
+
+        if(k[0] == &quot;o&quot; &amp;&amp; k[1] == &quot;n&quot;) {
+            const capture = (k.indexOf(&quot;Capture&quot;) != -1)
+            dom.addEventListener(k.substring(2).toLowerCase(), v, capture)
+            return
+        }
+
+        dom.setAttribute(k, v)
+    })
+}
+
+function removeAttrs(dom, props) {
+    for(let k in props) {
+        if(k == &quot;className&quot;) {
+            dom.removeAttribute(&quot;class&quot;)
+            continue
+        }
+
+        if(k == &quot;style&quot;) {
+            dom.style.cssText = &quot;&quot; //IE
+            continue
+        }
+
+
+        if(k[0] == &quot;o&quot; &amp;&amp; k[1] == &quot;n&quot;) {
+            const capture = (k.indexOf(&quot;Capture&quot;) != -1)
+            const v = props[k]
+            dom.removeEventListener(k.substring(2).toLowerCase(), v, capture)
+            continue
+        }
+
+        dom.removeAttribute(k)
+    }
+}
+
+/**
+ *  &#x8C03;&#x7528;&#x8005;&#x4FDD;&#x8BC1;newProps &#x4E0E; oldProps &#x7684;keys&#x662F;&#x76F8;&#x540C;&#x7684;
+ * @param dom
+ * @param newProps
+ * @param oldProps
+ */
+function diffAttrs(dom, newProps, oldProps) {
+    for(let k in newProps) {
+        let v = newProps[k]
+        let ov = oldProps[k]
+        if(v === ov) continue
+
+        if(k == &quot;className&quot;) {
+            dom.setAttribute(&quot;class&quot;, v)
+            continue
+        }
+
+        if(k == &quot;style&quot;) {
+            if(typeof v == &quot;string&quot;) {
+                dom.style.cssText = v
+            } else if( typeof v == &quot;object&quot; &amp;&amp; typeof ov == &quot;object&quot;) {
+                for(let vk in v) {
+                    if(v[vk] !== ov[vk]) {
+                        dom.style[vk] = v[vk]
+                    }
+                }
+
+                for(let ovk in ov) {
+                    if(v[ovk] === undefined){
+                        dom.style[ovk] = &quot;&quot;
+                    }
+                }
+            } else {  //typeof v == &quot;object&quot; &amp;&amp; typeof ov == &quot;string&quot;
+                dom.style = {}
+                for(let vk in v) {
+                    dom.style[vk] = v[vk]
+                }
+            }
+            continue
+        }
+
+        if(k[0] == &quot;o&quot; &amp;&amp; k[1] == &quot;n&quot;) {
+            const capture = (k.indexOf(&quot;Capture&quot;) != -1)
+            let eventKey = k.substring(2).toLowerCase()
+            dom.removeEventListener(eventKey, ov, capture)
+            dom.addEventListener(eventKey, v, capture)
+            continue
+        }
+
+        dom.setAttribute(k, v)
+    }
+}
+</code></pre><p>&apos;&#x65B0;&apos;&#x7684;dom&#x7ED3;&#x6784; &#x5C5E;&#x6027;&#x548C;  renderAfter&#x5BF9;&#x5E94;&#x4E86;&#x3002;<br>
+&#x4F46;&#x662F; children&#x90E8;&#x5206; &#x8FD8;&#x662F;&#x4E4B;&#x524D;&#x7684;</p>
+<h4 id="&#x64CD;&#x4F5C;&#x5B50;&#x8282;&#x70B9;">&#x64CD;&#x4F5C;&#x5B50;&#x8282;&#x70B9;</h4>
+<p>&#x4E4B;&#x524D; &#x64CD;&#x4F5C;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x4EE3;&#x7801;&#xFF1A; 
+```javascript 1.7
+for(let i = 0; i &lt; vnode.children.length; i++) {
+    render(vnode.children[i], dom, null, null)
+}</p>
+<pre><code>render &#x7684;&#x7B2C;3&#x4E2A;&#x53C2;&#x6570;comp &apos;&#x8C01;&#x6E32;&#x67D3;&#x4E86;&#x6211;&apos;&#xFF0C; &#x7B2C;4&#x4E2A;&#x53C2;&#x6570;olddom &apos;&#x4E4B;&#x524D;&#x7684;&#x65E7;dom&#x5143;&#x7D20;&apos;&#x3002;&#x73B0;&#x5728;&#x590D;&#x7528;&#x65E7;&#x7684;dom&#xFF0C; &#x6240;&#x4EE5;&#x7B2C;4&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x80FD;&#x662F;&#x6709;&#x503C;&#x7684; &#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A; 
+```javascript 1.7
+let olddomChild = olddom.firstChild
+for(let i = 0; i &lt; vnode.children.length; i++) {
+    render(vnode.children[i], olddom, null, olddomChild)
+    olddomChild = olddomChild &amp;&amp; olddomChild.nextSibling
+}
+
+//&#x5220;&#x9664;&#x591A;&#x4F59;&#x7684;&#x5B50;&#x8282;&#x70B9;
+while (olddomChild) {
+    let next = olddomChild.nextSibling
+    olddom.removeChild(olddomChild)
+    olddomChild = next
+}
+</code></pre><p>&#x7EFC;&#x4E0A;&#x6240;&#x8FF0;  &#x5B8C;&#x6574;&#x7684;diffDOM &#x5982;&#x4E0B;&#xFF1A;
+```javascript 1.7
+function diffDOM(vnode, parent, comp, olddom) {
+    const {onlyInLeft, bothIn, onlyInRight} = diffObject(vnode.props, olddom.__vnode.props)
+    setAttrs(olddom, onlyInLeft)
+    removeAttrs(olddom, onlyInRight)
+    diffAttrs(olddom, bothIn.left, bothIn.right)</p>
+<pre><code>let olddomChild = olddom.firstChild
+for(let i = 0; i &lt; vnode.children.length; i++) {
+    render(vnode.children[i], olddom, null, olddomChild)
+    olddomChild = olddomChild &amp;&amp; olddomChild.nextSibling
+}
+
+while (olddomChild) { //&#x5220;&#x9664;&#x591A;&#x4F59;&#x7684;&#x5B50;&#x8282;&#x70B9;
+    let next = olddomChild.nextSibling
+    olddom.removeChild(olddomChild)
+    olddomChild = next
+}
+olddom.__vnode = vnode  
+</code></pre><p>}</p>
+<pre><code>&#x7531;&#x4E8E;&#x9700;&#x8981;&#x5728;diffDOM&#x7684;&#x65F6;&#x5019; &#x4ECE;olddom&#x83B7;&#x53D6; oldVNODE&#xFF08;&#x5373; diffObject(vnode.props, olddom.__vnode.props)&#xFF09;&#x3002; &#x6240;&#x4EE5;&#xFF1A;
+```javascript 1.7
+// &#x5728;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;
+...
+let dom = document.createElement(vnode.nodeName)
+dom.__vnode = vnode
+...
+
+
+// diffDOM
+...
+const {onlyInLeft, bothIn, onlyInRight} = diffObject(vnode.props, olddom.__vnode.props)
+...
+olddom.__vnode = vnode  // &#x66F4;&#x65B0;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C; &#x9700;&#x8981;&#x628A;__vnode&#x7684;&#x6307;&#x5411; &#x66F4;&#x65B0;
+...
+</code></pre><p>&#x53E6;&#x5916; &#x5BF9;&#x4E8E; TextNode&#x7684;&#x590D;&#x7528;:
+```javascript 1.7
+...
+if(typeof vnode == &quot;string&quot; || typeof vnode == &quot;number&quot;) {
+        if(olddom &amp;&amp; olddom.splitText) {
+            if(olddom.nodeValue !== vnode) {
+                olddom.nodeValue = vnode
+            }
+        } else {
+            dom = document.createTextNode(vnode)
+            if(olddom) {
+                parent.replaceChild(dom, olddom)
+            } else {
+                parent.appendChild(dom)
+            }
+        }
+    }
+...</p>
+<pre><code>
+&#x91CD;&#x65B0; &#x8DD1;&#x4E00;&#x4E0B;&#x5F00;&#x5934; &#x7684;&#x4F8B;&#x5B50; setState&#x540E;&#x6E32;&#x67D3;&#x65F6;&#x95F4;&#x53D8;&#x6210;&#x4E86; 20ms &#x5DE6;&#x53F3;&#x3002; &#x4ECE; 180ms &#x5230;20ms &#x5DEE;&#x4E0D;&#x591A;&#x5FEB;&#x6709;&#x4E00;&#x4E2A;&#x6570;&#x91CF;&#x7EA7;&#x7684;&#x5DEE;&#x8DDD;&#x4E86;&#x3002; 
+&#x5230;&#x5E95;&#x5FEB;&#x4E86;&#x591A;&#x5C11;&#xFF0C;&#x53D6;&#x51B3;&#x4E8E;&#x524D;&#x540E;&#x7ED3;&#x6784;&#x7684;&#x76F8;&#x4F3C;&#x7A0B;&#x5EA6;&#xFF0C; &#x5982;&#x679C;&#x524D;&#x540E;&#x7ED3;&#x6784;&#x57FA;&#x672C;&#x76F8;&#x540C;&#xFF0C;diff&#x662F;&#x6709;&#x610F;&#x4E49;&#x7684;&#x51CF;&#x5C11;&#x4E86;DOM&#x64CD;&#x4F5C;&#x3002;
+
+#### &#x590D;&#x7528;&#x5B50;&#x8282;&#x70B9; - **key**
+```javascript 1.7
+&#x521D;&#x59CB;&#x6E32;&#x67D3;
+...
+render() {
+    return (
+        &lt;div&gt;
+            &lt;WeightCompA/&gt;
+            &lt;WeightCompB/&gt;
+            &lt;WeightCompC/&gt;
+        &lt;/div&gt;
+    )
+}
+...
+
+setState&#x518D;&#x6B21;&#x6E32;&#x67D3;
+...
+render() {
+    return (
+        &lt;div&gt;
+            &lt;span&gt;hi&lt;/span&gt;
+            &lt;WeightCompA/&gt;
+            &lt;WeightCompB/&gt;
+            &lt;WeightCompC/&gt;
+        &lt;/div&gt;
+    )
+}
+...
+</code></pre><p>&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x590D;&#x7528;&#x987A;&#x5E8F;&#x5C31;&#x662F;&#x6309;&#x7167;DOM&#x987A;&#x5E8F;&#xFF0C; &#x663E;&#x7136;&#x8FD9;&#x91CC;&#x5982;&#x679C;&#x8FD9;&#x6837;&#x5904;&#x7406;&#x7684;&#x8BDD;&#xFF0C; &#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x7EC4;&#x4EF6;&#x90FD;&#x590D;&#x7528;&#x4E0D;&#x4E86;&#x3002; &#x9488;&#x5BF9;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C; React&#x662F;&#x901A;&#x8FC7;&#x7ED9;&#x6BCF;&#x4E00;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A; &quot;key&quot;&#x5C5E;&#x6027;&#x6765;&#x89E3;&#x51B3;&#x7684;
+&#x5BF9;&#x4E8E;&#x62E5;&#x6709; &#x540C;&#x6837;key&#x7684;&#x8282;&#x70B9;&#xFF0C; &#x8BA4;&#x4E3A;&#x7ED3;&#x6784;&#x76F8;&#x540C;&#x3002; &#x6240;&#x4EE5;&#x95EE;&#x9898;&#x53D8;&#x6210;&#x4E86;&#xFF1A;</p>
+<pre><code>f([{key: &apos;wca&apos;}, {key: &apos;wcb}, {key: &apos;wcc}]) = [{key:&apos;spanhi&apos;}, {key: &apos;wca&apos;}, {key: &apos;wcb}, {key: &apos;wcc}]
+</code></pre><p>&#x51FD;&#x6570;f &#x901A;&#x8FC7;&#x5220;&#x9664;&#xFF0C; &#x63D2;&#x5165;&#x64CD;&#x4F5C;&#xFF0C;&#x628A;olddom&#x7684;children&#x987A;&#x5E8F;&#xFF0C; &#x6539;&#x4E3A;&#x548C; newProps&#x91CC;&#x9762;&#x7684;children&#x4E00;&#x6837; &#xFF08;&#x6309;&#x7167;key&#x503C;&#x4E00;&#x6837;&#xFF09;&#x3002;&#x7C7B;&#x4F3C;&#x4E0E; <a href="https://en.wikipedia.org/wiki/Edit_distance" target="_blank">&#x5B57;&#x7B26;&#x4E32;&#x8DDD;&#x79BB;</a>,</p>
+<h3 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h3>
+<p>&#x901A;&#x8FC7; diff &#x6BD4;&#x8F83;&#x6E32;&#x67D3;&#x524D;&#x540E; DOM&#x7684;&#x5DEE;&#x522B;&#x6765;&#x590D;&#x7528;&#x5B9E;&#x9645;&#x7684;&#xFF0C; &#x6211;&#x4EEC;&#x7684;&#x6027;&#x80FD;&#x5F97;&#x5230;&#x4E86;&#x63D0;&#x9AD8;&#x3002;&#x73B0;&#x5728; render&#x65B9;&#x6CD5;&#x7684;&#x63CF;&#x8FF0;&#xFF1A; <br>
+render &#x65B9;&#x6CD5;&#x662F;&#x6839;&#x636E;&#x7684;vnode&#xFF0C; &#x6E32;&#x67D3;&#x5230;&#x5B9E;&#x9645;&#x7684;dom&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;olddom&#x4F1A;&#x5148;&#x5C1D;&#x8BD5;&#x590D;&#x7528;&#x7684; &#x4E00;&#x4E2A;&#x9012;&#x5F52;&#x65B9;&#x6CD5; (&#x7531;&#x4E8E;&#x7EC4;&#x4EF6; &#x6700;&#x7EC8;&#x4E00;&#x5B9A;&#x4F1A;render html&#x7684;&#x6807;&#x7B7E;&#x3002; &#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x9012;&#x5F52;&#x4E00;&#x5B9A;&#x662F;&#x80FD;&#x591F;&#x6B63;&#x5E38;&#x8FD4;&#x56DE;&#x7684;)</p>
+<ul>
+<li>vnode&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C; &#x5982;&#x679C;&#x5B58;&#x5728;olddom&#xFF0C; &#x4E14;&#x53EF;&#x4EE5;&#x590D;&#x7528;&#xFF0C; &#x590D;&#x7528;&#x4E4B;&#x3002;&#x5426;&#x5219;&#x521B;&#x5EFA;textNode&#x8282;&#x70B9;</li>
+<li>&#x5F53;vnode.nodeName&#x662F; &#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x5982;&#x679C;&#x5B58;&#x5728;olddom&#xFF0C; &#x4E14;&#x53EF;&#x4EE5;&#x590D;&#x7528;&#xFF0C; &#x590D;&#x7528;&#x4E4B;&#x3002;&#x5426;&#x5219;&#x521B;&#x5EFA;dom&#x8282;&#x70B9;&#xFF0C; &#x6839;&#x636E;props&#x8BBE;&#x7F6E;&#x8282;&#x70B9;&#x5C5E;&#x6027;&#xFF0C; &#x904D;&#x5386;render children</li>
+<li>&#x5F53;vnode.nodeName&#x662F; function&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x83B7;&#x53D6;render&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C; vnode&apos;&#xFF0C; &#x6267;&#x884C;render(vnode&apos;)</li>
+</ul>
+<h2 id="&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny-react&#xFF08;&#x4E09;&#xFF09;&#x751F;&#x547D;&#x5468;&#x671F;">&#x4ECE;0&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;tiny react&#xFF08;&#x4E09;&#xFF09;&#x751F;&#x547D;&#x5468;&#x671F;</h2>
+<p>&#x5728;&#x7ED9;tinyreact&#x52A0;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x8003;&#x8651; &#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x7684;&#x590D;&#x7528; &#x8FD9;&#x4E2A;&#x524D;&#x7F6E;&#x95EE;&#x9898;</p>
+<h3 id="&#x590D;&#x7528;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;">&#x590D;&#x7528;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;</h3>
+<p>render&#x51FD;&#x6570; &#x53EA;&#x80FD;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6839;
+```jsx harmony
+class A extends Component{
+    render() {
+        return (<b>...</b>)<br>    }
+}
+class C extends Component {
+    render() {
+        return (
+            <div>
+               <c1>...</c1>
+               <c2>...</c2>
+               <c3>...</c3>
+            </div>
+        )
+    }
+}</p>
+<pre><code>&#x6240;&#x4EE5; &#x6700;&#x7EC8;&#x7684;&#x7EC4;&#x4EF6;&#x6811;&#x4E00;&#x5B9A;&#x662F;&#x7C7B;&#x4F3C;&#x8FD9;&#x79CD;&#x7684; (&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#x7684;&#x4EE3;&#x8868;&#x7EC4;&#x4EF6;&#xFF0C; div&#xFF0F;span&#xFF0F;a...&#x4EE3;&#x8868;&#x539F;&#x751F;DOM&#x7C7B;&#x578B;)
+
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../../resource/assets/react/041402.png&quot; /&gt;&lt;/div&gt;
+
+&#x662F;&#x7EDD;&#x5BF9;&#x4E0D;&#x53EF;&#x80FD; &#x51FA;&#x73B0;&#x4E0B;&#x56FE;&#x8FD9;&#x79CD;&#x6811;&#x7ED3;&#x6784; (&#x4E0E;render&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x5355;&#x6839;&#x7684;&#x7279;&#x6027;&#x77DB;&#x76FE;)
+
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../../resource/assets/react/041403.png&quot; /&gt;&lt;/div&gt;
+
+&#x6CE8;&#x610F; __rendered&#x5F15;&#x7528; &#x6307;&#x5411;&#x4E86;&#x4E00;&#x4E2A;inst&#xFF0F;dom&#x3002; &#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;__rendered&#x6765;&#x590D;&#x7528;&#x5B9E;&#x4F8B;&#x3002; 
+&lt;br/&gt;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x600E;&#x4E48;&#x6839;&#x636E;__rendered &#x590D;&#x7528;inst
+
+&#x5047;&#x5982;&#x5728; Father&#x91CC;&#x9762;&#x8C03;&#x7528; setState&#xFF1F; &#x6309;&#x7167;&#x73B0;&#x5728;render &#x51FD;&#x6570;&#x7684;&#x505A;&#x6CD5;:
+```javascript 1.7
+else if (typeof vnode.nodeName == &quot;function&quot;) {
+    let func = vnode.nodeName
+    let inst = new func(vnode.props)
+    ...
+}
+</code></pre><ol>
+<li>&#x65B0;&#x5EFA; Son &#x5B9E;&#x4F8B;</li>
+<li>&#x65B0;&#x5EFA; Grandson &#x5B9E;&#x4F8B;</li>
+<li>diff &#x6E32;&#x67D3; div</li>
+</ol>
+<p>&#x518D;&#x6B21;setState&#x5462;? &#x597D;&#x5427;&#xFF0C; &#x518D;&#x6765;&#x4E00;&#x6B21;&#xFF1A;</p>
+<ol>
+<li>&#x65B0;&#x5EFA; Son &#x5B9E;&#x4F8B;</li>
+<li>&#x65B0;&#x5EFA; Grandson &#x5B9E;&#x4F8B;</li>
+<li>diff &#x6E32;&#x67D3; div</li>
+</ol>
+<p>&#x7B2C; 3&#x6B65; &#x5C31;&#x662F; (&#x4E8C;) &#x8BA8;&#x8BBA;&#x7684;&#x5185;&#x5BB9;&#xFF0C; &#x4F1A;&#x7528;&quot;&#x6700;&#x5C11;&quot;&#x7684;dom&#x64CD;&#x4F5C;&#xFF0C; &#x6765;&#x66F4;&#x65B0;dom&#x5230;&#x6700;&#x65B0;&#x7684;&#x72B6;&#x6001;&#x3002;<br>&#x5BF9;&#x4E8E;1&#xFF0C; 2 &#x6BCF;&#x6B21;setState&#x7684;&#x65F6;&#x5019;&#x90FD;&#x4F1A;&#x65B0;&#x5EFA;inst&#xFF0C; &#x5728;&#x8FD9;&#x91CC;&#x662F;&#x53EF;&#x4EE5;&#x590D;&#x7528;&#x4E4B;&#x524D;&#x521B;&#x5EFA;&#x597D;&#x7684;inst&#x5B9E;&#x4F8B;&#x7684;&#x3002; </p>
+<p>&#x4F46;&#x662F;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6; &#x521D;&#x59CB;&#x6E32;&#x67D3;&#x4E3A; &apos;\<a \="">&apos;, setState &#x4E4B;&#x540E;&#x6E32;&#x67D3;&#x4E3A; &apos;\<b \="">&apos; &#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x5462;&#xFF1F; &#x90A3;inst&#x5C31;&#x4E0D;&#x80FD;&#x590D;&#x7528;&#x4E86;&#xFF0C; &#x7C7B;&#x6BD4;&#x4E00;&#x4E0B; DOM &#x91CC;&#x7684; div --&gt; span
+&#x3002; &#x628A;render &#x7B2C;&#x56DB;&#x4E2A;&#x53C2;&#x6570; old ---&gt; olddomOrComp &#xFF0C; &#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x5224;&#x65AD; dom &#x6216;&#x8005;inst &#x662F;&#x5426;&#x53EF;&#x4EE5;&#x590D;&#x7528;&#xFF1A;
+```jsx harmony
+//inst &#x662F;&#x5426;&#x53EF;&#x4EE5;&#x590D;&#x7528;
+function render (vnode, parent, comp, olddomOrComp) {
+    ...
+    } else if(typeof vnode.nodeName === &quot;string&quot;) {
+        if(!olddomOrComp || olddomOrComp.nodeName !== vnode.nodeName.toUpperCase()) { // &lt;--- dom &#x53EF;&#x4EE5;&#x590D;&#x7528;
+             createNewDom(vnode, parent, comp, olddomOrComp, myIndex)
+         }
+    ...<br>    } else if (typeof vnode.nodeName == &quot;function&quot;) {
+        let func = vnode.nodeName
+        let inst
+        if(olddomOrComp &amp;&amp; olddomOrComp instanceof func) { // &lt;--- inst &#x53EF;&#x4EE5;&#x590D;&#x7528; 
+            inst = olddomOrComp
+            olddomOrComp.props = vnode.props 
+        }
+        ....</b></a></p>
+<pre><code>    render(innerVnode, parent, inst, inst.__rendered)
+</code></pre><pre><code>&#x8FD9;&#x91CC; &#x5728;&#x6700;&#x540E;&#x7684; render(innerVnode, parent, inst, olddom) &#x88AB;&#x6539;&#x4E3A;&#x4E86;&#xFF1A; render(innerVnode, parent, inst, inst.__rendered)&#x3002; &#x8FD9;&#x6837;&#x662F;&#x7B26;&#x5408; olddomOrComp&#x5B9A;&#x4E49;&#x7684;&#x3002;
+&#x4F46;&#x662F; olddom &#x5176;&#x5B9E;&#x662F;&#x6709;2&#x4E2A;&#x4F5C;&#x7528;&#x7684;
+1. &#x5224;&#x65AD;dom&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x590D;&#x7528;
+2. parent.replaceChild(dom, olddom), olddom&#x786E;&#x5B9A;&#x4E86;&#x65B0;&#x7684;dom&#x7684;&#x4F4D;&#x7F6E;
+&#x800C; olddomOrComp &#x662F;&#x505A;&#x4E0D;&#x5230;&#x7B2C;&#x4E8C;&#x70B9;&#x3002; &#x5373;&#x4F7F;&#xFF1A; parent.replaceChild(dom, getDOM(olddomOrComp)) &#x4E5F;&#x662F;&#x4E0D;&#x884C;&#x7684;&#x3002; &#x539F;&#x56E0;&#x662F;&#xFF1A;
+&#x5047;&#x5982;&#x521D;&#x59CB; CompA --&gt; &lt;Sub1/&gt;  setState&#x540E;  CompA --&gt; &lt;Sub2/&gt;&#xFF0C; &#x90A3;&#x4E48;inst &#x4E0D;&#x53EF;&#x4EE5;&#x590D;&#x7528;&#xFF0C; inst.__rendered &#x662F;undefined&#xFF0C; &#x5C31;&#x4ECE;replaceChild&#x53D8;&#x6210;&#x4E86;appendChild
+
+&#x600E;&#x4E48;&#x89E3;&#x51B3;&#x5462;&#xFF1F; &#x5F15;&#x5165;&#x7B2C;5&#x4E2A;&#x53C2;&#x6570; myIndex: dom&#x7684;&#x4F4D;&#x7F6E;&#x95EE;&#x9898;&#x90FD;&#x4EA4;&#x7ED9;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x3002; olddomOrComp&#x53EA;&#x8D1F;&#x8D23;&#x51B3;&#x5B9A; &#x590D;&#x7528;&#x7684;&#x95EE;&#x9898;
+
+so, &#x52A0;&#x5165;myIndex&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A; 
+```javascript 1.7
+/**
+ * &#x66FF;&#x6362;&#x65B0;&#x7684;Dom&#xFF0C; &#x5982;&#x679C;&#x6CA1;&#x6709;&#x5728;&#x6700;&#x540E;&#x63D2;&#x5165;
+ * @param parent
+ * @param newDom
+ * @param myIndex
+ */
+function setNewDom(parent, newDom, myIndex) {
+    const old =  parent.childNodes[myIndex]
+    if (old) {
+        parent.replaceChild(newDom, old)
+    } else {
+        parent.appendChild(newDom)
+    }
+}
+
+function render(vnode, parent, comp, olddomOrComp, myIndex) {
+    let dom
+    if(typeof vnode === &quot;string&quot; || typeof vnode === &quot;number&quot; ) {
+        ...
+        } else {
+
+            dom = document.createTextNode(vnode)
+            setNewDom(parent, dom, myIndex)              // &lt;--- &#x6839;&#x636E;myIndex&#x8BBE;&#x7F6E; dom
+        }
+    } else if(typeof vnode.nodeName === &quot;string&quot;) {
+        if(!olddomOrComp || olddomOrComp.nodeName !== vnode.nodeName.toUpperCase()) {
+            createNewDom(vnode, parent, comp, olddomOrComp, myIndex)
+        } else {
+            diffDOM(vnode, parent, comp, olddomOrComp, myIndex)
+        }
+    } else if (typeof vnode.nodeName === &quot;function&quot;) {
+        ...
+        let innerVnode = inst.render()
+        render(innerVnode, parent, inst, inst.__rendered, myIndex) // &lt;--- &#x4F20;&#x9012; myIndex
+    }
+}
+
+function createNewDom(vnode, parent, comp, olddomOrComp, myIndex) {
+    ...
+    setAttrs(dom, vnode.props)
+
+    setNewDom(parent, dom, myIndex)         // &lt;--- &#x6839;&#x636E;myIndex&#x8BBE;&#x7F6E; dom
+
+    for(let i = 0; i &lt; vnode.children.length; i++) {
+        render(vnode.children[i], dom, null, null, i)  // &lt;--- i &#x5C31;&#x662F;myIndex
+    }
+}
+
+function diffDOM(vnode, parent, comp, olddom) {
+    ...
+    for(let i = 0; i &lt; vnode.children.length; i++) {
+        render(vnode.children[i], olddom, null, renderedArr[i], i)  // &lt;--- i &#x5C31;&#x662F;myIndex
+    }
+    ...
+}
+</code></pre><p>&#x91CD;&#x65B0;&#x8003;&#x8651; Father&#x91CC;&#x9762;&#x8C03;&#x7528; setState&#x3002; &#x6B64;&#x65F6;&#x5DF2;&#x7ECF;&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x5B9E;&#x4F8B;&#x4E86;&#x3002;</p>
+<p>&#x90A3;&#x4E48; &#x5047;&#x5982;&#x73B0;&#x5728;&#x5BF9; Grandson&#x8C03;&#x7528;setState&#x5462;&#xFF1F; &#x5F88;&#x4E0D;&#x5E78;&#xFF0C; &#x6211;&#x4EEC;&#x9700;&#x8981;&#x521B;&#x5EFA;Granssonson1, Granssonson2, Granssonson3&#xFF0C; &#x8C03;&#x7528;&#x51E0;&#x6B21;&#xFF0C; &#x6211;&#x4EEC;&#x5C31;&#x5F97;&#x8DDF;&#x7740;&#x65B0;&#x5EFA;&#x51E0;&#x6B21;&#x3002; 
+&#x4E0A;&#x9762;&#x7684;&#x590D;&#x7528;&#x65B9;&#x5F0F; &#x5E76;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;, &#x4E4B;&#x524D; <strong>rendered &#x5F15;&#x7528;&#x94FE; &#x5230; dom&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#x3002;
+<br>&#x628A;</strong>rendered&#x8FD9;&#x6761;&#x94FE; &#x5B8C;&#x5584;&#x5427;&#xFF01;&#xFF01;</p>
+<p>&#x9996;&#x5148; &#x5BF9;__rendered &#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;:</p>
+<ol>
+<li>&#x5F53;X &#x662F;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x7684;&#x65F6;&#x5019;&#xFF0C; __rendered &#x4E3A;X&#x6E32;&#x67D3;&#x51FA;&#x7684; &#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B; &#x6216;&#x8005; dom&#x5143;&#x7D20;</li>
+<li>&#x5F53;X &#x662F;dom&#x5143;&#x7D20;&#x7684;&#x65F6;&#x5019;&#xFF0C; __rendered &#x4E3A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C; &#x662F;X&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B; &#x6216;&#x8005; &#x5B50;dom&#x5143;&#x7D20;<pre><code>Father --__rendered--&gt; Son  --__rendered--&gt; Grandson --__rendered--&gt; div --__rendered--&gt; [Granssonson1,  Granssonson2, Granssonson3,]
+</code></pre></li>
+</ol>
+<p>&#x5728;dom &#x4E0B;&#x521B;&#x5EFA; &quot;&#x76F4;&#x63A5;&#x5B50;&#x8282;&#x70B9;&quot; &#x7684;&#x65F6;&#x5019;&#x3002; &#x9700;&#x8981;&#x628A;&#x8FD9;&#x4E2A;&#x7EAA;&#x5F55;&#x5230;dom.<strong>rendered &#x6570;&#x7EC4;&#x4E2D;&#x3002; &#x6216;&#x8005;&#x8BF4;&#xFF0C; &#x5982;&#x679C;&#x65B0;&#x5EFA;&#x7684;&#x4E00;&#x4E2A;dom&#x5143;&#x7D20;&#xFF0F;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;  &#x662F;dom&#x7684; &quot;&#x76F4;&#x63A5;&#x5B50;&#x8282;&#x70B9;&quot;&#xFF0C; &#x90A3;&#x4E48;&#x9700;&#x8981;&#x628A;&#x5B83;&#x7EAA;&#x5F55;&#x5230;
+parent.</strong>rendered &#x6570;&#x7EC4;&#x4E2D;&#x3002; &#x90A3;&#x600E;&#x4E48;&#x5224;&#x65AD; &#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#x662F; &quot;&#x76F4;&#x63A5;&#x5B50;&#x8282;&#x70B9;&quot; &#x5462;&#xFF1F; &#x7B54;&#x6848;&#x662F;render &#x7B2C;3&#x4E2A;&#x53C2;&#x6570; comp&#x4E3A;null&#x7684;&#xFF0C; &#x5F88;&#x597D;&#x7406;&#x89E3;&#xFF0C; comp&#x7684;&#x610F;&#x601D;&#x662F; &quot;&#x8C01;&#x6E32;&#x67D3;&#x4E86;&#x6211;&quot;
+&#x5F88;&#x660E;&#x663E;&#xFF0C; &#x53EA;&#x6709; dom&#x4E0B;&#x7684; &quot;&#x76F4;&#x63A5;&#x5B50;&#x8282;&#x70B9;&quot; comp&#x624D;&#x662F;null&#xFF0C; &#x5176;&#x4ED6;&#x7684;&#x60C5;&#x51B5;&#xFF0C; comp&#x80AF;&#x5B9A;&#x4E0D;&#x662F;null&#xFF0C; &#x6BD4;&#x5982; Son&#x7684;comp&#x662F;Father&#xFF0C; Gsss1
+&#x7684;comp&#x662F;Grandsonson1&#x3002;&#x3002;&#x3002;</p>
+<p>&#x5E76;&#x4E14;&#x5F53;setState&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x5982;&#x679C;&#x8001;&#x7684;dom&#xFF0F;inst&#x6CA1;&#x6709;&#x88AB;&#x590D;&#x7528;&#xFF0C; &#x5219;&#x5E94;&#x8BE5;&#x7528;&#x65B0;&#x7684;dom&#xFF0F;inst &#x66FF;&#x6362;
+<br> </p>
+<ol>
+<li>&#x521B;&#x5EFA;dom&#x7684;&#x65F6;&#x5019;&#x3002;
+```javascript 1.7
+function createNewDom(vnode, parent, comp, olddomOrComp, myIndex) {
+ ...
+ if (comp) {<pre><code> comp.__rendered = dom
+</code></pre> } else {<pre><code> parent.__rendered[myIndex] = dom
+</code></pre> }
+ ...
+}
+```</li>
+<li><p>&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;
+```javascript 1.7
+else if (typeof vnode.nodeName == &quot;function&quot;) {
+ ...
+ if(olddomOrComp &amp;&amp; olddomOrComp instanceof func) {</p>
+<pre><code> inst = olddomOrComp
+</code></pre><p> } else {</p>
+<pre><code> inst = new func(vnode.props)
+
+ if (comp) {
+     comp.__rendered = inst
+ } else {
+     parent.__rendered[myIndex] = inst
+ }
+</code></pre><p> }
+ ...
+}
+```</p>
+</li>
+<li><p>diffDOM &#x7684;&#x65F6;&#x5019;&#xFF1A; a. remove&#x591A;&#x4F59;&#x7684;&#x8282;&#x70B9;&#xFF1B; b. render&#x5B50;&#x8282;&#x70B9;&#x7684;&#x65F6;&#x5019;olddomOrComp = olddom.<strong>rendered[i]
+```javascript 1.7
+function diffDOM(vnode, parent, comp, olddom) {
+ ...
+ olddom.</strong>rendered.slice(vnode.children.length)  // &lt;--- &#x79FB;&#x9664;&#x591A;&#x4F59; &#x5B50;&#x8282;&#x70B9;</p>
+<pre><code> .forEach(element =&gt; {
+     olddom.removeChild(getDOM(element))
+ })
+</code></pre><p> olddom.<strong>rendered = olddom.</strong>rendered.slice(0, vnode.children.length)
+ for(let i = 0; i &lt; vnode.children.length; i++) {</p>
+<pre><code> render(vnode.children[i], olddom, null, olddom.__rendered[i], i)
+</code></pre><p> }
+ olddom.__vnode = vnode
+}
+```</p>
+</li>
+</ol>
+<p>&#x6240;&#x4EE5;&#x5B8C;&#x6574;&#x7684;&#x4EE3;&#x7801;&#xFF1A;
+```jsx harmony
+function render(vnode, parent, comp, olddomOrComp, myIndex) {
+    let dom
+    if(typeof vnode === &quot;string&quot; || typeof vnode === &quot;number&quot; ) {
+        if(olddomOrComp &amp;&amp; olddomOrComp.splitText) {
+            if(olddomOrComp.nodeValue !== vnode) {
+                olddomOrComp.nodeValue = vnode
+            }
+        } else {
+            dom = document.createTextNode(vnode)
+            parent.__rendered[myIndex] = dom //comp &#x4E00;&#x5B9A;&#x662F;null</p>
+<pre><code>        setNewDom(parent, dom, myIndex) 
+    }
+} else if(typeof vnode.nodeName === &quot;string&quot;) {
+    if(!olddomOrComp || olddomOrComp.nodeName !== vnode.nodeName.toUpperCase()) {
+        createNewDom(vnode, parent, comp, olddomOrComp, myIndex)
+    } else {
+        diffDOM(vnode, parent, comp, olddomOrComp)
+    }
+} else if (typeof vnode.nodeName === &quot;function&quot;) {
+    let func = vnode.nodeName
+    let inst
+    if(olddomOrComp &amp;&amp; olddomOrComp instanceof func) {
+        inst = olddomOrComp
+        inst.props = vnode.props
+    } else {
+        inst = new func(vnode.props)
+
+        if (comp) {
+            comp.__rendered = inst
+        } else {
+            parent.__rendered[myIndex] = inst    
+        }
+    }
+
+    let innerVnode = inst.render()
+    render(innerVnode, parent, inst, inst.__rendered, myIndex)
+}
+</code></pre><p>}</p>
+<p>function createNewDom(vnode, parent, comp, olddomOrComp, myIndex) {
+    let dom = document.createElement(vnode.nodeName)</p>
+<pre><code>dom.__rendered = []  // &#x521B;&#x5EFA;dom&#x7684; &#x8BBE;&#x7F6E; __rendered &#x5F15;&#x7528;
+dom.__vnode = vnode
+
+if (comp) {
+    comp.__rendered = dom
+} else {
+    parent.__rendered[myIndex] = dom
+}
+
+setAttrs(dom, vnode.props)
+
+setNewDom(parent, dom, myIndex) 
+
+for(let i = 0; i &lt; vnode.children.length; i++) {
+    render(vnode.children[i], dom, null, null, i)
+}
+</code></pre><p>}</p>
+<p>function diffDOM(vnode, parent, comp, olddom) {
+    const {onlyInLeft, bothIn, onlyInRight} = diffObject(vnode.props, olddom.__vnode.props)
+    setAttrs(olddom, onlyInLeft)
+    removeAttrs(olddom, onlyInRight)
+    diffAttrs(olddom, bothIn.left, bothIn.right)</p>
+<pre><code>olddom.__rendered.slice(vnode.children.length)
+    .forEach(element =&gt; {
+        olddom.removeChild(getDOM(element))
+    })
+
+const __renderedArr = olddom.__rendered.slice(0, vnode.children.length)
+olddom.__rendered = __renderedArr
+for(let i = 0; i &lt; vnode.children.length; i++) {
+    render(vnode.children[i], olddom, null, __renderedArr[i], i) 
+}
+olddom.__vnode = vnode
+</code></pre><p>}</p>
+<p>class Component {
+    constructor(props) {
+        this.props = props
+    }</p>
+<pre><code>setState(state) {
+    setTimeout(() =&gt; {
+        this.state = state
+
+
+        const vnode = this.render()
+        let olddom = getDOM(this)
+        const myIndex = getDOMIndex(olddom)
+        render(vnode, olddom.parentNode, this, this.__rendered, myIndex)
+    }, 0)
+}
+</code></pre><p>}
+function getDOMIndex(dom) {
+    const cn = dom.parentNode.childNodes
+    for(let i= 0; i &lt; cn.length; i++) {
+        if (cn[i] === dom ) {
+            return i
+        }
+    }
+}</p>
+<pre><code>
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../../resource/assets/react/041404.png&quot; /&gt;&lt;/div&gt;
+
+&#x73B0;&#x5728; __rendered&#x94FE; &#x5B8C;&#x5584;&#x4E86;&#xFF0C; setState&#x89E6;&#x53D1;&#x7684;&#x6E32;&#x67D3;, &#x90FD;&#x4F1A;&#x5148;&#x53BB;&#x5C1D;&#x8BD5;&#x590D;&#x7528; &#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x3002;
+
+### &#x751F;&#x547D;&#x5468;&#x671F;
+&#x524D;&#x9762;&#x8BA8;&#x8BBA;&#x7684;__rendered &#x548C;&#x751F;&#x547D;&#x5468;&#x671F;&#x6709; &#x4EC0;&#x4E48;&#x5173;&#x7CFB;&#x5462;&#xFF1F; &#x751F;&#x547D;&#x5468;&#x671F;&#x662F;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C; &#x4E4B;&#x524D;&#x7684;&#x5DE5;&#x4F5C;&#x8D77;&#x7801;&#x4FDD;&#x8BC1;&#x4E86;&#x4E00;&#x70B9;: constructor &#x53EA;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x4E86;&#x5427;&#x3002;&#x3002;&#x3002;
+&#x540E;&#x9762;&#x8BA8;&#x8BBA;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F; &#x90FD;&#x662F;&#x57FA;&#x4E8E; &quot;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&quot;&#x7684; &#x590D;&#x7528;&#x624D;&#x6709;&#x610F;&#x4E49;&#x3002;tinyreact &#x5C06;&#x5B9E;&#x73B0;&#x4EE5;&#x4E0B;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF1A;
+
+1. componentWillMount
+2. componentDidMount
+3. componentWillReceiveProps
+4. shouldComponentUpdate
+5. componentWillUpdate
+6. componentDidUpdate
+7. componentWillUnmount
+&#x4ED6;&#x4EEC; &#x548C; react&#x540C;&#x540D;&#x51FD;&#x6570; &#x542B;&#x4E49;&#x76F8;&#x540C;
+
+#### componentWillMount, componentDidMount, componentDidUpdate
+&#x8FD9;&#x4E09;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F; &#x662F;&#x5982;&#x6B64;&#x4E4B;&#x7B80;&#x5355;&#xFF1A; componentWillMount&#x7D27;&#x63A5;&#x7740; &#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#xFF1B; &#x6E32;&#x67D3;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x5982;&#x679C;
+&#x7EC4;&#x4EF6;&#x662F;&#x65B0;&#x5EFA;&#x7684;componentDidMount &#xFF0C; &#x5426;&#x5219;&#xFF1A;componentDidUpdate
+```jsx harmony
+else if (typeof vnode.nodeName === &quot;function&quot;) {
+        let func = vnode.nodeName
+        let inst
+        if(olddomOrComp &amp;&amp; olddomOrComp instanceof func) {
+            inst = olddomOrComp
+            inst.props = vnode.props
+        } else {
+            inst = new func(vnode.props)
+            inst.componentWillMount &amp;&amp; inst.componentWillMount()
+
+
+            if (comp) {
+                comp.__rendered = inst
+            } else {
+                parent.__rendered[myIndex] = inst
+            }
+        }
+
+        let innerVnode = inst.render()
+        render(innerVnode, parent, inst, inst.__rendered, myIndex)
+
+        if(olddomOrComp &amp;&amp; olddomOrComp instanceof func) {
+            inst.componentDidUpdate &amp;&amp; inst.componentDidUpdate()
+        } else {
+            inst.componentDidMount &amp;&amp; inst.componentDidMount()
+        }
+    }
+</code></pre><h4 id="componentwillreceiveprops&#xFF0C;-shouldcomponentupdate&#xFF0C;-componentwillupdate">componentWillReceiveProps&#xFF0C; shouldComponentUpdate&#xFF0C; componentWillUpdate</h4>
+<p>&#x5F53;&#x7EC4;&#x4EF6; &#x83B7;&#x53D6;&#x65B0;&#x7684;props&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x4F1A;&#x8C03;&#x7528;componentWillReceiveProps&#xFF0C; &#x53C2;&#x6570;&#x4E3A;newProps&#xFF0C; &#x5E76;&#x4E14;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5185;&#x90E8;this.props &#x8FD8;&#x662F;&#x503C;&#x5411;oldProps,
+&#x7531;&#x4E8E;  props&#x7684;&#x6539;&#x53D8; &#x7531; &#x53EA;&#x80FD;&#x7531; &#x7236;&#x7EC4;&#x4EF6; &#x89E6;&#x53D1;&#x3002; &#x6240;&#x4EE5;&#x53EA;&#x7528;&#x5728; render&#x51FD;&#x6570;&#x91CC;&#x9762;&#x5904;&#x7406;&#x5C31;ok&#x3002;&#x4E0D;&#x8FC7; &#x8981;&#x5728; inst.props = vnode.props &#x4E4B;&#x524D;&#x8C03;&#x7528;componentWillReceiveProps:
+```jsx harmony
+else if (typeof vnode.nodeName === &quot;function&quot;) {
+        let func = vnode.nodeName
+        let inst
+        if(olddomOrComp &amp;&amp; olddomOrComp instanceof func) {
+            inst = olddomOrComp
+            inst.componentWillReceiveProps &amp;&amp; inst.componentWillReceiveProps(vnode.props) // &lt;-- &#x5728; inst.props = vnode.props &#x4E4B;&#x524D;&#x8C03;&#x7528;</p>
+<pre><code>        inst.props = vnode.props
+    } else {
+        ...
+    }
+}
+</code></pre><pre><code>
+&#x5F53; &#x7EC4;&#x4EF6;&#x7684; props&#x6216;&#x8005;state&#x53D1;&#x751F;&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7EC4;&#x4EF6;&#x4E00;&#x5B9A;&#x4F1A;&#x6E32;&#x67D3;&#x5417;&#xFF1F;shouldComponentUpdate&#x8BF4;&#x4E86;&#x7B97;&#xFF01;&#xFF01; &#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;shouldComponentUpdate&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C; &#x9ED8;&#x8BA4;&#x662F;&#x6E32;&#x67D3;&#x7684;&#x3002; 
+&#x5426;&#x5219;&#x662F;&#x57FA;&#x4E8E; shouldComponentUpdate&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002; &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x53C2;&#x6570; newProps, newState &#x3002; 
+&#x53E6;&#x5916;&#x7531;&#x4E8E; props&#x548C; state(setState) &#x6539;&#x53D8;&#x90FD;&#x4F1A;&#x5F15;&#x8D77; shouldComponentUpdate&#x8C03;&#x7528;&#xFF0C; &#x6240;&#x4EE5;: 
+```jsx harmony
+function render(vnode, parent, comp, olddomOrComp, myIndex) {
+    ...
+    else if (typeof vnode.nodeName === &quot;function&quot;) {
+            let func = vnode.nodeName
+            let inst
+            if(olddomOrComp &amp;&amp; olddomOrComp instanceof func) {
+                inst = olddomOrComp
+                inst.componentWillReceiveProps &amp;&amp; inst.componentWillReceiveProps(vnode.props) // &lt;-- &#x5728; inst.props = vnode.props &#x4E4B;&#x524D;&#x8C03;&#x7528;
+
+                let shoudUpdate
+                if(inst.shouldComponentUpdate) {
+                    shoudUpdate = inst.shouldComponentUpdate(vnode.props, olddomOrComp.state) // &lt;-- &#x5728; inst.props = vnode.props &#x4E4B;&#x524D;&#x8C03;&#x7528;
+                } else {
+                    shoudUpdate = true
+                }
+
+                inst.props = vnode.props   
+                if (!shoudUpdate) {   // &lt;-- &#x5728; inst.props = vnode.props  &#x4E4B;&#x540E;
+                    return // do nothing just return
+                }
+
+
+            } else {
+                ...
+            }
+        }
+     ...
+}
+
+
+setState(state) {
+    setTimeout(() =&gt; {
+        let shoudUpdate
+        if(this.shouldComponentUpdate) {
+            shoudUpdate = this.shouldComponentUpdate(this.props, state)
+        } else {
+            shoudUpdate = true
+        }
+        this.state = state
+        if (!shoudUpdate) {  // &lt;-- &#x5728;  this.state = state  &#x4E4B;&#x540E;
+            return // do nothing just return
+        }
+
+        const vnode = this.render()
+        let olddom = getDOM(this)
+        const myIndex = getDOMIndex(olddom)
+        render(vnode, olddom.parentNode, this, this.__rendered, myIndex)
+        this.componentDidUpdate &amp;&amp; this.componentDidUpdate() // &lt;-- &#x9700;&#x8981;&#x8C03;&#x7528;&#x4E0B;&#xFF1A; componentDidUpdate
+    }, 0)
+}
+</code></pre><p>&#x5F53; shoudUpdate &#x4E3A;false&#x7684;&#x65F6;&#x5019;&#x5462;&#xFF0C; &#x76F4;&#x63A5;return &#x5C31;ok&#x4E86;&#xFF0C; &#x4F46;&#x662F;shoudUpdate &#x4E3A;false &#x53EA;&#x662F;&#x8868;&#x660E; &#x4E0D;&#x6E32;&#x67D3;&#xFF0C; &#x4F46;&#x662F;&#x5728; return&#x4E4B;&#x524D;&#xFF0C; newProps&#x548C;newState&#x4E00;&#x5B9A;&#x8981;&#x8BBE;&#x7F6E;&#x5230;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x4E0A;&#x3002;
+<br><strong>&#x6CE8;</strong> setState render&#x4E4B;&#x540E; &#x4E5F;&#x662F;&#x9700;&#x8981;&#x8C03;&#x7528;&#xFF1A; componentDidUpdate</p>
+<p>&#x5F53; shoudUpdate == true &#x7684;&#x65F6;&#x5019;&#x3002; &#x4F1A;&#x8C03;&#x7528;&#xFF1A; componentWillUpdate&#xFF0C; &#x53C2;&#x6570;&#x4E3A;newProps&#x548C;newState&#x3002; &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x628A;nextProps&#x548C;nextState&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x5230;this.props&#x548C;this.state&#x4E2D;&#x3002;
+```jsx harmony
+function render(vnode, parent, comp, olddomOrComp, myIndex) {
+    ...
+    else if (typeof vnode.nodeName === &quot;function&quot;) {
+    ...
+    let shoudUpdate
+    if(inst.shouldComponentUpdate) {
+        shoudUpdate = inst.shouldComponentUpdate(vnode.props, olddomOrComp.state) // &lt;-- &#x5728; inst.props = vnode.props &#x4E4B;&#x524D;&#x8C03;&#x7528;
+    } else {
+        shoudUpdate = true
+    }
+    shoudUpdate &amp;&amp; inst.componentWillUpdate &amp;&amp; inst.componentWillUpdate(vnode.props, olddomOrComp.state)   // &lt;-- &#x5728; inst.props = vnode.props &#x4E4B;&#x524D;&#x8C03;&#x7528;<br>    inst.props = vnode.props<br>    if (!shoudUpdate) {   // &lt;-- &#x5728; inst.props = vnode.props  &#x4E4B;&#x540E;
+        return // do nothing just return
+    }</p>
+<pre><code>...
+</code></pre><p>}</p>
+<p>setState(state) {
+    setTimeout(() =&gt; {
+        ...
+        shoudUpdate &amp;&amp; this.componentWillUpdate &amp;&amp; this.componentWillUpdate(this.props, state) // &lt;-- &#x5728; this.state = state &#x4E4B;&#x524D;&#x8C03;&#x7528;
+        this.state = state
+        if (!shoudUpdate) {  // &lt;-- &#x5728;  this.state = state  &#x4E4B;&#x540E;
+            return // do nothing just return
+        }
+        ...
+}</p>
+<pre><code>
+#### componentWillUnmount
+&#x5F53;&#x7EC4;&#x4EF6;&#x8981;&#x88AB;&#x9500;&#x6BC1;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x7684;componentWillUnmount&#x3002; inst&#x6CA1;&#x6709;&#x88AB;&#x590D;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x8981;&#x9500;&#x6BC1;&#x3002; dom&#x6CA1;&#x6709;&#x88AB;&#x590D;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x4E5F;&#x8981;&#x9500;&#x6BC1;&#xFF0C; &#x800C;&#x4E14;&#x662F;&#x6811;&#x5F62;&#x7ED3;&#x6784;
+&#x7684;&#x9012;&#x5F52;&#x64CD;&#x4F5C;&#x3002; &#x6709;&#x70B9;&#x50CF; render&#x7684;&#x9012;&#x5F52;&#xFF0C; &#x76F4;&#x63A5;&#x770B;&#x4EE3;&#x7801;&#xFF1A; 
+```jsx harmony
+function recoveryComp(comp) {
+    if (comp instanceof Component) {  // &lt;--- component
+        comp.componentWillUnmount &amp;&amp; comp.componentWillUnmount()
+        recoveryComp(comp.__rendered)
+    } else if (comp.__rendered instanceof Array) { // &lt;--- dom like div/span
+        comp.__rendered.forEach(element =&gt; {
+            recoveryComp(element)
+        })
+    } else {       // &lt;--- TextNode
+        // do nothing
+    }
+}
+</code></pre><p>recoveryComp &#x662F;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x4E2A; &#x9012;&#x5F52;&#x51FD;&#x6570;&#xFF1A; </p>
+<ul>
+<li>&#x5F53;domOrComp &#x4E3A;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x9996;&#x5148;&#x8C03;&#x7528;&#xFF1A;componentWillUnmount&#xFF0C; &#x7136;&#x540E; recoveryDomOrComp(inst.__rendered) &#x3002; &#x8FD9;&#x91CC;&#x7684;&#x5148;&#x540E;&#x987A;&#x5E8F;&#x5173;&#x7CFB;&#x5F88;&#x91CD;&#x8981;</li>
+<li>&#x5F53;domOrComp &#x4E3A;DOM&#x8282;&#x70B9; &#xFF08;&#x975E;&#x6587;&#x672C; TextNode&#xFF09;, &#x904D;&#x5386; recoveryDomOrComp(&#x5B50;&#x8282;&#x70B9;) </li>
+<li>&#x5F53;domOrComp &#x4E3A;TextNode&#xFF0C;nothing...
+&#x4E0E;render&#x4E00;&#x6837;&#xFF0C; &#x7531;&#x4E8E;&#x7EC4;&#x4EF6; &#x6700;&#x7EC8;&#x4E00;&#x5B9A;&#x4F1A;render html&#x7684;&#x6807;&#x7B7E;&#x3002; &#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x9012;&#x5F52;&#x4E00;&#x5B9A;&#x662F;&#x80FD;&#x591F;&#x6B63;&#x5E38;&#x8FD4;&#x56DE;&#x7684;&#x3002;
+<br> &#x54EA;&#x4E9B;&#x5730;&#x65B9;&#x9700;&#x8981;&#x8C03;&#x7528;recoveryComp &#xFF1F; <ol>
+<li>&#x6240;&#x6709;olddomOrComp &#x6CA1;&#x6709;&#x88AB;&#x590D;&#x7528;&#x7684;&#x5730;&#x65B9;&#x3002; &#x56E0;&#x4E3A;&#x4E00;&#x65E6;olddomOrComp &#x4E0D;&#x88AB;&#x590D;&#x7528;&#xFF0C; &#x4E00;&#x5B9A;&#x6709;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x53D6;&#x5F97;&#x5B83;&#xFF0C; &#x5B83;&#x5C31;&#x8981;&#x88AB;&#x9500;&#x6BC1;</li>
+<li>&#x591A;&#x4F59;&#x7684; &#x5B50;&#x8282;&#x70B9;&#x3002; div &#x8D77;&#x521D;&#x6709;3&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#xFF0C; setState&#x4E4B;&#x540E;&#x53D8;&#x6210;&#x4E86;2&#x4E2A;&#x3002; &#x591A;&#x51FA;&#x6765;&#x7684;&#x8981;&#x88AB;&#x9500;&#x6BC1;
+```jsx harmony
+function diffDOM(vnode, parent, comp, olddom) {
+const {onlyInLeft, bothIn, onlyInRight} = diffObject(vnode.props, olddom.__vnode.props)
+setAttrs(olddom, onlyInLeft)
+removeAttrs(olddom, onlyInRight)
+diffAttrs(olddom, bothIn.left, bothIn.right)</li>
+</ol>
+</li>
+</ul>
+<pre><code>const willRemoveArr = olddom.__rendered.slice(vnode.children.length)
+const renderedArr = olddom.__rendered.slice(0, vnode.children.length)
+olddom.__rendered = renderedArr
+for(let i = 0; i &lt; vnode.children.length; i++) {
+    render(vnode.children[i], olddom, null, renderedArr[i], i)
+}
+
+willRemoveArr.forEach(element =&gt; {
+    recoveryComp(element)
+    olddom.removeChild(getDOM(element))
+})
+
+olddom.__vnode = vnode
+</code></pre><p>}</p>
+<pre><code>
+&#x5230;&#x8FD9;&#x91CC;&#xFF0C; tinyreact &#x5C31;&#x6709; &#x751F;&#x547D;&#x5468;&#x671F;&#x4E86;
+
+&#x4E4B;&#x524D;&#x7684;&#x4EE3;&#x7801; &#x7531;&#x4E8E;&#x4F1A;&#x7528;&#x5230;  dom.__rendered&#x3002; &#x6240;&#x4EE5;&#xFF1A;
+```jsx harmony
+const root = document.getElementById(&quot;root&quot;)
+root.__rendered = []
+render(&lt;App/&gt;, root)
+</code></pre><p>&#x4E3A;&#x4E86;&#x4E0D;&#x8981;&#x5728; &#x8C03;&#x7528;render&#x4E4B;&#x524D; &#x8BBE;&#x7F6E;&#xFF1A;__rendered &#x505A;&#x4E2A;&#x5C0F;&#x7684;&#x6539;&#x52A8; &#xFF1A;
+```jsx harmony
+/**</p>
+<ul>
+<li>&#x6E32;&#x67D3;vnode&#x6210;&#x5B9E;&#x9645;&#x7684;dom</li>
+<li>@param vnode &#x865A;&#x62DF;dom&#x8868;&#x793A;</li>
+<li>@param parent &#x5B9E;&#x9645;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#x7684;dom&#xFF0C;&#x6302;&#x8F7D;&#x7684;&#x7236;&#x5143;&#x7D20;
+*/
+export default function render(vnode, parent) {
+ parent.<strong>rendered =[]  //&lt;--- &#x8FD9;&#x91CC;&#x8BBE;&#x7F6E; </strong>rendered
+ renderInner(vnode, parent, null, null, 0)
+}</li>
+</ul>
+<p>function renderInner(vnode, parent, comp, olddomOrComp, myIndex) {
+    ...
+}</p>
+<pre><code>
+### &#x5176;&#x4ED6;
+tinyreact &#x672A;&#x5B9E;&#x73B0;&#x529F;&#x80FD;&#xFF1A;
+1. context
+2. &#x4E8B;&#x4EF6;&#x4EE3;&#x7406;
+3. &#x591A;&#x5403;&#x8C03;&#x7528;setState&#xFF0C; &#x53EA;render&#x4E00;&#x6B21;
+4. react &#x9876;&#x5C42;Api
+5. &#x3002;&#x3002;&#x3002;
+
+tinyreat &#x6709;&#x4E9B;&#x5730;&#x65B9;&#x53C2;&#x8003;&#x4E86;[preact](https://github.com/developit/preact)
+
+npm&#x5305;:
+</code></pre><pre><code> npm install tinyreact --save
+</code></pre><p>```</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="从头实现一个简易版React.html" class="navigation navigation-prev " aria-label="Previous page: 从头实现一个简易版React">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="实现自己的react之简单rendering.html" class="navigation navigation-next " aria-label="Next page: 实现自己的react之简单rendering">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"从0实现一个tiny-react","level":"3.3.13","depth":2,"next":{"title":"实现自己的react之简单rendering","level":"3.3.14","depth":2,"path":"React/源码分析/实现自己的react之简单rendering.md","ref":"React/源码分析/实现自己的react之简单rendering.md","articles":[]},"previous":{"title":"从头实现一个简易版React","level":"3.3.12","depth":2,"path":"React/源码分析/从头实现一个简易版React.md","ref":"React/源码分析/从头实现一个简易版React.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"React/源码分析/从0实现一个tiny-react.md","mtime":"2019-06-29T13:42:17.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-29T13:52:32.157Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
