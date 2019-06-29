@@ -1,0 +1,3855 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>React Hooks · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Lu jingce <lujingce@163.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../resource/styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="React-HOC.html" />
+    
+    
+    <link rel="prev" href="setState.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ailjc.com/lunotes" target="_blank" class="custom-link">路小二</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    1.JS
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../Js/js基础/js基础.html">
+            
+                <a href="../../Js/js基础/js基础.html">
+            
+                    
+                    1.1 Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Js/js基础/ljc-Js.html">
+            
+                <a href="../../Js/js基础/ljc-Js.html">
+            
+                    
+                    1.2 ljc-Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../Js/js基础/moveJs.html">
+            
+                <a href="../../Js/js基础/moveJs.html">
+            
+                    
+                    1.3 moveJs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../Js/js基础/移动web.html">
+            
+                <a href="../../Js/js基础/移动web.html">
+            
+                    
+                    1.4 移动web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../Js/js基础/ICD.html">
+            
+                <a href="../../Js/js基础/ICD.html">
+            
+                    
+                    1.5 ICD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../Js/js基础/js-es6-Map.html">
+            
+                <a href="../../Js/js基础/js-es6-Map.html">
+            
+                    
+                    1.6 js es6 Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../Js/js基础/ES6-数组array新增方法.html">
+            
+                <a href="../../Js/js基础/ES6-数组array新增方法.html">
+            
+                    
+                    ES6-数组array新增方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../Js/js基础/require和import区别.html">
+            
+                <a href="../../Js/js基础/require和import区别.html">
+            
+                    
+                    require和import区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../Js/js基础/window.history方法总结.html">
+            
+                <a href="../../Js/js基础/window.history方法总结.html">
+            
+                    
+                    window.history方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../../Js/js基础/fetch.html">
+            
+                <a href="../../Js/js基础/fetch.html">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../../Js/js基础/Js判断字符串中是否包含某个字符串.html">
+            
+                <a href="../../Js/js基础/Js判断字符串中是否包含某个字符串.html">
+            
+                    
+                    Js判断字符串中是否包含某个字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../../Js/js基础/三种js类的实现方法(es5和es6">
+            
+                <span>
+            
+                    
+                    三种js类的实现方法(es5和es6)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../../Js/js基础/async-await.html">
+            
+                <a href="../../Js/js基础/async-await.html">
+            
+                    
+                    async await
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../../Js/js基础/关于移动端,webview监听滚动条的坑.html">
+            
+                <a href="../../Js/js基础/关于移动端,webview监听滚动条的坑.html">
+            
+                    
+                    关于移动端,webview监听滚动条的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../../Js/js基础/js类型转换.html">
+            
+                <a href="../../Js/js基础/js类型转换.html">
+            
+                    
+                    js类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../../Js/js基础/js事件轮询、微任务和宏任务.html">
+            
+                <a href="../../Js/js基础/js事件轮询、微任务和宏任务.html">
+            
+                    
+                    js事件轮询、微任务和宏任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    2.正则
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../Js/正则/正则表达式不要背.html">
+            
+                <a href="../../Js/正则/正则表达式不要背.html">
+            
+                    
+                    正则表达式不要背
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../Js/正则/RegExp.html">
+            
+                <a href="../../Js/正则/RegExp.html">
+            
+                    
+                    RegExp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    3.面向对象
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../Js/面向对象/面向对象之组件开发之弹窗.html">
+            
+                <a href="../../Js/面向对象/面向对象之组件开发之弹窗.html">
+            
+                    
+                    面向对象之组件开发之弹窗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../Js/面向对象/面向对象的微博登录提示邮箱.html">
+            
+                <a href="../../Js/面向对象/面向对象的微博登录提示邮箱.html">
+            
+                    
+                    面向对象的微博登录提示邮箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    4.浏览器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../浏览器/事件机制.html">
+            
+                <a href="../../浏览器/事件机制.html">
+            
+                    
+                    事件机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../浏览器/跨域.html">
+            
+                <a href="../../浏览器/跨域.html">
+            
+                    
+                    跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../浏览器/Event-loop.html">
+            
+                <a href="../../浏览器/Event-loop.html">
+            
+                    
+                    Event loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../浏览器/存储.html">
+            
+                <a href="../../浏览器/存储.html">
+            
+                    
+                    存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../浏览器/渲染机制.html">
+            
+                <a href="../../浏览器/渲染机制.html">
+            
+                    
+                    渲染机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    5.小程序
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../Js/小程序/性能更优越的小程序图片懒加载方式.html">
+            
+                <a href="../../Js/小程序/性能更优越的小程序图片懒加载方式.html">
+            
+                    
+                    性能更优越的小程序图片懒加载方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    6.基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../Js/基础/错误处理机制.html">
+            
+                <a href="../../Js/基础/错误处理机制.html">
+            
+                    
+                    错误处理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../Js/基础/HTTPS协议.html">
+            
+                <a href="../../Js/基础/HTTPS协议.html">
+            
+                    
+                    HTTPS协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../Js/基础/cookie与session.html">
+            
+                <a href="../../Js/基础/cookie与session.html">
+            
+                    
+                    cookie与session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../Js/基础/实用的60个CSS代码片段.html">
+            
+                <a href="../../Js/基础/实用的60个CSS代码片段.html">
+            
+                    
+                    实用的60个CSS代码片段
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    7.NodeJs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../Node/node基础/node命令.html">
+            
+                <a href="../../Node/node基础/node命令.html">
+            
+                    
+                    node命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../Node/node基础/搭建一个私有的npm仓库.html">
+            
+                <a href="../../Node/node基础/搭建一个私有的npm仓库.html">
+            
+                    
+                    搭建一个私有的npm仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../Node/node基础/AnyProxy.html">
+            
+                <a href="../../Node/node基础/AnyProxy.html">
+            
+                    
+                    AnyProxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../Node/node基础/Node进程管理器PM2.html">
+            
+                <a href="../../Node/node基础/Node进程管理器PM2.html">
+            
+                    
+                    Node进程管理器PM2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../../Node/node基础/DOM-Mutation-Observer-API.md">
+            
+                <span>
+            
+                    
+                    DOM Mutation Observer API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../../Node/node基础/Path对路径操作的Api.html">
+            
+                <a href="../../Node/node基础/Path对路径操作的Api.html">
+            
+                    
+                    Path对路径操作的Api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../../Node/node基础/node.html">
+            
+                <a href="../../Node/node基础/node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../../Node/node基础/babel.html">
+            
+                <a href="../../Node/node基础/babel.html">
+            
+                    
+                    Babel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../../Node/node基础/mongodb.html">
+            
+                <a href="../../Node/node基础/mongodb.html">
+            
+                    
+                    mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    8.Typescript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../Js/TypeScript/TypeScript.html">
+            
+                <a href="../../Js/TypeScript/TypeScript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../Js/TypeScript/TypeScript2.8下的终极React组件模式.html">
+            
+                <a href="../../Js/TypeScript/TypeScript2.8下的终极React组件模式.html">
+            
+                    
+                    TypeScript2.8下的终极React组件模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2 - Advanced</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    1.框架通识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../框架通识/MVVM.html">
+            
+                <a href="../../框架通识/MVVM.html">
+            
+                    
+                    MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../框架通识/VirtualDom.html">
+            
+                <a href="../../框架通识/VirtualDom.html">
+            
+                    
+                    Virtual Dom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../框架通识/VirtualDOM算法.html">
+            
+                <a href="../../框架通识/VirtualDOM算法.html">
+            
+                    
+                    VirtualDOM算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../框架通识/构建一个使用Virtual-DOM的前端模版引擎.html">
+            
+                <a href="../../框架通识/构建一个使用Virtual-DOM的前端模版引擎.html">
+            
+                    
+                    构建一个使用Virtual-DOM的前端模版引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../框架通识/Object.defineProperty方法.html">
+            
+                <a href="../../框架通识/Object.defineProperty方法.html">
+            
+                    
+                    Object.defineProperty方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../框架通识/Proxy.html">
+            
+                <a href="../../框架通识/Proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../框架通识/10分钟快速入门rollupJs(1">
+            
+                <span>
+            
+                    
+                    10分钟快速入门rollup(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../../框架通识/10分钟快速入门rollupJs(2">
+            
+                <span>
+            
+                    
+                    10分钟快速入门rollup(2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../../框架通识/谈谈JavaScript中的双向数据绑定.html">
+            
+                <a href="../../框架通识/谈谈JavaScript中的双向数据绑定.html">
+            
+                    
+                    谈谈JavaScript中的双向数据绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../../框架通识/MVC-VS-Flux.html">
+            
+                <a href="../../框架通识/MVC-VS-Flux.html">
+            
+                    
+                    MVC VS Flux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../../框架通识/路由实现.html">
+            
+                <a href="../../框架通识/路由实现.html">
+            
+                    
+                    路由实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../安全/安全.html">
+            
+                <a href="../../安全/安全.html">
+            
+                    
+                    2.安全XSS-CSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    3.性能
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../安全/性能.html">
+            
+                <a href="../../安全/性能.html">
+            
+                    
+                    性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../安全/网站性能优化.html">
+            
+                <a href="../../安全/网站性能优化.html">
+            
+                    
+                    网站性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                <a href="../../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                    
+                    4.如何渲染几万条数据并不卡住界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    5.综合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../面试/综合1.html">
+            
+                <a href="../../面试/综合1.html">
+            
+                    
+                    综合1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../面试/综合2.html">
+            
+                <a href="../../面试/综合2.html">
+            
+                    
+                    综合2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../面试/综合3.html">
+            
+                <a href="../../面试/综合3.html">
+            
+                    
+                    综合3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../../面试/综合4-vue.html">
+            
+                <a href="../../面试/综合4-vue.html">
+            
+                    
+                    综合4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../../面试/综合5.html">
+            
+                <a href="../../面试/综合5.html">
+            
+                    
+                    综合5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../../面试/综合6.html">
+            
+                <a href="../../面试/综合6.html">
+            
+                    
+                    综合6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../面试/Js基础.html">
+            
+                <a href="../../面试/Js基础.html">
+            
+                    
+                    6.JS基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../手撸代码无敌/">
+            
+                <a href="../../手撸代码无敌/">
+            
+                    
+                    7.手撸代码无敌
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../../手撸代码无敌/new.html">
+            
+                <a href="../../手撸代码无敌/new.html">
+            
+                    
+                    new
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../../手撸代码无敌/instanceof.html">
+            
+                <a href="../../手撸代码无敌/instanceof.html">
+            
+                    
+                    instanceof
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../../手撸代码无敌/防抖和节流.html">
+            
+                <a href="../../手撸代码无敌/防抖和节流.html">
+            
+                    
+                    防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../../手撸代码无敌/Proxy.html">
+            
+                <a href="../../手撸代码无敌/Proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../../手撸代码无敌/Promise实现.html">
+            
+                <a href="../../手撸代码无敌/Promise实现.html">
+            
+                    
+                    Promise 实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../../手撸代码无敌/Generator实现.html">
+            
+                <a href="../../手撸代码无敌/Generator实现.html">
+            
+                    
+                    Generator实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.7" data-path="../../手撸代码无敌/call-apply-bind.html">
+            
+                <a href="../../手撸代码无敌/call-apply-bind.html">
+            
+                    
+                    call, apply, bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.8" data-path="../../手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.html">
+            
+                <a href="../../手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.html">
+            
+                    
+                    不用call和apply方法模拟实现ES5的bind方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.9" data-path="../../手撸代码无敌/curry.html">
+            
+                <a href="../../手撸代码无敌/curry.html">
+            
+                    
+                    curry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.10" data-path="../../手撸代码无敌/Template.html">
+            
+                <a href="../../手撸代码无敌/Template.html">
+            
+                    
+                    Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.11" data-path="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                <a href="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                    
+                    封装Ajax和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.12" data-path="../../手撸代码无敌/js-tree.html">
+            
+                <a href="../../手撸代码无敌/js-tree.html">
+            
+                    
+                    js-tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.13" data-path="../../手撸代码无敌/js复杂判断的更优雅写法.html">
+            
+                <a href="../../手撸代码无敌/js复杂判断的更优雅写法.html">
+            
+                    
+                    js复杂判断的更优雅写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.14" data-path="../../手撸代码无敌/JavaScript优雅的实现方式.html">
+            
+                <a href="../../手撸代码无敌/JavaScript优雅的实现方式.html">
+            
+                    
+                    JavaScript优雅的实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.15" data-path="../../手撸代码无敌/函数式代码.html">
+            
+                <a href="../../手撸代码无敌/函数式代码.html">
+            
+                    
+                    函数式代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.16" data-path="../../手撸代码无敌/js编程黑科技.html">
+            
+                <a href="../../手撸代码无敌/js编程黑科技.html">
+            
+                    
+                    js编程黑科技
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.17" data-path="../../手撸代码无敌/自己实现简单的shift(">
+            
+                <span>
+            
+                    
+                    自己实现简单的shift()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.18" data-path="../../手撸代码无敌/迭代函数与迭代函数的实现.html">
+            
+                <a href="../../手撸代码无敌/迭代函数与迭代函数的实现.html">
+            
+                    
+                    迭代函数与迭代函数的实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.19" data-path="../../手撸代码无敌/startsWith(">
+            
+                <span>
+            
+                    
+                    startsWith()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.20" data-path="../../手撸代码无敌/endsWith(">
+            
+                <span>
+            
+                    
+                    endsWith()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.21" data-path="../../手撸代码无敌/trim(">
+            
+                <span>
+            
+                    
+                    String.prototype.trim()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.22" data-path="../../手撸代码无敌/repeat(">
+            
+                <span>
+            
+                    
+                    String.prototype.repeat()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.23" data-path="../../手撸代码无敌/padStart(">
+            
+                <span>
+            
+                    
+                    String.prototype.padStart()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.24" data-path="../../手撸代码无敌/padEnd(">
+            
+                <span>
+            
+                    
+                    String.prototype.padEnd()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.25" data-path="../../手撸代码无敌/实现一个JSON.stringify.html">
+            
+                <a href="../../手撸代码无敌/实现一个JSON.stringify.html">
+            
+                    
+                    实现一个JSON.stringify
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.26" data-path="../../手撸代码无敌/实现一个JSON.parse.html">
+            
+                <a href="../../手撸代码无敌/实现一个JSON.parse.html">
+            
+                    
+                    实现一个JSON.parse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.27" data-path="../../手撸代码无敌/实现一个继承.html">
+            
+                <a href="../../手撸代码无敌/实现一个继承.html">
+            
+                    
+                    实现一个继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.28" data-path="../../手撸代码无敌/JS深拷贝.html">
+            
+                <a href="../../手撸代码无敌/JS深拷贝.html">
+            
+                    
+                    Js深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.29" data-path="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                <a href="../../手撸代码无敌/封装Ajax和Promise.html">
+            
+                    
+                    封装Ajax和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../设计模式/">
+            
+                <a href="../../设计模式/">
+            
+                    
+                    8.设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../../设计模式/单例模式.html">
+            
+                <a href="../../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../../设计模式/策略模式.html">
+            
+                <a href="../../设计模式/策略模式.html">
+            
+                    
+                    策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../../设计模式/代理模式.html">
+            
+                <a href="../../设计模式/代理模式.html">
+            
+                    
+                    代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../../设计模式/迭代器模式.html">
+            
+                <a href="../../设计模式/迭代器模式.html">
+            
+                    
+                    迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../../设计模式/发布-订阅模式(观察者模式">
+            
+                <span>
+            
+                    
+                    发布-订阅模式(观察者模式)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../../设计模式/命令模式.html">
+            
+                <a href="../../设计模式/命令模式.html">
+            
+                    
+                    命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../../设计模式/组合模式.html">
+            
+                <a href="../../设计模式/组合模式.html">
+            
+                    
+                    组合模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="../../设计模式/模板方法模式.html">
+            
+                <a href="../../设计模式/模板方法模式.html">
+            
+                    
+                    模板方法模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.9" data-path="../../设计模式/享元模式.html">
+            
+                <a href="../../设计模式/享元模式.html">
+            
+                    
+                    享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="../../设计模式/职责链模式.html">
+            
+                <a href="../../设计模式/职责链模式.html">
+            
+                    
+                    职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="../../设计模式/中介者模式.html">
+            
+                <a href="../../设计模式/中介者模式.html">
+            
+                    
+                    中介者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="../../设计模式/装饰者模式.html">
+            
+                <a href="../../设计模式/装饰者模式.html">
+            
+                    
+                    装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.13" data-path="../../设计模式/状态模式.html">
+            
+                <a href="../../设计模式/状态模式.html">
+            
+                    
+                    状态模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.14" data-path="../../设计模式/适配器模式.html">
+            
+                <a href="../../设计模式/适配器模式.html">
+            
+                    
+                    适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.15" data-path="../../设计模式/策略设计模式和ES6的Proxy代理模式.html">
+            
+                <a href="../../设计模式/策略设计模式和ES6的Proxy代理模式.html">
+            
+                    
+                    策略设计模式和ES6的Proxy代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.16" data-path="../../设计模式/ES5&&ES6实现观察者模式.html">
+            
+                <a href="../../设计模式/ES5&&ES6实现观察者模式.html">
+            
+                    
+                    ES5 && ES6 实现观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" >
+            
+                <span>
+            
+                    
+                    9.算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../../算法/快速排序.html">
+            
+                <a href="../../算法/快速排序.html">
+            
+                    
+                    快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="../../算法/Deepclone.html">
+            
+                <a href="../../算法/Deepclone.html">
+            
+                    
+                    Deepclone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="../../算法/数组去重.html">
+            
+                <a href="../../算法/数组去重.html">
+            
+                    
+                    数组去重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.4" data-path="../../算法/冒泡排序.html">
+            
+                <a href="../../算法/冒泡排序.html">
+            
+                    
+                    冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">React</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    1.React基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../React基础/react基础.html">
+            
+                <a href="../React基础/react基础.html">
+            
+                    
+                    React基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../React基础/React生命周期分析.html">
+            
+                <a href="../React基础/React生命周期分析.html">
+            
+                    
+                    React生命周期分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../React基础/setState.html">
+            
+                <a href="../React基础/setState.html">
+            
+                    
+                    setState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../React基础/webpack4+babel7+React.html">
+            
+                <a href="../React基础/webpack4+babel7+React.html">
+            
+                    
+                    webpack4+babel7+React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../React基础/React-Router页面传值的三种方法.html">
+            
+                <a href="../React基础/React-Router页面传值的三种方法.html">
+            
+                    
+                    React Router页面传值的三种方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    2.React进阶
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="实现react服务器渲染基础方法.html">
+            
+                <a href="实现react服务器渲染基础方法.html">
+            
+                    
+                    实现react服务器渲染基础法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="React实现Toast（提示）效果.html">
+            
+                <a href="React实现Toast（提示）效果.html">
+            
+                    
+                    React实现Toast（提示）效果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="React进阶之路.html">
+            
+                <a href="React进阶之路.html">
+            
+                    
+                    React进阶之路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="Ref.html">
+            
+                <a href="Ref.html">
+            
+                    
+                    Ref
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="setState.html">
+            
+                <a href="setState.html">
+            
+                    
+                    setState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2.6" data-path="React-Hooks.html">
+            
+                <a href="React-Hooks.html">
+            
+                    
+                    React Hooks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.7" data-path="React-HOC.html">
+            
+                <a href="React-HOC.html">
+            
+                    
+                    React HOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    3.源码分析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../源码分析/React-Object实现React对象.html">
+            
+                <a href="../源码分析/React-Object实现React对象.html">
+            
+                    
+                    React Object实现React对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../源码分析/从零开始实现一个React(一">
+            
+                <span>
+            
+                    
+                    从零开始实现一个React(一)-JSX和虚拟DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../源码分析/从零开始实现一个React（二）：组件和生命周期.html">
+            
+                <a href="../源码分析/从零开始实现一个React（二）：组件和生命周期.html">
+            
+                    
+                    从零开始实现一个React（二）：组件和生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../源码分析/从零开始实现一个React（三）：diff算法.html">
+            
+                <a href="../源码分析/从零开始实现一个React（三）：diff算法.html">
+            
+                    
+                    从零开始实现一个React（三）：diff算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../源码分析/从零开始实现一个React（四）：异步的setState.html">
+            
+                <a href="../源码分析/从零开始实现一个React（四）：异步的setState.html">
+            
+                    
+                    从零开始实现一个React（四）：异步的setState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../源码分析/85行代码实现一个React.html">
+            
+                <a href="../源码分析/85行代码实现一个React.html">
+            
+                    
+                    85行代码实现一个React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.7" data-path="../源码分析/40行代码内实现一个React.html">
+            
+                <a href="../源码分析/40行代码内实现一个React.html">
+            
+                    
+                    40行代码内实现一个React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.8" data-path="../源码分析/简易版react.html">
+            
+                <a href="../源码分析/简易版react.html">
+            
+                    
+                    简易版react
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.9" data-path="../源码分析/200行代码实现简版react.html">
+            
+                <a href="../源码分析/200行代码实现简版react.html">
+            
+                    
+                    200行代码实现简版react
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.10" data-path="../源码分析/实现Didact.html">
+            
+                <a href="../源码分析/实现Didact.html">
+            
+                    
+                    实现Didact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.11" data-path="../源码分析/实现一个简易版的React.html">
+            
+                <a href="../源码分析/实现一个简易版的React.html">
+            
+                    
+                    实现一个简易版的React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.12" data-path="../源码分析/从头实现一个简易版React.html">
+            
+                <a href="../源码分析/从头实现一个简易版React.html">
+            
+                    
+                    从头实现一个简易版React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.13" data-path="../源码分析/从0实现一个tiny-react.html">
+            
+                <a href="../源码分析/从0实现一个tiny-react.html">
+            
+                    
+                    从0实现一个tiny-react
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.14" data-path="../源码分析/实现自己的react之简单rendering.html">
+            
+                <a href="../源码分析/实现自己的react之简单rendering.html">
+            
+                    
+                    实现自己的react之简单rendering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.15" data-path="../源码分析/Redux源码分析.html">
+            
+                <a href="../源码分析/Redux源码分析.html">
+            
+                    
+                    Redux源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.16" data-path="../源码分析/React-redux源码分析.html">
+            
+                <a href="../源码分析/React-redux源码分析.html">
+            
+                    
+                    React-redux源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.17" data-path="../源码分析/从0实现一个lu-redux.html">
+            
+                <a href="../源码分析/从0实现一个lu-redux.html">
+            
+                    
+                    从0实现一个lu-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.18" data-path="../源码分析/从0实现一个tiny-react-redux.html">
+            
+                <a href="../源码分析/从0实现一个tiny-react-redux.html">
+            
+                    
+                    从0实现一个tiny-react-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.19" data-path="../源码分析/从0开始实现react-router.html">
+            
+                <a href="../源码分析/从0开始实现react-router.html">
+            
+                    
+                    从0开始实现react-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.20" data-path="../源码分析/路由实现及react-router-v4源码分析.html">
+            
+                <a href="../源码分析/路由实现及react-router-v4源码分析.html">
+            
+                    
+                    路由实现及react-router v4源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                    4.Dva
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../dva/React+DvaJS之hook路由权限控制.html">
+            
+                <a href="../dva/React+DvaJS之hook路由权限控制.html">
+            
+                    
+                    React+DvaJS 之 hook 路由权限控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" >
+            
+                <span>
+            
+                    
+                    5.React Native
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../react-native/react-native.html">
+            
+                <a href="../react-native/react-native.html">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Vue</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../Vue/Vue生命周期.html">
+            
+                <a href="../../Vue/Vue生命周期.html">
+            
+                    
+                    Vue生命周期分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../Vue/vueRouter使用query和params传参的使用和区别.html">
+            
+                <a href="../../Vue/vueRouter使用query和params传参的使用和区别.html">
+            
+                    
+                    vueRouter使用query和params传参的使用和区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../Vue/Vue组件data为什么必须是函数.html">
+            
+                <a href="../../Vue/Vue组件data为什么必须是函数.html">
+            
+                    
+                    Vue组件data为什么必须是函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../Vue/Vue组件通信的方法.html">
+            
+                <a href="../../Vue/Vue组件通信的方法.html">
+            
+                    
+                    Vue组件通信的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../../Vue/NextTick原理分析.html">
+            
+                <a href="../../Vue/NextTick原理分析.html">
+            
+                    
+                    NextTick原理分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../../Vue/从Vue.js源码看nextTick机制.html">
+            
+                <a href="../../Vue/从Vue.js源码看nextTick机制.html">
+            
+                    
+                    从Vue.js源码看nextTick机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../../Vue/VueRouter源码分析.html">
+            
+                <a href="../../Vue/VueRouter源码分析.html">
+            
+                    
+                    VueRouter源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../../Vue/Vue&&MVVM原理.html">
+            
+                <a href="../../Vue/Vue&&MVVM原理.html">
+            
+                    
+                    Vue&&MVVM原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../../Vue/撸一个简单的Vue.html">
+            
+                <a href="../../Vue/撸一个简单的Vue.html">
+            
+                    
+                    撸一个简单的Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../../Vue/剖析Vue原理&实现双向绑定MVVM.html">
+            
+                <a href="../../Vue/剖析Vue原理&实现双向绑定MVVM.html">
+            
+                    
+                    剖析Vue原理&实现双向绑定MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../../Vue/150行代码实现一个低配版的MVVM库.html">
+            
+                <a href="../../Vue/150行代码实现一个低配版的MVVM库.html">
+            
+                    
+                    150行代码实现一个低配版的MVVM库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../../Vue/160行代码仿Vue实现极简双向绑定[详细注释].html">
+            
+                <a href="../../Vue/160行代码仿Vue实现极简双向绑定[详细注释].html">
+            
+                    
+                    160行代码仿Vue实现极简双向绑定[详细注释]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../../Vue/vue-SSR-cookie问题.html">
+            
+                <a href="../../Vue/vue-SSR-cookie问题.html">
+            
+                    
+                    Vue SSR cookie问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../../Vue/理解vue-ssr原理并自己搭建简单的ssr框架.html">
+            
+                <a href="../../Vue/理解vue-ssr原理并自己搭建简单的ssr框架.html">
+            
+                    
+                    理解vue ssr原理并自己搭建简单的ssr框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="../../Vue/Vue插件开发.html">
+            
+                <a href="../../Vue/Vue插件开发.html">
+            
+                    
+                    Vue插件开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3 - other</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    1.git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../git/git基本使用.html">
+            
+                <a href="../../git/git基本使用.html">
+            
+                    
+                    git基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../git/git分支管理策略.html">
+            
+                <a href="../../git/git分支管理策略.html">
+            
+                    
+                    git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../git/publish脚本.html">
+            
+                <a href="../../git/publish脚本.html">
+            
+                    
+                    publish脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../git/gitbook.html">
+            
+                <a href="../../git/gitbook.html">
+            
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    2.规范
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../规范/分支开发规范.html">
+            
+                <a href="../../规范/分支开发规范.html">
+            
+                    
+                    分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../../规范/es6编码规范.html">
+            
+                <a href="../../规范/es6编码规范.html">
+            
+                    
+                    ES6编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../../规范/vue编码规范.html">
+            
+                <a href="../../规范/vue编码规范.html">
+            
+                    
+                    vue编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                <a href="../../规范/Airbnb-React-JSX编码规范.html">
+            
+                    
+                    Airbnb-React-JSX编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    3.其它
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="../../other/Emoji表情.html">
+            
+                <a href="../../other/Emoji表情.html">
+            
+                    
+                    Emoji表情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" >
+            
+                <span>
+            
+                    
+                    deep
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.3" data-path="../../other/简明-Vim-练级攻略.html">
+            
+                <a href="../../other/简明-Vim-练级攻略.html">
+            
+                    
+                    简明-Vim-练级攻略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    世路如今已惯,此心到处悠然
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >React Hooks</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4E00;&#x7BC7;&#x770B;&#x61C2;-react-hooks">&#x4E00;&#x7BC7;&#x770B;&#x61C2; React Hooks</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#&#x4E00;&#x7BC7;&#x770B;&#x61C2;-react-hooks">&#x4E00;&#x7BC7;&#x770B;&#x61C2; React Hooks</a></li>
+<li><a href="#&#x4EC0;&#x4E48;&#x662F;-react-hooks">&#x4EC0;&#x4E48;&#x662F; React Hooks</a><ul>
+<li><a href="#react-hooks-&#x7684;&#x7279;&#x70B9;">React Hooks &#x7684;&#x7279;&#x70B9;</a><ul>
+<li><a href="#&#x5229;&#x7528;-usestate-&#x521B;&#x5EFA;-redux">&#x5229;&#x7528; useState &#x521B;&#x5EFA; Redux</a></li>
+<li><a href="#&#x5229;&#x7528;-useeffect-&#x4EE3;&#x66FF;&#x4E00;&#x4E9B;&#x751F;&#x547D;&#x5468;&#x671F;">&#x5229;&#x7528; useEffect &#x4EE3;&#x66FF;&#x4E00;&#x4E9B;&#x751F;&#x547D;&#x5468;&#x671F;</a></li>
+</ul>
+</li>
+<li><a href="#react-hooks-&#x5C06;&#x5E26;&#x6765;&#x4EC0;&#x4E48;&#x53D8;&#x5316;">React Hooks &#x5C06;&#x5E26;&#x6765;&#x4EC0;&#x4E48;&#x53D8;&#x5316;</a><ul>
+<li><a href="#hooks-&#x5E26;&#x6765;&#x7684;&#x7EA6;&#x5B9A;">Hooks &#x5E26;&#x6765;&#x7684;&#x7EA6;&#x5B9A;</a></li>
+<li><a href="#&#x72B6;&#x6001;&#x4E0E;-ui-&#x7684;&#x754C;&#x9650;&#x4F1A;&#x8D8A;&#x6765;&#x8D8A;&#x6E05;&#x6670;">&#x72B6;&#x6001;&#x4E0E; UI &#x7684;&#x754C;&#x9650;&#x4F1A;&#x8D8A;&#x6765;&#x8D8A;&#x6E05;&#x6670;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#react-hooks-&#x5B9E;&#x8DF5;">React Hooks &#x5B9E;&#x8DF5;</a><ul>
+<li><a href="#dom-&#x526F;&#x4F5C;&#x7528;&#x4FEE;&#x6539;--&#x76D1;&#x542C;">DOM &#x526F;&#x4F5C;&#x7528;&#x4FEE;&#x6539; / &#x76D1;&#x542C;</a><ul>
+<li><a href="#&#x4FEE;&#x6539;&#x9875;&#x9762;-title">&#x4FEE;&#x6539;&#x9875;&#x9762; title</a></li>
+<li><a href="#&#x76D1;&#x542C;&#x9875;&#x9762;&#x5927;&#x5C0F;&#x53D8;&#x5316;&#x7F51;&#x7EDC;&#x662F;&#x5426;&#x65AD;&#x5F00;">&#x76D1;&#x542C;&#x9875;&#x9762;&#x5927;&#x5C0F;&#x53D8;&#x5316;&#xFF0C;&#x7F51;&#x7EDC;&#x662F;&#x5426;&#x65AD;&#x5F00;</a></li>
+<li><a href="#&#x52A8;&#x6001;&#x6CE8;&#x5165;-css">&#x52A8;&#x6001;&#x6CE8;&#x5165; css</a></li>
+</ul>
+</li>
+<li><a href="#&#x7EC4;&#x4EF6;&#x8F85;&#x52A9;">&#x7EC4;&#x4EF6;&#x8F85;&#x52A9;</a><ul>
+<li><a href="#&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x5BBD;&#x9AD8;">&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x5BBD;&#x9AD8;</a></li>
+<li><a href="#&#x62FF;&#x5230;&#x7EC4;&#x4EF6;-onchange-&#x629B;&#x51FA;&#x7684;&#x503C;">&#x62FF;&#x5230;&#x7EC4;&#x4EF6; onChange &#x629B;&#x51FA;&#x7684;&#x503C;</a></li>
+</ul>
+</li>
+<li><a href="#&#x505A;&#x52A8;&#x753B;">&#x505A;&#x52A8;&#x753B;</a><ul>
+<li><a href="#&#x5728;&#x67D0;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#x5185;&#x83B7;&#x53D6;-0-1-&#x4E4B;&#x95F4;&#x7684;&#x503C;">&#x5728;&#x67D0;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#x5185;&#x83B7;&#x53D6; 0-1 &#x4E4B;&#x95F4;&#x7684;&#x503C;</a></li>
+<li><a href="#&#x5F39;&#x6027;&#x52A8;&#x753B;">&#x5F39;&#x6027;&#x52A8;&#x753B;</a></li>
+<li><a href="#tween-&#x52A8;&#x753B;">Tween &#x52A8;&#x753B;</a></li>
+</ul>
+</li>
+<li><a href="#&#x53D1;&#x8BF7;&#x6C42;">&#x53D1;&#x8BF7;&#x6C42;</a><ul>
+<li><a href="#&#x901A;&#x7528;-http-&#x5C01;&#x88C5;">&#x901A;&#x7528; Http &#x5C01;&#x88C5;</a></li>
+<li><a href="#request-service">Request Service</a></li>
+</ul>
+</li>
+<li><a href="#&#x586B;&#x8868;&#x5355;">&#x586B;&#x8868;&#x5355;</a><ul>
+<li><a href="#hooks-&#x601D;&#x7EF4;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;">Hooks &#x601D;&#x7EF4;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;</a></li>
+</ul>
+</li>
+<li><a href="#&#x6A21;&#x62DF;&#x751F;&#x547D;&#x5468;&#x671F;">&#x6A21;&#x62DF;&#x751F;&#x547D;&#x5468;&#x671F;</a><ul>
+<li><a href="#componentdidmount">componentDidMount</a></li>
+<li><a href="#componentwillunmount">componentWillUnmount</a></li>
+<li><a href="#componentdidupdate">componentDidUpdate</a></li>
+<li><a href="#force-update">Force Update</a></li>
+<li><a href="#ismounted">isMounted</a></li>
+</ul>
+</li>
+<li><a href="#&#x5B58;&#x6570;&#x636E;">&#x5B58;&#x6570;&#x636E;</a><ul>
+<li><a href="#&#x5168;&#x5C40;-store">&#x5168;&#x5C40; Store</a></li>
+</ul>
+</li>
+<li><a href="#&#x5C01;&#x88C5;&#x539F;&#x6709;&#x5E93;">&#x5C01;&#x88C5;&#x539F;&#x6709;&#x5E93;</a><ul>
+<li><a href="#renderprops-to-hooks">RenderProps to Hooks</a></li>
+<li><a href="#hooks-to-renderprops">Hooks to RenderProps</a></li>
+<li><a href="#&#x5C01;&#x88C5;&#x539F;&#x672C;&#x5BF9;-setstate-&#x589E;&#x5F3A;&#x7684;&#x5E93;">&#x5C01;&#x88C5;&#x539F;&#x672C;&#x5BF9; setState &#x589E;&#x5F3A;&#x7684;&#x5E93;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</a></li>
+</ul>
+<!-- /TOC -->
+<p>&#x5C06;&#x4E4B;&#x524D;&#x5BF9; React Hooks &#x7684;&#x603B;&#x7ED3;&#x6574;&#x7406;&#x5728;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#xFF0C;&#x5E26;&#x4F60;&#x4ECE;&#x8BA4;&#x8BC6;&#x5230;&#x4F7F;&#x7528; React Hooks&#x3002;</p>
+<h1 id="&#x4EC0;&#x4E48;&#x662F;-react-hooks">&#x4EC0;&#x4E48;&#x662F; React Hooks</h1>
+<p>React Hooks &#x662F; React <code>16.7.0-alpha</code> &#x7248;&#x672C;&#x63A8;&#x51FA;&#x7684;&#x65B0;&#x7279;&#x6027;&#xFF0C;&#x60F3;&#x5C1D;&#x8BD5;&#x7684;&#x540C;&#x5B66;&#x5B89;&#x88C5;&#x6B64;&#x7248;&#x672C;&#x5373;&#x53EF;&#x3002;</p>
+<p><strong>React Hooks &#x8981;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x662F;&#x72B6;&#x6001;&#x5171;&#x4EAB;</strong>&#xFF0C;&#x662F;&#x7EE7; <a href="https://reactjs.org/docs/render-props.html" target="_blank">render-props</a> &#x548C; <a href="https://reactjs.org/docs/higher-order-components.html" target="_blank">higher-order components</a> &#x4E4B;&#x540E;&#x7684;&#x7B2C;&#x4E09;&#x79CD;&#x72B6;&#x6001;&#x5171;&#x4EAB;&#x65B9;&#x6848;&#xFF0C;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F; JSX &#x5D4C;&#x5957;&#x5730;&#x72F1;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x6307;&#x7684;&#x662F;&#x72B6;&#x6001;&#x903B;&#x8F91;&#xFF0C;&#x6240;&#x4EE5;&#x79F0;&#x4E3A;<strong>&#x72B6;&#x6001;&#x903B;&#x8F91;&#x590D;&#x7528;</strong>&#x4F1A;&#x66F4;&#x6070;&#x5F53;&#xFF0C;&#x56E0;&#x4E3A;&#x53EA;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x5904;&#x7406;&#x903B;&#x8F91;&#xFF0C;&#x4E0D;&#x4F1A;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x672C;&#x8EAB;&#x3002;</p>
+<blockquote>
+<p>&#x4E0D;&#x4E45;&#x524D;&#x7CBE;&#x8BFB;&#x5206;&#x4EAB;&#x8FC7;&#x7684;&#x4E00;&#x7BC7; <a href="https://github.com/dt-fe/weekly/blob/master/75.%E7%B2%BE%E8%AF%BB%E3%80%8AEpitath%20%E6%BA%90%E7%A0%81%20-%20renderProps%20%E6%96%B0%E7%94%A8%E6%B3%95%E3%80%8B.md" target="_blank">Epitath &#x6E90;&#x7801; - renderProps &#x65B0;&#x7528;&#x6CD5;</a> &#x5C31;&#x662F;&#x89E3;&#x51B3; JSX &#x5D4C;&#x5957;&#x95EE;&#x9898;&#xFF0C;&#x6709;&#x4E86; React Hooks &#x4E4B;&#x540E;&#xFF0C;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5C31;&#x88AB;&#x5B98;&#x65B9;&#x6B63;&#x5F0F;&#x89E3;&#x51B3;&#x4E86;&#x3002;</p>
+</blockquote>
+<p>&#x4E3A;&#x4E86;&#x66F4;&#x5FEB;&#x7406;&#x89E3; React Hooks &#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x5148;&#x770B;&#x7B14;&#x8005;&#x5F15;&#x7528;&#x7684;&#x4E0B;&#x9762;&#x4E00;&#x6BB5; renderProps &#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-ts">function App() {
+  return (
+    &lt;Toggle initial={false}&gt;
+      {({ on, toggle }) =&gt; (
+        &lt;Button type=&quot;primary&quot; onClick={toggle}&gt; Open Modal &lt;/Button&gt;
+        &lt;Modal visible={on} onOk={toggle} onCancel={toggle} /&gt;
+      )}
+    &lt;/Toggle&gt;
+  )
+}
+</code></pre>
+<p>&#x6070;&#x5DE7;&#xFF0C;React Hooks &#x89E3;&#x51B3;&#x7684;&#x4E5F;&#x662F;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<pre><code class="lang-ts">function App() {
+  const [open, setOpen] = useState(false);
+  return (
+    &lt;&gt;
+      &lt;Button type=&quot;primary&quot; onClick={() =&gt; setOpen(true)}&gt;
+        Open Modal
+      &lt;/Button&gt;
+      &lt;Modal
+        visible={open}
+        onOk={() =&gt; setOpen(false)}
+        onCancel={() =&gt; setOpen(false)}
+      /&gt;
+    &lt;/&gt;
+  );
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;React Hooks &#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x5185;&#x7F6E;&#x7684;&#x6253;&#x5E73; renderProps &#x5E93;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x4E0E;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x770B;&#x4E0A;&#x53BB;&#x50CF; function &#x5F62;&#x5F0F;&#x7684; setState&#xFF0C;&#x5176;&#x5B9E;&#x8FD9;&#x7B49;&#x4EF7;&#x4E8E;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF0C;&#x4E0E;&#x4F7F;&#x7528; setState &#x76F8;&#x6BD4;&#xFF0C;<strong>&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x662F;&#x6CA1;&#x6709;&#x72B6;&#x6001;&#x7684;</strong>&#x3002;</p>
+<h2 id="react-hooks-&#x7684;&#x7279;&#x70B9;">React Hooks &#x7684;&#x7279;&#x70B9;</h2>
+<p>React Hooks &#x5E26;&#x6765;&#x7684;&#x597D;&#x5904;&#x4E0D;&#x4EC5;&#x662F; &#x201C;&#x66F4; FP&#xFF0C;&#x66F4;&#x65B0;&#x7C92;&#x5EA6;&#x66F4;&#x7EC6;&#xFF0C;&#x4EE3;&#x7801;&#x66F4;&#x6E05;&#x6670;&#x201D;&#xFF0C;&#x8FD8;&#x6709;&#x5982;&#x4E0B;&#x4E09;&#x4E2A;&#x7279;&#x6027;&#xFF1A;</p>
+<ol>
+<li>&#x591A;&#x4E2A;&#x72B6;&#x6001;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x5D4C;&#x5957;&#xFF0C;&#x5199;&#x6CD5;&#x8FD8;&#x662F;&#x5E73;&#x94FA;&#x7684;&#xFF08;renderProps &#x53EF;&#x4EE5;&#x901A;&#x8FC7; compose &#x89E3;&#x51B3;&#xFF0C;&#x53EF;&#x4E0D;&#x4F46;&#x4F7F;&#x7528;&#x7565;&#x4E3A;&#x7E41;&#x7410;&#xFF0C;&#x800C;&#x4E14;&#x56E0;&#x4E3A;&#x5F3A;&#x5236;&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x800C;&#x589E;&#x52A0;&#x4E86;&#x5B9E;&#x4F53;&#x6570;&#x91CF;&#xFF09;&#x3002;</li>
+<li>Hooks &#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x5176;&#x4ED6; Hooks&#x3002;</li>
+<li>&#x66F4;&#x5BB9;&#x6613;&#x5C06;&#x7EC4;&#x4EF6;&#x7684; UI &#x4E0E;&#x72B6;&#x6001;&#x5206;&#x79BB;&#x3002;</li>
+</ol>
+<p>&#x7B2C;&#x4E8C;&#x70B9;&#x5C55;&#x5F00;&#x8BF4;&#x4E00;&#x4E0B;&#xFF1A;Hooks &#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x5176;&#x4ED6; Hooks&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x505A;&#xFF1A;</p>
+<pre><code class="lang-ts">import { useState, useEffect } from &quot;react&quot;;
+
+// &#x5E95;&#x5C42; Hooks, &#x8FD4;&#x56DE;&#x5E03;&#x5C14;&#x503C;&#xFF1A;&#x662F;&#x5426;&#x5728;&#x7EBF;
+function useFriendStatusBoolean(friendID) {
+  const [isOnline, setIsOnline] = useState(null);
+
+  function handleStatusChange(status) {
+    setIsOnline(status.isOnline);
+  }
+
+  useEffect(() =&gt; {
+    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
+    return () =&gt; {
+      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
+    };
+  });
+
+  return isOnline;
+}
+
+// &#x4E0A;&#x5C42; Hooks&#xFF0C;&#x6839;&#x636E;&#x5728;&#x7EBF;&#x72B6;&#x6001;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;Loading... or Online or Offline
+function useFriendStatusString(props) {
+  const isOnline = useFriendStatusBoolean(props.friend.id);
+
+  if (isOnline === null) {
+    return &quot;Loading...&quot;;
+  }
+  return isOnline ? &quot;Online&quot; : &quot;Offline&quot;;
+}
+
+// &#x4F7F;&#x7528;&#x4E86;&#x5E95;&#x5C42; Hooks &#x7684; UI
+function FriendListItem(props) {
+  const isOnline = useFriendStatusBoolean(props.friend.id);
+
+  return (
+    &lt;li style={{ color: isOnline ? &quot;green&quot; : &quot;black&quot; }}&gt;{props.friend.name}&lt;/li&gt;
+  );
+}
+
+// &#x4F7F;&#x7528;&#x4E86;&#x4E0A;&#x5C42; Hooks &#x7684; UI
+function FriendListStatus(props) {
+  const statu = useFriendStatusString(props.friend.id);
+
+  return &lt;li&gt;{statu}&lt;/li&gt;;
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6709;&#x4E24;&#x4E2A; Hooks&#xFF1A;<code>useFriendStatusBoolean</code> &#x4E0E; <code>useFriendStatusString</code>, <code>useFriendStatusString</code> &#x662F;&#x5229;&#x7528; <code>useFriendStatusBoolean</code> &#x751F;&#x6210;&#x7684;&#x65B0; Hook&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A; Hook &#x53EF;&#x4EE5;&#x7ED9;&#x4E0D;&#x540C;&#x7684; UI&#xFF1A;<code>FriendListItem</code>&#x3001;<code>FriendListStatus</code> &#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x56E0;&#x4E3A;&#x4E24;&#x4E2A; Hooks &#x6570;&#x636E;&#x662F;&#x8054;&#x52A8;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x4E24;&#x4E2A; UI &#x7684;&#x72B6;&#x6001;&#x4E5F;&#x662F;&#x8054;&#x52A8;&#x7684;&#x3002;</p>
+<p>&#x987A;&#x5E26;&#x4E00;&#x63D0;&#xFF0C;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x7406;&#x89E3; <a href="https://zhuanlan.zhihu.com/p/48264713" target="_blank">&#x5BF9; React Hooks &#x7684;&#x4E00;&#x4E9B;&#x601D;&#x8003;</a> &#x4E00;&#x6587;&#x7684;&#x90A3;&#x53E5;&#x8BDD;&#xFF1A;<strong>&#x201C;&#x6709;&#x72B6;&#x6001;&#x7684;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;&#x6E32;&#x67D3;&#xFF0C;&#x6709;&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;&#x72B6;&#x6001;&#x201D;</strong>&#xFF1A;</p>
+<ul>
+<li><code>useFriendStatusBoolean</code> &#x4E0E; <code>useFriendStatusString</code> &#x662F;&#x6709;&#x72B6;&#x6001;&#x7684;&#x7EC4;&#x4EF6;&#xFF08;&#x4F7F;&#x7528; <code>useState</code>&#xFF09;&#xFF0C;&#x6CA1;&#x6709;&#x6E32;&#x67D3;&#xFF08;&#x8FD4;&#x56DE;&#x975E; UI &#x7684;&#x503C;&#xFF09;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A; <strong>Custom Hooks</strong> &#x88AB;&#x4EFB;&#x4F55; UI &#x7EC4;&#x4EF6;&#x8C03;&#x7528;&#x3002;</li>
+<li><code>FriendListItem</code> &#x4E0E; <code>FriendListStatus</code> &#x662F;&#x6709;&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;&#xFF08;&#x8FD4;&#x56DE;&#x4E86; JSX&#xFF09;&#xFF0C;&#x6CA1;&#x6709;&#x72B6;&#x6001;&#xFF08;&#x6CA1;&#x6709;&#x4F7F;&#x7528; <code>useState</code>&#xFF09;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7EAF;&#x51FD;&#x6570; UI &#x7EC4;&#x4EF6;&#xFF0C;</li>
+</ul>
+<h3 id="&#x5229;&#x7528;-usestate-&#x521B;&#x5EFA;-redux">&#x5229;&#x7528; useState &#x521B;&#x5EFA; Redux</h3>
+<p>Redux &#x7684;&#x7CBE;&#x9AD3;&#x5C31;&#x662F; Reducer&#xFF0C;&#x800C;&#x5229;&#x7528; React Hooks &#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; Redux &#x673A;&#x5236;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-comment">// &#x8FD9;&#x5C31;&#x662F; Redux</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useReducer</span>(<span class="hljs-params">reducer, initialState</span>) </span>{
+  <span class="hljs-keyword">const</span> [state, setState] = useState(initialState);
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dispatch</span>(<span class="hljs-params">action</span>) </span>{
+    <span class="hljs-keyword">const</span> nextState = reducer(state, action);
+    setState(nextState);
+  }
+
+  <span class="hljs-keyword">return</span> [state, dispatch];
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49; Hook &#x7684; value &#x90E8;&#x5206;&#x5F53;&#x4F5C; redux &#x7684; state&#xFF0C;setValue &#x90E8;&#x5206;&#x5F53;&#x4F5C; redux &#x7684; dispatch&#xFF0C;&#x5408;&#x8D77;&#x6765;&#x5C31;&#x662F;&#x4E00;&#x4E2A; redux&#x3002;&#x800C; react-redux &#x7684; connect &#x90E8;&#x5206;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x4E0E; Hook &#x8C03;&#x7528;&#x4E00;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-ts">// &#x4E00;&#x4E2A; Action
+function useTodos() {
+  const [todos, dispatch] = useReducer(todosReducer, []);
+
+  function handleAddClick(text) {
+    dispatch({ type: &quot;add&quot;, text });
+  }
+
+  return [todos, { handleAddClick }];
+}
+
+// &#x7ED1;&#x5B9A; Todos &#x7684; UI
+function TodosUI() {
+  const [todos, actions] = useTodos();
+  return (
+    &lt;&gt;
+      {todos.map((todo, index) =&gt; (
+        &lt;div&gt;{todo.text}&lt;/div&gt;
+      ))}
+      &lt;button onClick={actions.handleAddClick}&gt;Add Todo&lt;/button&gt;
+    &lt;/&gt;
+  );
+}
+</code></pre>
+<p><code>useReducer</code> &#x5DF2;&#x7ECF;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5185;&#x7F6E; Hooks &#x4E86;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x67E5;&#x9605;&#x6240;&#x6709; <a href="https://reactjs.org/docs/hooks-reference.html" target="_blank">&#x5185;&#x7F6E; Hooks</a>&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x6BCF;&#x6B21; <code>useReducer</code> &#x6216;&#x8005;&#x81EA;&#x5DF1;&#x7684; Custom Hooks &#x90FD;&#x4E0D;&#x4F1A;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E24;&#x4E2A; App&#xFF0C;App1 &#x4E0E; App2:</p>
+<pre><code class="lang-ts">function App1() {
+  const [todos, actions] = useTodos();
+
+  return &lt;span&gt;todo count: {todos.length}&lt;/span&gt;;
+}
+
+function App2() {
+  const [todos, actions] = useTodos();
+
+  return &lt;span&gt;todo count: {todos.length}&lt;/span&gt;;
+}
+
+function All() {
+  return (
+    &lt;&gt;
+      &lt;App1 /&gt;
+      &lt;App2 /&gt;
+    &lt;/&gt;
+  );
+}
+</code></pre>
+<p>&#x8FD9;&#x4E24;&#x4E2A;&#x5B9E;&#x4F8B;&#x540C;&#x65F6;&#x6E32;&#x67D3;&#x65F6;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x5171;&#x4EAB;&#x4E00;&#x4E2A; todos &#x5217;&#x8868;&#xFF0C;&#x800C;&#x662F;&#x5206;&#x522B;&#x5B58;&#x5728;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB; todos &#x5217;&#x8868;&#x3002;&#x4E5F;&#x5C31;&#x662F; React Hooks &#x53EA;&#x63D0;&#x4F9B;&#x72B6;&#x6001;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x4F1A;&#x6301;&#x4E45;&#x5316;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8981;&#x771F;&#x6B63;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A; Redux &#x529F;&#x80FD;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5168;&#x5C40;&#x7EF4;&#x6301;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x4EFB;&#x4F55;&#x7EC4;&#x4EF6; <code>useReducer</code> &#x90FD;&#x4F1A;&#x8BBF;&#x95EE;&#x5230;&#x540C;&#x4E00;&#x4EFD;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x548C; <a href="https://reactjs.org/docs/hooks-reference.html#usecontext" target="_blank">useContext</a> &#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5927;&#x4F53;&#x601D;&#x8DEF;&#x662F;&#x5229;&#x7528; <code>useContext</code> &#x5171;&#x4EAB;&#x4E00;&#x4EFD;&#x6570;&#x636E;&#xFF0C;&#x4F5C;&#x4E3A; Custom Hooks &#x7684;&#x6570;&#x636E;&#x6E90;&#x3002;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://github.com/facebookincubator/redux-react-hook/blob/master/src/index.ts" target="_blank">redux-react-hook</a>&#x3002;</p>
+<h3 id="&#x5229;&#x7528;-useeffect-&#x4EE3;&#x66FF;&#x4E00;&#x4E9B;&#x751F;&#x547D;&#x5468;&#x671F;">&#x5229;&#x7528; useEffect &#x4EE3;&#x66FF;&#x4E00;&#x4E9B;&#x751F;&#x547D;&#x5468;&#x671F;</h3>
+<p>&#x5728; useState &#x4F4D;&#x7F6E;&#x9644;&#x8FD1;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; useEffect &#x5904;&#x7406;&#x526F;&#x4F5C;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-ts">useEffect(() =&gt; {
+  <span class="hljs-keyword">const</span> subscription = props.source.subscribe();
+  <span class="hljs-keyword">return</span> () =&gt; {
+    <span class="hljs-comment">// Clean up the subscription</span>
+    subscription.unsubscribe();
+  };
+});
+</code></pre>
+<p><code>useEffect</code> &#x7684;&#x4EE3;&#x7801;&#x65E2;&#x4F1A;&#x5728;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x5019;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x4F1A;&#x5728;&#x540E;&#x7EED;&#x6BCF;&#x6B21; rerender &#x65F6;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x8FD4;&#x56DE;&#x503C;&#x5728;&#x6790;&#x6784;&#x65F6;&#x6267;&#x884C;&#x3002;&#x8FD9;&#x4E2A;&#x66F4;&#x591A;&#x5E26;&#x6765;&#x7684;&#x662F;&#x4FBF;&#x5229;&#xFF0C;&#x5BF9;&#x6BD4;&#x4E00;&#x4E0B; React &#x7248; G2 &#x8C03;&#x7528;&#x6D41;&#x7A0B;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">class</span> Component extends React.PureComponent&lt;Props, State&gt; {
+  <span class="hljs-keyword">private</span> chart: G2.Chart = <span class="hljs-literal">null</span>;
+  <span class="hljs-keyword">private</span> rootDomRef: React.ReactInstance = <span class="hljs-literal">null</span>;
+
+  componentDidMount() {
+    <span class="hljs-keyword">this</span>.rootDom = ReactDOM.findDOMNode(<span class="hljs-keyword">this</span>.rootDomRef) as HTMLDivElement;
+
+    <span class="hljs-keyword">this</span>.chart = <span class="hljs-keyword">new</span> G2.Chart({
+      container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;chart&quot;</span>),
+      forceFit: <span class="hljs-literal">true</span>,
+      height: <span class="hljs-number">300</span>
+    });
+    <span class="hljs-keyword">this</span>.freshChart(<span class="hljs-keyword">this</span>.props);
+  }
+
+  componentWillReceiveProps(nextProps: Props) {
+    <span class="hljs-keyword">this</span>.freshChart(nextProps);
+  }
+
+  componentWillUnmount() {
+    <span class="hljs-keyword">this</span>.chart.destroy();
+  }
+
+  freshChart(props: Props) {
+    <span class="hljs-comment">// do something</span>
+    <span class="hljs-keyword">this</span>.chart.render();
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> &lt;div ref={ref =&gt; (<span class="hljs-keyword">this</span>.rootDomRef = ref)} /&gt;;
+  }
+}
+</code></pre>
+<p>&#x7528; React Hooks &#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x505A;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> ref = React.useRef(<span class="hljs-literal">null</span>);
+  <span class="hljs-keyword">let</span> chart: G2.Chart = <span class="hljs-literal">null</span>;
+
+  React.useEffect(() =&gt; {
+    <span class="hljs-keyword">if</span> (!chart) {
+      chart = <span class="hljs-keyword">new</span> G2.Chart({
+        container: ReactDOM.findDOMNode(ref.current) as HTMLDivElement,
+        width: <span class="hljs-number">500</span>,
+        height: <span class="hljs-number">500</span>
+      });
+    }
+
+    <span class="hljs-comment">// do something</span>
+    chart.render();
+
+    <span class="hljs-keyword">return</span> () =&gt; chart.destroy();
+  });
+
+  <span class="hljs-keyword">return</span> &lt;div ref={ref} /&gt;;
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5C06;&#x7EC6;&#x788E;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x7ED3;&#x5408;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x66F4;&#x7EF4;&#x62A4;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x4ECB;&#x7ECD;&#x4E86; <code>useState</code> <code>useContext</code> <code>useEffect</code> <code>useRef</code> &#x7B49;&#x5E38;&#x7528; hooks&#xFF0C;&#x66F4;&#x591A;&#x53EF;&#x4EE5;&#x67E5;&#x9605;&#xFF1A;<a href="https://reactjs.org/docs/hooks-reference.html" target="_blank">&#x5185;&#x7F6E; Hooks</a>&#xFF0C;&#x76F8;&#x4FE1;&#x4E0D;&#x4E45;&#x7684;&#x672A;&#x6765;&#xFF0C;&#x8FD9;&#x4E9B; API &#x53C8;&#x4F1A;&#x6210;&#x4E3A;&#x4E00;&#x5957;&#x65B0;&#x7684;&#x524D;&#x7AEF;&#x89C4;&#x8303;&#x3002;</p>
+<h2 id="react-hooks-&#x5C06;&#x5E26;&#x6765;&#x4EC0;&#x4E48;&#x53D8;&#x5316;">React Hooks &#x5C06;&#x5E26;&#x6765;&#x4EC0;&#x4E48;&#x53D8;&#x5316;</h2>
+<h3 id="hooks-&#x5E26;&#x6765;&#x7684;&#x7EA6;&#x5B9A;">Hooks &#x5E26;&#x6765;&#x7684;&#x7EA6;&#x5B9A;</h3>
+<p>Hook &#x51FD;&#x6570;&#x5FC5;&#x987B;&#x4EE5; &quot;use&quot; &#x547D;&#x540D;&#x5F00;&#x5934;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x624D;&#x65B9;&#x4FBF; eslint &#x505A;&#x68C0;&#x67E5;&#xFF0C;&#x9632;&#x6B62;&#x7528; condition &#x5224;&#x65AD;&#x5305;&#x88F9; useHook &#x8BED;&#x53E5;&#x3002;</p>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x80FD;&#x7528; condition &#x5305;&#x88F9; useHook &#x8BED;&#x53E5;&#xFF0C;&#x8BE6;&#x60C5;&#x53EF;&#x4EE5;&#x89C1; <a href="https://reactjs.org/docs/hooks-rules.html#explanation" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a>&#xFF0C;&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x3002;</p>
+<p>React Hooks &#x5E76;&#x4E0D;&#x662F;&#x901A;&#x8FC7; Proxy &#x6216;&#x8005; getters &#x5B9E;&#x73B0;&#x7684;&#xFF08;&#x5177;&#x4F53;&#x53EF;&#x4EE5;&#x770B;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0; <a href="https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e" target="_blank">React hooks: not magic, just arrays</a>&#xFF09;&#xFF0C;&#x800C;&#x662F;&#x901A;&#x8FC7;&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6BCF;&#x6B21; <code>useState</code> &#x90FD;&#x4F1A;&#x6539;&#x53D8;&#x4E0B;&#x6807;&#xFF0C;&#x5982;&#x679C; <code>useState</code> &#x88AB;&#x5305;&#x88F9;&#x5728; condition &#x4E2D;&#xFF0C;&#x90A3;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x7684;&#x4E0B;&#x6807;&#x5C31;&#x53EF;&#x80FD;&#x5BF9;&#x4E0D;&#x4E0A;&#xFF0C;&#x5BFC;&#x81F4; <code>useState</code> &#x5BFC;&#x51FA;&#x7684; <code>setter</code> &#x66F4;&#x65B0;&#x9519;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x867D;&#x7136;&#x6709; <a href="https://www.npmjs.com/package/eslint-plugin-react-hooks" target="_blank">eslint-plugin-react-hooks</a> &#x63D2;&#x4EF6;&#x4FDD;&#x9A7E;&#x62A4;&#x822A;&#xFF0C;&#x4F46;&#x8FD9;&#x7B2C;&#x4E00;&#x6B21;&#x5C06; &#x201C;&#x7EA6;&#x5B9A;&#x4F18;&#x5148;&#x201D; &#x7406;&#x5FF5;&#x5F15;&#x5165;&#x4E86; React &#x6846;&#x67B6;&#x4E2D;&#xFF0C;&#x5E26;&#x6765;&#x4E86;&#x524D;&#x6240;&#x672A;&#x6709;&#x7684;<strong>&#x4EE3;&#x7801;&#x547D;&#x540D;&#x548C;&#x987A;&#x5E8F;&#x9650;&#x5236;</strong>&#xFF08;&#x51FD;&#x6570;&#x547D;&#x540D;&#x906D;&#x5230;&#x5B98;&#x65B9;&#x9650;&#x5236;&#xFF0C;JS &#x81EA;&#x7531;&#x4E3B;&#x4E49;&#x8005;&#x4E5F;&#x8BB8;&#x4F1A;&#x66B4;&#x8DF3;&#x5982;&#x96F7;&#xFF09;&#xFF0C;&#x4F46;&#x5E26;&#x6765;&#x7684;&#x4FBF;&#x5229;&#x4E5F;&#x662F;&#x524D;&#x6240;&#x672A;&#x6709;&#x7684;&#xFF08;&#x6CA1;&#x6709;&#x6BD4; React Hooks &#x66F4;&#x597D;&#x7684;&#x72B6;&#x6001;&#x5171;&#x4EAB;&#x65B9;&#x6848;&#x4E86;&#xFF0C;&#x7EA6;&#x5B9A;&#x5E26;&#x6765;&#x63D0;&#x6548;&#xFF0C;&#x81EA;&#x7531;&#x7684;&#x4EE3;&#x4EF7;&#x5C31;&#x662F;&#x56DE;&#x5230; renderProps or HOC&#xFF0C;&#x5404;&#x56E2;&#x961F;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x8BC4;&#x4F30;&#xFF09;&#x3002;</p>
+<p>&#x7B14;&#x8005;&#x8BA4;&#x4E3A;&#xFF0C;React Hooks &#x7684;&#x8BDE;&#x751F;&#xFF0C;&#x4E5F;&#x8BB8;&#x6765;&#x81EA;&#x4E8E;&#x8FD9;&#x4E2A;&#x7075;&#x611F;&#xFF1A;&#x201C;&#x4E0D;&#x5982;&#x901A;&#x8FC7;&#x589E;&#x52A0;&#x4E00;&#x4E9B;&#x7EA6;&#x5B9A;&#xFF0C;&#x5F7B;&#x5E95;&#x89E3;&#x51B3;&#x72B6;&#x6001;&#x5171;&#x4EAB;&#x95EE;&#x9898;&#x5427;&#xFF01;&#x201D;</p>
+<blockquote>
+<p>React &#x7EA6;&#x5B9A;&#x5927;&#x4E8E;&#x914D;&#x7F6E;&#x811A;&#x624B;&#x67B6; <a href="https://github.com/zeit/next.js" target="_blank">nextjs</a> <a href="https://github.com/umijs/umi" target="_blank">umi</a> &#x4EE5;&#x53CA;&#x7B14;&#x8005;&#x7684; <a href="https://github.com/prijs/pri" target="_blank">pri</a> &#x90FD;&#x901A;&#x8FC7;&#x6709; &#x201C;&#x7EA6;&#x5B9A;&#x8DEF;&#x7531;&#x201D; &#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5927;&#x5927;&#x964D;&#x4F4E;&#x4E86;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x590D;&#x6742;&#x5EA6;&#xFF0C;<strong>&#x90A3;&#x4E48; React Hooks &#x5C31;&#x50CF;&#x4EE3;&#x7801;&#x7EA7;&#x522B;&#x7684;&#x7EA6;&#x5B9A;</strong>&#xFF0C;&#x5927;&#x5927;&#x964D;&#x4F4E;&#x4E86;&#x4EE3;&#x7801;&#x590D;&#x6742;&#x5EA6;&#x3002;</p>
+</blockquote>
+<h3 id="&#x72B6;&#x6001;&#x4E0E;-ui-&#x7684;&#x754C;&#x9650;&#x4F1A;&#x8D8A;&#x6765;&#x8D8A;&#x6E05;&#x6670;">&#x72B6;&#x6001;&#x4E0E; UI &#x7684;&#x754C;&#x9650;&#x4F1A;&#x8D8A;&#x6765;&#x8D8A;&#x6E05;&#x6670;</h3>
+<p>&#x56E0;&#x4E3A; React Hooks &#x7684;&#x7279;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A; Hook &#x4E0D;&#x4EA7;&#x751F; UI&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x53EF;&#x4EE5;&#x6C38;&#x8FDC;&#x88AB;&#x5176;&#x4ED6; Hook &#x5C01;&#x88C5;&#xFF0C;&#x867D;&#x7136;&#x5141;&#x8BB8;&#x6709;&#x526F;&#x4F5C;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x88AB;&#x5305;&#x88F9;&#x5728; <code>useEffect</code> &#x91CC;&#xFF0C;&#x603B;&#x4F53;&#x6765;&#x8BF4;&#x8FD8;&#x662F;&#x633A;&#x51FD;&#x6570;&#x5F0F;&#x7684;&#x3002;&#x800C; Hooks &#x8981;&#x96C6;&#x4E2D;&#x5728; UI &#x51FD;&#x6570;&#x9876;&#x90E8;&#x5199;&#xFF0C;&#x4E5F;&#x5F88;&#x5BB9;&#x6613;&#x517B;&#x6210;&#x4E66;&#x5199;&#x65E0;&#x72B6;&#x6001; UI &#x7EC4;&#x4EF6;&#x7684;&#x597D;&#x4E60;&#x60EF;&#xFF0C;&#x8DF5;&#x884C; &#x201C;&#x72B6;&#x6001;&#x4E0E; UI &#x5206;&#x5F00;&#x201D; &#x8FD9;&#x4E2A;&#x7406;&#x5FF5;&#x4F1A;&#x66F4;&#x5BB9;&#x6613;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#x8FD9;&#x4E2A;&#x7406;&#x5FF5;&#x7A0D;&#x5FAE;&#x6709;&#x70B9;&#x8E69;&#x811A;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x90A3;&#x5C31;&#x662F; &#x201C;&#x72B6;&#x6001;&#x201D; &#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#x3002;</p>
+<pre><code class="lang-ts">function App() {
+  const [count, setCount] = useCount();
+  return &lt;span&gt;{count}&lt;/span&gt;;
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x77E5;&#x9053; <code>useCount</code> &#x7B97;&#x662F;&#x65E0;&#x72B6;&#x6001;&#x7684;&#xFF0C;&#x56E0;&#x4E3A; React Hooks &#x672C;&#x8D28;&#x5C31;&#x662F; renderProps &#x6216;&#x8005; HOC &#x7684;&#x53E6;&#x4E00;&#x79CD;&#x5199;&#x6CD5;&#xFF0C;&#x6362;&#x6210; renderProps &#x5C31;&#x597D;&#x7406;&#x89E3;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-ts">&lt;Count&gt;{(count, setCount) =&gt; &lt;App count={count} setCount={setCount} /&gt;}&lt;/Count&gt;;
+
+function App(props) {
+  return &lt;span&gt;{props.count}&lt;/span&gt;;
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230; App &#x7EC4;&#x4EF6;&#x662F;&#x65E0;&#x72B6;&#x6001;&#x7684;&#xFF0C;&#x8F93;&#x51FA;&#x5B8C;&#x5168;&#x7531;&#x8F93;&#x5165;&#xFF08;Props&#xFF09;&#x51B3;&#x5B9A;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x6709;&#x72B6;&#x6001;&#x65E0; UI &#x7684;&#x7EC4;&#x4EF6;&#x5C31;&#x662F; <code>useCount</code> &#x4E86;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useCount</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> [count, setCount] = useState(<span class="hljs-number">0</span>);
+  <span class="hljs-keyword">return</span> [count, setCount];
+}
+</code></pre>
+<p>&#x6709;&#x72B6;&#x6001;&#x7684;&#x5730;&#x65B9;&#x5E94;&#x8BE5;&#x6307; <code>useState(0)</code> &#x8FD9;&#x53E5;&#xFF0C;&#x4E0D;&#x8FC7;&#x8FD9;&#x53E5;&#x548C;&#x65E0;&#x72B6;&#x6001; UI &#x7EC4;&#x4EF6; App &#x7684; <code>useCount()</code> &#x5F88;&#x50CF;&#xFF0C;&#x65E2;&#x7136; React &#x628A; <code>useCount</code> &#x6210;&#x4E3A;&#x81EA;&#x5B9A;&#x4E49; Hook&#xFF0C;&#x90A3;&#x4E48; <code>useState</code> &#x5C31;&#x662F;&#x5B98;&#x65B9; Hook&#xFF0C;&#x5177;&#x6709;&#x4E00;&#x6837;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A; <code>useCount</code> &#x662F;&#x65E0;&#x72B6;&#x6001;&#x7684;&#xFF0C;<code>useState</code> &#x4E5F;&#x662F;&#x4E00;&#x5C42; renderProps&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x72B6;&#x6001;&#x5176;&#x5B9E;&#x662F; <code>useState</code> &#x8FD9;&#x4E2A; React &#x5185;&#x7F6E;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x770B; renderProps &#x5D4C;&#x5957;&#x7684;&#x8868;&#x8FBE;&#xFF1A;</p>
+<pre><code class="lang-ts">&lt;UseState&gt;
+  {(count, setCount) =&gt; (
+    &lt;UseCount&gt;
+      {&quot; &quot;}
+      {/**&#x867D;&#x7136;&#x662F;&#x900F;&#x4F20;&#xFF0C;&#x4F46;&#x7ED9; count &#x505A;&#x4E86;&#x53BB;&#x91CD;&#xFF0C;&#x4E0D;&#x53EF;&#x8C13;&#x6CA1;&#x6709;&#x4F5C;&#x7528; */}
+      {(count, setCount) =&gt; &lt;App count={count} setCount={setCount} /&gt;}
+    &lt;/UseCount&gt;
+  )}
+&lt;/UseState&gt;
+</code></pre>
+<p>&#x80FD;&#x786E;&#x5B9A;&#x7684;&#x662F;&#xFF0C;App &#x4E00;&#x5B9A;&#x6709; UI&#xFF0C;&#x800C;&#x4E0A;&#x9762;&#x4E24;&#x5C42;&#x7236;&#x7EA7;&#x7EC4;&#x4EF6;&#x4E00;&#x5B9A;&#x6CA1;&#x6709; UI&#x3002;&#x4E3A;&#x4E86;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#xFF0C;&#x6211;&#x4EEC;&#x5C3D;&#x91CF;&#x907F;&#x514D; App &#x81EA;&#x5DF1;&#x7EF4;&#x62A4;&#x72B6;&#x6001;&#xFF0C;&#x800C;&#x5176;&#x7236;&#x7EA7;&#x7684; RenderProps &#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x7EF4;&#x62A4;&#x72B6;&#x6001;&#xFF08;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x7EF4;&#x62A4;&#x72B6;&#x6001;&#xFF0C;&#x505A;&#x4E2A;&#x4E8C;&#x4F20;&#x624B;&#xFF09;&#x3002;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x5728; &#x201C;&#x6709;&#x72B6;&#x6001;&#x7684;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;&#x6E32;&#x67D3;&#xFF0C;&#x6709;&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;&#x72B6;&#x6001;&#x201D; &#x8FD9;&#x53E5;&#x8BDD;&#x540E;&#x9762;&#x52A0;&#x4E00;&#x53E5;&#xFF1A;&#x6CA1;&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;&#x4E5F;&#x53EF;&#x4EE5;&#x6CA1;&#x72B6;&#x6001;&#x3002;</p>
+<h1 id="react-hooks-&#x5B9E;&#x8DF5;">React Hooks &#x5B9E;&#x8DF5;</h1>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x7406;&#x89E3;&#xFF0C;&#x4F60;&#x5DF2;&#x7ECF;&#x5BF9; React Hooks &#x6709;&#x4E86;&#x57FA;&#x672C;&#x7406;&#x89E3;&#xFF0C;&#x4E5F;&#x8BB8;&#x4F60;&#x4E5F;&#x770B;&#x4E86; React Hooks &#x57FA;&#x672C;&#x5B9E;&#x73B0;&#x5256;&#x6790;&#xFF08;&#x5C31;&#x662F;&#x6570;&#x7EC4;&#xFF09;&#xFF0C;&#x4F46;&#x7406;&#x89E3;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x597D;&#x4E86;&#x5417;&#xFF1F;&#x5B66;&#x7684;&#x662F;&#x77E5;&#x8BC6;&#xFF0C;&#x800C;&#x7528;&#x7684;&#x662F;&#x6280;&#x80FD;&#xFF0C;&#x770B;&#x522B;&#x4EBA;&#x7684;&#x7528;&#x6CD5;&#x5C31;&#x50CF;&#x5237;&#x6296;&#x97F3;&#x4E00;&#x6837;&#xFF08;&#x54C7;&#xFF0C;&#x996D;&#x8FD8;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5403;&#xFF1F;&#xFF09;&#xFF0C;&#x4F60;&#x603B;&#x4F1A;&#x6709;&#x65B0;&#x7684;&#x6536;&#x83B7;&#x3002;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x7AD9;&#x5728;&#x4F7F;&#x7528;&#x89D2;&#x5EA6;&#xFF0C;&#x8981;&#x7406;&#x89E3; React Hooks &#x7684;&#x7279;&#x70B9;&#x662F; &#x201C;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#x7684; Connect &#x4E00;&#x5207;&#x201D;&#xFF0C;&#x6240;&#x4EE5;&#x65E0;&#x8BBA;&#x662F;&#x6570;&#x636E;&#x6D41;&#x3001;Network&#xFF0C;&#x6216;&#x8005;&#x662F;&#x5B9A;&#x65F6;&#x5668;&#x90FD;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#xFF0C;&#x6709;&#x4E00;&#x70B9; RXJS &#x7684;&#x610F;&#x5473;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4F60;&#x53EF;&#x4EE5;&#x5229;&#x7528; React Hooks&#xFF0C;&#x5C06; React &#x7EC4;&#x4EF6;&#x6253;&#x9020;&#x6210;&#xFF1A;&#x4EFB;&#x4F55;&#x4E8B;&#x7269;&#x7684;&#x53D8;&#x5316;&#x90FD;&#x662F;&#x8F93;&#x5165;&#x6E90;&#xFF0C;&#x5F53;&#x8FD9;&#x4E9B;&#x6E90;&#x53D8;&#x5316;&#x65F6;&#x4F1A;&#x91CD;&#x65B0;&#x89E6;&#x53D1; React &#x7EC4;&#x4EF6;&#x7684; render&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x6311;&#x9009;&#x7EC4;&#x4EF6;&#x7ED1;&#x5B9A;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x6E90;&#xFF08;use &#x54EA;&#x4E9B; Hooks&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x53EA;&#x7BA1;&#x5199; render &#x51FD;&#x6570;&#x5C31;&#x884C;&#x4E86;&#xFF01;</p>
+<h2 id="dom-&#x526F;&#x4F5C;&#x7528;&#x4FEE;&#x6539;--&#x76D1;&#x542C;">DOM &#x526F;&#x4F5C;&#x7528;&#x4FEE;&#x6539; / &#x76D1;&#x542C;</h2>
+<p>&#x505A;&#x4E00;&#x4E2A;&#x7F51;&#x9875;&#xFF0C;&#x603B;&#x6709;&#x4E00;&#x4E9B;&#x770B;&#x4E0A;&#x53BB;&#x548C;&#x7EC4;&#x4EF6;&#x5173;&#x7CFB;&#x4E0D;&#x5927;&#x7684;&#x9EBB;&#x70E6;&#x4E8B;&#xFF0C;&#x6BD4;&#x5982;&#x4FEE;&#x6539;&#x9875;&#x9762;&#x6807;&#x9898;&#xFF08;&#x5207;&#x6362;&#x9875;&#x9762;&#x8BB0;&#x5F97;&#x6539;&#x6210;&#x9ED8;&#x8BA4;&#x6807;&#x9898;&#xFF09;&#x3001;&#x76D1;&#x542C;&#x9875;&#x9762;&#x5927;&#x5C0F;&#x53D8;&#x5316;&#xFF08;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x8BB0;&#x5F97;&#x53D6;&#x6D88;&#x76D1;&#x542C;&#xFF09;&#x3001;&#x65AD;&#x7F51;&#x65F6;&#x63D0;&#x793A;&#xFF08;&#x4E00;&#x5C42;&#x5C42;&#x88C5;&#x9970;&#x5668;&#x8981;&#x5806;&#x6210;&#x5C0F;&#x5C71;&#x4E86;&#xFF09;&#x3002;&#x800C; React Hooks &#x7279;&#x522B;&#x64C5;&#x957F;&#x505A;&#x8FD9;&#x4E9B;&#x4E8B;&#xFF0C;&#x9020;&#x8FD9;&#x79CD;&#x8F6E;&#x5B50;&#xFF0C;&#x5927;&#x5C0F;&#x7686;&#x5B9C;&#x3002;</p>
+<blockquote>
+<p>&#x7531;&#x4E8E; React Hooks &#x964D;&#x4F4E;&#x4E86;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;&#x6210;&#x672C;&#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x5957;&#x751F;&#x547D;&#x5468;&#x671F;&#x624D;&#x80FD;&#x5B8C;&#x6210;&#x7684; &#x201C;&#x6742;&#x800D;&#x201D; &#x5C06;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x3002;</p>
+</blockquote>
+<p>&#x4E0B;&#x9762;&#x4E3E;&#x51E0;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<h3 id="&#x4FEE;&#x6539;&#x9875;&#x9762;-title">&#x4FEE;&#x6539;&#x9875;&#x9762; title</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x5728;&#x7EC4;&#x4EF6;&#x91CC;&#x8C03;&#x7528; <code>useDocumentTitle</code> &#x51FD;&#x6570;&#x5373;&#x53EF;&#x8BBE;&#x7F6E;&#x9875;&#x9762;&#x6807;&#x9898;&#xFF0C;&#x4E14;&#x5207;&#x6362;&#x9875;&#x9762;&#x65F6;&#xFF0C;&#x9875;&#x9762;&#x6807;&#x9898;&#x91CD;&#x7F6E;&#x4E3A;&#x9ED8;&#x8BA4;&#x6807;&#x9898; &#x201C;&#x524D;&#x7AEF;&#x7CBE;&#x8BFB;&#x201D;&#x3002;</p>
+<pre><code class="lang-ts">useDocumentTitle(<span class="hljs-string">&quot;&#x4E2A;&#x4EBA;&#x4E2D;&#x5FC3;&quot;</span>);
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x76F4;&#x63A5;&#x7528; <code>document.title</code> &#x8D4B;&#x503C;&#xFF0C;&#x4E0D;&#x80FD;&#x518D;&#x7B80;&#x5355;&#x3002;&#x5728;&#x9500;&#x6BC1;&#x65F6;&#x518D;&#x6B21;&#x7ED9;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x6807;&#x9898;&#x5373;&#x53EF;&#xFF0C;&#x8FD9;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x62BD;&#x8C61;&#x5728;&#x9879;&#x76EE;&#x5DE5;&#x5177;&#x51FD;&#x6570;&#x91CC;&#xFF0C;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x7EC4;&#x4EF6;&#x90FD;&#x9700;&#x8981;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useDocumentTitle</span>(<span class="hljs-params">title</span>) </span>{
+  useEffect(
+    () =&gt; {
+      <span class="hljs-built_in">document</span>.title = title;
+      <span class="hljs-keyword">return</span> () =&gt; (<span class="hljs-built_in">document</span>.title = <span class="hljs-string">&quot;&#x524D;&#x7AEF;&#x7CBE;&#x8BFB;&quot;</span>);
+    },
+    [title]
+  );
+}
+</code></pre>
+<p><a href="https://codesandbox.io/s/lrnvnx866l" target="_blank">&#x5728;&#x7EBF; Demo</a></p>
+<h3 id="&#x76D1;&#x542C;&#x9875;&#x9762;&#x5927;&#x5C0F;&#x53D8;&#x5316;&#xFF0C;&#x7F51;&#x7EDC;&#x662F;&#x5426;&#x65AD;&#x5F00;">&#x76D1;&#x542C;&#x9875;&#x9762;&#x5927;&#x5C0F;&#x53D8;&#x5316;&#xFF0C;&#x7F51;&#x7EDC;&#x662F;&#x5426;&#x65AD;&#x5F00;</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x5728;&#x7EC4;&#x4EF6;&#x8C03;&#x7528; <code>useWindowSize</code> &#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x9875;&#x9762;&#x5927;&#x5C0F;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7F29;&#x653E;&#x65F6;&#x81EA;&#x52A8;&#x89E6;&#x53D1;&#x7EC4;&#x4EF6;&#x66F4;&#x65B0;&#x3002;</p>
+<pre><code class="lang-ts">const windowSize = useWindowSize();
+return &lt;div&gt;&#x9875;&#x9762;&#x9AD8;&#x5EA6;&#xFF1A;{windowSize.innerWidth}&lt;/div&gt;;
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x548C;&#x6807;&#x9898;&#x601D;&#x8DEF;&#x57FA;&#x672C;&#x4E00;&#x81F4;&#xFF0C;&#x8FD9;&#x6B21;&#x4ECE; <code>window.innerHeight</code> &#x7B49; API &#x76F4;&#x63A5;&#x62FF;&#x5230;&#x9875;&#x9762;&#x5BBD;&#x9AD8;&#x5373;&#x53EF;&#xFF0C;&#x6CE8;&#x610F;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x7528; <code>window.addEventListener(&apos;resize&apos;)</code> &#x76D1;&#x542C;&#x9875;&#x9762;&#x5927;&#x5C0F;&#x53D8;&#x5316;&#xFF0C;&#x6B64;&#x65F6;&#x8C03;&#x7528; <code>setValue</code> &#x5C06;&#x4F1A;&#x89E6;&#x53D1;&#x8C03;&#x7528;&#x81EA;&#x8EAB;&#x7684; UI &#x7EC4;&#x4EF6; rerender&#xFF0C;&#x5C31;&#x662F;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#xFF01;</p>
+<p>&#x6700;&#x540E;&#x6CE8;&#x610F;&#x5728;&#x9500;&#x6BC1;&#x65F6;&#xFF0C;<code>removeEventListener</code> &#x6CE8;&#x9500;&#x76D1;&#x542C;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSize</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    innerHeight: <span class="hljs-built_in">window</span>.innerHeight,
+    innerWidth: <span class="hljs-built_in">window</span>.innerWidth,
+    outerHeight: <span class="hljs-built_in">window</span>.outerHeight,
+    outerWidth: <span class="hljs-built_in">window</span>.outerWidth
+  };
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useWindowSize</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">let</span> [windowSize, setWindowSize] = useState(getSize());
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleResize</span>(<span class="hljs-params"></span>) </span>{
+    setWindowSize(getSize());
+  }
+
+  useEffect(() =&gt; {
+    <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&quot;resize&quot;</span>, handleResize);
+    <span class="hljs-keyword">return</span> () =&gt; {
+      <span class="hljs-built_in">window</span>.removeEventListener(<span class="hljs-string">&quot;resize&quot;</span>, handleResize);
+    };
+  }, []);
+
+  <span class="hljs-keyword">return</span> windowSize;
+}
+</code></pre>
+<p><a href="https://codesandbox.io/s/j2rz2mj83" target="_blank">&#x5728;&#x7EBF; Demo</a></p>
+<h3 id="&#x52A8;&#x6001;&#x6CE8;&#x5165;-css">&#x52A8;&#x6001;&#x6CE8;&#x5165; css</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x5728;&#x9875;&#x9762;&#x6CE8;&#x5165;&#x4E00;&#x6BB5; class&#xFF0C;&#x5E76;&#x4E14;&#x5F53;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x65F6;&#xFF0C;&#x79FB;&#x9664;&#x8FD9;&#x4E2A; class&#x3002;</p>
+<pre><code class="lang-ts">const className = useCss({
+  color: &quot;red&quot;
+});
+
+return &lt;div className={className}&gt;Text.&lt;/div&gt;;
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;Hooks &#x65B9;&#x4FBF;&#x7684;&#x5730;&#x65B9;&#x662F;&#x5728;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x65F6;&#x79FB;&#x9664;&#x526F;&#x4F5C;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B89;&#x5FC3;&#x7684;&#x5229;&#x7528; Hooks &#x505A;&#x4E00;&#x4E9B;&#x526F;&#x4F5C;&#x7528;&#x3002;&#x6CE8;&#x5165; css &#x81EA;&#x7136;&#x4E0D;&#x5FC5;&#x8BF4;&#x4E86;&#xFF0C;&#x800C;&#x9500;&#x6BC1; css &#x53EA;&#x8981;&#x627E;&#x5230;&#x6CE8;&#x5165;&#x7684;&#x90A3;&#x6BB5;&#x5F15;&#x7528;&#x8FDB;&#x884C;&#x9500;&#x6BC1;&#x5373;&#x53EF;&#xFF0C;&#x5177;&#x4F53;&#x53EF;&#x4EE5;&#x770B;&#x8FD9;&#x4E2A; <a href="https://github.com/streamich/nano-css/blob/c21413ddbed233777886f7c9aa1375af8a221f7b/addon/pipe.js#L51" target="_blank">&#x4EE3;&#x7801;&#x7247;&#x6BB5;</a>&#x3002;</p>
+<blockquote>
+<p>DOM &#x526F;&#x4F5C;&#x7528;&#x4FEE;&#x6539; / &#x76D1;&#x542C;&#x573A;&#x666F;&#x6709;&#x4E00;&#x4E9B;&#x73B0;&#x6210;&#x7684;&#x5E93;&#x4E86;&#xFF0C;&#x4ECE;&#x540D;&#x5B57;&#x4E0A;&#x5C31;&#x80FD;&#x770B;&#x51FA;&#x6765;&#x7528;&#x6CD5;&#xFF1A;<a href="https://github.com/rehooks/document-visibility" target="_blank">document-visibility</a>&#x3001;<a href="https://github.com/rehooks/network-status" target="_blank">network-status</a>&#x3001;<a href="https://github.com/rehooks/online-status" target="_blank">online-status</a>&#x3001;<a href="https://github.com/rehooks/window-scroll-position" target="_blank">window-scroll-position</a>&#x3001;<a href="https://github.com/rehooks/window-size" target="_blank">window-size</a>&#x3001;<a href="https://github.com/rehooks/document-title" target="_blank">document-title</a>&#x3002;</p>
+</blockquote>
+<h2 id="&#x7EC4;&#x4EF6;&#x8F85;&#x52A9;">&#x7EC4;&#x4EF6;&#x8F85;&#x52A9;</h2>
+<p>Hooks &#x8FD8;&#x53EF;&#x4EE5;&#x589E;&#x5F3A;&#x7EC4;&#x4EF6;&#x80FD;&#x529B;&#xFF0C;&#x6BD4;&#x5982;&#x62FF;&#x5230;&#x5E76;&#x76D1;&#x542C;&#x7EC4;&#x4EF6;&#x8FD0;&#x884C;&#x65F6;&#x5BBD;&#x9AD8;&#x7B49;&#x3002;</p>
+<h3 id="&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x5BBD;&#x9AD8;">&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x5BBD;&#x9AD8;</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7;&#x8C03;&#x7528; <code>useComponentSize</code> &#x62FF;&#x5230;&#x67D0;&#x4E2A;&#x7EC4;&#x4EF6; ref &#x5B9E;&#x4F8B;&#x7684;&#x5BBD;&#x9AD8;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x5BBD;&#x9AD8;&#x53D8;&#x5316;&#x65F6;&#xFF0C;rerender &#x5E76;&#x62FF;&#x5230;&#x6700;&#x65B0;&#x7684;&#x5BBD;&#x9AD8;&#x3002;</p>
+<pre><code class="lang-ts">const ref = useRef(null);
+let componentSize = useComponentSize(ref);
+
+return (
+  &lt;&gt;
+    {componentSize.width}
+    &lt;textArea ref={ref} /&gt;
+  &lt;/&gt;
+);
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x548C; DOM &#x76D1;&#x542C;&#x7C7B;&#x4F3C;&#xFF0C;&#x8FD9;&#x6B21;&#x6362;&#x6210;&#x4E86;&#x5229;&#x7528; <code>ResizeObserver</code> &#x5BF9;&#x7EC4;&#x4EF6; ref &#x8FDB;&#x884C;&#x76D1;&#x542C;&#xFF0C;&#x540C;&#x65F6;&#x5728;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x65F6;&#xFF0C;&#x9500;&#x6BC1;&#x76D1;&#x542C;&#x3002;</p>
+<p>&#x5176;&#x672C;&#x8D28;&#x8FD8;&#x662F;&#x76D1;&#x542C;&#x4E00;&#x4E9B;&#x526F;&#x4F5C;&#x7528;&#xFF0C;&#x4F46;&#x901A;&#x8FC7; ref &#x7684;&#x4F20;&#x9012;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5BF9;&#x7EC4;&#x4EF6;&#x7C92;&#x5EA6;&#x8FDB;&#x884C;&#x76D1;&#x542C;&#x548C;&#x64CD;&#x4F5C;&#x4E86;&#x3002;</p>
+<pre><code class="lang-ts">useLayoutEffect(() =&gt; {
+  handleResize();
+
+  <span class="hljs-keyword">let</span> resizeObserver = <span class="hljs-keyword">new</span> ResizeObserver(() =&gt; handleResize());
+  resizeObserver.observe(ref.current);
+
+  <span class="hljs-keyword">return</span> () =&gt; {
+    resizeObserver.disconnect(ref.current);
+    resizeObserver = <span class="hljs-literal">null</span>;
+  };
+}, []);
+</code></pre>
+<p><a href="https://codesandbox.io/s/zqxp3l9yrm" target="_blank">&#x5728;&#x7EBF; Demo</a>&#xFF0C;&#x5BF9;&#x5E94;&#x7EC4;&#x4EF6; <a href="https://github.com/rehooks/component-size" target="_blank">component-size</a>&#x3002;</p>
+<h3 id="&#x62FF;&#x5230;&#x7EC4;&#x4EF6;-onchange-&#x629B;&#x51FA;&#x7684;&#x503C;">&#x62FF;&#x5230;&#x7EC4;&#x4EF6; onChange &#x629B;&#x51FA;&#x7684;&#x503C;</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7; <code>useInputValue()</code> &#x62FF;&#x5230; Input &#x6846;&#x5F53;&#x524D;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x503C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x624B;&#x52A8;&#x76D1;&#x542C; onChange &#x518D;&#x817E;&#x4E00;&#x4E2A; <code>otherInputValue</code> &#x548C;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x628A;&#x8FD9;&#x4E00;&#x5806;&#x903B;&#x8F91;&#x5199;&#x5728;&#x65E0;&#x5173;&#x7684;&#x5730;&#x65B9;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">let</span> name = useInputValue(<span class="hljs-string">&quot;Jamie&quot;</span>);
+<span class="hljs-comment">// name = { value: &apos;Jamie&apos;, onChange: [Function] }</span>
+<span class="hljs-keyword">return</span> &lt;input {...name} /&gt;;
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x4EC5;&#x6CA1;&#x6709;&#x5360;&#x7528;&#x7EC4;&#x4EF6;&#x81EA;&#x5DF1;&#x7684; state&#xFF0C;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x5199; onChange &#x56DE;&#x8C03;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x4E9B;&#x5904;&#x7406;&#x90FD;&#x538B;&#x7F29;&#x6210;&#x4E86;&#x4E00;&#x884C; use hook&#x3002;</p>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x8BFB;&#x5230;&#x8FD9;&#x91CC;&#x5E94;&#x8BE5;&#x5927;&#x81F4;&#x53EF;&#x4EE5;&#x731C;&#x5230;&#x4E86;&#xFF0C;&#x5229;&#x7528; <code>useState</code> &#x5B58;&#x50A8;&#x7EC4;&#x4EF6;&#x7684;&#x503C;&#xFF0C;&#x5E76;&#x629B;&#x51FA; <code>value</code> &#x4E0E; <code>onChange</code>&#xFF0C;&#x76D1;&#x542C; <code>onChange</code> &#x5E76;&#x901A;&#x8FC7; <code>setValue</code> &#x4FEE;&#x6539; <code>value</code>, &#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x6BCF;&#x6B21; <code>onChange</code> &#x65F6;&#x89E6;&#x53D1;&#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x7684; rerender &#x4E86;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useInputValue</span>(<span class="hljs-params">initialValue</span>) </span>{
+  <span class="hljs-keyword">let</span> [value, setValue] = useState(initialValue);
+  <span class="hljs-keyword">let</span> onChange = useCallback(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+    setValue(event.currentTarget.value);
+  }, []);
+
+  <span class="hljs-keyword">return</span> {
+    value,
+    onChange
+  };
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x7EC4;&#x4EF6;&#x589E;&#x5F3A;&#x65F6;&#xFF0C;<strong>&#x7EC4;&#x4EF6;&#x7684;&#x56DE;&#x8C03;&#x4E00;&#x822C;&#x4E0D;&#x9700;&#x8981;&#x9500;&#x6BC1;&#x76D1;&#x542C;&#xFF0C;&#x800C;&#x4E14;&#x4EC5;&#x9700;&#x76D1;&#x542C;&#x4E00;&#x6B21;&#xFF0C;&#x8FD9;&#x4E0E; DOM &#x76D1;&#x542C;&#x4E0D;&#x540C;</strong>&#xFF0C;&#x56E0;&#x6B64;&#x5927;&#x90E8;&#x5206;&#x573A;&#x666F;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5229;&#x7528; <code>useCallback</code> &#x5305;&#x88F9;&#xFF0C;&#x5E76;&#x4F20;&#x4E00;&#x4E2A;&#x7A7A;&#x6570;&#x7EC4;&#xFF0C;&#x6765;&#x4FDD;&#x8BC1;&#x6C38;&#x8FDC;&#x53EA;&#x76D1;&#x542C;&#x4E00;&#x6B21;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x9700;&#x8981;&#x5728;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x65F6;&#x6CE8;&#x9500;&#x8FD9;&#x4E2A; callback&#x3002;</p>
+<p><a href="https://codesandbox.io/s/0xlk250l5l" target="_blank">&#x5728;&#x7EBF; Demo</a>&#xFF0C;&#x5BF9;&#x5E94;&#x7EC4;&#x4EF6; <a href="https://github.com/rehooks/input-value" target="_blank">input-value</a>&#x3002;</p>
+<h2 id="&#x505A;&#x52A8;&#x753B;">&#x505A;&#x52A8;&#x753B;</h2>
+<p>&#x5229;&#x7528; React Hooks &#x505A;&#x52A8;&#x753B;&#xFF0C;&#x4E00;&#x822C;&#x662F;&#x62FF;&#x5230;&#x4E00;&#x4E9B;&#x5177;&#x6709;&#x5F39;&#x6027;&#x53D8;&#x5316;&#x7684;&#x503C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x503C;&#x8D4B;&#x7ED9;&#x8FDB;&#x5EA6;&#x6761;&#x4E4B;&#x7C7B;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x8FD9;&#x6837;&#x5176;&#x8FDB;&#x5EA6;&#x53D8;&#x5316;&#x5C31;&#x7B26;&#x5408;&#x67D0;&#x79CD;&#x52A8;&#x753B;&#x66F2;&#x7EBF;&#x3002;</p>
+<h3 id="&#x5728;&#x67D0;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#x5185;&#x83B7;&#x53D6;-0-1-&#x4E4B;&#x95F4;&#x7684;&#x503C;">&#x5728;&#x67D0;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#x5185;&#x83B7;&#x53D6; 0-1 &#x4E4B;&#x95F4;&#x7684;&#x503C;</h3>
+<p>&#x8FD9;&#x4E2A;&#x662F;&#x52A8;&#x753B;&#x6700;&#x57FA;&#x672C;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x67D0;&#x4E2A;&#x65F6;&#x95F4;&#x5185;&#x62FF;&#x5230;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x589E;&#x957F;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7; <code>useRaf(t)</code> &#x62FF;&#x5230; t &#x6BEB;&#x79D2;&#x5185;&#x4E0D;&#x65AD;&#x5237;&#x65B0;&#x7684; 0-1 &#x4E4B;&#x95F4;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x671F;&#x95F4;&#x7EC4;&#x4EF6;&#x4F1A;&#x4E0D;&#x65AD;&#x5237;&#x65B0;&#xFF0C;&#x4F46;&#x5237;&#x65B0;&#x9891;&#x7387;&#x7531; requestAnimationFrame &#x63A7;&#x5236;&#xFF08;&#x4E0D;&#x4F1A;&#x5361;&#x987F; UI&#xFF09;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> value = useRaf(<span class="hljs-number">1000</span>);
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x5199;&#x8D77;&#x6765;&#x6BD4;&#x8F83;&#x5197;&#x957F;&#xFF0C;&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x63CF;&#x8FF0;&#x4E00;&#x4E0B;&#x3002;&#x5229;&#x7528; <code>requestAnimationFrame</code> &#x5728;&#x7ED9;&#x5B9A;&#x65F6;&#x95F4;&#x5185;&#x7ED9;&#x51FA; 0-1 &#x4E4B;&#x95F4;&#x7684;&#x503C;&#xFF0C;&#x90A3;&#x6BCF;&#x6B21;&#x5237;&#x65B0;&#x65F6;&#xFF0C;&#x53EA;&#x8981;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x5237;&#x65B0;&#x7684;&#x65F6;&#x95F4;&#x70B9;&#x5360;&#x603B;&#x65F6;&#x95F4;&#x7684;&#x6BD4;&#x4F8B;&#x662F;&#x591A;&#x5C11;&#xFF0C;&#x7136;&#x540E;&#x505A;&#x5206;&#x6BCD;&#xFF0C;&#x5206;&#x5B50;&#x662F; 1 &#x5373;&#x53EF;&#x3002;</p>
+<p><a href="https://codesandbox.io/s/n745x9pyy4" target="_blank">&#x5728;&#x7EBF; Demo</a>&#xFF0C;&#x5BF9;&#x5E94;&#x7EC4;&#x4EF6; <a href="https://github.com/streamich/react-use/blob/master/docs/useRaf.md" target="_blank">use-raf</a>&#x3002;</p>
+<h3 id="&#x5F39;&#x6027;&#x52A8;&#x753B;">&#x5F39;&#x6027;&#x52A8;&#x753B;</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7; <code>useSpring</code> &#x62FF;&#x5230;&#x52A8;&#x753B;&#x503C;&#xFF0C;&#x7EC4;&#x4EF6;&#x4EE5;&#x56FA;&#x5B9A;&#x9891;&#x7387;&#x5237;&#x65B0;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x52A8;&#x753B;&#x503C;&#x4EE5;&#x5F39;&#x6027;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x589E;&#x51CF;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x4E00;&#x822C;&#x662F;&#xFF0C;&#x5148;&#x901A;&#x8FC7; <code>useState</code> &#x62FF;&#x5230;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x518D;&#x901A;&#x8FC7;&#x52A8;&#x753B;&#x51FD;&#x6570;&#x5305;&#x4F4F;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x8FD9;&#x6837;&#x7EC4;&#x4EF6;&#x5C31;&#x4F1A;&#x4ECE;&#x539F;&#x672C;&#x7684;&#x5237;&#x65B0;&#x4E00;&#x6B21;&#xFF0C;&#x53D8;&#x6210;&#x5237;&#x65B0; N &#x6B21;&#xFF0C;&#x62FF;&#x5230;&#x7684;&#x503C;&#x4E5F;&#x968F;&#x7740;&#x52A8;&#x753B;&#x51FD;&#x6570;&#x7684;&#x89C4;&#x5219;&#x53D8;&#x5316;&#xFF0C;&#x6700;&#x540E;&#x8FD9;&#x4E2A;&#x503C;&#x4F1A;&#x7A33;&#x5B9A;&#x5230;&#x6700;&#x7EC8;&#x7684;&#x8F93;&#x5165;&#x503C;&#xFF08;&#x5982;&#x4F8B;&#x5B50;&#x4E2D;&#x7684; <code>50</code>&#xFF09;&#x3002;</p>
+<pre><code class="lang-ts">const [target, setTarget] = useState(50);
+const value = useSpring(target);
+
+return &lt;div onClick={() =&gt; setTarget(100)}&gt;{value}&lt;/div&gt;;
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x52A8;&#x753B;&#x6548;&#x679C;&#xFF0C;&#x9700;&#x8981;&#x4F9D;&#x8D56; <code>rebound</code> &#x5E93;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5C06;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x503C;&#x62C6;&#x89E3;&#x4E3A;&#x7B26;&#x5408;&#x5F39;&#x6027;&#x52A8;&#x753B;&#x51FD;&#x6570;&#x8FC7;&#x7A0B;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5229;&#x7528; React Hooks &#x505A;&#x7684;&#x5C31;&#x662F;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x63A5;&#x6536;&#x5230;&#x76EE;&#x6807;&#x503C;&#x662F;&#xFF0C;&#x8C03;&#x7528; <code>spring.setEndValue</code> &#x6765;&#x89E6;&#x53D1;&#x52A8;&#x753B;&#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x5728; <code>useEffect</code> &#x91CC;&#x505A;&#x4E00;&#x6B21;&#x6027;&#x76D1;&#x542C;&#xFF0C;&#x518D;&#x503C;&#x53D8;&#x65F6;&#x91CD;&#x65B0; <code>setValue</code> &#x5373;&#x53EF;&#x3002;</p>
+<p>&#x6700;&#x795E;&#x5947;&#x7684; <code>setTarget</code> &#x8054;&#x52A8; <code>useSpring</code> &#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x5F39;&#x6027;&#x52A8;&#x753B;&#x90E8;&#x5206;&#xFF0C;&#x662F;&#x901A;&#x8FC7; <code>useEffect</code> &#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-ts">useEffect(
+  () =&gt; {
+    <span class="hljs-keyword">if</span> (spring) {
+      spring.setEndValue(targetValue);
+    }
+  },
+  [targetValue]
+);
+</code></pre>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x5F53;&#x76EE;&#x6807;&#x503C;&#x53D8;&#x5316;&#x540E;&#xFF0C;&#x624D;&#x4F1A;&#x8FDB;&#x884C;&#x65B0;&#x7684;&#x4E00;&#x8F6E; rerender&#xFF0C;&#x6240;&#x4EE5; <code>useSpring</code> &#x5E76;&#x4E0D;&#x9700;&#x8981;&#x76D1;&#x542C;&#x8C03;&#x7528;&#x5904;&#x7684; <code>setTarget</code>&#xFF0C;&#x5B83;&#x53EA;&#x9700;&#x8981;&#x76D1;&#x542C; <code>target</code> &#x7684;&#x53D8;&#x5316;&#x5373;&#x53EF;&#xFF0C;&#x800C;&#x5DE7;&#x5999;&#x5229;&#x7528; <code>useEffect</code> &#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4E8B;&#x534A;&#x529F;&#x500D;&#x3002;</p>
+<p><a href="https://codesandbox.io/s/yq0moqo8mv" target="_blank">&#x5728;&#x7EBF; Demo</a></p>
+<h3 id="tween-&#x52A8;&#x753B;">Tween &#x52A8;&#x753B;</h3>
+<p>&#x660E;&#x767D;&#x4E86;&#x5F39;&#x6027;&#x52A8;&#x753B;&#x539F;&#x7406;&#xFF0C;Tween &#x52A8;&#x753B;&#x5C31;&#x66F4;&#x7B80;&#x5355;&#x4E86;&#x3002;</p>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7; <code>useTween</code> &#x62FF;&#x5230;&#x4E00;&#x4E2A;&#x4ECE; 0 &#x53D8;&#x5316;&#x5230; 1 &#x7684;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x7684;&#x52A8;&#x753B;&#x66F2;&#x7EBF;&#x662F; <code>tween</code>&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x7531;&#x4E8E;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x7ED9;&#x521D;&#x59CB;&#x503C;&#x4E86;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> value = useTween();
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x901A;&#x8FC7; <code>useRaf</code> &#x62FF;&#x5230;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x589E;&#x957F;&#x7684;&#x503C;&#xFF08;&#x533A;&#x95F4;&#x4E5F;&#x662F; 0 &#xFF5E; 1&#xFF09;&#xFF0C;&#x518D;&#x901A;&#x8FC7; <code>easing</code> &#x5E93;&#x5C06;&#x5176;&#x6620;&#x5C04;&#x5230; 0 &#xFF5E; 1 &#x5230;&#x503C;&#x5373;&#x53EF;&#x3002;&#x8FD9;&#x91CC;&#x7528;&#x5230;&#x4E86; hook &#x8C03;&#x7528; hook &#x7684;&#x8054;&#x52A8;&#xFF08;&#x901A;&#x8FC7; <code>useRaf</code> &#x9A71;&#x52A8; <code>useTween</code>&#xFF09;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x4E3E;&#x4E00;&#x53CD;&#x4E09;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> fn: Easing = easing[easingName];
+<span class="hljs-keyword">const</span> t = useRaf(ms, delay);
+
+<span class="hljs-keyword">return</span> fn(t);
+</code></pre>
+<h2 id="&#x53D1;&#x8BF7;&#x6C42;">&#x53D1;&#x8BF7;&#x6C42;</h2>
+<p>&#x5229;&#x7528; Hooks&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x4EFB;&#x610F;&#x8BF7;&#x6C42; Promise &#x5C01;&#x88C5;&#x4E3A;&#x5E26;&#x6709;&#x6807;&#x51C6;&#x72B6;&#x6001;&#x7684;&#x5BF9;&#x8C61;&#xFF1A;loading&#x3001;error&#x3001;result&#x3002;</p>
+<h3 id="&#x901A;&#x7528;-http-&#x5C01;&#x88C5;">&#x901A;&#x7528; Http &#x5C01;&#x88C5;</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7; <code>useAsync</code> &#x5C06;&#x4E00;&#x4E2A; Promise &#x62C6;&#x89E3;&#x4E3A; loading&#x3001;error&#x3001;result &#x4E09;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> { loading, error, result } = useAsync(fetchUser, [id]);
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x5728; Promise &#x7684;&#x521D;&#x671F;&#x8BBE;&#x7F6E; loading&#xFF0C;&#x7ED3;&#x675F;&#x540E;&#x8BBE;&#x7F6E; result&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x9519;&#x5219;&#x8BBE;&#x7F6E; error&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x5C06;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#x5305;&#x88C5;&#x6210; <code>useAsyncState</code> &#x6765;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x653E;&#x51FA;&#x6765;&#x4E86;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useAsync</span>(<span class="hljs-params">asyncFunction</span>) </span>{
+  <span class="hljs-keyword">const</span> asyncState = useAsyncState(options);
+
+  useEffect(() =&gt; {
+    <span class="hljs-keyword">const</span> promise = asyncFunction();
+    asyncState.setLoading();
+    promise.then(
+      result =&gt; asyncState.setResult(result);,
+      error =&gt; asyncState.setError(error);
+    );
+  }, params);
+}
+</code></pre>
+<p>&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://github.com/slorber/react-async-hook/blob/master/src/index.js" target="_blank">react-async-hook</a>&#xFF0C;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x5EFA;&#x8BAE;&#x4EC5;&#x4E86;&#x89E3;&#x539F;&#x7406;&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x56E0;&#x4E3A;&#x6709;&#x4E00;&#x4E9B;&#x8FB9;&#x754C;&#x60C5;&#x51B5;&#x9700;&#x8981;&#x8003;&#x8651;&#xFF0C;&#x6BD4;&#x5982;&#x7EC4;&#x4EF6; isMounted &#x540E;&#x624D;&#x80FD;&#x76F8;&#x5E94;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#x3002;</p>
+<h3 id="request-service">Request Service</h3>
+<p>&#x4E1A;&#x52A1;&#x5C42;&#x4E00;&#x822C;&#x4F1A;&#x62BD;&#x8C61;&#x4E00;&#x4E2A; <code>request service</code> &#x505A;&#x7EDF;&#x4E00;&#x53D6;&#x6570;&#x7684;&#x62BD;&#x8C61;&#xFF08;&#x6BD4;&#x5982;&#x7EDF;&#x4E00; url&#xFF0C;&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x7EDF;&#x4E00;&#x6362; socket &#x5B9E;&#x73B0;&#x7B49;&#x7B49;&#xFF09;&#x3002;&#x5047;&#x5982;&#x4EE5;&#x524D;&#x6BD4;&#x8F83; low &#x7684;&#x505A;&#x6CD5;&#x662F;&#xFF1A;</p>
+<pre><code class="lang-ts">async componentDidMount() {
+  <span class="hljs-comment">// setState: &#x6539; isLoading state</span>
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> data = await fetchUser()
+    <span class="hljs-comment">// setState: &#x6539; isLoading&#x3001;error&#x3001;data</span>
+  } <span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-comment">// setState: &#x6539; isLoading&#x3001;error</span>
+  }
+}
+</code></pre>
+<p>&#x540E;&#x6765;&#x628A;&#x8BF7;&#x6C42;&#x653E;&#x5728; redux &#x91CC;&#xFF0C;&#x901A;&#x8FC7; connect &#x6CE8;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x4F1A;&#x7A0D;&#x5FAE;&#x6709;&#x4E9B;&#x6539;&#x89C2;&#xFF1A;</p>
+<pre><code class="lang-ts">@Connect(...)
+<span class="hljs-keyword">class</span> App extends React.PureComponent {
+  <span class="hljs-keyword">public</span> componentDidMount() {
+    <span class="hljs-keyword">this</span>.props.fetchUser()
+  }
+
+  <span class="hljs-keyword">public</span> render() {
+    <span class="hljs-comment">// this.props.userData.isLoading | error | data</span>
+  }
+}
+</code></pre>
+<p>&#x6700;&#x540E;&#x4F1A;&#x53D1;&#x73B0;&#x8FD8;&#x662F; Hooks &#x7B80;&#x6D01;&#x660E;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> { isLoading, error, data } = useFetchUser();
+}
+</code></pre>
+<p>&#x800C; <code>useFetchUser</code> &#x5229;&#x7528;&#x4E0A;&#x9762;&#x5C01;&#x88C5;&#x7684; <code>useAsync</code> &#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x7F16;&#x5199;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> fetchUser = id =&gt;
+  fetch(<span class="hljs-string">`xxx`</span>).then(result =&gt; {
+    <span class="hljs-keyword">if</span> (result.status !== <span class="hljs-number">200</span>) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;bad status = &quot;</span> + result.status);
+    }
+    <span class="hljs-keyword">return</span> result.json();
+  });
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useFetchUser</span>(<span class="hljs-params">id</span>) </span>{
+  <span class="hljs-keyword">const</span> asyncFetchUser = useAsync(fetchUser, id);
+  <span class="hljs-keyword">return</span> asyncUser;
+}
+</code></pre>
+<h2 id="&#x586B;&#x8868;&#x5355;">&#x586B;&#x8868;&#x5355;</h2>
+<p>React Hooks &#x7279;&#x522B;&#x9002;&#x5408;&#x505A;&#x8868;&#x5355;&#xFF0C;&#x5C24;&#x5176;&#x662F; <a href="https://ant.design/components/form-cn/" target="_blank">antd form</a> &#x5982;&#x679C;&#x652F;&#x6301; Hooks &#x7248;&#xFF0C;&#x90A3;&#x7528;&#x8D77;&#x6765;&#x4F1A;&#x65B9;&#x4FBF;&#x8BB8;&#x591A;&#xFF1A;</p>
+<pre><code class="lang-ts">function App() {
+  const { getFieldDecorator } = useAntdForm();
+
+  return (
+    &lt;Form onSubmit={this.handleSubmit} className=&quot;login-form&quot;&gt;
+      &lt;FormItem&gt;
+        {getFieldDecorator(&quot;userName&quot;, {
+          rules: [{ required: true, message: &quot;Please input your username!&quot; }]
+        })(
+          &lt;Input
+            prefix={&lt;Icon type=&quot;user&quot; style={{ color: &quot;rgba(0,0,0,.25)&quot; }} /&gt;}
+            placeholder=&quot;Username&quot;
+          /&gt;
+        )}
+      &lt;/FormItem&gt;
+      &lt;FormItem&gt;
+        &lt;Button type=&quot;primary&quot; htmlType=&quot;submit&quot; className=&quot;login-form-button&quot;&gt;
+          Log in
+        &lt;/Button&gt;
+        Or &lt;a href=&quot;&quot;&gt;register now!&lt;/a&gt;
+      &lt;/FormItem&gt;
+    &lt;/Form&gt;
+  );
+}
+</code></pre>
+<p>&#x4E0D;&#x8FC7;&#x867D;&#x7136;&#x5982;&#x6B64;&#xFF0C;<code>getFieldDecorator</code> &#x8FD8;&#x662F;&#x57FA;&#x4E8E; RenderProps &#x601D;&#x8DEF;&#x7684;&#xFF0C;&#x5F7B;&#x5E95;&#x7684; Hooks &#x601D;&#x8DEF;&#x662F;&#x5229;&#x7528;&#x4E4B;&#x524D;&#x8BF4;&#x7684; <strong>&#x7EC4;&#x4EF6;&#x8F85;&#x52A9;&#x65B9;&#x5F0F;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x65B9;&#x6CD5;&#x96C6;&#xFF0C;&#x7528;&#x89E3;&#x6784;&#x65B9;&#x5F0F;&#x4F20;&#x7ED9;&#x7EC4;&#x4EF6;</strong>&#x3002;</p>
+<h3 id="hooks-&#x601D;&#x7EF4;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;">Hooks &#x601D;&#x7EF4;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7; <code>useFormState</code> &#x62FF;&#x5230;&#x8868;&#x5355;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x4E00;&#x7CFB;&#x5217; <strong>&#x7EC4;&#x4EF6;&#x8F85;&#x52A9;</strong> &#x65B9;&#x6CD5;&#x63A7;&#x5236;&#x7EC4;&#x4EF6;&#x72B6;&#x6001;&#x3002;</p>
+<pre><code class="lang-ts">const [formState, { text, password }] = useFormState();
+return (
+  &lt;form&gt;
+    &lt;input {...text(&quot;username&quot;)} required /&gt;
+    &lt;input {...password(&quot;password&quot;)} required minLength={8} /&gt;
+  &lt;/form&gt;
+);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>formState</code> &#x968F;&#x65F6;&#x62FF;&#x5230;&#x8868;&#x5355;&#x503C;&#xFF0C;&#x548C;&#x4E00;&#x4E9B;&#x6821;&#x9A8C;&#x4FE1;&#x606F;&#xFF0C;&#x901A;&#x8FC7; <code>password(&quot;pwd&quot;)</code> &#x4F20;&#x7ED9; <code>input</code> &#x7EC4;&#x4EF6;&#xFF0C;&#x8BA9;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x8FBE;&#x5230;&#x53D7;&#x63A7;&#x72B6;&#x6001;&#xFF0C;&#x4E14;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#x662F; <code>password</code> &#x7C7B;&#x578B;&#xFF0C;&#x8868;&#x5355; key &#x662F; <code>pwd</code>&#x3002;&#x800C;&#x4E14;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4F7F;&#x7528;&#x7684; <code>form</code> &#x662F;&#x539F;&#x751F;&#x6807;&#x7B7E;&#xFF0C;&#x8FD9;&#x79CD;&#x8868;&#x5355;&#x589E;&#x5F3A;&#x662F;&#x76F8;&#x5F53;&#x89E3;&#x8026;&#x7684;&#x3002;</p>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x4ED4;&#x7EC6;&#x89C2;&#x5BDF;&#x4E00;&#x4E0B;&#x7ED3;&#x6784;&#xFF0C;&#x4E0D;&#x96BE;&#x53D1;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x7ED3;&#x5408; <strong>&#x7EC4;&#x4EF6;&#x8F85;&#x52A9; &#x5C0F;&#x8282;&#x8BF4;&#x7684; &#x201C;&#x62FF;&#x5230;&#x7EC4;&#x4EF6; onChange &#x629B;&#x51FA;&#x7684;&#x503C;&#x201D; &#x4E00;&#x8282;&#x7684;&#x601D;&#x8DEF;&#xFF0C;&#x5C31;&#x80FD;&#x8F7B;&#x677E;&#x7406;&#x89E3; <code>text</code>&#x3001;<code>password</code> &#x662F;&#x5982;&#x4F55;&#x4F5C;&#x7528;&#x4E8E; <code>input</code> &#x7EC4;&#x4EF6;&#xFF0C;&#x5E76;&#x62FF;&#x5230;&#x5176;&#x8F93;&#x5165;&#x72B6;&#x6001;</strong>&#x3002;</p>
+<p>&#x5F80;&#x7B80;&#x5355;&#x7684;&#x6765;&#x8BF4;&#xFF0C;&#x53EA;&#x8981;&#x628A;&#x8FD9;&#x4E9B;&#x72B6;&#x6001; Merge &#x8D77;&#x6765;&#xFF0C;&#x901A;&#x8FC7; <code>useReducer</code> &#x805A;&#x5408;&#x5230; <code>formState</code> &#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E86;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8003;&#x8651;&#x5BF9; <code>input</code> &#x7684;&#x589E;&#x5F3A;&#xFF0C;&#x6E90;&#x7801;&#x4EC5;&#x9700; 30 &#x51E0;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useFormState</span>(<span class="hljs-params">initialState</span>) </span>{
+  <span class="hljs-keyword">const</span> [state, setState] = useReducer(stateReducer, initialState || {});
+
+  <span class="hljs-keyword">const</span> createPropsGetter = <span class="hljs-keyword">type</span> =&gt; (name, ownValue) =&gt; {
+    <span class="hljs-keyword">const</span> hasOwnValue = !!ownValue;
+    <span class="hljs-keyword">const</span> hasValueInState = state[name] !== <span class="hljs-literal">undefined</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setInitialValue</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">let</span> value = <span class="hljs-string">&quot;&quot;</span>;
+      setState({ [name]: value });
+    }
+
+    <span class="hljs-keyword">const</span> inputProps = {
+      name, <span class="hljs-comment">// &#x7ED9; input &#x6DFB;&#x52A0; type: text or password</span>
+      <span class="hljs-keyword">get</span> value() {
+        <span class="hljs-keyword">if</span> (!hasValueInState) {
+          setInitialValue(); <span class="hljs-comment">// &#x7ED9;&#x521D;&#x59CB;&#x5316;&#x503C;</span>
+        }
+        <span class="hljs-keyword">return</span> hasValueInState ? state[name] : <span class="hljs-string">&quot;&quot;</span>; <span class="hljs-comment">// &#x8D4B;&#x503C;</span>
+      },
+      onChange(e) {
+        <span class="hljs-keyword">let</span> { value } = e.target;
+        setState({ [name]: value }); <span class="hljs-comment">// &#x4FEE;&#x6539;&#x5BF9;&#x5E94; Key &#x7684;&#x503C;</span>
+      }
+    };
+
+    <span class="hljs-keyword">return</span> inputProps;
+  };
+
+  <span class="hljs-keyword">const</span> inputPropsCreators = [<span class="hljs-string">&quot;text&quot;</span>, <span class="hljs-string">&quot;password&quot;</span>].reduce(
+    (methods, <span class="hljs-keyword">type</span>) =&gt; ({ ...methods, [<span class="hljs-keyword">type</span>]: createPropsGetter(<span class="hljs-keyword">type</span>) }),
+    {}
+  );
+
+  <span class="hljs-keyword">return</span> [
+    { values: state }, <span class="hljs-comment">// formState</span>
+    inputPropsCreators
+  ];
+}
+</code></pre>
+<p>&#x4E0A;&#x9762; 30 &#x884C;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E86;&#x5BF9; <code>input</code> &#x6807;&#x7B7E;&#x7C7B;&#x578B;&#x7684;&#x8BBE;&#x7F6E;&#xFF0C;&#x76D1;&#x542C; <code>value</code> <code>onChange</code>&#xFF0C;&#x6700;&#x7EC8;&#x805A;&#x5408;&#x5230;&#x5927;&#x7684; <code>values</code> &#x4F5C;&#x4E3A; <code>formState</code> &#x8FD4;&#x56DE;&#x3002;&#x8BFB;&#x5230;&#x8FD9;&#x91CC;&#x5E94;&#x8BE5;&#x53D1;&#x73B0;&#x5BF9; React Hooks &#x7684;&#x5E94;&#x7528;&#x90FD;&#x662F;&#x4E07;&#x53D8;&#x4E0D;&#x79BB;&#x5176;&#x5B97;&#x7684;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5BF9;&#x7EC4;&#x4EF6;&#x4FE1;&#x606F;&#x7684;&#x83B7;&#x53D6;&#xFF0C;&#x901A;&#x8FC7;&#x89E3;&#x6784;&#x65B9;&#x5F0F;&#x6765;&#x505A;&#xFF0C;Hooks &#x5185;&#x90E8;&#x518D;&#x505A;&#x4E00;&#x4E0B;&#x805A;&#x5408;&#xFF0C;&#x5C31;&#x5B8C;&#x6210;&#x8868;&#x5355;&#x7EC4;&#x4EF6;&#x57FA;&#x672C;&#x529F;&#x80FD;&#x4E86;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x8F6E;&#x5B50;&#x8FD8;&#x9700;&#x8981;&#x8003;&#x8651; <code>checkbox</code> <code>radio</code> &#x7684;&#x517C;&#x5BB9;&#xFF0C;&#x4EE5;&#x53CA;&#x6821;&#x9A8C;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x4E9B;&#x601D;&#x8DEF;&#x5927;&#x540C;&#x5C0F;&#x5F02;&#xFF0C;&#x5177;&#x4F53;&#x6E90;&#x7801;&#x53EF;&#x4EE5;&#x770B; <a href="https://github.com/wsmd/react-use-form-state" target="_blank">react-use-form-state</a>&#x3002;</p>
+<h2 id="&#x6A21;&#x62DF;&#x751F;&#x547D;&#x5468;&#x671F;">&#x6A21;&#x62DF;&#x751F;&#x547D;&#x5468;&#x671F;</h2>
+<p>&#x6709;&#x7684;&#x65F6;&#x5019; React15 &#x7684; API &#x8FD8;&#x662F;&#x633A;&#x6709;&#x7528;&#x7684;&#xFF0C;&#x5229;&#x7528; React Hooks &#x51E0;&#x4E4E;&#x53EF;&#x4EE5;&#x6A21;&#x62DF;&#x51FA;&#x5168;&#x5957;&#x3002;</p>
+<h3 id="componentdidmount">componentDidMount</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7; <code>useMount</code> &#x62FF;&#x5230; mount &#x5468;&#x671F;&#x624D;&#x6267;&#x884C;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-ts">useMount(() =&gt; {
+  <span class="hljs-comment">// quite similar to `componentDidMount`</span>
+});
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;<code>componentDidMount</code> &#x7B49;&#x4EF7;&#x4E8E; <code>useEffect</code> &#x7684;&#x56DE;&#x8C03;&#xFF08;&#x4EC5;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x65F6;&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x76F4;&#x63A5;&#x628A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x629B;&#x51FA;&#x6765;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-ts">useEffect(() =&gt; <span class="hljs-built_in">void</span> fn(), []);
+</code></pre>
+<h3 id="componentwillunmount">componentWillUnmount</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7; <code>useUnmount</code> &#x62FF;&#x5230; unmount &#x5468;&#x671F;&#x624D;&#x6267;&#x884C;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-ts">useUnmount(() =&gt; {
+  <span class="hljs-comment">// quite similar to `componentWillUnmount`</span>
+});
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;<code>componentWillUnmount</code> &#x7B49;&#x4EF7;&#x4E8E; <code>useEffect</code> &#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;&#xFF08;&#x4EC5;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x65F6;&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x76F4;&#x63A5;&#x628A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;&#x629B;&#x51FA;&#x6765;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-ts">useEffect(() =&gt; fn, []);
+</code></pre>
+<h3 id="componentdidupdate">componentDidUpdate</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7; <code>useUpdate</code> &#x62FF;&#x5230; didUpdate &#x5468;&#x671F;&#x624D;&#x6267;&#x884C;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-ts">useUpdate(() =&gt; {
+  <span class="hljs-comment">// quite similar to `componentDidUpdate`</span>
+});
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;<code>componentDidUpdate</code> &#x7B49;&#x4EF7;&#x4E8E; <code>useMount</code> &#x7684;&#x903B;&#x8F91;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#xFF0C;&#x9664;&#x4E86;&#x521D;&#x59CB;&#x5316;&#x7B2C;&#x4E00;&#x6B21;&#x3002;&#x56E0;&#x6B64;&#x91C7;&#x7528; mouting flag&#xFF08;&#x5224;&#x65AD;&#x521D;&#x59CB;&#x72B6;&#x6001;&#xFF09;+ &#x4E0D;&#x52A0;&#x9650;&#x5236;&#x53C2;&#x6570;&#x786E;&#x4FDD;&#x6BCF;&#x6B21; rerender &#x90FD;&#x4F1A;&#x6267;&#x884C;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> mounting = useRef(<span class="hljs-literal">true</span>);
+useEffect(() =&gt; {
+  <span class="hljs-keyword">if</span> (mounting.current) {
+    mounting.current = <span class="hljs-literal">false</span>;
+  } <span class="hljs-keyword">else</span> {
+    fn();
+  }
+});
+</code></pre>
+<h3 id="force-update">Force Update</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x8FD9;&#x4E2A;&#x6700;&#x6709;&#x610F;&#x601D;&#x4E86;&#xFF0C;&#x6211;&#x5E0C;&#x671B;&#x62FF;&#x5230;&#x4E00;&#x4E2A;&#x51FD;&#x6570; <code>update</code>&#xFF0C;&#x6BCF;&#x6B21;&#x8C03;&#x7528;&#x5C31;&#x5F3A;&#x5236;&#x5237;&#x65B0;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> update = useUpdate();
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x6211;&#x4EEC;&#x77E5;&#x9053; <code>useState</code> &#x4E0B;&#x6807;&#x4E3A; 1 &#x7684;&#x9879;&#x662F;&#x7528;&#x6765;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x5C31;&#x7B97;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x53D8;&#x5316;&#xFF0C;&#x8C03;&#x7528;&#x4E86;&#x4E5F;&#x4F1A;&#x5237;&#x65B0;&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x4FEE;&#x6539;&#x6570;&#x503C;&#x7684; <code>setValue</code>&#xFF0C;&#x8FD9;&#x6837;&#x5B83;&#x7684;&#x529F;&#x80FD;&#x5C31;&#x4EC5;&#x5269;&#x4E0B;&#x5237;&#x65B0;&#x7EC4;&#x4EF6;&#x4E86;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> useUpdate = () =&gt; useState(<span class="hljs-number">0</span>)[<span class="hljs-number">1</span>];
+</code></pre>
+<blockquote>
+<p>&#x5BF9;&#x4E8E; <code>getSnapshotBeforeUpdate</code>, <code>getDerivedStateFromError</code>, <code>componentDidCatch</code> &#x76EE;&#x524D; Hooks &#x662F;&#x65E0;&#x6CD5;&#x6A21;&#x62DF;&#x7684;&#x3002;</p>
+</blockquote>
+<h3 id="ismounted">isMounted</h3>
+<p>&#x5F88;&#x4E45;&#x4EE5;&#x524D; React &#x662F;&#x63D0;&#x4F9B;&#x8FC7;&#x8FD9;&#x4E2A; API &#x7684;&#xFF0C;&#x540E;&#x6765;&#x79FB;&#x9664;&#x4E86;&#xFF0C;&#x539F;&#x56E0;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>componentWillMount</code> &#x548C; <code>componentWillUnmount</code> &#x63A8;&#x5BFC;&#x3002;&#x81EA;&#x4ECE;&#x6709;&#x4E86; React Hooks&#xFF0C;&#x652F;&#x6301; isMount &#x7B80;&#x76F4;&#x662F;&#x5206;&#x5206;&#x949F;&#x7684;&#x4E8B;&#x3002;</p>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7; <code>useIsMounted</code> &#x62FF;&#x5230; <code>isMounted</code> &#x72B6;&#x6001;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> isMounted = useIsMounted();
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x770B;&#x5230;&#x8FD9;&#x91CC;&#x7684;&#x8BDD;&#xFF0C;&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x5F88;&#x719F;&#x6089;&#x8FD9;&#x4E2A;&#x5957;&#x8DEF;&#x4E86;&#xFF0C;<code>useEffect</code> &#x7B2C;&#x4E00;&#x6B21;&#x8C03;&#x7528;&#x65F6;&#x8D4B;&#x503C;&#x4E3A; true&#xFF0C;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x65F6;&#x8FD4;&#x56DE; false&#xFF0C;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x52A0;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x7A7A;&#x6570;&#x7EC4;&#x6765;&#x4F18;&#x5316;&#x6027;&#x80FD;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> [isMount, setIsMount] = useState(<span class="hljs-literal">false</span>);
+useEffect(() =&gt; {
+  <span class="hljs-keyword">if</span> (!isMount) {
+    setIsMount(<span class="hljs-literal">true</span>);
+  }
+  <span class="hljs-keyword">return</span> () =&gt; setIsMount(<span class="hljs-literal">false</span>);
+}, []);
+<span class="hljs-keyword">return</span> isMount;
+</code></pre>
+<p><a href="https://codesandbox.io/s/5zwr1l1o1n" target="_blank">&#x5728;&#x7EBF; Demo</a></p>
+<h2 id="&#x5B58;&#x6570;&#x636E;">&#x5B58;&#x6570;&#x636E;</h2>
+<p>&#x4E0A;&#x4E00;&#x7BC7;&#x63D0;&#x5230;&#x8FC7; React Hooks &#x5185;&#x7F6E;&#x7684; <code>useReducer</code> &#x53EF;&#x4EE5;&#x6A21;&#x62DF; Redux &#x7684; reducer &#x884C;&#x4E3A;&#xFF0C;&#x90A3;&#x552F;&#x4E00;&#x9700;&#x8981;&#x8865;&#x5145;&#x7684;&#x5C31;&#x662F;&#x5C06;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x3002;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x6700;&#x5C0F;&#x5B9E;&#x73B0;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5168;&#x5C40; Store + Provider &#x90E8;&#x5206;&#x3002;</p>
+<h3 id="&#x5168;&#x5C40;-store">&#x5168;&#x5C40; Store</h3>
+<p>&#x6548;&#x679C;&#xFF1A;&#x901A;&#x8FC7; <code>createStore</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5168;&#x5C40; Store&#xFF0C;&#x518D;&#x901A;&#x8FC7; <code>StoreProvider</code> &#x5C06; <code>store</code> &#x6CE8;&#x5165;&#x5230;&#x5B50;&#x7EC4;&#x4EF6;&#x7684; <code>context</code> &#x4E2D;&#xFF0C;&#x6700;&#x7EC8;&#x901A;&#x8FC7;&#x4E24;&#x4E2A; Hooks &#x8FDB;&#x884C;&#x83B7;&#x53D6;&#x4E0E;&#x64CD;&#x4F5C;&#xFF1A;<code>useStore</code> &#x4E0E; <code>useAction</code>&#xFF1A;</p>
+<pre><code class="lang-ts">const store = createStore({
+  user: {
+    name: &quot;&#x5C0F;&#x660E;&quot;,
+    setName: (state, payload) =&gt; {
+      state.name = payload;
+    }
+  }
+});
+
+const App = () =&gt; (
+  &lt;StoreProvider store={store}&gt;
+    &lt;YourApp /&gt;
+  &lt;/StoreProvider&gt;
+);
+
+function YourApp() {
+  const userName = useStore(state =&gt; state.user.name);
+  const setName = userAction(dispatch =&gt; dispatch.user.setName);
+}
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x7684;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x62CE;&#x51FA;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x7B14;&#x8005;&#x4ECE;&#x5B58;&#x6570;&#x636E;&#x7684;&#x89D2;&#x5EA6;&#x5256;&#x6790;&#x4E00;&#x4E0B; <code>StoreProvider</code> &#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x5BF9;&#xFF0C;Hooks &#x5E76;&#x4E0D;&#x89E3;&#x51B3; Provider &#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x5168;&#x5C40;&#x72B6;&#x6001;&#x5FC5;&#x987B;&#x6709; Provider&#xFF0C;&#x4F46;&#x8FD9;&#x4E2A; Provider &#x53EF;&#x4EE5;&#x5229;&#x7528; React &#x5185;&#x7F6E;&#x7684; <code>createContext</code> &#x7B80;&#x5355;&#x641E;&#x5B9A;&#xFF1A;</p>
+<pre><code class="lang-ts">const StoreContext = createContext();
+
+const StoreProvider = ({ children, store }) =&gt; (
+  &lt;StoreContext.Provider value={store}&gt;{children}&lt;/StoreContext.Provider&gt;
+);
+</code></pre>
+<p>&#x5269;&#x4E0B;&#x5C31;&#x662F; <code>useStore</code> &#x600E;&#x4E48;&#x53D6;&#x5230;&#x6301;&#x4E45;&#x5316; Store &#x7684;&#x95EE;&#x9898;&#x4E86;&#xFF0C;&#x8FD9;&#x91CC;&#x5229;&#x7528; <code>useContext</code> &#x548C;&#x521A;&#x624D;&#x521B;&#x5EFA;&#x7684; Context &#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> store = useContext(StoreContext);
+<span class="hljs-keyword">return</span> store;
+</code></pre>
+<p>&#x66F4;&#x591A;&#x6E90;&#x7801;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://github.com/ctrlplusb/easy-peasy" target="_blank">easy-peasy</a>&#xFF0C;&#x8FD9;&#x4E2A;&#x5E93;&#x57FA;&#x4E8E; redux &#x7F16;&#x5199;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957; Hooks API&#x3002;</p>
+<h2 id="&#x5C01;&#x88C5;&#x539F;&#x6709;&#x5E93;">&#x5C01;&#x88C5;&#x539F;&#x6709;&#x5E93;</h2>
+<p>&#x662F;&#x4E0D;&#x662F; React Hooks &#x51FA;&#x73B0;&#x540E;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5E93;&#x90FD;&#x8981;&#x91CD;&#x5199;&#x4E00;&#x6B21;&#xFF1F;&#x5F53;&#x7136;&#x4E0D;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x5176;&#x4ED6;&#x5E93;&#x5982;&#x4F55;&#x505A;&#x6539;&#x9020;&#x3002;</p>
+<h3 id="renderprops-to-hooks">RenderProps to Hooks</h3>
+<p>&#x8FD9;&#x91CC;&#x62FF; <a href="https://github.com/renatorib/react-powerplug" target="_blank">react-powerplug</a> &#x4E3E;&#x4F8B;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x6709;&#x4E00;&#x4E2A; renderProps &#x5E93;&#xFF0C;&#x5E0C;&#x671B;&#x6539;&#x9020;&#x6210; Hooks &#x7684;&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-ts">import { Toggle } from &apos;react-powerplug&apos;
+
+function App() {
+  return (
+    &lt;Toggle initial={true}&gt;
+      {({ on, toggle }) =&gt; (
+        &lt;Checkbox checked={on} onChange={toggle} /&gt;
+      )}
+    &lt;/Toggle&gt;
+  )
+}
+&#x2193; &#x2193; &#x2193; &#x2193; &#x2193; &#x2193;
+import { useToggle } from &apos;react-powerhooks&apos;
+
+function App() {
+  const [on, toggle] = useToggle()
+  return &lt;Checkbox checked={on} onChange={toggle} /&gt;
+}
+</code></pre>
+<p>&#x6548;&#x679C;&#xFF1A;&#x5047;&#x5982;&#x6211;&#x662F; <code>react-powerplug</code> &#x7684;&#x7EF4;&#x62A4;&#x8005;&#xFF0C;&#x600E;&#x4E48;&#x6837;&#x6700;&#x5C0F;&#x6210;&#x672C;&#x652F;&#x6301; React Hook? &#x8BF4;&#x5B9E;&#x8BDD;&#x8FD9;&#x4E2A;&#x6CA1;&#x529E;&#x6CD5;&#x4E00;&#x6B65;&#x505A;&#x5230;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E24;&#x6B65;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Toggle</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// &#x8FD9;&#x662F; Toggle &#x7684;&#x6E90;&#x7801;</span>
+  <span class="hljs-comment">// balabalabala..</span>
+}
+
+<span class="hljs-keyword">const</span> App = wrap(() =&gt; {
+  <span class="hljs-comment">// &#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5305; wrap</span>
+  <span class="hljs-keyword">const</span> [on, toggle] = useRenderProps(Toggle); <span class="hljs-comment">// &#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5305; useRenderProps</span>
+});
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x9996;&#x5148;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5305;&#x4E24;&#x5C42;&#xFF0C;&#x9996;&#x5148; Hooks &#x5FC5;&#x987B;&#x9075;&#x5FAA; React &#x7684;&#x89C4;&#x8303;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x5199;&#x4E00;&#x4E2A; <code>useRenderProps</code> &#x51FD;&#x6570;&#x4EE5;&#x7B26;&#x5408; Hooks &#x7684;&#x683C;&#x5F0F;&#xFF0C;<strong>&#x90A3;&#x95EE;&#x9898;&#x662F;&#x5982;&#x4F55;&#x62FF;&#x5230; Toggle &#x7ED9; render &#x7684; <code>on</code> &#x4E0E; <code>toggle</code>&#xFF1F;</strong>&#x6B63;&#x5E38;&#x65B9;&#x5F0F;&#x5E94;&#x8BE5;&#x62FF;&#x4E0D;&#x5230;&#xFF0C;&#x6240;&#x4EE5;&#x9000;&#x800C;&#x6C42;&#x5176;&#x6B21;&#xFF0C;&#x5C06; <code>useRenderProps</code> &#x62FF;&#x5230;&#x7684; Toggle &#x4F20;&#x7ED9; <code>wrap</code>&#xFF0C;<strong>&#x8BA9; <code>wrap</code> &#x6784;&#x9020; RenderProps &#x6267;&#x884C;&#x73AF;&#x5883;&#x62FF;&#x5230; <code>on</code> &#x4E0E; <code>toggle</code> &#x540E;&#xFF0C;&#x8C03;&#x7528; <code>useRenderProps</code> &#x5185;&#x90E8;&#x7684; <code>setArgs</code> &#x51FD;&#x6570;&#xFF0C;&#x8BA9; <code>const [on, toggle] = useRenderProps(Toggle)</code> &#x5B9E;&#x73B0;&#x66F2;&#x7EBF;&#x6551;&#x56FD;&#x3002;</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> wrappers = []; <span class="hljs-comment">// &#x5168;&#x5C40;&#x5B58;&#x50A8; wrappers</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> useRenderProps = (WrapperComponent, wrapperProps) =&gt; {
+  <span class="hljs-keyword">const</span> [args, setArgs] = useState([]);
+  <span class="hljs-keyword">const</span> ref = useRef({});
+  <span class="hljs-keyword">if</span> (!ref.current.initialized) {
+    wrappers.push({
+      WrapperComponent,
+      wrapperProps,
+      setArgs
+    });
+  }
+  useEffect(() =&gt; {
+    ref.current.initialized = <span class="hljs-literal">true</span>;
+  }, []);
+  <span class="hljs-keyword">return</span> args; <span class="hljs-comment">// &#x901A;&#x8FC7;&#x4E0B;&#x9762; wrap &#x8C03;&#x7528; setArgs &#x83B7;&#x53D6;&#x503C;&#x3002;</span>
+};
+</code></pre>
+<p>&#x7531;&#x4E8E; <code>useRenderProps</code> &#x4F1A;&#x5148;&#x4E8E; <code>wrap</code> &#x6267;&#x884C;&#xFF0C;&#x6240;&#x4EE5; wrappers &#x4F1A;&#x5148;&#x62FF;&#x5230; Toggle&#xFF0C;<code>wrap</code> &#x6267;&#x884C;&#x65F6;&#x76F4;&#x63A5;&#x8C03;&#x7528; <code>wrappers.pop()</code> &#x5373;&#x53EF;&#x62FF;&#x5230; Toggle &#x5BF9;&#x8C61;&#x3002;&#x7136;&#x540E;&#x6784;&#x9020;&#x51FA; RenderProps &#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;&#x5373;&#x53EF;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> wrap = FunctionComponent =&gt; props =&gt; {
+  <span class="hljs-keyword">const</span> element = FunctionComponent(props);
+  <span class="hljs-keyword">const</span> ref = useRef({ wrapper: wrappers.pop() }); <span class="hljs-comment">// &#x62FF;&#x5230; useRenderProps &#x63D0;&#x4F9B;&#x7684; Toggle</span>
+  <span class="hljs-keyword">const</span> { WrapperComponent, wrapperProps } = ref.current.wrapper;
+  <span class="hljs-keyword">return</span> createElement(WrapperComponent, wrapperProps, (...args) =&gt; {
+    <span class="hljs-comment">// WrapperComponent =&gt; Toggle&#xFF0C;&#x8FD9;&#x4E00;&#x6B65;&#x662F;&#x5728;&#x6784;&#x9020; RenderProps &#x6267;&#x884C;&#x73AF;&#x5883;</span>
+    <span class="hljs-keyword">if</span> (!ref.current.processed) {
+      ref.current.wrapper.setArgs(args); <span class="hljs-comment">// &#x62FF;&#x5230; on&#x3001;toggle &#x540E;&#xFF0C;&#x901A;&#x8FC7; setArgs &#x4F20;&#x7ED9;&#x4E0A;&#x9762;&#x7684; args&#x3002;</span>
+      ref.current.processed = <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> {
+      ref.current.processed = <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-keyword">return</span> element;
+  });
+};
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x5B9E;&#x73B0;&#x65B9;&#x6848;&#x53C2;&#x8003; <a href="https://github.com/dai-shi/react-hooks-render-props" target="_blank">react-hooks-render-props</a>&#xFF0C;&#x6709;&#x9700;&#x6C42;&#x8981;&#x53EF;&#x4EE5;&#x62FF;&#x8FC7;&#x6765;&#x76F4;&#x63A5;&#x7528;&#xFF0C;&#x4E0D;&#x8FC7;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#xFF0C;&#x4F5C;&#x8005;&#x7684;&#x8111;&#x6D1E;&#x633A;&#x5927;&#x3002;</p>
+<h3 id="hooks-to-renderprops">Hooks to RenderProps</h3>
+<p>&#x597D;&#x5427;&#xFF0C;&#x5982;&#x679C;&#x5E0C;&#x671B; Hooks &#x652F;&#x6301; RenderProps&#xFF0C;&#x90A3;&#x4E00;&#x5B9A;&#x662F;&#x5E0C;&#x671B;&#x540C;&#x65F6;&#x652F;&#x6301;&#x8FD9;&#x4E24;&#x5957;&#x8BED;&#x6CD5;&#x3002;</p>
+<p>&#x6548;&#x679C;&#xFF1A;&#x4E00;&#x5957;&#x4EE3;&#x7801;&#x540C;&#x65F6;&#x652F;&#x6301; Hooks &#x548C; RenderProps&#x3002;</p>
+<p>&#x5B9E;&#x73B0;&#xFF1A;&#x5176;&#x5B9E; Hooks &#x5C01;&#x88C5;&#x4E3A; RenderProps &#x6700;&#x65B9;&#x4FBF;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x4F7F;&#x7528; Hooks &#x5199;&#x6838;&#x5FC3;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x5199;&#x4E00;&#x4E2A;&#x6700;&#x7B80;&#x5355;&#x7684; <code>Toggle</code>&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> useToggle = initialValue =&gt; {
+  <span class="hljs-keyword">const</span> [on, setOn] = useState(initialValue);
+  <span class="hljs-keyword">return</span> {
+    on,
+    toggle: () =&gt; setOn(!on)
+  };
+};
+</code></pre>
+<p><a href="https://codesandbox.io/s/ppvrpnz80m" target="_blank">&#x5728;&#x7EBF; Demo</a></p>
+<p>&#x7136;&#x540E;&#x901A;&#x8FC7; <code>render-props</code> &#x8FD9;&#x4E2A;&#x5E93;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x5C01;&#x88C5;&#x51FA; RenderProps &#x7EC4;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> Toggle = ({ initialValue, children, render = children }) =&gt;
+  renderProps(render, useToggle(initialValue));
+</code></pre>
+<p><a href="https://codesandbox.io/s/249n3n4r30" target="_blank">&#x5728;&#x7EBF; Demo</a></p>
+<p>&#x5176;&#x5B9E; <code>renderProps</code> &#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5728; Class &#x5F62;&#x5F0F; React &#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x63A5;&#x6536;&#x7684;&#x662F; <code>this.state</code>&#xFF0C;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6539;&#x6210; <code>useToggle</code> &#x8FD4;&#x56DE;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A; <code>state</code>&#xFF0C;&#x5229;&#x7528; Hooks &#x673A;&#x5236;&#x9A71;&#x52A8; Toggle &#x7EC4;&#x4EF6; rerender&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;&#x5B50;&#x7EC4;&#x4EF6; rerender&#x3002;</p>
+<h3 id="&#x5C01;&#x88C5;&#x539F;&#x672C;&#x5BF9;-setstate-&#x589E;&#x5F3A;&#x7684;&#x5E93;">&#x5C01;&#x88C5;&#x539F;&#x672C;&#x5BF9; setState &#x589E;&#x5F3A;&#x7684;&#x5E93;</h3>
+<p>Hooks &#x4E5F;&#x7279;&#x522B;&#x9002;&#x5408;&#x5C01;&#x88C5;&#x539F;&#x672C;&#x5C31;&#x4F5C;&#x7528;&#x4E8E; setState &#x7684;&#x5E93;&#xFF0C;&#x6BD4;&#x5982; <a href="https://github.com/mweststrate/immer" target="_blank">immer</a>&#x3002;</p>
+<p><code>useState</code> &#x867D;&#x7136;&#x4E0D;&#x662F; <code>setState</code>&#xFF0C;&#x4F46;&#x5374;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x63A7;&#x5236;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x7684; <code>setState</code>&#xFF0C;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684; <code>useState</code>&#xFF0C;&#x7136;&#x540E;&#x5185;&#x7F6E;&#x5BF9; <code>setState</code> &#x7684;&#x4F18;&#x5316;&#x3002;</p>
+<p>&#x6BD4;&#x5982; immer &#x7684;&#x8BED;&#x6CD5;&#x662F;&#x901A;&#x8FC7; <code>produce</code> &#x5305;&#x88C5;&#xFF0C;&#x5C06; mutable &#x4EE3;&#x7801;&#x901A;&#x8FC7; Proxy &#x4EE3;&#x7406;&#x4E3A; immutable&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> nextState = produce(baseState, draftState =&gt; {
+  draftState.push({ todo: <span class="hljs-string">&quot;Tweet about it&quot;</span> });
+  draftState[<span class="hljs-number">1</span>].done = <span class="hljs-literal">true</span>;
+});
+</code></pre>
+<p>&#x90A3;&#x8FD9;&#x4E2A; <code>produce</code> &#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C01;&#x88C5;&#x4E00;&#x4E2A; <code>useImmer</code> &#x6765;&#x9690;&#x85CF;&#x6389;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useImmer</span>(<span class="hljs-params">initialValue</span>) </span>{
+  <span class="hljs-keyword">const</span> [val, updateValue] = React.useState(initialValue);
+  <span class="hljs-keyword">return</span> [
+    val,
+    updater =&gt; {
+      updateValue(produce(updater));
+    }
+  ];
+}
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> [value, setValue] = useImmer({ a: <span class="hljs-number">1</span> });
+
+value(obj =&gt; (obj.a = <span class="hljs-number">2</span>)); <span class="hljs-comment">// immutable</span>
+</code></pre>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
+<p>&#x628A; React Hooks &#x5F53;&#x4F5C;&#x66F4;&#x4FBF;&#x6377;&#x7684; RenderProps &#x53BB;&#x7528;&#x5427;&#xFF0C;&#x867D;&#x7136;&#x5199;&#x6CD5;&#x770B;&#x4E0A;&#x53BB;&#x662F;&#x5185;&#x90E8;&#x7EF4;&#x62A4;&#x4E86;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x4F46;&#x5176;&#x5B9E;&#x7B49;&#x4EF7;&#x4E8E;&#x6CE8;&#x5165;&#x3001;Connect&#x3001;HOC&#x3001;&#x6216;&#x8005; renderProps&#xFF0C;&#x90A3;&#x4E48;&#x5982;&#x6B64;&#x4E00;&#x6765;&#xFF0C;&#x4F7F;&#x7528; renderProps &#x7684;&#x95E8;&#x69DB;&#x4F1A;&#x5927;&#x5927;&#x964D;&#x4F4E;&#xFF0C;&#x56E0;&#x4E3A; Hooks &#x7528;&#x8D77;&#x6765;&#x5B9E;&#x5728;&#x662F;&#x592A;&#x65B9;&#x4FBF;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x62BD;&#x8C61;&#x5927;&#x91CF; Custom Hooks&#xFF0C;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x52A0; FP&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x4E0D;&#x4F1A;&#x589E;&#x52A0;&#x5D4C;&#x5957;&#x5C42;&#x7EA7;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="setState.html" class="navigation navigation-prev " aria-label="Previous page: setState">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="React-HOC.html" class="navigation navigation-next " aria-label="Next page: React HOC">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"React Hooks","level":"3.2.6","depth":2,"next":{"title":"React HOC","level":"3.2.7","depth":2,"path":"React/React进阶/React-HOC.md","ref":"React/React进阶/React-HOC.md","articles":[]},"previous":{"title":"setState","level":"3.2.5","depth":2,"path":"React/React进阶/setState.md","ref":"React/React进阶/setState.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"React/React进阶/React-Hooks.md","mtime":"2019-06-29T14:34:27.577Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-29T14:40:41.702Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
