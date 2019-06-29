@@ -1,0 +1,3628 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>150行代码实现一个低配版的MVVM库 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Lu jingce <lujingce@163.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../resource/styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="160行代码仿Vue实现极简双向绑定[详细注释].html" />
+    
+    
+    <link rel="prev" href="剖析Vue原理&实现双向绑定MVVM.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ailjc.com/lunotes" target="_blank" class="custom-link">路小二</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    1.JS
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Js/js基础/js基础.html">
+            
+                <a href="../Js/js基础/js基础.html">
+            
+                    
+                    1.1 Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Js/js基础/ljc-Js.html">
+            
+                <a href="../Js/js基础/ljc-Js.html">
+            
+                    
+                    1.2 ljc-Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Js/js基础/moveJs.html">
+            
+                <a href="../Js/js基础/moveJs.html">
+            
+                    
+                    1.3 moveJs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Js/js基础/移动web.html">
+            
+                <a href="../Js/js基础/移动web.html">
+            
+                    
+                    1.4 移动web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Js/js基础/ICD.html">
+            
+                <a href="../Js/js基础/ICD.html">
+            
+                    
+                    1.5 ICD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Js/js基础/js-es6-Map.html">
+            
+                <a href="../Js/js基础/js-es6-Map.html">
+            
+                    
+                    1.6 js es6 Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Js/js基础/ES6-数组array新增方法.html">
+            
+                <a href="../Js/js基础/ES6-数组array新增方法.html">
+            
+                    
+                    ES6-数组array新增方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Js/js基础/require和import区别.html">
+            
+                <a href="../Js/js基础/require和import区别.html">
+            
+                    
+                    require和import区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Js/js基础/window.history方法总结.html">
+            
+                <a href="../Js/js基础/window.history方法总结.html">
+            
+                    
+                    window.history方法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../Js/js基础/fetch.html">
+            
+                <a href="../Js/js基础/fetch.html">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../Js/js基础/Js判断字符串中是否包含某个字符串.html">
+            
+                <a href="../Js/js基础/Js判断字符串中是否包含某个字符串.html">
+            
+                    
+                    Js判断字符串中是否包含某个字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../Js/js基础/三种js类的实现方法(es5和es6">
+            
+                <span>
+            
+                    
+                    三种js类的实现方法(es5和es6)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../Js/js基础/async-await.html">
+            
+                <a href="../Js/js基础/async-await.html">
+            
+                    
+                    async await
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../Js/js基础/关于移动端,webview监听滚动条的坑.html">
+            
+                <a href="../Js/js基础/关于移动端,webview监听滚动条的坑.html">
+            
+                    
+                    关于移动端,webview监听滚动条的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../Js/js基础/js类型转换.html">
+            
+                <a href="../Js/js基础/js类型转换.html">
+            
+                    
+                    js类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../Js/js基础/js事件轮询、微任务和宏任务.html">
+            
+                <a href="../Js/js基础/js事件轮询、微任务和宏任务.html">
+            
+                    
+                    js事件轮询、微任务和宏任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    2.正则
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Js/正则/正则表达式不要背.html">
+            
+                <a href="../Js/正则/正则表达式不要背.html">
+            
+                    
+                    正则表达式不要背
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Js/正则/RegExp.html">
+            
+                <a href="../Js/正则/RegExp.html">
+            
+                    
+                    RegExp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    3.面向对象
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Js/面向对象/面向对象之组件开发之弹窗.html">
+            
+                <a href="../Js/面向对象/面向对象之组件开发之弹窗.html">
+            
+                    
+                    面向对象之组件开发之弹窗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Js/面向对象/面向对象的微博登录提示邮箱.html">
+            
+                <a href="../Js/面向对象/面向对象的微博登录提示邮箱.html">
+            
+                    
+                    面向对象的微博登录提示邮箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    4.浏览器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../浏览器/事件机制.html">
+            
+                <a href="../浏览器/事件机制.html">
+            
+                    
+                    事件机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../浏览器/跨域.html">
+            
+                <a href="../浏览器/跨域.html">
+            
+                    
+                    跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../浏览器/Event-loop.html">
+            
+                <a href="../浏览器/Event-loop.html">
+            
+                    
+                    Event loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../浏览器/存储.html">
+            
+                <a href="../浏览器/存储.html">
+            
+                    
+                    存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../浏览器/渲染机制.html">
+            
+                <a href="../浏览器/渲染机制.html">
+            
+                    
+                    渲染机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    5.小程序
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Js/小程序/性能更优越的小程序图片懒加载方式.html">
+            
+                <a href="../Js/小程序/性能更优越的小程序图片懒加载方式.html">
+            
+                    
+                    性能更优越的小程序图片懒加载方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    6.基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Js/基础/错误处理机制.html">
+            
+                <a href="../Js/基础/错误处理机制.html">
+            
+                    
+                    错误处理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Js/基础/HTTPS协议.html">
+            
+                <a href="../Js/基础/HTTPS协议.html">
+            
+                    
+                    HTTPS协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Js/基础/cookie与session.html">
+            
+                <a href="../Js/基础/cookie与session.html">
+            
+                    
+                    cookie与session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Js/基础/实用的60个CSS代码片段.html">
+            
+                <a href="../Js/基础/实用的60个CSS代码片段.html">
+            
+                    
+                    实用的60个CSS代码片段
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    7.NodeJs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Node/node基础/node命令.html">
+            
+                <a href="../Node/node基础/node命令.html">
+            
+                    
+                    node命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Node/node基础/搭建一个私有的npm仓库.html">
+            
+                <a href="../Node/node基础/搭建一个私有的npm仓库.html">
+            
+                    
+                    搭建一个私有的npm仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Node/node基础/AnyProxy.html">
+            
+                <a href="../Node/node基础/AnyProxy.html">
+            
+                    
+                    AnyProxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Node/node基础/Node进程管理器PM2.html">
+            
+                <a href="../Node/node基础/Node进程管理器PM2.html">
+            
+                    
+                    Node进程管理器PM2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../Node/node基础/DOM-Mutation-Observer-API.md">
+            
+                <span>
+            
+                    
+                    DOM Mutation Observer API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../Node/node基础/Path对路径操作的Api.html">
+            
+                <a href="../Node/node基础/Path对路径操作的Api.html">
+            
+                    
+                    Path对路径操作的Api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../Node/node基础/node.html">
+            
+                <a href="../Node/node基础/node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../Node/node基础/babel.html">
+            
+                <a href="../Node/node基础/babel.html">
+            
+                    
+                    Babel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../Node/node基础/mongodb.html">
+            
+                <a href="../Node/node基础/mongodb.html">
+            
+                    
+                    mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2 - Advanced</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    1.框架通识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../框架通识/MVVM.html">
+            
+                <a href="../框架通识/MVVM.html">
+            
+                    
+                    MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../框架通识/VirtualDom.html">
+            
+                <a href="../框架通识/VirtualDom.html">
+            
+                    
+                    Virtual Dom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../框架通识/Object.defineProperty方法.html">
+            
+                <a href="../框架通识/Object.defineProperty方法.html">
+            
+                    
+                    Object.defineProperty方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../框架通识/Proxy.html">
+            
+                <a href="../框架通识/Proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../框架通识/10分钟快速入门rollupJs(1">
+            
+                <span>
+            
+                    
+                    10分钟快速入门rollup(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../框架通识/10分钟快速入门rollupJs(2">
+            
+                <span>
+            
+                    
+                    10分钟快速入门rollup(2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../框架通识/谈谈JavaScript中的双向数据绑定.html">
+            
+                <a href="../框架通识/谈谈JavaScript中的双向数据绑定.html">
+            
+                    
+                    谈谈JavaScript中的双向数据绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../安全/安全.html">
+            
+                <a href="../安全/安全.html">
+            
+                    
+                    2.安全XSS-CSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    3.性能
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../安全/性能.html">
+            
+                <a href="../安全/性能.html">
+            
+                    
+                    性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../安全/网站性能优化.html">
+            
+                <a href="../安全/网站性能优化.html">
+            
+                    
+                    网站性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                <a href="../面试/如何渲染几万条数据并不卡住界面.html">
+            
+                    
+                    4.如何渲染几万条数据并不卡住界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    5.综合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../面试/综合1.html">
+            
+                <a href="../面试/综合1.html">
+            
+                    
+                    综合1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../面试/综合2.html">
+            
+                <a href="../面试/综合2.html">
+            
+                    
+                    综合2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../面试/综合3.html">
+            
+                <a href="../面试/综合3.html">
+            
+                    
+                    综合3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../面试/综合4-vue.html">
+            
+                <a href="../面试/综合4-vue.html">
+            
+                    
+                    综合4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../面试/综合5.html">
+            
+                <a href="../面试/综合5.html">
+            
+                    
+                    综合5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../面试/综合6.html">
+            
+                <a href="../面试/综合6.html">
+            
+                    
+                    综合6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../面试/Js基础.html">
+            
+                <a href="../面试/Js基础.html">
+            
+                    
+                    6.JS基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../手撸代码无敌/">
+            
+                <a href="../手撸代码无敌/">
+            
+                    
+                    7.手撸代码无敌
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../手撸代码无敌/new.html">
+            
+                <a href="../手撸代码无敌/new.html">
+            
+                    
+                    new
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../手撸代码无敌/instanceof.html">
+            
+                <a href="../手撸代码无敌/instanceof.html">
+            
+                    
+                    instanceof
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../手撸代码无敌/防抖和节流.html">
+            
+                <a href="../手撸代码无敌/防抖和节流.html">
+            
+                    
+                    防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../手撸代码无敌/Proxy.html">
+            
+                <a href="../手撸代码无敌/Proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../手撸代码无敌/Promise实现.html">
+            
+                <a href="../手撸代码无敌/Promise实现.html">
+            
+                    
+                    Promise 实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../手撸代码无敌/Generator实现.html">
+            
+                <a href="../手撸代码无敌/Generator实现.html">
+            
+                    
+                    Generator实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.7" data-path="../手撸代码无敌/call-apply-bind.html">
+            
+                <a href="../手撸代码无敌/call-apply-bind.html">
+            
+                    
+                    call, apply, bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.8" data-path="../手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.html">
+            
+                <a href="../手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.html">
+            
+                    
+                    不用call和apply方法模拟实现ES5的bind方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.9" data-path="../手撸代码无敌/curry.html">
+            
+                <a href="../手撸代码无敌/curry.html">
+            
+                    
+                    curry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.10" data-path="../手撸代码无敌/Template.html">
+            
+                <a href="../手撸代码无敌/Template.html">
+            
+                    
+                    Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.11" data-path="../手撸代码无敌/封装Ajax和Promise.html">
+            
+                <a href="../手撸代码无敌/封装Ajax和Promise.html">
+            
+                    
+                    封装Ajax和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.12" data-path="../手撸代码无敌/js-tree.html">
+            
+                <a href="../手撸代码无敌/js-tree.html">
+            
+                    
+                    js-tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.13" data-path="../手撸代码无敌/js复杂判断的更优雅写法.html">
+            
+                <a href="../手撸代码无敌/js复杂判断的更优雅写法.html">
+            
+                    
+                    js复杂判断的更优雅写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.14" data-path="../手撸代码无敌/JavaScript优雅的实现方式.html">
+            
+                <a href="../手撸代码无敌/JavaScript优雅的实现方式.html">
+            
+                    
+                    JavaScript优雅的实现方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.15" data-path="../手撸代码无敌/函数式代码.html">
+            
+                <a href="../手撸代码无敌/函数式代码.html">
+            
+                    
+                    函数式代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.16" data-path="../手撸代码无敌/js编程黑科技.html">
+            
+                <a href="../手撸代码无敌/js编程黑科技.html">
+            
+                    
+                    js编程黑科技
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.17" data-path="../手撸代码无敌/自己实现简单的shift(">
+            
+                <span>
+            
+                    
+                    自己实现简单的shift()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.18" data-path="../手撸代码无敌/迭代函数与迭代函数的实现.html">
+            
+                <a href="../手撸代码无敌/迭代函数与迭代函数的实现.html">
+            
+                    
+                    迭代函数与迭代函数的实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.19" data-path="../手撸代码无敌/startsWith(">
+            
+                <span>
+            
+                    
+                    startsWith()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.20" data-path="../手撸代码无敌/endsWith(">
+            
+                <span>
+            
+                    
+                    endsWith()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.21" data-path="../手撸代码无敌/trim(">
+            
+                <span>
+            
+                    
+                    String.prototype.trim()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.22" data-path="../手撸代码无敌/repeat(">
+            
+                <span>
+            
+                    
+                    String.prototype.repeat()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.23" data-path="../手撸代码无敌/padStart(">
+            
+                <span>
+            
+                    
+                    String.prototype.padStart()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.24" data-path="../手撸代码无敌/padEnd(">
+            
+                <span>
+            
+                    
+                    String.prototype.padEnd()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.25" data-path="../手撸代码无敌/实现一个JSON.stringify.html">
+            
+                <a href="../手撸代码无敌/实现一个JSON.stringify.html">
+            
+                    
+                    实现一个JSON.stringify
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.26" data-path="../手撸代码无敌/实现一个JSON.parse.html">
+            
+                <a href="../手撸代码无敌/实现一个JSON.parse.html">
+            
+                    
+                    实现一个JSON.parse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.27" data-path="../手撸代码无敌/实现一个继承.html">
+            
+                <a href="../手撸代码无敌/实现一个继承.html">
+            
+                    
+                    实现一个继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.28" data-path="../手撸代码无敌/JS深拷贝.html">
+            
+                <a href="../手撸代码无敌/JS深拷贝.html">
+            
+                    
+                    Js深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.29" data-path="../手撸代码无敌/封装Ajax和Promise.html">
+            
+                <a href="../手撸代码无敌/封装Ajax和Promise.html">
+            
+                    
+                    封装Ajax和Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../设计模式/">
+            
+                <a href="../设计模式/">
+            
+                    
+                    8.设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../设计模式/单例模式.html">
+            
+                <a href="../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../设计模式/策略模式.html">
+            
+                <a href="../设计模式/策略模式.html">
+            
+                    
+                    策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../设计模式/代理模式.html">
+            
+                <a href="../设计模式/代理模式.html">
+            
+                    
+                    代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../设计模式/迭代器模式.html">
+            
+                <a href="../设计模式/迭代器模式.html">
+            
+                    
+                    迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../设计模式/发布-订阅模式(观察者模式">
+            
+                <span>
+            
+                    
+                    发布-订阅模式(观察者模式)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../设计模式/命令模式.html">
+            
+                <a href="../设计模式/命令模式.html">
+            
+                    
+                    命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../设计模式/组合模式.html">
+            
+                <a href="../设计模式/组合模式.html">
+            
+                    
+                    组合模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="../设计模式/模板方法模式.html">
+            
+                <a href="../设计模式/模板方法模式.html">
+            
+                    
+                    模板方法模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.9" data-path="../设计模式/享元模式.html">
+            
+                <a href="../设计模式/享元模式.html">
+            
+                    
+                    享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="../设计模式/职责链模式.html">
+            
+                <a href="../设计模式/职责链模式.html">
+            
+                    
+                    职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="../设计模式/中介者模式.html">
+            
+                <a href="../设计模式/中介者模式.html">
+            
+                    
+                    中介者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="../设计模式/装饰者模式.html">
+            
+                <a href="../设计模式/装饰者模式.html">
+            
+                    
+                    装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.13" data-path="../设计模式/状态模式.html">
+            
+                <a href="../设计模式/状态模式.html">
+            
+                    
+                    状态模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.14" data-path="../设计模式/适配器模式.html">
+            
+                <a href="../设计模式/适配器模式.html">
+            
+                    
+                    适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.15" data-path="../设计模式/策略设计模式和ES6的Proxy代理模式.html">
+            
+                <a href="../设计模式/策略设计模式和ES6的Proxy代理模式.html">
+            
+                    
+                    策略设计模式和ES6的Proxy代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.16" data-path="../设计模式/ES5&&ES6实现观察者模式.html">
+            
+                <a href="../设计模式/ES5&&ES6实现观察者模式.html">
+            
+                    
+                    ES5 && ES6 实现观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" >
+            
+                <span>
+            
+                    
+                    9.算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../算法/快速排序.html">
+            
+                <a href="../算法/快速排序.html">
+            
+                    
+                    快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="../算法/Deepclone.html">
+            
+                <a href="../算法/Deepclone.html">
+            
+                    
+                    Deepclone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="../算法/数组去重.html">
+            
+                <a href="../算法/数组去重.html">
+            
+                    
+                    数组去重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.4" data-path="../算法/冒泡排序.html">
+            
+                <a href="../算法/冒泡排序.html">
+            
+                    
+                    冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">React</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    1.React基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../React/React基础/react基础.html">
+            
+                <a href="../React/React基础/react基础.html">
+            
+                    
+                    React基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../React/React基础/React生命周期分析.html">
+            
+                <a href="../React/React基础/React生命周期分析.html">
+            
+                    
+                    React生命周期分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../React/React基础/setState.html">
+            
+                <a href="../React/React基础/setState.html">
+            
+                    
+                    setState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../React/React基础/webpack4+babel7+React.html">
+            
+                <a href="../React/React基础/webpack4+babel7+React.html">
+            
+                    
+                    webpack4+babel7+React
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    2.Dva
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../React/dva/React+DvaJS之hook路由权限控制.html">
+            
+                <a href="../React/dva/React+DvaJS之hook路由权限控制.html">
+            
+                    
+                    React+DvaJS 之 hook 路由权限控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    3.源码分析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../React/源码分析/Redux源码分析.html">
+            
+                <a href="../React/源码分析/Redux源码分析.html">
+            
+                    
+                    Redux源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Vue</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="Vue生命周期.html">
+            
+                <a href="Vue生命周期.html">
+            
+                    
+                    Vue生命周期分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="vueRouter使用query和params传参的使用和区别.html">
+            
+                <a href="vueRouter使用query和params传参的使用和区别.html">
+            
+                    
+                    vueRouter使用query和params传参的使用和区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="Vue组件data为什么必须是函数.html">
+            
+                <a href="Vue组件data为什么必须是函数.html">
+            
+                    
+                    Vue组件data为什么必须是函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="Vue组件通信的方法.html">
+            
+                <a href="Vue组件通信的方法.html">
+            
+                    
+                    Vue组件通信的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="NextTick原理分析.html">
+            
+                <a href="NextTick原理分析.html">
+            
+                    
+                    NextTick原理分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="从Vue.js源码看nextTick机制.html">
+            
+                <a href="从Vue.js源码看nextTick机制.html">
+            
+                    
+                    从Vue.js源码看nextTick机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="VueRouter源码分析.html">
+            
+                <a href="VueRouter源码分析.html">
+            
+                    
+                    VueRouter源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="Vue&&MVVM原理.html">
+            
+                <a href="Vue&&MVVM原理.html">
+            
+                    
+                    Vue&&MVVM原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="撸一个简单的Vue.html">
+            
+                <a href="撸一个简单的Vue.html">
+            
+                    
+                    撸一个简单的Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="剖析Vue原理&实现双向绑定MVVM.html">
+            
+                <a href="剖析Vue原理&实现双向绑定MVVM.html">
+            
+                    
+                    剖析Vue原理&实现双向绑定MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.11" data-path="150行代码实现一个低配版的MVVM库.html">
+            
+                <a href="150行代码实现一个低配版的MVVM库.html">
+            
+                    
+                    150行代码实现一个低配版的MVVM库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="160行代码仿Vue实现极简双向绑定[详细注释].html">
+            
+                <a href="160行代码仿Vue实现极简双向绑定[详细注释].html">
+            
+                    
+                    160行代码仿Vue实现极简双向绑定[详细注释]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="vue-SSR-cookie问题.html">
+            
+                <a href="vue-SSR-cookie问题.html">
+            
+                    
+                    Vue SSR cookie问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="理解vue-ssr原理并自己搭建简单的ssr框架.html">
+            
+                <a href="理解vue-ssr原理并自己搭建简单的ssr框架.html">
+            
+                    
+                    理解vue ssr原理并自己搭建简单的ssr框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="Vue插件开发.html">
+            
+                <a href="Vue插件开发.html">
+            
+                    
+                    Vue插件开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3 - other</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    1.git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../git/git基本使用.html">
+            
+                <a href="../git/git基本使用.html">
+            
+                    
+                    git基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../git/git分支管理策略.html">
+            
+                <a href="../git/git分支管理策略.html">
+            
+                    
+                    git分支管理策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../git/publish脚本.html">
+            
+                <a href="../git/publish脚本.html">
+            
+                    
+                    publish脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../git/gitbook.html">
+            
+                <a href="../git/gitbook.html">
+            
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    2.规范
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../规范/分支开发规范.html">
+            
+                <a href="../规范/分支开发规范.html">
+            
+                    
+                    分支开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../规范/es6编码规范.html">
+            
+                <a href="../规范/es6编码规范.html">
+            
+                    
+                    ES6编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../规范/vue编码规范.html">
+            
+                <a href="../规范/vue编码规范.html">
+            
+                    
+                    vue编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../规范/Airbnb-React-JSX编码规范.html">
+            
+                <a href="../规范/Airbnb-React-JSX编码规范.html">
+            
+                    
+                    Airbnb-React-JSX编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    3.其它
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="../other/Emoji表情.html">
+            
+                <a href="../other/Emoji表情.html">
+            
+                    
+                    Emoji表情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" >
+            
+                <span>
+            
+                    
+                    deep
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.3" data-path="../other/简明-Vim-练级攻略.html">
+            
+                <a href="../other/简明-Vim-练级攻略.html">
+            
+                    
+                    简明-Vim-练级攻略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    世路如今已惯,此心到处悠然
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >150行代码实现一个低配版的MVVM库</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="150&#x884C;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;mvvm&#x5E93;">150&#x884C;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;MVVM&#x5E93;</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#150&#x884C;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;MVVM&#x5E93;">150&#x884C;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;MVVM&#x5E93;</a><ul>
+<li><a href="#&#x539F;&#x7406;&#x7BC7;">&#x539F;&#x7406;&#x7BC7;</a><ul>
+<li><a href="#&#x540D;&#x8BCD;&#x5B9A;&#x4E49;">&#x540D;&#x8BCD;&#x5B9A;&#x4E49;</a></li>
+<li><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x662F;&#x4F4E;&#x914D;&#x7248;">&#x4E3A;&#x4EC0;&#x4E48;&#x662F;&#x4F4E;&#x914D;&#x7248;&#xFF1F;</a></li>
+<li><a href="#&#x4EC0;&#x4E48;&#x662F;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;">&#x4EC0;&#x4E48;&#x662F;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</a></li>
+<li><a href="#&#x5355;&#x5411;&#x663E;&#x793A;&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;viewModel---view">&#x5355;&#x5411;&#x663E;&#x793A;&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF08;viewModel -&gt; view&#xFF09;</a><ul>
+<li><a href="#&#x5148;&#x770B;&#x770B;API&#x7684;&#x8BBE;&#x8BA1;">&#x5148;&#x770B;&#x770B;API&#x7684;&#x8BBE;&#x8BA1;</a></li>
+<li><a href="#&#x601D;&#x8003;&#x9898;1">&#x601D;&#x8003;&#x9898;1</a></li>
+</ul>
+</li>
+<li><a href="#&#x9006;&#x5411;&#x4FEE;&#x6539;&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;viewModel---view">&#x9006;&#x5411;&#x4FEE;&#x6539;&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF08;viewModel &lt;- view&#xFF09;</a><ul>
+<li><a href="#&#x601D;&#x8003;&#x9898;2">&#x601D;&#x8003;&#x9898;2</a></li>
+</ul>
+</li>
+<li><a href="#&#x540C;&#x6B65;&#x673A;&#x5236;">&#x540C;&#x6B65;&#x673A;&#x5236;</a><ul>
+<li><a href="#&#x810F;&#x68C0;&#x67E5;&#x5927;&#x6CD5;">&#x810F;&#x68C0;&#x67E5;&#x5927;&#x6CD5;</a></li>
+<li><a href="#setter&#x5927;&#x6CD5;">setter&#x5927;&#x6CD5;</a></li>
+<li><a href="#&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;">&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;</a></li>
+</ul>
+</li>
+<li><a href="#&#x603B;&#x4F53;&#x8BBE;&#x8BA1;&#x56FE;">&#x603B;&#x4F53;&#x8BBE;&#x8BA1;&#x56FE;</a></li>
+</ul>
+</li>
+<li><a href="#&#x4EE3;&#x7801;&#x7BC7;">&#x4EE3;&#x7801;&#x7BC7;</a><ul>
+<li><a href="#&#x7B2C;&#x4E00;&#x6B65;-&#x5148;&#x628A;&#x9AA8;&#x67B6;&#x642D;&#x597D;-&#x8840;&#x8089;&#x665A;&#x70B9;&#x518D;&#x586B;&#x5145;">&#x7B2C;&#x4E00;&#x6B65; &#x5148;&#x628A;&#x9AA8;&#x67B6;&#x642D;&#x597D;, &#x8840;&#x8089;&#x665A;&#x70B9;&#x518D;&#x586B;&#x5145;</a></li>
+<li><a href="#&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</a></li>
+</ul>
+</li>
+<li><a href="#github">github</a></li>
+<li><a href="#&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web-component&#x5E93;1-&#x8BBE;&#x8BA1;&#x7BC7;">&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web component&#x5E93;&#xFF08;1&#xFF09; &#x2014;&#x8BBE;&#x8BA1;&#x7BC7;</a><ul>
+<li><a href="#&#x4EC0;&#x4E48;&#x624D;&#x662F;&#x597D;&#x7684;-web-component-&#x8BBE;&#x8BA1;">&#x4EC0;&#x4E48;&#x624D;&#x662F;&#x597D;&#x7684; web component &#x8BBE;&#x8BA1;</a></li>
+<li><a href="#&#x4EC0;&#x4E48;&#x662F;component">&#x4EC0;&#x4E48;&#x662F;component</a></li>
+<li><a href="#&#x6211;&#x5FC3;&#x76EE;&#x4E2D;&#x7684;web-component">&#x6211;&#x5FC3;&#x76EE;&#x4E2D;&#x7684;web component</a></li>
+<li><a href="#API&#x8BBE;&#x8BA1;">API&#x8BBE;&#x8BA1;</a></li>
+<li><a href="#&#x4E00;&#x4E2A;Web-Component&#x5E93;&#x5FC5;&#x987B;&#x5177;&#x5907;&#x7684;&#x57FA;&#x672C;&#x7D20;&#x529F;&#x517B;&#x80FD;">&#x4E00;&#x4E2A;Web Component&#x5E93;&#x5FC5;&#x987B;&#x5177;&#x5907;&#x7684;&#x57FA;&#x672C;&#x7D20;&#xFF08;&#x529F;&#xFF09;&#x517B;&#xFF08;&#x80FD;&#xFF09;</a><ul>
+<li><a href="#&#x7B2C;&#x4E00;&#x70B9;Mvvm">&#x7B2C;&#x4E00;&#x70B9;Mvvm</a></li>
+<li><a href="#&#x7B2C;&#x4E8C;&#x70B9;Shadow-Style">&#x7B2C;&#x4E8C;&#x70B9;Shadow Style</a></li>
+<li><a href="#&#x7B2C;&#x4E09;&#x70B9;Communication">&#x7B2C;&#x4E09;&#x70B9;Communication</a></li>
+<li><a href="#&#x7B2C;&#x56DB;&#x70B9;&#x751F;&#x547D;&#x5468;&#x671F;">&#x7B2C;&#x56DB;&#x70B9;&#x751F;&#x547D;&#x5468;&#x671F;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web-component&#x5E93;2-&#x539F;&#x7406;&#x7BC7;">&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web component&#x5E93;&#xFF08;2&#xFF09; &#x2014;&#x539F;&#x7406;&#x7BC7;</a><ul>
+<li><a href="#&#x5148;&#x56DE;&#x987E;&#x4E00;&#x4E0B;">&#x5148;&#x56DE;&#x987E;&#x4E00;&#x4E0B;</a><ul>
+<li><a href="#&#x4E09;&#x5927;&#x90E8;&#x5206;&#x662F;">&#x4E09;&#x5927;&#x90E8;&#x5206;&#x662F;</a></li>
+<li><a href="#&#x56DB;&#x5927;&#x529F;&#x80FD;&#x662F;">&#x56DB;&#x5927;&#x529F;&#x80FD;&#x662F;</a></li>
+<li><a href="#Component&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x5982;&#x4E0B;">Component&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x5982;&#x4E0B;</a></li>
+</ul>
+</li>
+<li><a href="#Web-Component&#x5E93;&#x5927;&#x81F4;&#x6D41;&#x7A0B;">Web Component&#x5E93;&#x5927;&#x81F4;&#x6D41;&#x7A0B;</a></li>
+<li><a href="#&#x7EC4;&#x4EF6;&#x901A;&#x8BAF;">&#x7EC4;&#x4EF6;&#x901A;&#x8BAF;</a></li>
+</ul>
+</li>
+<li><a href="#&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web-component&#x5E93;3-&#x4EE3;&#x7801;&#x7BC7;">&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web component&#x5E93;&#xFF08;3&#xFF09; &#x2014;&#x4EE3;&#x7801;&#x7BC7;</a><ul>
+<li><a href="#component&#x5B9A;&#x4E49;&#x683C;&#x5F0F;">component&#x5B9A;&#x4E49;&#x683C;&#x5F0F;</a></li>
+<li><a href="#&#x8BBE;&#x8BA1;&#x56FE;">&#x8BBE;&#x8BA1;&#x56FE;</a></li>
+<li><a href="#&#x8FD8;&#x662F;&#x5148;&#x642D;&#x9AA8;&#x67B6;&#x518D;&#x586B;&#x8840;&#x8089;">&#x8FD8;&#x662F;&#x5148;&#x642D;&#x9AA8;&#x67B6;&#xFF0C;&#x518D;&#x586B;&#x8840;&#x8089;</a><ul>
+<li><a href="#SegmentFault">SegmentFault</a></li>
+<li><a href="#ComponentDefinition">ComponentDefinition</a></li>
+<li><a href="#Loader">Loader</a></li>
+<li><a href="#ComponentGenerator">ComponentGenerator</a></li>
+</ul>
+</li>
+<li><a href="#&#x586B;&#x4E0A;&#x9AA8;&#x8089;-&#x4E0A;&#x6700;&#x7EC8;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;">&#x586B;&#x4E0A;&#x9AA8;&#x8089; &#x4E0A;&#x6700;&#x7EC8;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;</a></li>
+</ul>
+</li>
+<li><a href="#github-1">github</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h2 id="&#x539F;&#x7406;&#x7BC7;">&#x539F;&#x7406;&#x7BC7;</h2>
+<h3 id="&#x540D;&#x8BCD;&#x5B9A;&#x4E49;">&#x540D;&#x8BCD;&#x5B9A;&#x4E49;</h3>
+<ul>
+<li>&#x5148;&#x7ED9;&#x4F4E;&#x914D;&#x7248;&#x7684;&#x5E93;&#x8D77;&#x4E00;&#x4E2A;&#x54CD;&#x4EAE;&#x7684;&#x540D;&#x5B57;-- SegmentFault.js &#x5427; &#xFF08;&#x4EE5;&#x4E0B;&#x7B80;&#x79F0;sf.js&#xFF09;</li>
+<li>&#x8BBE;&#x7F6E;&#x5728;DOM Element&#x4E0A;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x524D;&#x7F00;&#x7EDF;&#x4E00;&#x4EE5; sf- &#x5F00;&#x5934; &#xFF08;&#x5982; <code>&lt;input type=&quot;text&quot; sf-value=&quot;xxx&quot;&gt;</code>&#xFF09;</li>
+</ul>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x662F;&#x4F4E;&#x914D;&#x7248;&#xFF1F;">&#x4E3A;&#x4EC0;&#x4E48;&#x662F;&#x4F4E;&#x914D;&#x7248;&#xFF1F;</h3>
+<ol>
+<li>&#x6CA1;&#x6709;sf-repeat</li>
+<li>&#x4E0D;&#x652F;&#x6301;select&#xFF0C;checkbox&#xFF0C;radio&#x7B49;&#x63A7;&#x4EF6;&#x7684;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</li>
+<li>&#x6CA1;&#x6709;sf-if</li>
+<li>&#x5F88;&#x591A;&#x90FD;&#x6CA1;&#x6709;</li>
+</ol>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;">&#x4EC0;&#x4E48;&#x662F;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</h3>
+<p>&#x9996;&#x5148;&#x660E;&#x767D;&#x4E00;&#x4E2A;&#x6982;&#x5FF5;&#xFF0C;&#x4EC0;&#x4E48;&#x662F;<strong>&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</strong>&#xFF1F;&#x5728;&#x8BF4;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x8BF4;&#x8BF4;<strong>&#x5355;&#x5411;&#x663E;&#x793A;</strong>&#x3002;
+<strong>&#x5355;&#x5411;&#x663E;&#x793A;</strong> &#x8BF4;&#x767D;&#x4E86;&#x5C31;&#x662F;view&#x52A8;&#x6001;&#x5730;&#x663E;&#x793A;&#x53D8;&#x91CF;&#x3002;&#x6BD4;&#x5982;&#x5728;ng&#x6216;&#x5176;&#x5B83;&#x4E00;&#x4E9B;&#x4E3B;&#x6D41;&#x6846;&#x67B6;&#x91CC;&#x7C7B;&#x4F3C;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;</p>
+<pre><code class="lang-js"><span class="hljs-comment">//scope.message= &quot;segmentfault&quot;; </span>
+&lt;h3 ng-bind=<span class="hljs-string">&quot;message&quot;</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></span> 
+&lt;!-- &#x8FD0;&#x884C;&#x65F6;&#x751F;&#x6210; --&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>segmentfault<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></span>
+</code></pre>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x8BF4;&#x662F;&#x5355;&#x5411;&#x5462;&#xFF0C;&#x56E0;&#x4E3A;&#x90FD;&#x662F; viewModel&#x4E0A;&#x67D0;&#x4E2A;&#x53D8;&#x91CF;(message) -&gt; view (h3)&#x7684;&#x4E00;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;viewModel&#x4E0A;&#x7684;&#x53D8;&#x91CF;&#x88AB;view&#x6240;&#x5448;&#x73B0;&#x3002;</p>
+<p>&#x518D;&#x6765;&#x770B;&#x770B; <strong>&#x9006;&#x5411;&#x4FEE;&#x6539;</strong> 
+&#x524D;&#x9762;&#x8BF4;&#x4E86;<code>&#x5355;&#x5411;&#x662F;viewMode-&gt;view&#x7684;&#x8FC7;&#x7A0B;</code>&#xFF0C;&#x90A3;<code>&#x9006;&#x5411;&#x5C31;&#x662F; viewModel &lt;- view&#x7684;&#x8FC7;&#x7A0B;</code>&#xFF0C;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#x5C31;&#x662F;viewModel&#x88AB;view&#x4FEE;&#x6539;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x4F8B;&#x5982;angular&#x4E2D;</p>
+<pre><code class="lang-js">&lt;input type=<span class="hljs-string">&quot;text&quot;</span> ng-model=<span class="hljs-string">&quot;message&quot;</span>&gt;
+</code></pre>
+<p>&#x4E00;&#x65E6;&#x7528;&#x6237;&#x5728;input&#x63A7;&#x4EF6;&#x4E2D;&#x8F93;&#x5165;&#x503C;&#xFF0C;&#x4FBF;&#x4F1A;&#x5B9E;&#x65F6;&#x5730;&#x6539;&#x53D8;viewModel&#x4E2D;message&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;view -&gt; viewModel &#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x6240;&#x8C13;&#x7684;<strong>&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</strong>&#x5C31;&#x662F;&#x4E00;&#x4E2A; <strong>viewMode -&gt;&#xFF08;&#x663E;&#x793A;&#xFF09; view -&gt;&#xFF08;&#x4FEE;&#x6539;&#xFF09;viewModel</strong> &#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<blockquote>
+<p><strong>&#x53CC;&#x5411;&#x7ED1;&#x5B9A; = &#x5355;&#x5411;&#x663E;&#x793A; + &#x9006;&#x5411;&#x4FEE;&#x6539;</strong><br><strong>&#x6CE8;&#x610F;&#xFF1A; &#x5355;&#x5411;&#x663E;&#x793A;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x5728;&#x6240;&#x6709;&#x7684;&#x7C7B;&#x578B;DOM&#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x800C;&#x9006;&#x5411;&#x4FEE;&#x6539;&#x53EA;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x5728;INPUT,SELECT,TEXTAREA&#x7B49;&#x4EA4;&#x4E92;&#x578B;&#x63A7;&#x4EF6;&#x4E0A;&#x3002;</strong></p>
+</blockquote>
+<h3 id="&#x5355;&#x5411;&#x663E;&#x793A;&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF08;viewmodel---view&#xFF09;">&#x5355;&#x5411;&#x663E;&#x793A;&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF08;viewModel -&gt; view&#xFF09;</h3>
+<h4 id="&#x5148;&#x770B;&#x770B;api&#x7684;&#x8BBE;&#x8BA1;">&#x5148;&#x770B;&#x770B;API&#x7684;&#x8BBE;&#x8BA1;</h4>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- view --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">sf-text</span>=<span class="hljs-string">&quot;vm.message&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+    <span class="hljs-comment">// --- viewModel ---</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ViewModel</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">this</span>.message = <span class="hljs-string">&quot;segmentfault&quot;</span>;
+    }
+    <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> ViewModel();
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>&#x8981;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x6211;&#x4EEC;&#x7684;sf&#x5E93;&#x5E94;&#x8BE5;&#x9700;&#x8981;&#x54EA;&#x51E0;&#x6B65;&#x64CD;&#x4F5C;&#x5462;&#xFF1F;(&#x5148;&#x81EA;&#x5DF1;&#x60F3;&#x60F3;&#xFF0C;&#x72EC;&#x7ACB;&#x601D;&#x8003;&#x4E0B;)</p>
+<ol>
+<li>&#x6CE8;&#x518C;ViewModel&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x5E93;&#x9700;&#x8981;&#x77E5;&#x9053;&#x54EA;&#x4E9B;object&#x662F;viewModel</li>
+<li>&#x626B;&#x63CF;&#x6574;&#x4E2A;DOM Tree&#x627E;&#x5230;&#x6709;&#x54EA;&#x4E9B;DOM&#x8282;&#x70B9;&#x4E0A;&#x88AB;&#x914D;&#x7F6E;&#x4E86;sf-xxxx&#x8FD9;&#x4E2A;attribute</li>
+<li>&#x7EAA;&#x5F55;&#x8FD9;&#x4E9B;&#x88AB;&#x5355;&#x5411;&#x7ED1;&#x5B9A;&#x7684;DOM&#x8282;&#x70B9;&#x548C;viewModel&#x4E4B;&#x95F4;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;</li>
+<li>&#x4F7F;&#x7528;DOM API&#xFF0C; element.innerText = vm.prop, element.value = vm.prop, element.xxxx = vm.prop &#x6765;&#x663E;&#x793A;&#x6570;&#x636E;</li>
+</ol>
+<h4 id="&#x601D;&#x8003;&#x9898;1">&#x601D;&#x8003;&#x9898;1</h4>
+<p>Q&#xFF1A;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x5355;&#x5411;&#x7ED1;&#x5B9A;&#x4E0D;&#x662F;innerText,value &#x800C;&#x662F;&#x4F5C;&#x4E3A;&#x6837;&#x5F0F;&#x7684;class&#xFF0C;style&#x5462;&#xFF1F;
+A&#xFF1A;&#x6CA1;&#x9519;&#xFF0C;&#x4F7F;&#x7528;sf-class=&quot;vm.myClass&quot; sf-style=&quot;vm.myStyle&quot;&#x5C31;&#x597D;&#x4E86;&#xFF0C;&#x5176;&#x5B83;&#x539F;&#x751F;&#x5C5E;&#x6027;&#x4E5F;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;
+<strong>&quot;sf-&quot; + native attribute is good!</strong></p>
+<h3 id="&#x9006;&#x5411;&#x4FEE;&#x6539;&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF08;viewmodel---view&#xFF09;">&#x9006;&#x5411;&#x4FEE;&#x6539;&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF08;viewModel &lt;- view&#xFF09;</h3>
+<p>&#x4E3B;&#x6D41;&#x7684;&#x4E00;&#x4E9B;mvvm&#x6846;&#x67B6;&#x4E0A;&#x4E00;&#x822C;&#x8FD9;&#x4E48;&#x8BBE;&#x8BA1;API&#xFF0C;&#x8FD8;&#x662F;&#x62FF;angular&#x4E3E;&#x4F8B;&#x5B50;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">ng-model</span>=<span class="hljs-string">&quot;message&quot;</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4E2A;&#x4EBA;&#x5E76;&#x4E0D;&#x8BA4;&#x540C;&#x8FD9;&#x79CD;xx-model&#x7684;&#x547D;&#x540D;&#x65B9;&#x5F0F;&#x6765;&#x4F5C;&#x4E3A;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x4E00;&#x79CD;&#x6807;&#x8BC6;&#xFF0C;&#x6BD4;&#x5982;angular&#x7684;ng-model&#xFF0C;&#x6216;Vue&#x7684;v-model&#xFF0C;&#x6487;&#x5F00;&#x524D;&#x7F00;&#x4E0D;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E2A;model&#x5F88;&#x8BA9;&#x4EBA;&#x56F0;&#x60D1;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;input&#x63A7;&#x4EF6;&#x662F;&#x672C;&#x8EAB;&#x5C31;&#x6709;value&#x8FD9;&#x4E2A;native&#x7684;&#x5C5E;&#x6027;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5C31;&#x662F;&#x4EE3;&#x8868;&#x7740;input&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x7684;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x7ED9;&#x4E00;&#x4E2A;input&#x8FDB;&#x884C;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x5F88;&#x81EA;&#x7136;&#x800C;&#x7136;&#x5730;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; <em>-value&#x5C31;&#x53EF;&#x4EE5;&#x4E86;,&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x5F04;&#x51FA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;attribute&#x53EB;&#x505A;</em>-model&#x7684;,&#x4ECE;&#x800C;&#x589E;&#x52A0;&#x5B66;&#x4E60;&#x6210;&#x672C;&#x3002;</p>
+</blockquote>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x53EB;&#x505A;sf-value&#x7684;attribute&#x6765;&#x505A;API</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">sf-value</span>=<span class="hljs-string">&quot;vm.message&quot;</span>&gt;</span>
+</code></pre>
+<p>&#x62CD;&#x8111;&#x888B;&#x60F3;&#x60F3;&#xFF0C;view&#x8981;&#x6539;&#x53D8;&#x6570;&#x636E;&#x53EA;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x5728;&#x53EF;&#x4EE5;&#x548C;&#x7528;&#x6237;&#x4EA4;&#x4E92;&#x7684;&#x4E00;&#x4E9B;html&#x63A7;&#x4EF6;&#x4E0A;&#xFF0C;&#x6BD4;&#x5982;input&#x5BB6;&#x65CF;&#xFF08;text, radio, checkbox), select, textarea&#x4E0A;&#x3002; &#x50CF;h1~hn&#x5BB6;&#x65CF;&#xFF0C;&#x8FD9;&#x8F88;&#x5B50;&#x662F;&#x6CA1;&#x6709;&#x673A;&#x4F1A;&#x7684;&#x3002;</p>
+<p>&#x8981;&#x5B9E;&#x73B0;view&#x6539;&#x5199;viewModel&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x5E93;&#x5E94;&#x8BE5;&#x9700;&#x8981;&#x54EA;&#x51E0;&#x6B65;&#x64CD;&#x4F5C;&#x5462;&#xFF1F;</p>
+<ol>
+<li>&#x626B;&#x63CF;&#x6574;&#x4E2A;DOM Tree&#xFF0C;&#x627E;&#x5230;&#x54EA;&#x4E9B;INPUT&#xFF0C;SELECT&#xFF0C;TEXTAREA&#x8282;&#x70B9;&#x4E0A;&#x88AB;&#x914D;&#x7F6E;&#x4E86;sf-value&#x8FD9;&#x4E2A;attribute</li>
+<li>&#x7EAA;&#x5F55;&#x8FD9;&#x4E9B;&#x88AB;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;DOM&#x8282;&#x70B9;&#x548C;viewModel&#x4E4B;&#x95F4;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;</li>
+<li>sf.js&#x5E93;&#x81EA;&#x52A8;&#x7ED9;&#x8FD9;&#x4E2A;&#x5199;DOM&#x52A0;&#x4E0A;onchange&#x6216;&#x8005;oninput&#x7684;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;</li>
+<li>&#x4E00;&#x65E6;&#x76D1;&#x542C;&#x5230;change/input&#x4E8B;&#x4EF6;&#xFF0C;&#x7ACB;&#x5373;&#x83B7;&#x53D6;&#x8FD9;&#x4E2A;DOM&#x7684;value&#x503C;&#xFF0C;&#x628A;&#x8FD9;&#x4E2A;element.value&#x8D4B;&#x7ED9;&#x4E0E;&#x4E4B;&#x7ED1;&#x5B9A;&#x7684;viewModel&#x7684;&#x53D8;&#x91CF;&#x4E0A;&#x3002;</li>
+</ol>
+<h4 id="&#x601D;&#x8003;&#x9898;2">&#x601D;&#x8003;&#x9898;2</h4>
+<p>Q&#xFF1A;&#x90A3;&#x4E48;&#x95EE;&#x9898;&#x6765;&#x4E86;&#xFF0C;vm.message&#x88AB;input&#x4FEE;&#x6539;&#x4E86;&#xFF0C;&#x8C01;&#x53BB;&#x901A;&#x77E5;&#x5176;&#x5B83;&#x540C;&#x6837;&#x7ED1;&#x5B9A;&#x4E86;vm.message&#x7684;view&#x5462;&#xFF1F;
+A&#xFF1A;&#x8BF7;&#x770B;&#x4E0B;&#x4E00;&#x6BB5;</p>
+<h3 id="&#x540C;&#x6B65;&#x673A;&#x5236;">&#x540C;&#x6B65;&#x673A;&#x5236;</h3>
+<h4 id="&#x810F;&#x68C0;&#x67E5;&#x5927;&#x6CD5;">&#x810F;&#x68C0;&#x67E5;&#x5927;&#x6CD5;</h4>
+<p><strong>&#x810F;&#x68C0;&#x67E5;&#x5927;&#x6CD5;</strong> &#x8FD9;&#x4E09;&#x4E2A;&#x5B57;&#x60F3;&#x5FC5;&#x5927;&#x5BB6;&#x5DF2;&#x7ECF;&#x5982;&#x96F7;&#x8D2F;&#x8033;&#xFF0C;&#x6211;2&#x5E74;&#x591A;&#x524D;&#x51FA;&#x53BB;&#x9762;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x88AB;&#x95EE;&#x53CA;&#x6700;&#x591A;&#x7684;&#x5C31;&#x662F;angular&#x7684;&#x810F;&#x68C0;&#x67E5;&#xFF0C;&#x4EC0;&#x4E48;&#x662F;&#x810F;&#x68C0;&#x67E5;&#xFF1F;angular&#x810F;&#x68C0;&#x67E5;&#x7684;&#x65F6;&#x673A;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<p><strong>&#x810F;&#x68C0;&#x67E5;&#x7684;&#x539F;&#x7406;&#x5C31;&#x662F;&#xFF0C;&#x62F7;&#x8D1D;&#x4E00;&#x4EFD;copy_viewModel&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x4E00;&#x65E6;&#x6709;&#x7528;&#x6237;&#x70B9;&#x51FB;&#xFF0C;&#x8F93;&#x5165;&#x64CD;&#x4F5C;&#xFF0C;&#x6216;ajax&#x8BF7;&#x6C42;&#xFF0C;setInterval&#xFF0C;setTimeout&#x7B49;&#x8FD9;&#x4E9B;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;viewModel&#x53D1;&#x751F;&#x6539;&#x53D8;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x6846;&#x67B6;&#x90FD;&#x4F1A;&#x628A;copy_viewModel&#x548C;&#x6700;&#x65B0;&#x7684;viewModel&#x8FDB;&#x884C;&#x6DF1;&#x5EA6;&#x6BD4;&#x8F83;&#xFF0C;&#x4E00;&#x65E6;&#x53D1;&#x73B0;&#x6709;&#x5C5E;&#x6027;&#xFF08;&#x5982;vm.message&#xFF09;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5219;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x4E0E;message&#x7ED1;&#x5B9A;&#x7684;DOM&#x8282;&#x70B9;&#x3002;</strong></p>
+<p>&#x8FD9;&#x4E5F;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#xFF0C;&#x4E00;&#x65E6;&#x4F60;&#x6CA1;&#x6709;&#x4F7F;&#x7528;ng&#x81EA;&#x5E26;&#x7684;$http&#xFF0C;$interval,$timeout,ng-click&#x8FD9;&#x4E9B;angular&#x81EA;&#x5DF1;&#x5C01;&#x88C5;&#x7684;API&#x53BB;&#x64CD;&#x4F5C;viewModel&#xFF0C;angular&#x90FD;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x53BB;&#x540C;&#x6B65;view&#xFF0C;&#x56E0;&#x4E3A;&#x5DF2;&#x7ECF;&#x8D85;&#x51FA;&#x4ED6;&#x7684;&#x7BA1;&#x8F96;&#x8303;&#x56F4;&#x4E86;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x624B;&#x52A8;&#x8C03;&#x7528;apply&#x51FD;&#x6570;&#x53BB;&#x5F3A;&#x5236;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x810F;&#x68C0;&#x67E5;&#xFF0C;&#x4EE5;&#x540C;&#x6B65;view&#x3002;</p>
+<h4 id="setter&#x5927;&#x6CD5;">setter&#x5927;&#x6CD5;</h4>
+<p>&#x542C;&#x8BF4;VUE&#x662F;&#x4F7F;&#x7528;&#x7684;&#x8FD9;&#x79CD;&#x540C;&#x6B65;&#x673A;&#x5236;&#xFF0C;&#x5176;&#x6838;&#x5FC3;&#x539F;&#x7406;&#x5C31;&#x662F;&#x4F7F;&#x7528;<strong>Object.defineProperty(obj, prop, descriptor)</strong> &#x8FD9;&#x4E2A;API&#xFF0C;&#x5728;setter&#x4E2D;&#x52A0;&#x70B9;&#x6599;&#xFF0C;&#x4E00;&#x65E6;&#x6709;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x6267;&#x884C; vm.message = &quot;new value&quot;&#x8BED;&#x53E5;&#xFF0C;&#x5219;setter&#x90FD;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x7531;setter&#x53BB;&#x89E6;&#x53D1;&#x91CD;&#x65B0;&#x6E32;&#x67D3;view&#x7684;&#x903B;&#x8F91;&#x3002;</p>
+<p>&#x76F8;&#x8F83;&#x8FD9;&#x4E24;&#x79CD;&#x540C;&#x6B65;&#x673A;&#x5236;&#xFF0C;&#x4F3C;&#x4E4E;setter&#x66F4;&#x52A0;&#x8F7B;&#x4FBF;&#xFF0C;&#x6027;&#x80FD;&#x66F4;&#x597D;&#x3002;&#x6240;&#x4EE5;&#x672C;&#x6587;&#x4F7F;&#x7528;&#x4E86;setter&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#x540C;&#x6B65;&#x673A;&#x5236;&#xFF08;&#x5173;&#x952E;&#x662F;&#x5B9E;&#x73B0;setter&#x673A;&#x5236;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x8F83;&#x5C11;&#xFF09;&#x3002;</p>
+<h4 id="&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;">&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;</h4>
+<p>&#x7ED9;setter&#x52A0;&#x70B9;&#x6599;</p>
+<div align="center"><img src="../resource/assets/vue/021001.png"></div>
+
+<h3 id="&#x603B;&#x4F53;&#x8BBE;&#x8BA1;&#x56FE;">&#x603B;&#x4F53;&#x8BBE;&#x8BA1;&#x56FE;</h3>
+<p>&#x6240;&#x4EE5;&#x5F52;&#x7EB3;&#x6765;&#x8BF4;&#x4E00;&#x4E2A;MVVM&#x5E93;&#x4E3B;&#x8981;&#x7531;3&#x5757;&#x7EC4;&#x6210;
+<strong>MVVM&#x5E93; = &#x5355;&#x5411;&#x663E;&#x793A; + &#x9006;&#x5411;&#x4FEE;&#x6539; + &#x540C;&#x6B65;&#x673A;&#x5236;</strong></p>
+<p>&#x4E0B;&#x56FE;&#x4E3A;sf.js&#x7684;&#x5B9E;&#x73B0;&#x673A;&#x5236;
+&#x5176;&#x4E2D;Renderer&#x8D1F;&#x8D23;&#x5355;&#x5411;&#x663E;&#x793A;&#x548C;&#x9006;&#x5411;&#x4FEE;&#x6539;&#xFF0C;Watcher&#x8D1F;&#x8D23;&#x76D1;&#x89C6;viewModel&#x4E3A;&#x540C;&#x6B65;&#x673A;&#x5236;&#x7684;&#x6838;&#x5FC3;&#x6A21;&#x5757;&#xFF0C;
+Scanner&#x8D1F;&#x8D23;sf.js&#x521D;&#x59CB;&#x5316;&#x65F6;&#x626B;&#x63CF;DOM Tree&#x751F;&#x6210;view&#x548C;viewModel&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x3002;
+SegmentFault&#x6A21;&#x5757;&#x5219;&#x8D1F;&#x8D23;&#x7EF4;&#x62A4;view-viewModel Map&#xFF0C;&#x4EE5;&#x53CA;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x95F4;&#x7684;&#x8C03;&#x5EA6;</p>
+<div align="center"><img src="../resource/assets/vue/021002.png"></div>
+
+
+<h2 id="&#x4EE3;&#x7801;&#x7BC7;">&#x4EE3;&#x7801;&#x7BC7;</h2>
+<h3 id="&#x7B2C;&#x4E00;&#x6B65;-&#x5148;&#x628A;&#x9AA8;&#x67B6;&#x642D;&#x597D;-&#x8840;&#x8089;&#x665A;&#x70B9;&#x518D;&#x586B;&#x5145;">&#x7B2C;&#x4E00;&#x6B65; &#x5148;&#x628A;&#x9AA8;&#x67B6;&#x642D;&#x597D;, &#x8840;&#x8089;&#x665A;&#x70B9;&#x518D;&#x586B;&#x5145;</h3>
+<p>&#x8BBE;&#x8BA1;&#x7684;&#x7C7B;&#x4E0D;&#x591A;&#xFF0C;&#x4E00;&#x5171;&#x5C31;5&#x4E2A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">//SegmentFault.ts</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> SegmentFault = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SegmentFault</span> </span>{
+    private viewModelPool = {};   <span class="hljs-comment">//&#x7528;&#x6765;&#x7EF4;&#x62A4;viewModel&#x7684;&#x522B;&#x540D;alias&#x4E0E;viewModel&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</span>
+    private viewViewModelMap = {};<span class="hljs-comment">//&#x7528;&#x6765;&#x7EF4;&#x62A4;viewModel&#x548C;&#x88AB;&#x7ED1;&#x5B9A;&#x7684;view&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</span>
+    public registerViewModel(alias:string, vm:object) {};<span class="hljs-comment">//&#x5728;sf&#x6B63;&#x5F0F;&#x8FD0;&#x4F5C;&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x5148;&#x8981;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x4E0B;viewModel&#x5E76;&#x7ED9;&#x4ED6;&#x8D77;&#x4E00;&#x4E2A;&#x522B;&#x540D;</span>
+    public init() {};  <span class="hljs-comment">//sf&#x5E93;&#x5F00;&#x59CB;&#x8FD0;&#x4F5C;&#x7684;&#x5165;&#x53E3;&#x51FD;&#x6570;</span>
+
+    public refresh(alias:string){}; <span class="hljs-comment">// &#x66B4;&#x9732;&#x4E00;&#x4E2A;&#x5F3A;&#x5236;&#x5237;&#x65B0;&#x6574;&#x4E2A;viewModel&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x6BD5;&#x7ADF;&#x6709;&#x4F60;&#x76D1;&#x63A7;&#x4E0D;&#x5230;&#x7684;&#x89D2;&#x843D;</span>
+}
+</code></pre>
+<p>SegmentFault&#x662F;&#x5BF9;&#x7528;&#x6237;&#x66B4;&#x9732;&#x7684;&#x552F;&#x4E00;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5C31;&#x50CF;Angular&#x4ED6;&#x4F1A;&#x66B4;&#x9732;&#x4E00;&#x4E2A;angular&#x5BF9;&#x8C61;&#x7ED9;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x4E00;&#x6837;&#x3002;
+&#x6700;&#x7EC8;&#xFF0C;&#x7528;&#x6237;&#x4F1A;&#x8FD9;&#x6837;&#x6765;&#x64CD;&#x4F5C;SF&#x4EE5;&#x8FBE;&#x5230;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x76EE;&#x7684;
+&#x4E0D;&#x59A8;&#x518D;&#x770B;&#x770B;&#x4F7F;&#x7528;&#x6548;&#x679C;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;dist/sf.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span> <span class="hljs-comment">&lt;!-- &#x8FD9;&#x91CC;&#x5F15;&#x5165;&#x6211;&#x4EEC;&#x7684;sf.js&#x5E93;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+   <span class="hljs-keyword">var</span> sf = <span class="hljs-keyword">new</span> SegmentFault(); <span class="hljs-comment">//&#x751F;&#x6210;&#x4E00;&#x4E2A;sf&#x7684;&#x5B9E;&#x4F8B;</span>
+   sf.registerViewModel(<span class="hljs-string">&quot;vm&quot;</span>, <span class="hljs-keyword">new</span> ViewModel()); <span class="hljs-comment">//&#x6CE8;&#x518C;&#x4E00;&#x4E2A;viewModel&#xFF0C;&#x8D77;&#x4E00;&#x4E2A;&#x53EB;vm&#x7684;&#x522B;&#x540D;</span>
+   sf.init(); <span class="hljs-comment">//&#x8C03;&#x7528;init&#x65B9;&#x6CD5;&#xFF0C;&#x5F00;&#x59CB;&#x521D;&#x59CB;&#x5316;&#xFF0C;sf&#x6B63;&#x5F0F;&#x5F00;&#x59CB;&#x4E00;&#x4E9B;&#x5217;&#x5DE5;&#x4F5C;</span>
+
+   <span class="hljs-comment">//&#x4EE5;&#x4E0B;&#x662F;viewModel&#x7684;&#x5B9A;&#x4E49;</span>
+   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ViewModel</span><span class="hljs-params">()</span> </span>{
+     <span class="hljs-keyword">this</span>.message = <span class="hljs-string">&quot;hello, SegmentFault&quot;</span>;
+     <span class="hljs-keyword">this</span>.buttonClickHandler = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+       <span class="hljs-keyword">this</span>.message = <span class="hljs-string">&quot;clicked: &quot;</span> + <span class="hljs-keyword">this</span>.message;
+     };
+   }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>&#x6709;&#x6CA1;&#x6709;&#x89C9;&#x5F97;SF&#x7684;API&#x5E72;&#x51C0;&#x5229;&#x843D;&#xFF0C;&#x6E05;&#x65B0;&#x723D;&#x6D01;&#xFF01;</p>
+<p>&#x6839;&#x636E;&#x8BBE;&#x8BA1;&#x56FE;&#x7684;Step 1&#xFF0C;&#x5148;&#x7ED9;&#x5DF2;&#x6CE8;&#x518C;&#x7684;viewModel&#x52A0;&#x4E0A;&#x76D1;&#x89C6;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;Watcher&#x7C7B;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Watcher</span> </span>{
+    private sf;
+
+    <span class="hljs-comment">//&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CC;&#x4F20;&#x5165;&#x4E00;&#x4E2A;sf&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4FBF;&#x4E8E;callback&#x8C03;&#x7528;&#x65F6;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x786E;&#x5B9A;&#x3002;&#x3002;&#x3002;&#x8FD9;&#x662F;&#x540E;&#x8BDD;</span>
+    <span class="hljs-keyword">constructor</span>(sf) {
+        <span class="hljs-keyword">this</span>.sf = sf;
+    }
+    public observe(viewModel, callback) {} <span class="hljs-comment">//&#x6697;&#x4E2D;&#x89C2;&#x5BDF;</span>
+}
+</code></pre>
+<p>&#x518D;&#x6765;&#x770B;&#x4E00;&#x4E0B;Step 2, &#x53E6;&#x4E00;&#x4E2A;&#x4E3B;&#x8981;&#x7684;&#x7C7B;<strong>Scanner</strong>&#xFF0C;<strong>Scanner</strong>&#x662F;&#x5E72;&#x4EC0;&#x4E48;&#x7684;&#x5462;&#xFF1F;&#x4F5C;&#x7528;&#x5C31;&#x4E00;&#x4E2A;&#x904D;&#x5386;&#x6574;&#x4E2A;DOM Tree&#x628A;&#x51FA;&#x73B0;sf-xxxx&#x8FD9;&#x4E2A;attribute&#x7684;Elements&#x5168;&#x90E8;&#x6311;&#x51FA;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x627E;sf-xxxx = expression&#xFF0C;&#x7B49;&#x53F7;&#x53F3;&#x8FB9;&#x8FD9;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x91CC;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x4E86;viewModel&#x7684;alias&#xFF0C;&#x90A3;&#x5C31;&#x8BF4;&#x4E48;&#x8FD9;&#x4E2A;element&#x662F;&#x8DDF;viewModel&#x642D;&#x754C;&#x4E86;&#xFF0C;&#x662F;&#x7ED1;&#x5B9A;&#x5728;&#x4E00;&#x8D77;&#x4E86;&#xFF0C;<strong>scanner</strong>&#x8D1F;&#x8D23;&#x628A;&#x8FD9;&#x5BF9;&quot;&#x604B;&#x4EBA;&quot;&#x5173;&#x7CFB;&#x7528;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7EF4;&#x62A4;&#x4E00;&#x4E0B;&#xFF0C;&#x7B49;&#x5168;&#x90E8;&#x626B;&#x63CF;&#x5B8C;&#x4E86;&#x4E00;&#x8D77;&#x8FD4;&#x56DE;&#x7ED9;SegmentFault&#x53BB;&#x542C;&#x5019;&#x53D1;&#x843D;&#x3002;</p>
+<div align="center"><img src="../resource/assets/vue/021003.png"></div>
+
+<pre><code class="lang-js"><span class="hljs-comment">//Scanner.ts</span>
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Scanner</span> </span>{
+
+    private prefix = <span class="hljs-string">&quot;sf-&quot;</span>; <span class="hljs-comment">//&#x5E93;&#x7684;&#x524D;&#x7F00;</span>
+    private viewModelPool;
+
+    <span class="hljs-keyword">constructor</span>(viewModelPool) {
+        <span class="hljs-keyword">this</span>.viewModelPool = viewModelPool; 
+        <span class="hljs-comment">//Scanner&#x80AF;&#x5B9A;&#x662F;&#x4E3A;SegmentFault&#x670D;&#x52A1;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;SegmentFault&#x4F1A;&#x628A;&#x4E4B;&#x524D;&#x6CE8;&#x518C;&#x8FC7;&#x7684;viewModel&#x4FE1;&#x606F;&#x4F20;&#x7ED9;Scanner&#xFF0C;&#x4FBF;&#x4E8E;&#x5B83;&#x53BB;&#x626B;&#x63CF;&#x3002;</span>
+    }
+
+    public scanBindDOM():object {} 
+    <span class="hljs-comment">//&#x627E;&#x51FA;attribute&#x91CC;&#x5E26;sf-&#xFF0C;&#x4E14;&#x7B49;&#x53F7;&#x53F3;&#x8FB9;&#x8868;&#x8FBE;&#x5F0F;&#x91CC;&#x542B;&#x6709;viewModel&#x7684;alias&#x7684;Element&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;view&#x4E0E;viewModel&#x7684;map</span>
+
+}
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x53BB;&#xFF0C;SegmentFault&#x4F1A;&#x83B7;&#x5F97;Scanner.scanBindDOM()&#x6240;&#x8FD4;&#x56DE;&#x7684;view_viewModel Map,&#x6765;&#x770B;&#x770B;&#x8FD9;&#x4E2A;Map&#x7684;&#x5177;&#x4F53;&#x6570;&#x636E;&#x7ED3;&#x6784;</p>
+<pre><code class="lang-js"><span class="hljs-comment">//template</span>
+{
+    <span class="hljs-string">&quot;vm_alias&quot;</span>:[
+        {
+            <span class="hljs-string">&quot;viewModel&quot;</span>:viewModel,
+            <span class="hljs-string">&quot;element&quot;</span>:element,
+            <span class="hljs-string">&quot;expression&quot;</span>:expression,
+            <span class="hljs-string">&quot;attributeName&quot;</span>:attributeName
+        }
+    ]
+}
+<span class="hljs-comment">//&#x5982;&#x679C;&#x5B9E;&#x9645;&#x4E2D;&#x7684;DOM Tree&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF0C;</span>
+&lt;body&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">sf-text</span>=<span class="hljs-string">&quot;userVM.username&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+    &lt;input type=<span class="hljs-string">&quot;text&quot;</span> sf-value=<span class="hljs-string">&quot;userVM.username&quot;</span>&gt;
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span>
+<span class="hljs-comment">//&#x90A3;&#x4E48;&#xFF0C;Scanner&#x626B;&#x63CF;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x5E94;&#x8BE5;&#x662F;</span>
+{
+    <span class="hljs-string">&quot;userVM&quot;</span>:[
+        {
+            <span class="hljs-string">&quot;viewModel&quot;</span>: userViewModel,
+            <span class="hljs-string">&quot;element&quot;</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>/&gt;</span></span>,
+            <span class="hljs-string">&quot;expression&quot;</span>: <span class="hljs-string">&quot;vm.username&quot;</span>,
+            <span class="hljs-string">&quot;attributeName&quot;</span>: <span class="hljs-string">&quot;sf-text&quot;</span>
+        },
+        {
+            <span class="hljs-string">&quot;viewModel&quot;</span>: userViewModel,
+            <span class="hljs-string">&quot;element&quot;</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>&gt;</span>,
+            &quot;expression&quot;: &quot;vm.username&quot;,
+            &quot;attributeName&quot;: &quot;sf-value&quot;
+        }
+    ]
+}
+</span></code></pre>
+<p>&#x6211;&#x7684;&#x5B9E;&#x73B0;&#x4E2D;&#x7279;&#x5730;&#x5B9A;&#x4E00;&#x4E2A;&#x4E86;&#x4E00;&#x4E2A;BoundItem&#x7C7B;&#x6765;&#x63CF;&#x8FF0; {&quot;viewModel&quot;:viewModel,&quot;element&quot;:element,&quot;expression&quot;:expression,&quot;attributeName&quot;:attributeName}</p>
+<pre><code class="lang-js"><span class="hljs-comment">//BoundItem.ts</span>
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BoundItem</span> </span>{
+    public viewModel: object;
+    public element: Element;
+    public expression: string;
+    public attributeName: string;
+
+    <span class="hljs-keyword">constructor</span>(viewModel: object, element: Element, expression: string, attributeName: string) {
+        <span class="hljs-keyword">this</span>.viewModel = viewModel;
+        <span class="hljs-keyword">this</span>.element = element;
+        <span class="hljs-keyword">this</span>.expression = expression;
+        <span class="hljs-keyword">this</span>.attributeName = attributeName;
+    } 
+}
+</code></pre>
+<p>&#x62FF;&#x5230;view_viewModel map&#x540E;&#xFF0C;SegmentFault&#x4F1A;&#x8C03;&#x7528;Renderer&#x53BB;&#x6328;&#x4E2A;&#x6E32;&#x67D3;&#x6BCF;&#x4E00;&#x4E2A;BoundItem&#x3002;</p>
+<div align="center"><img src="../resource/assets/vue/021004.png"></div>
+
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Renderer</span></span>{
+    public render(boundItem:BoundItem) {};
+}
+</code></pre>
+<p>&#x597D;&#x81F3;&#x6B64;&#xFF0C;&#x51E0;&#x4E2A;&#x4E3B;&#x8981;&#x7684;&#x7C7B;&#x90FD;&#x4E00;&#x4E00;&#x767B;&#x573A;&#x4E86;&#xFF0C;&#x63A5;&#x4E0B;&#x53BB;&#x6211;&#x4EEC;&#x5B8C;&#x5584;&#x4E0B;SegmentFault&#x7C7B;&#xFF0C;&#x8BA9;ta&#x548C;&#x5176;&#x5B83;&#x51E0;&#x4E2A;&#x7C7B;&#x8054;&#x52A8;&#x8D77;&#x6765;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {Scanner} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./Scanner&quot;</span>;
+<span class="hljs-keyword">import</span> {Watcher} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./Watcher&quot;</span>;
+<span class="hljs-keyword">import</span> {Renderer} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./Renderer&quot;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> SegmentFault = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SegmentFault</span> </span>{
+  private viewModelPool = {};
+  private viewViewModelMap = {};
+  private renderer = <span class="hljs-keyword">new</span> Renderer();
+  public init() {
+    <span class="hljs-keyword">let</span> scanner = <span class="hljs-keyword">new</span> Scanner(<span class="hljs-keyword">this</span>.viewModelPool);
+    <span class="hljs-keyword">let</span> watcher = <span class="hljs-keyword">new</span> Watcher(<span class="hljs-keyword">this</span>);
+    <span class="hljs-comment">//step 1, &#x6697;&#x4E2D;&#x89C2;&#x5BDF;&#x5404;&#x4E2A;viewModel</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.viewModelPool) {
+      watcher.observe(<span class="hljs-keyword">this</span>.viewModelPool[key],<span class="hljs-keyword">this</span>.viewModelChangedHandler);
+    }
+    <span class="hljs-comment">//step 2 3, &#x626B;&#x63CF;DOM Tree&#x5E76;&#x8FD4;&#x56DE;Map </span>
+    <span class="hljs-keyword">this</span>.viewViewModelMap = scanner.scanBindDOM();
+    <span class="hljs-comment">//step 4, &#x6E32;&#x67D3;DOM</span>
+    <span class="hljs-built_in">Object</span>.keys(<span class="hljs-keyword">this</span>.viewViewModelMap).forEach(alias=&gt;{
+        <span class="hljs-keyword">this</span>.refresh(alias);
+    });   
+  };
+
+  public registerViewModel(alias:string, viewModel:object) {
+    viewModel[<span class="hljs-string">&quot;_alias&quot;</span>] = alias;
+      <span class="hljs-built_in">window</span>[alias] = <span class="hljs-keyword">this</span>.viewModelPool[alias] = viewModel;
+  };
+
+  public refresh(alias:string){
+    <span class="hljs-keyword">let</span> boundItems = <span class="hljs-keyword">this</span>.viewViewModelMap[alias];
+    boundItems.forEach(boundItem =&gt; {
+      <span class="hljs-keyword">this</span>.renderer.render(boundItem);
+    });
+  }
+
+  private viewModelChangedHandler(viewModel,prop) {
+    <span class="hljs-keyword">this</span>.refresh(viewModel._alias);
+  }
+}
+</code></pre>
+<p><strong>&#x597D;&#xFF0C;&#x5199;&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x9AA8;&#x67B6;&#x5168;&#x90E8;&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#xFF0C;&#x4F60;&#x6709;&#x6CA1;&#x6709;&#x5174;&#x8DA3;&#x81EA;&#x5DF1;&#x82B1;&#x70B9;&#x65F6;&#x95F4;&#x53BB;&#x586B;&#x5145;&#x8840;&#x8089;&#x5462;?</strong></p>
+<h3 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h3>
+<pre><code class="lang-js"><span class="hljs-comment">//Watcher.ts</span>
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Watcher</span> </span>{
+  private sf;
+  <span class="hljs-keyword">constructor</span>(sf) {
+    <span class="hljs-keyword">this</span>.sf = sf;
+  }
+  public observe(viewModel, callback) {
+    <span class="hljs-keyword">let</span> host = <span class="hljs-keyword">this</span>.sf;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> viewModel) {
+      <span class="hljs-keyword">var</span> defaultValue = viewModel[key];
+        (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">k, dv</span>) </span>{
+          <span class="hljs-keyword">if</span> (k !== <span class="hljs-string">&quot;_alias&quot;</span>) {
+            <span class="hljs-built_in">Object</span>.defineProperty(viewModel, k, {
+              get: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">return</span> dv;
+              },
+              set: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+                dv = value;
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;do something after set a new value&quot;</span>);
+                callback.call(host, viewModel, k);
+              }
+            });
+          }
+      })(key, defaultValue);
+    }
+  }
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//Scanner.ts</span>
+<span class="hljs-keyword">import</span> { BoundItem } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./BoundItem&quot;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Scanner</span> </span>{
+    private prefix = <span class="hljs-string">&quot;sf-&quot;</span>;
+    private viewModelPool;
+
+    <span class="hljs-keyword">constructor</span>(viewModelPool) {
+        <span class="hljs-keyword">this</span>.viewModelPool = viewModelPool;
+    }
+    public scanBindDOM() :object{
+        <span class="hljs-keyword">let</span> boundMap = {};
+
+        <span class="hljs-keyword">let</span> boundElements = <span class="hljs-keyword">this</span>.getAllBoundElements(<span class="hljs-keyword">this</span>.prefix);
+        boundElements.forEach(element =&gt; {
+           <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; element.attributes.length; i++) {
+                <span class="hljs-keyword">let</span> attr = element.attributes[i];
+                <span class="hljs-keyword">if</span> (attr.nodeName.search(<span class="hljs-keyword">this</span>.prefix) &gt; <span class="hljs-number">-1</span>) {
+                    <span class="hljs-keyword">let</span> attributeName = attr.nodeName;
+                    <span class="hljs-keyword">let</span> expression = element.getAttribute(attributeName);
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> alias <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.viewModelPool) {
+                        <span class="hljs-keyword">if</span> (expression.search(alias + <span class="hljs-string">&quot;.&quot;</span>) != <span class="hljs-number">-1</span>) {
+                            <span class="hljs-keyword">let</span> boundItem = <span class="hljs-keyword">new</span> BoundItem(<span class="hljs-keyword">this</span>.viewModelPool[alias], element, expression,attributeName);
+                            <span class="hljs-keyword">if</span> (!boundMap[alias]) {
+                                boundMap[alias] = [boundItem];
+                            } <span class="hljs-keyword">else</span> {
+                                boundMap[alias].push(boundItem);
+                            }
+                        }
+                    }
+                }
+            }
+        });  
+        <span class="hljs-keyword">return</span> boundMap;
+    }
+
+    private fuzzyFind(element:HTMLElement,text:string):HTMLElement {
+        <span class="hljs-keyword">if</span> (element &amp;&amp; element.attributes) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; element.attributes.length; i++) {
+                <span class="hljs-keyword">let</span> attr = element.attributes[i];
+                <span class="hljs-keyword">if</span> (attr.nodeName.search(text) &gt; <span class="hljs-number">-1</span>) {
+                    <span class="hljs-keyword">return</span> element;
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    }
+     private getAllBoundElements(prefix): <span class="hljs-built_in">Array</span>&lt;HTMLElement&gt; {
+        <span class="hljs-keyword">let</span> elements = [];
+        <span class="hljs-keyword">let</span> allChildren = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&quot;*&quot;</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; allChildren.length; i++) {
+            <span class="hljs-keyword">let</span> child: HTMLElement = allChildren[i] <span class="hljs-keyword">as</span> HTMLElement;
+            <span class="hljs-keyword">let</span> matchElement = <span class="hljs-keyword">this</span>.fuzzyFind(child, prefix);
+            <span class="hljs-keyword">if</span> (matchElement) {
+                elements.push(matchElement);
+            }
+        }
+        <span class="hljs-keyword">return</span> elements;
+    }
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//BoundItem.ts</span>
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BoundItem</span> </span>{
+    public viewModel: object;
+    public element: Element;
+    public expression: string;
+    public attributeName: string;
+    private interactiveDomConfig = {
+        <span class="hljs-string">&quot;INPUT&quot;</span>:{
+            <span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;input&quot;</span>,
+            <span class="hljs-string">&quot;password&quot;</span>:<span class="hljs-string">&quot;input&quot;</span>,
+            <span class="hljs-string">&quot;email&quot;</span>:<span class="hljs-string">&quot;input&quot;</span>,
+            <span class="hljs-string">&quot;url&quot;</span>:<span class="hljs-string">&quot;input&quot;</span>,
+            <span class="hljs-string">&quot;tel&quot;</span>:<span class="hljs-string">&quot;input&quot;</span>,
+            <span class="hljs-string">&quot;radio&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;checkbox&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;color&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;date&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;datetime&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;datetime-local&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;month&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;number&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;range&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;search&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;time&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;week&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+            <span class="hljs-string">&quot;button&quot;</span>:<span class="hljs-string">&quot;N/A&quot;</span>,
+            <span class="hljs-string">&quot;submit&quot;</span>:<span class="hljs-string">&quot;N/A&quot;</span>
+        },
+        <span class="hljs-string">&quot;SELECT&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>,
+        <span class="hljs-string">&quot;TEXTAREA&quot;</span>:<span class="hljs-string">&quot;change&quot;</span>
+    }
+    <span class="hljs-keyword">constructor</span>(viewModel: object, element: Element, expression: string, attributeName: string) {
+        <span class="hljs-keyword">this</span>.viewModel = viewModel;
+        <span class="hljs-keyword">this</span>.element = element;
+        <span class="hljs-keyword">this</span>.expression = expression;
+        <span class="hljs-keyword">this</span>.attributeName = attributeName;
+        <span class="hljs-keyword">this</span>.addListener(<span class="hljs-keyword">this</span>.element,<span class="hljs-keyword">this</span>.expression);
+    }
+
+    private addListener(element,expression){
+        <span class="hljs-keyword">let</span> tagName = element.tagName;
+        <span class="hljs-keyword">let</span> eventName = <span class="hljs-keyword">this</span>.interactiveDomConfig[tagName];
+        <span class="hljs-keyword">if</span>(!eventName){
+            <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> eventName === <span class="hljs-string">&quot;object&quot;</span>){
+            <span class="hljs-keyword">let</span> type = element.getAttribute(<span class="hljs-string">&quot;type&quot;</span>);
+            eventName = eventName[type];
+        }
+        element.addEventListener(eventName, (e)=&gt; {
+            <span class="hljs-keyword">let</span> newValue = (element <span class="hljs-keyword">as</span> HTMLInputElement).value;
+            <span class="hljs-keyword">let</span> cmd = expression + <span class="hljs-string">&quot;= \&quot;&quot;</span> + newValue + <span class="hljs-string">&quot;\&quot;&quot;</span>;
+            <span class="hljs-keyword">try</span>{
+                <span class="hljs-built_in">eval</span>(cmd);
+            }<span class="hljs-keyword">catch</span>(e){
+                <span class="hljs-built_in">console</span>.error(e);
+            }
+        });
+    }
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//Renderer.ts</span>
+<span class="hljs-keyword">import</span> {BoundItem} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./BoundItem&quot;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Renderer</span></span>{
+    public render(boundItem:BoundItem) {
+        <span class="hljs-keyword">var</span> value = <span class="hljs-keyword">this</span>.getValue(boundItem.viewModel, boundItem.expression);
+        <span class="hljs-keyword">var</span> attribute = boundItem.attributeName.split(<span class="hljs-string">&apos;-&apos;</span>)[<span class="hljs-number">1</span>];
+
+        <span class="hljs-keyword">if</span> (attribute.toLowerCase() === <span class="hljs-string">&quot;innertext&quot;</span>) {
+            attribute = <span class="hljs-string">&quot;innerText&quot;</span>;
+        }
+        boundItem.element[attribute] = value;
+    };
+    private getValue(viewModel, expression) {
+        <span class="hljs-keyword">return</span> (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">var</span> alias = viewModel._alias;
+            <span class="hljs-keyword">var</span> tempScope = {};
+            tempScope[alias] = viewModel;
+            <span class="hljs-keyword">try</span> {
+                <span class="hljs-keyword">var</span> pattern = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">&quot;\\b&quot;</span> + alias + <span class="hljs-string">&quot;\\b&quot;</span>, <span class="hljs-string">&quot;gm&quot;</span>);
+                expression = expression.replace(pattern, <span class="hljs-string">&quot;tempScope.&quot;</span> + alias);
+                <span class="hljs-keyword">var</span> result = <span class="hljs-built_in">eval</span>(expression);
+                tempScope = <span class="hljs-literal">null</span>;
+                <span class="hljs-keyword">return</span> result;
+            } <span class="hljs-keyword">catch</span> (e) {
+                <span class="hljs-keyword">throw</span> e;
+            }
+        })();
+    }
+}
+</code></pre>
+<h2 id="github">github</h2>
+<p><a href="ttps://github.com/momoko8443/how_to_write_a_mvvm_library" target="_blank">github</a></p>
+<h2 id="&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web-component&#x5E93;&#xFF08;1&#xFF09;-&#x2014;&#x8BBE;&#x8BA1;&#x7BC7;">&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web component&#x5E93;&#xFF08;1&#xFF09; &#x2014;&#x8BBE;&#x8BA1;&#x7BC7;</h2>
+<p>&#x672C;&#x7BC7;&#x662F;&#x5728;&#x4E0A;&#x4E24;&#x7BC7;&#x7684;&#x57FA;&#x7840;&#x4E4B;&#x4E0A;&#x5BF9;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x8FDB;&#x4E00;&#x6B65;&#x6269;&#x5C55;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;web component&#x529F;&#x80FD;&#xFF0C;&#x6240;&#x4EE5;&#x8BFB;&#x8005;&#x52A1;&#x5FC5;&#x638C;&#x63E1;mvvm&#x7684;&#x5B9E;&#x73B0;&#x673A;&#x5236;&#x624D;&#x80FD;&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x672C;&#x7BC7;&#x7684;&#x5185;&#x5BB9;&#xFF08;mvvm&#x662F;web component&#x7684;&#x57FA;&#x77F3;&#xFF09;&#x3002;</p>
+<h3 id="&#x4EC0;&#x4E48;&#x624D;&#x662F;&#x597D;&#x7684;-web-component-&#x8BBE;&#x8BA1;">&#x4EC0;&#x4E48;&#x624D;&#x662F;&#x597D;&#x7684; web component &#x8BBE;&#x8BA1;</h3>
+<p>&#x76EE;&#x524D;&#x5E02;&#x9762;&#x4E0A;&#x5404;&#x5927;&#x4E3B;&#x6D41;&#x524D;&#x7AEF;&#x6846;&#x67B6;&#xFF0C;&#x51E1;&#x4E8B;&#x5E26;web component&#x529F;&#x80FD;&#x7684;&#xFF0C;&#x4ED6;&#x4EEC;&#x7684;&#x8BBE;&#x8BA1;&#x6C34;&#x51C6;&#x57FA;&#x672C;&#x90FD;&#x4E0D;&#x5165;&#x6211;&#x7684;&#x6CD5;&#x773C;&#xFF0C;&#x552F;&#x4E00;&#x770B;&#x5F97;&#x4E0A;&#x773C;&#x7684;&#x662F;google&#x7684;polymer&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x67D0;&#x4E9B;API&#x8BBE;&#x8BA1;&#x5C42;&#x9762;&#x4E5F;&#x663E;&#x5F97;&#x7565;&#x5FAE;&#x7E41;&#x7410;&#xFF08;&#x60F3;&#x4E86;&#x89E3;polymer&#x7684;&#x670B;&#x53CB;&#x770B;&#x4E00;&#x7FFB;&#x4E00;&#x4E0B;&#x6211;&#x4E13;&#x680F;&#x91CC;&#x9762;<a href="https://segmentfault.com/a/1190000003810019" target="_blank">10&#x7BC7;polymer&#x5165;&#x95E8;&#x7CFB;&#x5217;&#x6559;&#x7A0B;</a>&#xFF09;</p>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;component">&#x4EC0;&#x4E48;&#x662F;component</h3>
+<p>html&#x63D0;&#x4F9B;&#x7684;&#x539F;&#x751F;&#x6807;&#x7B7E;&#xFF0C;&#x6BD4;&#x5982;DIV, BUTTON, INPUT&#x5BB6;&#x65CF;&#xFF0C;Hx&#x5BB6;&#x65CF;&#x7B49;&#x7B49;&#xFF0C;&#x8FD9;&#x4E9B;&#x5C31;&#x597D;&#x6BD4;&#x4FC4;&#x7F57;&#x65AF;&#x65B9;&#x5757;&#x91CC;&#x7684;&#x4E00;&#x5757;&#x5757;&#x6807;&#x51C6;&#x79EF;&#x6728;,&#x6211;&#x4EEC;&#x79F0;&#x5B83;&#x4EEC;&#x4E3A;stand component</p>
+<p>&#x67D0;&#x4E00;&#x5929;&#x8FD9;&#x4E9B;&#x79EF;&#x6728;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x4F60;&#x7684;&#x9700;&#x6C42;&#x4E86;&#xFF0C;&#x88AB;&#x6269;&#x5C55;&#x6216;&#x88AB;&#x7EC4;&#x5408;&#x5F62;&#x6210;&#x4E86;&#x975E;&#x57FA;&#x672C;&#x5F62;&#x72B6;</p>
+<div align="center"><img src="../resource/assets/vue/021005.png"></div>
+
+<p>&#x8FD9;&#x4E9B;&#x65B0;&#x5F62;&#x72B6;&#x5C31;&#x662F;custom component&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#xFF01;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6709;component&#x5462;&#xFF0C;&#x597D;&#x5904;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
+<ol>
+<li>&#x53EF;&#x4EE5;&#x590D;&#x7528;</li>
+<li>&#x7ED3;&#x6784;&#x6E05;&#x6670;</li>
+<li>&#x72EC;&#x7ACB;&#x5F00;&#x53D1;</li>
+</ol>
+<h3 id="&#x6211;&#x5FC3;&#x76EE;&#x4E2D;&#x7684;web-component">&#x6211;&#x5FC3;&#x76EE;&#x4E2D;&#x7684;web component</h3>
+<p>&#x5728;&#x5EA7;&#x7684;&#x5404;&#x4F4D;&#x90FD;&#x5199;&#x8FC7;index.html&#x4E48;&#xFF1F;&#x5F88;&#x7B80;&#x5355;
+&#x4E3B;&#x8981;&#x5C31;&#x5206;&#x6210;3&#x5927;&#x5757;&#x5185;&#x5BB9;&#xFF0C;style, dom, script</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--&#x6837;&#x5F0F;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-comment">&lt;!--DOM UI--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-comment">&lt;!--&#x903B;&#x8F91;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x5916;&#x9762;&#x7528;&#x4E2A;<html></html>&#x5305;&#x88F9;</p>
+<p>&#x6240;&#x4EE5;&#x8FD9;&#x671F;&#x4F4E;&#x914D;&#x7248;web component&#x5E93;&#x8BBE;&#x8BA1;&#x76EE;&#x7684;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#xFF0C;&#x6211;&#x5E0C;&#x671B;&#x5728;&#x5199;&#x4E00;&#x4E2A;custom component&#x7684;&#x65F6;&#x5019;&#x4E5F;&#x80FD;&#x6309;&#x7167;index.html&#x7684;&#x539F;&#x751F;&#x98CE;&#x683C;&#x6765;&#x5199;&#xFF0C;&#x8FD9;&#x662F;&#x591A;&#x4E48;&#x7684;&#x4F18;&#x96C5;&#xFF0C;&#x81EA;&#x7136;&#xFF0C;&#x6CA1;&#x6709;&#x5B66;&#x4E60;&#x6210;&#x672C;&#x554A;&#xFF01;
+&#x8FD9;&#x4E5F;&#x5E94;&#x8BE5;&#x662F;&#x65E0;&#x6570;&#x4EBA;&#x5FC3;&#x76EE;&#x4E2D;&#x7684;web component&#x8BBE;&#x8BA1;</p>
+<h3 id="api&#x8BBE;&#x8BA1;">API&#x8BBE;&#x8BA1;</h3>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x7684;SegmentFault.js v2.0&#x7684;Web Component&#x7684;&#x8BBE;&#x8BA1;&#x5B97;&#x65E8;&#x5C31;&#x662F;&#xFF0C;&#x5C3D;&#x91CF;&#x63A5;&#x8FD1;&#x539F;&#x751F;&#x7684;html&#x7ED3;&#x6784;&#x548C;&#x4F7F;&#x7528;&#x4E60;&#x60EF;,<strong>&#x63A5;&#x8FD1;&#x539F;&#x751F;&#x4ECE;&#x800C;&#x628A;&#x5B66;&#x4E60;&#x6210;&#x672C;&#x964D;&#x5230;&#x6700;&#x4F4E;&#xFF0C;&#x662F;&#x6211;&#x8FFD;&#x6C42;&#x7684;&#x4E1C;&#x897F;</strong></p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- myComp.html //&#x6587;&#x4EF6;&#x540D;&#x8FD8;&#x662F;&#x4EE5;.html&#x7ED3;&#x5C3E;,&#x81EA;&#x7136; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">sf-component</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="xml">
+        <span class="hljs-comment">&lt;!--css--&gt;</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- any dom--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+        <span class="hljs-comment">//js</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">sf-component</span>&gt;</span>
+</code></pre>
+<p>&#x5199;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x4F8B;&#x5B50;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- myComp.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">sf-component</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-tag">button</span>{
+            <span class="hljs-attribute">color</span>:red;
+        }
+        <span class="hljs-selector-tag">p</span>{
+            <span class="hljs-attribute">color</span>:yellow;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">sf-value</span>=<span class="hljs-string">&quot;this.message&quot;</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">sf-innerText</span>=<span class="hljs-string">&quot;this.buttonName&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;this.clickHandler()&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">sf-innerText</span>=<span class="hljs-string">&quot;this.message&quot;</span>&gt;</span> 
+            <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+        <span class="hljs-keyword">this</span>.message = <span class="hljs-string">&quot;this is a component&quot;</span>;
+        <span class="hljs-keyword">this</span>.buttonName = <span class="hljs-string">&quot;click me&quot;</span>;
+        <span class="hljs-keyword">this</span>.clickHandler = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+            alert(<span class="hljs-keyword">this</span>.message);
+        };
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">sf-component</span>&gt;</span>
+</code></pre>
+<p>&#x4E00;&#x4E2A;Component&#x7684;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x597D;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x63A5;&#x4E0B;&#x53BB;&#x5C31;&#x662F;&#x5982;&#x4F55;&#x5F15;&#x5165;&#x5B83;&#x4E86;&#x3002;&#x6CBF;&#x7528;&#x4E0A;&#x7BC7;Mvvm&#x4E2D;&#x7684;&#x98CE;&#x683C;&#xFF0C;&#x6211;&#x4EEC;&#x7ED9;SegmentFault&#x8FD9;&#x4E2A;Class&#x5F04;&#x4E2A;registerComponent(tagName,compPath)&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;&#x5728;index.html&#x4E2D;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> sf = <span class="hljs-keyword">new</span> SegmentFault();
+sf.registerController(<span class="hljs-string">&quot;xxx&quot;</span>,xxx);
+...
+sf.registerComponent(<span class="hljs-string">&quot;my-comp&quot;</span>,<span class="hljs-string">&quot;components/myComp.html&quot;</span>);
+...
+sf.init();
+</code></pre>
+<p>&#x800C;&#x5728;&#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&quot;my-comp&quot;&#x8FD9;&#x4E2A;&#x6211;&#x4EEC;&#x521A;&#x521A;&#x6CE8;&#x518C;&#x65F6;&#x8D77;&#x7684;&#x6807;&#x7B7E;&#x540D;&#x6765;&#x5F15;&#x5165;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>...<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">my-comp</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-comp</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+<p>&#x600E;&#x4E48;&#x6837;&#xFF01;&#x56DB;&#x4E2A;&#x5B57;&#xFF1A;&#x5E72;&#x51C0;&#x5229;&#x843D;</p>
+<h3 id="&#x4E00;&#x4E2A;web-component&#x5E93;&#x5FC5;&#x987B;&#x5177;&#x5907;&#x7684;&#x57FA;&#x672C;&#x7D20;&#xFF08;&#x529F;&#xFF09;&#x517B;&#xFF08;&#x80FD;&#xFF09;">&#x4E00;&#x4E2A;Web Component&#x5E93;&#x5FC5;&#x987B;&#x5177;&#x5907;&#x7684;&#x57FA;&#x672C;&#x7D20;&#xFF08;&#x529F;&#xFF09;&#x517B;&#xFF08;&#x80FD;&#xFF09;</h3>
+<ol>
+<li>Mvvm &#x5177;&#x5907;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x529F;&#x80FD;</li>
+<li>Shadow Style &#x5177;&#x6709;&#x72EC;&#x7ACB;&#x7684;&#x4E0D;&#x6C61;&#x67D3;&#x5168;&#x5C40;&#x7684;css&#x529F;&#x80FD;</li>
+<li>Communication &#x5177;&#x6709;&#x548C;&#x7236;&#x5B50;&#x5144;&#x5F1F;&#x7EC4;&#x4EF6;&#x901A;&#x8BAF;&#x7684;&#x529F;&#x80FD;</li>
+<li>&#x62E5;&#x6709;&#x751F;&#x547D;&#x5468;&#x671F; &#xFF08;&#x5C5E;&#x4E8E;&#x9AD8;&#x7EA7;&#x529F;&#x80FD;&#xFF0C;&#x672C;&#x4F4E;&#x914D;&#x7248;&#x5E93;&#x4E0D;&#x6D89;&#x53CA;&#xFF09;</li>
+</ol>
+<h4 id="&#x7B2C;&#x4E00;&#x70B9;mvvm">&#x7B2C;&#x4E00;&#x70B9;Mvvm</h4>
+<p>Mvvm&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x5957;&#x7528;&#x4E4B;&#x524D;&#x7684;&#x5B9E;&#x73B0;&#x5373;&#x53EF;</p>
+<h4 id="&#x7B2C;&#x4E8C;&#x70B9;shadow-style">&#x7B2C;&#x4E8C;&#x70B9;Shadow Style</h4>
+<p>&#x53EF;&#x80FD;&#x5F88;&#x591A;&#x4EBA;&#x5BF9;&#x8FD9;&#x4E2A;&#x6CA1;&#x4EC0;&#x4E48;&#x6982;&#x5FF5;&#xFF0C;&#x6211;&#x6CBF;&#x7528;&#x524D;&#x6587;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x5728;component&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x5B83;&#x7684;style&#xFF0C;&#x5982;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- myComp.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">sf-component</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-tag">button</span>{
+            <span class="hljs-attribute">color</span>:red;
+        }
+        <span class="hljs-selector-tag">p</span>{
+            <span class="hljs-attribute">color</span>:yellow;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            ...
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
+        ...
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">sf-component</span>&gt;</span>
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5728;<code>&lt;style&gt;&lt;/style&gt;</code>&#x6807;&#x7B7E;&#x4E2D;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;css&#xFF0C;&#x5176;&#x4E2D;p&#x548C;button&#x7684;&#x5199;&#x6CD5;&#x5728;&#x4F20;&#x7EDF;&#x89C2;&#x5FF5;&#x4E2D;&#x90FD;&#x662F;&#x4F1A;&#x5F71;&#x54CD;html&#x9875;&#x9762;&#x4E2D;&#x6240;&#x6709;&#x7684;p&#x5143;&#x7D20;&#x548C;button&#x5143;&#x7D20;&#x7684;&#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x4E0D;&#x5E0C;&#x671B;&#x53D1;&#x751F;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x7684;&#x662F;&#x8FD9;&#x4E2A;<code>&lt;style&gt;&lt;/style&gt;</code>&#x6807;&#x7B7E;&#x751F;&#x6548;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x4EC5;&#x4EC5;&#x662F;&#x5728;&#x5F53;&#x524D;&#x7684;&#xFF0C;&#x88AB;&#x5B9A;&#x4E49;&#x7684;component&#x4E2D;&#x3002;&#x8FD9;&#x79CD;&#x6709;&#x72EC;&#x7ACB;&#x4F5C;&#x7528;&#x57DF;&#x7684;css&#x5C31;&#x53EB;Shadow Style&#x3002;</p>
+<p>&#x8981;&#x5B9E;&#x73B0;Shadow Style&#xFF0C;&#x5176;&#x5B9E;&#x6709;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x672C;&#x7BC7;&#x8BBE;&#x8BA1;&#x7BC7;&#x4E2D;&#x4E0D;&#x4F1A;&#x6D89;&#x53CA;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8D81;&#x6B64;&#x72EC;&#x7ACB;&#x601D;&#x8003;&#x4E0B;&#xFF0C;&#x5F85;&#x4E0B;&#x7BC7;&#x770B;&#x770B;&#x662F;&#x5426;&#x4E0E;&#x6211;&#x4E0D;&#x8C0B;&#x800C;&#x5408;&#xFF0C;&#x6216;&#x8005;&#x6709;&#x6BD4;&#x6211;&#x66F4;&#x52A0;&#x9AD8;&#x7EA7;&#x7684;&#x65B9;&#x6848;&#x3002;</p>
+<h4 id="&#x7B2C;&#x4E09;&#x70B9;communication">&#x7B2C;&#x4E09;&#x70B9;Communication</h4>
+<p>&#x5373;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x8BAF;&#xFF0C;&#x7ECF;&#x5E38;&#x6709;&#x4EBA;&#x5728;sf&#x4E2D;&#x95EE;&#x5230;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x901A;&#x8BAF;&#x95EE;&#x9898;&#xFF0C;&#x5176;&#x5B9E;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#x6709;&#x6BD4;&#x8F83;&#x6807;&#x51C6;&#x7684;&#x7B54;&#x6848;&#x7684;&#xFF0C;&#x5373;3&#x70B9;</p>
+<ol>
+<li>&#x7236;&#x5B50;&#x901A;&#x8BAF;: &#x7236;-&gt;&#x5B50; &#x901A;&#x8FC7; set &#x5C5E;&#x6027;&#xFF0C; &#x5B50;-&gt;&#x7236; &#x629B;&#x4E8B;&#x4EF6;</li>
+<li>&#x5144;&#x5F1F;&#x901A;&#x8BAF;: &#x5927;&#x513F;&#x5B50; &#x629B;&#x4E8B;&#x4EF6;&#x7ED9; -&gt; &#x7236; -&gt; set &#x5C0F;&#x513F;&#x5B50; &#x7684;&#x5C5E;&#x6027;</li>
+<li>&#x8FDC;&#x4EB2;&#x901A;&#x8BAF;: &#x8D70;&#x6D88;&#x606F;&#x603B;&#x7EBF; &#xFF08;&#x5176;&#x5B9E;&#x5C31;&#x5728;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;&#x4E0A;&#x641E;&#x4E8B;&#x4EF6;&#x673A;&#x5236;&#xFF09;</li>
+</ol>
+<p>&#x8981;&#x5B9E;&#x73B0;&#x901A;&#x8BAF;&#x673A;&#x5236;&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x4E3B;&#x8981;&#x5C31;2&#x4E2A;&#x529F;&#x80FD;&#xFF0C;1 &#x7236;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;set&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#xFF0C; 2 &#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x5411;&#x5916;&#x5C42;&#x629B;&#x4E8B;&#x4EF6;&#xFF0C;&#x5916;&#x5C42;&#x4E5F;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x7EC4;&#x4EF6;&#x629B;&#x51FA;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5982;&#x6B64;&#x8BBE;&#x8BA1;&#x8FD9;&#x5757;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x89C9;&#x4E2A;&#x4F8B;&#x5B50;,&#x4EE3;&#x7801;&#x8BF4;&#x8BDD;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>...<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">my-comp</span> <span class="hljs-attr">sf-msg</span>=<span class="hljs-string">&quot;vm.message&quot;</span> <span class="hljs-attr">sf-oncustomevent</span>=<span class="hljs-string">&quot;vm.customEventHandler&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-comp</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+<p>&#x5927;&#x5BB6;&#x6CE8;&#x610F;&#x770B;&#xFF0C;&#x4ECE;&#x7236;&#x7EC4;&#x4EF6;&#x7684;&#x89D2;&#x5EA6;&#xFF0C;&#x6211;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>sf-</code> + propertyName(&#x8FD9;&#x91CC;&#x662F;msg) &#x6765;&#x5B9E;&#x73B0;&#x5916;&#x90E8;&#x7236;&#x7EC4;&#x4EF6;&#x5BF9;&#x7EC4;&#x4EF6;&#x7684;&#x8D4B;&#x503C;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x80FD;&#x4F7F;&#x7528;<code>sf-on</code> + &#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x540D;&#x79F0;&#xFF08;&#x8FD9;&#x91CC;&#x662F;customevent&#xFF09; &#x5BF9;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x76D1;&#x542C;&#x3002;</p>
+<p>&#x6362;&#x4E2A;&#x89D2;&#x5EA6;&#xFF0C;&#x4ECE;&#x5B50;&#x7EC4;&#x4EF6;&#x89D2;&#x5EA6;&#x51FA;&#x53D1;&#xFF0C;&#x6211;&#x53EF;&#x4EE5;&#x88AB;&#x5916;&#x90E8;&#x8D4B;&#x503C;&#xFF0C;&#x6211;&#x53EF;&#x4EE5;&#x53EF;&#x4EE5;&#x5411;&#x5916;&#x90E8;dispatch&#x4E8B;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-jsx">&lt;sf-component&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">
+        //...
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span>
+    &lt;template&gt;
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;compClass&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">sf-value</span>=<span class="hljs-string">&quot;this.message&quot;</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">sf-innerText</span>=<span class="hljs-string">&quot;this.buttonName&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;this.clickHandler()&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">my-comp2</span> <span class="hljs-attr">sf-msg</span>=<span class="hljs-string">&quot;this.message&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-comp2</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">sf-innerText</span>=<span class="hljs-string">&quot;this.message + &apos;, hi Component1&apos;&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+        <span class="hljs-keyword">this</span>.buttonName = <span class="hljs-string">&quot;click me&quot;</span>;
+        <span class="hljs-keyword">this</span>.clickHandler = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+            alert(<span class="hljs-keyword">this</span>.message);
+            <span class="hljs-keyword">this</span>.dispatchEvent(<span class="hljs-string">&quot;customevent&quot;</span>, <span class="hljs-string">&quot;hello world&quot;</span>);<span class="hljs-comment">//&#x4E3A;component&#x7684;vm,&#x5185;&#x7F6E;&#x4E00;&#x4E2A;dispatchEvent&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x6CD5;&#x548C;&#x539F;&#x751F;&#x7684;&#x4E8B;&#x4EF6;&#x673A;&#x5236;&#x4E00;&#x6BDB;&#x4E00;&#x6837;&#x3002;</span>
+        };
+        Object.defineProperty(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;msg&quot;</span>, {
+            <span class="hljs-keyword">set</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(value)</span> </span>{
+                <span class="hljs-keyword">if</span> (value) {
+                    <span class="hljs-keyword">this</span>.message = value;
+                }
+            }
+        });
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">sf-component</span>&gt;</span>
+</span></code></pre>
+<p>&#x4F7F;&#x7528;<code>Object.defineProperty</code>&#x53EF;&#x4EE5;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x6EE1;&#x8DB3;&#x6211;&#x4EEC;&#x5BF9;set property&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x53E6;&#x5916;&#x518D;&#x7ED9;<code>component</code>&#x7684;<code>vm</code>&#x6302;&#x8F7D;&#x4E00;&#x4E2A;&#x5185;&#x7F6E;&#x7684;&#x51FD;&#x6570;<code>this.dispatchEvent</code>&#x6765;&#x53D1;&#x9001;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x6211;&#x4EEC;&#x5C31;&#x529F;&#x5FB7;&#x5706;&#x6EE1;&#x4E86;&#x3002;</p>
+<h4 id="&#x7B2C;&#x56DB;&#x70B9;&#x751F;&#x547D;&#x5468;&#x671F;">&#x7B2C;&#x56DB;&#x70B9;&#x751F;&#x547D;&#x5468;&#x671F;</h4>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x7ED9;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF1A;<strong>&#x7531;&#x6CE8;&#x518C;-&gt;&#x52A0;&#x8F7D;&#x5B9A;&#x4E49;-&gt;&#x663E;&#x793A;&#x5230;DOM Tree-&gt;&#x5185;&#x5BB9;&#x66F4;&#x65B0;-&gt;&#x4ECE;DOM Tree&#x79FB;&#x9664;-&gt;&#x9500;&#x6BC1;</strong> &#x7B49;&#x4E00;&#x7CFB;&#x65F6;&#x95F4;&#x8282;&#x70B9;&#x5B9A;&#x4E49;&#x4ED6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x505A;&#x7684;&#x6BD4;&#x8F83;&#x8003;&#x7A76;&#x7684;&#x5E93;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x8FD9;&#x8FD9;&#x4E9B;&#x65F6;&#x95F4;&#x8282;&#x70B9;&#x7684;&#x53D8;&#x66F4;&#x90FD;&#x4E00;&#x4E00;&#x5411;&#x7528;&#x6237;&#x901A;&#x77E5;&#xFF0C;&#x6216;&#x8005;&#x63D0;&#x4F9B;api&#x4F9B;&#x7528;&#x6237;&#x63A7;&#x5236;&#x3002;&#x672C;&#x6587;&#x8BBE;&#x8BA1;&#x7684;&#x4F4E;&#x914D;&#x7248;&#x5E93;&#x9609;&#x5272;&#x4E86;&#x8FD9;&#x90E8;&#x5206;&#x9AD8;&#x7EA7;&#x529F;&#x80FD;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x662F;&#x4E00;&#x6559;&#x5B66;&#x5411;&#x7684;&#x5E93;&#xFF0C;&#x4E0D;&#x6574;&#x8FD9;&#x4E9B;&#x6709;&#x7684;&#x6CA1;&#x7684;&#x3002;</p>
+<h2 id="&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web-component&#x5E93;&#xFF08;2&#xFF09;-&#x2014;&#x539F;&#x7406;&#x7BC7;">&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web component&#x5E93;&#xFF08;2&#xFF09; &#x2014;&#x539F;&#x7406;&#x7BC7;</h2>
+<h3 id="&#x5148;&#x56DE;&#x987E;&#x4E00;&#x4E0B;">&#x5148;&#x56DE;&#x987E;&#x4E00;&#x4E0B;</h3>
+<p>&#x4E0A;&#x6587;&#x8BF4;&#x9053;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x6B3E;&#x7684;custom web component&#x7531;3&#x5927;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x5FC5;&#x987B;&#x5177;&#x5907;4&#x5927;&#x529F;&#x80FD;</p>
+<h4 id="&#x4E09;&#x5927;&#x90E8;&#x5206;&#x662F;">&#x4E09;&#x5927;&#x90E8;&#x5206;&#x662F;</h4>
+<ol>
+<li>Template(DOM)</li>
+<li>Style   </li>
+<li>Script (viewModel)</li>
+</ol>
+<h4 id="&#x56DB;&#x5927;&#x529F;&#x80FD;&#x662F;">&#x56DB;&#x5927;&#x529F;&#x80FD;&#x662F;</h4>
+<ol>
+<li>Mvvm</li>
+<li>Shadow Style</li>
+<li>Communication</li>
+<li>Lifecycle &#xFF08;&#x672C;&#x6587;&#x4E0D;&#x6D89;&#x53CA;LC&#x7684;API,&#x4F46;&#x5728;&#x5B9E;&#x73B0;&#x4E2D;&#x4F1A;&#x9690;&#x5F62;&#x7684;&#x6DB5;&#x76D6;&#x8FD9;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#xFF09;</li>
+</ol>
+<h4 id="component&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x5982;&#x4E0B;">Component&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x5982;&#x4E0B;</h4>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- myComp.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">sf-component</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-tag">button</span>{
+            <span class="hljs-attribute">color</span>:red;
+        }
+        <span class="hljs-selector-tag">p</span>{
+            <span class="hljs-attribute">color</span>:yellow;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">sf-value</span>=<span class="hljs-string">&quot;this.message&quot;</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">sf-innerText</span>=<span class="hljs-string">&quot;this.buttonName&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;this.clickHandler()&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">sf-innerText</span>=<span class="hljs-string">&quot;this.message&quot;</span>&gt;</span> 
+            <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+        <span class="hljs-keyword">this</span>.message = <span class="hljs-string">&quot;this is a component&quot;</span>;
+        <span class="hljs-keyword">this</span>.buttonName = <span class="hljs-string">&quot;click me&quot;</span>;
+        <span class="hljs-keyword">this</span>.clickHandler = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+            alert(<span class="hljs-keyword">this</span>.message);
+        };
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">sf-component</span>&gt;</span>
+</code></pre>
+<h3 id="web-component&#x5E93;&#x5927;&#x81F4;&#x6D41;&#x7A0B;">Web Component&#x5E93;&#x5927;&#x81F4;&#x6D41;&#x7A0B;</h3>
+<div align="center"><img src="../resource/assets/vue/021006.png"></div>
+
+<p>&#x9ED1;&#x6846;&#x4EE5;&#x4E0B;&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x773C;&#x719F;&#xFF0C;&#x5C31;&#x662F;Mvvm&#x7BC7;&#x4E2D;&#x7684;&#x6D41;&#x7A0B;&#x3002;&#x52A0;&#x5165;Component&#x529F;&#x80FD;&#x6211;&#x4EEC;&#x51E0;&#x4E4E;&#x4E0D;&#x7528;&#x52A8;Mvvm&#x90E8;&#x5206;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x8C03;&#x7528;Scanner&#x626B;&#x63CF;viewModel&#x548C;view&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x542B;&#x6709;Component tag&#x7684;&#x4E3B;DOM Tree&#x5347;&#x7EA7;&#x52A0;&#x5DE5;&#x5373;&#x53EF;&#x3002;&#x5176;&#x5B9E;Component&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x4E2D;&#x7684;<code>&lt;template/&gt;</code>&#x548C;<code>&lt;script/&gt;</code>&#x4E5F;&#x662F;view&#x548C;viewModel&#x7684;&#x5173;&#x7CFB;&#x3002;&#x6211;&#x4EEC;&#x628A;Component&#x7684;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x6E32;&#x67D3;&#x5230;&#x4E3B;DOM Tree&#x4E0A;&#x7FFB;&#x8BD1;&#x6210;view&#x548C;viewModel&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x518D;&#x7531;Mvvm&#x7BC7;&#x4E2D;&#x7684;Scanner&#xFF0C;Renderer&#x505A;&#x626B;&#x63CF;&#x548C;&#x6E32;&#x67D3;&#x5373;&#x53EF;&#x3002;&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x7B80;&#x5355;&#xFF1F;</p>
+<p>&#x6211;&#x4EEC;&#x628A;&#x7740;&#x91CD;&#x70B9;&#x653E;&#x5728;&#x9ED1;&#x6846;&#x4E0A;&#x9762;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x751F;&#x6210;Component&#x7684;&#x6D41;&#x7A0B;&#xFF0C;&#x6211;&#x4EEC;&#x66F4;&#x52A0;&#x56FE;&#x4E2D;&#x7684;steps&#xFF0C;&#x4E00;&#x6B65;&#x6B65;&#x6765;&#x770B;
+&#x5148;&#x653E;&#x5F20;&#x5C40;&#x90E8;&#x5927;&#x56FE;</p>
+<div align="center"><img src="../resource/assets/vue/021007.png"></div>
+
+<p>Step 1&#xFF1A;RegisterComponent&#xFF0C;&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x662F;&#x8981;&#x5728;SF&#x5E93;init&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x524D;&#x5C31;&#x8981;&#x8FDB;&#x884C;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x7ED9;&#x65B0;&#x7684;component&#x8D77;&#x4E2A;&#x540D;&#x5B57;tagName&#xFF0C;&#x6BD4;&#x5982;my-comp&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5728;&#x4EE5;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x7528;<code>&lt;my-comp/&gt;</code>&#x8FD9;&#x4E2A;tag&#x5728;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x5F15;&#x5165;&#x8FD9;&#x4E2A;component&#xFF0C;&#x53E6;&#x5916;&#x8FD8;&#x9700;&#x8981;&#x628A;component&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x544A;&#x8BC9;SF&#xFF0C;&#x65B9;&#x4FBF;&#x5176;&#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x52A0;&#x8F7D;&#x8FD9;&#x4E9B;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x4F2A;&#x4EE3;&#x7801;</span>
+<span class="hljs-keyword">var</span> sf = <span class="hljs-keyword">new</span> SegmentFault();
+sf.registerComponent(<span class="hljs-string">&quot;my-comp&quot;</span>,<span class="hljs-string">&quot;./components/myComp.html&quot;</span>);
+sf.init();
+</code></pre>
+<p>Step 2 3 4: Loader&#x52A0;&#x8F7D;&#x5668;&#x5728;sf.init()&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x53BB;&#x52A0;&#x8F7D;&quot;./components/myComp.html&quot;&#x8FD9;&#x4E9B;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;component&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x628A;&#x8FD9;&#x4E9B;&#x5B9A;&#x4E49;&#x548C;tagName&#x5F62;&#x6210;&#x4E00;&#x4EFD;Map&#x8FD4;&#x56DE;&#x7ED9;SF</p>
+<p>Step 5: &#xFF08;&#x7B2C;&#x4E94;&#x6B65;&#x76F8;&#x5F53;&#x91CD;&#x8981;&#xFF0C;web component 99%&#x7684;&#x7CBE;&#x9AD3;&#x90FD;&#x5728;&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x8BF7;&#x8BA4;&#x771F;&#x9605;&#x8BFB;&#xFF09;
+SF&#x62FF;&#x5230;Map&#x540E;&#xFF0C;&#x901A;&#x77E5;Generator&#x53BB;&#x626B;&#x63CF;DOM Tree&#x4E00;&#x65E6;&#x53D1;&#x73B0;&#x6709;<code>&lt;my-comp/&gt;</code>&#x6807;&#x7B7E;&#x51FA;&#x73B0;&#xFF0C;&#x5219;&#x4F7F;&#x51FA;DOM&#x66FF;&#x6362;&#x5927;&#x6CD5;&#xFF0C;&#x628A;Map&#x4E2D;my-comp&#x5BF9;&#x5E94;&#x7684;component&#x5B9A;&#x4E49;&#x4E2D;&#x7684;template&#x90E8;&#x5206;&#x7684;DOM&#xFF0C;&#x66FF;&#x6362;&#x4E0A;&#x53BB;&#x3002;&#x5982;&#x4E0B;&#x56FE;</p>
+<p>DOM&#x66FF;&#x6362;&#x5927;&#x6CD5;</p>
+<div align="center"><img src="../resource/assets/vue/021008.png"></div>
+
+<p>&#x601D;&#x8003;&#x9898;&#xFF1A;
+Q:&#x8FA3;&#x4E48;&#xFF0C;Component&#x5B9A;&#x4E49;&#x4E2D;&#x7684;<code>&lt;script&gt;</code>&#x91CC;&#x7684;viewModel&#x600E;&#x4E48;&#x529E;&#xFF1F;
+A: &#x4F7F;&#x7528;new Function()&#x6216;&#x8005;eval&#x628A;<code>&lt;script/&gt;</code>&#x4E2D;&#x7684;viewModel&#x751F;&#x6210;&#x4E00;&#x4E2A;function,&#x6211;&#x4EEC;&#x59D1;&#x4E14;&#x53EB;&#x5B83;CompViewModel&#xFF0C;&#x7136;&#x540E;&#x628A;template
+&#x4E0A;&#x7684;sf-xxx=&#x201C;this.xxxx&#x201D;&#x7684;attribute&#x4E2D;&#xFF0C;&#x7B49;&#x5F0F;&#x7684;&#x5DE6;&#x8FB9;&#x5168;&#x90E8;&#x542B;&#x6709;this&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x66FF;&#x6362;&#x6210;vm_&#x968F;&#x673A;&#x6570;&#xFF0C;&#x6BD4;&#x5982;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">sf-innerText</span>=<span class="hljs-string">&quot;this.message&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<p>&#x66FF;&#x6362;&#x6210;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">sf-innerText</span>=<span class="hljs-string">&quot;vm_2333.message&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<p>&#x8FD8;&#x8BB0;&#x5F97;&#x8FD9;&#x4E2A;<code>vm_2333</code>&#x662F;&#x4EC0;&#x4E48;&#x7684;&#xFF1F;&#x6CA1;&#x9519;&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;&#x767D;&#x770B;Mvvm&#x90A3;&#x4E24;&#x7BC7;&#x6559;&#x7A0B;&#x7684;&#x8BDD;&#xFF0C;<code>vm_2333</code>&#x5C31;&#x662F;<code>viewModel</code>&#x5B9E;&#x4F8B;&#x7684;<code>alias</code>&#x3002;&#x90A3;&#x8FD8;&#x7B49;&#x4EC0;&#x4E48;?&#x8D76;&#x7D27;&#x8C03;&#x7528;<code>sf.registerViewModle(&quot;vm_2333&quot;,new CompViewModel())</code>&#x6CE8;&#x518C;&#x8FD9;&#x4E2A;<code>component</code>&#x7684;<code>viewModel</code>&#x5427;&#xFF01;</p>
+<div align="center"><img src="../resource/assets/vue/021009.png"></div>
+
+<p>&#x6709;&#x6CA1;&#x6709;&#x53D1;&#x73B0;web component&#x5E93;&#x7684;&#x5957;&#x8DEF;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x7B80;&#x5355;&#xFF1F;&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x628A;index.html&#xFF08;&#x6216;&#x7236;&#x7EC4;&#x4EF6;&#xFF09;&#x4E2D;&#x542B;&#x6709;&#x7684;component tagName&#x627E;&#x51FA;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x4E00;&#x901A;&#x66FF;&#x6362;&#x548C;&#x4F2A;&#x88C5;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B65;&#xFF0C;&#x8BA9;SF&#x628A;&#x5B83;&#x5F53;&#x6210;Mvvm&#x7BC7;&#x4E2D;&#x7684;&#x666E;&#x901A;view-viewModel&#x548C;&#x5173;&#x7CFB;&#x53BB;&#x5904;&#x7406;&#x5373;&#x53EF;&#x3002;</p>
+<p>template&#x548C;script&#x5904;&#x7406;&#x5B8C;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x63A5;&#x4E0B;&#x53BB;&#x5C31;&#x53EA;&#x5269;&#x4E0B;style&#xFF0C;&#x5982;&#x4F55;&#x8BA9;<code>&lt;style&gt;</code>&#x6807;&#x7B7E;&#x4E2D;&#x7684;css&#x5B9A;&#x4E49;&#x7684;&#x4F5C;&#x7528;&#x4E8E;&#x53EA;&#x53D1;&#x751F;&#x5728;&#x5F53;&#x524D;&#xFF1F;</p>
+<p>&#x6211;&#x7ED9;&#x51FA;&#x7684;&#x529E;&#x6CD5;&#x662F;&#xFF0C;&#x8FD8;&#x662F;&#x79FB;&#x82B1;&#x63A5;&#x6728;&#x5927;&#x6CD5;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">sf-component</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-tag">p</span>{
+            <span class="hljs-attribute">color</span>:red;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">sf-component</span>&gt;</span>
+</code></pre>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x8981;&#x628A;&#x8FD9;&#x5768;css&#x52A0;&#x5230;index.html&#x7684;head&#x4E2D;&#x53BB;&#xFF0C;&#x8FD9;&#x6837;css&#x624D;&#x4F1A;&#x751F;&#x6548;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x4F1A;&#x6C61;&#x67D3;&#x5168;&#x5C40;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        ...
+        <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">text</span>/<span class="hljs-attr">css</span>&gt;</span><span class="css">
+            <span class="hljs-selector-tag">p</span>{
+                <span class="hljs-attribute">color</span>:red;
+            }
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</code></pre>
+<p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF0C;&#x628A;&#x8FD9;&#x5768;css&#x8FDB;&#x884C;&#x52A0;&#x5DE5;,&#x52A0;&#x4E0A;&#x4F5C;&#x7528;&#x57DF; .myComp ,&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x6839;&#x636E;css selector&#x8BED;&#x4E49;&#xFF0C;&#x53EA;&#x6709;&#x5728;class=&quot;myComp&quot;&#x7684;DOM&#x4E0B;&#x7684;p&#x5143;&#x7D20;&#x624D;&#x4F1A;&#x751F;&#x6548;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        ...
+        <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">text</span>/<span class="hljs-attr">css</span>&gt;</span><span class="css">
+            <span class="hljs-selector-class">.myComp</span> <span class="hljs-selector-tag">p</span>{
+                <span class="hljs-attribute">color</span>:red;
+            }
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</code></pre>
+<p>&#x7B2C;&#x4E09;&#x6B65;&#xFF0C;&#x5F53;&#x7136;&#x662F;&#x7ED9;&#x4EE3;&#x8868;component&#x7684;DOM&#x6700;&#x5916;&#x5C42;&#x4E0A;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x53EB;myComp&#x7684;class&#x4E86;&#xFF0C;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7248;&#x7684;Shadow Style&#x5C31;&#x8FD9;&#x6837;&#x5B9E;&#x73B0;&#x4E86;&#x3002;</p>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x4E00;&#x4E2A;component&#x7684;&#x4E09;&#x5927;&#x7EC4;&#x6210;&#x8BF4;&#x5B8C;&#xFF0C;&#x56DB;&#x5927;&#x529F;&#x80FD;&#x8FD8;&#x5269;communication&#x6CA1;&#x6709;&#x8BB2;</p>
+<h3 id="&#x7EC4;&#x4EF6;&#x901A;&#x8BAF;">&#x7EC4;&#x4EF6;&#x901A;&#x8BAF;</h3>
+<p>&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5B9E;&#x73B0;2&#x4E2A;&#x63A5;&#x53E3;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x7EC4;&#x4EF6;&#x901A;&#x8BAF;&#xFF0C;&#x5177;&#x4F53;&#x89C1;&#x4E0A;&#x7BC7;&#x300A;&#x8BBE;&#x8BA1;&#x7BC7;&#x300B;&#x6709;&#x63D0;&#x5230;</p>
+<ol>
+<li>Component&#x7684;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x88AB;&#x7236;&#x7EC4;&#x4EF6;set&#x8FDB;&#x503C;</li>
+<li>viewModel&#x53EF;&#x4EE5;&#x5411;&#x5916;dispatch&#x4E8B;&#x4EF6;</li>
+</ol>
+<p>&#x8FD9;2&#x4E2A;&#x63A5;&#x53E3;&#x90FD;&#x53EF;&#x4EE5;&#x5728;step 5&#x4E2D;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x5C0F;&#x52A8;&#x4F5C;&#xFF0C;&#x7ED9;&#x52A0;&#x8FDB;&#x53BB;&#xFF0C;&#x672C;&#x7BC7;&#x5C31;&#x4E0D;&#x5177;&#x4F53;&#x89E3;&#x91CA;&#x4E86;&#xFF0C;&#x4F5C;&#x4E3A;&#x601D;&#x8003;&#x9898;&#x5927;&#x5BB6;&#x56DE;&#x53BB;&#x601D;&#x8003;&#xFF0C;&#x4FD7;&#x8BDD;&#x8BF4;&#x7684;&#x7684;talk is cheap&#xFF0C;show me the code&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x4F1A;&#x5728;&#x7B2C;&#x4E09;&#x7BC7;&#x300A;&#x4EE3;&#x7801;&#x7BC7;&#x300B;&#x4E2D;&#x7ED9;&#x51FA;&#xFF0C;&#x5927;&#x5BB6;&#x770B;&#x4E86;&#x81EA;&#x5DF1;&#x4E00;&#x76EE;&#x4E86;&#x7136;&#xFF0C;&#x6BD4;&#x6211;&#x8FD9;&#x91CC;&#x6D6A;&#x8D39;&#x53E3;&#x820C;&#x80FD;&#x66F4;&#x597D;&#x7684;&#x7406;&#x89E3;&#x3002;</p>
+<h2 id="&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web-component&#x5E93;&#xFF08;3&#xFF09;-&#x2014;&#x4EE3;&#x7801;&#x7BC7;">&#x518D;&#x52A0;150&#x884C;&#x4EE3;&#x7801;&#x6559;&#x4F60;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x4F4E;&#x914D;&#x7248;&#x7684;web component&#x5E93;&#xFF08;3&#xFF09; &#x2014;&#x4EE3;&#x7801;&#x7BC7;</h2>
+<h3 id="component&#x5B9A;&#x4E49;&#x683C;&#x5F0F;">component&#x5B9A;&#x4E49;&#x683C;&#x5F0F;</h3>
+<pre><code class="lang-js">&lt;!-- myComp.html --&gt;
+&lt;sf-component&gt;
+    &lt;style&gt;
+        button{
+            color:red;
+        }
+        p{
+            color:yellow;
+        }
+    &lt;/style&gt;
+    &lt;template&gt;
+        &lt;div&gt;
+            &lt;input type=&quot;text&quot; sf-value=&quot;this.message&quot;/&gt;
+            &lt;button sf-innerText=&quot;this.buttonName&quot; onclick=&quot;this.clickHandler()&quot;&gt;&lt;/button&gt;
+            &lt;p sf-innerText=&quot;this.message&quot;&gt; 
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/template&gt;
+    &lt;script&gt;
+        this.message = &quot;this is a component&quot;;
+        this.buttonName = &quot;click me&quot;;
+        this.clickHandler = function(){
+            alert(this.message);
+        };
+    &lt;/script&gt;
+&lt;/sf-component&gt;
+</code></pre>
+<h3 id="&#x8BBE;&#x8BA1;&#x56FE;">&#x8BBE;&#x8BA1;&#x56FE;</h3>
+<div align="center"><img src="../resource/assets/vue/021010.png"></div>
+
+<h3 id="&#x8FD8;&#x662F;&#x5148;&#x642D;&#x9AA8;&#x67B6;&#xFF0C;&#x518D;&#x586B;&#x8840;&#x8089;">&#x8FD8;&#x662F;&#x5148;&#x642D;&#x9AA8;&#x67B6;&#xFF0C;&#x518D;&#x586B;&#x8840;&#x8089;</h3>
+<p>&#x8FD9;&#x6B21;&#x589E;&#x52A0;web component&#x529F;&#x80FD;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x539F;&#x6765;mvvm&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x65B0;&#x589E;&#x4E86;3&#x4E2A;&#x7C7B;&#xFF0C;&#x5206;&#x522B;&#x662F;<code>Loader</code>&#xFF0C;<code>ComponentGenerator</code>&#xFF0C;&#x548C;&#x4E00;&#x4E2A;&#x63CF;&#x8FF0;component&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;<code>ComponentDefinition</code></p>
+<p>&#x6211;&#x4EEC;&#x770B;&#x5230;&#x8BBE;&#x8BA1;&#x56FE;&#x4E2D;&#x7684;&#x5165;&#x53E3;&#x662F;register component&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7ED9;SegmentFault&#x7C7B;&#x589E;&#x52A0;&#x4E2A;registerComponent&#x7684;&#x63A5;&#x53E3;</p>
+<h4 id="segmentfault">SegmentFault</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> SegmentFault = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SegmentFault</span> </span>{
+    ...
+    private componentPool = {};
+    <span class="hljs-comment">//&#x4F20;&#x5165;&#x81EA;&#x5B9A;&#x4E49;component&#x7684;tagName&#xFF0C;tagName&#x53EF;&#x4EE5;&#x968F;&#x4FBF;&#x8D77;&#xFF0C;&#x4F8B;&#x5982;my-comp</span>
+    <span class="hljs-comment">//path&#x4E3A;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x4F8B;&#x5982;components/myComp.html</span>
+    public registerComponent(tagName,path){
+        <span class="hljs-keyword">this</span>.componentPool[tagName] = path;
+    }
+    ...
+}
+</code></pre>
+<h4 id="componentdefinition">ComponentDefinition</h4>
+<p>ComponentDefinitiony&#x7528;&#x6765;&#x7EF4;&#x62A4;component&#x7684;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x628A;&#x6BCF;&#x4E2A;xxxComp.html&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x4E2D;&#x7684;<code>&lt;template/&gt;&lt;script/&gt;&lt;style/&gt;</code>&#x4EE5;&#x53CA;component&#x7684;tagName&#x7EF4;&#x62A4;&#x5728;&#x5185;&#x5B58;&#x5BF9;&#x8C61;&#x4E2D;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ComponentDefinition</span></span>{
+    public tagName;  <span class="hljs-comment">//&#x4F8B;&#x5982; &lt;my-comp&gt;&#x4E2D;&#x7684;my-comp&#x5C31;&#x662F;tagName&#xFF0C;tagName&#x7531;registerComponent&#x65F6;&#x4F20;&#x5165;&#x3002;</span>
+    public style;  <span class="hljs-comment">//&#x6837;&#x5F0F;&#xFF0C;&#x5373;&lt;style/&gt;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x4E32;</span>
+    public template; <span class="hljs-comment">//DOM&#xFF0C;&#x5373;&lt;template/&gt;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x4E32;</span>
+    public script; <span class="hljs-comment">//&#x903B;&#x8F91;&#xFF0C;&#x5373;&lt;script/&gt;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x4E32;</span>
+    <span class="hljs-keyword">constructor</span>(tagName,style,template,script){
+        <span class="hljs-keyword">this</span>.tagName = tagName;
+        <span class="hljs-keyword">this</span>.style = style;
+        <span class="hljs-keyword">this</span>.template = template;
+        <span class="hljs-keyword">this</span>.script = script;
+    }
+}
+</code></pre>
+<h4 id="loader">Loader</h4>
+<p>&#x8FD9;&#x4E2A;&#x7C7B;&#x5C31;&#x662F;&#x5728;sf.init&#x7684;&#x65F6;&#x5019;&#x53BB;&#x52A0;&#x8F7D;&#x6240;&#x6709;&#x5B9A;&#x4E49;&#x7684;component&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#xFF0C;&#x628A;html&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x7EF4;&#x62A4;&#x5728;&#x5185;&#x5B58;&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x4E5F;&#x4F1A;&#x540C;&#x65F6;&#x7EF4;&#x62A4;&#x4E00;&#x5F20;map&#xFF0C;&#x6765;&#x53CD;&#x5E94;tagName&#x548C;ComponentDefinition&#x4E4B;&#x95F4;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x9274;&#x4E8E;&#x662F;&#x901A;&#x8FC7;ajax&#x8BF7;&#x6C42;&#x6765;load&#xFF0C;&#x8FD9;&#x4E9B;*.html&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x4F7F;&#x7528;promise&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {ComponentDefinition} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./ComponentDefinition&quot;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Loader</span> </span>{
+    private componentPool;
+    private componentDefinitionPool = {};
+    <span class="hljs-keyword">constructor</span>(componentPool) {
+        <span class="hljs-keyword">this</span>.componentPool = componentPool;
+    }
+    <span class="hljs-comment">//&#x901A;&#x8FC7;ajax&#x8BF7;&#x6C42;&#xFF0C;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x5404;&#x4E2A;.html&#x7684;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x7EF4;&#x62A4;componentDefinitionPool</span>
+    public load(): <span class="hljs-built_in">Promise</span>&lt;any&gt; {
+
+    }
+}
+</code></pre>
+<h4 id="componentgenerator">ComponentGenerator</h4>
+<p>Loader&#x52A0;&#x8F7D;&#x5B8C;&#x5B9A;&#x4E49;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x9700;&#x8981;Generator&#x6765;&#x626B;&#x63CF;&#x89E3;&#x6790;&#x6574;&#x68F5;DOM Tree&#xFF0C;&#x5E76;&#x7528;template&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x66FF;&#x6362;<code>&lt;my-comp&gt;</code>&#x8FD9;&#x79CD;tag&#x6807;&#x7B7E;&#x4E86;&#xFF0C;&#x5177;&#x4F53;&#x539F;&#x7406;&#x8BF7;&#x53C2;&#x8003;&#x300A;&#x539F;&#x7406;&#x7BC7;&#x300B;
+&#x4E3B;&#x8981;&#x5206;&#x6210;2&#x6B65; &#x626B;&#x63CF;scan&#xFF0C;&#x548C; &#x66FF;&#x6362;&#x751F;&#x6210;generator&#xFF01;&#x7531;&#x4E8E;&#x9700;&#x8981;&#x9012;&#x5F52;&#x626B;&#x63CF;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x6211;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x4F7F;&#x7528;&#x4E86;async/await&#x6765;&#x786E;&#x4FDD;&#x540C;&#x6B65;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ComponentGenerator</span> </span>{
+    private sf;
+    private componentDefinitionPool;
+    <span class="hljs-keyword">constructor</span>(sf, componentDefinitionPool) {
+        <span class="hljs-keyword">this</span>.componentDefinitionPool = componentDefinitionPool;
+        <span class="hljs-keyword">this</span>.sf = sf;
+    }
+    public <span class="hljs-keyword">async</span> scanComponent(element): <span class="hljs-built_in">Promise</span>&lt;any&gt; {
+
+    }
+    private <span class="hljs-keyword">async</span> generate(tagElement: HTMLElement, compDef: ComponentDefinition, attrs) {
+
+    }
+}
+</code></pre>
+<h3 id="&#x586B;&#x4E0A;&#x9AA8;&#x8089;-&#x4E0A;&#x6700;&#x7EC8;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;">&#x586B;&#x4E0A;&#x9AA8;&#x8089; &#x4E0A;&#x6700;&#x7EC8;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;</h3>
+<pre><code class="lang-js"><span class="hljs-comment">//SegmentFault.ts</span>
+<span class="hljs-keyword">import</span> {Scanner} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./Scanner&quot;</span>;
+<span class="hljs-keyword">import</span> {Watcher} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./Watcher&quot;</span>;
+<span class="hljs-keyword">import</span> {Renderer} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./Renderer&quot;</span>;
+<span class="hljs-keyword">import</span> {Loader} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./component/Loader&quot;</span>;
+<span class="hljs-keyword">import</span> {ComponentGenerator} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./component/ComponentGenerator&quot;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> SegmentFault = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SegmentFault</span> </span>{
+    private viewModelPool = {};
+    private viewViewModelMap = {};
+    private renderer = <span class="hljs-keyword">new</span> Renderer();
+    private generator:ComponentGenerator;
+    public init():<span class="hljs-built_in">Promise</span>&lt;any&gt;{
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve,reject)=&gt;{
+            <span class="hljs-keyword">let</span> loader = <span class="hljs-keyword">new</span> Loader(<span class="hljs-keyword">this</span>.componentPool);
+            loader.load().then( componentDefinitionPool =&gt;{
+                <span class="hljs-built_in">console</span>.log(componentDefinitionPool);
+                <span class="hljs-keyword">if</span>(componentDefinitionPool){
+                    <span class="hljs-keyword">this</span>.generator = <span class="hljs-keyword">new</span> ComponentGenerator(<span class="hljs-keyword">this</span>,componentDefinitionPool);
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.generator.scanComponent(<span class="hljs-built_in">document</span>);
+                }<span class="hljs-keyword">else</span>{
+                    <span class="hljs-keyword">return</span>;
+                }
+            }).then(()=&gt;{
+                <span class="hljs-keyword">let</span> scanner = <span class="hljs-keyword">new</span> Scanner(<span class="hljs-keyword">this</span>.viewModelPool);
+                <span class="hljs-keyword">let</span> watcher = <span class="hljs-keyword">new</span> Watcher(<span class="hljs-keyword">this</span>);
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.viewModelPool) {
+                    watcher.observe(<span class="hljs-keyword">this</span>.viewModelPool[key],<span class="hljs-keyword">this</span>.viewModelChangedHandler);
+                }
+                <span class="hljs-keyword">this</span>.viewViewModelMap = scanner.scanBindDOM();
+                <span class="hljs-built_in">Object</span>.keys(<span class="hljs-keyword">this</span>.viewViewModelMap).forEach(alias=&gt;{
+                    <span class="hljs-keyword">this</span>.refresh(alias);
+                }); 
+                resolve();
+            });
+        });
+    };
+    public registerViewModel(alias:string, viewModel:object) {
+        viewModel[<span class="hljs-string">&quot;_alias&quot;</span>] = alias;
+        <span class="hljs-built_in">window</span>[alias] = <span class="hljs-keyword">this</span>.viewModelPool[alias] = viewModel;
+    };
+    public refresh(alias:string){
+        <span class="hljs-keyword">let</span> boundItems = <span class="hljs-keyword">this</span>.viewViewModelMap[alias];
+        boundItems.forEach(boundItem =&gt; {
+            <span class="hljs-keyword">this</span>.renderer.render(boundItem);
+        });
+    }
+    private viewModelChangedHandler(viewModel,prop) {
+        <span class="hljs-keyword">this</span>.refresh(viewModel._alias);
+    }
+
+    private componentPool = {};
+    public registerComponent(tagName,path){
+        <span class="hljs-keyword">this</span>.componentPool[tagName] = path;
+    }
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//ComponentDefinition.ts</span>
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ComponentDefinition</span></span>{
+    public tagName;
+    public style;
+    public template;
+    public script; 
+    <span class="hljs-keyword">constructor</span>(tagName,style,template,script){
+        <span class="hljs-keyword">this</span>.tagName = tagName;
+        <span class="hljs-keyword">this</span>.style = style;
+        <span class="hljs-keyword">this</span>.template = template;
+        <span class="hljs-keyword">this</span>.script = script;
+    }
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//Loader.ts</span>
+<span class="hljs-keyword">import</span> {ComponentDefinition} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./ComponentDefinition&quot;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Loader</span> </span>{
+    private componentPool;
+    private componentDefinitionPool = {};
+    <span class="hljs-keyword">constructor</span>(componentPool) {
+        <span class="hljs-keyword">this</span>.componentPool = componentPool;
+    }
+    public load(): <span class="hljs-built_in">Promise</span>&lt;any&gt; {
+        <span class="hljs-keyword">let</span> compArray = [];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> tagName <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.componentPool) {
+            compArray.push({ name: tagName, path: <span class="hljs-keyword">this</span>.componentPool[tagName] });
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.doAsyncSeries(compArray).then(result=&gt;{
+            <span class="hljs-keyword">return</span> result;
+        });
+    }
+    private doAsyncSeries(componentArray): <span class="hljs-built_in">Promise</span>&lt;any&gt; {
+        <span class="hljs-keyword">return</span> componentArray.reduce( (promise, comp) =&gt;{
+            <span class="hljs-keyword">return</span> promise.then( (result) =&gt; {
+                <span class="hljs-keyword">return</span> fetch(comp.path).then((response) =&gt; {
+                    <span class="hljs-keyword">return</span> response.text().then(definition =&gt; {
+                        <span class="hljs-keyword">let</span> def = <span class="hljs-keyword">this</span>.getComponentDefinition(comp.name,definition);
+                        <span class="hljs-keyword">this</span>.componentDefinitionPool[comp.name] = def;
+                        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.componentDefinitionPool;
+                    });
+                });
+            });
+        }, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-keyword">void</span>&gt;((resolve, reject) =&gt; {
+            resolve();
+        }));
+    }
+    private getComponentDefinition(tagName:string, htmlString: string): ComponentDefinition {
+        <span class="hljs-keyword">let</span> tempDom: HTMLElement = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;div&quot;</span>);
+        tempDom.innerHTML = htmlString;
+        <span class="hljs-keyword">let</span> template: string = tempDom.querySelectorAll(<span class="hljs-string">&quot;template&quot;</span>)[<span class="hljs-number">0</span>] &amp;&amp; tempDom.querySelectorAll(<span class="hljs-string">&quot;template&quot;</span>)[<span class="hljs-number">0</span>].innerHTML;
+        <span class="hljs-keyword">let</span> script: string = tempDom.querySelectorAll(<span class="hljs-string">&quot;script&quot;</span>)[<span class="hljs-number">0</span>] &amp;&amp; tempDom.querySelectorAll(<span class="hljs-string">&quot;script&quot;</span>)[<span class="hljs-number">0</span>].innerHTML;
+        <span class="hljs-keyword">let</span> style: string = tempDom.querySelectorAll( <span class="hljs-string">&quot;style&quot;</span>)[<span class="hljs-number">0</span>] &amp;&amp; tempDom.querySelectorAll( <span class="hljs-string">&quot;style&quot;</span>)[<span class="hljs-number">0</span>].innerHTML;
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ComponentDefinition(tagName,style,template,script);
+    }
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//ComponentGenerator.ts</span>
+<span class="hljs-keyword">import</span> { ComponentDefinition } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./ComponentDefinition&quot;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ComponentGenerator</span> </span>{
+    private sf;
+    private componentDefinitionPool;
+    <span class="hljs-keyword">constructor</span>(sf, componentDefinitionPool) {
+        <span class="hljs-keyword">this</span>.componentDefinitionPool = componentDefinitionPool;
+        <span class="hljs-keyword">this</span>.sf = sf;
+    }
+    public <span class="hljs-keyword">async</span> scanComponent(element): <span class="hljs-built_in">Promise</span>&lt;any&gt; {
+        <span class="hljs-keyword">let</span> compDef: ComponentDefinition = <span class="hljs-keyword">this</span>.componentDefinitionPool[element.localName];
+        <span class="hljs-keyword">if</span> (compDef) {
+            <span class="hljs-keyword">let</span> attrs = element.attributes;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.generate(element, compDef, attrs);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> (element.children &amp;&amp; element.children.length &gt; <span class="hljs-number">0</span>) {
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; element.children.length; i++) {
+                    <span class="hljs-keyword">let</span> child = element.children[i];
+                    <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.scanComponent(child);
+                }
+                <span class="hljs-keyword">return</span> element;
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">return</span> element;
+            }
+        }
+    }
+    private <span class="hljs-keyword">async</span> generate(tagElement: HTMLElement, compDef: ComponentDefinition, attrs) {
+        <span class="hljs-keyword">if</span>(compDef.style){
+            <span class="hljs-keyword">this</span>.dealWithShadowStyle(compDef);
+        }       
+        <span class="hljs-keyword">let</span> randomAlias = <span class="hljs-string">&apos;vm_&apos;</span> + <span class="hljs-built_in">Math</span>.floor(<span class="hljs-number">10000</span> * <span class="hljs-built_in">Math</span>.random()).toString();
+        <span class="hljs-keyword">let</span> template = compDef.template;
+        template = template.replace(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">&apos;this&apos;</span>, <span class="hljs-string">&apos;gm&apos;</span>), randomAlias);
+        <span class="hljs-keyword">let</span> tempFragment = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
+        tempFragment.insertAdjacentHTML(<span class="hljs-string">&apos;afterBegin&apos;</span> <span class="hljs-keyword">as</span> InsertPosition, template);
+        <span class="hljs-keyword">if</span> (tempFragment.children.length &gt; <span class="hljs-number">1</span>) {
+            template = tempFragment.outerHTML;
+        }
+        tagElement.insertAdjacentHTML(<span class="hljs-string">&apos;beforeBegin&apos;</span> <span class="hljs-keyword">as</span> InsertPosition, template);
+        <span class="hljs-keyword">let</span> htmlDom = tagElement.previousElementSibling;
+        htmlDom.classList.add(tagElement.localName);
+        <span class="hljs-keyword">let</span> vm_instance;
+        <span class="hljs-keyword">if</span> (compDef.script) {
+            <span class="hljs-keyword">let</span> debugComment = <span class="hljs-string">&quot;//# sourceURL=&quot;</span>+tagElement.tagName+<span class="hljs-string">&quot;.js&quot;</span>;
+            <span class="hljs-keyword">let</span> script = compDef.script + debugComment;
+            <span class="hljs-keyword">let</span> ViewModelClass: <span class="hljs-built_in">Function</span> = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(script);
+            vm_instance = <span class="hljs-keyword">new</span> ViewModelClass.prototype.constructor();
+            <span class="hljs-keyword">this</span>.sf.registerViewModel(randomAlias, vm_instance);
+
+            vm_instance._dom = htmlDom;
+            vm_instance.dispatchEvent = (eventType: string, data: any, bubbles: boolean = <span class="hljs-literal">false</span>, cancelable: boolean = <span class="hljs-literal">true</span>) =&gt; {
+                <span class="hljs-keyword">let</span> event = <span class="hljs-keyword">new</span> CustomEvent(eventType.toLowerCase(), { <span class="hljs-string">&quot;bubbles&quot;</span>: bubbles, <span class="hljs-string">&quot;cancelable&quot;</span>: cancelable });
+                event[<span class="hljs-string">&apos;data&apos;</span>] = data;
+                vm_instance._dom.dispatchEvent(event);
+            };
+
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; attrs.length; i++) {
+                <span class="hljs-keyword">let</span> attr = attrs[i];
+                <span class="hljs-keyword">if</span>(attr.nodeName.search(<span class="hljs-string">&quot;sf-&quot;</span>) !== <span class="hljs-number">-1</span>){
+                    <span class="hljs-keyword">if</span>(attr.nodeName.search(<span class="hljs-string">&quot;sf-on&quot;</span>) !== <span class="hljs-number">-1</span>){
+                        <span class="hljs-keyword">let</span> eventName = attr.nodeName.substr(<span class="hljs-number">5</span>);
+                        vm_instance._dom.addEventListener(eventName,<span class="hljs-built_in">eval</span>(attr.nodeValue));
+                    }<span class="hljs-keyword">else</span>{
+                        <span class="hljs-keyword">let</span> setTarget = attr.nodeName.split(<span class="hljs-string">&quot;-&quot;</span>)[<span class="hljs-number">1</span>];
+                        vm_instance[setTarget] = <span class="hljs-built_in">eval</span>(attr.nodeValue);
+                    }                 
+                }           
+            }
+
+        }
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; attrs.length; i++) {
+            <span class="hljs-keyword">let</span> attr = attrs[i];
+            <span class="hljs-keyword">if</span>(attr.nodeName.search(<span class="hljs-string">&quot;sf-&quot;</span>) === <span class="hljs-number">-1</span>){
+                htmlDom.setAttribute(attr.nodeName, attr.nodeValue);
+            }           
+        }
+
+        tagElement.parentNode.removeChild(tagElement);
+        <span class="hljs-keyword">if</span> (htmlDom.children &amp;&amp; htmlDom.children.length &gt; <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; htmlDom.children.length; j++) {
+                <span class="hljs-keyword">let</span> child = htmlDom.children[j];
+                <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.scanComponent(child);
+            }
+            callInit();
+            <span class="hljs-keyword">return</span> htmlDom;
+        } <span class="hljs-keyword">else</span> {
+            callInit();
+            <span class="hljs-keyword">return</span> htmlDom;
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callInit</span>(<span class="hljs-params"></span>)</span>{
+            <span class="hljs-keyword">if</span> (vm_instance &amp;&amp; vm_instance._init &amp;&amp; <span class="hljs-keyword">typeof</span> (vm_instance._init) === <span class="hljs-string">&apos;function&apos;</span>) {
+                vm_instance._init();
+            }
+        }
+    }
+    private dealWithShadowStyle(compDef:ComponentDefinition): <span class="hljs-keyword">void</span> {
+        <span class="hljs-keyword">let</span> stylesheet = compDef.style;
+        <span class="hljs-keyword">let</span> tagName = compDef.tagName;
+        <span class="hljs-keyword">let</span> head = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&apos;HEAD&apos;</span>)[<span class="hljs-number">0</span>];
+        <span class="hljs-keyword">let</span> style = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;style&apos;</span>);
+        style.type = <span class="hljs-string">&apos;text/css&apos;</span>;
+        <span class="hljs-keyword">var</span> styleArray = stylesheet.split(<span class="hljs-string">&quot;}&quot;</span>);
+        <span class="hljs-keyword">var</span> newArray = [];
+        styleArray.forEach((value: string, index: number) =&gt; {
+            <span class="hljs-keyword">var</span> newValue = value.replace(<span class="hljs-regexp">/^\s*/</span>, <span class="hljs-string">&quot;&quot;</span>);
+            <span class="hljs-keyword">if</span> (newValue) {
+                newArray.push(newValue);
+            }
+        });
+        stylesheet = newArray.join(<span class="hljs-string">&quot;}\n&quot;</span> + <span class="hljs-string">&quot;.&quot;</span> + tagName + <span class="hljs-string">&quot; &quot;</span>);
+        stylesheet = <span class="hljs-string">&quot;.&quot;</span> + tagName + <span class="hljs-string">&quot; &quot;</span> + stylesheet + <span class="hljs-string">&quot;}&quot;</span>;
+        style.innerHTML = stylesheet;
+        head.appendChild(style);
+    }
+}
+</code></pre>
+<h2 id="github">github</h2>
+<p><a href="https://github.com/momoko8443/how_to_write_a_mvvm_library" target="_blank">github&#x5730;&#x5740;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="剖析Vue原理&实现双向绑定MVVM.html" class="navigation navigation-prev " aria-label="Previous page: 剖析Vue原理&实现双向绑定MVVM">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="160行代码仿Vue实现极简双向绑定[详细注释].html" class="navigation navigation-next " aria-label="Next page: 160行代码仿Vue实现极简双向绑定[详细注释]">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"150行代码实现一个低配版的MVVM库","level":"4.11","depth":1,"next":{"title":"160行代码仿Vue实现极简双向绑定[详细注释]","level":"4.12","depth":1,"path":"Vue/160行代码仿Vue实现极简双向绑定[详细注释].md","ref":"Vue/160行代码仿Vue实现极简双向绑定[详细注释].md","articles":[]},"previous":{"title":"剖析Vue原理&实现双向绑定MVVM","level":"4.10","depth":1,"path":"Vue/剖析Vue原理&实现双向绑定MVVM.md","ref":"Vue/剖析Vue原理&实现双向绑定MVVM.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"Vue/150行代码实现一个低配版的MVVM库.md","mtime":"2019-06-29T12:29:33.398Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-29T12:38:17.360Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
