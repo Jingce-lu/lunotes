@@ -66,6 +66,7 @@
   - [Proxy](框架通识/Proxy.md)
   - [10分钟快速入门rollup(1)](框架通识/10分钟快速入门rollupJs(1).md)
   - [10分钟快速入门rollup(2)](框架通识/10分钟快速入门rollupJs(2).md)
+  - [谈谈JavaScript中的双向数据绑定](框架通识/谈谈JavaScript中的双向数据绑定.md)
 
 * [2.安全XSS-CSRF](安全/安全.md)
 
@@ -152,10 +153,22 @@
 
 
 ## Vue
-  - [vueRouter使用query和params传参的使用和区别](Vue/vueRouter使用query和params传参的使用和区别.md)
-  - [NextTick原理分析](Vue/NextTick原理分析.md)
   - [Vue生命周期分析](Vue/Vue生命周期.md)
+  - [vueRouter使用query和params传参的使用和区别](Vue/vueRouter使用query和params传参的使用和区别.md)
+  - [Vue组件data为什么必须是函数](Vue/Vue组件data为什么必须是函数.md)
+  - [Vue组件通信的方法](Vue/Vue组件通信的方法.md)
+  - [NextTick原理分析](Vue/NextTick原理分析.md)
+  - [从Vue.js源码看nextTick机制](Vue/从Vue.js源码看nextTick机制.md)
   - [VueRouter源码分析](Vue/VueRouter源码分析.md)
+  - [Vue&&MVVM原理](Vue/Vue&&MVVM原理.md)
+  - [撸一个简单的Vue](Vue/撸一个简单的Vue.md)
+  - [剖析Vue原理&实现双向绑定MVVM](Vue/剖析Vue原理&实现双向绑定MVVM.md)
+  - [150行代码实现一个低配版的MVVM库](Vue/150行代码实现一个低配版的MVVM库.md)
+  - [160行代码仿Vue实现极简双向绑定[详细注释]](Vue/160行代码仿Vue实现极简双向绑定[详细注释].md)
+  - [Vue SSR cookie问题](Vue/vue-SSR-cookie问题.md)
+  - [理解vue ssr原理并自己搭建简单的ssr框架](Vue/理解vue-ssr原理并自己搭建简单的ssr框架.md)
+  - [Vue插件开发](Vue/Vue插件开发.md)
+
 
 ## Part 3 - other
 - 1.git
