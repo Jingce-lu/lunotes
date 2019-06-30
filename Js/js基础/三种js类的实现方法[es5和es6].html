@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Js基础 · GitBook</title>
+        <title>三种js类的实现方法(es5和es6) · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,8 +65,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="ljc-Js.html" />
+    <link rel="next" href="async-await.html" />
     
+    
+    <link rel="prev" href="Js判断字符串中是否包含某个字符串.html" />
     
 
     </head>
@@ -135,7 +137,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.1" data-path="js基础.html">
+        <li class="chapter " data-level="2.1" data-path="js基础.html">
             
                 <a href="js基础.html">
             
@@ -300,7 +302,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.12" data-path="三种js类的实现方法[es5和es6].html">
+        <li class="chapter active" data-level="2.12" data-path="三种js类的实现方法[es5和es6].html">
             
                 <a href="三种js类的实现方法[es5和es6].html">
             
@@ -3226,7 +3228,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Js基础</a>
+        <a href="../.." >三种js类的实现方法(es5和es6)</a>
     </h1>
 </div>
 
@@ -3244,161 +3246,231 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="js&#x57FA;&#x7840;">js&#x57FA;&#x7840;</h1>
-<!-- TOC -->
-<ul>
-<li><a href="#js&#x57FA;&#x7840;">js&#x57FA;&#x7840;</a><ul>
-<li><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x6A21;&#x5757;">&#x81EA;&#x5B9A;&#x4E49;&#x6A21;&#x5757;</a></li>
-<li><a href="#&#x968F;&#x673A;&#x751F;&#x6210;&#x989C;&#x8272;">&#x968F;&#x673A;&#x751F;&#x6210;&#x989C;&#x8272;</a></li>
-<li><a href="#&#x5229;&#x7528;-ObjectdefineProperty-&#x4FA6;&#x6D4B;&#x5BF9;&#x8C61;&#x7684;&#x53D8;&#x5316;&#x6700;&#x7B80;&#x5355;&#x7684;&#x53EF;&#x4EE5;&#x5199;&#x51FA;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;">&#x5229;&#x7528; Object.defineProperty &#x4FA6;&#x6D4B;&#x5BF9;&#x8C61;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x53EF;&#x4EE5;&#x5199;&#x51FA;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;</a></li>
-<li><a href="#JS&#x4E2D;&#x7684;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#x4E0E;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#x4EE5;&#x53CA;&#x6269;&#x5C55;">JS&#x4E2D;&#x7684;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#x4E0E;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#x4EE5;&#x53CA;&#x6269;&#x5C55;</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x6A21;&#x5757;">&#x81EA;&#x5B9A;&#x4E49;&#x6A21;&#x5757;</h2>
-<pre><code class="lang-javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module</span>)</span>{
-    <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>)</span>{
-        <span class="hljs-keyword">return</span> a + b;
+                                <h2 id="1&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x539F;&#x578B;&#x5B9E;&#x73B0;&#x7C7B;">1.&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;+&#x539F;&#x578B;&#x5B9E;&#x73B0;&#x7C7B;</h2>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * &#x6784;&#x9020;&#x5668;&#x65B9;&#x6CD5;/&#x53D8;&#x91CF;&#x548C;&#x539F;&#x578B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;&#xFF1A;
+ *  1. &#x539F;&#x578B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x53D8;&#x91CF;&#xFF0C;&#x662F;&#x8BE5;&#x7C7B;&#x6240;&#x6709;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x5171;&#x4EAB;&#x7684;&#x3002;
+ *  &#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4EFD;&#x3002;
+ * 
+ *  2. &#x800C;&#x6784;&#x9020;&#x5668;&#x5185;&#x7684;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x5219;&#x662F;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x5355;&#x72EC;&#x5360;&#x6709;- -
+ *  -&gt;&#x4E0D;&#x7BA1;&#x662F;&#x5426;&#x7528;this.**&#x65B9;&#x5F0F;&#xFF0C;&#x8FD8;&#x662F;&#x79C1;&#x6709;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x90FD;&#x662F;&#x72EC;&#x5360;&#x7684;&#x3002; 
+ * 
+ * &#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x5199;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x8003;&#x8651;&#x8BE5;&#x65B0;&#x589E;&#x5C5E;&#x6027;&#x662F;&#x5171;&#x4EAB;&#x7684;&#xFF0C;&#x8FD8;&#x662F;&#x72EC;&#x5360;&#x7684;&#x3002;
+ * &#x4EE5;&#x6B64;&#xFF0C;&#x51B3;&#x5B9A;&#x5728;&#x6784;&#x9020;&#x5668;&#x8FD8;&#x662F;&#x539F;&#x578B;&#x4E0A;&#x8FDB;&#x884C;&#x58F0;&#x660E;&#x3002;
+ */</span>
+
+<span class="hljs-comment">//&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x5927;&#x5199;&#x5F00;&#x5934;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Toast</span>(<span class="hljs-params">option</span>)</span>{
+    <span class="hljs-comment">// &#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x4E00;&#x4E2A;&#x5F3A;&#x5236;&#x8981;&#x6C42;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5C31;&#x662F;&#x9700;&#x8981;&#x4F7F;&#x7528;new&#x64CD;&#x4F5C;&#x7B26;&#x3002;</span>
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x4E0D;&#x4F7F;&#x7528;new&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x90A3;&#x4E48;&#x6784;&#x9020;&#x5668;&#x5185;&#x7684;this&#x6307;&#x5411;&#xFF0C;&#x5C06;&#x4E0D;&#x662F;&#x5F53;&#x524D;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x3002;</span>
+    <span class="hljs-comment">// ES5:  &#x4F7F;&#x7528;instanceof&#x505A;&#x4E00;&#x5C42;&#x9632;&#x62A4;&#x3002; </span>
+    <span class="hljs-comment">// ES6&#xFF1A; typeof new.target !== &quot;undefined&quot;</span>
+    <span class="hljs-keyword">if</span>(!(<span class="hljs-keyword">this</span> <span class="hljs-keyword">instanceof</span> Toast)){
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Toast(option);
     }
 
-    <span class="hljs-keyword">if</span> (<span class="hljs-string">&apos;undefined&apos;</span> != <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span>){
-        <span class="hljs-built_in">window</span>.add = <span class="hljs-built_in">module</span>.exports;
-    }
+    <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x6216;&#x8005;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7684;&#x4FE1;&#x606F;&#x4E5F;&#x53EF;&#x4EE5;</span>
+    <span class="hljs-comment">//   if(typeof new.target !== &quot;undefined&quot;)){</span>
+    <span class="hljs-comment">//       throw new Error(&apos;Toast instantiation error&apos;);</span>
+    <span class="hljs-comment">//   }</span>
 
-})(<span class="hljs-string">&apos;undefined&apos;</span> == <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> ? { <span class="hljs-built_in">module</span>: { exports: {} } } : <span class="hljs-built_in">module</span>);
-</code></pre>
-<h2 id="&#x968F;&#x673A;&#x751F;&#x6210;&#x989C;&#x8272;">&#x968F;&#x673A;&#x751F;&#x6210;&#x989C;&#x8272;</h2>
-<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRandomColor</span>(<span class="hljs-params"></span>)</span>{
-    <span class="hljs-keyword">let</span> rgb = [];:
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i&lt;<span class="hljs-number">3</span>; i++){
-        <span class="hljs-keyword">let</span> color = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">256</span>).toString(<span class="hljs-number">16</span>);
-        color = color.lenth == <span class="hljs-number">1</span> ? <span class="hljs-string">&apos;0&apos;</span> + color : color;
-        rgb.push(color)
-    }
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;#&apos;</span> + rgb.join(<span class="hljs-string">&apos;&apos;</span>);
+    <span class="hljs-keyword">this</span>.prompt = <span class="hljs-string">&apos;&apos;</span>;    <span class="hljs-comment">//toast&#x4E2D;&#x7684;&#x5185;&#x5BB9;</span>
+    <span class="hljs-keyword">this</span>.elem = <span class="hljs-literal">null</span>;    <span class="hljs-comment">//&#x5B9A;&#x4E49;&#x5143;&#x7D20;dom&#x7ED3;&#x6784;</span>
+    <span class="hljs-keyword">this</span>.init(option);  <span class="hljs-comment">//&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x5165;&#x53E3;&#xFF1B;</span>
 }
-</code></pre>
-<h2 id="&#x5229;&#x7528;-objectdefineproperty-&#x4FA6;&#x6D4B;&#x5BF9;&#x8C61;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x53EF;&#x4EE5;&#x5199;&#x51FA;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;">&#x5229;&#x7528; Object.defineProperty &#x4FA6;&#x6D4B;&#x5BF9;&#x8C61;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x53EF;&#x4EE5;&#x5199;&#x51FA;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">defineReactive</span> (<span class="hljs-params">data, key, val</span>) </span>{
-    <span class="hljs-built_in">Object</span>.defineProperty(data, key, {
-        enumerable: <span class="hljs-literal">true</span>,
-        configurable: <span class="hljs-literal">true</span>,
-        get: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-            <span class="hljs-keyword">return</span> val
-        },
-        set: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">newVal</span>) </span>{
-            <span class="hljs-keyword">if</span>(val === newVal){
-                <span class="hljs-keyword">return</span>
+Toast.prototype = {
+    <span class="hljs-comment">// &#x6784;&#x9020;&#x5668;</span>
+    <span class="hljs-keyword">constructor</span>:Toast, //&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x539F;&#x578B;&#x6307;&#x5411;
+    // &#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;
+    init: function(option){
+        <span class="hljs-keyword">this</span>.prompt = option.prompt || <span class="hljs-string">&apos;&apos;</span>;
+        <span class="hljs-keyword">this</span>.render();
+        <span class="hljs-keyword">this</span>.bindEvent();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;   <span class="hljs-comment">//&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;&#x7684;&#x6838;&#x5FC3;</span>
+    },
+    <span class="hljs-comment">// &#x663E;&#x793A;</span>
+    show: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">time</span>)</span>{
+        <span class="hljs-keyword">var</span> that=<span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">this</span>.changeStyle(<span class="hljs-keyword">this</span>.elem, <span class="hljs-string">&apos;display&apos;</span>, <span class="hljs-string">&apos;block&apos;</span>);
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            that.hide();
+        },time);
+    },
+    <span class="hljs-comment">// &#x9690;&#x85CF;</span>
+    hide: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">this</span>.changeStyle(<span class="hljs-keyword">this</span>.elem, <span class="hljs-string">&apos;display&apos;</span>, <span class="hljs-string">&apos;none&apos;</span>);
+    },
+    <span class="hljs-comment">// &#x753B;&#x51FA;dom</span>
+    render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">var</span> html = <span class="hljs-string">&apos;&apos;</span>;
+        <span class="hljs-keyword">this</span>.elem = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
+        <span class="hljs-keyword">this</span>.changeStyle(<span class="hljs-keyword">this</span>.elem, <span class="hljs-string">&apos;display&apos;</span>, <span class="hljs-string">&apos;none&apos;</span>);
+        html += <span class="hljs-string">&apos;&lt;a class=&quot;J-close&quot; href=&quot;javascript:;&quot;&gt;x&lt;/a&gt;&apos;</span>
+        html += <span class="hljs-string">&apos;&lt;p style=&quot;border:1px solid #a865aa&quot;&gt;&apos;</span>+ <span class="hljs-keyword">this</span>.prompt +<span class="hljs-string">&apos;&lt;/p&gt;&apos;</span>;
+        <span class="hljs-keyword">this</span>.elem.innerHTML = html;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">document</span>.body.appendChild(<span class="hljs-keyword">this</span>.elem);
+    },
+    <span class="hljs-comment">// &#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;</span>
+    bindEvent: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+
+        <span class="hljs-keyword">this</span>.addEvent(<span class="hljs-keyword">this</span>.elem, <span class="hljs-string">&apos;click&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+            <span class="hljs-keyword">if</span>(e.target.className.indexOf(<span class="hljs-string">&apos;J-close&apos;</span>) != <span class="hljs-number">-1</span>){
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;close Toast!&apos;</span>);
+                self.hide();
             }
-            val = newVal
-        }
-    })
-}
-</code></pre>
-<h2 id="js&#x4E2D;&#x7684;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#x4E0E;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#x4EE5;&#x53CA;&#x6269;&#x5C55;">JS&#x4E2D;&#x7684;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#x4E0E;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#x4EE5;&#x53CA;&#x6269;&#x5C55;</h2>
-<p>&#x5C5E;&#x6027;&#x7684;&#x679A;&#x4E3E;&#x6027;&#x4F1A;&#x5F71;&#x54CD;&#x4EE5;&#x4E0B;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x7ED3;&#x679C;&#xFF1A;</p>
-<ul>
-<li>for&#x2026;in</li>
-<li>Object.keys()</li>
-<li>JSON.stringify</li>
-</ul>
-<p>&#x5148;&#x770B;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6309;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;kxy&#x5BF9;&#x8C61;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">&quot;KXY&quot;</span>;
-}
-Person.prototype = {
-    <span class="hljs-keyword">constructor</span>: Person,
-    job: &quot;student&quot;,
+        });
+    },
+    <span class="hljs-comment">// &#x6DFB;&#x52A0;&#x4E8B;&#x4EF6;&#x65B9;&#x6CD5;</span>
+    addEvent: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">node, name, fn</span>)</span>{
+        <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+        node.addEventListener(name,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            fn.apply(self,<span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>));
+        },<span class="hljs-literal">false</span>);
+    },
+    <span class="hljs-comment">// &#x6539;&#x53D8;&#x6837;&#x5F0F;</span>
+    changeStyle: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">node, key, value</span>)</span>{
+        node.style[key] = value;
+    }
 };
 
-var kxy = new Person();
-Object.defineProperty(kxy, &quot;sex&quot;, {
-    value: <span class="hljs-string">&quot;female&quot;</span>,
-    enumerable: <span class="hljs-literal">false</span>
-});
+<span class="hljs-keyword">var</span> T=<span class="hljs-keyword">new</span> Toast({prompt:<span class="hljs-string">&apos;I\&apos;m Toast!&apos;</span>}).show(<span class="hljs-number">2000</span>);  <span class="hljs-comment">//&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;</span>
 </code></pre>
-<p>&#x5176;&#x4E2D;&#x7528;defineProperty&#x4E3A;&#x5BF9;&#x8C61;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;&#x201D;sex&#x201D;&#x7684;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;</p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x505A;&#x4EE5;&#x4E0B;&#x9A8C;&#x8BC1;&#xFF1A;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> pro <span class="hljs-keyword">in</span> kxy) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;kxy.&quot;</span> + pro + <span class="hljs-string">&quot; = &quot;</span> + kxy[pro]);
-}
-
-<span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;</span>
-<span class="hljs-comment">// kxy.name = KXY</span>
-<span class="hljs-comment">// kxy.constructor = function Person() {</span>
-<span class="hljs-comment">//    this.name = &quot;KXY&quot;;</span>
-<span class="hljs-comment">// }</span>
-<span class="hljs-comment">// kxy.job = student</span>
-
-<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.keys(kxy));
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1A;[&quot;name&quot;]</span>
-<span class="hljs-comment">// &#x53EA;&#x5305;&#x542B;&#x201D;name&#x201D;&#x5C5E;&#x6027;&#xFF0C;&#x8BF4;&#x660E;&#x8BE5;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x5177;&#x6709;&#x7684;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#x3002;</span>
-
-
-<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(kxy));
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1A;{&quot;name&quot;:&quot;KXY&quot;}</span>
-<span class="hljs-comment">// &#x6B64;&#x65B9;&#x6CD5;&#x4E5F;&#x53EA;&#x80FD;&#x8BFB;&#x53D6;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x7684;&#x53EF;&#x679A;&#x4E3E;&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x5E8F;&#x5217;&#x5316;&#x4E3A;JSON&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x901A;&#x8FC7;typeof JSON.stringify(kxy)&#x5F97;&#x5230;string&#x7C7B;&#x578B;&#xFF09;&#x3002;</span>
-</code></pre>
-<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params"></span>)</span>{  
-    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">&apos;kong&apos;</span>;  
-}  
-Person.prototype = {  
-    age : <span class="hljs-number">18</span>,  
-    job : <span class="hljs-string">&apos;student&apos;</span>  
-}  
-<span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> Person();  
-<span class="hljs-built_in">Object</span>.defineProperty(a, <span class="hljs-string">&apos;sex&apos;</span>, {  
-    value : <span class="hljs-string">&apos;men&apos;</span>,  
-    enumerable : <span class="hljs-literal">false</span>      <span class="hljs-comment">//&#x5B9A;&#x4E49;&#x8BE5;&#x5C5E;&#x6027;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;  </span>
-})  
-
-<span class="hljs-comment">//for in  </span>
-<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> k <span class="hljs-keyword">in</span> a){  
-    <span class="hljs-built_in">console</span>.log(k);  
-}  
-<span class="hljs-comment">//name age job  </span>
-
-<span class="hljs-comment">//Object.keys()  </span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.keys(a));  
-<span class="hljs-comment">//[&apos;name&apos;]  </span>
-
-<span class="hljs-comment">//JSON.stringify()  </span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(a));  
-<span class="hljs-comment">//{&apos;name&apos; : &apos;kong&apos;}  </span>
-
-<span class="hljs-comment">//propertyIsEnumerable&#x65B9;&#x6CD5;&#x5224;&#x65AD;&#x8BE5;&#x5C5E;&#x6027;&#x662F;&#x5426;&#x53EF;&#x679A;&#x4E3E;  </span>
-<span class="hljs-built_in">console</span>.log(a.propertyIsEnumerable(<span class="hljs-string">&apos;name&apos;</span>));    <span class="hljs-comment">//true  </span>
-<span class="hljs-built_in">console</span>.log(a.propertyIsEnumerable(<span class="hljs-string">&apos;age&apos;</span>));     <span class="hljs-comment">//false  </span>
-<span class="hljs-built_in">console</span>.log(a.propertyIsEnumerable(<span class="hljs-string">&apos;sex&apos;</span>));     <span class="hljs-comment">//false</span>
-</code></pre>
-<pre><code class="lang-javascript"><span class="hljs-keyword">for</span> (prop <span class="hljs-keyword">in</span> obj) {
-    <span class="hljs-keyword">if</span> (!obj.hasOwnProperty(prop)) <span class="hljs-keyword">continue</span>; <span class="hljs-comment">// &#x8DF3;&#x8FC7;&#x7EE7;&#x627F;&#x5C5E;&#x6027;</span>
-}
-</code></pre>
-<p>&#x5982;&#x6B64;&#x4E00;&#x6765;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x6765;&#x4F7F;&#x7528; for...in &#x5FAA;&#x73AF;&#x904D;&#x5386;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#xFF1A;</p>
-<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">var</span> getEnumPropertyNames = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">obj</span>) </span>{
-        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> obj !== <span class="hljs-string">&apos;object&apos;</span>) <span class="hljs-keyword">throw</span> <span class="hljs-built_in">TypeError</span>(); <span class="hljs-comment">// &#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;&#x5BF9;&#x8C61;</span>
-        <span class="hljs-keyword">var</span> props = []; <span class="hljs-comment">// &#x5C06;&#x8981;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x7EC4;</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> prop <span class="hljs-keyword">in</span> obj) { <span class="hljs-comment">// &#x904D;&#x5386;&#x6240;&#x6709;&#x53EF;&#x679A;&#x4E3E;&#x7684;&#x5C5E;&#x6027;</span>
-            <span class="hljs-keyword">if</span> (obj.hasOwnProperty(prop)) { <span class="hljs-comment">//&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x81EA;&#x6709;&#x5C5E;&#x6027;</span>
-                props.push(prop); <span class="hljs-comment">//&#x5C06;&#x5C5E;&#x6027;&#x540D;&#x6DFB;&#x52A0;&#x5230;&#x6570;&#x7EC4;&#x4E2D;</span>
+<h2 id="2&#x6784;&#x9020;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x5B57;&#x9762;&#x91CF;&#x5BF9;&#x5916;&#x66B4;&#x9732;">2.&#x6784;&#x9020;&#x51FD;&#x6570;+&#x5185;&#x90E8;&#x51FD;&#x6570;+&#x5BF9;&#x8C61;&#x5B57;&#x9762;&#x91CF;&#x5BF9;&#x5916;&#x66B4;&#x9732;</h2>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * &#x5728;&#x5E73;&#x65F6;&#x5F00;&#x53D1;&#x9875;&#x9762;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x5BF9;&#x4E8E;&#x67D0;&#x4E00;&#x5757;&#x7684;&#x529F;&#x80FD;&#x8FDB;&#x884C;&#x5185;&#x90E8;&#x7684;&#x5C01;&#x88C5;&#xFF0C;
+ * &#x4F18;&#x70B9;&#x662F;&#x4EE3;&#x7801;&#x7EC4;&#x7EC7;&#x7B80;&#x6D01;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x524D;&#x89C4;&#x5212;&#x597D;&#x5BF9;&#x5916;&#x66B4;&#x9732;&#x7684;&#x63A5;&#x53E3;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Toast</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-comment">// &#x5DF2;&#x70B9;&#x6B4C;&#x66F2;</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">init</span>(<span class="hljs-params">option</span>)</span>{
+        <span class="hljs-keyword">this</span>.prompt = option.prompt || <span class="hljs-string">&apos;&apos;</span>;
+        render();
+        bindEvent();
+    }
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">show</span>(<span class="hljs-params">time</span>)</span>{
+        changeStyle(<span class="hljs-keyword">this</span>.elem, <span class="hljs-string">&apos;display&apos;</span>, <span class="hljs-string">&apos;block&apos;</span>);
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            hide();
+        },time);
+    }
+    <span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">hide</span>(<span class="hljs-params"></span>)</span>{
+        changeStyle(<span class="hljs-keyword">this</span>.elem, <span class="hljs-string">&apos;display&apos;</span>, <span class="hljs-string">&apos;none&apos;</span>);
+    }
+    <span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">var</span> html = <span class="hljs-string">&apos;&apos;</span>;
+        <span class="hljs-keyword">this</span>.elem = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
+        changeStyle(<span class="hljs-keyword">this</span>.elem, <span class="hljs-string">&apos;display&apos;</span>, <span class="hljs-string">&apos;none&apos;</span>);
+        html += <span class="hljs-string">&apos;&lt;a class=&quot;J-close&quot; href=&quot;javascript:;&quot;&gt;x&lt;/a&gt;&apos;</span>
+        html += <span class="hljs-string">&apos;&lt;p style=&quot;border:1px solid #a865aa&quot;&gt;&apos;</span>+ <span class="hljs-keyword">this</span>.prompt +<span class="hljs-string">&apos;&lt;/p&gt;&apos;</span>;
+        <span class="hljs-keyword">this</span>.elem.innerHTML = html;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">document</span>.body.appendChild(<span class="hljs-keyword">this</span>.elem);
+    }
+    <span class="hljs-comment">//&#x7ED1;&#x5B9A;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">bindEvent</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+        addEvent(<span class="hljs-keyword">this</span>.elem,<span class="hljs-string">&apos;click&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+            <span class="hljs-keyword">if</span>(e.target.className.indexOf(<span class="hljs-string">&apos;J-close&apos;</span>) != <span class="hljs-number">-1</span>){
+                self.hide();
+            }<span class="hljs-keyword">else</span>{
+                alert(<span class="hljs-string">&quot;&#x7ED1;&#x5B9A;&#x7684;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x751F;&#x6548;&#x4E86;&quot;</span>);
             }
-        }
-        <span class="hljs-keyword">return</span> props; <span class="hljs-comment">//&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x6570;&#x7EC4;</span>
+        });
+    }
+    <span class="hljs-comment">// &#x6DFB;&#x52A0;&#x7ED1;&#x5B9A;&#x591A;&#x79CD;&#x4E8B;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">addEvent</span>(<span class="hljs-params">node,name,fn</span>)</span>{
+        <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+        node.addEventListener(name,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            fn.apply(self,<span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>));
+        },<span class="hljs-literal">false</span>);
+    }
+    <span class="hljs-comment">// &#x6539;&#x53D8;&#x6837;&#x5F0F;</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeStyle</span>(<span class="hljs-params">node,key,value</span>)</span>{
+        node.style[key]=value;
     }
 
-    <span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;</span>
-    <span class="hljs-keyword">var</span> obj = {
-       <span class="hljs-string">&apos;x&apos;</span>: <span class="hljs-number">1</span>,
-       <span class="hljs-string">&apos;y&apos;</span>:<span class="hljs-number">2</span>
+
+    <span class="hljs-comment">/**
+     * @Desc: &#x5C06;&#x4E0A;&#x8FF0;&#x65B9;&#x6CD5;&#x7EFC;&#x5408;&#x8D77;&#x6765;&#x4F7F;&#x7528;&#xFF0C;
+     * &#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x4EC5;&#x4EC5;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x8FDB;&#x884C;&#x4F7F;&#x7528;&#xFF0C;&#x5BF9;&#x5916;&#x4EC5;&#x4EC5;&#x66B4;&#x9732;&#x5F00;&#x542F;&#x548C;&#x5173;&#x95ED;&#x65B9;&#x6CD5;&#x5373;&#x53EF;
+     */</span>
+    <span class="hljs-keyword">var</span> service = {
+        start: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">config</span>)</span>{
+            init(config);  <span class="hljs-comment">//&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x5165;&#x53E3;&#xFF1B;</span>
+            show(<span class="hljs-number">20000</span>);
+        },
+        stop: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            hide();
+        }
+    };
+    <span class="hljs-keyword">return</span> service;  <span class="hljs-comment">//&#x5C06;&#x8BE5;&#x7EC4;&#x4EF6;&#x7684;&#x63A5;&#x53E3;&#x66B4;&#x9732;&#x51FA;&#x53BB;</span>
+}
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x6848;&#x4F8B;</span>
+<span class="hljs-keyword">var</span> T= <span class="hljs-keyword">new</span> Toast();
+T.start({prompt:<span class="hljs-string">&apos;I\&apos;m Toast!&apos;</span>,elem:<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;test&quot;</span>)});  <span class="hljs-comment">//&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x5143;&#x7D20;</span>
+</code></pre>
+<h2 id="3-es6-class&#x521B;&#x5EFA;">3. ES6 class&#x521B;&#x5EFA;</h2>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * class&#x7C7B;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;extends&#x5BF9;&#x7C7B;&#x8FDB;&#x884C;&#x65B9;&#x6CD5;&#x7EE7;&#x627F;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Toast</span> </span>{
+    <span class="hljs-comment">// constructor(x, y) {</span>
+    <span class="hljs-comment">//     this.x = x;</span>
+    <span class="hljs-comment">//     this.y = y;</span>
+    <span class="hljs-comment">// }</span>
+
+    <span class="hljs-comment">// &#x5DF2;&#x70B9;&#x6B4C;&#x66F2;</span>
+    init(option){
+        <span class="hljs-keyword">this</span>.prompt = option.prompt || <span class="hljs-string">&apos;&apos;</span>;
+        render();
+        bindEvent();
+        show(<span class="hljs-number">2000</span>);
     }
-    obj.propertyIsEnumerable(<span class="hljs-string">&apos;toString&apos;</span>)
-    <span class="hljs-keyword">var</span> propertys = getEnumPropertyNames(obj);
-    <span class="hljs-built_in">console</span>.log(propertys.length);       <span class="hljs-comment">//2</span>
-    <span class="hljs-built_in">console</span>.log(propertys.join(<span class="hljs-string">&quot;,&quot;</span>));   <span class="hljs-comment">//x,y</span>
-})()
+    show(time){
+        changeStyle(<span class="hljs-keyword">this</span>.elem, <span class="hljs-string">&apos;display&apos;</span>, <span class="hljs-string">&apos;block&apos;</span>);
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            hide();
+        },time);
+    }
+    hide(){
+        changeStyle(<span class="hljs-keyword">this</span>.elem, <span class="hljs-string">&apos;display&apos;</span>,<span class="hljs-string">&apos;none&apos;</span>);
+    }
+    render(config){
+        <span class="hljs-keyword">var</span> html = <span class="hljs-string">&apos;&apos;</span>;
+        <span class="hljs-keyword">this</span>.elem = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
+        <span class="hljs-keyword">this</span>.changeStyle(<span class="hljs-keyword">this</span>.elem, <span class="hljs-string">&apos;display&apos;</span>, <span class="hljs-string">&apos;block&apos;</span>);
+        html += <span class="hljs-string">&apos;&lt;a class=&quot;J-close&quot; href=&quot;javascript:;&quot;&gt;x&lt;/a&gt;&apos;</span>
+        html += <span class="hljs-string">&apos;&lt;p style=&quot;border:1px solid #a865aa&quot;&gt;&apos;</span>+ config.prompt +<span class="hljs-string">&apos;&lt;/p&gt;&apos;</span>;
+        <span class="hljs-keyword">this</span>.elem.innerHTML = html;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">document</span>.body.appendChild(<span class="hljs-keyword">this</span>.elem);
+    }
+    <span class="hljs-comment">//&#x7ED1;&#x5B9A;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;</span>
+    bindEvent(){
+        <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">this</span>.addEvent(<span class="hljs-keyword">this</span>.elem,<span class="hljs-string">&apos;click&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+            <span class="hljs-keyword">if</span>(e.target.className.indexOf(<span class="hljs-string">&apos;J-close&apos;</span>) != <span class="hljs-number">-1</span>){
+                self.hide();
+            }<span class="hljs-keyword">else</span>{
+                alert(<span class="hljs-string">&quot;&#x7ED1;&#x5B9A;&#x7684;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x751F;&#x6548;&#x4E86;&quot;</span>);
+            }
+        });
+    }
+    <span class="hljs-comment">// &#x6DFB;&#x52A0;&#x7ED1;&#x5B9A;&#x591A;&#x79CD;&#x4E8B;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;</span>
+    addEvent(node,name,fn){
+        <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+        node.addEventListener(name,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            fn.apply(self,<span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>));
+        },<span class="hljs-literal">false</span>);
+    }
+    <span class="hljs-comment">// &#x6539;&#x53D8;&#x6837;&#x5F0F;</span>
+    changeStyle(node,key,value){
+        node.style[key]=value;
+    }
+}
+<span class="hljs-keyword">var</span> T= <span class="hljs-keyword">new</span> Toast();
+T.render({prompt:<span class="hljs-string">&apos;I\&apos;m Toast!&apos;</span>,elem:<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;test&quot;</span>)});  <span class="hljs-comment">//&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x5143;&#x7D20;</span>
+T.bindEvent();
 </code></pre>
 
                                 
@@ -3443,8 +3515,12 @@ Person.prototype = {
 
             
                 
+                <a href="Js判断字符串中是否包含某个字符串.html" class="navigation navigation-prev " aria-label="Previous page: Js判断字符串中是否包含某个字符串">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="ljc-Js.html" class="navigation navigation-next navigation-unique" aria-label="Next page: ljc-Js">
+                
+                <a href="async-await.html" class="navigation navigation-next " aria-label="Next page: async await">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -3455,7 +3531,7 @@ Person.prototype = {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Js基础","level":"2.1","depth":1,"next":{"title":"ljc-Js","level":"2.2","depth":1,"path":"Js/js基础/ljc-Js.md","ref":"Js/js基础/ljc-Js.md","articles":[]},"previous":{"title":"JS","level":"2","depth":0,"ref":"","articles":[{"title":"Js基础","level":"2.1","depth":1,"path":"Js/js基础/js基础.md","ref":"Js/js基础/js基础.md","articles":[]},{"title":"ljc-Js","level":"2.2","depth":1,"path":"Js/js基础/ljc-Js.md","ref":"Js/js基础/ljc-Js.md","articles":[]},{"title":"moveJs","level":"2.3","depth":1,"path":"Js/js基础/moveJs.md","ref":"Js/js基础/moveJs.md","articles":[]},{"title":"移动web","level":"2.4","depth":1,"path":"Js/js基础/移动web.md","ref":"Js/js基础/移动web.md","articles":[]},{"title":"ICD","level":"2.5","depth":1,"path":"Js/js基础/ICD.md","ref":"Js/js基础/ICD.md","articles":[]},{"title":"Js ES6 Map","level":"2.6","depth":1,"path":"Js/js基础/js-es6-Map.md","ref":"Js/js基础/js-es6-Map.md","articles":[]},{"title":"ES6-数组array新增方法","level":"2.7","depth":1,"path":"Js/js基础/ES6-数组array新增方法.md","ref":"Js/js基础/ES6-数组array新增方法.md","articles":[]},{"title":"require和import区别","level":"2.8","depth":1,"path":"Js/js基础/require和import区别.md","ref":"Js/js基础/require和import区别.md","articles":[]},{"title":"window.history方法总结","level":"2.9","depth":1,"path":"Js/js基础/window.history方法总结.md","ref":"Js/js基础/window.history方法总结.md","articles":[]},{"title":"fetch","level":"2.10","depth":1,"path":"Js/js基础/fetch.md","ref":"Js/js基础/fetch.md","articles":[]},{"title":"Js判断字符串中是否包含某个字符串","level":"2.11","depth":1,"path":"Js/js基础/Js判断字符串中是否包含某个字符串.md","ref":"Js/js基础/Js判断字符串中是否包含某个字符串.md","articles":[]},{"title":"三种js类的实现方法(es5和es6)","level":"2.12","depth":1,"path":"Js/js基础/三种js类的实现方法[es5和es6].md","ref":"Js/js基础/三种js类的实现方法[es5和es6].md","articles":[]},{"title":"async await","level":"2.13","depth":1,"path":"Js/js基础/async-await.md","ref":"Js/js基础/async-await.md","articles":[]},{"title":"关于移动端,webview监听滚动条的坑","level":"2.14","depth":1,"path":"Js/js基础/关于移动端,webview监听滚动条的坑.md","ref":"Js/js基础/关于移动端,webview监听滚动条的坑.md","articles":[]},{"title":"js类型转换","level":"2.15","depth":1,"path":"Js/js基础/js类型转换.md","ref":"Js/js基础/js类型转换.md","articles":[]},{"title":"js事件轮询、微任务和宏任务","level":"2.16","depth":1,"path":"Js/js基础/js事件轮询、微任务和宏任务.md","ref":"Js/js基础/js事件轮询、微任务和宏任务.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"Js/js基础/js基础.md","mtime":"2019-06-30T08:31:42.168Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-30T12:02:43.163Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"三种js类的实现方法(es5和es6)","level":"2.12","depth":1,"next":{"title":"async await","level":"2.13","depth":1,"path":"Js/js基础/async-await.md","ref":"Js/js基础/async-await.md","articles":[]},"previous":{"title":"Js判断字符串中是否包含某个字符串","level":"2.11","depth":1,"path":"Js/js基础/Js判断字符串中是否包含某个字符串.md","ref":"Js/js基础/Js判断字符串中是否包含某个字符串.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"Js/js基础/三种js类的实现方法[es5和es6].md","mtime":"2019-06-30T12:02:09.632Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-30T12:02:43.163Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
