@@ -15,7 +15,7 @@
     - [window.history方法总结](Js/js基础/window.history方法总结.md)
     - [fetch](Js/js基础/fetch.md)
     - [Js判断字符串中是否包含某个字符串](Js/js基础/Js判断字符串中是否包含某个字符串.md)
-    - [三种js类的实现方法(es5和es6)](Js/js基础/三种js类的实现方法(es5和es6).md)
+    - [三种js类的实现方法(es5和es6)](Js/js基础/三种js类的实现方法[es5和es6].md)
     - [async await](Js/js基础/async-await.md)
     - [关于移动端,webview监听滚动条的坑](Js/js基础/关于移动端,webview监听滚动条的坑.md)
     - [js类型转换](Js/js基础/js类型转换.md)
