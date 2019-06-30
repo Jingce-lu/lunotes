@@ -2,10 +2,11 @@ js基础
 ====
 <!-- TOC -->
 
-- [自定义模块](#自定义模块)
-- [随机生成颜色](#随机生成颜色)
-- [利用 Object.defineProperty 侦测对象的变化，最简单的可以写出这样的代码](#利用-objectdefineproperty-侦测对象的变化最简单的可以写出这样的代码)
-- [JS中的可枚举属性与不可枚举属性以及扩展](#js中的可枚举属性与不可枚举属性以及扩展)
+- [js基础](#js基础)
+  - [自定义模块](#自定义模块)
+  - [随机生成颜色](#随机生成颜色)
+  - [利用 Object.defineProperty 侦测对象的变化，最简单的可以写出这样的代码](#利用-ObjectdefineProperty-侦测对象的变化最简单的可以写出这样的代码)
+  - [JS中的可枚举属性与不可枚举属性以及扩展](#JS中的可枚举属性与不可枚举属性以及扩展)
 
 <!-- /TOC -->
 ## 自定义模块
@@ -86,13 +87,11 @@ for(var pro in kxy) {
 }
 
 // 结果：
-/*
-kxy.name = KXY
-kxy.constructor = function Person() {
-    this.name = "KXY";
-}
-kxy.job = student
-*/
+// kxy.name = KXY
+// kxy.constructor = function Person() {
+//    this.name = "KXY";
+// }
+// kxy.job = student
 
 console.log(Object.keys(kxy));
 // 返回结果：["name"]
