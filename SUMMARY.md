@@ -56,6 +56,7 @@
   - [Node](Node/node基础/node.md)
   - [Babel](Node/node基础/babel.md)
   - [mongodb](Node/node基础/mongodb.md)
+  - [node-http-proxy解决本地开发ajax跨域问题](Node/node基础/node-http-proxy解决本地开发ajax跨域问题.md)
 <!-- 8.Typescript -->
 * Typescript
   - [TypeScript](Js/TypeScript/TypeScript.md)
