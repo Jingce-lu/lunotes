@@ -74,6 +74,7 @@
   - [谈谈JavaScript中的双向数据绑定](框架通识/谈谈JavaScript中的双向数据绑定.md)
   - [MVC VS Flux](框架通识/MVC-VS-Flux.md)
   - [路由实现](框架通识/路由实现.md)
+  - [使用EventEmitter2(观察者模式)构建前端应用](框架通识/使用EventEmitter2[观察者模式]构建前端应用.md)
 <!-- 2.安全XSS-CSRF -->
 * [安全XSS-CSRF](安全/安全.md)
 <!-- 3.性能 -->
