@@ -44,7 +44,7 @@
   - [HTTPS协议](Js/基础/HTTPS协议.md)
   - [cookie与session](Js/基础/cookie与session.md)
   - [实用的60个CSS代码片段](Js/基础/实用的60个CSS代码片段.md)
-  - [Jquery事件机制](Js/基础/Jquery事件机制)
+  - [Jquery事件机制](Js/基础/Jquery事件机制.md)
 <!-- 7.NodeJs -->
 * NodeJs
   - [node命令](Node/node基础/node命令.md)
