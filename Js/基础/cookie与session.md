@@ -30,7 +30,7 @@
 
 ### cookie原理
 
-<div align="center"><img src='../resource/assets/060301.jpg'/></div>
+<div align="center"><img src='../../../resource/assets/060301.jpg'/></div>
 
 第一次访问网站的时候，浏览器发出请求，服务器响应请求后，会将 cookie 放入到响应请求中，在浏览器第二次发请求的时候，会把 cookie 带过去，服务端会辨别用户身份，当然服务器也可以修改 cookie 内容（后面会谈到这点）。cookie 的产生是通过扩展 HTTP 协议来实现的，服务器通过在 HTTP 响应头中加上一行特殊的指示以提示浏览器按照指示生成相应的 cookie。然而纯粹的客户端脚本如 JavaScript 也可以生成 cookie。而 cookie 的使用是由浏览器按照一定的原则在后台自动发送给服务器的。浏览器检查所有存储的 cookie ，如果某个 cookie 所声明的作用范围（这个作用范围由 cookie 的 path 和 domain 同时决定）大于等于将要请求的资源所在的位置，则把该 cookie 附在请求资源的 HTTP 请求头上发送给服务器。
 
@@ -46,7 +46,7 @@ cookie 在客户端是由浏览器来管理的。浏览器能够保证 Google �
 ### cookie属性
 cookie 的属性比较多，我们可以看下下面这张图
 
-<div align="center"><img src='../resource/assets/060302.jpg'/></div>
+<div align="center"><img src='../../resource/assets/060302.jpg'/></div>
 
 #### name
 这个显而易见，就是代表 cookie 的名字的意思，一个域名下绑定的 cookie ，name 不能相同，相同的 name 的值会被覆盖掉
@@ -82,7 +82,7 @@ document.cookie='myname=liuzhiyu;path=/;domain=.baidu.com';	//	写入 cookie
 ```
 
 ### 服务端如何去设置cookie
-<div align="center"><img src='../resource/assets/060303.jpg'/></div>
+<div align="center"><img src='../../resource/assets/060303.jpg'/></div>
 
 服务端就是通过 `setCookie` 来设置 `cookie` 的，注意点，要设置多个 cookie 时，得多写几个 setCookie ，我们还可以从上图看到，请求可以携带 cookie 给后端。
 
@@ -156,4 +156,4 @@ echo $_SESSION["username"];
 
 由此可以看出: 
 
-    当浏览器关闭时，原session并没有被销毁（destory方法没有执行），而是等到timeout到期，才销毁这个session。关闭浏览器只是在客户端的内存中清除了与原会话相关的cookie，再次打开浏览器进行连接时，浏览器无法发送cookie信息，所以服务器会认为是一个新的会话。因此，如果有某些与session关联的资源想在关闭浏览器时就进行清理（如临时文件等），那么应该发送特定的请求到服务器端，而不是等到session的自动清理。
+当浏览器关闭时，原session并没有被销毁（destory方法没有执行），而是等到timeout到期，才销毁这个session。关闭浏览器只是在客户端的内存中清除了与原会话相关的cookie，再次打开浏览器进行连接时，浏览器无法发送cookie信息，所以服务器会认为是一个新的会话。因此，如果有某些与session关联的资源想在关闭浏览器时就进行清理（如临时文件等），那么应该发送特定的请求到服务器端，而不是等到session的自动清理。
