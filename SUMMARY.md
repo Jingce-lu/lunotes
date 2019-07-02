@@ -169,6 +169,7 @@
   - [setState](React/React进阶/setState.md)
   - [React Hooks](React/React进阶/React-Hooks.md)
   - [React HOC](React/React进阶/React-HOC.md)
+  - [React-HOC](React/React进阶/HOC.md)
   - [React事件处理机制](React/React进阶/React事件处理机制.md)
   - [React事件机制](React/React进阶/React事件机制.md)
 <!-- 3.源码分析 -->
