@@ -1134,7 +1134,7 @@ const Paragraph = (props, context) => {
 ```javascript
 <ThemeProvider value={{mainColor: 'green', textColor: 'red'}} >
     <Page />
-  </ThemeProvider>
+</ThemeProvider>
 ```
 
 ### 10.6 两种提供者模式实现方式的比较
