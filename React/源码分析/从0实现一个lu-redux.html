@@ -3372,276 +3372,277 @@ redux &#x66F4;&#x591A;&#x7684;&#x662F;&#x5BF9;&#x601D;&#x7EF4;&#x4E0A;&#x7684;&#
 <p>&#x73B0;&#x5728;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x4ECE;&#x65E0;&#x5230;&#x6709;&#xFF01;&#xFF01;</p>
 <h3 id="so-tiny-">so tiny !</h3>
 <p>redux &#x662F;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x6D41;&#x7A0B;&#xFF1A;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;action --&gt; redux&#x505A;&#x4E00;&#x4E9B;&#x903B;&#x8F91;&#xFF0C;&#x8FD4;&#x56DE;state --&gt; &#x89E6;&#x53D1;&#x76D1;&#x542C;&#x7A0B;&#x5E8F;&#x3002; &#x8FD9;&#x4E0D;&#x5C31;&#x662F;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x7684;&#x4E8B;&#x4EF6;&#x673A;&#x5236;&#x5417;&#xFF08;&#x5728;web &#x4E0A;&#x5C31;&#x662F;addEventListener&#xFF09;&#xFF01;
-&#x6240;&#x4EE5;&#x4E00;&#x4E2A; &#x6700;&#x5C0F;&#x7684;redux&#xFF1A;
-```jsx harmony
-class Store {
-    constructor(reducer, state = {}) {
-        this.state = state
-        this.listeners = []
-        this.reducer = reducer
-    }</p>
-<pre><code>dispatch(action) {
-    this.state = this.reducer(this.state, action)
-    this.listeners.forEach(listener =&gt; listener())
-}
+&#x6240;&#x4EE5;&#x4E00;&#x4E2A; &#x6700;&#x5C0F;&#x7684;redux&#xFF1A;</p>
+<pre><code class="lang-jsx"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
+    <span class="hljs-keyword">constructor</span>(reducer, state = {}) {
+        <span class="hljs-keyword">this</span>.state = state
+        <span class="hljs-keyword">this</span>.listeners = []
+        <span class="hljs-keyword">this</span>.reducer = reducer
+    }
 
-getState() {
-    return this.state
-}
+    dispatch(action) {
+        <span class="hljs-keyword">this</span>.state = <span class="hljs-keyword">this</span>.reducer(<span class="hljs-keyword">this</span>.state, action)
+        <span class="hljs-keyword">this</span>.listeners.forEach(listener =&gt; listener())
+    }
 
-subscribe(listener) {
-    this.listeners.push(listener)
-}
-</code></pre><p>}</p>
-<pre><code>&#x6211;&#x4EEC;&#x7684;&#x8FD9;&#x4E2A; Store &#x548C; redux&#x7684;store&#x63D0;&#x4F9B;&#x4E86;&#x60F3;&#x7684;api&#xFF1A;
-1. dispatch &#x89E6;&#x53D1;&#x4E00;&#x4E2A;action
-2. getState &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x72B6;&#x6001;
-3. subscribe &#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x76D1;&#x542C;&#x5668;
+    getState() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.state
+    }
 
-&#x8BA9;&#x6211;&#x4EEC;&#x7528;&#x8FD9;&#x4E2A;&#x6700;&#x5C0F;&#x7684;&#x4F8B;&#x5B50;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A; &#x8BA1;&#x6570;&#x5668;[&#x5728;&#x7EBF;&#x5730;&#x5740;](https://jsfiddle.net/yankang/mpzz40gv/)
-```jsx harmony
-function reducer(state, action) {
-   switch (action.type) {
-       case &apos;addOne&apos;: {
-           return {
+    subscribe(listener) {
+        <span class="hljs-keyword">this</span>.listeners.push(listener)
+    }
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x7684;&#x8FD9;&#x4E2A; Store &#x548C; redux&#x7684;store&#x63D0;&#x4F9B;&#x4E86;&#x60F3;&#x7684;api&#xFF1A;</p>
+<ol>
+<li>dispatch &#x89E6;&#x53D1;&#x4E00;&#x4E2A;action</li>
+<li>getState &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x72B6;&#x6001;</li>
+<li>subscribe &#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x76D1;&#x542C;&#x5668;</li>
+</ol>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x7528;&#x8FD9;&#x4E2A;&#x6700;&#x5C0F;&#x7684;&#x4F8B;&#x5B50;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A; &#x8BA1;&#x6570;&#x5668;<a href="https://jsfiddle.net/yankang/mpzz40gv/" target="_blank">&#x5728;&#x7EBF;&#x5730;&#x5740;</a></p>
+<pre><code class="lang-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reducer</span>(<span class="hljs-params">state, action</span>) </span>{
+   <span class="hljs-keyword">switch</span> (action.type) {
+       <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;addOne&apos;</span>: {
+           <span class="hljs-keyword">return</span> {
                ...state,
-               count: state.count + 1
+               count: state.count + <span class="hljs-number">1</span>
            }
        }
-       default: {
-           return state
+       <span class="hljs-keyword">default</span>: {
+           <span class="hljs-keyword">return</span> state
        }
    }
 }
 
-const store = new Store(reducer, {count: 0})
+<span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> Store(reducer, {count: <span class="hljs-number">0</span>})
 
 store.subscribe(() =&gt; {
-    console.log(&apos;subscribe test:&apos;, store.getState())
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;subscribe test:&apos;</span>, store.getState())
 })
 
-store.dispatch({type: &apos;addOne&apos;})
-store.dispatch({type: &apos;addOne&apos;})
-</code></pre><h3 id="&#x53E6;&#x4E00;&#x4E2A;&#x7075;&#x9B42;-middleware">&#x53E6;&#x4E00;&#x4E2A;&#x7075;&#x9B42; middleware</h3>
+store.dispatch({type: <span class="hljs-string">&apos;addOne&apos;</span>})
+store.dispatch({type: <span class="hljs-string">&apos;addOne&apos;</span>})
+</code></pre>
+<h3 id="&#x53E6;&#x4E00;&#x4E2A;&#x7075;&#x9B42;-middleware">&#x53E6;&#x4E00;&#x4E2A;&#x7075;&#x9B42; middleware</h3>
 <p>redux&#x7684;<a href="http://cn.redux.js.org/" target="_blank">&#x4E2D;&#x6587;&#x6587;&#x6863;</a> &#x4E0A;&#x5173;&#x4E8E;<a href="http://cn.redux.js.org/docs/advanced/Middleware.html" target="_blank">middleware</a>&#x7684;&#x90E8;&#x5206;&#xFF0C; &#x5DF2;&#x7ECF;&#x8BB2;&#x7684;&#x5F88;&#x597D;&#x4E86;&#x3002;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x4ECE;&#x53E6;&#x4E00;&#x4E2A;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;
 &#x9996;&#x5148;&#xFF0C;middleware &#x662F;redux&#x5728;dispatch&#x524D;&#x540E;&#xFF0C;&#x63D0;&#x4F9B;&#x7684;&#x6269;&#x5C55;&#x673A;&#x5236;&#x3002; &#x6BD4;&#x5982;&#x65E5;&#x5FD7;&#x529F;&#x80FD;&#xFF0C; &#x9700;&#x8981;&#x5728;dispath&#x4E00;&#x4E2A;action&#x4E4B;&#x524D;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x72B6;&#x6001;&#xFF0C;&#x7136;&#x540E;reducer&#x5904;&#x7406;&#x5B8C;&#x903B;&#x8F91;&#x4E4B;&#x540E;&#xFF0C; &#x518D;&#x6B21;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x3002; &#x8FD9;&#x4E0D;&#x5C31;&#x662F; <strong>&#x9762;&#x5411;&#x5207;&#x9762;&#x7F16;&#x7A0B;</strong>&#x5417;&#xFF01;
-&#x65F6;&#x9AE6;&#x7684;<strong>AOP</strong>&#xFF01; &#x7528;java&#x7684;&#x8BDD;&#x4E0D;&#x7BA1;&#x662F; &#x9759;&#x6001;&#x4EE3;&#x7406;&#x8FD8;&#x662F;&#x52A8;&#x6001;&#x4EE3;&#x7406;, &#x5199;&#x8D77;&#x6765;&#x90FD;&#x633A;&#x590D;&#x6742;&#x7684;&#x3002; &#x4F46;&#x662F;js&#x5B9E;&#x73B0; &#x5F88;&#x7B80;&#x5355;&#xFF1A; 
-```jsx harmony
-function enhancer(originF) {
-  return function(...args) {
-    console.log(&apos;before&apos;)
-    var result = originF(...args)
-    console.log(&apos;after&apos;)
-    return result
+&#x65F6;&#x9AE6;&#x7684;<strong>AOP</strong>&#xFF01; &#x7528;java&#x7684;&#x8BDD;&#x4E0D;&#x7BA1;&#x662F; &#x9759;&#x6001;&#x4EE3;&#x7406;&#x8FD8;&#x662F;&#x52A8;&#x6001;&#x4EE3;&#x7406;, &#x5199;&#x8D77;&#x6765;&#x90FD;&#x633A;&#x590D;&#x6742;&#x7684;&#x3002; &#x4F46;&#x662F;js&#x5B9E;&#x73B0; &#x5F88;&#x7B80;&#x5355;&#xFF1A; </p>
+<pre><code class="lang-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enhancer</span>(<span class="hljs-params">originF</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">...args</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;before&apos;</span>)
+    <span class="hljs-keyword">var</span> result = originF(...args)
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;after&apos;</span>)
+    <span class="hljs-keyword">return</span> result
   }
-}</p>
-<pre><code>enhancer &#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;A&#xFF0C; &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x589E;&#x5F3A;&#x7684;&#x65B9;&#x6CD5;B&#x3002; &#x5BF9;B&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x518D;&#x6B21;  &#x589E;&#x5F3A;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x662F;&#x53EF;&#x4EE5;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x7684;: 
-```jsx harmony
-var fEnhancer = function (originF) {
-    return function (...args) {
-        console.log(&apos;this is fEnhancer before&apos;)
-        var r = originF(...args)
-        console.log(&apos;this is fEnhancer after&apos;)
-        return r
+}
+</code></pre>
+<p>enhancer &#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;A&#xFF0C; &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x589E;&#x5F3A;&#x7684;&#x65B9;&#x6CD5;B&#x3002; &#x5BF9;B&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x518D;&#x6B21;  &#x589E;&#x5F3A;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x662F;&#x53EF;&#x4EE5;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x7684;: </p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">var</span> fEnhancer = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">originF</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;this is fEnhancer before&apos;</span>)
+        <span class="hljs-keyword">var</span> r = originF(...args)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;this is fEnhancer after&apos;</span>)
+        <span class="hljs-keyword">return</span> r
     }
 }
 
-var hEnhancer = function (originF) {
-    return function (...args) {
-        console.log(&apos;this is hEnhancer before&apos;)
-        var r = originF(...args)
-        console.log(&apos;this is hEnhancer after&apos;)
-        return r
+<span class="hljs-keyword">var</span> hEnhancer = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">originF</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;this is hEnhancer before&apos;</span>)
+        <span class="hljs-keyword">var</span> r = originF(...args)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;this is hEnhancer after&apos;</span>)
+        <span class="hljs-keyword">return</span> r
     }
 }
 
-var gEnhancer = function (originF) {
-    return function (...args) {
-        console.log(&apos;this is gEnhancer before&apos;)
-        var r = originF(...args)
-        console.log(&apos;this is gEnhancer after&apos;)
-        return r
+<span class="hljs-keyword">var</span> gEnhancer = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">originF</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;this is gEnhancer before&apos;</span>)
+        <span class="hljs-keyword">var</span> r = originF(...args)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;this is gEnhancer after&apos;</span>)
+        <span class="hljs-keyword">return</span> r
     }
 }
 
-function justPrint() {
-    console.log(&apos;justPrint...&apos;)
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">justPrint</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;justPrint...&apos;</span>)
 }
 
 fEnhancer(hEnhancer(gEnhancer(justPrint)))()
-</code></pre><p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x8F93;&#x51FA;<a href="">&#x5728;&#x7EBF;&#x5730;&#x5740;</a>&#xFF1A; </p>
-<p>```jsx harmony
-this is fEnhancer before
-this is hEnhancer before
-this is gEnhancer before
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x8F93;&#x51FA;<a href="">&#x5728;&#x7EBF;&#x5730;&#x5740;</a>&#xFF1A; </p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">this</span> is fEnhancer before
+<span class="hljs-keyword">this</span> is hEnhancer before
+<span class="hljs-keyword">this</span> is gEnhancer before
 justPrint...
 this is gEnhancer after
-this is hEnhancer after
-this is fEnhancer after</p>
-<pre><code>
-&#x5BF9;&#x4E8E; fEnhancer(hEnhancer(gEnhancer(justPrint))) &#x7B49;&#x6548;&#x7684;&#x5199;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;
-```jsx harmony
-var enhancerArray = [gEnhancer, hEnhancer, fEnhancer]
-function enhancerFun(originF) {
-    let of = originF
+<span class="hljs-keyword">this</span> is hEnhancer after
+<span class="hljs-keyword">this</span> is fEnhancer after
+</code></pre>
+<p>&#x5BF9;&#x4E8E; fEnhancer(hEnhancer(gEnhancer(justPrint))) &#x7B49;&#x6548;&#x7684;&#x5199;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">var</span> enhancerArray = [gEnhancer, hEnhancer, fEnhancer]
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enhancerFun</span>(<span class="hljs-params">originF</span>) </span>{
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">of</span> = originF
     enhancerArray.forEach(enhancer =&gt; {
-        of = enhancer(of)
+        <span class="hljs-keyword">of</span> = enhancer(<span class="hljs-keyword">of</span>)
     })
-    return of
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">of</span>
 }
-</code></pre><p>&#x66F4;&#x52A0;&#x6D41;&#x5F0A;&#x7684;&#x5199;&#x6CD5;&#xFF0C; &#x4E5F;&#x5C31;&#x662F;redux&#x7684;&#x5B9E;&#x73B0;(&#x5DE7;&#x5999;&#x7684;&#x4F7F;&#x7528;&#x4E86;&#x6570;&#x7EC4;&#x7684;reduce&#x65B9;&#x6CD5;)&#xFF1A; 
-```jsx harmony
-var enhancerArray = [gEnhancer, hEnhancer, fEnhancer]
-function enhancerFun2(originF) {
-    return enhancerArray.reduce((a, b) =&gt; (...args) =&gt; a(b(...args)))(originF)
-}</p>
-<pre><code>
-&#x56DE;&#x5230; redux&#xFF0C; &#x9700;&#x8981;&#x6211;&#x4EEC;&#x589E;&#x5F3A;&#x7684;&#x662F;dispatch&#xFF0C; &#x6240;&#x4EE5;&#x53EA;&#x9700;&#x8981; enhancerFun(store.dispatch)&#x3002; &#x8FD9;&#x91CC;&#x6709;&#x4E24;&#x4E2A;&#x95EE;&#x9898;&#xFF1A; 
-&#x7B2C;&#x4E00;&#x4E2A;&#x95EE;&#x9898; &#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684;dispatch&#x91CC;&#x9762;&#x4F7F;&#x7528;&#x4E86; this&#xFF0C; &#x800C;&#x8FD9;&#x4E2A;&#x589E;&#x5F3A;&#x7684;&#x8C03;&#x7528;&#xFF1A;  var r = originF()  &#x8FD9;&#x91CC;&#x5C31;&#x4E22;&#x6389;&#x4E86;this&#x3002;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A; 
-```jsx harmony
-class Store {
-    constructor(reducer, state) {
-        this.state = state
-        this.listeners = []
-        this.reducer = reducer
+</code></pre>
+<p>&#x66F4;&#x52A0;&#x6D41;&#x5F0A;&#x7684;&#x5199;&#x6CD5;&#xFF0C; &#x4E5F;&#x5C31;&#x662F;redux&#x7684;&#x5B9E;&#x73B0;(&#x5DE7;&#x5999;&#x7684;&#x4F7F;&#x7528;&#x4E86;&#x6570;&#x7EC4;&#x7684;reduce&#x65B9;&#x6CD5;)&#xFF1A; </p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">var</span> enhancerArray = [gEnhancer, hEnhancer, fEnhancer]
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enhancerFun2</span>(<span class="hljs-params">originF</span>) </span>{
+    <span class="hljs-keyword">return</span> enhancerArray.reduce((a, b) =&gt; (...args) =&gt; a(b(...args)))(originF)
+}
+</code></pre>
+<p>&#x56DE;&#x5230; redux&#xFF0C; &#x9700;&#x8981;&#x6211;&#x4EEC;&#x589E;&#x5F3A;&#x7684;&#x662F;dispatch&#xFF0C; &#x6240;&#x4EE5;&#x53EA;&#x9700;&#x8981; enhancerFun(store.dispatch)&#x3002; &#x8FD9;&#x91CC;&#x6709;&#x4E24;&#x4E2A;&#x95EE;&#x9898;&#xFF1A; 
+&#x7B2C;&#x4E00;&#x4E2A;&#x95EE;&#x9898; &#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684;dispatch&#x91CC;&#x9762;&#x4F7F;&#x7528;&#x4E86; this&#xFF0C; &#x800C;&#x8FD9;&#x4E2A;&#x589E;&#x5F3A;&#x7684;&#x8C03;&#x7528;&#xFF1A;  var r = originF()  &#x8FD9;&#x91CC;&#x5C31;&#x4E22;&#x6389;&#x4E86;this&#x3002;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A; </p>
+<pre><code class="lang-jsx"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
+    <span class="hljs-keyword">constructor</span>(reducer, state) {
+        <span class="hljs-keyword">this</span>.state = state
+        <span class="hljs-keyword">this</span>.listeners = []
+        <span class="hljs-keyword">this</span>.reducer = reducer
 
-        this.dispatch = this.dispatch.bind(this)
-        this.getState = this.getState.bind(this)
-        this.subscribe = this.subscribe.bind(this)
+        <span class="hljs-keyword">this</span>.dispatch = <span class="hljs-keyword">this</span>.dispatch.bind(<span class="hljs-keyword">this</span>)
+        <span class="hljs-keyword">this</span>.getState = <span class="hljs-keyword">this</span>.getState.bind(<span class="hljs-keyword">this</span>)
+        <span class="hljs-keyword">this</span>.subscribe = <span class="hljs-keyword">this</span>.subscribe.bind(<span class="hljs-keyword">this</span>)
     }
     ...
 }
-</code></pre><p>&#x8FD9;&#x6837;&#x5728;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x8C03;&#x7528; store&#x7684;&#x65B9;&#x6CD5;&#xFF0C; &#x90FD;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x4E86;</p>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5728;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x8C03;&#x7528; store&#x7684;&#x65B9;&#x6CD5;&#xFF0C; &#x90FD;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x4E86;</p>
 <p>&#x7B2C;&#x4E8C;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x5728;gEnhancer &#x91CC;&#x9762;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x8C03;&#x7528; store.getState() &#x6765;&#x8BB0;&#x5F55; &#x8C03;&#x7528;dispatch &#x524D;&#x540E;&#x7684;&#x72B6;&#x6001;&#x600E;&#x4E48;&#x529E;&#xFF1F; &#xFF08;&#x6211;&#x4EEC;&#x4E0D;&#x53EF;&#x80FD;&#x6BCF;&#x6B21;&#x53BB;import store&#x5427;&#xFF0C; &#x56E0;&#x4E3A;&#x5728;&#x5199;enhancer&#x7684;&#x65F6;&#x5019;&#xFF0C;
-&#x53EF;&#x80FD;&#x538B;&#x6839;&#x5C31;&#x4E0D;&#x77E5;&#x9053; store&#x5728;&#x54EA;&#x91CC;&#x5462;&#x3002; &#xFF09; &#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;
-```jsx harmony
-var fEnhancer = function ({ getState, dispatch }) {
-    return function (originF) {
-        return function (...args) {
-            console.log(&apos;this is fEnhancer before&apos;, getState())
-            var r = originF(...args)
-            console.log(&apos;this is fEnhancer after&apos;, getState())
-            return r
+&#x53EF;&#x80FD;&#x538B;&#x6839;&#x5C31;&#x4E0D;&#x77E5;&#x9053; store&#x5728;&#x54EA;&#x91CC;&#x5462;&#x3002; &#xFF09; &#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">var</span> fEnhancer = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">{ getState, dispatch }</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">originF</span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;this is fEnhancer before&apos;</span>, getState())
+            <span class="hljs-keyword">var</span> r = originF(...args)
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;this is fEnhancer after&apos;</span>, getState())
+            <span class="hljs-keyword">return</span> r
         }
     }
-}</p>
-<pre><code>&#x901A;&#x8FC7;&#x95ED;&#x5305;&#x7684;&#x5F62;&#x5F0F;&#xFF0C; &#x6211;&#x4EEC;&#x8BA9; fEnhancer &#x5185;&#x90E8;&#x7684;&#x903B;&#x8F91; &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528; getState&#x3002;
-
-&#x90A3;middleware&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F; &#x8FD9;&#x91CC;&#x7684;fEnhancer&#x5C31;&#x662F;&#x6807;&#x51C6;&#x7684;&#x4E00;&#x4E2A; redux middleware, &#x662F;&#x7684;&#xFF0C;redux-logger&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x4E86;&#xFF0C; &#x8BA9;&#x6211;&#x4EEC;&#x7528;fEnhancer&#x5427;&#x3002; &#x5BF9;&#x5E94;&#x7684; applyMiddleware&#xFF1A; 
-```jsx harmony
-function applyMiddleware(store, ...args) {
-    console.log(args)
-    const enArr = args.map(middleware =&gt; middleware({
+}
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x95ED;&#x5305;&#x7684;&#x5F62;&#x5F0F;&#xFF0C; &#x6211;&#x4EEC;&#x8BA9; fEnhancer &#x5185;&#x90E8;&#x7684;&#x903B;&#x8F91; &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528; getState&#x3002;</p>
+<p>&#x90A3;middleware&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F; &#x8FD9;&#x91CC;&#x7684;fEnhancer&#x5C31;&#x662F;&#x6807;&#x51C6;&#x7684;&#x4E00;&#x4E2A; redux middleware, &#x662F;&#x7684;&#xFF0C;redux-logger&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x4E86;&#xFF0C; &#x8BA9;&#x6211;&#x4EEC;&#x7528;fEnhancer&#x5427;&#x3002; &#x5BF9;&#x5E94;&#x7684; applyMiddleware&#xFF1A; </p>
+<pre><code class="lang-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyMiddleware</span>(<span class="hljs-params">store, ...args</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(args)
+    <span class="hljs-keyword">const</span> enArr = args.map(middleware =&gt; middleware({
         getState: store.getState,
         dispatch: store.dispatch
     }))
 
 
-    let of = store.dispatch
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">of</span> = store.dispatch
     enArr.forEach(en =&gt; {
-        of = en(of)
+        <span class="hljs-keyword">of</span> = en(<span class="hljs-keyword">of</span>)
     })
 
-    store.dispatch = of
+    store.dispatch = <span class="hljs-keyword">of</span>
 }
-</code></pre><p>&#x73B0;&#x5728;&#xFF0C; &#x7ED9;&#x6211;&#x4EEC;&#x5F00;&#x5934;&#x7684;reducer &#x589E;&#x5F3A;&#x4E00;&#x4E0B;&#x5427;&#xFF01;&#xFF01; <a href="https://jsfiddle.net/yankang/awruyq59/" target="_blank">&#x5728;&#x7EBF;&#x5730;&#x5740;</a></p>
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C; &#x7ED9;&#x6211;&#x4EEC;&#x5F00;&#x5934;&#x7684;reducer &#x589E;&#x5F3A;&#x4E00;&#x4E0B;&#x5427;&#xFF01;&#xFF01; <a href="https://jsfiddle.net/yankang/awruyq59/" target="_blank">&#x5728;&#x7EBF;&#x5730;&#x5740;</a></p>
 <h3 id="&#x8F85;&#x52A9;&#x51FD;&#x6570;">&#x8F85;&#x52A9;&#x51FD;&#x6570;</h3>
 <p>&#x5230;&#x8FD9;&#x91CC;&#xFF0C; tineyredux&#x5176;&#x5B9E;&#x5DF2;&#x7ECF;&#x7ED3;&#x675F;&#x4E86;&#x3002; &#x4F46;&#x662F;redux&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x8005; &#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;&#x8F85;&#x52A9;&#x51FD;&#x6570;&#xFF1A; combineReducers &#x548C; bindActionCreators&#x3002;
 bindActionCreators &#x5C31;&#x662F;&#x5728; &#x539F;&#x672C;&#x8C03;&#x7528; actionCreator&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9ED8;&#x8BA4;&#x5E2E;&#x4F60;dispatch&#x4E00;&#x4E0B;&#xFF1A; actionCreator() ==&#x300B; store.dispatch(actionCreator())&#x3002; 
-&#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A; &apos;&#x589E;&#x5F3A;&apos;:
-```jsx harmony
-function bindActionCreator(creator, dispatch) {
-    return function (...args) {
-        dispatch(creator(args)) // &lt;---- &#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A; &apos;&#x589E;&#x5F3A;&apos;
+&#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A; &apos;&#x589E;&#x5F3A;&apos;:</p>
+<pre><code class="lang-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bindActionCreator</span>(<span class="hljs-params">creator, dispatch</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args</span>) </span>{
+        dispatch(creator(args)) <span class="hljs-comment">// &lt;---- &#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A; &apos;&#x589E;&#x5F3A;&apos;</span>
     }
-}</p>
-<p>export default function bindActionCreators(creators, dispatch) {
-    const keys = Object.keys(creators)
-    const result = {}
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bindActionCreators</span>(<span class="hljs-params">creators, dispatch</span>) </span>{
+    <span class="hljs-keyword">const</span> keys = <span class="hljs-built_in">Object</span>.keys(creators)
+    <span class="hljs-keyword">const</span> result = {}
     keys.forEach(key =&gt; {
         result[key] = bindActionCreator(creators[key], dispatch)
     })
-    return result
-}</p>
-<pre><code>
-combineReducers &#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x53E6;&#x5916;&#x7684;&#x75DB;&#x70B9;&#xFF0C; &#x6BD4;&#x5982;&#x5982;&#x4E0B;&#x7684;store &#x548C;reducer&#xFF1A; 
-```jsx harmony
-{
+    <span class="hljs-keyword">return</span> result
+}
+</code></pre>
+<p>combineReducers &#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x53E6;&#x5916;&#x7684;&#x75DB;&#x70B9;&#xFF0C; &#x6BD4;&#x5982;&#x5982;&#x4E0B;&#x7684;store &#x548C;reducer&#xFF1A; </p>
+<pre><code class="lang-jsx">{
     clock: {
-        count: 0
+        count: <span class="hljs-number">0</span>
     },
     yk: {
-        age: 0
+        age: <span class="hljs-number">0</span>
     }
     ...
 }
 
-function reducer(state, action) {
-    switch (action.type) {
-        case &apos;clock_add&apos;:...
-        case &apos;clock_cnum&apos;...
-        case &apos;yk_older&apos;: ...
-        case &apos;yk_forever18&apos;: ...
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reducer</span>(<span class="hljs-params">state, action</span>) </span>{
+    <span class="hljs-keyword">switch</span> (action.type) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;clock_add&apos;</span>:...
+        case <span class="hljs-string">&apos;clock_cnum&apos;</span>...
+        case <span class="hljs-string">&apos;yk_older&apos;</span>: ...
+        case <span class="hljs-string">&apos;yk_forever18&apos;</span>: ...
         default: {
-            return state
+            <span class="hljs-keyword">return</span> state
         }
     }
 }
-</code></pre><p>&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#xFF0C; &#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x6211;&#x4EEC;&#x7684;&#x5E94;&#x7528;&#xFF0C;clock&#x6570;&#x636E;&#x90E8;&#x5206;&#xFF0C;&#x5BF9;&#x5E94;clock&#x81EA;&#x5DF1;&#x7684;&#x903B;&#x8F91;&#xFF0C; yk&#x6570;&#x636E;&#x90E8;&#x5206;&#x7684;&#x4FEE;&#x6539;&#x903B;&#x8F91;&#x4E5F;&#x53EA;&#x4F1A;&#x5173;&#x5FC3;&#x81EA;&#x5DF1;&#xFF08;&#x901A;&#x5E38;&#x8FD9;&#x90FD;&#x662F;2&#x4E2A;&#x9875;&#x9762;&#x7684;&#x6570;&#x636E;&#x4E86;&#xFF09;&#x3002;
-&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x7684;&#x4E00;&#x4E2A; <strong>&quot;&#x5927;switch&quot;</strong> &#x662F;&#x53EF;&#x4EE5;&#x5207;&#x5206;&#x7684;&#x3002;
-```jsx harmony
-function clockReducer(state, action) {
-    switch (action.type) {
-        case &apos;clock_addOne&apos;: ...
-        case &apos;clock_cnum&apos;: ...
+</code></pre>
+<p>&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#xFF0C; &#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x6211;&#x4EEC;&#x7684;&#x5E94;&#x7528;&#xFF0C;clock&#x6570;&#x636E;&#x90E8;&#x5206;&#xFF0C;&#x5BF9;&#x5E94;clock&#x81EA;&#x5DF1;&#x7684;&#x903B;&#x8F91;&#xFF0C; yk&#x6570;&#x636E;&#x90E8;&#x5206;&#x7684;&#x4FEE;&#x6539;&#x903B;&#x8F91;&#x4E5F;&#x53EA;&#x4F1A;&#x5173;&#x5FC3;&#x81EA;&#x5DF1;&#xFF08;&#x901A;&#x5E38;&#x8FD9;&#x90FD;&#x662F;2&#x4E2A;&#x9875;&#x9762;&#x7684;&#x6570;&#x636E;&#x4E86;&#xFF09;&#x3002;
+&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x7684;&#x4E00;&#x4E2A; <strong>&quot;&#x5927;switch&quot;</strong> &#x662F;&#x53EF;&#x4EE5;&#x5207;&#x5206;&#x7684;&#x3002;</p>
+<pre><code class="lang-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clockReducer</span>(<span class="hljs-params">state, action</span>) </span>{
+    <span class="hljs-keyword">switch</span> (action.type) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;clock_addOne&apos;</span>: ...
+        case <span class="hljs-string">&apos;clock_cnum&apos;</span>: ...
         default: {
-            return state
+            <span class="hljs-keyword">return</span> state
         }
     }
-}</p>
-<p>function ykReducer(state, action) {
-    switch (action.type) {
-        case &apos;yk_older&apos;: ...
-        case &apos;yk_forever18&apos;: ...
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ykReducer</span>(<span class="hljs-params">state, action</span>) </span>{
+    <span class="hljs-keyword">switch</span> (action.type) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;yk_older&apos;</span>: ...
+        case <span class="hljs-string">&apos;yk_forever18&apos;</span>: ...
         default: {
-            return state
+            <span class="hljs-keyword">return</span> state
         }
     }
-}</p>
-<p>function reducer(state, action) {
-  return {
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reducer</span>(<span class="hljs-params">state, action</span>) </span>{
+  <span class="hljs-keyword">return</span> {
       clock: clockReducer(state, action),
       yk: ykReducer(state, action),
   }
-}</p>
-<pre><code>combineReducers &#x5C31;&#x662F;&#x5BF9;&#x5C0F;&#x7684;reducer&#x8FDB;&#x884C;&#x5408;&#x5E76;&#x7684;&#xFF1A;
-```jsx harmony
-function combineReducers(reducers) {
-    return function (state, action) {
-        const keys = Object.keys(reducers)
+}
+</code></pre>
+<p>combineReducers &#x5C31;&#x662F;&#x5BF9;&#x5C0F;&#x7684;reducer&#x8FDB;&#x884C;&#x5408;&#x5E76;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">combineReducers</span>(<span class="hljs-params">reducers</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state, action</span>) </span>{
+        <span class="hljs-keyword">const</span> keys = <span class="hljs-built_in">Object</span>.keys(reducers)
 
-        const newState = {}
+        <span class="hljs-keyword">const</span> newState = {}
         keys.forEach(key =&gt; {
             newState[key] = reducers[key](state[key], action)
         })
-        return newState
+        <span class="hljs-keyword">return</span> newState
     }
 }
-</code></pre><p>&#x9898;&#x5916;&#x8BDD;&#xFF1A; &#x8FD9;&#x91CC;&#x7684; combineReducers  &#x5982;&#x679C;&#x5C0F;reducer&#x7279;&#x522B;&#x591A;&#xFF0C; &#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF1A; &#x56E0;&#x4E3A;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A; action&#xFF0C;&#x90FD;&#x662F;&#x8D70;&#x4E86;&#x6240;&#x6709;&#x7684;reducer&#x3002; &#x5982;&#x679C;&#x6211;&#x4EEC;&#x573A;&#x666F;&#x7279;&#x6B8A;&#xFF0C;
-&#x662F;&#x6211;&#x4EEC;&#x521A;&#x624D;&#x8BF4;&#x7684; &#x4E00;&#x5757;&#x6570;&#x636E;&#x7684;&#x903B;&#x8F91; &#x53EA;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;reducer&#xFF0C; &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x53D8;&#x79CD;(&#x53EA;&#x4F1A;&#x6267;&#x884C;&#x4E00;&#x4E2A;reducer&#xFF0C; &#x9700;&#x8981;&#x4FDD;&#x8BC1;action&#x524D;&#x7F00;&#x548C;store&#x4E2D;key&#x4E00;&#x81F4;)&#xFF1A; 
-```jsx harmony
-function combineReducersVariant(reducers) {
-    return function (state, action) {
-        const lineIndex = action.type.indexOf(&quot;_&quot;)
-        const actionKey = action.type.substring(0, lineIndex)
-        const newS = reducers<a href="state[actionKey],%20action">actionKey</a></p>
-<pre><code>    return state[actionKey] === newS ? state : {
-        ...state,
-        [actionKey]: newS
+</code></pre>
+<p>&#x9898;&#x5916;&#x8BDD;&#xFF1A; &#x8FD9;&#x91CC;&#x7684; combineReducers  &#x5982;&#x679C;&#x5C0F;reducer&#x7279;&#x522B;&#x591A;&#xFF0C; &#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF1A; &#x56E0;&#x4E3A;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A; action&#xFF0C;&#x90FD;&#x662F;&#x8D70;&#x4E86;&#x6240;&#x6709;&#x7684;reducer&#x3002; &#x5982;&#x679C;&#x6211;&#x4EEC;&#x573A;&#x666F;&#x7279;&#x6B8A;&#xFF0C;
+&#x662F;&#x6211;&#x4EEC;&#x521A;&#x624D;&#x8BF4;&#x7684; &#x4E00;&#x5757;&#x6570;&#x636E;&#x7684;&#x903B;&#x8F91; &#x53EA;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;reducer&#xFF0C; &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x53D8;&#x79CD;(&#x53EA;&#x4F1A;&#x6267;&#x884C;&#x4E00;&#x4E2A;reducer&#xFF0C; &#x9700;&#x8981;&#x4FDD;&#x8BC1;action&#x524D;&#x7F00;&#x548C;store&#x4E2D;key&#x4E00;&#x81F4;)&#xFF1A; </p>
+<pre><code class="lang-jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">combineReducersVariant</span>(<span class="hljs-params">reducers</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state, action</span>) </span>{
+        <span class="hljs-keyword">const</span> lineIndex = action.type.indexOf(<span class="hljs-string">&quot;_&quot;</span>)
+        <span class="hljs-keyword">const</span> actionKey = action.type.substring(<span class="hljs-number">0</span>, lineIndex)
+        <span class="hljs-keyword">const</span> newS = reducers[actionKey](state[actionKey], action)
+
+        <span class="hljs-keyword">return</span> state[actionKey] === newS ? state : {
+            ...state,
+            [actionKey]: newS
+        }
     }
 }
-</code></pre><p>}
-```</p>
+</code></pre>
 <h3 id="&#x5176;&#x4ED6;">&#x5176;&#x4ED6;</h3>
 <p><a href="https://github.com/Jingce-lu/lu-redux" target="_blank">&#x4EE3;&#x7801;&#x6258;&#x7BA1;&#x5728;</a></p>
 
@@ -3703,7 +3704,7 @@ function combineReducersVariant(reducers) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"从0实现一个lu-redux","level":"3.17","depth":1,"next":{"title":"从0实现一个tiny-react-redux","level":"3.18","depth":1,"path":"React/源码分析/从0实现一个tiny-react-redux.md","ref":"React/源码分析/从0实现一个tiny-react-redux.md","articles":[]},"previous":{"title":"React-redux源码分析","level":"3.16","depth":1,"path":"React/源码分析/React-redux源码分析.md","ref":"React/源码分析/React-redux源码分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"React/源码分析/从0实现一个lu-redux.md","mtime":"2019-06-29T13:50:58.875Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-02T05:55:06.212Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"从0实现一个lu-redux","level":"3.17","depth":1,"next":{"title":"从0实现一个tiny-react-redux","level":"3.18","depth":1,"path":"React/源码分析/从0实现一个tiny-react-redux.md","ref":"React/源码分析/从0实现一个tiny-react-redux.md","articles":[]},"previous":{"title":"React-redux源码分析","level":"3.16","depth":1,"path":"React/源码分析/React-redux源码分析.md","ref":"React/源码分析/React-redux源码分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"React/源码分析/从0实现一个lu-redux.md","mtime":"2019-07-03T08:35:03.030Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-03T08:55:10.280Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

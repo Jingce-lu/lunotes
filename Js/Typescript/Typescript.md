@@ -7,43 +7,43 @@
   - [序](#序)
   - [第一章：配置](#第一章配置)
     - [准备工作](#准备工作)
-    - [React + Typescript 脚手架](#react--typescript-脚手架)
-    - [引入 React](#引入-react)
+    - [React + Typescript 脚手架](#React--Typescript-脚手架)
+    - [引入 React](#引入-React)
   - [第二章：开始](#第二章开始)
     - [无状态组件](#无状态组件)
-    - [基于 Class 的有状态组件](#基于-class-的有状态组件)
-    - [定义 DefaultProps](#定义-defaultprops)
-    - [提取 Prop Types](#提取-prop-types)
+    - [基于 Class 的有状态组件](#基于-Class-的有状态组件)
+    - [定义 DefaultProps](#定义-DefaultProps)
+    - [提取 Prop Types](#提取-Prop-Types)
     - [types 还是 interfaces？](#types-还是-interfaces)
-    - [基本的 Prop Types 例子](#基本的-prop-types-例子)
-    - [有用的 React Type 例子](#有用的-react-type-例子)
+    - [基本的 Prop Types 例子](#基本的-Prop-Types-例子)
+    - [有用的 React Type 例子](#有用的-React-Type-例子)
     - [表单与事件](#表单与事件)
   - [第三章：高级用法](#第三章高级用法)
     - [高阶组件 / render props](#高阶组件--render-props)
-    - [Context](#context)
-    - [Forwarding References/createRef](#forwarding-referencescreateref)
-    - [Portals](#portals)
+    - [Context](#Context)
+    - [Forwarding References/createRef](#Forwarding-ReferencescreateRef)
+    - [Portals](#Portals)
   - [错误边界](#错误边界)
-  - [Timeout/Placeholder/createFetcher](#timeoutplaceholdercreatefetcher)
+  - [Timeout/Placeholder/createFetcher](#TimeoutPlaceholdercreateFetcher)
   - [第四章：其他注意事项](#第四章其他注意事项)
-    - [写 Typescript 库而不是应用](#写-typescript-库而不是应用)
+    - [写 Typescript 库而不是应用](#写-Typescript-库而不是应用)
     - [组件/设计 系统开发](#组件设计-系统开发)
-    - [从Flow迁移](#从flow迁移)
-    - [Prettier + TSLint](#prettier--tslint)
-    - [ESLint + TSLint](#eslint--tslint)
-    - [与非Typescript库配合使用 (编辑自己的 index.d.ts)](#与非typescript库配合使用-编辑自己的-indexdts)
-  - [故障排除手册：Types](#故障排除手册types)
+    - [从Flow迁移](#从Flow迁移)
+    - [Prettier + TSLint](#Prettier--TSLint)
+    - [ESLint + TSLint](#ESLint--TSLint)
+    - [与非Typescript库配合使用 (编辑自己的 index.d.ts)](#与非Typescript库配合使用-编辑自己的-indexdts)
+  - [故障排除手册：Types](#故障排除手册Types)
     - [联合类型](#联合类型)
     - [可选类型](#可选类型)
     - [枚举类型](#枚举类型)
     - [类型断言](#类型断言)
     - [交叉类型](#交叉类型)
   - [忽略类型的属性](#忽略类型的属性)
-  - [Type Zoo](#type-zoo)
-  - [故障排除手册：TSLint](#故障排除手册tslint)
+  - [Type Zoo](#Type-Zoo)
+  - [故障排除手册：TSLint](#故障排除手册TSLint)
   - [故障排除手册：tsconfig.json](#故障排除手册tsconfigjson)
-  - [推荐的值得学习的 React+TypeScript 代码库](#推荐的值得学习的-reacttypescript-代码库)
-  - [其他的 React + TypeScript 资源](#其他的-react--typescript-资源)
+  - [推荐的值得学习的 React+TypeScript 代码库](#推荐的值得学习的-ReactTypeScript-代码库)
+  - [其他的 React + TypeScript 资源](#其他的-React--TypeScript-资源)
   - [我想问的问题在这里没有答案！](#我想问的问题在这里没有答案)
 
 <!-- /TOC -->
@@ -574,17 +574,17 @@ export class MyComponent extends React.Component<IMyComponentProps, {}> {
 [`eslint-typescript-parser`](https://github.com/eslint/typescript-eslint-parser)  可以补救这些缺陷，它试图连接 Javascript 和 Typescript 之前的不同，尽管它目前还有一些不完善的地方，但是在一些插件的帮配合下已经可以稳定地提供帮助了。
 
 <table>
- <tr>
-  <td>
-   Usage
-  </td>
-  <td>
-   .eslintrc
-  </td>
- </tr>
- <tr>
-  <td>
-  <pre>
+  <tr>
+    <td>
+      Usage
+    </td>
+    <td>
+      .eslintrc
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <pre>
 // Install:
 
 npm i -D typescript-eslint-parser
@@ -592,10 +592,10 @@ npm i -D typescript-eslint-parser
 // And in your ESLint configuration file:
 
 "parser": "typescript-eslint-parser"
-  </pre>
-  </td>
-  <td>
-  <pre>
+      </pre>
+    </td>
+    <td>
+      <pre>
 {
   "extends": [
     "airbnb",
@@ -634,10 +634,11 @@ npm i -D typescript-eslint-parser
     }
   ]
 }
-  </pre>
-  </td>
- </tr>
+      </pre>
+    </td>
+  </tr>
 </table>
+ 
 这是一个展示如何集成的项目的 github 仓库的地址：[eslint + tslint + create-react-app-ts](https://github.com/azdanov/tslint-eslint-crats).
 
 ### 与非Typescript库配合使用 (编辑自己的 index.d.ts)
