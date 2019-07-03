@@ -59,8 +59,8 @@
   - [mongodb](Node/node基础/mongodb.md)
   - [node-http-proxy解决本地开发ajax跨域问题](Node/node基础/node-http-proxy解决本地开发ajax跨域问题.md)
 <!-- 8.Typescript -->
-* Typescript
-  - [TypeScript](Js/TypeScript/TypeScript.md)
+* TypeScript
+  - [TypeScript](Js/TypeScript/Typescript.md)
   - [TypeScript2.8下的终极React组件模式](Js/TypeScript/TypeScript2.8下的终极React组件模式.md)
 
 ## Part 2 - Advanced
@@ -190,6 +190,8 @@
   - [实现自己的react之简单rendering](React/源码分析/实现自己的react之简单rendering.md)
   - [Redux源码分析](React/源码分析/Redux源码分析.md)
   - [React-redux源码分析](React/源码分析/React-redux源码分析.md)
+  - [动手实现 Redux](React/源码分析/动手实现Redux.md)
+  - [动手实现 React-redux](React/源码分析/动手实现React-redux.md)
   - [从0实现一个lu-redux](React/源码分析/从0实现一个lu-redux.md)
   - [从0实现一个tiny-react-redux](React/源码分析/从0实现一个tiny-react-redux.md)
   - [从0开始实现react-router](React/源码分析/从0开始实现react-router.md)
