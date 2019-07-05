@@ -63,6 +63,8 @@
   - [TypeScript](Js/TypeScript/Typescript.md)
   - [TypeScript2.8下的终极React组件模式](Js/TypeScript/TypeScript2.8下的终极React组件模式.md)
 
+* -
+
 ## Part 2 - Advanced
 <!-- 1.框架通识 -->
 * 框架通识
@@ -146,11 +148,18 @@
   - [策略设计模式和ES6的Proxy代理模式](设计模式/策略设计模式和ES6的Proxy代理模式.md)
   - [ES5 && ES6 实现观察者模式](设计模式/ES5&&ES6实现观察者模式.md)
 <!-- 9.算法 -->
-* [算法]()
+* [算法](算法/README.md)
   - [快速排序](算法/快速排序.md)
   - [Deepclone](算法/Deepclone.md)
   - [数组去重](算法/数组去重.md)
   - [冒泡排序](算法/冒泡排序.md)
+  - [js数组里面任意两个数的和与目标值](算法/js数组里面任意两个数的和与目标值.md)
+  - [反转字符串](算法/反转字符串.md)
+  - [仅仅反转字母](算法/仅仅反转字母.md)
+  - [反转字符串中的元音字母](算法/反转字符串中的元音字母.md)
+  - [整数反转](算法/整数反转.md)
+  - [两数相加](算法/两数相加.md)
+  - [无重复字符的最长子串](算法/无重复字符的最长子串.md)
 
 ## React
 <!-- 1.React基础 -->
@@ -175,7 +184,7 @@
 <!-- 3.源码分析 -->
 * 源码分析
   - [React Object实现React对象](React/源码分析/React-Object实现React对象.md)
-  - [从零开始实现一个React(一)-JSX和虚拟DOM](React/源码分析/从零开始实现一个React(一)-JSX和虚拟DOM .md)
+  - [从零开始实现一个React(一)-JSX和虚拟DOM](React/源码分析/从零开始实现一个React(一)-JSX和虚拟DOM.md)
   - [从零开始实现一个React（二）：组件和生命周期](React/源码分析/从零开始实现一个React（二）：组件和生命周期.md)
   - [从零开始实现一个React（三）：diff算法](React/源码分析/从零开始实现一个React（三）：diff算法.md)
   - [从零开始实现一个React（四）：异步的setState](React/源码分析/从零开始实现一个React（四）：异步的setState.md)
