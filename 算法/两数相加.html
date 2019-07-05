@@ -65,6 +65,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="无重复字符的最长子串.html" />
+    
     
     <link rel="prev" href="整数反转.html" />
     
@@ -2260,6 +2262,21 @@
             
         </li>
     
+        <li class="chapter " data-level="9.11" data-path="无重复字符的最长子串.html">
+            
+                <a href="无重复字符的最长子串.html">
+            
+                    
+                        <b>9.11.</b>
+                    
+                    无重复字符的最长子串
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -3484,7 +3501,216 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="&#x4E24;&#x6570;&#x76F8;&#x52A0;">&#x4E24;&#x6570;&#x76F8;&#x52A0;</h1>
+<h2 id="&#x95EE;&#x9898;">&#x95EE;&#x9898;</h2>
+<p>&#x7ED9;&#x51FA;&#x4E24;&#x4E2A; &#x975E;&#x7A7A; &#x7684;&#x94FE;&#x8868;&#x7528;&#x6765;&#x8868;&#x793A;&#x4E24;&#x4E2A;&#x975E;&#x8D1F;&#x7684;&#x6574;&#x6570;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x5B83;&#x4EEC;&#x5404;&#x81EA;&#x7684;&#x4F4D;&#x6570;&#x662F;&#x6309;&#x7167; &#x9006;&#x5E8F; &#x7684;&#x65B9;&#x5F0F;&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x4EEC;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x53EA;&#x80FD;&#x5B58;&#x50A8; &#x4E00;&#x4F4D; &#x6570;&#x5B57;&#x3002;</p>
+<p>&#x5982;&#x679C;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E24;&#x4E2A;&#x6570;&#x76F8;&#x52A0;&#x8D77;&#x6765;&#xFF0C;&#x5219;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x94FE;&#x8868;&#x6765;&#x8868;&#x793A;&#x5B83;&#x4EEC;&#x7684;&#x548C;&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5047;&#x8BBE;&#x9664;&#x4E86;&#x6570;&#x5B57; 0 &#x4E4B;&#x5916;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x6570;&#x90FD;&#x4E0D;&#x4F1A;&#x4EE5; 0 &#x5F00;&#x5934;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
+&#x8F93;&#x51FA;&#xFF1A;7 -&gt; 0 -&gt; 8
+&#x539F;&#x56E0;&#xFF1A;342 + 465 = 807
+</code></pre><h2 id="javascript-&#x5206;&#x89E3;&#x601D;&#x8DEF;-160ms">javascript &#x5206;&#x89E3;&#x601D;&#x8DEF; 160ms</h2>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */</span>
+
+<span class="hljs-keyword">var</span> listToStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">list</span>) </span>{
+  <span class="hljs-comment">//&#x5012;&#x5E8F;&#x94FE;&#x8868;&#x8F6C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;</span>
+  <span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;&quot;</span>;
+  <span class="hljs-keyword">while</span> (list) {
+    val = list.val;
+    list = list.next ? list.next : <span class="hljs-literal">null</span>;
+    str += val;
+  }
+  <span class="hljs-keyword">return</span> str
+    .split(<span class="hljs-string">&quot;&quot;</span>)
+    .reverse()
+    .join(<span class="hljs-string">&quot;&quot;</span>);
+};
+
+<span class="hljs-keyword">var</span> strToList = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">str</span>) </span>{
+  <span class="hljs-comment">//&#x6570;&#x5B57;&#x8F6C;&#x4E3A;&#x94FE;&#x8868;&#xFF0C;&#x4E14;&#x5012;&#x5E8F;</span>
+  <span class="hljs-keyword">let</span> arr = str.split(<span class="hljs-string">&quot;&quot;</span>);
+  <span class="hljs-keyword">let</span> listNode = <span class="hljs-keyword">new</span> ListNode(arr.shift());
+  <span class="hljs-keyword">return</span> arr.reduce((ori, cur) =&gt; {
+    <span class="hljs-keyword">let</span> ln = <span class="hljs-keyword">new</span> ListNode(cur);
+    ln.next = ori;
+    <span class="hljs-keyword">return</span> ln;
+  }, listNode);
+};
+
+<span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-comment">//&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x76F8;&#x52A0;</span>
+  <span class="hljs-keyword">var</span> res = <span class="hljs-string">&quot;&quot;</span>,
+    c = <span class="hljs-number">0</span>;
+  a = a.split(<span class="hljs-string">&quot;&quot;</span>);
+  b = b.split(<span class="hljs-string">&quot;&quot;</span>);
+  <span class="hljs-keyword">while</span> (a.length || b.length || c) {
+    c += ~~a.pop() + ~~b.pop();
+    res = c % <span class="hljs-number">10</span> + res;
+    c = c &gt; <span class="hljs-number">9</span>;
+  }
+  <span class="hljs-keyword">return</span> res;
+};
+
+<span class="hljs-comment">/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */</span>
+<span class="hljs-keyword">var</span> addTwoNumbers = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">l1, l2</span>) </span>{
+  <span class="hljs-keyword">let</span> sum = add(listToStr(l1), listToStr(l2));
+  <span class="hljs-keyword">return</span> strToList(sum);
+};
+</code></pre>
+<h2 id="2">2.</h2>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */</span>
+<span class="hljs-comment">/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */</span>
+<span class="hljs-keyword">var</span> addTwoNumbers = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">l1, l2</span>) </span>{
+  <span class="hljs-keyword">let</span> result = <span class="hljs-keyword">new</span> ListNode(<span class="hljs-literal">null</span>);
+  <span class="hljs-keyword">let</span> nextRst = result;
+  <span class="hljs-comment">// &#x8FDB;&#x4F4D;</span>
+  <span class="hljs-keyword">let</span> params = <span class="hljs-number">0</span>; <span class="hljs-comment">// &#x4F20;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;&#x5C42;&#x7EA7;&#x7684;&#x503C;</span>
+  <span class="hljs-keyword">let</span> val = <span class="hljs-number">0</span>; <span class="hljs-comment">// &#x4F20;&#x7ED9;&#x5F53;&#x524D;&#x5C42;&#x7EA7;&#x7684;&#x503C;</span>
+
+  <span class="hljs-keyword">while</span> (l1 != <span class="hljs-literal">null</span> || l2 != <span class="hljs-literal">null</span>) {
+    <span class="hljs-comment">// TODO</span>
+    <span class="hljs-keyword">let</span> x = l1 != <span class="hljs-literal">null</span> ? l1.val : <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">let</span> y = l2 != <span class="hljs-literal">null</span> ? l2.val : <span class="hljs-number">0</span>;
+
+    val = (x + y + params) % <span class="hljs-number">10</span>;
+    params = <span class="hljs-built_in">Math</span>.floor((x + y + params) / <span class="hljs-number">10</span>);
+
+    nextRst.next = <span class="hljs-keyword">new</span> ListNode(val);
+    nextRst = nextRst.next;
+
+    <span class="hljs-keyword">if</span> (l1 != <span class="hljs-literal">null</span>) l1 = l1.next;
+    <span class="hljs-keyword">if</span> (l2 != <span class="hljs-literal">null</span>) l2 = l2.next;
+  }
+
+  <span class="hljs-keyword">if</span> (params) {
+    nextRst.next = <span class="hljs-keyword">new</span> ListNode(params);
+  }
+
+  <span class="hljs-keyword">return</span> result.next;
+};
+</code></pre>
+<h2 id="3">3.</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> addTwoNumbers = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">l1, l2</span>) </span>{
+  <span class="hljs-keyword">var</span> l1Node = l1;
+  <span class="hljs-keyword">var</span> l2Node = l2;
+  <span class="hljs-keyword">var</span> args = []; <span class="hljs-comment">// &#x5B58;&#x50A8;&#x5BF9;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;&#x76F8;&#x52A0;&#x7684;&#x7ED3;&#x679C;</span>
+  <span class="hljs-keyword">var</span> needAdd1 = <span class="hljs-number">0</span>;
+  <span class="hljs-comment">// &#x5148;&#x4E0D;&#x8003;&#x8651;&#x8FDB;&#x4F4D;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x94FE;&#x8868;&#x6BCF;&#x4E00;&#x4F4D;&#x76F8;&#x52A0;</span>
+  <span class="hljs-keyword">while</span> (l1Node || l2Node) {
+    <span class="hljs-comment">// &#x8003;&#x8651;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x957F;&#x5EA6;&#x4E0D;&#x540C;&#x7684;&#x60C5;&#x51B5;</span>
+    <span class="hljs-comment">// var val1 = l1Node &amp;&amp; l1Node.val || 0</span>
+    <span class="hljs-comment">// var val2 = l2Node &amp;&amp; l2Node.val || 0</span>
+    <span class="hljs-keyword">var</span> val1 = l1Node ? l1Node.val : <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">var</span> val2 = l2Node ? l2Node.val : <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">var</span> temp = val1 + val2;
+    args.push(temp);
+    l1Node &amp;&amp; (l1Node = l1Node.next);
+    l2Node &amp;&amp; (l2Node = l2Node.next);
+  }
+  <span class="hljs-comment">// &#x8003;&#x8651;&#x8FDB;&#x4F4D;&#x7684;&#x95EE;&#x9898;</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; args.length; i++) {
+    <span class="hljs-keyword">if</span> (args[i] &gt; <span class="hljs-number">9</span>) {
+      args[i] -= <span class="hljs-number">10</span>;
+      <span class="hljs-keyword">if</span> (args[i + <span class="hljs-number">1</span>] === <span class="hljs-literal">undefined</span>) {
+        args[i + <span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;
+      } <span class="hljs-keyword">else</span> {
+        args[i + <span class="hljs-number">1</span>] += <span class="hljs-number">1</span>;
+      }
+    }
+  }
+  <span class="hljs-comment">// &#x628A;&#x6570;&#x7EC4;&#x8F6C;&#x6210;&#x6210;&#x94FE;&#x8868;(&#x9012;&#x5F52;)</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createList</span>(<span class="hljs-params">...argu</span>) </span>{
+    <span class="hljs-keyword">if</span> (argu.length &gt; <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">var</span> nodeStart = <span class="hljs-keyword">new</span> ListNode(argu[<span class="hljs-number">0</span>]);
+      argu.shift();
+      nodeStart.next = createList(...argu);
+      <span class="hljs-keyword">return</span> nodeStart;
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    }
+  }
+
+  <span class="hljs-keyword">return</span> createList(...args);
+};
+</code></pre>
+<h2 id="4-javascript&#x5404;&#x79CD;&#x9012;&#x5F52;&#xFF0C;&#x5404;&#x79CD;&#x901F;&#x5EA6;&#x88AB;&#x6253;&#x8D25;">4. JavaScript&#x5404;&#x79CD;&#x9012;&#x5F52;&#xFF0C;&#x5404;&#x79CD;&#x901F;&#x5EA6;&#x88AB;&#x6253;&#x8D25;</h2>
+<p>&#x94FE;&#x8868;&#x9012;&#x5F52;&#x4F5C;&#x548C;&#xFF0C;&#x548C;&#x4E3A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x8FDB;&#x4F4D;&#x5904;&#x7406;&#xFF0C;&#x6700;&#x7EC8;&#x8F6C;&#x94FE;&#x8868;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x5B9A;&#x4E49;&#x8282;&#x70B9;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>{
+  <span class="hljs-keyword">constructor</span>(val) {
+    <span class="hljs-keyword">this</span>.val = val;
+    <span class="hljs-keyword">this</span>.next = <span class="hljs-literal">null</span>;
+  }
+}
+<span class="hljs-comment">// &#x5B9A;&#x4E49;&#x94FE;&#x8868;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NodeList</span> </span>{
+  <span class="hljs-keyword">constructor</span>(arr) {
+    <span class="hljs-keyword">const</span> nodeList = [];
+    <span class="hljs-keyword">const</span> root = <span class="hljs-keyword">new</span> Node(arr.shift());
+    nodeList.push(root);
+    arr.forEach((item, idx) =&gt; {
+      <span class="hljs-keyword">const</span> newNode = <span class="hljs-keyword">new</span> Node(item);
+
+      nodeList[idx].next = newNode;
+      nodeList.push(newNode);
+    });
+    nodeList.length = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">return</span> root;
+  }
+}
+<span class="hljs-comment">// &#x8FDB;&#x4F4D;&#x8FD0;&#x7B97;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pushDigit</span>(<span class="hljs-params">arr, idx</span>) </span>{
+  <span class="hljs-keyword">const</span> item = arr[idx];
+  <span class="hljs-keyword">if</span> (item === <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> arr;
+  }
+  <span class="hljs-keyword">if</span> (arr[idx] &gt;= <span class="hljs-number">10</span>) {
+    arr[idx] = item - <span class="hljs-number">10</span>;
+    arr[idx + <span class="hljs-number">1</span>] !== <span class="hljs-keyword">void</span> <span class="hljs-number">0</span> ? ++arr[idx + <span class="hljs-number">1</span>] : arr.push(<span class="hljs-number">1</span>);
+  }
+  <span class="hljs-keyword">return</span> pushDigit(arr, idx + <span class="hljs-number">1</span>);
+}
+<span class="hljs-keyword">var</span> addTwoNumbers = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">l1, l2</span>) </span>{
+  <span class="hljs-keyword">const</span> sumArr = [];
+  <span class="hljs-comment">// &#x4F5C;&#x548C;</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">acc, item1, item2</span>) </span>{
+    <span class="hljs-keyword">if</span> (!item1 &amp;&amp; !item2) {
+      <span class="hljs-keyword">return</span> acc;
+    }
+    item1 = item1 || {};
+    item2 = item2 || {};
+    acc.push(+(item1.val || <span class="hljs-number">0</span>) + +(item2.val || <span class="hljs-number">0</span>));
+    <span class="hljs-keyword">return</span> add(acc, item1.next, item2.next);
+  }
+  add(sumArr, l1, l2);
+  <span class="hljs-comment">// &#x8FDB;&#x4F4D;</span>
+  <span class="hljs-keyword">const</span> result = pushDigit(sumArr, <span class="hljs-number">0</span>);
+  <span class="hljs-comment">// &#x8F6C;&#x94FE;&#x8868;</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> NodeList(result);
+};
+</code></pre>
+
                                 
                                 </section>
                             
@@ -3527,10 +3753,14 @@
 
             
                 
-                <a href="整数反转.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 整数反转">
+                <a href="整数反转.html" class="navigation navigation-prev " aria-label="Previous page: 整数反转">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="无重复字符的最长子串.html" class="navigation navigation-next " aria-label="Next page: 无重复字符的最长子串">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -3539,7 +3769,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"两数相加","level":"9.10","depth":1,"next":{"title":"React基础","level":"1","depth":0,"ref":"","articles":[{"title":"React基础","level":"1.1","depth":1,"path":"React/React基础/react基础.md","ref":"React/React基础/react基础.md","articles":[]},{"title":"React生命周期分析","level":"1.2","depth":1,"path":"React/React基础/React生命周期分析.md","ref":"React/React基础/React生命周期分析.md","articles":[]},{"title":"setState","level":"1.3","depth":1,"path":"React/React基础/setState.md","ref":"React/React基础/setState.md","articles":[]},{"title":"webpack4+babel7+React","level":"1.4","depth":1,"path":"React/React基础/webpack4+babel7+React.md","ref":"React/React基础/webpack4+babel7+React.md","articles":[]},{"title":"React Router页面传值的三种方法","level":"1.5","depth":1,"path":"React/React基础/React-Router页面传值的三种方法.md","ref":"React/React基础/React-Router页面传值的三种方法.md","articles":[]}]},"previous":{"title":"整数反转","level":"9.9","depth":1,"path":"算法/整数反转.md","ref":"算法/整数反转.md","articles":[]},"dir":"neutral"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/两数相加.md","mtime":"2019-07-05T08:55:41.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-05T08:56:02.411Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"两数相加","level":"9.10","depth":1,"next":{"title":"无重复字符的最长子串","level":"9.11","depth":1,"path":"算法/无重复字符的最长子串.md","ref":"算法/无重复字符的最长子串.md","articles":[]},"previous":{"title":"整数反转","level":"9.9","depth":1,"path":"算法/整数反转.md","ref":"算法/整数反转.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/两数相加.md","mtime":"2019-07-05T09:03:09.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-05T09:23:24.224Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
