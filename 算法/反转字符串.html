@@ -3751,31 +3751,34 @@ reverseString([<span class="hljs-string">&quot;H&quot;</span>,<span class="hljs-
 </ol>
 <p>&#x89E3;&#x7B54;&#xFF1A;</p>
 <ol>
-<li>&#x6B63;&#x5219;&#x5206;&#x7EC4;<br><code>``javascript
-var reverseStr = function(s, k) {
-return (
- s
-   // &#x6309;2k &#x4E2A;&#x5B57;&#x7B26;&#x5206;&#x6210;&#x6570;&#x7EC4;
-   .match(new RegExp(</code>(\w){${2 <em> k}}|((\w){1,${2 </em> k - 1}}$)`, &quot;g&quot;))
-   // &#x6BCF;2k &#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x524D;&#x534A;&#x90E8;&#x5206;&#x9006;&#x5E8F; &#x540E;&#x534A;&#x90E8;&#x5206;&#x4E0D;&#x53D8;
-   .map(str =&gt; [...str.slice(0, k)].reverse().join(&quot;&quot;) + str.slice(k))
-   .join(&quot;&quot;)
-); // &#x7EC4;&#x5408;&#x6BCF;2k&#x4E2A;&#x9879;&#x76EE;&#x6210;&#x5B57;&#x7B26;&#x4E32;
-};</li>
-</ol>
-<p>reverseStr(&quot;abcdefg&quot;, 2)</p>
-<pre><code>
-1. &#x516C;&#x5F0F;&#x89C4;&#x5F8B;&#x5206;&#x7EC4;
-```js
-var reverseStr = function(s, k) {
-  let res = &quot;&quot;;
-  for (let i = 0; i &lt; s.length; i += 2 * k) {
-    res +=
-      [...s.slice(i, i + k)].reverse().join(&quot;&quot;) + s.slice(i + k, i + 2 * k);
-  }
-  return res;
+<li><p>&#x6B63;&#x5219;&#x5206;&#x7EC4;  </p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> reverseStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, k</span>) </span>{
+ <span class="hljs-keyword">return</span> (
+   s
+     <span class="hljs-comment">// &#x6309;2k &#x4E2A;&#x5B57;&#x7B26;&#x5206;&#x6210;&#x6570;&#x7EC4;</span>
+     .match(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">`(\\w){<span class="hljs-subst">${2 * k}</span>}|((\\w){1,<span class="hljs-subst">${2 * k - 1}</span>}$)`</span>, <span class="hljs-string">&quot;g&quot;</span>))
+     <span class="hljs-comment">// &#x6BCF;2k &#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x524D;&#x534A;&#x90E8;&#x5206;&#x9006;&#x5E8F; &#x540E;&#x534A;&#x90E8;&#x5206;&#x4E0D;&#x53D8;</span>
+     .map(str =&gt; [...str.slice(<span class="hljs-number">0</span>, k)].reverse().join(<span class="hljs-string">&quot;&quot;</span>) + str.slice(k))
+     .join(<span class="hljs-string">&quot;&quot;</span>)
+ ); <span class="hljs-comment">// &#x7EC4;&#x5408;&#x6BCF;2k&#x4E2A;&#x9879;&#x76EE;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span>
 };
-</code></pre><h2 id="&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5355;&#x8BCD;-iii">&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5355;&#x8BCD; III</h2>
+
+reverseStr(<span class="hljs-string">&quot;abcdefg&quot;</span>, <span class="hljs-number">2</span>)
+</code></pre>
+</li>
+<li><p>&#x516C;&#x5F0F;&#x89C4;&#x5F8B;&#x5206;&#x7EC4;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> reverseStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, k</span>) </span>{
+<span class="hljs-keyword">let</span> res = <span class="hljs-string">&quot;&quot;</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; s.length; i += <span class="hljs-number">2</span> * k) {
+ res +=
+   [...s.slice(i, i + k)].reverse().join(<span class="hljs-string">&quot;&quot;</span>) + s.slice(i + k, i + <span class="hljs-number">2</span> * k);
+}
+<span class="hljs-keyword">return</span> res;
+};
+</code></pre>
+</li>
+</ol>
+<h2 id="&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5355;&#x8BCD;-iii">&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5355;&#x8BCD; III</h2>
 <p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x5B57;&#x7B26;&#x987A;&#x5E8F;&#xFF0C;&#x540C;&#x65F6;&#x4ECD;&#x4FDD;&#x7559;&#x7A7A;&#x683C;&#x548C;&#x5355;&#x8BCD;&#x7684;&#x521D;&#x59CB;&#x987A;&#x5E8F;&#x3002;</p>
 <p>&#x793A;&#x4F8B; 1:</p>
 <pre><code class="lang-js">&#x8F93;&#x5165;: <span class="hljs-string">&quot;Let&apos;s take LeetCode contest&quot;</span>
@@ -3845,7 +3848,7 @@ var reverseStr = function(s, k) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"反转字符串","level":"9.6","depth":1,"next":{"title":"仅仅反转字母","level":"9.7","depth":1,"path":"算法/仅仅反转字母.md","ref":"算法/仅仅反转字母.md","articles":[]},"previous":{"title":"js数组里面任意两个数的和与目标值","level":"9.5","depth":1,"path":"算法/js数组里面任意两个数的和与目标值.md","ref":"算法/js数组里面任意两个数的和与目标值.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/反转字符串.md","mtime":"2019-07-07T09:46:57.837Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-07T09:47:04.840Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"反转字符串","level":"9.6","depth":1,"next":{"title":"仅仅反转字母","level":"9.7","depth":1,"path":"算法/仅仅反转字母.md","ref":"算法/仅仅反转字母.md","articles":[]},"previous":{"title":"js数组里面任意两个数的和与目标值","level":"9.5","depth":1,"path":"算法/js数组里面任意两个数的和与目标值.md","ref":"算法/js数组里面任意两个数的和与目标值.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/反转字符串.md","mtime":"2019-07-07T09:50:19.115Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-07T09:50:28.053Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
