@@ -5,6 +5,8 @@
 - [删除链表的倒数第N个节点](#删除链表的倒数第N个节点)
   - [题目](#题目)
   - [先后指针](#先后指针)
+  - [法二](#法二)
+  - [法三](#法三)
 
 <!-- /TOC -->
 
@@ -53,6 +55,61 @@ var removeNthFromEnd = function(head, n) {
   } else {
     pre.next = slow.next;
   }
+  return head;
+};
+```
+
+## 法二
+JavaScript。不需要额外的node节点。有点像一辆高铁，先找到车头，当车头跑到终点时，车尾也到了
+```js
+var removeNthFromEnd = function(head, n) {
+  let curr = head, deleteNode = head, i = 0;
+  while(i < n) {
+    curr = curr.next;
+    i++;
+  }
+  if (!curr) return head.next;  // 要删除的是第一个节点
+  while(curr.next) {
+    curr = curr.next;
+    deleteNode = deleteNode.next;
+  }
+  deleteNode.next = deleteNode.next.next;
+  return head;
+};
+```
+
+## 法三
+代码里设置初始状态两个指针都是null，比较抽象，可以新建一个辅助节点放在链表头之前，两个指针最开始都指向这个辅助节点，这样整个流程就可以统一了，避免了各种null的判断。
+
+除此之外，还有两个解法可可以参考：
+1. 遍历一遍链表存到一个数组a里，直接a.splice(a.length-n, 1)，这个方法需要额外空间，而且还得再把数组转为链表，但是我认为最好想到了。
+2. 遍历一遍链表，得到链表长度l，再从头往后走l-n步就可以找到要删除的节点了。
+
+```js
+var removeNthFromEnd = function(head, n) {
+  //idx1指向要删除的节点之前的节点
+  let idx1 = null,
+      idx2 = null;
+  //idx2先向后走n步，这样idx1正好指向从idx2往前数n+1个节点
+  for (let i = 0; i < n; i++) {
+    if (idx2 === null) idx2 = head;
+    else idx2 = idx2.next;
+  }
+
+  //两个指针一起往后走，直到idx2指到最后一个节点
+  while (idx2.next) {
+    if (idx1 === null) idx1 = head;
+    else idx1 = idx1.next;
+    idx2 = idx2.next;
+  }
+
+  //判断idx1是不是一步没走
+  //是的话，则是“长度为n的链表删除倒数第n个节点”的情况，即删除第一个节点
+  if (idx1 === null) return head.next;
+
+  //idx1走了的话，就删除idx1所指节点后面的节点
+  idx1.next = idx1.next.next;
+
   return head;
 };
 ```
