@@ -12,6 +12,8 @@
     - [一遍哈希表](#一遍哈希表)
     - [用对象呢？](#用对象呢)
     - [哈希表+两分法](#哈希表两分法)
+  - [第二种思路：用二叉树的特性](#第二种思路用二叉树的特性)
+    - [深度优先搜索](#深度优先搜索)
 
 <!-- /TOC -->
 
@@ -179,4 +181,33 @@ var findTarget = function (root, target) {
 };
 ```
 
+## 第二种思路：用二叉树的特性
+### 深度优先搜索
+```js
+var findTarget = function (root, k) {
+  let stack = [root] // 数组初始化，存入root
+  let map = []
 
+  while (stack.length > 0) {
+    let cur = stack.pop()		// 每次把数组顶端的node拿出来
+
+    if (map.includes(k - cur.val)) { // 在map数组内查询是否有
+      return true
+    }
+    map.push(cur.val) // 没有就推入map数组
+
+    if (cur.left) {
+      stack.push(cur.left)
+    }
+    if (cur.right) {
+      stack.push(cur.right)
+    }
+  }
+  return false
+};
+```
+
+> Runtime: 152 ms, faster than 5.88% of JavaScript online submissions for Two Sum IV - Input is a BST.
+
+因为右边是最后推入stack的，因此是从右往左的深度优先的查询。 
+不过感觉非常耗时……也许是因为map是数组的原因？.includes()查询比较耗时？
