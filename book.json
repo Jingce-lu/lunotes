@@ -39,6 +39,9 @@
     },
     "code": {
       "copyButtons": true
+    },
+    "search": {
+      "maxIndexSize": 5000000
     }
   },
   "styles": {
