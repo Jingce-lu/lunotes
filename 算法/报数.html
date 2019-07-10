@@ -65,6 +65,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="压缩字符串.html" />
+    
     
     <link rel="prev" href="解数独.html" />
     
@@ -2995,6 +2997,126 @@
             
         </li>
     
+        <li class="chapter " data-level="9.60" data-path="压缩字符串.html">
+            
+                <a href="压缩字符串.html">
+            
+                    
+                        <b>9.60.</b>
+                    
+                    压缩字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.61" data-path="组合.html">
+            
+                <a href="组合.html">
+            
+                    
+                        <b>9.61.</b>
+                    
+                    组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.62" data-path="组合总和.html">
+            
+                <a href="组合总和.html">
+            
+                    
+                        <b>9.62.</b>
+                    
+                    组合总和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.63" data-path="组合总和II.html">
+            
+                <a href="组合总和II.html">
+            
+                    
+                        <b>9.63.</b>
+                    
+                    组合总和 II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.64" data-path="组合总和III.html">
+            
+                <a href="组合总和III.html">
+            
+                    
+                        <b>9.64.</b>
+                    
+                    组合总和 III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.65" data-path="缺失的第一个正数.html">
+            
+                <a href="缺失的第一个正数.html">
+            
+                    
+                        <b>9.65.</b>
+                    
+                    缺失的第一个正数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.66" data-path="缺失数字.html">
+            
+                <a href="缺失数字.html">
+            
+                    
+                        <b>9.66.</b>
+                    
+                    缺失数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.67" data-path="../只出现一次的数字.md">
+            
+                <span>
+            
+                    
+                        <b>9.67.</b>
+                    
+                    只出现一次的数字
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4228,6 +4350,7 @@
 <li><a href="#&#x6B63;&#x5219;&#x8BA1;&#x6570;-d1g-&#x53CD;&#x5411;&#x5F15;&#x7528;&#x53EF;&#x4EE5;&#x6355;&#x83B7;&#x76F8;&#x540C;&#x6570;&#x5B57;">&#x6B63;&#x5219;&#x8BA1;&#x6570;&#xFF0C; <code>/(\d)\1*/g</code> (&#x53CD;&#x5411;&#x5F15;&#x7528;)&#x53EF;&#x4EE5;&#x6355;&#x83B7;&#x76F8;&#x540C;&#x6570;&#x5B57;</a></li>
 <li><a href="#&#x53CC;&#x6307;&#x9488;&#x6CD5;&#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x8BB0;&#x5F55;&#x503C;&#x7B2C;&#x4E8C;&#x4E2A;&#x6307;&#x9488;&#x8BB0;&#x5F55;&#x6570;&#x91CF;">&#x53CC;&#x6307;&#x9488;&#x6CD5;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x8BB0;&#x5F55;&#x503C;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x6307;&#x9488;&#x8BB0;&#x5F55;&#x6570;&#x91CF;</a></li>
 <li><a href="#&#x6808;">&#x6808;</a></li>
+<li><a href="#&#x9012;&#x5F52;&#x7B97;&#x6CD5;">&#x9012;&#x5F52;&#x7B97;&#x6CD5;</a></li>
 </ul>
 </li>
 </ul>
@@ -4342,6 +4465,32 @@
   }
 };
 </code></pre>
+<h2 id="&#x9012;&#x5F52;&#x7B97;&#x6CD5;">&#x9012;&#x5F52;&#x7B97;&#x6CD5;</h2>
+<p>&#x672C;&#x9898;&#x5927;&#x610F;&#x4E3A; 1&#x9879;&#x4E0D;&#x505A;&#x5904;&#x7406;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x672C;&#x8EAB;1 2&#x5373;&#x89E3;&#x91CA;&#x8BF4;&#x660E;1&#x9879;&#xFF0C;1&#x9879;&#x662F;1&#x4E2A;1&#x7EC4;&#x6210;&#xFF0C;&#x6240;&#x4EE5;&#x4E3A;11 3&#x9879;&#x89E3;&#x91CA;&#x8BF4;&#x660E;2&#x9879;&#xFF0C;2&#x9879;&#x662F;2&#x4E2A;1&#x7EC4;&#x6210;&#xFF0C;&#x6240;&#x4EE5;&#x662F;21 4&#x9879;&#x89E3;&#x91CA;&#x8BF4;&#x660E;3&#x9879;&#xFF0C;3&#x9879;&#x662F;1&#x4E2A;2&#x548C;1&#x4E2A;1&#x7EC4;&#x6210;&#xFF0C;&#x6240;&#x4EE5;&#x662F;1211 5&#x9879;&#x540C;&#x7406;&#xFF0C;1&#x4E2A;1&#x9879;&#x548C;1&#x4E2A;2&#x9879;&#x548C;2&#x4E2A;1&#x9879;&#x7EC4;&#x6210;&#xFF0C;&#x5373;111221 &#x540C;&#x7406;&#x63A8;&#x5012;&#x4E0B;&#x53BB;&#x3002;&#x3002;&#x3002;</p>
+<p>&#x7B80;&#x5355;&#x9012;&#x5F52;&#x601D;&#x8DEF;&#x3002;&#x5728;&#x505A;&#x8FD9;&#x79CD;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x4E0A;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x7684;&#x9898;&#x76EE;&#x65F6;&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x8BA9;&#x4EBA;&#x8054;&#x60F3;&#x5230;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x3002; &#x7B80;&#x5355;&#x660E;&#x786E;&#x4E0B;&#x672C;&#x4F53;&#x7684;&#x601D;&#x8DEF;&#x3002; 1&#x3001;&#x9996;&#x5148;&#x8981;&#x660E;&#x786E;&#x7684;&#x662F;&#x9012;&#x5F52;&#x7EC8;&#x6B62;&#x6761;&#x4EF6;&#x3002;&#x5F00;&#x5934;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x5373;&#x8FD4;&#x56DE; &#x7136;&#x540E;&#x5C31;&#x662F;&#x5904;&#x7406;&#xFF0C;&#x7528;&#x6570;&#x7EC4;&#x5C31;&#x662F;&#x5904;&#x7406;&#xFF0C;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x6027;&#x80FD;&#x6D88;&#x8017;&#x66F4;&#x5927;&#xFF0C;&#x6211;&#x8BD5;&#x8FC7;&#x4E86;&#x3002;&#x3002;&#x3002; &#x5148;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#xFF0C;&#x5982;&#x679C;&#x76F8;&#x7B49;&#xFF0C;&#x90A3;&#x4E48;&#x91CD;&#x5408;&#x5EA6;k&#x589E;&#x52A0;1&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x76F8;&#x7B49;&#xFF0C;&#x90A3;&#x4E48;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x6570;&#x7EC4;&#xFF09;&#x62FC;&#x63A5; &#x6700;&#x540E;&#x7528;&#x8FD9;&#x4E2A;&#x65B0;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8C03;&#x7528;&#x81EA;&#x5DF1;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x6210;&#x65B0;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> countAndSay = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>) </span>{
+  <span class="hljs-keyword">return</span> createStr(<span class="hljs-number">1</span>, [<span class="hljs-string">&quot;1&quot;</span>], n);
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createStr</span>(<span class="hljs-params">index, str, n</span>) </span>{
+    <span class="hljs-keyword">if</span> (index == n) <span class="hljs-keyword">return</span> str.join(<span class="hljs-string">&quot;&quot;</span>); <span class="hljs-comment">//&#x7EC8;&#x6B62;&#x6761;&#x4EF6;&#xFF1A;&#x67E5;&#x8BE2;&#x5230;&#x4E86;&#x7B2C;n&#x4E2A;&#x6570;&#x4E86;&#xFF0C;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;&#xFF0C;&#x5426;&#x5219;index+1</span>
+    index++;
+    <span class="hljs-keyword">let</span> newChar = [];
+    <span class="hljs-keyword">let</span> k = <span class="hljs-number">1</span>; <span class="hljs-comment">//&#x4FDD;&#x5B58;&#x8BE5;&#x6570;&#x5B58;&#x5728;&#x6B21;&#x6570;&#xFF1A;&#x5F53;&#x67E5;&#x8BE2;&#x5230;&#x4E0D;&#x7B49;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5728;&#x4E0B;&#x65B9;&#x91CD;&#x7F6E;k</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; str.length; j++) {
+      <span class="hljs-keyword">let</span> char = str[j];
+      <span class="hljs-keyword">if</span> (char == str[j + <span class="hljs-number">1</span>] &amp;&amp; j != str.length - <span class="hljs-number">1</span>) {
+        <span class="hljs-comment">//&#x4E0D;&#x7B49;&#xFF0C;&#x4E14;&#x904D;&#x5386;&#x6CA1;&#x5230;&#x5E95;&#xFF0C;&#x90A3;&#x5C31;&#x7EE7;&#x7EED;&#x5BFB;&#x627E;</span>
+        k++;
+      } <span class="hljs-keyword">else</span> {
+        newChar.push(k);
+        newChar.push(str[j]);
+        k = <span class="hljs-number">1</span>;
+      }
+    }
+    <span class="hljs-keyword">return</span> createStr(index, newChar, n);
+  }
+};
+</code></pre>
 
                                 
                                 </section>
@@ -4385,10 +4534,14 @@
 
             
                 
-                <a href="解数独.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 解数独">
+                <a href="解数独.html" class="navigation navigation-prev " aria-label="Previous page: 解数独">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="压缩字符串.html" class="navigation navigation-next " aria-label="Next page: 压缩字符串">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -4397,7 +4550,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"报数","level":"9.59","depth":1,"next":{"title":"React基础","level":"1","depth":0,"ref":"","articles":[{"title":"React基础","level":"1.1","depth":1,"path":"React/React基础/react基础.md","ref":"React/React基础/react基础.md","articles":[]},{"title":"React生命周期分析","level":"1.2","depth":1,"path":"React/React基础/React生命周期分析.md","ref":"React/React基础/React生命周期分析.md","articles":[]},{"title":"setState","level":"1.3","depth":1,"path":"React/React基础/setState.md","ref":"React/React基础/setState.md","articles":[]},{"title":"webpack4+babel7+React","level":"1.4","depth":1,"path":"React/React基础/webpack4+babel7+React.md","ref":"React/React基础/webpack4+babel7+React.md","articles":[]},{"title":"React Router页面传值的三种方法","level":"1.5","depth":1,"path":"React/React基础/React-Router页面传值的三种方法.md","ref":"React/React基础/React-Router页面传值的三种方法.md","articles":[]}]},"previous":{"title":"解数独","level":"9.58","depth":1,"path":"算法/解数独.md","ref":"算法/解数独.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/报数.md","mtime":"2019-07-10T07:11:17.841Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-10T07:26:14.436Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"报数","level":"9.59","depth":1,"next":{"title":"压缩字符串","level":"9.60","depth":1,"path":"算法/压缩字符串.md","ref":"算法/压缩字符串.md","articles":[]},"previous":{"title":"解数独","level":"9.58","depth":1,"path":"算法/解数独.md","ref":"算法/解数独.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/报数.md","mtime":"2019-07-10T07:28:34.450Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-10T09:21:45.629Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
