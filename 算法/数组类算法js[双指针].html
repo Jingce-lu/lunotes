@@ -2937,6 +2937,21 @@
             
         </li>
     
+        <li class="chapter " data-level="9.56" data-path="搜索插入位置.html">
+            
+                <a href="搜索插入位置.html">
+            
+                    
+                        <b>9.56.</b>
+                    
+                    搜索插入位置
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4165,6 +4180,7 @@
 <!-- TOC -->
 <ul>
 <li><a href="#&#x6570;&#x7EC4;&#x7C7B;&#x7B97;&#x6CD5;js&#x53CC;&#x6307;&#x9488;">&#x6570;&#x7EC4;&#x7C7B;&#x7B97;&#x6CD5;js(&#x53CC;&#x6307;&#x9488;)</a><ul>
+<li><a href="#&#x53CC;&#x6307;&#x9488;">&#x53CC;&#x6307;&#x9488;</a></li>
 <li><a href="#1&#x79FB;&#x52A8;&#x96F6;">1.&#x79FB;&#x52A8;&#x96F6;</a></li>
 <li><a href="#2&#x79FB;&#x9664;&#x5143;&#x7D20;">2.&#x79FB;&#x9664;&#x5143;&#x7D20;</a></li>
 <li><a href="#3&#x5220;&#x9664;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x91CD;&#x590D;&#x9879;">3.&#x5220;&#x9664;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x91CD;&#x590D;&#x9879;</a></li>
@@ -4173,6 +4189,70 @@
 </li>
 </ul>
 <!-- /TOC -->
+<h2 id="&#x53CC;&#x6307;&#x9488;">&#x53CC;&#x6307;&#x9488;</h2>
+<ol>
+<li>&#x542F;&#x53D1;&#xFF1A;&#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x8FD9;&#x4E2A;&#x6570;&#x7EC4;&#x7684;&#x4EFB;&#x610F;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x4E4B;&#x548C;&#x7684;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x3002;&#x90A3;&#x4E48;&#x5229;&#x7528;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x6CD5;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#xFF0C;&#x4F46;&#x662F;&#x6392;&#x5E8F;&#x9700;&#x8981;&#x5E73;&#x65B9;&#x65F6;&#x95F4;</li>
+<li><p>&#x8FD9;&#x4E2A;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x6CD5;&#x542F;&#x53D1;&#x6211;&#x4EEC;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5BF9;&#x4E24;&#x4E2A;&#x6570;&#x5B57;&#x7684;&#x548C;&#x8FDB;&#x884C;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x904D;&#x5386;</p>
+</li>
+<li><p>&#x53CC;&#x6307;&#x9488;&#x5982;&#x679C;&#x53D6;&#x4E24;&#x4E2A;&#x6700;&#x5C0F;&#xFF08;&#x548C;&#x6700;&#x5C0F;&#xFF09;</p>
+</li>
+<li>&#x53CC;&#x6307;&#x9488;&#x5982;&#x679C;&#x53D6;&#x4E24;&#x4E2A;&#x6700;&#x5927;&#xFF08;&#x548C;&#x6700;&#x5927;&#xFF09;</li>
+<li>&#x53CC;&#x6307;&#x9488;&#x5982;&#x679C;&#x53D6;&#x6700;&#x5C0F;&#x548C;&#x6700;&#x5927;&#xFF08;&#x548C;&#x5C45;&#x4E2D;&#xFF09;</li>
+<li>&#x5BF9;&#x4E8E;&#x5E73;&#x5747;&#x67E5;&#x627E;&#x65F6;&#x95F4;&#x6765;&#x8BB2;&#xFF0C;&#x5C45;&#x4E2D;&#x7684;&#x5177;&#x6709;&#x4F18;&#x52BF;</li>
+</ol>
+<p>&#x8BC1;&#x660E;&#x53CC;&#x6307;&#x9488;&#x6CD5;&#x4E3A;&#x4EC0;&#x4E48;&#x662F;&#x6709;&#x6548;&#x7684;&#xFF1F;</p>
+<ol>
+<li>&#x5982;&#x679C;&#x5B58;&#x5728;&#x7B54;&#x6848;&#xFF0C;&#x90A3;&#x4E48;0 &lt;= i &lt; j &lt;=n-1&#xFF0C;i, j&#x90FD;&#x5F80;&#x4E2D;&#x95F4;&#x8D70;&#xFF0C;&#x8D8B;&#x52BF;&#x662F;&#x5BF9;&#x7684;</li>
+<li>&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x4E0D;&#x53D8;&#x5F0F;&#xFF1A;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x540E;i, j&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x53EF;&#x80FD;&#x6027;&#x53D6;&#x503C;&#x7684;&#x8FB9;&#x754C;&#x4F4D;&#x7F6E;</li>
+</ol>
+<pre>
+&#x8BC1;&#x660E;&#xFF1A;  
+&#x521D;&#x59CB;&#x5316;&#xFF1A;&#x521D;&#x59CB;&#x5316;&#x524D;&#xFF0C;i, j &#x5904;&#x4E8E;&#x8FB9;&#x754C;&#xFF08;&#x5904;&#x4E8E;&#x8FB9;&#x754C;&#x7684;&#x610F;&#x601D;&#x662F;&#xFF1A;&#x5DF2;&#x7ECF;&#x6709;&#x6548;&#x6392;&#x9664;&#x4E86;&#x6240;&#x6709;&#x8BE5;&#x6392;&#x9664;&#x7684;&#x53EF;&#x80FD;&#x6027;&#xFF09;
+
+&#x7EF4;&#x6301;&#xFF1A;&#xFF08;&#x82E5;&#x67D0;&#x6B21;&#x64CD;&#x4F5C;&#x524D;&#xFF0C;i, j&#x5904;&#x4E8E;&#x8FB9;&#x754C;&#xFF0C; &#x64CD;&#x4F5C;&#x540E;&#xFF0C;i, j&#x8FD8;&#x662F;&#x5904;&#x4E8E;&#x8FB9;&#x754C;&#xFF09;
+  a) &#x82E5;(i) + (j) &gt; target
+    &#x90A3;&#x4E48;&#x589E;&#x52A0;i&#x4E3A;i1&#xFF0C;(i1) + (j) &gt; (i) + (j) &gt; target&#xFF0C;&#x4E5F;&#x5373; &#x4EFB;&#x610F;&#x79FB;&#x52A8;i&#xFF0C;&#x6240;&#x5F97;&#x7684;&#x548C;&#x90FD;&#x6BD4;target&#x8981;&#x5927;&#xFF0C;&#x56E0;&#x6B64;&#x6392;&#x9664;&#x6389;&#x4E86;(j)&#x4F4D;&#x7F6E;&#x7684;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x6027;
+    &#x53EA;&#x80FD;&#x9012;&#x51CF;j 
+  b) &#x82E5;(i) + (j) &lt; target
+    &#x540C;&#x7406;&#xFF0C;&#x90A3;&#x4E48;&#x9012;&#x51CF;j&#x4E3A;j1&#xFF0C;(i) + (j1) &lt; (i) + (j) &lt; target&#xFF0C;&#x4E5F;&#x5373; &#x4EFB;&#x610F;&#x79FB;&#x52A8;j&#xFF0C;&#x6240;&#x5F97;&#x7684;&#x548C;&#x90FD;&#x6BD4;target&#x8981;&#x5C0F;&#xFF0C;&#x56E0;&#x6B64;&#x6392;&#x9664;&#x6389;&#x4E86;(i)&#x4F4D;&#x7F6E;&#x7684;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x6027;
+    &#x53EA;&#x80FD;&#x9012;&#x589E;i
+
+&#xFF08;&#x6839;&#x636E;&#x8BC1;&#x660E;&#x53EF;&#x77E5;&#xFF1A;&#x8FD9;&#x4E2A;&#x5176;&#x5B9E;&#x672C;&#x8D28;&#x4E0A;&#x4E5F;&#x7B26;&#x5408;&#x8D2A;&#x5FC3;&#x7684;&#x6027;&#x8D28;&#xFF0C;&#x6700;&#x540E;&#x8F6C;&#x5316;&#x4E3A;&#x4E86;&#x66F4;&#x5C0F;&#x5B50;&#x6570;&#x7EC4;&#x7684;&#x67E5;&#x627E;&#xFF09;
+</pre>
+
+
+<p><strong>&#x53CC;&#x6307;&#x9488;&#x8D2A;&#x5FC3;</strong></p>
+<p>&#x53CC;&#x6307;&#x9488;&#x6CD5;&#x4E3A;&#x4EC0;&#x4E48;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x6240;&#x6709;&#x7684;&#x60C5;&#x51B5;?</p>
+<pre>
+&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x4E0D;&#x53D8;&#x5F0F;&#xFF1A;
+  small&#x6CA1;&#x52A0;&#x4E00;&#x4E2A;&#xFF0C;&#x8868;&#x793A;small-1&#x7684;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x6027;&#x5DF2;&#x7ECF;&#x7A77;&#x5C3D;&#xFF1B;&#x5E76;&#x4E14;&#x4E5F;&#x5DF2;&#x7ECF;&#x7A77;&#x5C3D;&#x4E86;big&#x4ECE;small + 1&#x5230;&#x5F53;&#x524D;&#x503C;&#x7684;&#x53EF;&#x80FD;&#x6027;
+
+&#x4EE5;target = 15&#x4E3A;&#x4F8B;&#x8BF4;&#x660E;&#xFF1A;
+step1. small = 1, big =2&#xFF0C;&#x5C06;big&#x4E00;&#x76F4;&#x5411;&#x53F3;&#x79FB;&#x52A8;&#xFF0C;&#x76F4;&#x81F3;sum(small - big) = 15&#xFF0C;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF1B;
+           &#x7EE7;&#x7EED;&#x52A0;&#x5230;sum(small - big) = 21 &gt; 15&#xFF0C;&#x6B64;&#x65F6;small = 1, big = 6
+           &#x8FD9;&#x662F;&#x5982;&#x679C;big&#x7EE7;&#x7EED;&#x52A0;&#x5927;&#xFF0C;&#x90A3;&#x4E48;sum&#x53EA;&#x4F1A;&#x66F4;&#x5927;&#xFF0C;&#x504F;&#x79BB;target&#x66F4;&#x591A;&#xFF0C;&#x56E0;&#x6B64;
+           &#x4EE5;small = 1&#x8D77;&#x59CB;&#x7684;&#x6240;&#x6709;&#x60C5;&#x51B5;&#x7A77;&#x5C3D;&#x4E86;
+step2. &#x5185;&#x90E8;while&#x5FAA;&#x73AF; &#x627E;&#x5230;&#x7684;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;sum &gt; target&#x7684;big&#x503C;
+           &#x6B64;&#x65F6;small = 1, big = 6&#xFF0C;&#x5728;&#x524D;&#x9762;&#x4E00;&#x4E2A;&#x7684;&#x65F6;&#x5019;sum <= target="" 因为此时small="1&#x5DF2;&#x7ECF;&#x7A77;&#x5C3D;&#xFF0C;&#x53EA;&#x80FD;small" ++变为2="" 但是因为sum(2="" -="" 5)="" <="" sum(1-="" 5)，因此只有可能sum(2="" 6)才可能等于target，这也是为什么内部循环要如此写的原因="" step3.一直按照step1,="" step2这样循环往复地分析，就能获取到所有可能性（所有以某个数开始的连续和的所有可能性）="" small="">= middle
+big &gt; small &gt;= midlle
+sum(small - big) &gt; target
+</=></pre>
+
+<p><strong>&#x53CC;&#x6307;&#x9488;&#x7A97;&#x53E3;</strong></p>
+<p>&#x4E3A;&#x4EC0;&#x4E48;start&#x548C;end&#x8FD9;&#x79CD;&#x79FB;&#x52A8;&#x65B9;&#x5F0F;&#x5C31;&#x80FD;&#x627E;&#x5230;&#x6240;&#x6709; &#x65E0;&#x91CD;&#x590D;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
+<pre>
+&#x5FAA;&#x73AF;&#x4E0D;&#x53D8;&#x5F0F;&#xFF1A;&#x4E00;&#x76F4;&#x6C42;&#x5F97;&#x662F;&#x4EE5;start&#x5F00;&#x5934;&#x7684;&#x6700;&#x957F;&#x65E0;&#x91CD;&#x590D;&#x5B57;&#x7B26;&#x4E32;
+
+&#x8BF4;&#x660E;&#xFF1A;&#x4EE5;abcdcbaefga&#x4E3A;&#x4F8B;
+step1. start = 0
+    end&#x4E00;&#x76F4;&#x7D2F;&#x52A0;&#xFF0C;&#x76F4;&#x5230;end&#x6307;&#x5411;4
+    &#x8FD9;&#x662F;&#x4EE5;0&#x5F00;&#x5934;&#x7684;&#x6700;&#x957F;&#x7684;&#x65E0;&#x91CD;&#x590D;&#x5B57;&#x7B26;&#x4E32;
+step2. &#x5F53;end = 4&#x65F6;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x65F6;start = 0&#xFF0C;&#x56E0;&#x4E3A;start - end&#x4E4B;&#x95F4;&#x542B;&#x6709;&#x4E24;&#x4E2A;c
+    &#x56E0;&#x6B64;&#xFF0C;&#x79FB;&#x52A8;start = 1&#xFF0C;&#x6B64;&#x65F6;&#x8FD8;&#x662F;&#x6709;&#x4E24;&#x4E2A;c&#xFF0C;&#x56E0;&#x6B64; &#x6B64;&#x65F6;&#x7684;end - start&#x65E0;&#x7591;&#x8F83;&#x5C0F;&#xFF0C;&#x7EE7;&#x7EED;&#x7D2F;&#x52A0;&#xFF0C;&#x8FD9;&#x662F;&#x4EE5;1&#x5F00;&#x5934;&#x7684;&#x6700;&#x957F;&#x65E0;&#x91CD;&#x590D;
+    start =2 &#xFF0C;&#x6B64;&#x65F6;&#x8FD8;&#x6709;&#x4E24;&#x4E2A;c&#xFF0C;&#x7EE7;&#x7EED;&#x7D2F;&#x52A0;&#xFF0C;&#x8FD9;&#x662F;&#x4EE5;2&#x5F00;&#x5934;&#x7684;&#x6700;&#x957F;&#x65E0;&#x91CD;&#x590D;&#x5B57;&#x7B26;&#x4E32;
+    start = 3&#xFF0C;&#x65E0;&#x91CD;&#x590D;&#xFF0C;&#x6B64;&#x65F6;&#x9700;&#x8981;&#x7D2F;&#x52A0;end&#xFF0C;&#x4EE5;&#x6C42;&#x5F97;&#x4EE5;3&#x5F00;&#x5934;&#x7684;&#x6700;&#x957F;&#x65E0;&#x91CD;&#x590D;&#x5B57;&#x7B26;&#x4E32;
+</pre>
+
 <h2 id="1&#x79FB;&#x52A8;&#x96F6;">1.&#x79FB;&#x52A8;&#x96F6;</h2>
 <p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4; nums&#xFF0C;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5C06;&#x6240;&#x6709; 0 &#x79FB;&#x52A8;&#x5230;&#x6570;&#x7EC4;&#x7684;&#x672B;&#x5C3E;&#xFF0C;&#x540C;&#x65F6;&#x4FDD;&#x6301;&#x975E;&#x96F6;&#x5143;&#x7D20;&#x7684;&#x76F8;&#x5BF9;&#x987A;&#x5E8F;&#x3002;</p>
 <p>&#x793A;&#x4F8B;:</p>
@@ -4441,7 +4521,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数组类算法js(双指针)","level":"9.26","depth":1,"next":{"title":"两数之和","level":"9.27","depth":1,"path":"算法/两数之和.md","ref":"算法/两数之和.md","articles":[]},"previous":{"title":"整数转换英文表示","level":"9.25","depth":1,"path":"算法/整数转换英文表示.md","ref":"算法/整数转换英文表示.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/数组类算法js[双指针].md","mtime":"2019-07-07T13:44:23.520Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-10T01:29:04.908Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数组类算法js(双指针)","level":"9.26","depth":1,"next":{"title":"两数之和","level":"9.27","depth":1,"path":"算法/两数之和.md","ref":"算法/两数之和.md","articles":[]},"previous":{"title":"整数转换英文表示","level":"9.25","depth":1,"path":"算法/整数转换英文表示.md","ref":"算法/整数转换英文表示.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/数组类算法js[双指针].md","mtime":"2019-07-10T03:29:01.898Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-10T03:29:09.838Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
