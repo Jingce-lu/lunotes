@@ -1075,9 +1075,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../框架通识/10分钟快速入门rollupJs(1">
+        <li class="chapter " data-level="1.7" data-path="../框架通识/10分钟快速入门rollupJs1.html">
             
-                <span>
+                <a href="../框架通识/10分钟快速入门rollupJs1.html">
             
                     
                         <b>1.7.</b>
@@ -1090,7 +1090,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../框架通识/10分钟快速入门rollupJs(2">
+        <li class="chapter " data-level="1.8" data-path="../框架通识/10分钟快速入门rollupJs2.md">
             
                 <span>
             
@@ -1633,9 +1633,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.17" data-path="../手撸代码无敌/自己实现简单的shift.md">
+        <li class="chapter " data-level="7.17" data-path="../手撸代码无敌/简单的shift.html">
             
-                <span>
+                <a href="../手撸代码无敌/简单的shift.html">
             
                     
                         <b>7.17.</b>
@@ -1909,9 +1909,9 @@
             
         </li>
     
-        <li class="chapter " data-level="8.5" data-path="../设计模式/发布-订阅模式(观察者模式">
+        <li class="chapter " data-level="8.5" data-path="../设计模式/发布-订阅模式[观察者模式].html">
             
-                <span>
+                <a href="../设计模式/发布-订阅模式[观察者模式].html">
             
                     
                         <b>8.5.</b>
@@ -3245,14 +3245,14 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../React/源码分析/从零开始实现一个React(一">
+        <li class="chapter " data-level="3.2" data-path="../React/源码分析/从零开始实现一个React（一）：JSX和虚拟DOM.html">
             
-                <span>
+                <a href="../React/源码分析/从零开始实现一个React（一）：JSX和虚拟DOM.html">
             
                     
                         <b>3.2.</b>
                     
-                    从零开始实现一个React(一)-JSX和虚拟DOM
+                    从零开始实现一个React（一）：JSX和虚拟DOM
             
                 </a>
             
@@ -4159,7 +4159,91 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="&#x7B2C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7684;&#x7248;&#x672C;">&#x7B2C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7684;&#x7248;&#x672C;</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#&#x7B2C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7684;&#x7248;&#x672C;">&#x7B2C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7684;&#x7248;&#x672C;</a><ul>
+<li><a href="#&#x9898;&#x76EE;">&#x9898;&#x76EE;</a></li>
+<li><a href="#&#x6807;&#x7B7E;">&#x6807;&#x7B7E;</a></li>
+<li><a href="#js&#x9012;&#x5F52;">js,&#x9012;&#x5F52;</a></li>
+<li><a href="#JS2">JS2</a></li>
+<li><a href="#JS3">JS3</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h2 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h2>
+<p>&#x4F60;&#x662F;&#x4EA7;&#x54C1;&#x7ECF;&#x7406;&#xFF0C;&#x76EE;&#x524D;&#x6B63;&#x5728;&#x5E26;&#x9886;&#x4E00;&#x4E2A;&#x56E2;&#x961F;&#x5F00;&#x53D1;&#x65B0;&#x7684;&#x4EA7;&#x54C1;&#x3002;&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x4F60;&#x7684;&#x4EA7;&#x54C1;&#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x8D28;&#x91CF;&#x68C0;&#x6D4B;&#x3002;&#x7531;&#x4E8E;&#x6BCF;&#x4E2A;&#x7248;&#x672C;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x9519;&#x8BEF;&#x7684;&#x7248;&#x672C;&#x4E4B;&#x540E;&#x7684;&#x6240;&#x6709;&#x7248;&#x672C;&#x90FD;&#x662F;&#x9519;&#x7684;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x4F60;&#x6709; <code>n</code> &#x4E2A;&#x7248;&#x672C; <code>[1, 2, ..., n]</code>&#xFF0C;&#x4F60;&#x60F3;&#x627E;&#x51FA;&#x5BFC;&#x81F4;&#x4E4B;&#x540E;&#x6240;&#x6709;&#x7248;&#x672C;&#x51FA;&#x9519;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7684;&#x7248;&#x672C;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528; <code>bool isBadVersion(version)</code> &#x63A5;&#x53E3;&#x6765;&#x5224;&#x65AD;&#x7248;&#x672C;&#x53F7; <code>version</code> &#x662F;&#x5426;&#x5728;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x4E2D;&#x51FA;&#x9519;&#x3002;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6765;&#x67E5;&#x627E;&#x7B2C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7684;&#x7248;&#x672C;&#x3002;&#x4F60;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x51CF;&#x5C11;&#x5BF9;&#x8C03;&#x7528; API &#x7684;&#x6B21;&#x6570;&#x3002;</p>
+<p>&#x793A;&#x4F8B;:</p>
+<pre><code class="lang-js">&#x7ED9;&#x5B9A; n = <span class="hljs-number">5</span>&#xFF0C;&#x5E76;&#x4E14; version = <span class="hljs-number">4</span> &#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7684;&#x7248;&#x672C;&#x3002;
+
+&#x8C03;&#x7528; isBadVersion(<span class="hljs-number">3</span>) -&gt; <span class="hljs-literal">false</span>
+&#x8C03;&#x7528; isBadVersion(<span class="hljs-number">5</span>) -&gt; <span class="hljs-literal">true</span>
+&#x8C03;&#x7528; isBadVersion(<span class="hljs-number">4</span>) -&gt; <span class="hljs-literal">true</span>
+
+&#x6240;&#x4EE5;&#xFF0C;<span class="hljs-number">4</span> &#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7684;&#x7248;&#x672C;&#x3002;
+</code></pre>
+<h2 id="&#x6807;&#x7B7E;">&#x6807;&#x7B7E;</h2>
+<ul>
+<li>&#x4E8C;&#x5206;&#x67E5;&#x627E;</li>
+</ul>
+<h2 id="js&#x9012;&#x5F52;">js,&#x9012;&#x5F52;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> solution = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">isBadVersion</span>) </span>{
+  <span class="hljs-comment">/**
+   * @param {integer} n Total versions
+   * @return {integer} The first bad version
+   */</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>) </span>{
+    <span class="hljs-keyword">const</span> check = (start, end) =&gt; {
+      <span class="hljs-keyword">if</span> (end - start === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> start;
+      <span class="hljs-keyword">let</span> c = <span class="hljs-built_in">Math</span>.floor((start + end) / <span class="hljs-number">2</span>);
+      <span class="hljs-keyword">if</span> (isBadVersion(c)) <span class="hljs-keyword">return</span> check(start, c);
+      <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> check(c + <span class="hljs-number">1</span>, end);
+    };
+    <span class="hljs-keyword">return</span> check(<span class="hljs-number">1</span>, n);
+  };
+};
+</code></pre>
+<h2 id="js2">JS2</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> solution = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">isBadVersion</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>) </span>{
+    <span class="hljs-keyword">let</span> low = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span> (low &lt; n) {
+      <span class="hljs-keyword">let</span> mid = <span class="hljs-built_in">Math</span>.floor(low + (n - low) / <span class="hljs-number">2</span>);
+      isBadVersion(mid) ? (n = mid) : (low = mid + <span class="hljs-number">1</span>);
+    }
+    <span class="hljs-keyword">return</span> n;
+  };
+};
+</code></pre>
+<h2 id="js3">JS3</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> solution = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">isBadVersion</span>) </span>{
+  <span class="hljs-comment">/**
+   * @param {integer} n Total versions
+   * @return {integer} The first bad version
+   */</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>) </span>{
+    <span class="hljs-keyword">var</span> left = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">var</span> right = n;
+    <span class="hljs-keyword">var</span> mid;
+    <span class="hljs-keyword">while</span> (left &lt;= right) {
+      mid = ((left + right) / <span class="hljs-number">2</span>) &gt;&gt; <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">if</span> (isBadVersion(mid)) {
+        right = mid - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">if</span> (!isBadVersion(right)) {
+          <span class="hljs-keyword">return</span> mid;
+        }
+      } <span class="hljs-keyword">else</span> {
+        left = mid + <span class="hljs-number">1</span>;
+      }
+    }
+    <span class="hljs-keyword">return</span> mid;
+  };
+};
+</code></pre>
+
                                 
                                 </section>
                             
@@ -4214,7 +4298,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第一个错误的版本","level":"9.55","depth":1,"next":{"title":"React基础","level":"1","depth":0,"ref":"","articles":[{"title":"React基础","level":"1.1","depth":1,"path":"React/React基础/react基础.md","ref":"React/React基础/react基础.md","articles":[]},{"title":"React生命周期分析","level":"1.2","depth":1,"path":"React/React基础/React生命周期分析.md","ref":"React/React基础/React生命周期分析.md","articles":[]},{"title":"setState","level":"1.3","depth":1,"path":"React/React基础/setState.md","ref":"React/React基础/setState.md","articles":[]},{"title":"webpack4+babel7+React","level":"1.4","depth":1,"path":"React/React基础/webpack4+babel7+React.md","ref":"React/React基础/webpack4+babel7+React.md","articles":[]},{"title":"React Router页面传值的三种方法","level":"1.5","depth":1,"path":"React/React基础/React-Router页面传值的三种方法.md","ref":"React/React基础/React-Router页面传值的三种方法.md","articles":[]}]},"previous":{"title":"在排序数组中查找元素的第一个和最后一个位置","level":"9.54","depth":1,"path":"算法/在排序数组中查找元素的第一个和最后一个位置.md","ref":"算法/在排序数组中查找元素的第一个和最后一个位置.md","articles":[]},"dir":"neutral"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/第一个错误的版本.md","mtime":"2019-07-09T11:31:28.103Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-09T11:39:49.965Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第一个错误的版本","level":"9.55","depth":1,"next":{"title":"React基础","level":"1","depth":0,"ref":"","articles":[{"title":"React基础","level":"1.1","depth":1,"path":"React/React基础/react基础.md","ref":"React/React基础/react基础.md","articles":[]},{"title":"React生命周期分析","level":"1.2","depth":1,"path":"React/React基础/React生命周期分析.md","ref":"React/React基础/React生命周期分析.md","articles":[]},{"title":"setState","level":"1.3","depth":1,"path":"React/React基础/setState.md","ref":"React/React基础/setState.md","articles":[]},{"title":"webpack4+babel7+React","level":"1.4","depth":1,"path":"React/React基础/webpack4+babel7+React.md","ref":"React/React基础/webpack4+babel7+React.md","articles":[]},{"title":"React Router页面传值的三种方法","level":"1.5","depth":1,"path":"React/React基础/React-Router页面传值的三种方法.md","ref":"React/React基础/React-Router页面传值的三种方法.md","articles":[]}]},"previous":{"title":"在排序数组中查找元素的第一个和最后一个位置","level":"9.54","depth":1,"path":"算法/在排序数组中查找元素的第一个和最后一个位置.md","ref":"算法/在排序数组中查找元素的第一个和最后一个位置.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/第一个错误的版本.md","mtime":"2019-07-10T01:16:48.438Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-10T01:29:04.908Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
