@@ -73,6 +73,8 @@ int bisearch(void *sorted, void *target, int size, int esize, int (compare *)(co
 
 复杂度：O（lg n），n为要查找的元素个数。
 
+![二分法](../resource/assets/算法/二分法.png)
+
 ### 二分法
 ```js
 var findTarget = function(root, target) {
