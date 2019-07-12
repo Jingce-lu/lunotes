@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>反转字符串中的元音字母 · GitBook</title>
+        <title>两数之和 IV 输入BST · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="整数反转.html" />
+    <link rel="next" href="三数之和.html" />
     
     
-    <link rel="prev" href="仅仅反转字母.html" />
+    <link rel="prev" href="两数之和II-输入有序数组.html" />
     
 
     </head>
@@ -2247,7 +2247,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="9.10" data-path="反转字符串中的元音字母.html">
+        <li class="chapter " data-level="9.10" data-path="反转字符串中的元音字母.html">
             
                 <a href="反转字符串中的元音字母.html">
             
@@ -2532,7 +2532,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.29" data-path="两数之和IV输入BST.html">
+        <li class="chapter active" data-level="9.29" data-path="两数之和IV输入BST.html">
             
                 <a href="两数之和IV输入BST.html">
             
@@ -4578,7 +4578,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >反转字符串中的元音字母</a>
+        <a href=".." >两数之和 IV 输入BST</a>
     </h1>
 </div>
 
@@ -4596,127 +4596,216 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5143;&#x97F3;&#x5B57;&#x6BCD;">&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5143;&#x97F3;&#x5B57;&#x6BCD;</h1>
+                                <h1 id="&#x4E24;&#x6570;&#x4E4B;&#x548C;-iv-&#x8F93;&#x5165;bst">&#x4E24;&#x6570;&#x4E4B;&#x548C; IV &#x8F93;&#x5165;BST</h1>
 <!-- TOC -->
 <ul>
-<li><a href="#&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5143;&#x97F3;&#x5B57;&#x6BCD;">&#x53CD;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5143;&#x97F3;&#x5B57;&#x6BCD;</a><ul>
-<li><a href="#&#x95EE;&#x9898;">&#x95EE;&#x9898;</a></li>
-<li><a href="#&#x89E3;&#x7B54;">&#x89E3;&#x7B54;</a></li>
+<li><a href="#&#x4E24;&#x6570;&#x4E4B;&#x548C;-IV-&#x8F93;&#x5165;BST">&#x4E24;&#x6570;&#x4E4B;&#x548C; IV &#x8F93;&#x5165;BST</a><ul>
+<li><a href="#&#x9898;&#x76EE;">&#x9898;&#x76EE;</a></li>
+<li><a href="#BST&#x7684;&#x5B9A;&#x4E49;&#x4E86;&#x89E3;&#x4E86;&#x662F;&#x5173;&#x952E;">BST&#x7684;&#x5B9A;&#x4E49;&#x4E86;&#x89E3;&#x4E86;&#x662F;&#x5173;&#x952E;</a></li>
+<li><a href="#&#x89E3;&#x7B54;-&#x7B2C;&#x4E00;&#x79CD;&#x601D;&#x8DEF;&#x6574;&#x7406;&#x6210;&#x6570;&#x7EC4;&#x56DE;&#x5230;two-sum-2">&#x89E3;&#x7B54; &#x7B2C;&#x4E00;&#x79CD;&#x601D;&#x8DEF;&#xFF1A;&#x6574;&#x7406;&#x6210;&#x6570;&#x7EC4;&#xFF0C;&#x56DE;&#x5230;two sum 2</a><ul>
+<li><a href="#&#x4E8C;&#x5206;&#x6CD5;&#x5B9A;&#x4E49;">&#x4E8C;&#x5206;&#x6CD5;&#x5B9A;&#x4E49;</a></li>
+<li><a href="#&#x4E8C;&#x5206;&#x6CD5;">&#x4E8C;&#x5206;&#x6CD5;</a></li>
+<li><a href="#&#x53CC;&#x6307;&#x9488;">&#x53CC;&#x6307;&#x9488;</a></li>
+<li><a href="#&#x4E00;&#x904D;&#x54C8;&#x5E0C;&#x8868;">&#x4E00;&#x904D;&#x54C8;&#x5E0C;&#x8868;</a></li>
+<li><a href="#&#x7528;&#x5BF9;&#x8C61;&#x5462;">&#x7528;&#x5BF9;&#x8C61;&#x5462;&#xFF1F;</a></li>
+<li><a href="#&#x54C8;&#x5E0C;&#x8868;&#x4E24;&#x5206;&#x6CD5;">&#x54C8;&#x5E0C;&#x8868;+&#x4E24;&#x5206;&#x6CD5;</a></li>
+</ul>
+</li>
+<li><a href="#&#x7B2C;&#x4E8C;&#x79CD;&#x601D;&#x8DEF;&#x7528;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x7279;&#x6027;">&#x7B2C;&#x4E8C;&#x79CD;&#x601D;&#x8DEF;&#xFF1A;&#x7528;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x7279;&#x6027;</a><ul>
+<li><a href="#&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;">&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="&#x95EE;&#x9898;">&#x95EE;&#x9898;</h2>
-<p>&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x5B57;&#x7B26;&#x4E32;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x53CD;&#x8F6C;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5143;&#x97F3;&#x5B57;&#x6BCD;&#x3002;</p>
-<p>&#x793A;&#x4F8B; 1:</p>
-<pre><code class="lang-js">&#x8F93;&#x5165;: <span class="hljs-string">&quot;hello&quot;</span>
-&#x8F93;&#x51FA;: <span class="hljs-string">&quot;holle&quot;</span>
-</code></pre>
-<p>&#x793A;&#x4F8B; 2:</p>
-<pre><code class="lang-js">&#x8F93;&#x5165;: <span class="hljs-string">&quot;leetcode&quot;</span>
-&#x8F93;&#x51FA;: <span class="hljs-string">&quot;leotcede&quot;</span>
-</code></pre>
-<p>&#x8BF4;&#x660E;: &#x5143;&#x97F3;&#x5B57;&#x6BCD;&#x4E0D;&#x5305;&#x542B;&#x5B57;&#x6BCD;&quot;y&quot;&#x3002;</p>
-<h2 id="&#x89E3;&#x7B54;">&#x89E3;&#x7B54;</h2>
-<p>&#x5148;&#x627E;&#x51FA;&#x5143;&#x97F3;&#x5B57;&#x6BCD;&#x4F4D;&#x7F6E;&#x548C;&#x6240;&#x6709;&#x5143;&#x97F3;&#x5B57;&#x6BCD;&#xFF0C;&#x53CD;&#x7740;&#x63D2;&#x5165;&#x5373;&#x53EF;  </p>
-<p>&#x6CE8;&#x610F;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x6709;&#x5927;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#xFF0C;&#x8FD8;&#x6709;&#x6570;&#x5B57;&#x7B49;&#x3002; &#x8FD9;&#x91CC;&#x66FF;&#x4EE3;&#x5143;&#x97F3;&#x7528;&#x7684;&#x2018;-1&#x2019;&#x3002;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> reverseVowels = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s</span>) </span>{
-  <span class="hljs-keyword">if</span> (s.length &lt; <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> s;
+<h2 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h2>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x548C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x679C; BST &#x4E2D;&#x5B58;&#x5728;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x4E14;&#x5B83;&#x4EEC;&#x7684;&#x548C;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x7684;&#x76EE;&#x6807;&#x7ED3;&#x679C;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; true&#x3002;</p>
+<p>&#x6848;&#x4F8B; 1:</p>
+<pre><code class="lang-js">&#x8F93;&#x5165;: 
+    <span class="hljs-number">5</span>
+   / \
+  <span class="hljs-number">3</span>   <span class="hljs-number">6</span>
+ / \   \
+<span class="hljs-number">2</span>   <span class="hljs-number">4</span>   <span class="hljs-number">7</span>
 
-  <span class="hljs-keyword">var</span> arr = s.split(<span class="hljs-string">&quot;&quot;</span>);
-  <span class="hljs-keyword">var</span> yuan = [];
-  <span class="hljs-keyword">var</span> newarr = arr.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{
-    <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/[aeiouAEIOU]/</span>.test(x)) {
-      yuan.push(x);
-      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;-1&quot;</span>;
-    } <span class="hljs-keyword">else</span> {
-      <span class="hljs-keyword">return</span> x;
-    }
-  });
+Target = <span class="hljs-number">9</span>
 
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> newarr) {
-    <span class="hljs-keyword">if</span> (newarr[i] == <span class="hljs-string">&quot;-1&quot;</span>) {
-      newarr[i] = yuan.pop();
-    }
+&#x8F93;&#x51FA;: True
+</code></pre>
+<p>&#x6848;&#x4F8B; 2:</p>
+<pre><code class="lang-js">&#x8F93;&#x5165;: 
+    <span class="hljs-number">5</span>
+   / \
+  <span class="hljs-number">3</span>   <span class="hljs-number">6</span>
+ / \   \
+<span class="hljs-number">2</span>   <span class="hljs-number">4</span>   <span class="hljs-number">7</span>
+
+Target = <span class="hljs-number">28</span>
+
+&#x8F93;&#x51FA;: False
+</code></pre>
+<h2 id="bst&#x7684;&#x5B9A;&#x4E49;&#x4E86;&#x89E3;&#x4E86;&#x662F;&#x5173;&#x952E;">BST&#x7684;&#x5B9A;&#x4E49;&#x4E86;&#x89E3;&#x4E86;&#x662F;&#x5173;&#x952E;</h2>
+<p>&#x601D;&#x8DEF;&#x662F;&#x904D;&#x5386;&#x6811;&#xFF0C;&#x8F6C;&#x6362;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x53D8;&#x4E3A;&#x4E24;&#x6570;&#x4E4B;&#x548C;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F; &#x5982;&#x679C;&#x6811;&#x4E3A;BST&#x6811;&#xFF0C;&#x53EF;&#x8F6C;&#x6362;&#x4E3A;&#x6709;&#x5E8F;&#x6570;&#x5B57;&#xFF0C;&#x4F7F;&#x7528;&#x53CC;&#x6307;&#x9488;&#x5BF9;&#x649E;&#x6CD5;&#x6548;&#x7387;&#x6700;&#x9AD8;</p>
+<h2 id="&#x89E3;&#x7B54;-&#x7B2C;&#x4E00;&#x79CD;&#x601D;&#x8DEF;&#xFF1A;&#x6574;&#x7406;&#x6210;&#x6570;&#x7EC4;&#xFF0C;&#x56DE;&#x5230;two-sum-2">&#x89E3;&#x7B54; &#x7B2C;&#x4E00;&#x79CD;&#x601D;&#x8DEF;&#xFF1A;&#x6574;&#x7406;&#x6210;&#x6570;&#x7EC4;&#xFF0C;&#x56DE;&#x5230;two sum 2</h2>
+<p>&#x628A;&#x4E8C;&#x53C9;&#x6811;&#x53D8;&#x6210;&#x539F;&#x6765;&#x7684;&#x5347;&#x5E8F;&#x6570;&#x7EC4;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x7528;two sum 2&#x7684;&#x89E3;&#x6CD5;&#x6765;&#x505A;</p>
+<h3 id="&#x4E8C;&#x5206;&#x6CD5;&#x5B9A;&#x4E49;">&#x4E8C;&#x5206;&#x6CD5;&#x5B9A;&#x4E49;</h3>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6765;&#x73A9;&#x4E00;&#x4E2A;&#x731C;&#x6570;&#x7684;&#x6E38;&#x620F;&#xFF0C;&#x5047;&#x8BBE;&#x6709;&#x4E00;&#x4E2A;&#x4EBA;&#x8981;&#x6211;&#x4EEC;&#x731C;0-99&#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x4E2A;&#x6570;&#x3002;&#x90A3;&#x4E48;&#x6700;&#x597D;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x4ECE;0-99&#x7684;&#x4E2D;&#x95F4;&#x6570;49&#x5F00;&#x59CB;&#x731C;&#x3002;&#x5982;&#x679C;&#x8981;&#x731C;&#x7684;&#x6570;&#x5C0F;&#x4E8E;49&#xFF0C;&#x5C31;&#x731C;24&#xFF08;0-48&#x7684;&#x4E2D;&#x95F4;&#x6570;&#xFF09;&#xFF1B;&#x5982;&#x679C;&#x8981;&#x731C;&#x7684;&#x6570;&#x5927;&#x4E8E;49&#xFF0C;&#x5C31;&#x731C;74&#xFF08;50-99&#x7684;&#x4E2D;&#x95F4;&#x6570;&#xFF09;&#x3002;&#x91CD;&#x590D;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x6765;&#x7F29;&#x5C0F;&#x731C;&#x6D4B;&#x7684;&#x8303;&#x56F4;&#xFF0C;&#x76F4;&#x5230;&#x731C;&#x51FA;&#x6B63;&#x786E;&#x7684;&#x6570;&#x5B57;&#x3002;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#x4E8E;&#x6B64;&#x3002;</p>
+<p><strong>&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x64CD;&#x4F5C;&#x7684;&#x6570;&#x636E;&#x96C6;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x6570;&#x636E;&#x96C6;</strong>&#x3002;&#x5F00;&#x59CB;&#x65F6;&#xFF0C;&#x5148;&#x627E;&#x51FA;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x95F4;&#x7684;&#x90A3;&#x4E2A;&#x5143;&#x7D20;&#x3002;&#x5982;&#x679C;&#x6B64;&#x5143;&#x7D20;&#x6BD4;&#x8981;&#x67E5;&#x627E;&#x7684;&#x5143;&#x7D20;&#x5927;&#xFF0C;&#x5C31;&#x63A5;&#x7740;&#x5728;&#x8F83;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;&#x534A;&#x533A;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#xFF1B;&#x53CD;&#x4E4B;&#xFF0C;&#x5982;&#x679C;&#x6B64;&#x5143;&#x7D20;&#x6BD4;&#x8981;&#x627E;&#x7684;&#x5143;&#x7D20;&#x5C0F;&#xFF0C;&#x5C31;&#x5728;&#x8F83;&#x5927;&#x7684;&#x4E00;&#x4E2A;&#x534A;&#x533A;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x3002;&#x5728;&#x6BCF;&#x4E2A;&#x66F4;&#x5C0F;&#x7684;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x91CD;&#x590D;&#x8FD9;&#x4E2A;&#x67E5;&#x627E;&#x8FC7;&#x7A0B;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x8981;&#x67E5;&#x627E;&#x7684;&#x5143;&#x7D20;&#x6216;&#x8005;&#x6570;&#x636E;&#x96C6;&#x4E0D;&#x80FD;&#x518D;&#x5206;&#x5272;&#x3002;</p>
+<p><strong>&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x80FD;&#x5E94;&#x7528;&#x4E8E;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x53EA;&#x8981;&#x80FD;&#x5C06;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x6309;&#x7167;&#x67D0;&#x79CD;&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x6392;&#x5E8F;</strong>&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6B63;&#x56E0;&#x4E3A;&#x5B83;&#x4F9D;&#x8D56;&#x4E8E;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97;&#x5B83;&#x5728;&#x5904;&#x7406;&#x90A3;&#x4E9B;&#x9891;&#x7E41;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x7684;&#x6570;&#x636E;&#x96C6;&#x65F6;&#x4E0D;&#x592A;&#x9AD8;&#x6548;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#xFF0C;&#x5BF9;&#x4E8E;&#x63D2;&#x5165;&#x548C;&#x64CD;&#x4F5C;&#x6765;&#x8BF4;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x67E5;&#x627E;&#x8FC7;&#x7A0B;&#x6B63;&#x5E38;&#x8FDB;&#x884C;&#xFF0C;&#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x96C6;&#x59CB;&#x7EC8;&#x6709;&#x5E8F;&#x3002;&#x76F8;&#x5BF9;&#x4E8E;&#x67E5;&#x627E;&#x6765;&#x8BF4;&#xFF0C;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x6570;&#x636E;&#x96C6;&#x7684;&#x4EE3;&#x4EF7;&#x66F4;&#x9AD8;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5143;&#x7D20;&#x5FC5;&#x987B;&#x5B58;&#x50A8;&#x5728;&#x8FDE;&#x7EED;&#x7684;&#x7A7A;&#x95F4;&#x4E2D;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5F53;&#x5F85;&#x641C;&#x7D22;&#x7684;&#x96C6;&#x5408;&#x662F;&#x76F8;&#x5BF9;&#x9759;&#x6001;&#x7684;&#x6570;&#x636E;&#x96C6;&#x65F6;&#xFF0C;&#x6B64;&#x65F6;&#x4F7F;&#x7528;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x662F;&#x6700;&#x597D;&#x7684;&#x9009;&#x62E9;&#x3002;</p>
+<p><strong>&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7684;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;</strong>
+bisearch</p>
+<p>int bisearch(void <em>sorted, void </em>target, int size, int esize, int (compare <em>)(const void </em>key1, const void *key2);</p>
+<p>&#x8FD4;&#x56DE;&#x503C;&#xFF1A;&#x5982;&#x679C;&#x67E5;&#x627E;&#x6210;&#x529F;&#x8FD4;&#x56DE;&#x76EE;&#x6807;&#x7684;&#x7D22;&#x5F15;&#x503C;&#xFF1B;&#x5426;&#x5219;&#x8FD4;&#x56DE;-1&#x3002;</p>
+<p>&#x63CF;&#x8FF0;&#xFF1A;&#x5229;&#x7528;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x5B9A;&#x4F4D;&#x6709;&#x5E8F;&#x5143;&#x7D20;&#x6570;&#x7EC4;sorted&#x4E2D;target&#x3002;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x7531;size&#x51B3;&#x5B9A;&#xFF0C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5927;&#x5C0F;&#x7531;esize&#x51B3;&#x5B9A;&#x3002;&#x51FD;&#x6570;&#x6307;&#x9488;compare&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6BD4;&#x8F83;&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;key1&#x5927;&#x4E8E;key2&#xFF0C;&#x51FD;&#x6570;&#x8FD4;&#x56DE;1&#xFF0C;&#x5982;&#x679C;key1=key2&#xFF0C;&#x51FD;&#x6570;&#x8FD4;&#x56DE;0&#xFF0C;&#x5982;&#x679C;key1&#x5C0F;&#x4E8E;key2&#xFF0C;&#x51FD;&#x6570;&#x8FD4;&#x56DE;-1&#x3002;</p>
+<p>&#x590D;&#x6742;&#x5EA6;&#xFF1A;O&#xFF08;lg n&#xFF09;&#xFF0C;n&#x4E3A;&#x8981;&#x67E5;&#x627E;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x3002;</p>
+<p><img src="../resource/assets/&#x7B97;&#x6CD5;/&#x4E8C;&#x5206;&#x6CD5;.png" alt="&#x4E8C;&#x5206;&#x6CD5;"></p>
+<h3 id="&#x4E8C;&#x5206;&#x6CD5;">&#x4E8C;&#x5206;&#x6CD5;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> findTarget = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root, target</span>) </span>{
+  <span class="hljs-keyword">if</span> (!root) {
+    <span class="hljs-comment">// &#x57FA;&#x7840;&#x5224;&#x65AD;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
   }
 
-  <span class="hljs-keyword">return</span> newarr.join(<span class="hljs-string">&quot;&quot;</span>);
-};
-</code></pre>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> reverseVowels = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s</span>) </span>{
-  s = [...s];
-  <span class="hljs-keyword">let</span> left = <span class="hljs-number">0</span>;
-  <span class="hljs-keyword">let</span> right = s.length - <span class="hljs-number">1</span>;
-  <span class="hljs-keyword">while</span> (left &lt; right) {
-    <span class="hljs-keyword">if</span> (!isVowel(s[left])) {
-      left++;
+  <span class="hljs-keyword">let</span> nums = [];
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inOrder</span>(<span class="hljs-params">root</span>) </span>{
+    <span class="hljs-keyword">if</span> (!root) {
+      <span class="hljs-keyword">return</span>;
     }
-    <span class="hljs-keyword">if</span> (!isVowel(s[right])) {
-      right--;
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (isVowel(s[left]) &amp;&amp; isVowel(s[right])) {
-      <span class="hljs-keyword">let</span> temp = s[left];
-      s[left] = s[right];
-      s[right] = temp;
-      left++;
-      right--;
-    }
+    inOrder(root.left);
+    nums.push(root.val);
+    inOrder(root.right);
   }
-  <span class="hljs-keyword">return</span> s.join(<span class="hljs-string">&quot;&quot;</span>);
-  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isVowel</span>(<span class="hljs-params">letter</span>) </span>{
-    <span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>, <span class="hljs-string">&quot;i&quot;</span>, <span class="hljs-string">&quot;o&quot;</span>, <span class="hljs-string">&quot;u&quot;</span>, <span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;E&quot;</span>, <span class="hljs-string">&quot;I&quot;</span>, <span class="hljs-string">&quot;O&quot;</span>, <span class="hljs-string">&quot;U&quot;</span>];
-    <span class="hljs-keyword">if</span> (arr.indexOf(letter) == <span class="hljs-number">-1</span>) {
-      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
-    }
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
-  }
-};
-</code></pre>
-<p>&#x53CC;&#x6307;&#x9488;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> reverseVowels = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s</span>) </span>{
-  s = [...s];
-  <span class="hljs-keyword">let</span> left = <span class="hljs-number">0</span>; <span class="hljs-comment">// &#x5DE6;&#x6307;&#x9488;</span>
-  <span class="hljs-keyword">let</span> right = s.length - <span class="hljs-number">1</span>; <span class="hljs-comment">// &#x53F3;&#x6307;&#x9488;</span>
-  <span class="hljs-keyword">while</span> (left &lt; right) {
-    <span class="hljs-comment">// &#x8FED;&#x4EE3;&#x7684;&#x6BCF;&#x4E00;&#x6B21;&#x627E;&#x5230;&#x5DE6;&#x53F3;&#x7AEF;&#x5BF9;&#x5E94;&#x7684;&#x5143;&#x97F3;&#x5B57;&#x6BCD;&#x5BF9;</span>
-    <span class="hljs-keyword">while</span> (left &lt; s.length &amp;&amp; !<span class="hljs-regexp">/[aeiou]/i</span>.test(s[left])) {
-      left++;
-    }
-    <span class="hljs-keyword">while</span> (right &gt;= <span class="hljs-number">0</span> &amp;&amp; !<span class="hljs-regexp">/[aeiou]/i</span>.test(s[right])) {
-      right--;
-    }
-    <span class="hljs-keyword">if</span> (left &lt; right) {
-      [s[left], s[right]] = [s[right], s[left]]; <span class="hljs-comment">// js &#x4EA4;&#x6362;&#x53D8;&#x91CF;&#x503C; ES6 &#x89E3;&#x6784;&#x8D4B;&#x503C;</span>
-      left++;
-      right--;
-    }
-  }
-  <span class="hljs-keyword">return</span> s.join(<span class="hljs-string">&quot;&quot;</span>);
-};
-</code></pre>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> reverseVowels = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s</span>) </span>{
-  s = [...s];
-  <span class="hljs-keyword">let</span> v = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>, <span class="hljs-string">&quot;i&quot;</span>, <span class="hljs-string">&quot;o&quot;</span>, <span class="hljs-string">&quot;u&quot;</span>, <span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;E&quot;</span>, <span class="hljs-string">&quot;I&quot;</span>, <span class="hljs-string">&quot;O&quot;</span>, <span class="hljs-string">&quot;U&quot;</span>];
-  <span class="hljs-keyword">let</span> l = <span class="hljs-number">0</span>;
-  <span class="hljs-keyword">let</span> r = s.length - <span class="hljs-number">1</span>;
-  <span class="hljs-keyword">while</span> (l &lt;= r) {
-    <span class="hljs-keyword">if</span> (v.includes(s[l])) {
-      <span class="hljs-keyword">while</span> (l &lt;= r) {
-        <span class="hljs-keyword">if</span> (v.includes(s[r])) {
-          [s[l], s[r]] = [s[r], s[l]];
-          r--;
-          <span class="hljs-keyword">break</span>;
-        } <span class="hljs-keyword">else</span> {
-          r--;
-        }
+  inOrder(root);
+
+  <span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x662F;&#x4E8C;&#x5206;&#x6CD5;&#x7684;&#x4EE3;&#x7801;</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>; index &lt; nums.length; index++) {
+    <span class="hljs-keyword">const</span> aim = target - nums[index];
+    <span class="hljs-keyword">let</span> start = index + <span class="hljs-number">1</span>;
+    end = nums.length - <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span> (start &lt;= end) {
+      <span class="hljs-keyword">let</span> mid = <span class="hljs-built_in">Math</span>.round((start + end) / <span class="hljs-number">2</span>);
+      <span class="hljs-keyword">if</span> (nums[mid] === aim) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &lt; aim) {
+        start = mid + <span class="hljs-number">1</span>;
+      } <span class="hljs-keyword">else</span> {
+        end = mid - <span class="hljs-number">1</span>;
       }
-      l++;
-    } <span class="hljs-keyword">else</span> {
-      l++;
     }
   }
-  <span class="hljs-keyword">return</span> s.join(<span class="hljs-string">&quot;&quot;</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
 };
 </code></pre>
+<h3 id="&#x53CC;&#x6307;&#x9488;">&#x53CC;&#x6307;&#x9488;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> findTarget = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">root, target</span>) </span>{
+...
+  let low = <span class="hljs-number">0</span>;
+  high = nums.length - <span class="hljs-number">1</span>;
+
+  <span class="hljs-keyword">while</span> (low &lt; high) {
+    <span class="hljs-keyword">let</span> sum = nums[low] + nums[high];
+    <span class="hljs-keyword">if</span> (sum &lt; target) {
+      low++
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (sum &gt; target) {
+      high--
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    }
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+};
+</code></pre>
+<h3 id="&#x4E00;&#x904D;&#x54C8;&#x5E0C;&#x8868;">&#x4E00;&#x904D;&#x54C8;&#x5E0C;&#x8868;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> findTarget = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">root, target</span>) </span>{
+...
+  const arrMap = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) {
+    <span class="hljs-keyword">const</span> result = target - nums[i];
+    <span class="hljs-keyword">if</span> (arrMap.has(result)) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    }
+    arrMap.set(nums[i], i)
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+};
+</code></pre>
+<h3 id="&#x7528;&#x5BF9;&#x8C61;&#x5462;&#xFF1F;">&#x7528;&#x5BF9;&#x8C61;&#x5462;&#xFF1F;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> findTarget = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">root, target</span>) </span>{
+...
+  const map = {}
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) {
+    <span class="hljs-keyword">const</span> result = target - nums[i];
+    <span class="hljs-keyword">if</span> (map.hasOwnProperty(result)) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    }
+    map[nums[i]] = i;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+};
+</code></pre>
+<h3 id="&#x54C8;&#x5E0C;&#x8868;&#x4E24;&#x5206;&#x6CD5;">&#x54C8;&#x5E0C;&#x8868;+&#x4E24;&#x5206;&#x6CD5;</h3>
+<p>&#x548C;two sum 2&#x7684;&#x65B9;&#x6CD5;&#x4E0D;&#x540C;&#xFF0C;&#x9700;&#x8981;&#x591A;&#x505A;&#x4E00;&#x6B65;&#x5224;&#x65AD;&#xFF0C;&#x4E0D;&#x7136;&#x4F1A;&#x51FA;&#x73B0;&#x591A;&#x6B21;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x4F8B;&#x5B50;&#x662F;[2,3]&#xFF0C;target=6&#xFF0C;&#x663E;&#x7136;&#x662F;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;false&#x3002;&#x7136;&#x800C;&#x4E0D;&#x52A0;&#x5224;&#x65AD;&#x4F1A;&#x8FD4;&#x56DE;true&#x3002;</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x904D;&#x627E;&#x4E0D;&#x5230;4&#xFF0C;&#x4E8E;&#x662F;&#x628A;&#x8BBF;&#x95EE;&#x8FC7;&#x7684;3&#x52A0;&#x5165;&#x54C8;&#x5E0C;&#x8868;{3 =&gt; 1}</li>
+<li>&#x7B2C;&#x4E8C;&#x904D;&#x5F00;&#x59CB;&#x67E5;&#x54C8;&#x5E0C;&#x8868;&#xFF0C;&#x8981;&#x627E;3&#xFF0C;&#x6B63;&#x597D;&#x6709;3&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;&#x4E86;true&#x3002;&#x7136;&#x800C;&#x8FD9;&#x4E24;&#x4E2A;3&#x90FD;&#x662F;nums&#x7684;&#x7B2C;&#x4E8C;&#x4F4D;&#xFF0C;&#x7528;&#x4E86;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x4E86;&#x3002;</li>
+</ul>
+<p>&#x5728;two sum2&#x4E2D;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#xFF0C;&#x56E0;&#x4E3A;&#x7ED9;&#x7684;target&#x603B;&#x662F;&#x5BF9;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5C31;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x79CD;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4E5F;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x591A;&#x52A0;&#x4E00;&#x6B65;&#x5224;&#x65AD;&#x4E86;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> findTarget = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">root, target</span>) </span>{
+...
+    const arrMap = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) {
+    <span class="hljs-keyword">const</span> aim = target - nums[i];
+    <span class="hljs-keyword">if</span> (arrMap.has(aim) &amp;&amp; arrMap.get(aim) !== i) {  <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x9700;&#x8981;&#x591A;&#x505A;&#x4E00;&#x6B65;&#x5224;&#x65AD;</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    }
+
+    <span class="hljs-keyword">let</span> start = i + <span class="hljs-number">1</span>;
+    end = nums.length - <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span> (start &lt;= end) {
+      <span class="hljs-keyword">let</span> mid = <span class="hljs-built_in">Math</span>.round((start + end) / <span class="hljs-number">2</span>)
+      <span class="hljs-keyword">if</span> (nums[mid] === aim) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &lt; aim) {
+        start = mid + <span class="hljs-number">1</span>
+      } <span class="hljs-keyword">else</span> {
+        end = mid - <span class="hljs-number">1</span>
+      }
+      arrMap.set(nums[mid], mid)
+    }
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+};
+</code></pre>
+<h2 id="&#x7B2C;&#x4E8C;&#x79CD;&#x601D;&#x8DEF;&#xFF1A;&#x7528;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x7279;&#x6027;">&#x7B2C;&#x4E8C;&#x79CD;&#x601D;&#x8DEF;&#xFF1A;&#x7528;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x7279;&#x6027;</h2>
+<h3 id="&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;">&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> findTarget = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">root, k</span>) </span>{
+  <span class="hljs-keyword">let</span> stack = [root] <span class="hljs-comment">// &#x6570;&#x7EC4;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5B58;&#x5165;root</span>
+  <span class="hljs-keyword">let</span> map = []
+
+  <span class="hljs-keyword">while</span> (stack.length &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">let</span> cur = stack.pop()        <span class="hljs-comment">// &#x6BCF;&#x6B21;&#x628A;&#x6570;&#x7EC4;&#x9876;&#x7AEF;&#x7684;node&#x62FF;&#x51FA;&#x6765;</span>
+
+    <span class="hljs-keyword">if</span> (map.includes(k - cur.val)) { <span class="hljs-comment">// &#x5728;map&#x6570;&#x7EC4;&#x5185;&#x67E5;&#x8BE2;&#x662F;&#x5426;&#x6709;</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    }
+    map.push(cur.val) <span class="hljs-comment">// &#x6CA1;&#x6709;&#x5C31;&#x63A8;&#x5165;map&#x6570;&#x7EC4;</span>
+
+    <span class="hljs-keyword">if</span> (cur.left) {
+      stack.push(cur.left)
+    }
+    <span class="hljs-keyword">if</span> (cur.right) {
+      stack.push(cur.right)
+    }
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+};
+</code></pre>
+<blockquote>
+<p>Runtime: 152 ms, faster than 5.88% of JavaScript online submissions for Two Sum IV - Input is a BST.</p>
+</blockquote>
+<p>&#x56E0;&#x4E3A;&#x53F3;&#x8FB9;&#x662F;&#x6700;&#x540E;&#x63A8;&#x5165;stack&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x662F;&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#x7684;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x7684;&#x67E5;&#x8BE2;&#x3002; 
+&#x4E0D;&#x8FC7;&#x611F;&#x89C9;&#x975E;&#x5E38;&#x8017;&#x65F6;&#x2026;&#x2026;&#x4E5F;&#x8BB8;&#x662F;&#x56E0;&#x4E3A;map&#x662F;&#x6570;&#x7EC4;&#x7684;&#x539F;&#x56E0;&#xFF1F;.includes()&#x67E5;&#x8BE2;&#x6BD4;&#x8F83;&#x8017;&#x65F6;&#xFF1F;</p>
 
                                 
                                 </section>
@@ -4760,12 +4849,12 @@
 
             
                 
-                <a href="仅仅反转字母.html" class="navigation navigation-prev " aria-label="Previous page: 仅仅反转字母">
+                <a href="两数之和II-输入有序数组.html" class="navigation navigation-prev " aria-label="Previous page: 两数之和II-输入有序数组">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="整数反转.html" class="navigation navigation-next " aria-label="Next page: 整数反转">
+                <a href="三数之和.html" class="navigation navigation-next " aria-label="Next page: 三数之和">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -4776,7 +4865,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"反转字符串中的元音字母","level":"9.10","depth":1,"next":{"title":"整数反转","level":"9.11","depth":1,"path":"算法/整数反转.md","ref":"算法/整数反转.md","articles":[]},"previous":{"title":"仅仅反转字母","level":"9.9","depth":1,"path":"算法/仅仅反转字母.md","ref":"算法/仅仅反转字母.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/反转字符串中的元音字母.md","mtime":"2019-07-05T08:12:52.038Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-12T10:20:19.540Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"两数之和 IV 输入BST","level":"9.29","depth":1,"next":{"title":"三数之和","level":"9.30","depth":1,"path":"算法/三数之和.md","ref":"算法/三数之和.md","articles":[]},"previous":{"title":"两数之和II-输入有序数组","level":"9.28","depth":1,"path":"算法/两数之和II-输入有序数组.md","ref":"算法/两数之和II-输入有序数组.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/两数之和IV输入BST.md","mtime":"2019-07-10T06:06:11.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-12T10:20:19.540Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
