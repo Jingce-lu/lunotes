@@ -4911,265 +4911,232 @@ n &#x4E3A;&#x5929;&#x6570;&#xFF0C;&#x5927; K &#x4E3A;&#x6700;&#x591A;&#x4EA4;&#x
 <p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x5B8C;&#x6210;&#x4E86;&#x300C;&#x72B6;&#x6001;&#x300D;&#x7684;&#x7A77;&#x4E3E;&#xFF0C;&#x6211;&#x4EEC;&#x5F00;&#x59CB;&#x601D;&#x8003;&#x6BCF;&#x79CD;&#x300C;&#x72B6;&#x6001;&#x300D;&#x6709;&#x54EA;&#x4E9B;&#x300C;&#x9009;&#x62E9;&#x300D;&#xFF0C;&#x5E94;&#x8BE5;&#x5982;&#x4F55;&#x66F4;&#x65B0;&#x300C;&#x72B6;&#x6001;&#x300D;&#x3002;&#x53EA;&#x770B;&#x300C;&#x6301;&#x6709;&#x72B6;&#x6001;&#x300D;&#xFF0C;&#x53EF;&#x4EE5;&#x753B;&#x4E2A;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x56FE;&#x3002;</p>
 <p><img src="../resource/assets/&#x7B97;&#x6CD5;/gupiao.png" alt="gupiao.png"></p>
 <p>&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x56FE;&#x53EF;&#x4EE5;&#x5F88;&#x6E05;&#x695A;&#x5730;&#x770B;&#x5230;&#xFF0C;&#x6BCF;&#x79CD;&#x72B6;&#x6001;&#xFF08;0 &#x548C; 1&#xFF09;&#x662F;&#x5982;&#x4F55;&#x8F6C;&#x79FB;&#x800C;&#x6765;&#x7684;&#x3002;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x56FE;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x5199;&#x4E00;&#x4E0B;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#xFF1A;</p>
-<pre>
-dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])
+<pre><code class="lang-js">dp[i][k][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>] + prices[i])
               max(   &#x9009;&#x62E9; rest  ,           &#x9009;&#x62E9; sell      )
 
 &#x89E3;&#x91CA;&#xFF1A;&#x4ECA;&#x5929;&#x6211;&#x6CA1;&#x6709;&#x6301;&#x6709;&#x80A1;&#x7968;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#xFF1A;
 &#x8981;&#x4E48;&#x662F;&#x6211;&#x6628;&#x5929;&#x5C31;&#x6CA1;&#x6709;&#x6301;&#x6709;&#xFF0C;&#x7136;&#x540E;&#x4ECA;&#x5929;&#x9009;&#x62E9; rest&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4ECA;&#x5929;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x6301;&#x6709;&#xFF1B;
 &#x8981;&#x4E48;&#x662F;&#x6211;&#x6628;&#x5929;&#x6301;&#x6709;&#x80A1;&#x7968;&#xFF0C;&#x4F46;&#x662F;&#x4ECA;&#x5929;&#x6211; sell &#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4ECA;&#x5929;&#x6CA1;&#x6709;&#x6301;&#x6709;&#x80A1;&#x7968;&#x4E86;&#x3002;
 
-dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])
+dp[i][k][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>] - prices[i])
               max(   &#x9009;&#x62E9; rest  ,           &#x9009;&#x62E9; buy         )
 
 &#x89E3;&#x91CA;&#xFF1A;&#x4ECA;&#x5929;&#x6211;&#x6301;&#x6709;&#x7740;&#x80A1;&#x7968;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#xFF1A;
 &#x8981;&#x4E48;&#x6211;&#x6628;&#x5929;&#x5C31;&#x6301;&#x6709;&#x7740;&#x80A1;&#x7968;&#xFF0C;&#x7136;&#x540E;&#x4ECA;&#x5929;&#x9009;&#x62E9; rest&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4ECA;&#x5929;&#x8FD8;&#x6301;&#x6709;&#x7740;&#x80A1;&#x7968;&#xFF1B;
 &#x8981;&#x4E48;&#x6211;&#x6628;&#x5929;&#x672C;&#x6CA1;&#x6709;&#x6301;&#x6709;&#xFF0C;&#x4F46;&#x4ECA;&#x5929;&#x6211;&#x9009;&#x62E9; buy&#xFF0C;&#x6240;&#x4EE5;&#x4ECA;&#x5929;&#x6211;&#x5C31;&#x6301;&#x6709;&#x80A1;&#x7968;&#x4E86;&#x3002;
-</pre>
-
+</code></pre>
 <p>&#x8FD9;&#x4E2A;&#x89E3;&#x91CA;&#x5E94;&#x8BE5;&#x5F88;&#x6E05;&#x695A;&#x4E86;&#xFF0C;&#x5982;&#x679C; buy&#xFF0C;&#x5C31;&#x8981;&#x4ECE;&#x5229;&#x6DA6;&#x4E2D;&#x51CF;&#x53BB; prices[i]&#xFF0C;&#x5982;&#x679C; sell&#xFF0C;&#x5C31;&#x8981;&#x7ED9;&#x5229;&#x6DA6;&#x589E;&#x52A0; prices[i]&#x3002;&#x4ECA;&#x5929;&#x7684;&#x6700;&#x5927;&#x5229;&#x6DA6;&#x5C31;&#x662F;&#x8FD9;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#x9009;&#x62E9;&#x4E2D;&#x8F83;&#x5927;&#x7684;&#x90A3;&#x4E2A;&#x3002;&#x800C;&#x4E14;&#x6CE8;&#x610F; k &#x7684;&#x9650;&#x5236;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x9009;&#x62E9; buy &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x628A; k &#x51CF;&#x5C0F;&#x4E86; 1&#xFF0C;&#x5F88;&#x597D;&#x7406;&#x89E3;&#x5427;&#xFF0C;&#x5F53;&#x7136;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728; sell &#x7684;&#x65F6;&#x5019;&#x51CF; 1&#xFF0C;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
 <p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x4E2D;&#x6700;&#x56F0;&#x96BE;&#x7684;&#x4E00;&#x6B65;&#xFF1A;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x3002;<strong>&#x5982;&#x679C;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5BB9;&#x4F60;&#x90FD;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x79D2;&#x6740;&#x6240;&#x6709;&#x95EE;&#x9898;&#x4E86;&#xFF0C;&#x53EA;&#x8981;&#x5957;&#x8FD9;&#x4E2A;&#x6846;&#x67B6;&#x5C31;&#x884C;&#x4E86;</strong>&#x3002;&#x4E0D;&#x8FC7;&#x8FD8;&#x5DEE;&#x6700;&#x540E;&#x4E00;&#x70B9;&#x70B9;&#xFF0C;&#x5C31;&#x662F;&#x5B9A;&#x4E49; base case&#xFF0C;&#x5373;&#x6700;&#x7B80;&#x5355;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
-<pre>
-dp[-1][k][0] = 0
-&#x89E3;&#x91CA;&#xFF1A;&#x56E0;&#x4E3A; i &#x662F;&#x4ECE; 0 &#x5F00;&#x59CB;&#x7684;&#xFF0C;&#x6240;&#x4EE5; i = -1 &#x610F;&#x5473;&#x7740;&#x8FD8;&#x6CA1;&#x6709;&#x5F00;&#x59CB;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x7684;&#x5229;&#x6DA6;&#x5F53;&#x7136;&#x662F; 0 &#x3002;
-dp[-1][k][1] = -infinity
+<pre><code class="lang-js">dp[<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>
+&#x89E3;&#x91CA;&#xFF1A;&#x56E0;&#x4E3A; i &#x662F;&#x4ECE; <span class="hljs-number">0</span> &#x5F00;&#x59CB;&#x7684;&#xFF0C;&#x6240;&#x4EE5; i = <span class="hljs-number">-1</span> &#x610F;&#x5473;&#x7740;&#x8FD8;&#x6CA1;&#x6709;&#x5F00;&#x59CB;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x7684;&#x5229;&#x6DA6;&#x5F53;&#x7136;&#x662F; <span class="hljs-number">0</span> &#x3002;
+dp[<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>] = -infinity
 &#x89E3;&#x91CA;&#xFF1A;&#x8FD8;&#x6CA1;&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x6301;&#x6709;&#x80A1;&#x7968;&#x7684;&#xFF0C;&#x7528;&#x8D1F;&#x65E0;&#x7A77;&#x8868;&#x793A;&#x8FD9;&#x79CD;&#x4E0D;&#x53EF;&#x80FD;&#x3002;
-dp[i][0][0] = 0
-&#x89E3;&#x91CA;&#xFF1A;&#x56E0;&#x4E3A; k &#x662F;&#x4ECE; 1 &#x5F00;&#x59CB;&#x7684;&#xFF0C;&#x6240;&#x4EE5; k = 0 &#x610F;&#x5473;&#x7740;&#x6839;&#x672C;&#x4E0D;&#x5141;&#x8BB8;&#x4EA4;&#x6613;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5229;&#x6DA6;&#x5F53;&#x7136;&#x662F; 0 &#x3002;
-dp[i][0][1] = -infinity
+dp[i][<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>
+&#x89E3;&#x91CA;&#xFF1A;&#x56E0;&#x4E3A; k &#x662F;&#x4ECE; <span class="hljs-number">1</span> &#x5F00;&#x59CB;&#x7684;&#xFF0C;&#x6240;&#x4EE5; k = <span class="hljs-number">0</span> &#x610F;&#x5473;&#x7740;&#x6839;&#x672C;&#x4E0D;&#x5141;&#x8BB8;&#x4EA4;&#x6613;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5229;&#x6DA6;&#x5F53;&#x7136;&#x662F; <span class="hljs-number">0</span> &#x3002;
+dp[i][<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] = -infinity
 &#x89E3;&#x91CA;&#xFF1A;&#x4E0D;&#x5141;&#x8BB8;&#x4EA4;&#x6613;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x6301;&#x6709;&#x80A1;&#x7968;&#x7684;&#xFF0C;&#x7528;&#x8D1F;&#x65E0;&#x7A77;&#x8868;&#x793A;&#x8FD9;&#x79CD;&#x4E0D;&#x53EF;&#x80FD;&#x3002;
-</pre>
-
+</code></pre>
 <p>&#x628A;&#x4E0A;&#x9762;&#x7684;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF1A;</p>
-<pre>
-base case&#xFF1A;
-dp[-1][k][0] = dp[i][0][0] = 0
-dp[-1][k][1] = dp[i][0][1] = -infinity
+<pre><code class="lang-js">base <span class="hljs-keyword">case</span>&#xFF1A;
+dp[<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>] = dp[i][<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>
+dp[<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>] = dp[i][<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] = -infinity
 
 &#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#xFF1A;
-dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])
-dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])
-</pre>
-
+dp[i][k][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>] + prices[i])
+dp[i][k][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>] - prices[i])
+</code></pre>
 <p>&#x8BFB;&#x8005;&#x53EF;&#x80FD;&#x4F1A;&#x95EE;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x7EC4;&#x7D22;&#x5F15;&#x662F; -1 &#x600E;&#x4E48;&#x7F16;&#x7A0B;&#x8868;&#x793A;&#x51FA;&#x6765;&#x5462;&#xFF0C;&#x8D1F;&#x65E0;&#x7A77;&#x600E;&#x4E48;&#x8868;&#x793A;&#x5462;&#xFF1F;&#x8FD9;&#x90FD;&#x662F;&#x7EC6;&#x8282;&#x95EE;&#x9898;&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x3002;&#x73B0;&#x5728;&#x5B8C;&#x6574;&#x7684;&#x6846;&#x67B6;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#xFF0C;&#x4E0B;&#x9762;&#x5F00;&#x59CB;&#x5177;&#x4F53;&#x5316;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x79D2;&#x6740;&#x9898;&#x76EE;">&#x4E09;&#x3001;&#x79D2;&#x6740;&#x9898;&#x76EE;</h2>
 <h3 id="&#x7B2C;&#x4E00;&#x9898;&#xFF0C;k--1">&#x7B2C;&#x4E00;&#x9898;&#xFF0C;k = 1</h3>
 <p>&#x76F4;&#x63A5;&#x5957;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#xFF0C;&#x6839;&#x636E; base case&#xFF0C;&#x53EF;&#x4EE5;&#x505A;&#x4E00;&#x4E9B;&#x5316;&#x7B80;&#xFF1A;</p>
-<pre>
-dp[i][1][0] = max(dp[i-1][1][0], dp[i-1][1][1] + prices[i])
-dp[i][1][1] = max(dp[i-1][1][1], dp[i-1][0][0] - prices[i]) 
-            = max(dp[i-1][1][1], -prices[i])
-&#x89E3;&#x91CA;&#xFF1A;k = 0 &#x7684; base case&#xFF0C;&#x6240;&#x4EE5; dp[i-1][0][0] = 0&#x3002;
+<pre><code class="lang-js">dp[i][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] + prices[i])
+dp[i][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] - prices[i]) 
+            = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>], -prices[i])
+&#x89E3;&#x91CA;&#xFF1A;k = <span class="hljs-number">0</span> &#x7684; base <span class="hljs-keyword">case</span>&#xFF0C;&#x6240;&#x4EE5; dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>&#x3002;
 
-&#x73B0;&#x5728;&#x53D1;&#x73B0; k &#x90FD;&#x662F; 1&#xFF0C;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#xFF0C;&#x5373; k &#x5BF9;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x5DF2;&#x7ECF;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x4E86;&#x3002;
+&#x73B0;&#x5728;&#x53D1;&#x73B0; k &#x90FD;&#x662F; <span class="hljs-number">1</span>&#xFF0C;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#xFF0C;&#x5373; k &#x5BF9;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x5DF2;&#x7ECF;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x4E86;&#x3002;
 &#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8FDB;&#x4E00;&#x6B65;&#x5316;&#x7B80;&#x53BB;&#x6389;&#x6240;&#x6709; k&#xFF1A;
-dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
-dp[i][1] = max(dp[i-1][1], -prices[i])
-</pre>
-&#x76F4;&#x63A5;&#x5199;&#x51FA;&#x4EE3;&#x7801;&#xFF1A;
-<pre>
-int n = prices.length;
-int[][] dp = new int[n][2];
-for (int i = 0; i &lt; n; i++) {
-    dp[i][0] = Math.max(dp[i-1][0], dp[i-1][1] + prices[i]);
-    dp[i][1] = Math.max(dp[i-1][1], -prices[i]);
+dp[i][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>] + prices[i])
+dp[i][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>], -prices[i])
+</code></pre>
+<p>&#x76F4;&#x63A5;&#x5199;&#x51FA;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-js">int n = prices.length;
+int[][] dp = <span class="hljs-keyword">new</span> int[n][<span class="hljs-number">2</span>];
+<span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+    dp[i][<span class="hljs-number">0</span>] = <span class="hljs-built_in">Math</span>.max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>] + prices[i]);
+    dp[i][<span class="hljs-number">1</span>] = <span class="hljs-built_in">Math</span>.max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>], -prices[i]);
 }
-return dp[n - 1][0];
-</pre>
-&#x663E;&#x7136; `i = 0` &#x65F6; `dp[i-1]` &#x662F;&#x4E0D;&#x5408;&#x6CD5;&#x7684;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x5BF9; i &#x7684; base case &#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5904;&#x7406;&#xFF1A;
-```js
-for (int i = 0; i &lt; n; i++) {
-    if (i - 1 == -1) {
-        dp[i][0] = 0;
-        // &#x89E3;&#x91CA;&#xFF1A;
-        //   dp[i][0] 
-        // = max(dp[-1][0], dp[-1][1] + prices[i])
-        // = max(0, -infinity + prices[i]) = 0
-        dp[i][1] = -prices[i];
-        //&#x89E3;&#x91CA;&#xFF1A;
-        //   dp[i][1] 
-        // = max(dp[-1][1], dp[-1][0] - prices[i])
-        // = max(-infinity, 0 - prices[i]) 
-        // = -prices[i]
-        continue;
+<span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>];
+</code></pre>
+<p>&#x663E;&#x7136; <code>i = 0</code> &#x65F6; <code>dp[i-1]</code> &#x662F;&#x4E0D;&#x5408;&#x6CD5;&#x7684;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x5BF9; i &#x7684; base case &#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5904;&#x7406;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+    <span class="hljs-keyword">if</span> (i - <span class="hljs-number">1</span> == <span class="hljs-number">-1</span>) {
+        dp[i][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+        <span class="hljs-comment">// &#x89E3;&#x91CA;&#xFF1A;</span>
+        <span class="hljs-comment">//   dp[i][0] </span>
+        <span class="hljs-comment">// = max(dp[-1][0], dp[-1][1] + prices[i])</span>
+        <span class="hljs-comment">// = max(0, -infinity + prices[i]) = 0</span>
+        dp[i][<span class="hljs-number">1</span>] = -prices[i];
+        <span class="hljs-comment">//&#x89E3;&#x91CA;&#xFF1A;</span>
+        <span class="hljs-comment">//   dp[i][1] </span>
+        <span class="hljs-comment">// = max(dp[-1][1], dp[-1][0] - prices[i])</span>
+        <span class="hljs-comment">// = max(-infinity, 0 - prices[i]) </span>
+        <span class="hljs-comment">// = -prices[i]</span>
+        <span class="hljs-keyword">continue</span>;
     }
-    dp[i][0] = Math.max(dp[i-1][0], dp[i-1][1] + prices[i]);
-    dp[i][1] = Math.max(dp[i-1][1], -prices[i]);
+    dp[i][<span class="hljs-number">0</span>] = <span class="hljs-built_in">Math</span>.max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>] + prices[i]);
+    dp[i][<span class="hljs-number">1</span>] = <span class="hljs-built_in">Math</span>.max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>], -prices[i]);
 }
-return dp[n - 1][0];
-```
-
-&#x7B2C;&#x4E00;&#x9898;&#x5C31;&#x89E3;&#x51B3;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x5904;&#x7406; base case &#x5F88;&#x9EBB;&#x70E6;&#xFF0C;&#x800C;&#x4E14;&#x6CE8;&#x610F;&#x4E00;&#x4E0B;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#xFF0C;&#x65B0;&#x72B6;&#x6001;&#x53EA;&#x548C;&#x76F8;&#x90BB;&#x7684;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x6709;&#x5173;&#xFF0C;&#x5176;&#x5B9E;&#x4E0D;&#x7528;&#x6574;&#x4E2A; dp &#x6570;&#x7EC4;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x50A8;&#x5B58;&#x76F8;&#x90BB;&#x7684;&#x90A3;&#x4E2A;&#x72B6;&#x6001;&#x5C31;&#x8DB3;&#x591F;&#x4E86;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x628A;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x964D;&#x5230; O(1):
-```js
-// k == 1
+<span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>];
+</code></pre>
+<p>&#x7B2C;&#x4E00;&#x9898;&#x5C31;&#x89E3;&#x51B3;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x5904;&#x7406; base case &#x5F88;&#x9EBB;&#x70E6;&#xFF0C;&#x800C;&#x4E14;&#x6CE8;&#x610F;&#x4E00;&#x4E0B;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#xFF0C;&#x65B0;&#x72B6;&#x6001;&#x53EA;&#x548C;&#x76F8;&#x90BB;&#x7684;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x6709;&#x5173;&#xFF0C;&#x5176;&#x5B9E;&#x4E0D;&#x7528;&#x6574;&#x4E2A; dp &#x6570;&#x7EC4;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x50A8;&#x5B58;&#x76F8;&#x90BB;&#x7684;&#x90A3;&#x4E2A;&#x72B6;&#x6001;&#x5C31;&#x8DB3;&#x591F;&#x4E86;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x628A;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x964D;&#x5230; O(1):</p>
+<pre><code class="lang-js"><span class="hljs-comment">// k == 1</span>
 int maxProfit_k_1(int[] prices) {
     int n = prices.length;
-    // base case: dp[-1][0] = 0, dp[-1][1] = -infinity
-    int dp_i_0 = 0, dp_i_1 = Integer.MIN_VALUE;
-    for (int i = 0; i &lt; n; i++) {
-        // dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
-        dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);
-        // dp[i][1] = max(dp[i-1][1], -prices[i])
-        dp_i_1 = Math.max(dp_i_1, -prices[i]);
+    <span class="hljs-comment">// base case: dp[-1][0] = 0, dp[-1][1] = -infinity</span>
+    int dp_i_0 = <span class="hljs-number">0</span>, dp_i_1 = Integer.MIN_VALUE;
+    <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        <span class="hljs-comment">// dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])</span>
+        dp_i_0 = <span class="hljs-built_in">Math</span>.max(dp_i_0, dp_i_1 + prices[i]);
+        <span class="hljs-comment">// dp[i][1] = max(dp[i-1][1], -prices[i])</span>
+        dp_i_1 = <span class="hljs-built_in">Math</span>.max(dp_i_1, -prices[i]);
     }
-    return dp_i_0;
+    <span class="hljs-keyword">return</span> dp_i_0;
 }
-```
-
-&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;&#x8FD9;&#x79CD;&#x7F16;&#x7A0B;&#x65B9;&#x6CD5;&#x7B80;&#x6D01;&#x5F88;&#x591A;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x524D;&#x9762;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x7684;&#x5F15;&#x5BFC;&#xFF0C;&#x662F;&#x80AF;&#x5B9A;&#x770B;&#x4E0D;&#x61C2;&#x7684;&#x3002;&#x540E;&#x7EED;&#x7684;&#x9898;&#x76EE;&#xFF0C;&#x6211;&#x4E3B;&#x8981;&#x5199;&#x8FD9;&#x79CD;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6; O(1) &#x7684;&#x89E3;&#x6CD5;&#x3002;
-
-### &#x7B2C;&#x4E8C;&#x9898;&#xFF0C;k = +infinity
-
-&#x5982;&#x679C; k &#x4E3A;&#x6B63;&#x65E0;&#x7A77;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A; k &#x548C; k - 1 &#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x6539;&#x5199;&#x6846;&#x67B6;&#xFF1A;
-<pre>
-dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])
-dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])
-            = max(dp[i-1][k][1], dp[i-1][k][0] - prices[i])
+</code></pre>
+<p>&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;&#x8FD9;&#x79CD;&#x7F16;&#x7A0B;&#x65B9;&#x6CD5;&#x7B80;&#x6D01;&#x5F88;&#x591A;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x524D;&#x9762;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x7684;&#x5F15;&#x5BFC;&#xFF0C;&#x662F;&#x80AF;&#x5B9A;&#x770B;&#x4E0D;&#x61C2;&#x7684;&#x3002;&#x540E;&#x7EED;&#x7684;&#x9898;&#x76EE;&#xFF0C;&#x6211;&#x4E3B;&#x8981;&#x5199;&#x8FD9;&#x79CD;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6; O(1) &#x7684;&#x89E3;&#x6CD5;&#x3002;</p>
+<h3 id="&#x7B2C;&#x4E8C;&#x9898;&#xFF0C;k--infinity">&#x7B2C;&#x4E8C;&#x9898;&#xFF0C;k = +infinity</h3>
+<p>&#x5982;&#x679C; k &#x4E3A;&#x6B63;&#x65E0;&#x7A77;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A; k &#x548C; k - 1 &#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x6539;&#x5199;&#x6846;&#x67B6;&#xFF1A;</p>
+<pre><code class="lang-js">dp[i][k][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>] + prices[i])
+dp[i][k][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>] - prices[i])
+            = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>] - prices[i])
 
 &#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x6570;&#x7EC4;&#x4E2D;&#x7684; k &#x5DF2;&#x7ECF;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x4E86;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x4E0D;&#x9700;&#x8981;&#x8BB0;&#x5F55; k &#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x4E86;&#xFF1A;
-dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
-dp[i][1] = max(dp[i-1][1], dp[i-1][0] - prices[i])
-</pre>
-
+dp[i][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>] + prices[i])
+dp[i][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>] - prices[i])
+</code></pre>
 <p>&#x76F4;&#x63A5;&#x7FFB;&#x8BD1;&#x6210;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre>
-int maxProfit_k_inf(int[] prices) {
+<pre><code class="lang-js">int maxProfit_k_inf(int[] prices) {
     int n = prices.length;
-    int dp_i_0 = 0, dp_i_1 = Integer.MIN_VALUE;
-    for (int i = 0; i &lt; n; i++) {
+    int dp_i_0 = <span class="hljs-number">0</span>, dp_i_1 = Integer.MIN_VALUE;
+    <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; n; i++) {
         int temp = dp_i_0;
-        dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);
-        dp_i_1 = Math.max(dp_i_1, temp - prices[i]);
+        dp_i_0 = <span class="hljs-built_in">Math</span>.max(dp_i_0, dp_i_1 + prices[i]);
+        dp_i_1 = <span class="hljs-built_in">Math</span>.max(dp_i_1, temp - prices[i]);
     }
-    return dp_i_0;
+    <span class="hljs-keyword">return</span> dp_i_0;
 }
-</pre>
-
+</code></pre>
 <h3 id="&#x7B2C;&#x4E09;&#x9898;&#xFF0C;k--infinity-with-cooldown">&#x7B2C;&#x4E09;&#x9898;&#xFF0C;k = +infinity with cooldown</h3>
 <p>&#x6BCF;&#x6B21; sell &#x4E4B;&#x540E;&#x8981;&#x7B49;&#x4E00;&#x5929;&#x624D;&#x80FD;&#x7EE7;&#x7EED;&#x4EA4;&#x6613;&#x3002;&#x53EA;&#x8981;&#x628A;&#x8FD9;&#x4E2A;&#x7279;&#x70B9;&#x878D;&#x5165;&#x4E0A;&#x4E00;&#x9898;&#x7684;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x5373;&#x53EF;&#xFF1A;</p>
-<pre>
-dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
-dp[i][1] = max(dp[i-1][1], dp[i-2][0] - prices[i])
-&#x89E3;&#x91CA;&#xFF1A;&#x7B2C; i &#x5929;&#x9009;&#x62E9; buy &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x4ECE; i-2 &#x7684;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#xFF0C;&#x800C;&#x4E0D;&#x662F; i-1 &#x3002;
-</pre>
-&#x7FFB;&#x8BD1;&#x6210;&#x4EE3;&#x7801;&#xFF1A;
-<pre>
-int maxProfit_with_cool(int[] prices) {
+<pre><code class="lang-js">dp[i][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>] + prices[i])
+dp[i][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-2</span>][<span class="hljs-number">0</span>] - prices[i])
+&#x89E3;&#x91CA;&#xFF1A;&#x7B2C; i &#x5929;&#x9009;&#x62E9; buy &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x4ECE; i<span class="hljs-number">-2</span> &#x7684;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#xFF0C;&#x800C;&#x4E0D;&#x662F; i<span class="hljs-number">-1</span> &#x3002;
+</code></pre>
+<p>&#x7FFB;&#x8BD1;&#x6210;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-js">int maxProfit_with_cool(int[] prices) {
     int n = prices.length;
-    int dp_i_0 = 0, dp_i_1 = Integer.MIN_VALUE;
-    int dp_pre_0 = 0; // &#x4EE3;&#x8868; dp[i-2][0]
-    for (int i = 0; i &lt; n; i++) {
+    int dp_i_0 = <span class="hljs-number">0</span>, dp_i_1 = Integer.MIN_VALUE;
+    int dp_pre_0 = <span class="hljs-number">0</span>; <span class="hljs-comment">// &#x4EE3;&#x8868; dp[i-2][0]</span>
+    <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; n; i++) {
         int temp = dp_i_0;
-        dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);
-        dp_i_1 = Math.max(dp_i_1, dp_pre_0 - prices[i]);
+        dp_i_0 = <span class="hljs-built_in">Math</span>.max(dp_i_0, dp_i_1 + prices[i]);
+        dp_i_1 = <span class="hljs-built_in">Math</span>.max(dp_i_1, dp_pre_0 - prices[i]);
         dp_pre_0 = temp;
     }
-    return dp_i_0;
+    <span class="hljs-keyword">return</span> dp_i_0;
 }
-</pre>
-
+</code></pre>
 <h3 id="&#x7B2C;&#x56DB;&#x9898;&#xFF0C;k--infinity-with-fee">&#x7B2C;&#x56DB;&#x9898;&#xFF0C;k = +infinity with fee</h3>
 <p>&#x6BCF;&#x6B21;&#x4EA4;&#x6613;&#x8981;&#x652F;&#x4ED8;&#x624B;&#x7EED;&#x8D39;&#xFF0C;&#x53EA;&#x8981;&#x628A;&#x624B;&#x7EED;&#x8D39;&#x4ECE;&#x5229;&#x6DA6;&#x4E2D;&#x51CF;&#x53BB;&#x5373;&#x53EF;&#x3002;&#x6539;&#x5199;&#x65B9;&#x7A0B;&#xFF1A;</p>
-<pre>
-dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
-dp[i][1] = max(dp[i-1][1], dp[i-1][0] - prices[i] - fee)
+<pre><code class="lang-js">dp[i][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>] + prices[i])
+dp[i][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>] - prices[i] - fee)
 &#x89E3;&#x91CA;&#xFF1A;&#x76F8;&#x5F53;&#x4E8E;&#x4E70;&#x5165;&#x80A1;&#x7968;&#x7684;&#x4EF7;&#x683C;&#x5347;&#x9AD8;&#x4E86;&#x3002;
 &#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x5F0F;&#x5B50;&#x91CC;&#x51CF;&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x5356;&#x51FA;&#x80A1;&#x7968;&#x7684;&#x4EF7;&#x683C;&#x51CF;&#x5C0F;&#x4E86;&#x3002;
-</pre>
-
+</code></pre>
 <p>&#x76F4;&#x63A5;&#x7FFB;&#x8BD1;&#x6210;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre>
-int maxProfit_with_fee(int[] prices, int fee) {
+<pre><code class="lang-js">int maxProfit_with_fee(int[] prices, int fee) {
     int n = prices.length;
-    int dp_i_0 = 0, dp_i_1 = Integer.MIN_VALUE;
-    for (int i = 0; i &lt; n; i++) {
+    int dp_i_0 = <span class="hljs-number">0</span>, dp_i_1 = Integer.MIN_VALUE;
+    <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; n; i++) {
         int temp = dp_i_0;
-        dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);
-        dp_i_1 = Math.max(dp_i_1, temp - prices[i] - fee);
+        dp_i_0 = <span class="hljs-built_in">Math</span>.max(dp_i_0, dp_i_1 + prices[i]);
+        dp_i_1 = <span class="hljs-built_in">Math</span>.max(dp_i_1, temp - prices[i] - fee);
     }
-    return dp_i_0;
+    <span class="hljs-keyword">return</span> dp_i_0;
 }
-</pre>
-
+</code></pre>
 <h3 id="&#x7B2C;&#x4E94;&#x9898;&#xFF0C;k--2">&#x7B2C;&#x4E94;&#x9898;&#xFF0C;k = 2</h3>
 <p>k = 2 &#x548C;&#x524D;&#x9762;&#x9898;&#x76EE;&#x7684;&#x60C5;&#x51B5;&#x7A0D;&#x5FAE;&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0A;&#x9762;&#x7684;&#x60C5;&#x51B5;&#x90FD;&#x548C; k &#x7684;&#x5173;&#x7CFB;&#x4E0D;&#x592A;&#x5927;&#x3002;&#x8981;&#x4E48; k &#x662F;&#x6B63;&#x65E0;&#x7A77;&#xFF0C;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x548C; k &#x6CA1;&#x5173;&#x7CFB;&#x4E86;&#xFF1B;&#x8981;&#x4E48; k = 1&#xFF0C;&#x8DDF; k = 0 &#x8FD9;&#x4E2A; base case &#x6328;&#x5F97;&#x8FD1;&#xFF0C;&#x6700;&#x540E;&#x4E5F;&#x6CA1;&#x6709;&#x5B58;&#x5728;&#x611F;&#x3002;</p>
 <p>&#x8FD9;&#x9053;&#x9898; k = 2 &#x548C;&#x540E;&#x9762;&#x8981;&#x8BB2;&#x7684; k &#x662F;&#x4EFB;&#x610F;&#x6B63;&#x6574;&#x6570;&#x7684;&#x60C5;&#x51B5;&#x4E2D;&#xFF0C;&#x5BF9; k &#x7684;&#x5904;&#x7406;&#x5C31;&#x51F8;&#x663E;&#x51FA;&#x6765;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x5199;&#x4EE3;&#x7801;&#xFF0C;&#x8FB9;&#x5199;&#x8FB9;&#x5206;&#x6790;&#x539F;&#x56E0;&#x3002;</p>
-<pre>
-&#x539F;&#x59CB;&#x7684;&#x52A8;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#xFF0C;&#x6CA1;&#x6709;&#x53EF;&#x5316;&#x7B80;&#x7684;&#x5730;&#x65B9;
-dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])
-dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])
-</pre>
-
+<pre><code class="lang-js">&#x539F;&#x59CB;&#x7684;&#x52A8;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#xFF0C;&#x6CA1;&#x6709;&#x53EF;&#x5316;&#x7B80;&#x7684;&#x5730;&#x65B9;
+dp[i][k][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>] + prices[i])
+dp[i][k][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>] - prices[i])
+</code></pre>
 <p>&#x6309;&#x7167;&#x4E4B;&#x524D;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x60F3;&#x5F53;&#x7136;&#x8FD9;&#x6837;&#x5199;&#x4EE3;&#x7801;&#xFF08;&#x9519;&#x8BEF;&#x7684;&#xFF09;&#xFF1A;</p>
-<pre>
-int k = 2;
-int[][][] dp = new int[n][k + 1][2];
-for (int i = 0; i &lt; n; i++)
-    if (i - 1 == -1) { /* &#x5904;&#x7406;&#x4E00;&#x4E0B; base case*/ }
-    dp[i][k][0] = Math.max(dp[i-1][k][0], dp[i-1][k][1] + prices[i]);
-    dp[i][k][1] = Math.max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i]);
+<pre><code class="lang-js">int k = <span class="hljs-number">2</span>;
+int[][][] dp = <span class="hljs-keyword">new</span> int[n][k + <span class="hljs-number">1</span>][<span class="hljs-number">2</span>];
+<span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; n; i++)
+    <span class="hljs-keyword">if</span> (i - <span class="hljs-number">1</span> == <span class="hljs-number">-1</span>) { <span class="hljs-comment">/* &#x5904;&#x7406;&#x4E00;&#x4E0B; base case*/</span> }
+    dp[i][k][<span class="hljs-number">0</span>] = <span class="hljs-built_in">Math</span>.max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>] + prices[i]);
+    dp[i][k][<span class="hljs-number">1</span>] = <span class="hljs-built_in">Math</span>.max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>] - prices[i]);
 }
-return dp[n - 1][k][0];
-</pre>
-
+<span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>][k][<span class="hljs-number">0</span>];
+</code></pre>
 <p>&#x4E3A;&#x4EC0;&#x4E48;&#x9519;&#x8BEF;&#xFF1F;&#x6211;&#x8FD9;&#x4E0D;&#x662F;&#x7167;&#x7740;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x5199;&#x7684;&#x5417;&#xFF1F;</p>
 <p>&#x8FD8;&#x8BB0;&#x5F97;&#x524D;&#x9762;&#x603B;&#x7ED3;&#x7684;&#x300C;&#x7A77;&#x4E3E;&#x6846;&#x67B6;&#x300D;&#x5417;&#xFF1F;&#x5C31;&#x662F;&#x8BF4;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x7A77;&#x4E3E;&#x6240;&#x6709;&#x72B6;&#x6001;&#x3002;&#x5176;&#x5B9E;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x7684;&#x89E3;&#x6CD5;&#xFF0C;&#x90FD;&#x5728;&#x7A77;&#x4E3E;&#x6240;&#x6709;&#x72B6;&#x6001;&#xFF0C;&#x53EA;&#x662F;&#x4E4B;&#x524D;&#x7684;&#x9898;&#x76EE;&#x4E2D; k &#x90FD;&#x88AB;&#x5316;&#x7B80;&#x6389;&#x4E86;&#x3002;&#x8FD9;&#x9053;&#x9898;&#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x6D88;&#x6389; k &#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x8981;&#x5BF9; k &#x8FDB;&#x884C;&#x7A77;&#x4E3E;&#xFF1A;</p>
-<pre>
-int max_k = 2;
-int[][][] dp = new int[n][max_k + 1][2];
-for (int i = 0; i &lt; n; i++) {
-    for (int k = max_k; k &gt;= 1; k--) {
-        if (i - 1 == -1) { /*&#x5904;&#x7406; base case */ }
-        dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i]);
-        dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i]);
+<pre><code class="lang-js">int max_k = <span class="hljs-number">2</span>;
+int[][][] dp = <span class="hljs-keyword">new</span> int[n][max_k + <span class="hljs-number">1</span>][<span class="hljs-number">2</span>];
+<span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+    <span class="hljs-keyword">for</span> (int k = max_k; k &gt;= <span class="hljs-number">1</span>; k--) {
+        <span class="hljs-keyword">if</span> (i - <span class="hljs-number">1</span> == <span class="hljs-number">-1</span>) { <span class="hljs-comment">/*&#x5904;&#x7406; base case */</span> }
+        dp[i][k][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>] + prices[i]);
+        dp[i][k][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>] - prices[i]);
     }
 }
-// &#x7A77;&#x4E3E;&#x4E86; n &#xD7; max_k &#xD7; 2 &#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x6B63;&#x786E;&#x3002;
-return dp[n - 1][max_k][0];
-</pre>
-
+<span class="hljs-comment">// &#x7A77;&#x4E3E;&#x4E86; n &#xD7; max_k &#xD7; 2 &#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x6B63;&#x786E;&#x3002;</span>
+<span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>][max_k][<span class="hljs-number">0</span>];
+</code></pre>
 <p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x7406;&#x89E3;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x70B9;&#x300C;&#x7A77;&#x4E3E;&#x6846;&#x67B6;&#x300D;&#x91CD;&#x65B0;&#x9605;&#x8BFB;&#x4F53;&#x4F1A;&#x4E00;&#x4E0B;&#x3002;</p>
 <p>&#x8FD9;&#x91CC; k &#x53D6;&#x503C;&#x8303;&#x56F4;&#x6BD4;&#x8F83;&#x5C0F;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4E0D;&#x7528; for &#x5FAA;&#x73AF;&#xFF0C;&#x76F4;&#x63A5;&#x628A; k = 1 &#x548C; 2 &#x7684;&#x60C5;&#x51B5;&#x624B;&#x52A8;&#x5217;&#x4E3E;&#x51FA;&#x6765;&#x4E5F;&#x53EF;&#x4EE5;&#xFF1A;</p>
-<pre>
-dp[i][2][0] = max(dp[i-1][2][0], dp[i-1][2][1] + prices[i])
-dp[i][2][1] = max(dp[i-1][2][1], dp[i-1][1][0] - prices[i])
-dp[i][1][0] = max(dp[i-1][1][0], dp[i-1][1][1] + prices[i])
-dp[i][1][1] = max(dp[i-1][1][1], -prices[i])
+<pre><code class="lang-js">dp[i][<span class="hljs-number">2</span>][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">2</span>][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">2</span>][<span class="hljs-number">1</span>] + prices[i])
+dp[i][<span class="hljs-number">2</span>][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">2</span>][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] - prices[i])
+dp[i][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] + prices[i])
+dp[i][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>], -prices[i])
 
 int maxProfit_k_2(int[] prices) {
-    int dp_i10 = 0, dp_i11 = Integer.MIN_VALUE;
-    int dp_i20 = 0, dp_i21 = Integer.MIN_VALUE;
-    for (int price : prices) {
-        dp_i20 = Math.max(dp_i20, dp_i21 + price);
-        dp_i21 = Math.max(dp_i21, dp_i10 - price);
-        dp_i10 = Math.max(dp_i10, dp_i11 + price);
-        dp_i11 = Math.max(dp_i11, -price);
+    int dp_i10 = <span class="hljs-number">0</span>, dp_i11 = Integer.MIN_VALUE;
+    int dp_i20 = <span class="hljs-number">0</span>, dp_i21 = Integer.MIN_VALUE;
+    <span class="hljs-keyword">for</span> (int price : prices) {
+        dp_i20 = <span class="hljs-built_in">Math</span>.max(dp_i20, dp_i21 + price);
+        dp_i21 = <span class="hljs-built_in">Math</span>.max(dp_i21, dp_i10 - price);
+        dp_i10 = <span class="hljs-built_in">Math</span>.max(dp_i10, dp_i11 + price);
+        dp_i11 = <span class="hljs-built_in">Math</span>.max(dp_i11, -price);
     }
-    return dp_i20;
+    <span class="hljs-keyword">return</span> dp_i20;
 }
-</pre>
-
+</code></pre>
 <p>&#x6709;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x548C;&#x542B;&#x4E49;&#x660E;&#x786E;&#x7684;&#x53D8;&#x91CF;&#x540D;&#x6307;&#x5BFC;&#xFF0C;&#x76F8;&#x4FE1;&#x4F60;&#x5F88;&#x5BB9;&#x6613;&#x770B;&#x61C2;&#x3002;&#x5176;&#x5B9E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6545;&#x5F04;&#x7384;&#x865A;&#xFF0C;&#x628A;&#x4E0A;&#x8FF0;&#x56DB;&#x4E2A;&#x53D8;&#x91CF;&#x6362;&#x6210; a, b, c, d&#x3002;&#x8FD9;&#x6837;&#x5F53;&#x522B;&#x4EBA;&#x770B;&#x5230;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x65F6;&#x5C31;&#x4F1A;&#x4E00;&#x5934;&#x96FE;&#x6C34;&#xFF0C;&#x5927;&#x60CA;&#x5931;&#x8272;&#xFF0C;&#x4E0D;&#x5F97;&#x4E0D;&#x5BF9;&#x4F60;&#x8083;&#x7136;&#x8D77;&#x656C;&#x3002;</p>
 <h3 id="&#x7B2C;&#x516D;&#x9898;&#xFF0C;k--any-integer">&#x7B2C;&#x516D;&#x9898;&#xFF0C;k = any integer</h3>
 <p>&#x6709;&#x4E86;&#x4E0A;&#x4E00;&#x9898; k = 2 &#x7684;&#x94FA;&#x57AB;&#xFF0C;&#x8FD9;&#x9898;&#x5E94;&#x8BE5;&#x548C;&#x4E0A;&#x4E00;&#x9898;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x89E3;&#x6CD5;&#x6CA1;&#x5565;&#x533A;&#x522B;&#x3002;&#x4F46;&#x662F;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x8D85;&#x5185;&#x5B58;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x539F;&#x6765;&#x662F;&#x4F20;&#x5165;&#x7684; k &#x503C;&#x4F1A;&#x975E;&#x5E38;&#x5927;&#xFF0C;dp &#x6570;&#x7EC4;&#x592A;&#x5927;&#x4E86;&#x3002;&#x73B0;&#x5728;&#x60F3;&#x60F3;&#xFF0C;&#x4EA4;&#x6613;&#x6B21;&#x6570; k &#x6700;&#x591A;&#x6709;&#x591A;&#x5927;&#x5462;&#xFF1F;</p>
 <p>&#x4E00;&#x6B21;&#x4EA4;&#x6613;&#x7531;&#x4E70;&#x5165;&#x548C;&#x5356;&#x51FA;&#x6784;&#x6210;&#xFF0C;&#x81F3;&#x5C11;&#x9700;&#x8981;&#x4E24;&#x5929;&#x3002;&#x6240;&#x4EE5;&#x8BF4;&#x6709;&#x6548;&#x7684;&#x9650;&#x5236; k &#x5E94;&#x8BE5;&#x4E0D;&#x8D85;&#x8FC7; n/2&#xFF0C;&#x5982;&#x679C;&#x8D85;&#x8FC7;&#xFF0C;&#x5C31;&#x6CA1;&#x6709;&#x7EA6;&#x675F;&#x4F5C;&#x7528;&#x4E86;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E; k = +infinity&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x662F;&#x4E4B;&#x524D;&#x89E3;&#x51B3;&#x8FC7;&#x7684;&#x3002;</p>
 <p>&#x76F4;&#x63A5;&#x628A;&#x4E4B;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x91CD;&#x7528;&#xFF1A;</p>
-<p><pre>
-int maxProfit_k_any(int max_k, int[] prices) {
+<pre><code class="lang-js">int maxProfit_k_any(int max_k, int[] prices) {
     int n = prices.length;
-    if (max_k &gt; n / 2) 
-        return maxProfit_k_inf(prices);</pre></p>
-<pre><code>int[][][] dp = new int[n][max_k + 1][2];
-for (int i = 0; i &lt; n; i++) 
-    for (int k = max_k; k &gt;= 1; k--) {
-        if (i - 1 == -1) { /* &#x5904;&#x7406; base case */ }
-        dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i]);
-        dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i]);     
-    }
-return dp[n - 1][max_k][0];
-</code></pre><p>}
-&lt;/pre&gt;
-&#x81F3;&#x6B64;&#xFF0C;6 &#x9053;&#x9898;&#x76EE;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x5168;&#x90E8;&#x89E3;&#x51B3;&#x3002;</p>
+    <span class="hljs-keyword">if</span> (max_k &gt; n / <span class="hljs-number">2</span>) 
+        <span class="hljs-keyword">return</span> maxProfit_k_inf(prices);
+
+    int[][][] dp = <span class="hljs-keyword">new</span> int[n][max_k + <span class="hljs-number">1</span>][<span class="hljs-number">2</span>];
+    <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; n; i++) 
+        <span class="hljs-keyword">for</span> (int k = max_k; k &gt;= <span class="hljs-number">1</span>; k--) {
+            <span class="hljs-keyword">if</span> (i - <span class="hljs-number">1</span> == <span class="hljs-number">-1</span>) { <span class="hljs-comment">/* &#x5904;&#x7406; base case */</span> }
+            dp[i][k][<span class="hljs-number">0</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">0</span>], dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>] + prices[i]);
+            dp[i][k][<span class="hljs-number">1</span>] = max(dp[i<span class="hljs-number">-1</span>][k][<span class="hljs-number">1</span>], dp[i<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>] - prices[i]);     
+        }
+    <span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>][max_k][<span class="hljs-number">0</span>];
+}
+</code></pre>
+<p>&#x81F3;&#x6B64;&#xFF0C;6 &#x9053;&#x9898;&#x76EE;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x5168;&#x90E8;&#x89E3;&#x51B3;&#x3002;</p>
 <h2 id="&#x56DB;&#x3001;&#x6700;&#x540E;&#x603B;&#x7ED3;">&#x56DB;&#x3001;&#x6700;&#x540E;&#x603B;&#x7ED3;</h2>
 <p>&#x672C;&#x6587;&#x7ED9;&#x5927;&#x5BB6;&#x8BB2;&#x4E86;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x7684;&#x65B9;&#x6CD5;&#x89E3;&#x51B3;&#x590D;&#x6742;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x7528;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x79D2;&#x6740;&#x4E86; 6 &#x9053;&#x80A1;&#x7968;&#x4E70;&#x5356;&#x95EE;&#x9898;&#xFF0C;&#x73B0;&#x5728;&#x60F3;&#x60F3;&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x4E0D;&#x7B97;&#x96BE;&#x5BF9;&#x5427;&#xFF1F;&#x8FD9;&#x5DF2;&#x7ECF;&#x5C5E;&#x4E8E;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x95EE;&#x9898;&#x4E2D;&#x8F83;&#x56F0;&#x96BE;&#x7684;&#x4E86;&#x3002;</p>
 <p>&#x5173;&#x952E;&#x5C31;&#x5728;&#x4E8E;&#x5217;&#x4E3E;&#x51FA;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x300C;&#x72B6;&#x6001;&#x300D;&#xFF0C;&#x7136;&#x540E;&#x60F3;&#x60F3;&#x600E;&#x4E48;&#x7A77;&#x4E3E;&#x66F4;&#x65B0;&#x8FD9;&#x4E9B;&#x300C;&#x72B6;&#x6001;&#x300D;&#x3002;&#x4E00;&#x822C;&#x7528;&#x4E00;&#x4E2A;&#x591A;&#x7EF4; dp &#x6570;&#x7EC4;&#x50A8;&#x5B58;&#x8FD9;&#x4E9B;&#x72B6;&#x6001;&#xFF0C;&#x4ECE; base case &#x5F00;&#x59CB;&#x5411;&#x540E;&#x63A8;&#x8FDB;&#xFF0C;&#x63A8;&#x8FDB;&#x5230;&#x6700;&#x540E;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x7B54;&#x6848;&#x3002;&#x60F3;&#x60F3;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x4F60;&#x662F;&#x4E0D;&#x662F;&#x6709;&#x70B9;&#x7406;&#x89E3;&#x300C;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x300D;&#x8FD9;&#x4E2A;&#x540D;&#x8BCD;&#x7684;&#x610F;&#x4E49;&#x4E86;&#x5462;&#xFF1F;</p>
@@ -5242,7 +5209,7 @@ return dp[n - 1][max_k][0];
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"一个通用方法团灭 6 道股票问题","level":"9.97","depth":1,"next":{"title":"股票价格跨度","level":"9.98","depth":1,"path":"算法/股票价格跨度.md","ref":"算法/股票价格跨度.md","articles":[]},"previous":{"title":"买卖股票的最佳时机含手续费","level":"9.96","depth":1,"path":"算法/买卖股票的最佳时机含手续费.md","ref":"算法/买卖股票的最佳时机含手续费.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/一个通用方法团灭6道股票问题.md","mtime":"2019-07-15T09:43:26.294Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T09:50:59.222Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"一个通用方法团灭 6 道股票问题","level":"9.97","depth":1,"next":{"title":"股票价格跨度","level":"9.98","depth":1,"path":"算法/股票价格跨度.md","ref":"算法/股票价格跨度.md","articles":[]},"previous":{"title":"买卖股票的最佳时机含手续费","level":"9.96","depth":1,"path":"算法/买卖股票的最佳时机含手续费.md","ref":"算法/买卖股票的最佳时机含手续费.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/一个通用方法团灭6道股票问题.md","mtime":"2019-07-15T11:41:49.933Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T11:41:54.864Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
