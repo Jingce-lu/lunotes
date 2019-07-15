@@ -3372,6 +3372,111 @@
             
         </li>
     
+        <li class="chapter " data-level="9.85" data-path="Pow[x,n].html">
+            
+                <a href="Pow[x,n].html">
+            
+                    
+                        <b>9.85.</b>
+                    
+                    Pow(x, n)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.86" data-path="超级次方.html">
+            
+                <a href="超级次方.html">
+            
+                    
+                        <b>9.86.</b>
+                    
+                    超级次方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.87" data-path="x的平方根.html">
+            
+                <a href="x的平方根.html">
+            
+                    
+                        <b>9.87.</b>
+                    
+                    x的平方根
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.88" data-path="有效的完全平方数.html">
+            
+                <a href="有效的完全平方数.html">
+            
+                    
+                        <b>9.88.</b>
+                    
+                    有效的完全平方数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.89" data-path="平方数之和.html">
+            
+                <a href="平方数之和.html">
+            
+                    
+                        <b>9.89.</b>
+                    
+                    平方数之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.90" data-path="最大子序和.html">
+            
+                <a href="最大子序和.html">
+            
+                    
+                        <b>9.90.</b>
+                    
+                    最大子序和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.91" data-path="买卖股票的最佳时机.html">
+            
+                <a href="买卖股票的最佳时机.html">
+            
+                    
+                        <b>9.91.</b>
+                    
+                    买卖股票的最佳时机
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4599,17 +4704,14 @@
                                 <h1 id="&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;&#x5206;&#x7EC4;">&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;&#x5206;&#x7EC4;</h1>
 <!-- TOC -->
 <ul>
-<li><a href="#&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;&#x5206;&#x7EC4;">&#x5B57;&#x6BCD;&#x5F02;&#x4F4D;&#x8BCD;&#x5206;&#x7EC4;</a><ul>
 <li><a href="#&#x9898;&#x76EE;">&#x9898;&#x76EE;</a></li>
 <li><a href="#&#x6807;&#x7B7E;">&#x6807;&#x7B7E;</a></li>
-<li><a href="#JS">JS</a></li>
-<li><a href="#JS2-Objectvalues">JS2 Object.values</a></li>
-<li><a href="#JS3-Map-get-set">JS3 Map get set</a></li>
-<li><a href="#JS4-hash&#x6392;&#x5E8F;">JS4 hash+&#x6392;&#x5E8F;</a></li>
-<li><a href="#JS5-indexOf">JS5 indexOf</a></li>
-<li><a href="#JS-&#x7D20;&#x6570;-charCodeAt">JS &#x7D20;&#x6570; charCodeAt</a></li>
-</ul>
-</li>
+<li><a href="#js">JS</a></li>
+<li><a href="#js2-objectvalues">JS2 Object.values</a></li>
+<li><a href="#js3-map-get-set">JS3 Map get set</a></li>
+<li><a href="#js4-hash&#x6392;&#x5E8F;">JS4 hash+&#x6392;&#x5E8F;</a></li>
+<li><a href="#js5-indexof">JS5 indexOf</a></li>
+<li><a href="#js-&#x7D20;&#x6570;-charcodeat">JS &#x7D20;&#x6570; charCodeAt</a></li>
 </ul>
 <!-- /TOC -->
 <h2 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h2>
@@ -4675,47 +4777,47 @@
 </code></pre>
 <h2 id="js3-map-get-set">JS3 Map get set</h2>
 <blockquote>
-<p>&#x6267;&#x884C;&#x7528;&#x65F6; : 212 ms , &#x5728;&#x6240;&#x6709; JavaScript &#x63D0;&#x4EA4;&#x4E2D;&#x51FB;&#x8D25;&#x4E86; 90.00% &#x7684;&#x7528;&#x6237;
-```js
-var groupAnagrams = function(strs) {
-  let arr = new Map();
-  for (let i = 0; i &lt; strs.length; i++) {
-    let t = test(strs[i]);
-    if (arr.has(t)) {
-      let s = arr.get(test(strs[i]));
+<p>&#x6267;&#x884C;&#x7528;&#x65F6; : 212 ms , &#x5728;&#x6240;&#x6709; JavaScript &#x63D0;&#x4EA4;&#x4E2D;&#x51FB;&#x8D25;&#x4E86; 90.00% &#x7684;&#x7528;&#x6237;</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> groupAnagrams = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">strs</span>) </span>{
+  <span class="hljs-keyword">let</span> arr = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; strs.length; i++) {
+    <span class="hljs-keyword">let</span> t = test(strs[i]);
+    <span class="hljs-keyword">if</span> (arr.has(t)) {
+      <span class="hljs-keyword">let</span> s = arr.get(test(strs[i]));
       s.push(strs[i]);
       arr.set(t, s);
-    } else {
+    } <span class="hljs-keyword">else</span> {
       arr.set(t, [strs[i]]);
     }
   }
-  return Array.from(arr.values());</p>
-</blockquote>
-<p>  function test(str1) {
-    let arr = str1.split(&quot;&quot;);
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.from(arr.values());
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params">str1</span>) </span>{
+    <span class="hljs-keyword">let</span> arr = str1.split(<span class="hljs-string">&quot;&quot;</span>);
     arr.sort();
-    return arr.join(&quot;&quot;);
+    <span class="hljs-keyword">return</span> arr.join(<span class="hljs-string">&quot;&quot;</span>);
   }
-};</p>
-<pre><code>
-## JS4 hash+&#x6392;&#x5E8F;
-```js
-var strs = [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;];
-var groupAnagrams = function(strs) {
-  let hash = new Map();
-  for (let i = 0; i &lt; strs.length; i++) {
-    let str = strs[i].split(&quot;&quot;).sort().join();
-    if (hash.has(str)) {
+};
+</code></pre>
+<h2 id="js4-hash&#x6392;&#x5E8F;">JS4 hash+&#x6392;&#x5E8F;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> strs = [<span class="hljs-string">&quot;eat&quot;</span>, <span class="hljs-string">&quot;tea&quot;</span>, <span class="hljs-string">&quot;tan&quot;</span>, <span class="hljs-string">&quot;ate&quot;</span>, <span class="hljs-string">&quot;nat&quot;</span>, <span class="hljs-string">&quot;bat&quot;</span>];
+<span class="hljs-keyword">var</span> groupAnagrams = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">strs</span>) </span>{
+  <span class="hljs-keyword">let</span> hash = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; strs.length; i++) {
+    <span class="hljs-keyword">let</span> str = strs[i].split(<span class="hljs-string">&quot;&quot;</span>).sort().join();
+    <span class="hljs-keyword">if</span> (hash.has(str)) {
       hash.set(str, hash.get(str).concat([strs[i]]));
-    } else {
+    } <span class="hljs-keyword">else</span> {
       hash.set(str, [strs[i]]);
     }
   }
-  console.log(hash)
-  return [...hash].map(v =&gt; v[1])
+  <span class="hljs-built_in">console</span>.log(hash)
+  <span class="hljs-keyword">return</span> [...hash].map(v =&gt; v[<span class="hljs-number">1</span>])
 };
 groupAnagrams(strs)
-</code></pre><h2 id="js5-indexof">JS5 indexOf</h2>
+</code></pre>
+<h2 id="js5-indexof">JS5 indexOf</h2>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> groupAnagrams = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">strs</span>) </span>{
   <span class="hljs-keyword">var</span> l = [],
     res = [];
@@ -4837,7 +4939,7 @@ groupAnagrams(strs)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"字母异位词分组","level":"9.81","depth":1,"next":{"title":"有效的字母异位词","level":"9.82","depth":1,"path":"算法/有效的字母异位词.md","ref":"算法/有效的字母异位词.md","articles":[]},"previous":{"title":"旋转图像","level":"9.80","depth":1,"path":"算法/旋转图像.md","ref":"算法/旋转图像.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/字母异位词分组.md","mtime":"2019-07-12T06:45:24.716Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-12T10:20:19.540Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"字母异位词分组","level":"9.81","depth":1,"next":{"title":"有效的字母异位词","level":"9.82","depth":1,"path":"算法/有效的字母异位词.md","ref":"算法/有效的字母异位词.md","articles":[]},"previous":{"title":"旋转图像","level":"9.80","depth":1,"path":"算法/旋转图像.md","ref":"算法/旋转图像.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/字母异位词分组.md","mtime":"2019-07-15T01:16:11.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T01:17:13.310Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
