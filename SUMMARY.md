@@ -20,7 +20,7 @@
     - [关于移动端,webview监听滚动条的坑](Js/js基础/关于移动端,webview监听滚动条的坑.md)
     - [js类型转换](Js/js基础/js类型转换.md)
     - [js事件轮询、微任务和宏任务](Js/js基础/js事件轮询、微任务和宏任务.md)
-    - [Js reduce](Js/基础/reduce.md)
+    - [Js reduce](Js/js基础/reduce.md)
 <!-- 2.正则 -->
 * 正则
     * [正则表达式不要背](Js/正则/正则表达式不要背.md)
