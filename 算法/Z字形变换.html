@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>最小覆盖子串 · GitBook</title>
+        <title>Z字形变换 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -50,6 +50,8 @@
 
     
         
+        <link rel="stylesheet" href="../resource/styles/website.css">
+        
     
 
         
@@ -63,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="下一个排列.html" />
+    <link rel="next" href="字符串转换整数.html" />
     
     
-    <link rel="prev" href="串联所有单词的子串.html" />
+    <link rel="prev" href="回文数.html" />
     
 
     </head>
@@ -2365,7 +2367,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.17" data-path="Z字形变换.html">
+        <li class="chapter active" data-level="9.17" data-path="Z字形变换.html">
             
                 <a href="Z字形变换.html">
             
@@ -2800,7 +2802,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="9.46" data-path="最小覆盖子串.html">
+        <li class="chapter " data-level="9.46" data-path="最小覆盖子串.html">
             
                 <a href="最小覆盖子串.html">
             
@@ -3693,6 +3695,96 @@
                         <b>9.105.</b>
                     
                     第k个排列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.106" data-path="路径总和.html">
+            
+                <a href="路径总和.html">
+            
+                    
+                        <b>9.106.</b>
+                    
+                    路径总和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.107" data-path="路径总和II.html">
+            
+                <a href="路径总和II.html">
+            
+                    
+                        <b>9.107.</b>
+                    
+                    路径总和 II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.108" data-path="路径总和III.html">
+            
+                <a href="路径总和III.html">
+            
+                    
+                        <b>9.108.</b>
+                    
+                    路径总和 III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.109" data-path="求根到叶子节点数字之和.html">
+            
+                <a href="求根到叶子节点数字之和.html">
+            
+                    
+                        <b>9.109.</b>
+                    
+                    求根到叶子节点数字之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.110" data-path="相同的树.html">
+            
+                <a href="相同的树.html">
+            
+                    
+                        <b>9.110.</b>
+                    
+                    相同的树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.111" data-path="图像渲染.html">
+            
+                <a href="图像渲染.html">
+            
+                    
+                        <b>9.111.</b>
+                    
+                    图像渲染
             
                 </a>
             
@@ -4906,7 +4998,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >最小覆盖子串</a>
+        <a href=".." >Z字形变换</a>
     </h1>
 </div>
 
@@ -4924,66 +5016,98 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6700;&#x5C0F;&#x8986;&#x76D6;&#x5B50;&#x4E32;">&#x6700;&#x5C0F;&#x8986;&#x76D6;&#x5B50;&#x4E32;</h1>
+                                <h1 id="z-&#x5B57;&#x5F62;&#x53D8;&#x6362;">Z &#x5B57;&#x5F62;&#x53D8;&#x6362;</h1>
 <!-- TOC -->
 <ul>
-<li><a href="#&#x6700;&#x5C0F;&#x8986;&#x76D6;&#x5B50;&#x4E32;">&#x6700;&#x5C0F;&#x8986;&#x76D6;&#x5B50;&#x4E32;</a><ul>
+<li><a href="#Z-&#x5B57;&#x5F62;&#x53D8;&#x6362;">Z &#x5B57;&#x5F62;&#x53D8;&#x6362;</a><ul>
 <li><a href="#&#x9898;&#x76EE;">&#x9898;&#x76EE;</a></li>
-<li><a href="#&#x6700;&#x540E;3&#x4E2A;&#x7528;&#x4F8B;&#x8D85;&#x65F6;">&#x6700;&#x540E;3&#x4E2A;&#x7528;&#x4F8B;&#x8D85;&#x65F6;</a></li>
+<li><a href="#&#x89E3;&#x7B54;1">&#x89E3;&#x7B54;1</a></li>
+<li><a href="#&#x89E3;&#x7B54;2">&#x89E3;&#x7B54;2</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
 <h2 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h2>
-<p>&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32; S&#x3001;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32; T&#xFF0C;&#x8BF7;&#x5728;&#x5B57;&#x7B26;&#x4E32; S &#x91CC;&#x9762;&#x627E;&#x51FA;&#xFF1A;&#x5305;&#x542B; T &#x6240;&#x6709;&#x5B57;&#x6BCD;&#x7684;&#x6700;&#x5C0F;&#x5B50;&#x4E32;&#x3002;</p>
-<p>&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-js">&#x8F93;&#x5165;: S = <span class="hljs-string">&quot;ADOBECODEBANC&quot;</span>, T = <span class="hljs-string">&quot;ABC&quot;</span>
-&#x8F93;&#x51FA;: <span class="hljs-string">&quot;BANC&quot;</span>
+<p>&#x5C06;&#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x5B57;&#x7B26;&#x4E32;&#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x7684;&#x884C;&#x6570;&#xFF0C;&#x4EE5;&#x4ECE;&#x4E0A;&#x5F80;&#x4E0B;&#x3001;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x8FDB;&#x884C; Z &#x5B57;&#x5F62;&#x6392;&#x5217;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x4E3A; <code>&quot;LEETCODEISHIRING&quot;</code> &#x884C;&#x6570;&#x4E3A; 3 &#x65F6;&#xFF0C;&#x6392;&#x5217;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>L   C   I   R
+E T O E S I I G
+E   D   H   N
+</code></pre><p>&#x4E4B;&#x540E;&#xFF0C;&#x4F60;&#x7684;&#x8F93;&#x51FA;&#x9700;&#x8981;&#x4ECE;&#x5DE6;&#x5F80;&#x53F3;&#x9010;&#x884C;&#x8BFB;&#x53D6;&#xFF0C;&#x4EA7;&#x751F;&#x51FA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;<code>&quot;LCIRETOESIIGEDHN&quot;</code>&#x3002;</p>
+<p>&#x8BF7;&#x4F60;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x6307;&#x5B9A;&#x884C;&#x6570;&#x53D8;&#x6362;&#x7684;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-js">string convert(string s, int numRows);
 </code></pre>
-<p>&#x8BF4;&#x660E;&#xFF1A;</p>
-<ul>
-<li>&#x5982;&#x679C; S &#x4E2D;&#x4E0D;&#x5B58;&#x8FD9;&#x6837;&#x7684;&#x5B50;&#x4E32;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x7B26;&#x4E32; &quot;&quot;&#x3002;</li>
-<li>&#x5982;&#x679C; S &#x4E2D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x5B50;&#x4E32;&#xFF0C;&#x6211;&#x4EEC;&#x4FDD;&#x8BC1;&#x5B83;&#x662F;&#x552F;&#x4E00;&#x7684;&#x7B54;&#x6848;&#x3002;</li>
-</ul>
-<h2 id="&#x6700;&#x540E;3&#x4E2A;&#x7528;&#x4F8B;&#x8D85;&#x65F6;">&#x6700;&#x540E;3&#x4E2A;&#x7528;&#x4F8B;&#x8D85;&#x65F6;</h2>
-<pre><code class="lang-js"><span class="hljs-comment">/**
- * @param {string} s
- * @param {string} t
- * @return {string}
-*/</span>
+<p>&#x793A;&#x4F8B; 1:</p>
+<pre><code class="lang-js">&#x8F93;&#x5165;: s = <span class="hljs-string">&quot;LEETCODEISHIRING&quot;</span>, numRows = <span class="hljs-number">3</span>
+&#x8F93;&#x51FA;: <span class="hljs-string">&quot;LCIRETOESIIGEDHN&quot;</span>
+</code></pre>
+<p>&#x793A;&#x4F8B; 2:</p>
+<pre><code class="lang-js">&#x8F93;&#x5165;: s = <span class="hljs-string">&quot;LEETCODEISHIRING&quot;</span>, numRows = <span class="hljs-number">4</span>
+&#x8F93;&#x51FA;: <span class="hljs-string">&quot;LDREOEIIECIHNTSG&quot;</span>
+</code></pre>
+<p>&#x89E3;&#x91CA;:</p>
+<pre><code>L     D     R
+E   O E   I I
+E C   I H   N
+T     S     G
+</code></pre><h2 id="&#x89E3;&#x7B54;1">&#x89E3;&#x7B54;1</h2>
+<ol>
+<li><p>&#x627E;&#x5230; &#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x6240;&#x5728;&#x7684;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x653E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x6700;&#x540E;&#x62FC;&#x63A5;&#x6BCF;&#x884C;&#x7684;&#x5B57;&#x7B26;&#x4E32; rowindex&#x662F;&#x6839;&#x636E;&#x4E0A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x7684;rowindex&#x52A0;1&#x6216;&#x51CF;1&#xFF08;offset=1, offset=-1&#xFF09;&#xFF0C;&#x5982;&#x679C;numRows&#x662F;3&#xFF0C;rowindex&#x7684;&#x8303;&#x56F4;&#x662F;[0,2]&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x68C0;&#x6D4B;&#x5230;&#x8FBE;&#x8FB9;&#x754C;&#x7684;&#x65F6;&#x5019;&#x6539;&#x53D8;offset&#x7684;&#x7B26;&#x53F7;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> convert = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, numRows</span>) </span>{
+<span class="hljs-keyword">var</span> rows = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(numRows),
+ ch,
+ offset = <span class="hljs-number">1</span>,
+ prevIndex = <span class="hljs-number">-1</span>,
+ rowIndex;
 
-<span class="hljs-keyword">var</span> minWindow = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, t</span>) </span>{
-  <span class="hljs-keyword">var</span> tarr = t.split(<span class="hljs-string">&quot;&quot;</span>),
-    ltarr,
-    lbj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(t.length).fill(<span class="hljs-number">1</span>),
-    bj,
-    result = [];
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; s.length; i++) {
-    ltarr = [...tarr];
-    bj = [...lbj];
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> ii = i; ii &lt; s.length; ii++) {
-      <span class="hljs-keyword">if</span> (result.length &gt; <span class="hljs-number">0</span>) {
-        <span class="hljs-keyword">if</span> (i &gt; s.length - t.length) <span class="hljs-keyword">return</span> s.slice(result[<span class="hljs-number">0</span>], result[<span class="hljs-number">1</span>] + <span class="hljs-number">1</span>);
-        <span class="hljs-keyword">if</span> (ii - i &gt; result[<span class="hljs-number">1</span>] - result[<span class="hljs-number">0</span>]) {
-          <span class="hljs-keyword">break</span>;
-        }
-      }
-      <span class="hljs-keyword">var</span> index = ltarr.indexOf(s[ii]);
-      <span class="hljs-keyword">if</span> (index !== <span class="hljs-number">-1</span> &amp;&amp; bj[index] === <span class="hljs-number">1</span>) {
-        bj[index] = <span class="hljs-number">0</span>;
-        ltarr[index] = <span class="hljs-string">&quot;&quot;</span>;
-      }
-      <span class="hljs-keyword">if</span> (bj.indexOf(<span class="hljs-number">1</span>) === <span class="hljs-number">-1</span>) {
-        <span class="hljs-keyword">if</span> (result.length == <span class="hljs-number">0</span>) {
-          result = [i, ii];
-        } <span class="hljs-keyword">else</span> {
-          result = result[<span class="hljs-number">1</span>] - result[<span class="hljs-number">0</span>] &gt; ii - i ? [i, ii] : result;
-        }
-        <span class="hljs-keyword">break</span>;
-      }
-    }
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; s.length; i++) {
+ ch = s[i];
+ rowIndex = prevIndex + offset;
+ <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">0</span> &amp;&amp; i % (numRows - <span class="hljs-number">1</span>) === <span class="hljs-number">0</span>) {
+   offset = -offset;
+ }
+ <span class="hljs-keyword">if</span> (!rows[rowIndex]) {
+   rows[rowIndex] = <span class="hljs-string">&quot;&quot;</span>;
+ }
+ rows[rowIndex] += ch;
+ prevIndex = rowIndex;
+}
+
+<span class="hljs-keyword">return</span> rows.join(<span class="hljs-string">&quot;&quot;</span>);
+};
+</code></pre>
+</li>
+</ol>
+<h2 id="&#x89E3;&#x7B54;2">&#x89E3;&#x7B54;2</h2>
+<p>&#x6309;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x901A;&#x8FC7;&#x53D8;&#x91CF;&#x6765;&#x63A7;&#x5236;&#x4E0B;&#x6807;&#x7684;&#x9012;&#x589E;&#xFF0F;&#x9012;&#x51CF;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> convert = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, numRows</span>) </span>{
+  <span class="hljs-comment">// &#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x6765;&#x5B58;&#x50A8;numRows&#x4E2A;&#x5B57;&#x7B26;&#x4E32;</span>
+  <span class="hljs-keyword">let</span> arr = [];
+  <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x4E0B;&#x6807;</span>
+  <span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>;
+  <span class="hljs-comment">// &#x5F53;&#x524D;&#x5E94;&#x8BE5;&#x662F;&#x4E0B;&#x6807;&#x9012;&#x589E;&#x6216;&#x662F;&#x9012;&#x51CF;</span>
+  <span class="hljs-keyword">let</span> add = <span class="hljs-literal">true</span>;
+  <span class="hljs-comment">// &#x5982;&#x679C;numRows&#x4E3A;1&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;s</span>
+  <span class="hljs-keyword">if</span> (numRows === <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">return</span> s;
   }
-  <span class="hljs-keyword">return</span> s.slice(result[<span class="hljs-number">0</span>], result[<span class="hljs-number">1</span>] + <span class="hljs-number">1</span>);
+  <span class="hljs-comment">// &#x904D;&#x5386;&#x7ED9;&#x5B9A;&#x5B57;&#x7B26;&#x4E32;</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; s.length; i++) {
+    <span class="hljs-comment">// &#x9700;&#x8981;&#x5224;&#x65AD;arr[count]&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x9632;&#x6B62;&#x51FA;&#x73B0;undefined + &apos;a&apos;&#x8FD9;&#x7C7B;&#x60C5;&#x51B5;</span>
+    arr[count] = arr[count] ? arr[count] + s[i] : s[i];
+    <span class="hljs-comment">// &#x5F53;count&#x8BA1;&#x6570;&#x5230;0&#x65F6;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x9700;&#x8981;&#x9012;&#x589E;</span>
+    <span class="hljs-comment">// &#x5F53;count&#x8BA1;&#x6570;&#x5230;numRows - 1&#x65F6;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x9700;&#x8981;&#x9012;&#x51CF;</span>
+    <span class="hljs-keyword">if</span> (count === <span class="hljs-number">0</span>) {
+      add = <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (count === numRows - <span class="hljs-number">1</span>) {
+      add = <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-comment">// &#x6839;&#x636E;&#x9012;&#x589E;&#x9012;&#x51CF;&#x60C5;&#x51B5;&#xFF0C;&#x5BF9;&#x4E0B;&#x6807;count&#x8FDB;&#x884C;&#x5BF9;&#x5E94;&#x64CD;&#x4F5C;</span>
+    count = add ? count + <span class="hljs-number">1</span> : count - <span class="hljs-number">1</span>;
+  }
+
+  <span class="hljs-comment">// &#x62FC;&#x63A5;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x5E76;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;</span>
+  <span class="hljs-keyword">return</span> arr.join(<span class="hljs-string">&quot;&quot;</span>);
 };
 </code></pre>
 
@@ -5029,12 +5153,12 @@
 
             
                 
-                <a href="串联所有单词的子串.html" class="navigation navigation-prev " aria-label="Previous page: 串联所有单词的子串">
+                <a href="回文数.html" class="navigation navigation-prev " aria-label="Previous page: 回文数">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="下一个排列.html" class="navigation navigation-next " aria-label="Next page: 下一个排列">
+                <a href="字符串转换整数.html" class="navigation navigation-next " aria-label="Next page: 字符串转换整数 (atoi)">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -5045,7 +5169,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"最小覆盖子串","level":"9.46","depth":1,"next":{"title":"下一个排列","level":"9.47","depth":1,"path":"算法/下一个排列.md","ref":"算法/下一个排列.md","articles":[]},"previous":{"title":"串联所有单词的子串","level":"9.45","depth":1,"path":"算法/串联所有单词的子串.md","ref":"算法/串联所有单词的子串.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/最小覆盖子串.md","mtime":"2019-07-09T07:34:54.235Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-16T09:06:52.272Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Z字形变换","level":"9.17","depth":1,"next":{"title":"字符串转换整数 (atoi)","level":"9.18","depth":1,"path":"算法/字符串转换整数.md","ref":"算法/字符串转换整数.md","articles":[]},"previous":{"title":"回文数","level":"9.16","depth":1,"path":"算法/回文数.md","ref":"算法/回文数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/Z字形变换.md","mtime":"2019-07-06T10:04:09.504Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T11:44:53.364Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

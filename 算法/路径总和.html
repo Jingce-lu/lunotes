@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>实现strStr() · GitBook</title>
+        <title>路径总和 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="串联所有单词的子串.html" />
+    <link rel="next" href="路径总和II.html" />
     
     
-    <link rel="prev" href="移除元素.html" />
+    <link rel="prev" href="第k个排列.html" />
     
 
     </head>
@@ -2772,7 +2772,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="9.44" data-path="实现strStr.html">
+        <li class="chapter " data-level="9.44" data-path="实现strStr.html">
             
                 <a href="实现strStr.html">
             
@@ -3695,6 +3695,96 @@
                         <b>9.105.</b>
                     
                     第k个排列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="9.106" data-path="路径总和.html">
+            
+                <a href="路径总和.html">
+            
+                    
+                        <b>9.106.</b>
+                    
+                    路径总和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.107" data-path="路径总和II.html">
+            
+                <a href="路径总和II.html">
+            
+                    
+                        <b>9.107.</b>
+                    
+                    路径总和 II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.108" data-path="路径总和III.html">
+            
+                <a href="路径总和III.html">
+            
+                    
+                        <b>9.108.</b>
+                    
+                    路径总和 III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.109" data-path="求根到叶子节点数字之和.html">
+            
+                <a href="求根到叶子节点数字之和.html">
+            
+                    
+                        <b>9.109.</b>
+                    
+                    求根到叶子节点数字之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.110" data-path="相同的树.html">
+            
+                <a href="相同的树.html">
+            
+                    
+                        <b>9.110.</b>
+                    
+                    相同的树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.111" data-path="图像渲染.html">
+            
+                <a href="图像渲染.html">
+            
+                    
+                        <b>9.111.</b>
+                    
+                    图像渲染
             
                 </a>
             
@@ -4908,7 +4998,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >实现strStr()</a>
+        <a href=".." >路径总和</a>
     </h1>
 </div>
 
@@ -4926,125 +5016,116 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5B9E;&#x73B0;strstr">&#x5B9E;&#x73B0;strStr()</h1>
+                                <h1 id="&#x8DEF;&#x5F84;&#x603B;&#x548C;">&#x8DEF;&#x5F84;&#x603B;&#x548C;</h1>
 <!-- TOC -->
 <ul>
-<li><a href="#&#x5B9E;&#x73B0;strStr">&#x5B9E;&#x73B0;strStr()</a><ul>
+<li><a href="#&#x8DEF;&#x5F84;&#x603B;&#x548C;">&#x8DEF;&#x5F84;&#x603B;&#x548C;</a><ul>
 <li><a href="#&#x9898;&#x76EE;">&#x9898;&#x76EE;</a></li>
 <li><a href="#&#x6807;&#x7B7E;">&#x6807;&#x7B7E;</a></li>
-<li><a href="#JavaScript-&#x4E2D;&#x6709;&#x4E09;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x65B9;&#x6CD5;&#x90FD;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x5206;&#x522B;&#x662F;-indexOf--search-match">JavaScript &#x4E2D;&#x6709;&#x4E09;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x65B9;&#x6CD5;&#x90FD;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x5206;&#x522B;&#x662F; indexOf , search, match</a></li>
-<li><a href="#js2">js2</a></li>
-<li><a href="#KMP">KMP</a></li>
+<li><a href="#JS1-&#x5FAA;&#x73AF;&#x5199;&#x6CD5;">JS1 &#x5FAA;&#x73AF;&#x5199;&#x6CD5;</a></li>
+<li><a href="#JS2-&#x9012;&#x5F52;&#x5199;&#x6CD5;">JS2 &#x9012;&#x5F52;&#x5199;&#x6CD5;</a></li>
+<li><a href="#&#x5199;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x7684;&#x5957;&#x8DEF;Java">&#x5199;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x7684;&#x5957;&#x8DEF;(Java)</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
 <h2 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h2>
-<p>&#x5B9E;&#x73B0; <code>strStr()</code> &#x51FD;&#x6570;&#x3002;</p>
-<ul>
-<li>strstr &#xFF08;PHP&#x8BED;&#x8A00;&#x51FD;&#x6570;&#xFF09;</li>
-<li>strstr(str1,str2) &#x51FD;&#x6570;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x5B57;&#x7B26;&#x4E32;str2&#x662F;&#x5426;&#x662F;str1&#x7684;&#x5B50;&#x4E32;&#x3002;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x5219;&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;str2&#x5728;str1&#x4E2D;&#x9996;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x5730;&#x5740;&#xFF1B;&#x5426;&#x5219;&#xFF0C;&#x8FD4;&#x56DE;NULL</li>
-</ul>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A; <code>haystack</code> &#x5B57;&#x7B26;&#x4E32;&#x548C;&#x4E00;&#x4E2A; <code>needle</code> &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5728; <code>haystack</code> &#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x627E;&#x51FA; <code>needle</code> &#x5B57;&#x7B26;&#x4E32;&#x51FA;&#x73B0;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E; (&#x4ECE;0&#x5F00;&#x59CB;)&#x3002;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;  -1&#x3002;</p>
-<p>&#x793A;&#x4F8B; 1:</p>
-<pre><code class="lang-js">&#x8F93;&#x5165;: haystack = <span class="hljs-string">&quot;hello&quot;</span>, needle = <span class="hljs-string">&quot;ll&quot;</span>
-&#x8F93;&#x51FA;: <span class="hljs-number">2</span>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#x548C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x548C;&#xFF0C;&#x5224;&#x65AD;&#x8BE5;&#x6811;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x6839;&#x8282;&#x70B9;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x8FD9;&#x6761;&#x8DEF;&#x5F84;&#x4E0A;&#x6240;&#x6709;&#x8282;&#x70B9;&#x503C;&#x76F8;&#x52A0;&#x7B49;&#x4E8E;&#x76EE;&#x6807;&#x548C;&#x3002;</p>
+<p>&#x8BF4;&#x660E;: &#x53F6;&#x5B50;&#x8282;&#x70B9;&#x662F;&#x6307;&#x6CA1;&#x6709;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#x3002;</p>
+<p>&#x793A;&#x4F8B;: </p>
+<pre><code class="lang-js">&#x7ED9;&#x5B9A;&#x5982;&#x4E0B;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x4EE5;&#x53CA;&#x76EE;&#x6807;&#x548C; sum = 22&#xFF0C;
+
+              5
+             / \
+            4   8
+           /   / \
+          11  13  4
+         /  \      \
+        7    2      1
 </code></pre>
-<p>&#x793A;&#x4F8B; 2:</p>
-<pre><code class="lang-js">&#x8F93;&#x5165;: haystack = <span class="hljs-string">&quot;aaaaa&quot;</span>, needle = <span class="hljs-string">&quot;bba&quot;</span>
-&#x8F93;&#x51FA;: <span class="hljs-number">-1</span>
-</code></pre>
-<p>&#x8BF4;&#x660E;:</p>
-<p>&#x5F53; <code>needle</code> &#x662F;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x5F53;&#x8FD4;&#x56DE;&#x4EC0;&#x4E48;&#x503C;&#x5462;&#xFF1F;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5728;&#x9762;&#x8BD5;&#x4E2D;&#x5F88;&#x597D;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
-<p>&#x5BF9;&#x4E8E;&#x672C;&#x9898;&#x800C;&#x8A00;&#xFF0C;&#x5F53; <code>needle</code> &#x662F;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#x6211;&#x4EEC;&#x5E94;&#x5F53;&#x8FD4;&#x56DE; 0 &#x3002;&#x8FD9;&#x4E0E;C&#x8BED;&#x8A00;&#x7684; <code>strstr()</code> &#x4EE5;&#x53CA; Java&#x7684; <code>indexOf()</code> &#x5B9A;&#x4E49;&#x76F8;&#x7B26;&#x3002;</p>
+<p>&#x8FD4;&#x56DE; <code>true</code>, &#x56E0;&#x4E3A;&#x5B58;&#x5728;&#x76EE;&#x6807;&#x548C;&#x4E3A; <code>22</code> &#x7684;&#x6839;&#x8282;&#x70B9;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x8DEF;&#x5F84; <code>5-&gt;4-&gt;11-&gt;2</code>&#x3002;</p>
 <h2 id="&#x6807;&#x7B7E;">&#x6807;&#x7B7E;</h2>
 <ul>
-<li>&#x5B57;&#x7B26;&#x4E32;</li>
-<li>&#x53CC;&#x6307;&#x9488;</li>
+<li>&#x6811;</li>
+<li>&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</li>
+<li>&#x9012;&#x5F52;</li>
 </ul>
-<h2 id="javascript-&#x4E2D;&#x6709;&#x4E09;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x65B9;&#x6CD5;&#x90FD;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x5206;&#x522B;&#x662F;-indexof--search-match">JavaScript &#x4E2D;&#x6709;&#x4E09;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x65B9;&#x6CD5;&#x90FD;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x5206;&#x522B;&#x662F; indexOf , search, match</h2>
-<p>indexOf &#x662F;&#x6700;&#x5207;&#x5408;&#x8981;&#x6C42;&#x7684;&#xFF0C;&#x539F;&#x672C;&#x5C31;&#x662F;&#x9898;&#x76EE;&#x4E2D;&#x8981;&#x6C42;&#x7684;&#x529F;&#x80FD;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> strStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">haystack, needle</span>) </span>{
-    <span class="hljs-keyword">return</span> haystack.indexOf(needle);
-};
-</code></pre>
-<p>search &#x65B9;&#x6CD5;&#x4E0E; indexOf &#x65B9;&#x6CD5;&#x529F;&#x80FD;&#x57FA;&#x672C;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x662F;search&#x652F;&#x6301;&#x6B63;&#x5219;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5219;indexOf&#x4E0D;&#x652F;&#x6301;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> strStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">haystack, needle</span>) </span>{
-    <span class="hljs-keyword">return</span> haystack.search(needle);
-};
-</code></pre>
-<p>match &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x6570;&#x7EC4;&#xFF0C;&#x5728;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x6B63;&#x5219;&#x4FEE;&#x9970;&#x7B26;g&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x989D;&#x5916;&#x63D0;&#x4F9B;index&#x5C5E;&#x6027;&#x6765;&#x8868;&#x793A;&#x4F4D;&#x7F6E;&#xFF0C;&#x53EA;&#x662F;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x67E5;&#x627E;&#x5230;&#xFF0C;match&#x8FD4;&#x56DE;&#x7684;&#x503C;&#x4E3A;null&#x3002;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> strStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">haystack, needle</span>) </span>{
-    <span class="hljs-keyword">let</span> ret = haystack.match(needle);
-    <span class="hljs-keyword">return</span> ret === <span class="hljs-literal">null</span> ? <span class="hljs-number">-1</span> : ret.index;
-};
-</code></pre>
-<h2 id="js2">js2</h2>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> strStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">haystack, needle</span>) </span>{
-  <span class="hljs-keyword">if</span>(haystack === needle || needle.length === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>; i&lt;haystack.length; i++) {
-    <span class="hljs-keyword">if</span>(haystack[i] === needle[<span class="hljs-number">0</span>]) {
-      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j=i, t=<span class="hljs-number">0</span>; j&lt;haystack.length &amp;&amp; t&lt;needle.length; j++, t++) {
-        <span class="hljs-keyword">let</span> mark = haystack[j] === needle[t];
-        <span class="hljs-keyword">if</span>(mark) {
-          <span class="hljs-keyword">if</span>(t === needle.length - <span class="hljs-number">1</span>) {
-            <span class="hljs-keyword">return</span> i;
-          }
-        }
-        <span class="hljs-keyword">else</span> {
-          <span class="hljs-keyword">break</span>;
-        }
-      }
+<h2 id="js1-&#x5FAA;&#x73AF;&#x5199;&#x6CD5;">JS1 &#x5FAA;&#x73AF;&#x5199;&#x6CD5;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> hasPathSum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root, sum</span>) </span>{
+  <span class="hljs-keyword">if</span> (!root) {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  }
+  <span class="hljs-keyword">let</span> arr = [root];
+  <span class="hljs-keyword">while</span> (arr.length) {
+    <span class="hljs-keyword">let</span> node = arr.pop();
+    <span class="hljs-keyword">if</span> (!node.left &amp;&amp; !node.right &amp;&amp; node.val === sum) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+    <span class="hljs-keyword">if</span> (node.left) {
+      node.left.val += node.val;
+      arr.push(node.left);
+    }
+    <span class="hljs-keyword">if</span> (node.right) {
+      node.right.val += node.val;
+      arr.push(node.right);
     }
   }
-  <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
 };
 </code></pre>
-<h2 id="kmp">KMP</h2>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> strStr = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">haystack, needle</span>) </span>{
-  <span class="hljs-comment">// &#x8BA1;&#x7B97;next&#x6570;&#x7EC4;&#xFF0C;next[i]&#x8868;&#x793A;str[i]&#x524D;&#x9762;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6700;&#x957F;&#x516C;&#x5171;&#x524D;&#x540E;&#x7F00;</span>
-  <span class="hljs-comment">// &#x5982; abcdabe&#xFF0C;next[6]=2&#xFF0C;&#x6700;&#x957F;&#x516C;&#x5171;&#x524D;&#x540E;&#x7F00;&#x662F;ab&#x3002;</span>
-  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getNext</span>(<span class="hljs-params">str</span>) </span>{
-    <span class="hljs-keyword">let</span> len = str.length;
-    <span class="hljs-comment">// i&#x8868;&#x793A;str&#x7684;&#x4E0B;&#x6807;</span>
-    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">-1</span>;
-    <span class="hljs-keyword">let</span> next = [];
-    <span class="hljs-comment">// next[0]&#x524D;&#x9762;&#x6CA1;&#x6709;&#x5B57;&#x7B26;&#x4E32;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x7F6E;&#x4E3A;-1</span>
-    next[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>;
-    <span class="hljs-comment">// &#x56E0;&#x4E3A;if&#x4E2D;&#x662F;&#x5148;i++&#x518D;&#x7ED9;next[i]&#x8D4B;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x5FAA;&#x73AF;&#x5230;len-1&#x5C31;&#x591F;&#x4E86;</span>
-    <span class="hljs-keyword">while</span>(i &lt; len - <span class="hljs-number">1</span>) {
-      <span class="hljs-keyword">if</span>(j === <span class="hljs-number">-1</span> || str[i] === str[j]) {
-        i++;
-        j++;
-        next[i] = j;
-      }
-      <span class="hljs-keyword">else</span> {
-        j = next[j];
-      }
-    }
-    <span class="hljs-keyword">return</span> next;
+<h2 id="js2-&#x9012;&#x5F52;&#x5199;&#x6CD5;">JS2 &#x9012;&#x5F52;&#x5199;&#x6CD5;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> hasPathSum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root, sum</span>) </span>{
+  <span class="hljs-keyword">if</span> (!root) {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
   }
-  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">kmp</span>(<span class="hljs-params">str, s</span>) </span>{
-    <span class="hljs-keyword">let</span> next = getNext(s);
-    <span class="hljs-keyword">let</span> len1 = str.length, len2 = s.length;
-    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">while</span>(i &lt;len1 &amp;&amp; j &lt; len2) {
-      <span class="hljs-keyword">if</span>(j === <span class="hljs-number">-1</span> || str[i] === s[j]) {
-        i++;
-        j++;
-      }
-      <span class="hljs-keyword">else</span> {
-        j = next[j];
-      }
-    }
-    <span class="hljs-comment">// &#x5339;&#x914D;&#x6210;&#x529F;&#xFF0C;&#x8FD4;&#x56DE;&#x5728;str&#x4E2D;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;s&#x7684;&#x4E0B;&#x6807;</span>
-    <span class="hljs-keyword">if</span>(j === len2)  <span class="hljs-keyword">return</span> i - j;
-    <span class="hljs-comment">// &#x6CA1;&#x6709;&#x5339;&#x914D;&#x5230;&#x5C31;&#x8FD4;&#x56DE;-1</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
+  <span class="hljs-keyword">if</span> (!root.left &amp;&amp; !root.right &amp;&amp; root.val === sum) {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
   }
-  <span class="hljs-keyword">return</span> kmp(haystack, needle);
+  sum -= root.val;
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">arguments</span>.callee(root.left, sum) || <span class="hljs-built_in">arguments</span>.callee(root.right, sum);
+};
+</code></pre>
+<h2 id="&#x5199;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x7684;&#x5957;&#x8DEF;java">&#x5199;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x7684;&#x5957;&#x8DEF;(Java)</h2>
+<pre><code class="lang-java"><span class="hljs-comment">/* &#x770B;&#x4E0D;&#x61C2;&#x6CA1;&#x5173;&#x7CFB;&#xFF0C;&#x5E95;&#x4E0B;&#x6709;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x5206;&#x6790;&#x7248;&#x672C;&#xFF0C;&#x8FD9;&#x91CC;&#x7A81;&#x51FA;&#x4F53;&#x73B0;&#x9012;&#x5F52;&#x7684;&#x7B80;&#x6D01;&#x4F18;&#x7F8E; */</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pathSum</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> sum)</span> </span>{
+  <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">return</span> count(root, sum) + 
+    pathSum(root.left, sum) + pathSum(root.right, sum);
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">count</span><span class="hljs-params">(TreeNode node, <span class="hljs-keyword">int</span> sum)</span> </span>{
+  <span class="hljs-keyword">if</span> (node == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">return</span> (node.val == sum) + 
+    count(node.left, sum - node.val) + count(node.right, sum - node.val);
 }
 </code></pre>
+<p>&#x9898;&#x76EE;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x590D;&#x6742;&#x5427;&#xFF0C;&#x4E0D;&#x8FC7;&#x4EE3;&#x7801;&#x5374;&#x6781;&#x5176;&#x7B80;&#x6D01;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x9012;&#x5F52;&#x7684;&#x9B45;&#x529B;&#x3002;&#x6211;&#x6765;&#x7B80;&#x5355;&#x603B;&#x7ED3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;<strong>&#x89E3;&#x51B3;&#x8FC7;&#x7A0B;</strong>&#xFF1A;</p>
+<p>&#x9996;&#x5148;&#x660E;&#x786E;&#xFF0C;&#x9012;&#x5F52;&#x6C42;&#x89E3;&#x6811;&#x7684;&#x95EE;&#x9898;&#x5FC5;&#x7136;&#x662F;&#x8981;&#x904D;&#x5386;&#x6574;&#x68F5;&#x6811;&#x7684;&#xFF0C;&#x6240;&#x4EE5;<strong>&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x904D;&#x5386;&#x6846;&#x67B6;</strong>&#xFF08;&#x5206;&#x522B;&#x5BF9;&#x5DE6;&#x53F3;&#x5B69;&#x5B50;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x672C;&#x8EAB;&#xFF09;&#x5FC5;&#x7136;&#x8981;&#x51FA;&#x73B0;&#x5728;&#x4E3B;&#x51FD;&#x6570; pathSum &#x4E2D;&#x3002;&#x90A3;&#x4E48;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x4ED6;&#x4EEC;&#x5E94;&#x8BE5;&#x5E72;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x4ED6;&#x4EEC;&#x5E94;&#x8BE5;&#x770B;&#x770B;&#xFF0C;&#x81EA;&#x5DF1;&#x548C;&#x811A;&#x5E95;&#x4E0B;&#x7684;&#x5C0F;&#x5F1F;&#x4EEC;&#x5305;&#x542B;&#x591A;&#x5C11;&#x6761;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x597D;&#x4E86;&#xFF0C;&#x8FD9;&#x9053;&#x9898;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#x3002;</p>
+<p>&#x6309;&#x7167;&#x524D;&#x9762;&#x8BF4;&#x7684;&#x6280;&#x5DE7;&#xFF0C;&#x6839;&#x636E;&#x521A;&#x624D;&#x7684;&#x5206;&#x6790;&#x6765;&#x5B9A;&#x4E49;&#x6E05;&#x695A;&#x6BCF;&#x4E2A;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x5E94;&#x8BE5;&#x505A;&#x7684;&#x4E8B;&#xFF1A;</p>
+<ul>
+<li><strong>PathSum &#x51FD;&#x6570;</strong>&#xFF1A;&#x7ED9;&#x4ED6;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x548C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x503C;&#xFF0C;&#x4ED6;&#x8FD4;&#x56DE;&#x4EE5;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x4E3A;&#x6839;&#x7684;&#x6811;&#x4E2D;&#xFF0C;&#x548C;&#x4E3A;&#x76EE;&#x6807;&#x503C;&#x7684;&#x8DEF;&#x5F84;&#x603B;&#x6570;&#x3002;</li>
+<li><strong>count &#x51FD;&#x6570;</strong>&#xFF1A;&#x7ED9;&#x4ED6;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x548C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x503C;&#xFF0C;&#x4ED6;&#x8FD4;&#x56DE;&#x4EE5;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x4E3A;&#x6839;&#x7684;&#x6811;&#x4E2D;&#xFF0C;&#x80FD;&#x51D1;&#x51FA;&#x51E0;&#x4E2A;&#x4EE5;&#x8BE5;&#x8282;&#x70B9;&#x4E3A;&#x8DEF;&#x5F84;&#x5F00;&#x5934;&#xFF0C;&#x548C;&#x4E3A;&#x76EE;&#x6807;&#x503C;&#x7684;&#x8DEF;&#x5F84;&#x603B;&#x6570;&#x3002;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-comment">/* &#x6709;&#x4E86;&#x4EE5;&#x4E0A;&#x94FA;&#x57AB;&#xFF0C;&#x8BE6;&#x7EC6;&#x6CE8;&#x91CA;&#x4E00;&#x4E0B;&#x4EE3;&#x7801; */</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pathSum</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> sum)</span> </span>{
+    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> pathImLeading = count(root, sum); <span class="hljs-comment">// &#x81EA;&#x5DF1;&#x4E3A;&#x5F00;&#x5934;&#x7684;&#x8DEF;&#x5F84;&#x6570;</span>
+    <span class="hljs-keyword">int</span> leftPathSum = pathSum(root.left, sum); <span class="hljs-comment">// &#x5DE6;&#x8FB9;&#x8DEF;&#x5F84;&#x603B;&#x6570;&#xFF08;&#x76F8;&#x4FE1;&#x4ED6;&#x80FD;&#x7B97;&#x51FA;&#x6765;&#xFF09;</span>
+    <span class="hljs-keyword">int</span> rightPathSum = pathSum(root.right, sum); <span class="hljs-comment">// &#x53F3;&#x8FB9;&#x8DEF;&#x5F84;&#x603B;&#x6570;&#xFF08;&#x76F8;&#x4FE1;&#x4ED6;&#x80FD;&#x7B97;&#x51FA;&#x6765;&#xFF09;</span>
+    <span class="hljs-keyword">return</span> leftPathSum + rightPathSum + pathImLeading;
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">count</span><span class="hljs-params">(TreeNode node, <span class="hljs-keyword">int</span> sum)</span> </span>{
+    <span class="hljs-keyword">if</span> (node == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    <span class="hljs-comment">// &#x6211;&#x81EA;&#x5DF1;&#x80FD;&#x4E0D;&#x80FD;&#x72EC;&#x5F53;&#x4E00;&#x9762;&#xFF0C;&#x4F5C;&#x4E3A;&#x4E00;&#x6761;&#x5355;&#x72EC;&#x7684;&#x8DEF;&#x5F84;&#x5462;&#xFF1F;</span>
+    <span class="hljs-keyword">int</span> isMe = (node.val == sum) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;
+    <span class="hljs-comment">// &#x5DE6;&#x8FB9;&#x7684;&#x5C0F;&#x8001;&#x5F1F;&#xFF0C;&#x4F60;&#x90A3;&#x8FB9;&#x80FD;&#x51D1;&#x51E0;&#x4E2A; sum - node.val &#x5440;&#xFF1F;</span>
+    <span class="hljs-keyword">int</span> leftBrother = count(node.left, sum - node.val); 
+    <span class="hljs-comment">// &#x53F3;&#x8FB9;&#x7684;&#x5C0F;&#x8001;&#x5F1F;&#xFF0C;&#x4F60;&#x90A3;&#x8FB9;&#x80FD;&#x51D1;&#x51E0;&#x4E2A; sum - node.val &#x5440;&#xFF1F;</span>
+    <span class="hljs-keyword">int</span> rightBrother = count(node.right, sum - node.val);
+    <span class="hljs-keyword">return</span>  isMe + leftBrother + rightBrother; <span class="hljs-comment">// &#x6211;&#x8FD9;&#x80FD;&#x51D1;&#x8FD9;&#x4E48;&#x591A;&#x4E2A;</span>
+}
+</code></pre>
+<p>&#x8FD8;&#x662F;&#x90A3;&#x53E5;&#x8BDD;&#xFF0C;&#x660E;&#x767D;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x80FD;&#x505A;&#x7684;&#x4E8B;&#xFF0C;&#x5E76;&#x76F8;&#x4FE1;&#x4ED6;&#x4EEC;&#x80FD;&#x591F;&#x5B8C;&#x6210;&#x3002;</p>
+<p>&#x603B;&#x7ED3;&#x4E0B;&#xFF0C;PathSum &#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x7684;&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;&#x6846;&#x67B6;&#xFF0C;&#x5728;&#x904D;&#x5386;&#x4E2D;&#x5BF9;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x8C03;&#x7528; count &#x51FD;&#x6570;&#xFF0C;&#x770B;&#x51FA;&#x5148;&#x5E8F;&#x904D;&#x5386;&#x4E86;&#x5417;&#xFF08;&#x8FD9;&#x9053;&#x9898;&#x4EC0;&#x4E48;&#x5E8F;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF09;&#xFF1B;count &#x51FD;&#x6570;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;&#xFF0C;&#x7528;&#x4E8E;&#x5BFB;&#x627E;&#x4EE5;&#x8BE5;&#x8282;&#x70B9;&#x5F00;&#x5934;&#x7684;&#x76EE;&#x6807;&#x503C;&#x8DEF;&#x5F84;&#x3002;</p>
 
                                 
                                 </section>
@@ -5088,12 +5169,12 @@
 
             
                 
-                <a href="移除元素.html" class="navigation navigation-prev " aria-label="Previous page: 移除元素">
+                <a href="第k个排列.html" class="navigation navigation-prev " aria-label="Previous page: 第k个排列">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="串联所有单词的子串.html" class="navigation navigation-next " aria-label="Next page: 串联所有单词的子串">
+                <a href="路径总和II.html" class="navigation navigation-next " aria-label="Next page: 路径总和 II">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -5104,7 +5185,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"实现strStr()","level":"9.44","depth":1,"next":{"title":"串联所有单词的子串","level":"9.45","depth":1,"path":"算法/串联所有单词的子串.md","ref":"算法/串联所有单词的子串.md","articles":[]},"previous":{"title":"移除元素","level":"9.43","depth":1,"path":"算法/移除元素.md","ref":"算法/移除元素.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/实现strStr.md","mtime":"2019-07-09T06:57:45.650Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-16T09:06:52.272Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"路径总和","level":"9.106","depth":1,"next":{"title":"路径总和 II","level":"9.107","depth":1,"path":"算法/路径总和II.md","ref":"算法/路径总和II.md","articles":[]},"previous":{"title":"第k个排列","level":"9.105","depth":1,"path":"算法/第k个排列.md","ref":"算法/第k个排列.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/路径总和.md","mtime":"2019-07-16T09:47:27.042Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T11:43:00.523Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

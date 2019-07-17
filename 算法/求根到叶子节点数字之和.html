@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>下一个排列 · GitBook</title>
+        <title>求根到叶子节点数字之和 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="全排列.html" />
+    <link rel="next" href="相同的树.html" />
     
     
-    <link rel="prev" href="最小覆盖子串.html" />
+    <link rel="prev" href="路径总和III.html" />
     
 
     </head>
@@ -2817,7 +2817,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="9.47" data-path="下一个排列.html">
+        <li class="chapter " data-level="9.47" data-path="下一个排列.html">
             
                 <a href="下一个排列.html">
             
@@ -3695,6 +3695,96 @@
                         <b>9.105.</b>
                     
                     第k个排列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.106" data-path="路径总和.html">
+            
+                <a href="路径总和.html">
+            
+                    
+                        <b>9.106.</b>
+                    
+                    路径总和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.107" data-path="路径总和II.html">
+            
+                <a href="路径总和II.html">
+            
+                    
+                        <b>9.107.</b>
+                    
+                    路径总和 II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.108" data-path="路径总和III.html">
+            
+                <a href="路径总和III.html">
+            
+                    
+                        <b>9.108.</b>
+                    
+                    路径总和 III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="9.109" data-path="求根到叶子节点数字之和.html">
+            
+                <a href="求根到叶子节点数字之和.html">
+            
+                    
+                        <b>9.109.</b>
+                    
+                    求根到叶子节点数字之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.110" data-path="相同的树.html">
+            
+                <a href="相同的树.html">
+            
+                    
+                        <b>9.110.</b>
+                    
+                    相同的树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.111" data-path="图像渲染.html">
+            
+                <a href="图像渲染.html">
+            
+                    
+                        <b>9.111.</b>
+                    
+                    图像渲染
             
                 </a>
             
@@ -4908,7 +4998,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >下一个排列</a>
+        <a href=".." >求根到叶子节点数字之和</a>
     </h1>
 </div>
 
@@ -4926,93 +5016,102 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4E0B;&#x4E00;&#x4E2A;&#x6392;&#x5217;">&#x4E0B;&#x4E00;&#x4E2A;&#x6392;&#x5217;</h1>
+                                <h1 id="&#x6C42;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x6570;&#x5B57;&#x4E4B;&#x548C;">&#x6C42;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x6570;&#x5B57;&#x4E4B;&#x548C;</h1>
 <!-- TOC -->
 <ul>
-<li><a href="#&#x4E0B;&#x4E00;&#x4E2A;&#x6392;&#x5217;">&#x4E0B;&#x4E00;&#x4E2A;&#x6392;&#x5217;</a><ul>
+<li><a href="#&#x6C42;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x6570;&#x5B57;&#x4E4B;&#x548C;">&#x6C42;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x6570;&#x5B57;&#x4E4B;&#x548C;</a><ul>
 <li><a href="#&#x9898;&#x76EE;">&#x9898;&#x76EE;</a></li>
-<li><a href="#&#x5FAA;&#x73AF;&#x5B57;&#x5178;&#x5E8F;">&#x5FAA;&#x73AF;&#xFF1B;&#x5B57;&#x5178;&#x5E8F;</a></li>
-<li><a href="#&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x9898;&#x89E3;">&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x9898;&#x89E3;</a></li>
+<li><a href="#&#x6807;&#x7B7E;">&#x6807;&#x7B7E;</a></li>
+<li><a href="#JS1">JS1</a></li>
+<li><a href="#JS2-dfs">JS2 dfs</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
 <h2 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h2>
-<p>&#x5B9E;&#x73B0;&#x83B7;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;&#x6392;&#x5217;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x7B97;&#x6CD5;&#x9700;&#x8981;&#x5C06;&#x7ED9;&#x5B9A;&#x6570;&#x5B57;&#x5E8F;&#x5217;&#x91CD;&#x65B0;&#x6392;&#x5217;&#x6210;&#x5B57;&#x5178;&#x5E8F;&#x4E2D;&#x4E0B;&#x4E00;&#x4E2A;&#x66F4;&#x5927;&#x7684;&#x6392;&#x5217;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x66F4;&#x5927;&#x7684;&#x6392;&#x5217;&#xFF0C;&#x5219;&#x5C06;&#x6570;&#x5B57;&#x91CD;&#x65B0;&#x6392;&#x5217;&#x6210;&#x6700;&#x5C0F;&#x7684;&#x6392;&#x5217;&#xFF08;&#x5373;&#x5347;&#x5E8F;&#x6392;&#x5217;&#xFF09;&#x3002;</p>
-<p><strong>&#x5FC5;&#x987B;&#x539F;&#x5730;&#x4FEE;&#x6539;&#xFF0C;&#x53EA;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x989D;&#x5916;&#x5E38;&#x6570;&#x7A7A;&#x95F4;</strong>&#x3002;</p>
-<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E9B;&#x4F8B;&#x5B50;&#xFF0C;&#x8F93;&#x5165;&#x4F4D;&#x4E8E;&#x5DE6;&#x4FA7;&#x5217;&#xFF0C;&#x5176;&#x76F8;&#x5E94;&#x8F93;&#x51FA;&#x4F4D;&#x4E8E;&#x53F3;&#x4FA7;&#x5217;&#x3002;</p>
-<pre><code class="lang-js"><span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> &#x2192; <span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>
-<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span> &#x2192; <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>
-<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">5</span> &#x2192; <span class="hljs-number">1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x5B83;&#x7684;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x90FD;&#x5B58;&#x653E;&#x4E00;&#x4E2A; <code>0-9</code> &#x7684;&#x6570;&#x5B57;&#xFF0C;&#x6BCF;&#x6761;&#x4ECE;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x8DEF;&#x5F84;&#x90FD;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x4ECE;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x8DEF;&#x5F84; <code>1-&gt;2-&gt;3</code> &#x4EE3;&#x8868;&#x6570;&#x5B57; <code>123</code>&#x3002;</p>
+<p>&#x8BA1;&#x7B97;&#x4ECE;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x751F;&#x6210;&#x7684;&#x6240;&#x6709;&#x6570;&#x5B57;&#x4E4B;&#x548C;&#x3002;</p>
+<p><strong>&#x8BF4;&#x660E;</strong>: &#x53F6;&#x5B50;&#x8282;&#x70B9;&#x662F;&#x6307;&#x6CA1;&#x6709;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#x3002;</p>
+<p>&#x793A;&#x4F8B; 1:</p>
+<pre><code class="lang-js">&#x8F93;&#x5165;: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]
+    <span class="hljs-number">1</span>
+   / \
+  <span class="hljs-number">2</span>   <span class="hljs-number">3</span>
+&#x8F93;&#x51FA;: <span class="hljs-number">25</span>
+&#x89E3;&#x91CA;:
+&#x4ECE;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x8DEF;&#x5F84; <span class="hljs-number">1</span>-&gt;<span class="hljs-number">2</span> &#x4EE3;&#x8868;&#x6570;&#x5B57; <span class="hljs-number">12.</span>
+&#x4ECE;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x8DEF;&#x5F84; <span class="hljs-number">1</span>-&gt;<span class="hljs-number">3</span> &#x4EE3;&#x8868;&#x6570;&#x5B57; <span class="hljs-number">13.</span>
+&#x56E0;&#x6B64;&#xFF0C;&#x6570;&#x5B57;&#x603B;&#x548C; = <span class="hljs-number">12</span> + <span class="hljs-number">13</span> = <span class="hljs-number">25.</span>
 </code></pre>
-<h2 id="&#x5FAA;&#x73AF;&#xFF1B;&#x5B57;&#x5178;&#x5E8F;">&#x5FAA;&#x73AF;&#xFF1B;&#x5B57;&#x5178;&#x5E8F;</h2>
-<p>&#x601D;&#x8DEF;&#xFF1A; &#x5B57;&#x5178;&#x5E8F;&#xFF1A;&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#xFF0C;&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x5DE6;&#x503C;&#x5C0F;&#x4E8E;&#x53F3;&#x503C;&#x7684;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#xFF0C;&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x5927;&#x4E8E;&#x8BE5;&#x5DE6;&#x503C;&#x7684;&#x6570;&#xFF0C;&#x4EA4;&#x6362;&#x8FD9;&#x4E24;&#x4E2A;&#x503C;&#xFF0C;&#x5E76;&#x5C06;&#x8BE5;&#x5DE6;&#x503C;(&#x4E0D;&#x5305;&#x542B;)&#x53F3;&#x8FB9;&#x7684;&#x8FDB;&#x884C;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x8FDB;&#x884C;&#x6392;&#x5E8F;(&#x539F;&#x6765;&#x4E3A;&#x964D;&#x5E8F;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6539;&#x4E3A;&#x5347;&#x5E8F;)&#x3002;</p>
+<p>&#x793A;&#x4F8B; 2:</p>
+<pre><code class="lang-js">&#x8F93;&#x5165;: [<span class="hljs-number">4</span>,<span class="hljs-number">9</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>]
+    <span class="hljs-number">4</span>
+   / \
+  <span class="hljs-number">9</span>   <span class="hljs-number">0</span>
+ / \
+<span class="hljs-number">5</span>   <span class="hljs-number">1</span>
+&#x8F93;&#x51FA;: <span class="hljs-number">1026</span>
+&#x89E3;&#x91CA;:
+&#x4ECE;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x8DEF;&#x5F84; <span class="hljs-number">4</span>-&gt;<span class="hljs-number">9</span>-&gt;<span class="hljs-number">5</span> &#x4EE3;&#x8868;&#x6570;&#x5B57; <span class="hljs-number">495.</span>
+&#x4ECE;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x8DEF;&#x5F84; <span class="hljs-number">4</span>-&gt;<span class="hljs-number">9</span>-&gt;<span class="hljs-number">1</span> &#x4EE3;&#x8868;&#x6570;&#x5B57; <span class="hljs-number">491.</span>
+&#x4ECE;&#x6839;&#x5230;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x8DEF;&#x5F84; <span class="hljs-number">4</span>-&gt;<span class="hljs-number">0</span> &#x4EE3;&#x8868;&#x6570;&#x5B57; <span class="hljs-number">40.</span>
+&#x56E0;&#x6B64;&#xFF0C;&#x6570;&#x5B57;&#x603B;&#x548C; = <span class="hljs-number">495</span> + <span class="hljs-number">491</span> + <span class="hljs-number">40</span> = <span class="hljs-number">1026.</span>
+</code></pre>
+<h2 id="&#x6807;&#x7B7E;">&#x6807;&#x7B7E;</h2>
+<ul>
+<li>&#x6811;</li>
+<li>&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</li>
+</ul>
+<h2 id="js1">JS1</h2>
 <pre><code class="lang-js"><span class="hljs-comment">/**
- * @param {number[]} nums
- * @return {void} Do not return anything, modify nums in-place instead.
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
  */</span>
-<span class="hljs-keyword">var</span> nextPermutation = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>{
-  <span class="hljs-keyword">let</span> len = nums.length;
-  <span class="hljs-keyword">if</span> (len &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span>;
 
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = len - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
-    <span class="hljs-keyword">if</span> (nums[i] &lt; nums[i + <span class="hljs-number">1</span>]) {
-      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = len - <span class="hljs-number">1</span>; j &gt; i; j--) {
-        <span class="hljs-keyword">if</span> (nums[i] &lt; nums[j]) {
-          swap(i, j, nums);
-          <span class="hljs-keyword">break</span>;
-        }
-      }
-      <span class="hljs-keyword">let</span> x = i + <span class="hljs-number">1</span>,
-        y = len - <span class="hljs-number">1</span>;
-      <span class="hljs-keyword">while</span> (x &lt; y) swap(x++, y--, nums);
-      <span class="hljs-keyword">break</span>;
+<span class="hljs-comment">/**
+ * @param {TreeNode} root
+ * @return {number}
+ */</span>
+
+<span class="hljs-keyword">var</span> sumNumbers = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>{
+  <span class="hljs-keyword">if</span> (root === <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">var</span> res = [];
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dfs</span>(<span class="hljs-params">sum, node</span>) </span>{
+    <span class="hljs-keyword">if</span> (node.left === <span class="hljs-literal">null</span> &amp;&amp; node.right === <span class="hljs-literal">null</span>) {
+      res.push(sum * <span class="hljs-number">10</span> + node.val);
+      <span class="hljs-keyword">return</span>;
     }
-    <span class="hljs-keyword">if</span> (i === <span class="hljs-number">0</span>) {
-      <span class="hljs-keyword">let</span> x = i,
-        y = len - <span class="hljs-number">1</span>;
-      <span class="hljs-keyword">while</span> (x &lt; y) swap(x++, y--, nums);
-    }
+    <span class="hljs-keyword">if</span> (node.left !== <span class="hljs-literal">null</span>) dfs(sum * <span class="hljs-number">10</span> + node.val, node.left);
+    <span class="hljs-keyword">if</span> (node.right !== <span class="hljs-literal">null</span>) dfs(sum * <span class="hljs-number">10</span> + node.val, node.right);
   }
+  dfs(<span class="hljs-number">0</span>, root);
+  <span class="hljs-keyword">return</span> res.reduce((a, b) =&gt; a + b);
 };
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swap</span>(<span class="hljs-params">i, j, nums</span>) </span>{
-  <span class="hljs-keyword">let</span> t = nums[i];
-  nums[i] = nums[j];
-  nums[j] = t;
-}
 </code></pre>
-<h2 id="&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x9898;&#x89E3;">&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x9898;&#x89E3;</h2>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> nextPermutation = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>{
-  <span class="hljs-keyword">let</span> len = nums.length;
-  <span class="hljs-keyword">if</span> (len &lt; <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> nums;
-  <span class="hljs-keyword">let</span> l = len - <span class="hljs-number">1</span>;
-  <span class="hljs-keyword">let</span> r = <span class="hljs-number">0</span>;
-  <span class="hljs-comment">//  &#x4ECE;&#x6570;&#x5217;&#x7684;&#x53F3;&#x4FA7;&#x5F00;&#x59CB;&#x68C0;&#x7D22;&#xFF0C;&#x5BF9;&#x6BD4;&#x8FDE;&#x7EED;&#x4E24;&#x4E2A;&#x5927;&#x5C0F;&#xFF0C;</span>
-  <span class="hljs-comment">// &#x5982;&#x679C;&#x53F3;&#x4FA7;&#x5C0F;&#x4E8E;&#x5DE6;&#x4FA7;&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x8FD9;&#x8FDE;&#x7EED;&#x7684;&#x4E24;&#x4E2A;&#x6570;&#x662F;&#x964D;&#x5E8F;&#xFF0C;&#x4ED6;&#x4EEC;&#x4E4B;&#x95F4;&#x5DF2;&#x7ECF;&#x662F;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x9700;&#x8981;&#x7EE7;&#x7EED;&#x5BF9;&#x6BD4;&#x4E0B;&#x4E00;&#x4E2A;&#x8FDE;&#x7EED;&#x6570;</span>
-  <span class="hljs-keyword">while</span> (nums[l] &lt;= nums[l - <span class="hljs-number">1</span>]) {
-    l--;
+<h2 id="js2--dfs">JS2  dfs</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> sumNumbers = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>{
+  <span class="hljs-keyword">var</span> res = <span class="hljs-number">0</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dfs</span>(<span class="hljs-params">node, val</span>) </span>{
+    <span class="hljs-keyword">if</span> (node === <span class="hljs-literal">null</span>) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">if</span> (node.left == <span class="hljs-literal">null</span> &amp;&amp; node.right == <span class="hljs-literal">null</span>) {
+      res += val * <span class="hljs-number">10</span> + node.val;
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">if</span> (node.left !== <span class="hljs-literal">null</span>) {
+      dfs(node.left, val * <span class="hljs-number">10</span> + node.val);
+    }
+    <span class="hljs-keyword">if</span> (node.right !== <span class="hljs-literal">null</span>) {
+      dfs(node.right, val * <span class="hljs-number">10</span> + node.val);
+    }
   }
-  <span class="hljs-comment">// &#x5F97;&#x5230;&#x5DE6;&#x4FA7;&#x6570;&#x5C0F;&#x4E8E;&#x53F3;&#x4FA7;&#x540E;&#xFF0C;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x662F;&#x53EF;&#x4EE5;&#x6392;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x8F83;&#x5927;&#x7684;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;</span>
-  <span class="hljs-comment">// &#x4F46;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#x5E94;&#x8BE5;&#x662F;&#x4EC0;&#x4E48;&#x6570;&#x5408;&#x9002;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x4ED6;&#x5927;&#x4E00;&#x70B9;&#x7684;&#x6570;</span>
-  <span class="hljs-keyword">while</span> (nums[l - <span class="hljs-number">1</span>] &lt; nums[l + r]) {
-    r++;
-  }
-  <span class="hljs-keyword">if</span> (l === <span class="hljs-number">0</span>) {
-    <span class="hljs-keyword">return</span> nums.reverse();
-  }
-  <span class="hljs-keyword">let</span> f = nums[l - <span class="hljs-number">1</span>];
-  <span class="hljs-keyword">let</span> s = nums[l + r - <span class="hljs-number">1</span>];
-  nums[l - <span class="hljs-number">1</span>] = s;
-  nums[l + r - <span class="hljs-number">1</span>] = f;
-  <span class="hljs-comment">// &#x8C03;&#x6362;&#x4F4D;&#x7F6E;&#x540E;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5BF9;&#x4F4D;&#x7F6E;&#x540E;&#x7684;&#x6570;&#x5217;&#x8FDB;&#x884C;&#x5347;&#x5E8F;&#x6392;&#xFF0C;</span>
-  <span class="hljs-comment">// &#x56E0;&#x4E3A;&#x5347;&#x5E8F;&#x540E;&#x540E;&#x5269;&#x4F59;&#x6570;&#x662F;&#x6700;&#x5C0F;&#x7684;&#xFF0C;&#x5373;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x5927;&#x6570;</span>
-  <span class="hljs-keyword">let</span> sp = nums.slice(l).reverse();
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; sp.length; i++) {
-    nums[l + i] = sp[i];
-  }
-  <span class="hljs-keyword">return</span> nums;
+  dfs(root, <span class="hljs-number">0</span>);
+  <span class="hljs-keyword">return</span> res;
 };
 </code></pre>
 
@@ -5058,12 +5157,12 @@
 
             
                 
-                <a href="最小覆盖子串.html" class="navigation navigation-prev " aria-label="Previous page: 最小覆盖子串">
+                <a href="路径总和III.html" class="navigation navigation-prev " aria-label="Previous page: 路径总和 III">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="全排列.html" class="navigation navigation-next " aria-label="Next page: 全排列">
+                <a href="相同的树.html" class="navigation navigation-next " aria-label="Next page: 相同的树">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -5074,7 +5173,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"下一个排列","level":"9.47","depth":1,"next":{"title":"全排列","level":"9.48","depth":1,"path":"算法/全排列.md","ref":"算法/全排列.md","articles":[]},"previous":{"title":"最小覆盖子串","level":"9.46","depth":1,"path":"算法/最小覆盖子串.md","ref":"算法/最小覆盖子串.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/下一个排列.md","mtime":"2019-07-09T07:41:04.541Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-16T09:06:52.272Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"求根到叶子节点数字之和","level":"9.109","depth":1,"next":{"title":"相同的树","level":"9.110","depth":1,"path":"算法/相同的树.md","ref":"算法/相同的树.md","articles":[]},"previous":{"title":"路径总和 III","level":"9.108","depth":1,"path":"算法/路径总和III.md","ref":"算法/路径总和III.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/求根到叶子节点数字之和.md","mtime":"2019-07-17T11:19:35.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T11:43:00.523Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

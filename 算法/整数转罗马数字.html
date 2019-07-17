@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>最长有效括号 · GitBook</title>
+        <title>整数转罗马数字 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="搜索旋转排序数组.html" />
+    <link rel="next" href="罗马数字转整数.html" />
     
     
-    <link rel="prev" href="全排列II.html" />
+    <link rel="prev" href="除自身以外数组的乘积.html" />
     
 
     </head>
@@ -2457,7 +2457,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.23" data-path="整数转罗马数字.html">
+        <li class="chapter active" data-level="9.23" data-path="整数转罗马数字.html">
             
                 <a href="整数转罗马数字.html">
             
@@ -2862,7 +2862,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="9.50" data-path="最长有效括号.html">
+        <li class="chapter " data-level="9.50" data-path="最长有效括号.html">
             
                 <a href="最长有效括号.html">
             
@@ -3695,6 +3695,96 @@
                         <b>9.105.</b>
                     
                     第k个排列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.106" data-path="路径总和.html">
+            
+                <a href="路径总和.html">
+            
+                    
+                        <b>9.106.</b>
+                    
+                    路径总和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.107" data-path="路径总和II.html">
+            
+                <a href="路径总和II.html">
+            
+                    
+                        <b>9.107.</b>
+                    
+                    路径总和 II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.108" data-path="路径总和III.html">
+            
+                <a href="路径总和III.html">
+            
+                    
+                        <b>9.108.</b>
+                    
+                    路径总和 III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.109" data-path="求根到叶子节点数字之和.html">
+            
+                <a href="求根到叶子节点数字之和.html">
+            
+                    
+                        <b>9.109.</b>
+                    
+                    求根到叶子节点数字之和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.110" data-path="相同的树.html">
+            
+                <a href="相同的树.html">
+            
+                    
+                        <b>9.110.</b>
+                    
+                    相同的树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.111" data-path="图像渲染.html">
+            
+                <a href="图像渲染.html">
+            
+                    
+                        <b>9.111.</b>
+                    
+                    图像渲染
             
                 </a>
             
@@ -4908,7 +4998,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >最长有效括号</a>
+        <a href=".." >整数转罗马数字</a>
     </h1>
 </div>
 
@@ -4926,71 +5016,248 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6700;&#x957F;&#x6709;&#x6548;&#x62EC;&#x53F7;">&#x6700;&#x957F;&#x6709;&#x6548;&#x62EC;&#x53F7;</h1>
+                                <h1 id="&#x6574;&#x6570;&#x8F6C;&#x7F57;&#x9A6C;&#x6570;&#x5B57;">&#x6574;&#x6570;&#x8F6C;&#x7F57;&#x9A6C;&#x6570;&#x5B57;</h1>
 <!-- TOC -->
 <ul>
-<li><a href="#&#x6700;&#x957F;&#x6709;&#x6548;&#x62EC;&#x53F7;">&#x6700;&#x957F;&#x6709;&#x6548;&#x62EC;&#x53F7;</a><ul>
+<li><a href="#&#x6574;&#x6570;&#x8F6C;&#x7F57;&#x9A6C;&#x6570;&#x5B57;">&#x6574;&#x6570;&#x8F6C;&#x7F57;&#x9A6C;&#x6570;&#x5B57;</a><ul>
 <li><a href="#&#x9898;&#x76EE;">&#x9898;&#x76EE;</a></li>
-<li><a href="#&#x4E00;">&#x4E00;&#x3002;</a></li>
-<li><a href="#js&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x66FF;&#x6362;&#x89E3;&#x51B3;&#x7684;&#x601D;&#x8DEF;&#x9003;&#x8BFE;&#x6210;&#x529F;">js&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x66FF;&#x6362;&#x89E3;&#x51B3;&#x7684;&#x601D;&#x8DEF;,&#x9003;&#x8BFE;&#x6210;&#x529F;</a></li>
+<li><a href="#&#x5B9A;&#x4E49;&#x8F6C;&#x6362;&#x6A21;&#x677F;-&#x65B9;&#x4FBF;&#x5EF6;&#x4F38;">&#x5B9A;&#x4E49;&#x8F6C;&#x6362;&#x6A21;&#x677F; &#x65B9;&#x4FBF;&#x5EF6;&#x4F38;</a></li>
+<li><a href="#&#x7A77;&#x4E3E;&#x6CD5;">&#x7A77;&#x4E3E;&#x6CD5;</a></li>
+<li><a href="#javascript-&#x65B9;&#x4FBF;&#x6269;&#x5C55;">javascript &#x65B9;&#x4FBF;&#x6269;&#x5C55;</a></li>
+<li><a href="#&#x8FD9;&#x4E2A;&#x89E3;&#x6CD5;&#x5E94;&#x8BE5;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;">&#x8FD9;&#x4E2A;&#x89E3;&#x6CD5;&#x5E94;&#x8BE5;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;</a></li>
+<li><a href="#Javascript">Javascript</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
 <h2 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x53EA;&#x5305;&#x542B; <code>&apos;(&apos;</code> &#x548C; <code>&apos;)&apos;</code> &#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x627E;&#x51FA;&#x6700;&#x957F;&#x7684;&#x5305;&#x542B;&#x6709;&#x6548;&#x62EC;&#x53F7;&#x7684;&#x5B50;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x3002;</p>
+<p>&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x4E03;&#x79CD;&#x5B57;&#x7B26;&#xFF1A; I&#xFF0C; V&#xFF0C; X&#xFF0C; L&#xFF0C;C&#xFF0C;D &#x548C; M&#x3002;</p>
+<pre><code class="lang-js">&#x5B57;&#x7B26;          &#x6570;&#x503C;
+I             <span class="hljs-number">1</span>
+V             <span class="hljs-number">5</span>
+X             <span class="hljs-number">10</span>
+L             <span class="hljs-number">50</span>
+C             <span class="hljs-number">100</span>
+D             <span class="hljs-number">500</span>
+M             <span class="hljs-number">1000</span>
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF0C; &#x7F57;&#x9A6C;&#x6570;&#x5B57; 2 &#x5199;&#x505A; <code>II</code> &#xFF0C;&#x5373;&#x4E3A;&#x4E24;&#x4E2A;&#x5E76;&#x5217;&#x7684; 1&#x3002;12 &#x5199;&#x505A; <code>XII</code> &#xFF0C;&#x5373;&#x4E3A; <code>X + II</code> &#x3002; 27 &#x5199;&#x505A;  <code>XXVII</code>, &#x5373;&#x4E3A; <code>XX + V + II</code> &#x3002;</p>
+<p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#x4E2D;&#x5C0F;&#x7684;&#x6570;&#x5B57;&#x5728;&#x5927;&#x7684;&#x6570;&#x5B57;&#x7684;&#x53F3;&#x8FB9;&#x3002;&#x4F46;&#x4E5F;&#x5B58;&#x5728;&#x7279;&#x4F8B;&#xFF0C;&#x4F8B;&#x5982; 4 &#x4E0D;&#x5199;&#x505A; <code>IIII</code>&#xFF0C;&#x800C;&#x662F; <code>IV</code>&#x3002;&#x6570;&#x5B57; 1 &#x5728;&#x6570;&#x5B57; 5 &#x7684;&#x5DE6;&#x8FB9;&#xFF0C;&#x6240;&#x8868;&#x793A;&#x7684;&#x6570;&#x7B49;&#x4E8E;&#x5927;&#x6570; 5 &#x51CF;&#x5C0F;&#x6570; 1 &#x5F97;&#x5230;&#x7684;&#x6570;&#x503C; 4 &#x3002;&#x540C;&#x6837;&#x5730;&#xFF0C;&#x6570;&#x5B57; 9 &#x8868;&#x793A;&#x4E3A; <code>IX</code>&#x3002;&#x8FD9;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x89C4;&#x5219;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x4EE5;&#x4E0B;&#x516D;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ul>
+<li><code>I</code> &#x53EF;&#x4EE5;&#x653E;&#x5728; <code>V</code> (5) &#x548C; <code>X</code> (10) &#x7684;&#x5DE6;&#x8FB9;&#xFF0C;&#x6765;&#x8868;&#x793A; 4 &#x548C; 9&#x3002;</li>
+<li><code>X</code> &#x53EF;&#x4EE5;&#x653E;&#x5728; <code>L</code> (50) &#x548C; <code>C</code> (100) &#x7684;&#x5DE6;&#x8FB9;&#xFF0C;&#x6765;&#x8868;&#x793A; 40 &#x548C; 90&#x3002; </li>
+<li><code>C</code> &#x53EF;&#x4EE5;&#x653E;&#x5728; <code>D</code> (500) &#x548C; <code>M</code> (1000) &#x7684;&#x5DE6;&#x8FB9;&#xFF0C;&#x6765;&#x8868;&#x793A; 400 &#x548C; 900&#x3002;</li>
+</ul>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x5C06;&#x5176;&#x8F6C;&#x4E3A;&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#x3002;&#x8F93;&#x5165;&#x786E;&#x4FDD;&#x5728; 1 &#x5230; 3999 &#x7684;&#x8303;&#x56F4;&#x5185;&#x3002;</p>
 <p>&#x793A;&#x4F8B; 1:</p>
-<pre><code class="lang-js">&#x8F93;&#x5165;: <span class="hljs-string">&quot;(()&quot;</span>
-&#x8F93;&#x51FA;: <span class="hljs-number">2</span>
-&#x89E3;&#x91CA;: &#x6700;&#x957F;&#x6709;&#x6548;&#x62EC;&#x53F7;&#x5B50;&#x4E32;&#x4E3A; <span class="hljs-string">&quot;()&quot;</span>
+<pre><code class="lang-js">&#x8F93;&#x5165;: <span class="hljs-number">3</span>
+&#x8F93;&#x51FA;: <span class="hljs-string">&quot;III&quot;</span>
 </code></pre>
 <p>&#x793A;&#x4F8B; 2:</p>
-<pre><code class="lang-js">&#x8F93;&#x5165;: <span class="hljs-string">&quot;)()())&quot;</span>
-&#x8F93;&#x51FA;: <span class="hljs-number">4</span>
-&#x89E3;&#x91CA;: &#x6700;&#x957F;&#x6709;&#x6548;&#x62EC;&#x53F7;&#x5B50;&#x4E32;&#x4E3A; <span class="hljs-string">&quot;()()&quot;</span>
+<pre><code class="lang-js">&#x8F93;&#x5165;: <span class="hljs-number">4</span>
+&#x8F93;&#x51FA;: <span class="hljs-string">&quot;IV&quot;</span>
 </code></pre>
-<h2 id="&#x4E00;&#x3002;">&#x4E00;&#x3002;</h2>
-<pre><code class="lang-js"><span class="hljs-comment">/**
- * m[i] &#x4EE5;&#x7B2C;i&#x4E2A;&#x5B57;&#x7B26;&#x7ED3;&#x5C3E;&#x7684;&#x6700;&#x957F;&#x6709;&#x6548;&#x62EC;&#x53F7;&#x6570;
- * str[i] === &apos;)&apos; &amp;&amp; str[i - m[i-1]-1] ===&apos;(&apos; ? m[i] = m[i-1]+2 +m[i-m[i-1]-2] : m[i] = 0
- *
- * @param {string} s
- * @return {number}
-**/</span>
-<span class="hljs-keyword">var</span> longestValidParentheses = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s</span>) </span>{
-  <span class="hljs-keyword">var</span> m = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(s.length);
-  m[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
-  <span class="hljs-keyword">let</span> res = <span class="hljs-number">0</span>;
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; i &lt; s.length; i++) {
-    <span class="hljs-keyword">if</span> (s[i] === <span class="hljs-string">&quot;)&quot;</span> &amp;&amp; s[i - m[i - <span class="hljs-number">1</span>] - <span class="hljs-number">1</span>] === <span class="hljs-string">&quot;(&quot;</span>) {
-      <span class="hljs-keyword">const</span> index = i - m[i - <span class="hljs-number">1</span>] - <span class="hljs-number">2</span>;
-      m[i] = m[i - <span class="hljs-number">1</span>] + <span class="hljs-number">2</span> + (index &gt; <span class="hljs-number">0</span> ? m[index] : <span class="hljs-number">0</span>);
-      res = <span class="hljs-built_in">Math</span>.max(res, m[i]);
-    } <span class="hljs-keyword">else</span> {
-      m[i] = <span class="hljs-number">0</span>;
+<p>&#x793A;&#x4F8B; 3:</p>
+<pre><code class="lang-js">&#x8F93;&#x5165;: <span class="hljs-number">9</span>
+&#x8F93;&#x51FA;: <span class="hljs-string">&quot;IX&quot;</span>
+</code></pre>
+<p>&#x793A;&#x4F8B; 4:</p>
+<pre><code class="lang-js">&#x8F93;&#x5165;: <span class="hljs-number">58</span>
+&#x8F93;&#x51FA;: <span class="hljs-string">&quot;LVIII&quot;</span>
+&#x89E3;&#x91CA;: L = <span class="hljs-number">50</span>, V = <span class="hljs-number">5</span>, III = <span class="hljs-number">3.</span>
+</code></pre>
+<p>&#x793A;&#x4F8B; 5:</p>
+<pre><code class="lang-js">&#x8F93;&#x5165;: <span class="hljs-number">1994</span>
+&#x8F93;&#x51FA;: <span class="hljs-string">&quot;MCMXCIV&quot;</span>
+&#x89E3;&#x91CA;: M = <span class="hljs-number">1000</span>, CM = <span class="hljs-number">900</span>, XC = <span class="hljs-number">90</span>, IV = <span class="hljs-number">4.</span>
+</code></pre>
+<h2 id="&#x5B9A;&#x4E49;&#x8F6C;&#x6362;&#x6A21;&#x677F;-&#x65B9;&#x4FBF;&#x5EF6;&#x4F38;">&#x5B9A;&#x4E49;&#x8F6C;&#x6362;&#x6A21;&#x677F; &#x65B9;&#x4FBF;&#x5EF6;&#x4F38;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> intToRoman = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">num</span>) </span>{
+  num = num.toString();
+  <span class="hljs-keyword">let</span> roman = <span class="hljs-string">&quot;&quot;</span>;
+  <span class="hljs-comment">//&#x5B9A;&#x4E49; &#x4E2A;&#xFF0C;&#x5341;&#xFF0C;&#x767E;&#xFF0C;&#x5343; &#x4F4D;&#x7684; &#x57FA;&#x672C;&#x4F4D; &#xFF0C; &#x4E2D;&#x95F4;&#x7684; &#xFF0C;&#x548C; &#x540E;&#x4E00;&#x4F4D; &#x8F6C;&#x6362;&#x7B26;&#x53F7;</span>
+  <span class="hljs-keyword">const</span> romanC = [
+    {
+      jiben: <span class="hljs-string">&quot;I&quot;</span>,
+      zhongjian: <span class="hljs-string">&quot;V&quot;</span>,
+      xiage: <span class="hljs-string">&quot;X&quot;</span>
+    },
+    {
+      jiben: <span class="hljs-string">&quot;X&quot;</span>,
+      zhongjian: <span class="hljs-string">&quot;L&quot;</span>,
+      xiage: <span class="hljs-string">&quot;C&quot;</span>
+    },
+    {
+      jiben: <span class="hljs-string">&quot;C&quot;</span>,
+      zhongjian: <span class="hljs-string">&quot;D&quot;</span>,
+      xiage: <span class="hljs-string">&quot;M&quot;</span>
+    },
+    {
+      jiben: <span class="hljs-string">&quot;M&quot;</span>,
+      zhongjian: <span class="hljs-string">&quot;&#x672A;&#x5B9A;&#x4E49;&#x4E07;&quot;</span>,
+      xiage: <span class="hljs-string">&quot;&#x672A;&#x5B9A;&#x4E49;&#x5341;&#x4E07;&quot;</span>
+    }
+  ];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = <span class="hljs-number">0</span>; j &lt; num.length; j++) {
+    <span class="hljs-keyword">let</span> i = <span class="hljs-built_in">parseInt</span>(num.substr(num.length - (j + <span class="hljs-number">1</span>), <span class="hljs-number">1</span>));
+    <span class="hljs-keyword">const</span> romanCi = romanC[j];
+    <span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">4</span>) {
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> k = <span class="hljs-number">0</span>; k &lt; i; k++) {
+        roman = romanCi.jiben + roman;
+      }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i == <span class="hljs-number">4</span>) {
+      roman = romanCi.jiben + romanCi.zhongjian + roman;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">4</span> &amp;&amp; i &lt; <span class="hljs-number">9</span>) {
+      <span class="hljs-keyword">let</span> da = <span class="hljs-string">&quot;&quot;</span>;
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> k = <span class="hljs-number">0</span>; k &lt; i - <span class="hljs-number">5</span>; k++) {
+        da += romanCi.jiben;
+      }
+      roman = romanCi.zhongjian + da + roman;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i == <span class="hljs-number">9</span>) {
+      roman = romanCi.jiben + romanCi.xiage + roman;
     }
   }
-  <span class="hljs-keyword">return</span> res;
+  <span class="hljs-keyword">return</span> roman;
 };
 </code></pre>
-<h2 id="js&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x66FF;&#x6362;&#x89E3;&#x51B3;&#x7684;&#x601D;&#x8DEF;&#x9003;&#x8BFE;&#x6210;&#x529F;">js&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x66FF;&#x6362;&#x89E3;&#x51B3;&#x7684;&#x601D;&#x8DEF;,&#x9003;&#x8BFE;&#x6210;&#x529F;</h2>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> longestValidParentheses = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s</span>) </span>{
-  <span class="hljs-keyword">let</span> _s = s.replace(<span class="hljs-regexp">/\((K*)\)/g</span>, <span class="hljs-string">&apos;$1K&apos;</span>);
-  <span class="hljs-keyword">while</span> (_s !== s) {
-    s = _s;
-    _s = s.replace(<span class="hljs-regexp">/\((K*)\)/g</span>, <span class="hljs-string">&apos;$1K&apos;</span>);
-  }
-  <span class="hljs-keyword">let</span> lx = <span class="hljs-number">0</span>
-    result = <span class="hljs-number">0</span>;
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; s.length; ++i) {
-    <span class="hljs-keyword">if</span> (s[i] === <span class="hljs-string">&apos;K&apos;</span>) {
-      lx++;
-      <span class="hljs-keyword">if</span> (lx &gt; result) result = lx;
-    } <span class="hljs-keyword">else</span> {
-      lx = <span class="hljs-number">0</span>;
+<h2 id="&#x7A77;&#x4E3E;&#x6CD5;">&#x7A77;&#x4E3E;&#x6CD5;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> intToRoman = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-comment">// let map = {</span>
+  <span class="hljs-comment">//     1: &apos;I&apos;,</span>
+  <span class="hljs-comment">//     5: &apos;V&apos;,</span>
+  <span class="hljs-comment">//     10: &apos;X&apos;,</span>
+  <span class="hljs-comment">//     50: &apos;L&apos;,</span>
+  <span class="hljs-comment">//     100: &apos;C&apos;,</span>
+  <span class="hljs-comment">//     500: &apos;D&apos;,</span>
+  <span class="hljs-comment">//     1000: &apos;M&apos;,</span>
+  <span class="hljs-comment">// };</span>
+  <span class="hljs-keyword">let</span> map = [<span class="hljs-string">&quot;I&quot;</span>, <span class="hljs-string">&quot;V&quot;</span>, <span class="hljs-string">&quot;X&quot;</span>, <span class="hljs-string">&quot;L&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;D&quot;</span>, <span class="hljs-string">&quot;M&quot;</span>];
+  <span class="hljs-keyword">let</span> res = [];
+  <span class="hljs-keyword">let</span> numStr = num + <span class="hljs-string">&quot;&quot;</span>;
+  <span class="hljs-keyword">let</span> len = numStr.length;
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+    <span class="hljs-keyword">let</span> cur = numStr[len - i - <span class="hljs-number">1</span>];
+    <span class="hljs-keyword">let</span> rate = [
+      map[<span class="hljs-number">2</span> * i],
+      map[<span class="hljs-built_in">Math</span>.min(<span class="hljs-number">2</span> * i + <span class="hljs-number">1</span>, map.length)],
+      map[<span class="hljs-built_in">Math</span>.min(<span class="hljs-number">2</span> * i + <span class="hljs-number">2</span>, map.length)]
+    ];
+
+    <span class="hljs-keyword">if</span> (~~cur &lt;= <span class="hljs-number">3</span>) {
+      res = <span class="hljs-built_in">Array</span>(~~cur)
+        .fill(rate[<span class="hljs-number">0</span>])
+        .concat(res);
+      <span class="hljs-keyword">continue</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (~~cur &lt;= <span class="hljs-number">4</span>) {
+      res.unshift(rate[<span class="hljs-number">1</span>]);
+      res.unshift(rate[<span class="hljs-number">0</span>]);
+      <span class="hljs-keyword">continue</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (cur === <span class="hljs-string">&quot;5&quot;</span>) {
+      res.unshift(rate[<span class="hljs-number">1</span>]);
+      <span class="hljs-keyword">continue</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (~~cur &lt;= <span class="hljs-number">8</span>) {
+      res = <span class="hljs-built_in">Array</span>(~~cur - <span class="hljs-number">5</span>)
+        .fill(rate[<span class="hljs-number">0</span>])
+        .concat(res);
+      res.unshift(rate[<span class="hljs-number">1</span>]);
+      <span class="hljs-keyword">continue</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (cur === <span class="hljs-string">&quot;9&quot;</span>) {
+      res.unshift(rate[<span class="hljs-number">2</span>]);
+      res.unshift(rate[<span class="hljs-number">0</span>]);
     }
   }
-  <span class="hljs-keyword">return</span> result * <span class="hljs-number">2</span>;
+
+  <span class="hljs-keyword">return</span> res.join(<span class="hljs-string">&quot;&quot;</span>);
+};
+</code></pre>
+<h2 id="javascript-&#x65B9;&#x4FBF;&#x6269;&#x5C55;">javascript &#x65B9;&#x4FBF;&#x6269;&#x5C55;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> transform = (val, arr) =&gt; {
+  <span class="hljs-keyword">if</span> (val &lt; <span class="hljs-number">4</span>) {
+    <span class="hljs-keyword">return</span> arr[<span class="hljs-number">0</span>].repeat(val);
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (val === <span class="hljs-number">4</span>) {
+    <span class="hljs-keyword">return</span> arr[<span class="hljs-number">0</span>] + arr[<span class="hljs-number">1</span>];
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (val &lt; <span class="hljs-number">9</span>) {
+    <span class="hljs-keyword">return</span> arr[<span class="hljs-number">1</span>] + arr[<span class="hljs-number">0</span>].repeat(val - <span class="hljs-number">5</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> arr[<span class="hljs-number">0</span>] + arr[<span class="hljs-number">2</span>];
+  }
+};
+<span class="hljs-comment">/**
+ * @param {number} num
+ * @return {string}
+ */</span>
+<span class="hljs-keyword">var</span> intToRoman = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-keyword">const</span> arr = [[<span class="hljs-string">&quot;I&quot;</span>, <span class="hljs-string">&quot;V&quot;</span>, <span class="hljs-string">&quot;X&quot;</span>], [<span class="hljs-string">&quot;X&quot;</span>, <span class="hljs-string">&quot;L&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>], [<span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;D&quot;</span>, <span class="hljs-string">&quot;M&quot;</span>], [<span class="hljs-string">&quot;M&quot;</span>]];
+  <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>,
+    s = <span class="hljs-string">&quot;&quot;</span>;
+  <span class="hljs-keyword">while</span> (num / <span class="hljs-number">10</span> &gt; <span class="hljs-number">0</span>) {
+    s = transform(num % <span class="hljs-number">10</span>, arr[i]) + s;
+    num = <span class="hljs-built_in">Math</span>.floor(num / <span class="hljs-number">10</span>);
+    i++;
+  }
+  <span class="hljs-keyword">return</span> s;
+};
+</code></pre>
+<h2 id="&#x8FD9;&#x4E2A;&#x89E3;&#x6CD5;&#x5E94;&#x8BE5;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;">&#x8FD9;&#x4E2A;&#x89E3;&#x6CD5;&#x5E94;&#x8BE5;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> intToRoman = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-keyword">var</span> q = <span class="hljs-built_in">Math</span>.floor(num / <span class="hljs-number">1000</span>);
+  <span class="hljs-keyword">var</span> b = <span class="hljs-built_in">Math</span>.floor((num % <span class="hljs-number">1000</span>) / <span class="hljs-number">100</span>);
+  <span class="hljs-keyword">var</span> s = <span class="hljs-built_in">Math</span>.floor((num % <span class="hljs-number">100</span>) / <span class="hljs-number">10</span>);
+  <span class="hljs-keyword">var</span> g = num % <span class="hljs-number">10</span>;
+  <span class="hljs-keyword">var</span> result = <span class="hljs-string">&quot;&quot;</span>;
+  <span class="hljs-keyword">var</span> parse = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">n, x, y, z</span>) </span>{
+    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">3</span>) {
+      <span class="hljs-keyword">return</span> x.repeat(n);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">5</span>) {
+      <span class="hljs-keyword">return</span> x.repeat(<span class="hljs-number">5</span> - n) + y;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">8</span>) {
+      <span class="hljs-keyword">return</span> y + x.repeat(n - <span class="hljs-number">5</span>);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (n &gt; <span class="hljs-number">8</span>) {
+      <span class="hljs-keyword">return</span> x.repeat(<span class="hljs-number">10</span> - n) + z;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>;
+  };
+  <span class="hljs-comment">//&#x5343;&#x4F4D;</span>
+  <span class="hljs-keyword">if</span> (q &gt; <span class="hljs-number">0</span>) {
+    result += <span class="hljs-string">&quot;M&quot;</span>.repeat(q);
+  }
+  <span class="hljs-comment">//&#x767E;&#x4F4D;</span>
+  result += parse(b, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;D&quot;</span>, <span class="hljs-string">&quot;M&quot;</span>);
+
+  <span class="hljs-comment">//&#x5341;&#x4F4D;</span>
+  result += parse(s, <span class="hljs-string">&quot;X&quot;</span>, <span class="hljs-string">&quot;L&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);
+
+  <span class="hljs-comment">//&#x4E2A;&#x4F4D;</span>
+  result += parse(g, <span class="hljs-string">&quot;I&quot;</span>, <span class="hljs-string">&quot;V&quot;</span>, <span class="hljs-string">&quot;X&quot;</span>);
+
+  <span class="hljs-keyword">return</span> result;
+};
+</code></pre>
+<h2 id="javascript">Javascript</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> intToRoman = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-comment">// make a dictionary,</span>
+  <span class="hljs-keyword">let</span> dict = [
+    [<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;M&quot;</span>, <span class="hljs-string">&quot;MM&quot;</span>, <span class="hljs-string">&quot;MMM&quot;</span>],
+    [<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;CC&quot;</span>, <span class="hljs-string">&quot;CCC&quot;</span>, <span class="hljs-string">&quot;CD&quot;</span>, <span class="hljs-string">&quot;D&quot;</span>, <span class="hljs-string">&quot;DC&quot;</span>, <span class="hljs-string">&quot;DCC&quot;</span>, <span class="hljs-string">&quot;DCCC&quot;</span>, <span class="hljs-string">&quot;CM&quot;</span>],
+    [<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;X&quot;</span>, <span class="hljs-string">&quot;XX&quot;</span>, <span class="hljs-string">&quot;XXX&quot;</span>, <span class="hljs-string">&quot;XL&quot;</span>, <span class="hljs-string">&quot;L&quot;</span>, <span class="hljs-string">&quot;LX&quot;</span>, <span class="hljs-string">&quot;LXX&quot;</span>, <span class="hljs-string">&quot;LXXX&quot;</span>, <span class="hljs-string">&quot;XC&quot;</span>],
+    [<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;I&quot;</span>, <span class="hljs-string">&quot;II&quot;</span>, <span class="hljs-string">&quot;III&quot;</span>, <span class="hljs-string">&quot;IV&quot;</span>, <span class="hljs-string">&quot;V&quot;</span>, <span class="hljs-string">&quot;VI&quot;</span>, <span class="hljs-string">&quot;VII&quot;</span>, <span class="hljs-string">&quot;VIII&quot;</span>, <span class="hljs-string">&quot;IX&quot;</span>]
+  ];
+
+  <span class="hljs-comment">//&#x51D1;&#x6EE1;4&#x4F4D;&#x6570;, &#x62C6;&#x6210;&#x6570;&#x7EC4;&#xFF0C;&#x6BCF;&#x4E2A;&#x6570;&#x5B57;&#x8F6C;&#x6210;&#x5B57;&#x5178;&#x91CC;&#x5BF9;&#x5E94;&#x7684;&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#xFF0C;&#x518D;&#x8F6C;&#x56DE;&#x5B57;&#x4E32;</span>
+  <span class="hljs-keyword">return</span> (<span class="hljs-string">&quot;000&quot;</span> + num)
+    .replace(<span class="hljs-regexp">/.*(....)$/</span>, <span class="hljs-string">&quot;$1&quot;</span>)
+    .split(<span class="hljs-string">&quot;&quot;</span>)
+    .map((n, i) =&gt; dict[i][+n])
+    .join(<span class="hljs-string">&quot;&quot;</span>);
 };
 </code></pre>
 
@@ -5036,12 +5303,12 @@
 
             
                 
-                <a href="全排列II.html" class="navigation navigation-prev " aria-label="Previous page: 全排列 II">
+                <a href="除自身以外数组的乘积.html" class="navigation navigation-prev " aria-label="Previous page: 除自身以外数组的乘积">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="搜索旋转排序数组.html" class="navigation navigation-next " aria-label="Next page: 搜索旋转排序数组">
+                <a href="罗马数字转整数.html" class="navigation navigation-next " aria-label="Next page: 罗马数字转整数">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -5052,7 +5319,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"最长有效括号","level":"9.50","depth":1,"next":{"title":"搜索旋转排序数组","level":"9.51","depth":1,"path":"算法/搜索旋转排序数组.md","ref":"算法/搜索旋转排序数组.md","articles":[]},"previous":{"title":"全排列 II","level":"9.49","depth":1,"path":"算法/全排列II.md","ref":"算法/全排列II.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/最长有效括号.md","mtime":"2019-07-09T08:26:13.256Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-16T09:06:52.272Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"整数转罗马数字","level":"9.23","depth":1,"next":{"title":"罗马数字转整数","level":"9.24","depth":1,"path":"算法/罗马数字转整数.md","ref":"算法/罗马数字转整数.md","articles":[]},"previous":{"title":"除自身以外数组的乘积","level":"9.22","depth":1,"path":"算法/除自身以外数组的乘积.md","ref":"算法/除自身以外数组的乘积.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/整数转罗马数字.md","mtime":"2019-07-06T12:51:26.992Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T11:44:53.364Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
