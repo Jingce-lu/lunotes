@@ -30,3 +30,4 @@
 27. [实现一个继承](./实现一个继承.md)
 28. [Js深拷贝](./JS深拷贝.md)
 29. [封装Ajax和Promise](./封装Ajax和Promise.md)
+30. [实现系统Math.max方法](实现系统Math.max方法.md)
