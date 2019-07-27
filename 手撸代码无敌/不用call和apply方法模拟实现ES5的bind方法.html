@@ -5430,37 +5430,36 @@ jawil.sayHello.applyTwo(lulin,[<span class="hljs-number">24</span>])<span class=
 <h3 id="133-&#x6A21;&#x62DF;&#x5B9E;&#x73B0;&#x7B2C;&#x4E09;&#x6B65;">1.3.3 &#x6A21;&#x62DF;&#x5B9E;&#x73B0;&#x7B2C;&#x4E09;&#x6B65;</h3>
 <p>&#x5176;&#x5B9E;&#x8FD8;&#x6709;&#x51E0;&#x4E2A;&#x5C0F;&#x5730;&#x65B9;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;</p>
 <ol>
-<li><p>this&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4F20;null&#x6216;&#x8005;&#x4E0D;&#x4F20;&#xFF0C;&#x5F53;&#x4E3A;null&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x89C6;&#x4E3A;&#x6307;&#x5411;window
-```js
+<li>this&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4F20;null&#x6216;&#x8005;&#x4E0D;&#x4F20;&#xFF0C;&#x5F53;&#x4E3A;null&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x89C6;&#x4E3A;&#x6307;&#x5411;window<br>```js
 // demo1
-var name = &apos;jawil&apos;;</p>
-<p>function sayHello() {</p>
-<pre><code>console.log(this.name);
-</code></pre><p>}</p>
-<p>sayHello.apply(null); // &apos;jawil&apos;</p>
-</li>
+var name = &apos;jawil&apos;;</li>
 </ol>
-<p>   // demo2
-   var name = &apos;jawil&apos;;</p>
-<p>   function sayHello() {
-       console.log(this.name);
-   }</p>
-<p>   sayHello.apply(); // &apos;jawil&apos;</p>
+<p>function sayHello() {
+    console.log(this.name);
+}</p>
+<p>sayHello.apply(null); // &apos;jawil&apos;</p>
+<p>// demo2
+var name = &apos;jawil&apos;;</p>
+<p>function sayHello() {
+    console.log(this.name);
+}</p>
+<p>sayHello.apply(); // &apos;jawil&apos;</p>
 <pre><code>
-2. &#x51FD;&#x6570;&#x662F;&#x53EF;&#x4EE5;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;
-   ```js
-   var obj = {
-       name: &apos;jawil&apos;
-   }
+2. &#x51FD;&#x6570;&#x662F;&#x53EF;&#x4EE5;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;  
 
-   function sayHello(age) {
-       return {
-           name: this.name,
-           age: age
-       }
-   }
+```js
+var obj = {
+    name: &apos;jawil&apos;
+}
 
-   console.log(sayHello.apply(obj,[24]));// {name: &quot;jawil&quot;, age: 24}
+function sayHello(age) {
+    return {
+        name: this.name,
+        age: age
+    }
+}
+
+console.log(sayHello.apply(obj,[24]));// {name: &quot;jawil&quot;, age: 24}
 </code></pre><p>&#x6B64;&#x65F6;&#x7684;&#x7B2C;&#x4E09;&#x7248;apply&#x6A21;&#x62DF;&#x65B9;&#x6CD5;</p>
 <pre><code class="lang-js"><span class="hljs-comment">//&#x539F;&#x751F;JavaScript&#x5C01;&#x88C5;apply&#x65B9;&#x6CD5;&#xFF0C;&#x7B2C;&#x4E09;&#x7248;</span>
 <span class="hljs-built_in">Function</span>.prototype.applyThree = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">context</span>) </span>{
@@ -5953,7 +5952,7 @@ alice.distractedGreeting();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"不用call和apply方法模拟实现ES5的bind方法","level":"7.8","depth":1,"next":{"title":"curry","level":"7.9","depth":1,"path":"手撸代码无敌/curry.md","ref":"手撸代码无敌/curry.md","articles":[]},"previous":{"title":"call, apply, bind","level":"7.7","depth":1,"path":"手撸代码无敌/call-apply-bind.md","ref":"手撸代码无敌/call-apply-bind.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.md","mtime":"2019-07-27T06:46:05.104Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-27T06:46:10.782Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"不用call和apply方法模拟实现ES5的bind方法","level":"7.8","depth":1,"next":{"title":"curry","level":"7.9","depth":1,"path":"手撸代码无敌/curry.md","ref":"手撸代码无敌/curry.md","articles":[]},"previous":{"title":"call, apply, bind","level":"7.7","depth":1,"path":"手撸代码无敌/call-apply-bind.md","ref":"手撸代码无敌/call-apply-bind.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.md","mtime":"2019-07-27T07:08:58.233Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-27T07:09:07.482Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
