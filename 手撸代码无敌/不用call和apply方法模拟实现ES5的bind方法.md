@@ -160,8 +160,8 @@ jawil.sayHello.applyTwo(lulin,[24])//lulin 24
 ### 1.3.3 模拟实现第三步
 
 其实还有几个小地方需要注意：
-1. this参数可以传null或者不传，当为null的时候，视为指向window
 
+A. this参数可以传null或者不传，当为null的时候，视为指向window  
 ```js
 // demo1
 var name = 'jawil';
@@ -183,7 +183,7 @@ function sayHello() {
 sayHello.apply(); // 'jawil'
 ```
 
-2. 函数是可以有返回值的.
+B. 函数是可以有返回值的  
 
 ```js
 var obj = {
