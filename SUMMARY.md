@@ -63,8 +63,7 @@
 * TypeScript
   - [TypeScript](Js/TypeScript/Typescript.md)
   - [TypeScript2.8下的终极React组件模式](Js/TypeScript/TypeScript2.8下的终极React组件模式.md)
-  - [TypeScript2特性](Js/TypeScript/TypeScript2特性.md)
-
+  - [TypeScript2特性](TypeScript2特性.md)
 * -
 
 ## Part 2 - Advanced
