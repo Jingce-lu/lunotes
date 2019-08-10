@@ -65,7 +65,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="N皇后.html" />
+    <link rel="next" href="零钱兑换.html" />
     
     
     <link rel="prev" href="最小路径和.html" />
@@ -4092,12 +4092,42 @@
             
         </li>
     
-        <li class="chapter " data-level="9.127" data-path="N皇后.html">
+        <li class="chapter " data-level="9.127" data-path="零钱兑换.html">
+            
+                <a href="零钱兑换.html">
+            
+                    
+                        <b>9.127.</b>
+                    
+                    零钱兑换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.128" data-path="零钱兑换II.html">
+            
+                <a href="零钱兑换II.html">
+            
+                    
+                        <b>9.128.</b>
+                    
+                    零钱兑换 II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.129" data-path="N皇后.html">
             
                 <a href="N皇后.html">
             
                     
-                        <b>9.127.</b>
+                        <b>9.129.</b>
                     
                     N皇后
             
@@ -4107,12 +4137,12 @@
             
         </li>
     
-        <li class="chapter " data-level="9.128" data-path="N皇后II.html">
+        <li class="chapter " data-level="9.130" data-path="N皇后II.html">
             
                 <a href="N皇后II.html">
             
                     
-                        <b>9.128.</b>
+                        <b>9.130.</b>
                     
                     N皇后 II
             
@@ -4122,12 +4152,12 @@
             
         </li>
     
-        <li class="chapter " data-level="9.129" data-path="颜色分类.html">
+        <li class="chapter " data-level="9.131" data-path="颜色分类.html">
             
                 <a href="颜色分类.html">
             
                     
-                        <b>9.129.</b>
+                        <b>9.131.</b>
                     
                     颜色分类
             
@@ -4137,12 +4167,12 @@
             
         </li>
     
-        <li class="chapter " data-level="9.130" data-path="子集.html">
+        <li class="chapter " data-level="9.132" data-path="子集.html">
             
                 <a href="子集.html">
             
                     
-                        <b>9.130.</b>
+                        <b>9.132.</b>
                     
                     子集
             
@@ -4152,12 +4182,12 @@
             
         </li>
     
-        <li class="chapter " data-level="9.131" data-path="单词搜索.html">
+        <li class="chapter " data-level="9.133" data-path="单词搜索.html">
             
                 <a href="单词搜索.html">
             
                     
-                        <b>9.131.</b>
+                        <b>9.133.</b>
                     
                     单词搜索
             
@@ -5606,21 +5636,41 @@ int coinChange(vector&lt;int&gt;&amp; coins, int amount) {
 }
 
 
-<span class="hljs-comment">// js</span>
-<span class="hljs-comment">// INT_MAX &#x9700;&#x8F6C;&#x6362;</span>
+<span class="hljs-comment">// js 1</span>
 <span class="hljs-keyword">var</span> coinChange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">coins, amount</span>) </span>{
   <span class="hljs-keyword">if</span> (amount == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-  <span class="hljs-keyword">var</span> ans = INT_MAX;
+  <span class="hljs-keyword">var</span> ans = <span class="hljs-built_in">Number</span>.MAX_VALUE;
   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> coin <span class="hljs-keyword">in</span> coins) {
     <span class="hljs-comment">// &#x91D1;&#x989D;&#x4E0D;&#x53EF;&#x8FBE;</span>
     <span class="hljs-keyword">if</span> (amount - coin &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;
     <span class="hljs-keyword">var</span> subProb = coinChange(coins, amount - coin);
     <span class="hljs-comment">// &#x5B50;&#x95EE;&#x9898;&#x65E0;&#x89E3;</span>
     <span class="hljs-keyword">if</span> (subProb == <span class="hljs-number">-1</span>) <span class="hljs-keyword">continue</span>;
-    ans = min(ans, subProb + <span class="hljs-number">1</span>);
+    ans = <span class="hljs-built_in">Math</span>.min(ans, subProb + <span class="hljs-number">1</span>);
   }
-  <span class="hljs-keyword">return</span> ans == INT_MAX ? <span class="hljs-number">-1</span> : ans;
+  <span class="hljs-keyword">return</span> ans == <span class="hljs-built_in">Number</span>.MAX_VALUE ? <span class="hljs-number">-1</span> : ans;
 }
+
+coinChange([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>], <span class="hljs-number">11</span>) <span class="hljs-comment">// 3</span>
+
+
+<span class="hljs-comment">// js2 DP</span>
+<span class="hljs-keyword">var</span> coinChange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">coins, amount</span>) </span>{
+  <span class="hljs-keyword">let</span> dp = [<span class="hljs-number">0</span>];
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; amount + <span class="hljs-number">1</span>; i++) {
+    dp[i] = <span class="hljs-built_in">Number</span>.MAX_VALUE;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> coin <span class="hljs-keyword">of</span> coins) {
+      <span class="hljs-keyword">if</span> (i &gt;= coin &amp;&amp; dp[i - coin] !== <span class="hljs-number">-1</span>) {
+        dp[i] = <span class="hljs-built_in">Math</span>.min(dp[i - coin] + <span class="hljs-number">1</span>, dp[i]);
+      }
+    }
+
+    <span class="hljs-keyword">if</span> (dp[i] === <span class="hljs-built_in">Number</span>.MAX_VALUE) dp[i] = <span class="hljs-number">-1</span>;
+  }
+  <span class="hljs-keyword">return</span> dp[amount];
+};
 
 coinChange([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>], <span class="hljs-number">11</span>)
 </code></pre>
@@ -5787,7 +5837,7 @@ int coinChange(vector&lt;int&gt;&amp; coins, int amount) {
                 </a>
                 
                 
-                <a href="N皇后.html" class="navigation navigation-next " aria-label="Next page: N皇后">
+                <a href="零钱兑换.html" class="navigation navigation-next " aria-label="Next page: 零钱兑换">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -5798,7 +5848,7 @@ int coinChange(vector&lt;int&gt;&amp; coins, int amount) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"斐波那契数","level":"9.126","depth":1,"next":{"title":"N皇后","level":"9.127","depth":1,"path":"算法/N皇后.md","ref":"算法/N皇后.md","articles":[]},"previous":{"title":"最小路径和","level":"9.125","depth":1,"path":"算法/最小路径和.md","ref":"算法/最小路径和.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/斐波那契数.md","mtime":"2019-08-10T05:39:25.985Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-10T05:49:28.453Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"斐波那契数","level":"9.126","depth":1,"next":{"title":"零钱兑换","level":"9.127","depth":1,"path":"算法/零钱兑换.md","ref":"算法/零钱兑换.md","articles":[]},"previous":{"title":"最小路径和","level":"9.125","depth":1,"path":"算法/最小路径和.md","ref":"算法/最小路径和.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"算法/斐波那契数.md","mtime":"2019-08-10T15:52:22.811Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-10T16:30:55.596Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
