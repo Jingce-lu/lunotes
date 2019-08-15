@@ -5730,94 +5730,85 @@ arr.sort(<span class="hljs-function"><span class="hljs-keyword">function</span>(
 </code></pre>
 </li>
 <li><p>&#x7B2C;&#x4E8C;&#x79CD;&#xFF1A; </p>
+</li>
+</ol>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> tasks= []
 <span class="hljs-keyword">const</span> output = (i) =&gt; <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve) =&gt; {
-setTimeout(() =&gt; {
- <span class="hljs-built_in">console</span>.log(i)
- resolve() <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x4E00;&#x5B9A;&#x8981; resolve, &#x5426;&#x5219;&#x4EE3;&#x7801;&#x4E0D;&#x4F1A;&#x6309;&#x9884;&#x671F; work</span>
-}, <span class="hljs-number">1000</span> * i)
+  setTimeout(() =&gt; {
+    <span class="hljs-built_in">console</span>.log(i)
+    resolve() <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x4E00;&#x5B9A;&#x8981; resolve, &#x5426;&#x5219;&#x4EE3;&#x7801;&#x4E0D;&#x4F1A;&#x6309;&#x9884;&#x671F; work</span>
+  }, <span class="hljs-number">1000</span> * i)
 })
 <span class="hljs-comment">// &#x751F;&#x6210;&#x5168;&#x90E8;&#x7684;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</span>
 <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
-tasks.push(output(i))
+  tasks.push(output(i))
 }
 <span class="hljs-comment">// &#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x8F93;&#x51FA;&#x6700;&#x540E;&#x7684;i</span>
 <span class="hljs-built_in">Promise</span>.all(tasks).then(() =&gt; {
-setTimeout(() =&gt; {
- <span class="hljs-built_in">console</span>.log(i)
-}, <span class="hljs-number">1000</span>)
+  setTimeout(() =&gt; {
+    <span class="hljs-built_in">console</span>.log(i)
+  }, <span class="hljs-number">1000</span>)
 })
 </code></pre>
-</li>
-<li><p>&#x7B2C;&#x4E09;&#x79CD; &#x6A21;&#x62DF;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E2D;&#x7684; sleep&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;<br>```js
-// &#x6A21;&#x62DF;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E2D;&#x7684; sleep&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;
-const sleep = (timeountMS) =&gt; new Promise((resolve) =&gt; {
- setTimeout(resolve, timeountMS);
-});</p>
-</li>
+<ol>
+<li>&#x7B2C;&#x4E09;&#x79CD; &#x6A21;&#x62DF;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E2D;&#x7684; sleep&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;  </li>
 </ol>
-<p>(async () =&gt; {  // &#x58F0;&#x660E;&#x5373;&#x6267;&#x884C;&#x7684; async &#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;
-    for (var i = 0; i &lt; 5; i++) {
-        await sleep(1000);
-        console.log(new Date, i);
-    }</p>
-<pre><code>await sleep(1000);
-console.log(new Date, i);
-</code></pre><p>})();</p>
-<pre><code>
-## 9. &#x8C08;&#x8C08;&#x5BF9;this&#x7684;&#x7406;&#x89E3;
-1. this&#x603B;&#x662F;&#x6307;&#x5411;&#x51FD;&#x6570;&#x7684;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x8005;&#xFF08;&#x800C;&#x975E;&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x8005;&#xFF09;
-2. &#x5982;&#x679C;&#x6709;new&#x5173;&#x952E;&#x5B57;&#xFF0C;this&#x6307;&#x5411;new&#x51FA;&#x6765;&#x7684;&#x90A3;&#x4E2A;&#x5BF9;&#x8C61;
-3. &#x5728;&#x4E8B;&#x4EF6;&#x4E2D;&#xFF0C;this&#x6307;&#x5411;&#x76EE;&#x6807;&#x5143;&#x7D20;&#xFF0C;&#x7279;&#x6B8A;&#x7684;&#x662F;IE&#x7684;attachEvent&#x4E2D;&#x7684;this&#x603B;&#x662F;&#x6307;&#x5411;&#x5168;&#x5C40;&#x5BF9;&#x8C61;window&#x3002;
+<pre><code class="lang-js"><span class="hljs-comment">// &#x6A21;&#x62DF;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E2D;&#x7684; sleep&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</span>
+<span class="hljs-keyword">const</span> sleep = (timeountMS) =&gt; <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve) =&gt; {
+    setTimeout(resolve, timeountMS);
+});
 
+(<span class="hljs-keyword">async</span> () =&gt; {  <span class="hljs-comment">// &#x58F0;&#x660E;&#x5373;&#x6267;&#x884C;&#x7684; async &#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+        <span class="hljs-keyword">await</span> sleep(<span class="hljs-number">1000</span>);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>, i);
+    }
 
-## 10. eval&#x662F;&#x505A;&#x4EC0;&#x4E48;&#x7684;&#xFF1F;
-&#x5B83;&#x7684;&#x529F;&#x80FD;&#x662F;&#x628A;&#x5BF9;&#x5E94;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x6210;JS&#x4EE3;&#x7801;&#x5E76;&#x8FD0;&#x884C;&#xFF1B;&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x4F7F;&#x7528;eval&#xFF0C;&#x4E0D;&#x5B89;&#x5168;&#xFF0C;&#x975E;&#x5E38;&#x8017;&#x6027;&#x80FD;&#xFF08;2&#x6B21;&#xFF0C;&#x4E00;&#x6B21;&#x89E3;&#x6790;&#x6210;js&#x8BED;&#x53E5;&#xFF0C;&#x4E00;&#x6B21;&#x6267;&#x884C;&#xFF09;
-
-
-## 11. [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;].map(parseInt)&#x7B54;&#x6848;&#x662F;&#x591A;&#x5C11;&#xFF1F;
-[1, NaN, NaN]
-
-&#x89E3;&#x6790;&#xFF1A;
-1. Array.prototype.map()  
-    array.map(callback[, thisArg])  
-    callback&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x89C4;&#x5219;   
-    &#x53C2;&#x6570;&#xFF1A;&#x81EA;&#x52A8;&#x4F20;&#x5165;&#x4E09;&#x4E2A;&#x53C2;&#x6570;   
-    currentValue(&#x5F53;&#x524D;&#x88AB;&#x4F20;&#x9012;&#x7684;&#x5143;&#x7D20;)  
-    index(&#x5F53;&#x524D;&#x88AB;&#x4F20;&#x9012;&#x7684;&#x5143;&#x7D20;&#x7684;&#x7D22;&#x5F15;) 
-    array(&#x8C03;&#x7528;map&#x65B9;&#x6CD5;&#x7684;&#x6570;&#x7EC4;)
-2. parseInt  
-    parseInt&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;  
-    &#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;[&apos;1&apos;, &apos;2&apos;, &apos;3&apos;]&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;parseInt&#x65B9;&#x6CD5;&#x5C06;&#x4F1A;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x88AB;&#x8C03;&#x7528;  
-    parseInt(&apos;1&apos;, 0)  
-    parseInt(&apos;2&apos;, 1)  
-    parseInt(&apos;3&apos;, 2)  
-
-- parseInt&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;radix&#x4E3A;0&#x65F6;&#xFF0C;ECMAScript5&#x5C06;string&#x4F5C;&#x4E3A;&#x5341;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x3002;
-- parseInt&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;radix&#x4E3A;1&#x65F6;&#xFF0C;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x4E3A;NaN;
-- parseInt&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;radix&#x5728;2-36&#x4E4B;&#x95F4;&#x65F6;&#xFF0C;&#x5982;&#x679C;string&#x53C2;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF08;&#x9664;&#x7A7A;&#x767D;&#x4EE5;&#x5916;&#xFF09;&#xFF0C;&#x4E0D;&#x5C5E;&#x4E8E;radix&#x6307;&#x5B9A;&#x8FDB;&#x5236;&#x4E0B;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x4E3A;NaN&#x3002;
-- parseInt(&apos;3&apos;, 2)&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x7531;&#x4E8E; &apos;3&apos; &#x4E0D;&#x5C5E;&#x4E8E;&#x4E8C;&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#xFF0C;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x4E3A; NaN&#x3002;
-
-
-## 12. &#x4EC0;&#x4E48;&#x662F;&#x95ED;&#x5305;(closure)&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x7528;&#x5B83;&#xFF1F;
-&#x95ED;&#x5305;&#x6307;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x53D8;&#x91CF;&#x3002;&#x5E38;&#x89C1;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x662F;&#x5728;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x5B9A;&#x4E49;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x5916;&#x5C42;&#x7684;&#x53D8;&#x91CF;&#xFF1B;&#x5916;&#x5C42;&#x53D8;&#x91CF;&#x4E0D;&#x4F1A;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;&#x56DE;&#x6536;&#x3002;
-&#x6CE8;&#x610F;&#xFF1A;&#x95ED;&#x5305;&#x7684;&#x539F;&#x7406;&#x662F;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#xFF0C;&#x6240;&#x4EE5;&#x95ED;&#x5305;&#x8BBF;&#x95EE;&#x7684;&#x4E0A;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x662F;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#x5176;&#x8FD0;&#x7B97;&#x7ED3;&#x675F;&#x540E;&#x7684;&#x5DE6;&#x540E;&#x4E00;&#x4E2A;&#x503C;&#x3002;
-
-- &#x4F18;&#x70B9;&#xFF1A;&#x907F;&#x514D;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x6C61;&#x67D3;&#x3002;
-- &#x7F3A;&#x70B9;&#xFF1A;&#x5BB9;&#x6613;&#x9020;&#x6210;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x3002;
-
-&#x4F8B;&#x5B50;&#xFF1A;  
-```js
-function makeFunc() {
-  var name = &apos;Mozilla&apos;
-  function displayName() {
-    console.log(name)
+    <span class="hljs-keyword">await</span> sleep(<span class="hljs-number">1000</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>, i);
+})();
+</code></pre>
+<h2 id="9-&#x8C08;&#x8C08;&#x5BF9;this&#x7684;&#x7406;&#x89E3;">9. &#x8C08;&#x8C08;&#x5BF9;this&#x7684;&#x7406;&#x89E3;</h2>
+<ol>
+<li>this&#x603B;&#x662F;&#x6307;&#x5411;&#x51FD;&#x6570;&#x7684;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x8005;&#xFF08;&#x800C;&#x975E;&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x8005;&#xFF09;</li>
+<li>&#x5982;&#x679C;&#x6709;new&#x5173;&#x952E;&#x5B57;&#xFF0C;this&#x6307;&#x5411;new&#x51FA;&#x6765;&#x7684;&#x90A3;&#x4E2A;&#x5BF9;&#x8C61;</li>
+<li>&#x5728;&#x4E8B;&#x4EF6;&#x4E2D;&#xFF0C;this&#x6307;&#x5411;&#x76EE;&#x6807;&#x5143;&#x7D20;&#xFF0C;&#x7279;&#x6B8A;&#x7684;&#x662F;IE&#x7684;attachEvent&#x4E2D;&#x7684;this&#x603B;&#x662F;&#x6307;&#x5411;&#x5168;&#x5C40;&#x5BF9;&#x8C61;window&#x3002;</li>
+</ol>
+<h2 id="10-eval&#x662F;&#x505A;&#x4EC0;&#x4E48;&#x7684;&#xFF1F;">10. eval&#x662F;&#x505A;&#x4EC0;&#x4E48;&#x7684;&#xFF1F;</h2>
+<p>&#x5B83;&#x7684;&#x529F;&#x80FD;&#x662F;&#x628A;&#x5BF9;&#x5E94;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x6210;JS&#x4EE3;&#x7801;&#x5E76;&#x8FD0;&#x884C;&#xFF1B;&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x4F7F;&#x7528;eval&#xFF0C;&#x4E0D;&#x5B89;&#x5168;&#xFF0C;&#x975E;&#x5E38;&#x8017;&#x6027;&#x80FD;&#xFF08;2&#x6B21;&#xFF0C;&#x4E00;&#x6B21;&#x89E3;&#x6790;&#x6210;js&#x8BED;&#x53E5;&#xFF0C;&#x4E00;&#x6B21;&#x6267;&#x884C;&#xFF09;</p>
+<h2 id="11-1-2-3mapparseint&#x7B54;&#x6848;&#x662F;&#x591A;&#x5C11;&#xFF1F;">11. [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;].map(parseInt)&#x7B54;&#x6848;&#x662F;&#x591A;&#x5C11;&#xFF1F;</h2>
+<p>[1, NaN, NaN]</p>
+<p>&#x89E3;&#x6790;&#xFF1A;</p>
+<ol>
+<li>Array.prototype.map()<br> array.map(callback[, thisArg])<br> callback&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x89C4;&#x5219;<br> &#x53C2;&#x6570;&#xFF1A;&#x81EA;&#x52A8;&#x4F20;&#x5165;&#x4E09;&#x4E2A;&#x53C2;&#x6570;<br> currentValue(&#x5F53;&#x524D;&#x88AB;&#x4F20;&#x9012;&#x7684;&#x5143;&#x7D20;)<br> index(&#x5F53;&#x524D;&#x88AB;&#x4F20;&#x9012;&#x7684;&#x5143;&#x7D20;&#x7684;&#x7D22;&#x5F15;) 
+ array(&#x8C03;&#x7528;map&#x65B9;&#x6CD5;&#x7684;&#x6570;&#x7EC4;)</li>
+<li><p>parseInt<br> parseInt&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;<br> &#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;[&apos;1&apos;, &apos;2&apos;, &apos;3&apos;]&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;parseInt&#x65B9;&#x6CD5;&#x5C06;&#x4F1A;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x88AB;&#x8C03;&#x7528;<br> parseInt(&apos;1&apos;, 0)<br> parseInt(&apos;2&apos;, 1)<br> parseInt(&apos;3&apos;, 2)  </p>
+</li>
+<li><p>parseInt&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;radix&#x4E3A;0&#x65F6;&#xFF0C;ECMAScript5&#x5C06;string&#x4F5C;&#x4E3A;&#x5341;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x3002;</p>
+</li>
+<li>parseInt&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;radix&#x4E3A;1&#x65F6;&#xFF0C;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x4E3A;NaN;</li>
+<li>parseInt&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;radix&#x5728;2-36&#x4E4B;&#x95F4;&#x65F6;&#xFF0C;&#x5982;&#x679C;string&#x53C2;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF08;&#x9664;&#x7A7A;&#x767D;&#x4EE5;&#x5916;&#xFF09;&#xFF0C;&#x4E0D;&#x5C5E;&#x4E8E;radix&#x6307;&#x5B9A;&#x8FDB;&#x5236;&#x4E0B;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x4E3A;NaN&#x3002;</li>
+<li>parseInt(&apos;3&apos;, 2)&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x7531;&#x4E8E; &apos;3&apos; &#x4E0D;&#x5C5E;&#x4E8E;&#x4E8C;&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#xFF0C;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x4E3A; NaN&#x3002;</li>
+</ol>
+<h2 id="12-&#x4EC0;&#x4E48;&#x662F;&#x95ED;&#x5305;closure&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x7528;&#x5B83;&#xFF1F;">12. &#x4EC0;&#x4E48;&#x662F;&#x95ED;&#x5305;(closure)&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x7528;&#x5B83;&#xFF1F;</h2>
+<p>&#x95ED;&#x5305;&#x6307;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x53D8;&#x91CF;&#x3002;&#x5E38;&#x89C1;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x662F;&#x5728;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x5B9A;&#x4E49;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x5916;&#x5C42;&#x7684;&#x53D8;&#x91CF;&#xFF1B;&#x5916;&#x5C42;&#x53D8;&#x91CF;&#x4E0D;&#x4F1A;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;&#x56DE;&#x6536;&#x3002;
+&#x6CE8;&#x610F;&#xFF1A;&#x95ED;&#x5305;&#x7684;&#x539F;&#x7406;&#x662F;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#xFF0C;&#x6240;&#x4EE5;&#x95ED;&#x5305;&#x8BBF;&#x95EE;&#x7684;&#x4E0A;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x662F;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#x5176;&#x8FD0;&#x7B97;&#x7ED3;&#x675F;&#x540E;&#x7684;&#x5DE6;&#x540E;&#x4E00;&#x4E2A;&#x503C;&#x3002;</p>
+<ul>
+<li>&#x4F18;&#x70B9;&#xFF1A;&#x907F;&#x514D;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x6C61;&#x67D3;&#x3002;</li>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x5BB9;&#x6613;&#x9020;&#x6210;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x3002;</li>
+</ul>
+<p>&#x4F8B;&#x5B50;&#xFF1A;  </p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeFunc</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> name = <span class="hljs-string">&apos;Mozilla&apos;</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">displayName</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(name)
   }
-  return displayName
+  <span class="hljs-keyword">return</span> displayName
 }
-var myFunc = makeFunc()
-myFunc() // &#x8F93;&#x51FA;Mozilla
-</code></pre><p>myFunc&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x95ED;&#x5305;&#x3002;&#x95ED;&#x5305;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5B83;&#x7531;&#x4E24;&#x90E8;&#x5206;&#x6784;&#x6210;&#xFF1A; &#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x53CA;&#x521B;&#x5EFA;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x73AF;&#x5883;&#x3002;&#x73AF;&#x5883;&#x7531;&#x95ED;&#x5305;&#x521B;&#x5EFA;&#x65F6;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7EC4;&#x6210;&#x3002;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;myFunc&#x662F;&#x4E00;&#x4E2A;&#x95ED;&#x5305;&#xFF0C;&#x7531;displayName&#x51FD;&#x6570;&#x548C;&#x95ED;&#x5305;&#x521B;&#x5EFA;&#x65F6;&#x5B58;&#x5728;&#x7684; &apos;Mozilla&apos; &#x5B57;&#x7B26;&#x4E32;&#x7EC4;&#x6210;&#x3002;</p>
+<span class="hljs-keyword">var</span> myFunc = makeFunc()
+myFunc() <span class="hljs-comment">// &#x8F93;&#x51FA;Mozilla</span>
+</code></pre>
+<p>myFunc&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x95ED;&#x5305;&#x3002;&#x95ED;&#x5305;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5B83;&#x7531;&#x4E24;&#x90E8;&#x5206;&#x6784;&#x6210;&#xFF1A; &#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x53CA;&#x521B;&#x5EFA;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x73AF;&#x5883;&#x3002;&#x73AF;&#x5883;&#x7531;&#x95ED;&#x5305;&#x521B;&#x5EFA;&#x65F6;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7EC4;&#x6210;&#x3002;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;myFunc&#x662F;&#x4E00;&#x4E2A;&#x95ED;&#x5305;&#xFF0C;&#x7531;displayName&#x51FD;&#x6570;&#x548C;&#x95ED;&#x5305;&#x521B;&#x5EFA;&#x65F6;&#x5B58;&#x5728;&#x7684; &apos;Mozilla&apos; &#x5B57;&#x7B26;&#x4E32;&#x7EC4;&#x6210;&#x3002;</p>
 <h2 id="13-js&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;">13. JS&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;</h2>
 <ol>
 <li>defer</li>
@@ -6187,7 +6178,7 @@ Search(str);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"综合2","level":"5.2","depth":1,"next":{"title":"Event loop","level":"5.3","depth":1,"path":"浏览器/Event-loop.md","ref":"浏览器/Event-loop.md","articles":[]},"previous":{"title":"事件机制","level":"5.1","depth":1,"path":"浏览器/事件机制.md","ref":"浏览器/事件机制.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"面试/综合2.md","mtime":"2019-08-15T03:55:44.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-15T03:56:01.283Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"综合2","level":"5.2","depth":1,"next":{"title":"Event loop","level":"5.3","depth":1,"path":"浏览器/Event-loop.md","ref":"浏览器/Event-loop.md","articles":[]},"previous":{"title":"事件机制","level":"5.1","depth":1,"path":"浏览器/事件机制.md","ref":"浏览器/事件机制.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"面试/综合2.md","mtime":"2019-08-15T04:06:37.287Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-15T04:06:42.052Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
