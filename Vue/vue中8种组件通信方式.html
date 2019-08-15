@@ -1372,7 +1372,7 @@
                     
                         <b>5.4.</b>
                     
-                    综合4
+                    综合4-vue
             
                 </a>
             
@@ -1410,12 +1410,27 @@
             
         </li>
     
-        <li class="chapter " data-level="5.7" data-path="../面试/20道JS原理题.html">
+        <li class="chapter " data-level="5.7" data-path="../面试/vue.html">
+            
+                <a href="../面试/vue.html">
+            
+                    
+                        <b>5.7.</b>
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../面试/20道JS原理题.html">
             
                 <a href="../面试/20道JS原理题.html">
             
                     
-                        <b>5.7.</b>
+                        <b>5.8.</b>
                     
                     20道JS原理题
             
@@ -1425,12 +1440,12 @@
             
         </li>
     
-        <li class="chapter " data-level="5.8" data-path="../面试/奇舞团面试秘籍.html">
+        <li class="chapter " data-level="5.9" data-path="../面试/奇舞团面试秘籍.html">
             
                 <a href="../面试/奇舞团面试秘籍.html">
             
                     
-                        <b>5.8.</b>
+                        <b>5.9.</b>
                     
                     奇舞团面试秘籍
             
@@ -1440,12 +1455,12 @@
             
         </li>
     
-        <li class="chapter " data-level="5.9" data-path="../面试/一道思考题.html">
+        <li class="chapter " data-level="5.10" data-path="../面试/一道思考题.html">
             
                 <a href="../面试/一道思考题.html">
             
                     
-                        <b>5.9.</b>
+                        <b>5.10.</b>
                     
                     一道思考题
             
@@ -5508,9 +5523,9 @@
 <li><a href="#vue&#x4E2D;8&#x79CD;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;">vue&#x4E2D;8&#x79CD;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;</a><ul>
 <li><a href="#&#x4E00;props--emit">&#x4E00;&#x3001;props / $emit</a><ul>
 <li><a href="#1-&#x7236;&#x7EC4;&#x4EF6;&#x5411;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;">1. &#x7236;&#x7EC4;&#x4EF6;&#x5411;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;</a></li>
+<li><a href="#2-&#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;">2. &#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;</a></li>
 </ul>
 </li>
-<li><a href="#2-&#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;">2. &#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;</a></li>
 <li><a href="#&#x4E8C;-children--parent">&#x4E8C;&#x3001; $children / $parent</a></li>
 <li><a href="#&#x4E09;provide-inject">&#x4E09;&#x3001;provide/ inject</a><ul>
 <li><a href="#&#x6982;&#x5FF5;">&#x6982;&#x5FF5;:</a></li>
@@ -5570,7 +5585,7 @@ export default {
 &lt;/script&gt;
 </code></pre>
 <p>&#x603B;&#x7ED3;: prop &#x53EA;&#x53EF;&#x4EE5;&#x4ECE;&#x4E0A;&#x4E00;&#x7EA7;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x5230;&#x4E0B;&#x4E00;&#x7EA7;&#x7EC4;&#x4EF6;&#xFF08;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#xFF09;&#xFF0C;&#x5373;&#x6240;&#x8C13;&#x7684;&#x5355;&#x5411;&#x6570;&#x636E;&#x6D41;&#x3002;&#x800C;&#x4E14; prop &#x53EA;&#x8BFB;&#xFF0C;&#x4E0D;&#x53EF;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x6240;&#x6709;&#x4FEE;&#x6539;&#x90FD;&#x4F1A;&#x5931;&#x6548;&#x5E76;&#x8B66;&#x544A;&#x3002;</p>
-<h2 id="2-&#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;">2. &#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;</h2>
+<h3 id="2-&#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;">2. &#x5B50;&#x7EC4;&#x4EF6;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;</h3>
 <p>&#x5BF9;&#x4E8E;<code>$emit</code> &#x6211;&#x81EA;&#x5DF1;&#x7684;&#x7406;&#x89E3;&#x662F;&#x8FD9;&#x6837;&#x7684;: <code>$emit</code>&#x7ED1;&#x5B9A;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;, &#x5F53;&#x8FD9;&#x4E2A;&#x8BED;&#x53E5;&#x88AB;&#x6267;&#x884C;&#x65F6;, &#x5C31;&#x4F1A;&#x5C06;&#x53C2;&#x6570;arg&#x4F20;&#x9012;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;,&#x7236;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;v-on&#x76D1;&#x542C;&#x5E76;&#x63A5;&#x6536;&#x53C2;&#x6570;&#x3002; &#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x8BF4;&#x660E;&#x5B50;&#x7EC4;&#x4EF6;&#x5982;&#x4F55;&#x5411;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x6570;&#x636E;&#x3002;
 &#x5728;&#x4E0A;&#x4E2A;&#x4F8B;&#x5B50;&#x7684;&#x57FA;&#x7840;&#x4E0A;, &#x70B9;&#x51FB;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#x7684;<code>ariticle</code>&#x7684;<code>item</code>, &#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#x663E;&#x793A;&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4E0B;&#x6807;</p>
 <pre><code class="lang-js">// &#x7236;&#x7EC4;&#x4EF6;&#x4E2D;
@@ -6159,7 +6174,7 @@ export default {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"vue中8种组件通信方式","level":"5","depth":0,"next":{"title":"事件机制","level":"5.1","depth":1,"path":"浏览器/事件机制.md","ref":"浏览器/事件机制.md","articles":[]},"previous":{"title":"面向对象的微博登录提示邮箱","level":"4.2","depth":1,"path":"Js/面向对象/面向对象的微博登录提示邮箱.md","ref":"Js/面向对象/面向对象的微博登录提示邮箱.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"Vue/vue中8种组件通信方式.md","mtime":"2019-08-15T07:04:48.763Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-15T07:05:22.352Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"vue中8种组件通信方式","level":"5","depth":0,"next":{"title":"事件机制","level":"5.1","depth":1,"path":"浏览器/事件机制.md","ref":"浏览器/事件机制.md","articles":[]},"previous":{"title":"面向对象的微博登录提示邮箱","level":"4.2","depth":1,"path":"Js/面向对象/面向对象的微博登录提示邮箱.md","ref":"Js/面向对象/面向对象的微博登录提示邮箱.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"Vue/vue中8种组件通信方式.md","mtime":"2019-08-15T07:13:34.078Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-15T08:21:12.231Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
