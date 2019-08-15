@@ -350,6 +350,7 @@
   - [vueRouter使用query和params传参的使用和区别](Vue/vueRouter使用query和params传参的使用和区别.md)
   - [Vue组件data为什么必须是函数](Vue/Vue组件data为什么必须是函数.md)
   - [Vue组件通信的方法](Vue/Vue组件通信的方法.md)
+  - [vue中8种组件通信方式](Vue/vue中8种组件通信方式.md)
   - [NextTick原理分析](Vue/NextTick原理分析.md)
   - [从Vue.js源码看nextTick机制](Vue/从Vue.js源码看nextTick机制.md)
   - [VueRouter源码分析](Vue/VueRouter源码分析.md)
