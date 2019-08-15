@@ -244,6 +244,15 @@ function knapSack(weightLimit, weightArray, valueArray, account) {
 }
 ```
 
+上述算法有一个前提，即每种物品只有一个。体现在算法上就是a = valueArray[i - 1] + ks[i - 1][w - weightArray[i - 1]];。
+
+当前物品是values[i-1]，那么剩余重量的最优解就是ks[i - 1][w - weightArray[i - 1]]。
+
+那么，如果同一物品不限量呢？
+
+将这个表达式改成`a = valueArray[i - 1] + ks[ i ][w - weightArray[i - 1]]`即可。
+
+
 ### 二、
 ```js
 function completeKnapsack(weights, values, W) {
