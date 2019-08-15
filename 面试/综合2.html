@@ -5576,6 +5576,20 @@ xhr.timeout = <span class="hljs-number">1000</span>
 
 <span class="hljs-comment">// &#x5F53;&#x8BF7;&#x6C42;&#x8D85;&#x65F6;&#x65F6;&#xFF0C;&#x4F1A;&#x89E6;&#x53D1; ontimeout &#x65B9;&#x6CD5;</span>
 xhr.ontimeout = () =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x8BF7;&#x6C42;&#x8D85;&#x65F6;&apos;</span>)
+
+
+<span class="hljs-comment">// other</span>
+<span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+xhr.open(<span class="hljs-string">&apos;GET&apos;</span>, url);
+xhr.responseType = <span class="hljs-string">&apos;json&apos;</span>;
+
+xhr.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(xhr.response);
+};
+
+xhr.onerror = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Oops, error&quot;</span>);
+};
 </code></pre>
 <h2 id="2-javascript-&#x8FDE;&#x7B49;&#x8D4B;&#x503C;&#x95EE;&#x9898;">2. javascript &#x8FDE;&#x7B49;&#x8D4B;&#x503C;&#x95EE;&#x9898;</h2>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> a = { n: <span class="hljs-number">1</span> };
@@ -5673,38 +5687,39 @@ arr.sort(<span class="hljs-function"><span class="hljs-keyword">function</span>(
 <h3 id="81-&#x89E3;&#x51B3;&#x529E;&#x6CD5;">8.1 &#x89E3;&#x51B3;&#x529E;&#x6CD5;</h3>
 <ol>
 <li><p>&#x7B2C;&#x4E00;&#x79CD;&#xFF1A;&#x95ED;&#x5305;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
-(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">j</span>) </span>{ <span class="hljs-comment">// j = i</span>
- setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-   <span class="hljs-built_in">console</span>.log(j)
- }, <span class="hljs-number">1000</span>)
-})(i)
-}
+<pre><code class="lang-js"> <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+   (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">j</span>) </span>{ <span class="hljs-comment">// j = i</span>
+     setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+       <span class="hljs-built_in">console</span>.log(j)
+     }, <span class="hljs-number">1000</span>)
+   })(i)
+ }
 </code></pre>
 </li>
-<li><p>&#x7B2C;&#x4E8C;&#x79CD;&#xFF1A;&#x503C;&#x7C7B;&#x578B;&#x4F20;&#x9012;
-```js
-var output = function(i) {
-setTimeout(function() {
- console.log(i)
-}, 1000)
-}</p>
+<li><p>&#x7B2C;&#x4E8C;&#x79CD;&#xFF1A;&#x503C;&#x7C7B;&#x578B;&#x4F20;&#x9012;  </p>
+<pre><code class="lang-js"> <span class="hljs-keyword">var</span> output = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">i</span>) </span>{
+   setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+     <span class="hljs-built_in">console</span>.log(i)
+   }, <span class="hljs-number">1000</span>)
+ }
+
+ <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+   output(i) <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x4F20;&#x8FC7;&#x53BB;&#x7684; i &#x88AB;&#x590D;&#x5236;&#x4E86;</span>
+ }
+</code></pre>
+</li>
+<li><p>&#x7B2C;&#x4E09;&#x79CD;&#xFF1A;es6 let </p>
+<pre><code class="lang-js"> <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+   setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+     <span class="hljs-built_in">console</span>.log(i)
+   }, <span class="hljs-number">1000</span>);
+ }
+</code></pre>
 </li>
 </ol>
-<p>for(var i = 0; i &lt; 5; i++) {
-  output(i) // &#x8FD9;&#x91CC;&#x4F20;&#x8FC7;&#x53BB;&#x7684; i &#x88AB;&#x590D;&#x5236;&#x4E86;
-}</p>
-<pre><code>
-3. &#x7B2C;&#x4E09;&#x79CD;&#xFF1A;es6 let
-```js
-for(let i = 0; i &lt; 5; i++) {
-  setTimeout(function() {
-    console.log(i)
-  }, 1000);
-}
-</code></pre><h3 id="82-&#x5982;&#x679C;&#x8981;&#x8BA9;0-4&#x4E00;&#x79D2;&#x4E00;&#x79D2;&#x5730;&#x8F93;&#x51FA;&#x6765;&#x5462;&#xFF1F;">8.2 &#x5982;&#x679C;&#x8981;&#x8BA9;0-4&#x4E00;&#x79D2;&#x4E00;&#x79D2;&#x5730;&#x8F93;&#x51FA;&#x6765;&#x5462;&#xFF1F;</h3>
+<h3 id="82-&#x5982;&#x679C;&#x8981;&#x8BA9;0-4&#x4E00;&#x79D2;&#x4E00;&#x79D2;&#x5730;&#x8F93;&#x51FA;&#x6765;&#x5462;&#xFF1F;">8.2 &#x5982;&#x679C;&#x8981;&#x8BA9;0-4&#x4E00;&#x79D2;&#x4E00;&#x79D2;&#x5730;&#x8F93;&#x51FA;&#x6765;&#x5462;&#xFF1F;</h3>
 <ol>
-<li><p>&#x7B2C;&#x4E00;&#x79CD;&#xFF1A;</p>
+<li><p>&#x7B2C;&#x4E00;&#x79CD;&#xFF1A; </p>
 <pre><code class="lang-js"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
 (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">j</span>) </span>{
  setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
@@ -5714,7 +5729,7 @@ for(let i = 0; i &lt; 5; i++) {
 }
 </code></pre>
 </li>
-<li><p>&#x7B2C;&#x4E8C;&#x79CD;&#xFF1A;</p>
+<li><p>&#x7B2C;&#x4E8C;&#x79CD;&#xFF1A; </p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> tasks= []
 <span class="hljs-keyword">const</span> output = (i) =&gt; <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve) =&gt; {
 setTimeout(() =&gt; {
@@ -5734,8 +5749,7 @@ setTimeout(() =&gt; {
 })
 </code></pre>
 </li>
-<li><p>&#x7B2C;&#x4E09;&#x79CD;
-```js
+<li><p>&#x7B2C;&#x4E09;&#x79CD; &#x6A21;&#x62DF;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E2D;&#x7684; sleep&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;<br>```js
 // &#x6A21;&#x62DF;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E2D;&#x7684; sleep&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;
 const sleep = (timeountMS) =&gt; new Promise((resolve) =&gt; {
  setTimeout(resolve, timeountMS);
@@ -5792,7 +5806,7 @@ console.log(new Date, i);
 - &#x4F18;&#x70B9;&#xFF1A;&#x907F;&#x514D;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x6C61;&#x67D3;&#x3002;
 - &#x7F3A;&#x70B9;&#xFF1A;&#x5BB9;&#x6613;&#x9020;&#x6210;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x3002;
 
-&#x4F8B;&#x5B50;&#xFF1A;
+&#x4F8B;&#x5B50;&#xFF1A;  
 ```js
 function makeFunc() {
   var name = &apos;Mozilla&apos;
@@ -6173,7 +6187,7 @@ Search(str);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"综合2","level":"5.2","depth":1,"next":{"title":"Event loop","level":"5.3","depth":1,"path":"浏览器/Event-loop.md","ref":"浏览器/Event-loop.md","articles":[]},"previous":{"title":"事件机制","level":"5.1","depth":1,"path":"浏览器/事件机制.md","ref":"浏览器/事件机制.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"面试/综合2.md","mtime":"2019-08-11T07:13:43.109Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-13T11:46:30.012Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"综合2","level":"5.2","depth":1,"next":{"title":"Event loop","level":"5.3","depth":1,"path":"浏览器/Event-loop.md","ref":"浏览器/Event-loop.md","articles":[]},"previous":{"title":"事件机制","level":"5.1","depth":1,"path":"浏览器/事件机制.md","ref":"浏览器/事件机制.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"面试/综合2.md","mtime":"2019-08-15T03:55:44.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-15T03:56:01.283Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
