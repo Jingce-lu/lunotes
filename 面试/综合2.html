@@ -5702,6 +5702,21 @@ arr.sort(<span class="hljs-function"><span class="hljs-keyword">function</span>(
 }
 
 <span class="hljs-built_in">console</span>.log(flatten(arr)); <span class="hljs-comment">// [1, 2, 3, 4]</span>
+
+<span class="hljs-comment">// 2</span>
+<span class="hljs-built_in">JSON</span>.parse(<span class="hljs-string">`[<span class="hljs-subst">${arr}</span>]`</span>)
+
+<span class="hljs-comment">// 3</span>
+arr.join().split(<span class="hljs-string">&quot;,&quot;</span>).map(<span class="hljs-built_in">Number</span>)
+
+<span class="hljs-comment">// 4</span>
+arr.toString().split(<span class="hljs-string">&quot;,&quot;</span>).map(<span class="hljs-built_in">Number</span>)
+
+<span class="hljs-comment">// 5</span>
+<span class="hljs-keyword">var</span> list = [<span class="hljs-number">1</span>, [<span class="hljs-number">2</span>, [<span class="hljs-number">3</span>]], <span class="hljs-number">4</span>, [<span class="hljs-number">5</span>]]
+<span class="hljs-built_in">JSON</span>.parse(<span class="hljs-string">`[<span class="hljs-subst">${list.toString()}</span>]`</span>)
+<span class="hljs-built_in">JSON</span>.parse(<span class="hljs-string">`[<span class="hljs-subst">${list.join()}</span>]`</span>)
+<span class="hljs-built_in">JSON</span>.parse(<span class="hljs-string">`[<span class="hljs-subst">${arr}</span>]`</span>)
 </code></pre>
 <h2 id="7-&#x7B80;&#x5355;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;">7. &#x7B80;&#x5355;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;</h2>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> TemplateEngine = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">tpl, data</span>) </span>{
@@ -6222,7 +6237,7 @@ Search(str);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"综合2","level":"5.2","depth":1,"next":{"title":"Event loop","level":"5.3","depth":1,"path":"浏览器/Event-loop.md","ref":"浏览器/Event-loop.md","articles":[]},"previous":{"title":"事件机制","level":"5.1","depth":1,"path":"浏览器/事件机制.md","ref":"浏览器/事件机制.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"面试/综合2.md","mtime":"2019-08-15T05:50:21.463Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-16T03:32:41.453Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"综合2","level":"5.2","depth":1,"next":{"title":"Event loop","level":"5.3","depth":1,"path":"浏览器/Event-loop.md","ref":"浏览器/Event-loop.md","articles":[]},"previous":{"title":"事件机制","level":"5.1","depth":1,"path":"浏览器/事件机制.md","ref":"浏览器/事件机制.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"面试/综合2.md","mtime":"2019-08-16T08:28:22.600Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-16T08:28:56.195Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
