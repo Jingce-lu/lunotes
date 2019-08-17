@@ -364,6 +364,7 @@
   - [Vue SSR cookie问题](Vue/vue-SSR-cookie问题.md)
   - [理解vue ssr原理并自己搭建简单的ssr框架](Vue/理解vue-ssr原理并自己搭建简单的ssr框架.md)
   - [Vue插件开发](Vue/Vue插件开发.md)
+  - [vue路由权限校验](Vue/vue路由权限校验.md)
 
 
 ## Part 3 - other
