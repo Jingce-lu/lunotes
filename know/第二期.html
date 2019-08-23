@@ -5749,6 +5749,242 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7B2C;&#x4E8C;&#x671F;">&#x7B2C;&#x4E8C;&#x671F;</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#&#x7B2C;&#x4E8C;&#x671F;">&#x7B2C;&#x4E8C;&#x671F;</a><ul>
+<li><a href="#&#x89E3;&#x51B3;&#x952E;&#x76D8;&#x5F39;&#x51FA;&#x540E;&#x6321;&#x8868;&#x5355;&#x7684;&#x95EE;&#x9898;">&#x89E3;&#x51B3;&#x952E;&#x76D8;&#x5F39;&#x51FA;&#x540E;&#x6321;&#x8868;&#x5355;&#x7684;&#x95EE;&#x9898;</a></li>
+<li><a href="#&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x76F8;&#x5173;">&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x76F8;&#x5173;</a><ul>
+<li><a href="#&#x56FE;&#x7247;&#x61D2;&#x52A0;&#x8F7D;">&#x56FE;&#x7247;&#x61D2;&#x52A0;&#x8F7D;</a></li>
+</ul>
+</li>
+<li><a href="#&#x65E0;loop&#x751F;&#x6210;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x6570;&#x7EC4;">&#x65E0;loop&#x751F;&#x6210;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x6570;&#x7EC4;</a></li>
+<li><a href="#&#x5F02;&#x6B65;&#x7684;-promise&#x7684;-then-&#x65B9;&#x6CD5;&#x7684;&#x56DE;&#x8C03;&#x662F;&#x4F55;&#x65F6;&#x88AB;&#x6DFB;&#x52A0;&#x5230;microtasks-queue&#x4E2D;&#x7684;">&#x5F02;&#x6B65;&#x7684; Promise&#x7684; then &#x65B9;&#x6CD5;&#x7684;&#x56DE;&#x8C03;&#x662F;&#x4F55;&#x65F6;&#x88AB;&#x6DFB;&#x52A0;&#x5230;microtasks queue&#x4E2D;&#x7684;?</a></li>
+<li><a href="#&#x79FB;&#x52A8;&#x7AEF;&#x6253;&#x5F00;&#x6307;&#x5B9A;app&#x6216;&#x8005;&#x4E0B;&#x8F7D;app">&#x79FB;&#x52A8;&#x7AEF;&#x6253;&#x5F00;&#x6307;&#x5B9A;App&#x6216;&#x8005;&#x4E0B;&#x8F7D;App</a></li>
+<li><a href="#&#x5229;&#x7528;-a-&#x6807;&#x7B7E;&#x89E3;&#x6790;-url">&#x5229;&#x7528; a &#x6807;&#x7B7E;&#x89E3;&#x6790; URL</a></li>
+<li><a href="#&#x6570;&#x7EC4;&#x53BB;&#x91CD;">&#x6570;&#x7EC4;&#x53BB;&#x91CD;</a></li>
+<li><a href="#js-&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#x7684;&#x9677;&#x9631;">JS &#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#x7684;&#x9677;&#x9631;</a></li>
+<li><a href="#kill-&#x6307;&#x5B9A;&#x7AEF;&#x53E3;">kill &#x6307;&#x5B9A;&#x7AEF;&#x53E3;</a></li>
+<li><a href="#linux&#x4E0B;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x66FF;&#x6362;&#x6587;&#x672C;">Linux&#x4E0B;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x66FF;&#x6362;&#x6587;&#x672C;</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h2 id="&#x89E3;&#x51B3;&#x952E;&#x76D8;&#x5F39;&#x51FA;&#x540E;&#x6321;&#x8868;&#x5355;&#x7684;&#x95EE;&#x9898;">&#x89E3;&#x51B3;&#x952E;&#x76D8;&#x5F39;&#x51FA;&#x540E;&#x6321;&#x8868;&#x5355;&#x7684;&#x95EE;&#x9898;</h2>
+<pre><code class="lang-js"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&apos;resize&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+<span class="hljs-keyword">if</span> (
+  <span class="hljs-built_in">document</span>.activeElement.tagName === <span class="hljs-string">&apos;INPUT&apos;</span> ||
+  <span class="hljs-built_in">document</span>.activeElement.tagName === <span class="hljs-string">&apos;TEXTAREA&apos;</span> ||
+  <span class="hljs-built_in">document</span>.activeElement.getAttribute(<span class="hljs-string">&apos;contenteditable&apos;</span>) == <span class="hljs-string">&apos;true&apos;</span>
+) {
+  <span class="hljs-built_in">window</span>.setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-string">&apos;scrollIntoView&apos;</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">document</span>.activeElement) {
+      <span class="hljs-built_in">document</span>.activeElement.scrollIntoView();
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// @ts-ignore</span>
+      <span class="hljs-built_in">document</span>.activeElement.scrollIntoViewIfNeeded();
+    }
+  }, <span class="hljs-number">0</span>);
+}
+})
+</code></pre>
+<h2 id="&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x76F8;&#x5173;">&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x76F8;&#x5173;</h2>
+<h3 id="&#x56FE;&#x7247;&#x61D2;&#x52A0;&#x8F7D;">&#x56FE;&#x7247;&#x61D2;&#x52A0;&#x8F7D;</h3>
+<pre><code class="lang-js">&lt;ul&gt;
+    &lt;li&gt;&lt;img src=&quot;./img/default.png&quot; data=&quot;./img/1.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;./img/default.png&quot; data=&quot;./img/2.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;./img/default.png&quot; data=&quot;./img/3.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;./img/default.png&quot; data=&quot;./img/4.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;./img/default.png&quot; data=&quot;./img/5.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;./img/default.png&quot; data=&quot;./img/6.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;./img/default.png&quot; data=&quot;./img/7.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;./img/default.png&quot; data=&quot;./img/8.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+let imgs =  document.querySelectorAll(&apos;img&apos;)
+// &#x7A97;&#x53E3;&#x53EF;&#x89C6;&#x533A;&#x9AD8;&#x5EA6;
+let clientHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+// img &#x8DDD;&#x79BB;&#x7A97;&#x53E3;&#x53EF;&#x89C6;&#x533A;&#x9876;&#x90E8;&#x7684;&#x8DDD;&#x79BB; imgs[i].getBoundingClientRect().top
+function lazyLoadImg () {
+    for (let i = 0; i &lt; imgs.length; i ++) {
+        if((imgs[i].getBoundingClientRect().top + imgs[i].height)&gt;=0&amp;&amp;imgs[i].getBoundingClientRect().top &lt; clientHeight ){
+            imgs[i].src = imgs[i].getAttribute(&apos;data&apos;)
+        }
+    }      
+}
+window.addEventListener(&apos;scroll&apos;, lazyLoadImg);
+</code></pre>
+<p>&#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4F1A;&#x5F15;&#x8D77;&#x56FE;&#x7247;&#x4E0B;&#x8F7D;&#x8FC7;&#x7A0B;&#x4E2D;&#x95EA;&#x767D;&#x4E00;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; JS &#x9884;&#x5148;&#x52A0;&#x8F7D;&#x56FE;&#x7247;&#x89E3;&#x51B3;&#x3002;</p>
+<p>&#x540C;&#x65F6;&#x4E0A;&#x8FF0;&#x7684;&#x61D2;&#x52A0;&#x8F7D;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x5DF2;&#x7ECF;&#x5F88;&#x8001;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6700;&#x65B0;&#x7684; API <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API" target="_blank">Intersection_Observer</a> &#x6765;&#x505A;&#x8FD9;&#x4EF6;&#x4E8B;&#xFF0C;&#x4F1A;&#x66F4;&#x7B80;&#x5355;&#x800C;&#x4E14;&#x53EF;&#x63A7;&#x4E00;&#x4E9B;&#x3002;</p>
+<h2 id="&#x65E0;loop&#x751F;&#x6210;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x6570;&#x7EC4;">&#x65E0;loop&#x751F;&#x6210;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x6570;&#x7EC4;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> List1 = len =&gt; <span class="hljs-string">&apos;&apos;</span>.padEnd(len, <span class="hljs-string">&apos;,&apos;</span>).split(<span class="hljs-string">&apos;.&apos;</span>)
+
+<span class="hljs-keyword">const</span> List2 = len =&gt; [...new <span class="hljs-built_in">Array</span>(len).keys()]
+</code></pre>
+<h2 id="&#x5F02;&#x6B65;&#x7684;-promise&#x7684;-then-&#x65B9;&#x6CD5;&#x7684;&#x56DE;&#x8C03;&#x662F;&#x4F55;&#x65F6;&#x88AB;&#x6DFB;&#x52A0;&#x5230;microtasks-queue&#x4E2D;&#x7684;">&#x5F02;&#x6B65;&#x7684; Promise&#x7684; then &#x65B9;&#x6CD5;&#x7684;&#x56DE;&#x8C03;&#x662F;&#x4F55;&#x65F6;&#x88AB;&#x6DFB;&#x52A0;&#x5230;microtasks queue&#x4E2D;&#x7684;?</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> pro = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+    <span class="hljs-keyword">const</span> pro1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+        setTimeout(() =&gt; {
+            resolve(<span class="hljs-number">3</span>);
+        }, <span class="hljs-number">0</span>);
+    });
+    resolve(<span class="hljs-number">4</span>);
+    pro1.then((args) =&gt; {
+        <span class="hljs-built_in">console</span>.log(args);
+    });
+});
+pro.then((args) =&gt; {
+    <span class="hljs-built_in">console</span>.log(args);
+});
+</code></pre>
+<p>&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x77E5;&#x9053;&#x8FD9;&#x9053;&#x9898;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x662F;4&#xFF0C;3&#xFF1B;&#x4F46;&#x662F;&#x6211;&#x5BF9;&#x9898;&#x4E3B;&#x7684;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4EA7;&#x751F;&#x4E86;&#x5F88;&#x5927;&#x7684;&#x7591;&#x95EE;&#xFF0C;&#x56E0;&#x4E3A;&#x4E2A;&#x4EBA;&#x5E76;&#x6CA1;&#x6709;&#x7740;&#x624B;&#x5B9E;&#x73B0;&#x8FC7;&#x7B26;&#x5408;promise A/A+&#x89C4;&#x5212;&#x7684;promise&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x6B21;&#x505A;&#x8FD9;&#x79CD;&#x9898;&#x90FD;&#x662F;&#x51ED;&#x7740;&#x5E73;&#x65F6;&#x7684;&#x4F7F;&#x7528;&#x7ECF;&#x9A8C;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x5185;&#x5FC3;&#x865A;&#x5F97;&#x5F88;,&#x7136;&#x540E;&#x81EA;&#x5DF1;&#x67E5;&#x9605;&#x4E86; spec&#xFF1A;<a href="https://tc39.es/ecma262/#sec-performpromisethen" target="_blank">ECMAScript 2018 Language Specification</a> &#x6839;&#x636E; spec&#xFF0C;&#x5982;&#x679C;&#x8C03;&#x7528; then &#x65F6; promise &#x662F; pending &#x72B6;&#x6001;&#xFF0C;&#x56DE;&#x8C03;&#x4F1A;&#x8FDB;&#x5165; promise &#x7684; <code>[[PromiseFulfill/RejectReactions]]</code> &#x5217;&#x8868;&#x91CC;&#xFF1B;&#x5426;&#x5219;&#x4F1A;&#x8FDB;&#x5165; PromiseJobs&#x3002;</p>
+<p>PromiseJob &#x4EE5;&#x53CA; Job Queue &#x662F; ES &#x4E2D;&#x7684;&#x8BF4;&#x6CD5;&#xFF0C;&#x800C; macroTask &#x548C; microTask &#x662F;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5305;&#x62EC; setTimeout &#x4E5F;&#x662F;&#x5BBF;&#x4E3B;&#x73AF;&#x5883;&#x63D0;&#x4F9B;&#x7684;&#x3002;&#x56E0;&#x6B64;&#x8F93;&#x51FA; 4 3 &#x662F; ECMAScript &#x548C; &#x6D4F;&#x89C8;&#x5668;&#x4E24;&#x79CD;&#x89C4;&#x8303;&#x5171;&#x540C;&#x7EA6;&#x675F;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>PromiseJob &#x5BF9;&#x5E94;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x4E00;&#x4E2A; microTask&#x3002;&#x5BF9;&#x4E8E;&#x8C03;&#x7528; then &#x65F6; promise &#x5904;&#x4E8E; pending &#x72B6;&#x6001;&#xFF0C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x8FDB;&#x5165;&#x5230;&#x5BF9;&#x5E94;&#x7684; reactions &#x961F;&#x5217;&#x4E2D;&#x3002;&#x5F53;&#x8BE5; promise &#x88AB; fulfill &#x6216; reject &#x65F6;&#xFF0C;&#x5219; flush &#x5BF9;&#x5E94;&#x7684; reactions &#x961F;&#x5217; &#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A; reaction &#x5BF9;&#x5E94;&#x4E00;&#x4E2A; PromiseJob &#x88AB;&#x6309;&#x5E8F; enqueue &#x5230; Job Queue&#x5982;&#x679C;&#x8C03;&#x7528; then &#x65F6; promise &#x5904;&#x4E8E;&#x5176;&#x4ED6;&#x4E24;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;JS &#x5F15;&#x64CE;&#x5C31;&#x76F4;&#x63A5; enqueue &#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684; PromiseJob &#x5230; Job Queue&#x793A;&#x4F8B;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x5982;&#x4E0B;&#x987A;&#x5E8F;&#xFF1A;</p>
+<pre>
+1. current cycle of evevt loop start
+2. Install Timer&#xFF0C;Timer get enqueued
+3. Resovle pro, because there is no fulfillReaction binding to pro, do nothing
+4. call then() at pro1, because pro1 is pending, add fulfillReaction to pro1
+5. call then() at pro, because pro is reolved&#xFF0C;immediately enqueue a PromiseJob
+6. current macroTask is finished
+7. run all PromiseJobs(microTasks) in order, 
+8. console.log(4)
+9. current cycle of event loop is finishedanother cycle starts
+10. Timer Fires, and pro1 is resolved
+11. at this time, pro1 hasfulfillReactions&#xFF0C;enqueue every fulfillReaction as a PromiseJob in order
+12. current macro Job is finished 
+13. run all PromiseJobs in order
+14. console.log(3)
+15. current cycle of event loop is finished
+</pre>
+
+
+<h2 id="&#x79FB;&#x52A8;&#x7AEF;&#x6253;&#x5F00;&#x6307;&#x5B9A;app&#x6216;&#x8005;&#x4E0B;&#x8F7D;app">&#x79FB;&#x52A8;&#x7AEF;&#x6253;&#x5F00;&#x6307;&#x5B9A;App&#x6216;&#x8005;&#x4E0B;&#x8F7D;App</h2>
+<pre><code class="lang-js">navToDownApp() {
+  <span class="hljs-keyword">let</span> u = navigator.userAgent
+  <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/MicroMessenger/gi</span>.test(u)) {
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x662F;&#x5FAE;&#x4FE1;&#x5BA2;&#x6237;&#x7AEF;&#x6253;&#x5F00;&#xFF0C;&#x5F15;&#x5BFC;&#x7528;&#x6237;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6253;&#x5F00;</span>
+    alert(<span class="hljs-string">&apos;&#x8BF7;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6253;&#x5F00;&apos;</span>)
+  }
+  <span class="hljs-keyword">if</span> (u.indexOf(<span class="hljs-string">&apos;Android&apos;</span>) &gt; <span class="hljs-number">-1</span> || u.indexOf(<span class="hljs-string">&apos;Linux&apos;</span>) &gt; <span class="hljs-number">-1</span>) {
+    <span class="hljs-comment">// Android</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.openApp(<span class="hljs-string">&apos;en://startapp&apos;</span>)) {
+      <span class="hljs-keyword">this</span>.openApp(<span class="hljs-string">&apos;en://startapp&apos;</span>) <span class="hljs-comment">// &#x901A;&#x8FC7;Scheme&#x534F;&#x8BAE;&#x6253;&#x5F00;&#x6307;&#x5B9A;APP</span>
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">//&#x8DF3;&#x8F6C;Android&#x4E0B;&#x8F7D;&#x5730;&#x5740;</span>
+    }
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (u.indexOf(<span class="hljs-string">&apos;iPhone&apos;</span>) &gt; <span class="hljs-number">-1</span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.openApp(<span class="hljs-string">&apos;ios--scheme&apos;</span>)) {
+      <span class="hljs-keyword">this</span>.openApp(<span class="hljs-string">&apos;ios--scheme&apos;</span>) <span class="hljs-comment">// &#x901A;&#x8FC7;Scheme&#x534F;&#x8BAE;&#x6253;&#x5F00;&#x6307;&#x5B9A;APP</span>
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// &#x8DF3;&#x8F6C;IOS&#x4E0B;&#x8F7D;&#x5730;&#x5740;</span>
+    }
+  }
+},
+openApp(src) {
+  <span class="hljs-comment">// &#x901A;&#x8FC7;iframe&#x7684;&#x65B9;&#x5F0F;&#x8BD5;&#x56FE;&#x6253;&#x5F00;APP&#xFF0C;&#x5982;&#x679C;&#x80FD;&#x6B63;&#x5E38;&#x6253;&#x5F00;&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;&#x5207;&#x6362;&#x5230;APP&#xFF0C;&#x5E76;&#x81EA;&#x52A8;&#x963B;&#x6B62;a&#x6807;&#x7B7E;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;</span>
+  <span class="hljs-comment">// &#x5426;&#x5219;&#x6253;&#x5F00;a&#x6807;&#x7B7E;&#x7684;href&#x94FE;&#x63A5;</span>
+  <span class="hljs-keyword">let</span> ifr = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;iframe&apos;</span>)
+  ifr.src = src
+  ifr.style.display = <span class="hljs-string">&apos;none&apos;</span>
+  <span class="hljs-built_in">document</span>.body.appendChild(ifr)
+  <span class="hljs-built_in">window</span>.setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// &#x6253;&#x5F00;App&#x540E;&#x79FB;&#x51FA;&#x8FD9;&#x4E2A;iframe</span>
+    <span class="hljs-built_in">document</span>.body.removeChild(ifr)
+  }, <span class="hljs-number">2000</span>)
+}
+</code></pre>
+<h2 id="&#x5229;&#x7528;-a-&#x6807;&#x7B7E;&#x89E3;&#x6790;-url">&#x5229;&#x7528; a &#x6807;&#x7B7E;&#x89E3;&#x6790; URL</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseURL</span>(<span class="hljs-params">url</span>) </span>{
+    <span class="hljs-keyword">var</span> a =  <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;a&apos;</span>);
+    a.href = url;
+    <span class="hljs-keyword">return</span> {
+        host: a.hostname,
+        port: a.port,
+        query: a.search,
+        params: (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            <span class="hljs-keyword">var</span> ret = {},
+                seg = a.search.replace(<span class="hljs-regexp">/^\?/</span>,<span class="hljs-string">&apos;&apos;</span>).split(<span class="hljs-string">&apos;&amp;&apos;</span>),
+                len = seg.length, i = <span class="hljs-number">0</span>, s;
+            <span class="hljs-keyword">for</span> (;i&lt;len;i++) {
+                <span class="hljs-keyword">if</span> (!seg[i]) { <span class="hljs-keyword">continue</span>; }
+                s = seg[i].split(<span class="hljs-string">&apos;=&apos;</span>);
+                ret[s[<span class="hljs-number">0</span>]] = s[<span class="hljs-number">1</span>];
+            }
+            <span class="hljs-keyword">return</span> ret;
+        })(),
+        hash: a.hash.replace(<span class="hljs-string">&apos;#&apos;</span>,<span class="hljs-string">&apos;&apos;</span>)
+    };
+}
+</code></pre>
+<h2 id="&#x6570;&#x7EC4;&#x53BB;&#x91CD;">&#x6570;&#x7EC4;&#x53BB;&#x91CD;</h2>
+<p>&#x5229;&#x7528;&#x4E00;&#x4E2A;&#x7A7A;&#x7684; Object &#x5BF9;&#x8C61;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x6570;&#x7EC4;&#x7684;&#x503C;&#x5B58;&#x6210; Object &#x7684; key &#x503C;&#xFF0C;&#x6BD4;&#x5982; Object[value1] = true&#xFF0C;&#x5728;&#x5224;&#x65AD;&#x53E6;&#x4E00;&#x4E2A;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C; Object[value2]&#x5B58;&#x5728;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x8BF4;&#x660E;&#x8BE5;&#x503C;&#x662F;&#x91CD;&#x590D;&#x7684;&#x3002;</p>
+<p>&#x56E0;&#x4E3A; 1 &#x548C; &apos;1&apos; &#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4F1A;&#x5224;&#x65AD;&#x4E3A;&#x540C;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x952E;&#x503C;&#x53EA;&#x80FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; typeof item + item &#x62FC;&#x6210;&#x5B57;&#x7B26;&#x4E32;&#x4F5C;&#x4E3A; key &#x503C;&#x6765;&#x907F;&#x514D;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&apos;1&apos;</span>];
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unique</span>(<span class="hljs-params">array</span>) </span>{
+  <span class="hljs-keyword">var</span> obj = {};
+  <span class="hljs-keyword">return</span> array.filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item, index, array</span>)</span>{
+    <span class="hljs-keyword">return</span> obj.hasOwnProperty(<span class="hljs-keyword">typeof</span> item + item) ? <span class="hljs-literal">false</span> : (obj[<span class="hljs-keyword">typeof</span> item + item] = <span class="hljs-literal">true</span>)
+  })
+}
+</code></pre>
+<h2 id="js-&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#x7684;&#x9677;&#x9631;">JS &#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x53C2;&#x6570;&#x7684;&#x9677;&#x9631;</h2>
+<p>&#x4E0A;&#x5468;&#x5728;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x5F39;&#x5C42;&#x529F;&#x80FD;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7528;&#x5230;&#x4E86;<code>rc-util</code>&#x91CC;&#x7684; <code>contains</code> &#x65B9;&#x6CD5;&#x51FD;&#x6570;, &#x7ED3;&#x679C; <code>code-review</code>&#x7684;&#x65F6;&#x5019;&#x540C;&#x4E8B;&#x5BF9;&#x8BE5;&#x4EE3;&#x7801;&#x63D0;&#x51FA;&#x4E86;&#x7591;&#x95EE;:</p>
+<p><a href="https://github.com/react-component/util/blob/master/src/Dom/contains.js" target="_blank">rc-util &#x6E90;&#x7801;&#x4ED3;&#x5E93;</a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">contains</span>(<span class="hljs-params">root, n</span>) </span>{
+  <span class="hljs-keyword">let</span> node = n;
+  <span class="hljs-keyword">while</span> (node) {
+    <span class="hljs-keyword">if</span> (node === root) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+    node = node.parentNode;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x662F; <code>antd</code> &#x5185;&#x90E8;&#x62BD;&#x8C61;&#x7684;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x6765;&#x5224;&#x65AD;&#x67D0;&#x4E2A;dom&#x662F;&#x5426;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;dom&#x7684;&#x7956;&#x5148;&#x8282;&#x70B9;&#x3002;</p>
+<p>&#x540C;&#x4E8B;&#x7591;&#x95EE;&#x7684;&#x662F; <code>let node = n;</code> &#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x662F;&#x4E0D;&#x662F;&#x591A;&#x4F59;&#x7684;&#xFF1F;</p>
+<p>&#x9996;&#x5148;&#x4E00;&#x5F00;&#x59CB;&#x7684;&#x7406;&#x89E3;&#x662F; &#x51FD;&#x6570;&#x53C2;&#x6570; <code>n</code> &#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4E00;&#x4E2A;<code>dom</code>&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x3002;
+&#x5982;&#x679C;&#x7528; <code>node</code> &#x4FDD;&#x5B58; <code>n</code> &#x7684;&#x503C;&#xFF0C;&#x9632;&#x6B62; <code>node = node.parentNode</code> &#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x6539;&#x53D8;&#x4F20;&#x5165;&#x7684;&#x5B9E;&#x53C2; <code>n</code> &#x5BF9;&#x5E94;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x6BD5;&#x7ADF;&#x4EE5;&#x4E0B;&#x7684;&#x4EE3;&#x7801;&#x6211;&#x4EEC;&#x90FD;&#x5F88;&#x719F;&#x6089;:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">contains</span>(<span class="hljs-params">root, n</span>) </span>{
+  <span class="hljs-keyword">if</span>(n) {
+    n.a = <span class="hljs-number">3</span>
+  }
+}
+
+<span class="hljs-keyword">const</span> A = {a:<span class="hljs-number">1</span>};
+<span class="hljs-keyword">const</span> B = {a:<span class="hljs-number">2</span>};
+contains(A,B)
+<span class="hljs-built_in">console</span>.log(B)    <span class="hljs-comment">// {a:3}</span>
+</code></pre>
+<p>&#x5373;&#x5F53;&#x5B9E;&#x53C2;&#x4E3A;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x662F;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#x4ECE;&#x800C;&#x5F71;&#x54CD;&#x51FD;&#x6570;&#x4E4B;&#x5916;&#x7684;&#x5B9E;&#x53C2;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x6D4B;&#x8BD5;&#x53E6;&#x5916;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x53D1;&#x73B0;&#x548C;&#x7406;&#x89E3;&#x7684;&#x4E0D;&#x4E00;&#x6837;:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">contains</span>(<span class="hljs-params">root, n</span>) </span>{
+  <span class="hljs-keyword">if</span>(n) {
+    n = {a:<span class="hljs-number">3</span>}
+  }
+}
+
+<span class="hljs-keyword">const</span> A = {a:<span class="hljs-number">1</span>};
+<span class="hljs-keyword">const</span> B = {a:<span class="hljs-number">2</span>}
+contains(A,B)
+<span class="hljs-built_in">console</span>.log(B) <span class="hljs-comment">// {a:2}</span>
+</code></pre>
+<p>&#x5373; <code>n.a = 3</code> &#x548C; <code>n = {a:3}</code> &#x8FD9;&#x4E24;&#x6BB5;&#x4EE3;&#x7801;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<p>&#x7F51;&#x4E0A;&#x4E5F;&#x6709;&#x76F8;&#x5173;&#x8D44;&#x6599;,&#x5176;&#x5B9E;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x7684;&#x7406;&#x89E3;&#x4E3A;: &#x5F53;&#x51FD;&#x6570;&#x4E00;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x65F6;&#xFF0C;<code>n</code> &#x662F;&#x6307;&#x5411;&#x5B9E;&#x53C2; <code>B</code> &#x7684;&#x4E00;&#x4E2A;&#x5F15;&#x7528;.</p>
+<p><code>n.a = 3</code> &#x662F;&#x5728;&#x5F15;&#x7528;&#x4E0A;&#x518D;&#x5173;&#x8054;&#x4E86;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;,&#x6B64;&#x65F6;&#x548C; <code>B</code> &#x8FD8;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x5F15;&#x7528;,&#x56E0;&#x6B64;&#x4F1A;&#x6539;&#x53D8;&#x5B9E;&#x53C2;<code>B</code>&#x7684;&#x503C;&#x3002;</p>
+<p>&#x800C; <code>n = {a:3}</code> &#x5219;&#x4F7F;&#x5F97; <code>n</code> &#x4E0D;&#x518D;&#x6307;&#x5411;&#x5B9E;&#x53C2; <code>B</code>, &#x800C;&#x662F;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;<code>{a:3}</code>,&#x4E5F;&#x5C31;&#x662F; <code>n</code> &#x4E0E; <code>B</code> &#x5F7B;&#x5E95;&#x65AD;&#x7EDD;&#x4E86;&#x5173;&#x7CFB;,&#x56E0;&#x6B64;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x5B9E;&#x53C2; <code>B</code> &#x7684;&#x503C;&#x3002;</p>
+<h2 id="kill-&#x6307;&#x5B9A;&#x7AEF;&#x53E3;">kill &#x6307;&#x5B9A;&#x7AEF;&#x53E3;</h2>
+<p>&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x53EF;&#x4EE5; kill &#x6389; 8080 &#x7AEF;&#x53E3;&#xFF0C;&#x5F53;&#x7136;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x901A;&#x8FC7; npm &#x547D;&#x4EE4;&#x7684;&#x65B9;&#x5F0F;&#x6307;&#x5B9A;&#x9700;&#x8981; kill &#x7684;&#x7AEF;&#x53E3;&#x3002;</p>
+<pre><code class="lang-js">lsof -i tcp:<span class="hljs-number">8080</span> | grep LISTEN | awk <span class="hljs-string">&apos;{print $2}&apos;</span>| awk -F<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-string">&apos;{ print $1 }&apos;</span> | xargs kill <span class="hljs-number">-9</span>
+</code></pre>
+<p>&#x53E6;&#x5916;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x5728; windows &#x4E0A;&#x662F;&#x4E0D;&#x53EF;&#x7528;&#x7684;&#x3002;&#x5982;&#x679C;&#x6709;&#x591A;&#x5E73;&#x53F0;&#x7684;&#x9700;&#x6C42;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <a href="https://www.npmjs.com/package/kill-port-process" target="_blank">Kill-port-process</a>&#x3002;</p>
+<h2 id="linux&#x4E0B;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x66FF;&#x6362;&#x6587;&#x672C;">Linux&#x4E0B;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x66FF;&#x6362;&#x6587;&#x672C;</h2>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x5C06;wxml&#x6587;&#x4EF6;&#x7684;i&#x6807;&#x7B7E;&#x66FF;&#x6362;&#x4E3A;text</span>
+grep <span class="hljs-string">&apos;&lt;i &apos;</span> -rl . --include=<span class="hljs-string">&apos;*.wxml&apos;</span> --exclude-dir=node_module --exclude-dir=dist | xargs sed -i <span class="hljs-_">-e</span> <span class="hljs-string">&apos;s/&lt;i /&lt;text /g&apos;</span>
+grep <span class="hljs-string">&apos;&lt;/i&gt;&apos;</span> -rl . --include=<span class="hljs-string">&apos;*.wxml&apos;</span> --exclude-dir=node_module --exclude-dir=dist | xargs sed -i <span class="hljs-_">-e</span> <span class="hljs-string">&apos;s/&lt;\/i&gt;/&lt;\/text&gt;/g&apos;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -5808,7 +6044,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二期","level":"6.4","depth":1,"next":{"title":"第三期","level":"6.5","depth":1,"path":"know/第三期.md","ref":"know/第三期.md","articles":[]},"previous":{"title":"在微信环境中直播功能的实践","level":"6.3","depth":1,"path":"know/在微信环境中直播功能的实践.md","ref":"know/在微信环境中直播功能的实践.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"know/第二期.md","mtime":"2019-08-23T07:16:47.463Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-23T08:15:26.824Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二期","level":"6.4","depth":1,"next":{"title":"第三期","level":"6.5","depth":1,"path":"know/第三期.md","ref":"know/第三期.md","articles":[]},"previous":{"title":"在微信环境中直播功能的实践","level":"6.3","depth":1,"path":"know/在微信环境中直播功能的实践.md","ref":"know/在微信环境中直播功能的实践.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"know/第二期.md","mtime":"2019-08-23T10:03:51.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-23T10:04:04.429Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
