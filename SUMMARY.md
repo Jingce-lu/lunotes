@@ -59,6 +59,7 @@
   - [Babel](Node/node基础/babel.md)
   - [mongodb](Node/node基础/mongodb.md)
   - [node-http-proxy解决本地开发ajax跨域问题](Node/node基础/node-http-proxy解决本地开发ajax跨域问题.md)
+  - [开启Gzip](Node/node基础/开启Gzip.md)
 <!-- 8.Typescript -->
 * TypeScript
   - [TypeScript](Js/TypeScript/Typescript.md)
@@ -105,9 +106,10 @@
   - [一道思考题](面试/一道思考题.md)
   - [几道高级前端面试题解析](面试/几道高级前端面试题解析.md)
 <!-- 6.JS基础 -->
-* JS基础
+* JS进阶 know
   - [JS基础](面试/Js基础.md)
   - [为啥await在forEach中不生效](面试/为啥await在forEach中不生效.md)
+  - [在微信环境中直播功能的实践](know/在微信环境中直播功能的实践.md)
 <!-- 7.手撸代码无敌 -->
 * [手撸代码无敌](手撸代码无敌/README.md)
   - [new](手撸代码无敌/new.md)
@@ -141,6 +143,10 @@
   - [封装Ajax和Promise](手撸代码无敌/封装Ajax和Promise.md)
   - [实现系统Math.max方法](手撸代码无敌/实现系统Math.max方法.md)
   - [通用进制转换](手撸代码无敌/通用进制转换.md)
+  - [实现sleep函数](手撸代码无敌/实现sleep函数.md)
+  - [正则过滤违规词](手撸代码无敌/正则过滤违规词.md)
+  - [统计Git代码行数](手撸代码无敌/统计Git代码行数.md)
+  - [实现一个only函数](手撸代码无敌/实现一个only函数.md)
 <!-- 8.设计模式 -->
 * [设计模式](设计模式/README.md)
   - [单例模式](设计模式/单例模式.md)
