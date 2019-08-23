@@ -105,7 +105,9 @@
   - [一道思考题](面试/一道思考题.md)
   - [几道高级前端面试题解析](面试/几道高级前端面试题解析.md)
 <!-- 6.JS基础 -->
-* [JS基础](面试/Js基础.md)
+* JS基础
+  - [JS基础](面试/Js基础.md)
+  - [为啥await在forEach中不生效](面试/为啥await在forEach中不生效.md)
 <!-- 7.手撸代码无敌 -->
 * [手撸代码无敌](手撸代码无敌/README.md)
   - [new](手撸代码无敌/new.md)
@@ -367,6 +369,7 @@
   - [理解vue ssr原理并自己搭建简单的ssr框架](Vue/理解vue-ssr原理并自己搭建简单的ssr框架.md)
   - [Vue插件开发](Vue/Vue插件开发.md)
   - [vue路由权限校验](Vue/vue路由权限校验.md)
+  - [Vuex 源码深度解析](Vue/Vuex源码深度解析.md)
 
 
 ## Part 3 - other
