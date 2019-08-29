@@ -19,6 +19,8 @@
     "gitbook-plugin-theme-itheima": "^1.1.12"
   },
   "scripts": {
+    "start": "gitbook serve",
+    "publish": "gitbook build && gh-pages -d _book",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
