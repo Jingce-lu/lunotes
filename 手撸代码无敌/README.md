@@ -32,3 +32,8 @@
 29. [封装Ajax和Promise](./封装Ajax和Promise.md)
 30. [实现系统Math.max方法](实现系统Math.max方法.md)
 31. [通用进制转换](通用进制转换.md)
+32. [实现sleep函数](实现sleep函数.md)
+33. [正则过滤违规词](正则过滤违规词.md)
+34. [统计Git代码行数](统计Git代码行数.md)
+35. [实现一个only函数](实现一个only函数.md)
+36. [用js实现map](map.md)
