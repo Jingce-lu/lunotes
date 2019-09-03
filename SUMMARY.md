@@ -108,6 +108,7 @@
   - [Daily-Interview-Question 1-10](面试/Daily-Interview-Question1-10.md)
   - [Daily-Interview-Question 11-20](面试/Daily-Interview-Question11-20.md)
   - [Daily-Interview-Question 21-30](面试/Daily-Interview-Question21-30.md)
+  - [Daily-Interview-Question 31-40](面试/Daily-Interview-Question31-40.md)
 <!-- 6.JS基础 -->
 * JS进阶 know
   - [JS基础](面试/Js基础.md)
