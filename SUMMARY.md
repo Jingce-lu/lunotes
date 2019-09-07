@@ -118,6 +118,7 @@
   - [Daily-Interview-Question 101-110](面试/Daily-Interview-Question101-110.md)
   - [Daily-Interview-Question 111-120](面试/Daily-Interview-Question111-120.md)
   - [Daily-Interview-Question 121-130](面试/Daily-Interview-Question121-130.md)
+  - [Daily-Interview-Question 131-140](面试/Daily-Interview-Question131-140.md)
 <!-- 6.JS基础 -->
 * JS进阶 know
   - [JS基础](面试/Js基础.md)
@@ -125,6 +126,7 @@
   - [在微信环境中直播功能的实践](know/在微信环境中直播功能的实践.md)
   - [第二期](know/第二期.md)
   - [第三期](know/第三期.md)
+  - [一种自动化生成骨架屏的方案](know/一种自动化生成骨架屏的方案.md)
 <!-- 7.手撸代码无敌 -->
 * [手撸代码无敌](手撸代码无敌/README.md)
   - [new](手撸代码无敌/new.md)
