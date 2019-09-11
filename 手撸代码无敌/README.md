@@ -37,3 +37,4 @@
 34. [统计Git代码行数](统计Git代码行数.md)
 35. [实现一个only函数](实现一个only函数.md)
 36. [用js实现map](map.md)
+40. [Object.assign 原理及其实现](Object.assign原理及其实现.md)
