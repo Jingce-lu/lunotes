@@ -398,6 +398,7 @@
   - [Vuex 源码深度解析](Vue/Vuex源码深度解析.md)
   - [vue源码解析－事件机制](Vue/vue源码解析－事件机制.md)
   - [vue上拉刷新下拉加载封装](Vue/vue上拉刷新下拉加载封装.md)
+  - [基于proxy的简易版vue](Vue/基于proxy的简易版vue.md)
 
 ## Part 3 - other
 - git
