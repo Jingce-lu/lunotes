@@ -6094,6 +6094,102 @@
 p.a = <span class="hljs-number">2</span> <span class="hljs-comment">// bind `value` to `2`</span>
 p.a <span class="hljs-comment">// -&gt; Get &apos;a&apos; = 2</span>
 </code></pre>
+<p><strong>proxy.html</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+      <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span>
+      <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;</span>
+    /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Vue &#x53CC;&#x5411;&#x7ED1;&#x5B9A;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-id">#app</span> {
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">100px</span> auto <span class="hljs-number">0</span> auto;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+        }
+        <span class="hljs-selector-id">#btn</span> {
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span> auto;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#x60A8;&#x8F93;&#x5165;&#x7684;&#x662F;&#xFF1A; <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>&#x6DFB;&#x52A0;&#x5230;Todolist<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;list&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">const</span> obj = {};
+    <span class="hljs-keyword">const</span> arr = [];
+    <span class="hljs-keyword">const</span> input = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;input&quot;</span>);
+    <span class="hljs-keyword">const</span> title = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;title&quot;</span>);
+    <span class="hljs-keyword">const</span> list = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;list&quot;</span>);
+    <span class="hljs-keyword">const</span> btn = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;btn&quot;</span>);
+    <span class="hljs-comment">// &#x6E32;&#x67D3;todolist&#x5217;&#x8868;</span>
+    <span class="hljs-keyword">const</span> Render = {
+      <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;</span>
+      init: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">arr</span>) </span>{
+        <span class="hljs-keyword">const</span> fragment = <span class="hljs-built_in">document</span>.createDocumentFragment();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+          <span class="hljs-keyword">const</span> li = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;li&quot;</span>);
+          li.textContent = arr[i];
+          fragment.appendChild(li);
+        }
+        list.appendChild(fragment);
+      },
+      addList: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val</span>) </span>{
+        <span class="hljs-keyword">const</span> li = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;li&quot;</span>);
+        li.textContent = val;
+        list.appendChild(li);
+      }
+    };
+    <span class="hljs-comment">// &#x76D1;&#x542C;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-keyword">const</span> newObj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(obj, {
+      get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">target, key, receiver</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`getting <span class="hljs-subst">${key}</span>!`</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.get(target, key, receiver);
+      },
+      set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">target, key, value, receiver</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(target, key, value, receiver);
+        <span class="hljs-keyword">if</span> (key === <span class="hljs-string">&quot;text&quot;</span>) {
+          input.value = value;
+          title.innerHTML = value;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.set(target, key, value, receiver);
+      }
+    });
+
+    <span class="hljs-comment">// &#x76D1;&#x542C;&#x6570;&#x7EC4;</span>
+    <span class="hljs-keyword">const</span> newArr = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(arr, {
+      get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">target, key, receiver</span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.get(target, key, receiver);
+      },
+      set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">target, key, value, receiver</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(target, key, value, receiver);
+        <span class="hljs-keyword">if</span> (key !== <span class="hljs-string">&quot;length&quot;</span>) {
+          Render.addList(value);
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.set(target, key, value, receiver);
+      }
+    });
+    <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;</span>
+    <span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      Render.init(arr);
+    };
+    input.addEventListener(<span class="hljs-string">&quot;keyup&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+        newObj.text = e.target.value;
+    });
+    btn.addEventListener(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      newArr.push(<span class="hljs-built_in">parseInt</span>(newObj.text));
+    });
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -6153,7 +6249,7 @@ p.a <span class="hljs-comment">// -&gt; Get &apos;a&apos; = 2</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Proxy","level":"7.4","depth":1,"next":{"title":"Jquery事件机制","level":"7.5","depth":1,"path":"Js/基础/Jquery事件机制.md","ref":"Js/基础/Jquery事件机制.md","articles":[]},"previous":{"title":"cookie与session","level":"7.3","depth":1,"path":"Js/基础/cookie与session.md","ref":"Js/基础/cookie与session.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"手撸代码无敌/Proxy.md","mtime":"2019-06-28T09:18:32.710Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-12T04:05:15.620Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Proxy","level":"7.4","depth":1,"next":{"title":"Jquery事件机制","level":"7.5","depth":1,"path":"Js/基础/Jquery事件机制.md","ref":"Js/基础/Jquery事件机制.md","articles":[]},"previous":{"title":"cookie与session","level":"7.3","depth":1,"path":"Js/基础/cookie与session.md","ref":"Js/基础/cookie与session.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","splitter","search-pro","-sharing","expandable-chapters"],"styles":{"website":"resource/styles/website.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"search":{"maxIndexSize":5000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","keywords":["gitbook","summary"],"author":"Lu jingce <lujingce@163.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","links":{"sidebar":{"路小二":"https://ailjc.com/lunotes"}},"gitbook":"3.2.3","description":"世路如今已惯, 此心到处悠然"},"file":{"path":"手撸代码无敌/Proxy.md","mtime":"2019-09-12T06:18:11.405Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-12T06:18:29.539Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
