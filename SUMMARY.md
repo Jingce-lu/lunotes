@@ -128,7 +128,8 @@
   - [第二期](know/第二期.md)
   - [第三期](know/第三期.md)
   - [一种自动化生成骨架屏的方案](know/一种自动化生成骨架屏的方案.md)
-  - [Lodash 防抖节流原理](know/Lodash防抖节流原理.md)
+  - [浅析Lodash 防抖节流原理](know/浅析Lodash防抖节流原理.md)
+  - [深入Lodash防抖节流函数实现原理](know/Lodash防抖节流函数实现原理.md)
 <!-- 7.手撸代码无敌 -->
 * [手撸代码无敌](手撸代码无敌/README.md)
   - [new](手撸代码无敌/new.md)
