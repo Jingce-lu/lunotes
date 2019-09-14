@@ -128,6 +128,7 @@
   - [第二期](know/第二期.md)
   - [第三期](know/第三期.md)
   - [一种自动化生成骨架屏的方案](know/一种自动化生成骨架屏的方案.md)
+  - [深入浅出节流函数 throttle](know/深入浅出节流函数throttle.md)
   - [浅析Lodash 防抖节流原理](know/浅析Lodash防抖节流原理.md)
   - [深入Lodash防抖节流函数实现原理](know/Lodash防抖节流函数实现原理.md)
 <!-- 7.手撸代码无敌 -->
@@ -347,6 +348,7 @@
   - [React-HOC](React/React进阶/HOC.md)
   - [React事件处理机制](React/React进阶/React事件处理机制.md)
   - [React事件机制](React/React进阶/React事件机制.md)
+  - [Throttle和Debounce在React中的应用](React/React进阶/Throttle和Debounce在React中的应用.md)
 <!-- 3.源码分析 -->
 * 源码分析
   - [React Object实现React对象](React/源码分析/React-Object实现React对象.md)
