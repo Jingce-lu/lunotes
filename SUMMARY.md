@@ -407,6 +407,11 @@
   - [vue上拉刷新下拉加载封装](Vue/vue上拉刷新下拉加载封装.md)
   - [基于proxy的简易版vue](Vue/基于proxy的简易版vue.md)
   - [vue-function-api](Vue/vue-function-api.md)
+<!-- Vue 进阶系列 -->
+* Vue 进阶系列
+  - [响应式原理及实现](Vue/vue进阶/响应式原理及实现.md)
+  - [插件原理及实现](Vue/vue进阶/插件原理及实现.md)
+  - [Render函数原理及实现](Vue/vue进阶/Render函数原理及实现.md)
 
 ## Part 3 - other
 - git
