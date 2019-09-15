@@ -2,12 +2,13 @@ Vue 进阶系列（三）之Render函数原理及实现
 ===
 <!-- TOC -->
 
-- [Render函数原理](#render函数原理)
-- [Actual DOM 和 Virtual DOM](#actual-dom-和-virtual-dom)
-- [JSX和Template](#jsx和template)
-- [实例1：实现example组件](#实例1实现example组件)
-- [实例2：实现动态的<example>组件](#实例2实现动态的example组件)
-- [实例3：实现组件](#实例3实现组件)
+- [Vue 进阶系列（三）之Render函数原理及实现](#vue-进阶系列三之render函数原理及实现)
+  - [Render函数原理](#render函数原理)
+  - [Actual DOM 和 Virtual DOM](#actual-dom-和-virtual-dom)
+  - [JSX和Template](#jsx和template)
+  - [实例1：实现example组件](#实例1实现example组件)
+  - [实例2：实现动态的<example>组件](#实例2实现动态的example组件)
+  - [实例3：实现组件](#实例3实现组件)
 
 <!-- /TOC -->
 

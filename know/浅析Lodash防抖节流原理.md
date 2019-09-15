@@ -2,6 +2,7 @@
 ===
 <!-- TOC -->
 
+- [7 个角度吃透 Lodash 防抖节流原理](#7-个角度吃透-lodash-防抖节流原理)
 - [节流函数 Throttle](#节流函数-throttle)
   - [角度1](#角度1)
     - [mousemove 第一次触发](#mousemove-第一次触发)
