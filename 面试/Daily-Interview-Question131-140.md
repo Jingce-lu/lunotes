@@ -10,6 +10,7 @@ Daily-Interview-Question 131-140
 - [第 135 题：算法题](#第-135-题算法题)
 - [第 136 题：如何实现骨架屏，说说你的思路](#第-136-题如何实现骨架屏说说你的思路)
 - [第 137 题：如何在 H5 和小程序项目中计算白屏时间和首屏时间，说说你的思路](#第-137-题如何在-h5-和小程序项目中计算白屏时间和首屏时间说说你的思路)
+- [第 138 题：反转链表，每 k 个节点反转一次，不足 k 就保持原有顺序](#第-138-题反转链表每-k-个节点反转一次不足-k-就保持原有顺序)
 
 <!-- /TOC -->
 
@@ -318,3 +319,242 @@ module.exports = skeleton
 可交互时间=用户可以正常进行事件输入时间点-开始请求时间点。
 
 PerformanceTiming有一个domInteractive属性，代表了DOM结构结束解析的时间点，就是Document.ready State属性变为“interactive”
+
+
+## 第 138 题：反转链表，每 k 个节点反转一次，不足 k 就保持原有顺序
+> 例如  
+> 链表： 1->2->3->4->5->6->7->8->null, k = 3   
+> 那么 6->7->8， 3->4->5，1->2 各为一组， 
+> 调整后： 1->2->5->4->3->8->7->6->null，其中1，2不调整，因为不够一组
+
+```js
+let a = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: {
+          value: 5,
+          next: {
+            value: 6,
+            next: {
+              value: 7,
+              next: {
+                value: 8,
+                next: {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+```js
+// 创建链表
+function createLinkList(...args) {
+  const res = {};
+  let current = res;
+  while (args.length) {
+    current.value = args.shift();
+    current.next = {};
+    current = current.next;
+  }
+  return res;
+}
+
+function reverse(linklist, k) {
+  const stack = [];
+  let current = linklist;
+  // 前面k个入栈
+  while (current.next && stack.length + 1 <= k) {
+    stack.push(current.value);
+    current = current.next;
+  }
+  // 不足k不用反转
+  if (stack.length < k) {
+    return linklist;
+  }
+  // 出栈+拼接current节点再递归
+  let temp = {};
+  const ret = stack.reduceRight(
+    (res, cur) => ((temp.value = cur), (temp = temp.next = {}), res),
+    temp
+  );
+  current && current.next && Object.assign(temp, reverse(current, k));
+  return ret;
+}
+
+reverse(createLinkList(1, 2, 3, 4, 5, 6, 7, 8), 3);
+```
+
+```js
+/**
+ * 反转链表，每 k 个节点反转一次，不足 k 就保持原有顺序
+ */
+
+interface ListItem {
+  next: ListItem | null;
+  value: any;
+}
+
+interface group {
+  head: ListItem;
+  tail: ListItem;
+}
+
+function reverseEveryKItems(head: ListItem, k: number): ListItem {
+  let headTmp: ListItem = head;
+  let groupHeads: Array<ListItem> = [];
+  let count = 1;
+  groupHeads.push(headTmp);
+
+  // 对列表分组
+  while (headTmp.next) {
+    count = count + 1;
+    if (count === k) {
+      groupHeads.push(headTmp.next);
+      count = 0;
+    }
+    headTmp = headTmp.next;
+  }
+
+  let lastGroupHead: ListItem;
+  // 不满K个节点的不反转
+  if (count !== 0) {
+    lastGroupHead = groupHeads.pop();
+  }
+
+  // 每K个节点置换，保存head，tail
+  const groups: Array<group> = groupHeads.map((groupHead) =>
+    reverseGroupList(groupHead, k)
+  );
+
+  // 将每个反转后的组前尾后头连起来
+  let reverseHead: ListItem = groups[0].head;
+  for (let i = 1; i < groups.length; i++) {
+    let preTail = groups[i - 1].tail;
+    let curHead = groups[i].head;
+    preTail.next = curHead;
+  }
+
+  groups[-1].tail.next = lastGroupHead || null;
+
+  return reverseHead;
+}
+
+/* 每K个列表反转 */
+function reverseGroupList(head: ListItem, k: number): group {
+  let pre: ListItem = head;
+  let cur: ListItem = head.next;
+
+  while (cur && k--) {
+    let next: ListItem = cur.next;
+    cur.next = pre;
+    pre = cur;
+    cur = next;
+  }
+
+  return {
+    head: cur,
+    tail: head
+  };
+}
+```
+
+<br/>
+<br/>
+
+大致思路：
+- 遍历链表，将每个元素添加到一个栈中
+- 判断栈的长度，达到指定长度后，出栈，即可反转
+- 若最后一次栈的长度没有达到指定长度，则将这个栈当作队列操作，直接出队
+
+实现如下：
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+
+  print() {
+    let pointer = this;
+    let result = '';
+    while(pointer) {
+      result += pointer.value + '>';
+      pointer = pointer.next;
+    }
+    console.log(result.substring(0, result.length - 1));
+  }
+}
+
+function reverseLinkedListByk(linkedList, k) {
+  if (!linkedList) {
+    return null;
+  }
+  if (k < 1) {
+    return linkedList;
+  }
+  const stack = [];
+  let resultHead = null;
+  let resultPointer = null;
+  let traversePointer = linkedList;
+  while(traversePointer) {
+    const copy = traversePointer;
+    traversePointer = traversePointer.next;
+    copy.next = null;
+    stack.push(copy);
+    if (stack.length == k) {
+      while(stack.length) {
+        const node = stack.pop();
+        if (!resultHead) {
+          resultHead = resultPointer = node;
+        } else {
+          resultPointer.next = node;
+          resultPointer = resultPointer.next;
+        }
+      }
+    }
+  }
+  if (stack.length && stack.length < k) {
+    while(stack.length) {
+      const node = stack.shift()
+      resultPointer.next = node;
+      resultPointer = resultPointer.next;
+    }
+  }
+  return resultHead;
+}
+
+const linkedList = new Node(5);
+n1 = new Node(8);
+n2 = new Node(3);
+n3 = new Node(6);
+n4 = new Node(9);
+n5 = new Node(1);
+n6 = new Node(10);
+n7 = new Node(39);
+linkedList.next = n1
+n1.next = n2;
+n2.next = n3;
+n3.next = n4;
+n4.next = n5;
+n5.next = n6;
+n6.next = n7;
+linkedList.print();
+console.log('----------');
+let reversed = reverseLinkedListByk(linkedList, 3);
+reversed.print();
+
+// 5>8>3>6>9>1>10>39
+// ----------
+// 3>8>5>1>9>6>10>39
+```
