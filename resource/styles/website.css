@@ -8,3 +8,10 @@
 .page-inner {
   max-width: 900px;
 }
+.markdown-section code {
+  color: rgb(255, 80, 44);
+  background: rgb(255, 245, 245);
+}
+.markdown-section pre>code {
+  color: #333;
+}
