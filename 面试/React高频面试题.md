@@ -216,7 +216,7 @@ React会对多次连续的 setState进行合并，如果你想立即使用上次
 ## 4.React如何实现自己的事件机制？
 React事件并没有绑定在真实的 Dom节点上，而是通过事件代理，在最外层的 document上对事件进行统一分发。
 
-![1909153.webp](../resource/assets/other/1909153.webp)
+![1909153.jpg](../resource/assets/other/1909153.jpg)
 
 ### 组件挂载、更新时：
 - 通过 `lastProps`、 `nextProps`判断是否新增、删除事件分别调用事件注册、卸载方法。
@@ -291,7 +291,7 @@ React合成的 `SyntheticEvent`采用了事件池，这样做可以大大节省�
 
 
 ## 9.虚拟Dom是什么？
-![1909154.webp](../resource/assets/other/1909154.webp)
+![1909154.jpg](../resource/assets/other/1909154.jpg)
 
 在原生的 JavaScript程序中，我们直接对 DOM进行创建和更改，而 DOM元素通过我们监听的事件和我们的应用程序进行通讯。
 
@@ -412,7 +412,7 @@ function visible ( WrappedComponent ) {
 
 上面的代码就是一个 `HOC`的简单应用，函数接收一个组件作为参数，并返回一个新组件，新组建可以接收一个 `visible props`，根据 `visible`的值来判断是否渲染Visible。
 
-![1909155.webp](../resource/assets/other/1909155.webp)
+![1909155.jpg](../resource/assets/other/1909155.jpg)
 
 我们可以通过以下两种方式实现高阶组件：
 1. 属性代理  
@@ -477,7 +477,7 @@ HOC在业务中的实际应用场景：
 ## 18.高阶组件(HOC)和Mixin的异同点是什么？
 `Mixin`和 `HOC`都可以用来解决 React的代码复用问题。
 
-![1909156.webp](../resource/assets/other/1909156.webp)
+![1909156.jpg](../resource/assets/other/1909156.jpg)
 
 - Mixin 可能会相互依赖，相互耦合，不利于代码维护
 - 不同的 Mixin中的方法可能会相互冲突
