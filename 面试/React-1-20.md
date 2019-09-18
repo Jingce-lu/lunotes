@@ -110,3 +110,69 @@ React15 版本不直接支持IE8 浏览器的，官方文档中说React16 中依
 - 2、异步任务异常，如setTiemout，ajax请求异常等；
 - 3、服务端渲染异常；
 - 4、异常边界组件自身内的异常；
+
+## 12.在React中你有经常使用常量吗？
+在写react应用的时候，在结合redux 处理react 应用层中的数据层的时候, 会单独写一个actionType文件，这个文件中定义的都是常量，这样写的好处是，单纯的引入字符串内容，容易出错且很难排查，中间做这个文件做一个过渡，就是这种引用常量的方式
+
+
+## 13.为什么说React中的props是只读的？
+react官方文档中说道，组件无论是使用函数声明还是通过class声明，都绝不能修改自身的props，props 作为组件对外通信的一个接口，为了保证组件像纯函数一样没有响应的副作用，所有的组件都必须像纯函数一样保护它们的props不被修改
+
+
+## 14.React-Router怎么获取URL的参数？
+- 在之前的版本中，可以通过 `this.props.location.query.bar` 进行获取
+- 在 v4 中，通过 `this.props.location.search` 获取，不过需要进行处理
+
+
+## 15.`super()`和`super(props)`有什么区别？
+`super()` 可以让我们使用this来调用各种东西，
+而`super(props)`可以让我们在this的基础上使用构造函数里面的东西， 或者从父元素那边传过来的一些属性
+
+如果只调用了`super()`，那么`this.props`在`super()`和构造函数结束之间仍是`undefined`。
+```js
+class Button extends React.Component {
+  constructor(props) {
+    super(); // 没有传 props
+    console.log(props);      // {}
+    console.log(this.props); // undefined 
+  }
+  // ...
+}
+```
+
+
+## 16.需要把keys设置为全局唯一吗？
+**不需要**,key是用来进行diff算法的时候进行同层比较,准备的说key只需要在兄弟节点之间唯一,一般情况key选取是后端定义的id.万不得已的时候可以选择index(选择index是万不得已的选择,因为选择了index后,一些操作会改变index的值,违背了唯一不变,在进行diff算法的时候出现问题)
+
+## 17.在history模式中push和replace有什么区别？
+pushState会增加一条新的历史记录，而replaceState则会替换当前的历史记录，因此不会增加History.length。
+
+
+## 18.React-Router 3和React-Router 4有什么变化？添加了什么好的特性？ 
+React-Router 4 从设计思想上进行改变，引入动态路由，将路由进行了拆分，将其放到了各自的模块中，不再有单独的 router 模块，充分体现了组件化的思想，更加贴合 React 的思想。
+
+具体表现：
+- 包含式路由与exact
+    * 在之前的版本中，在 Route 中写入的 path，在路由匹配时是独一无二的，路由的嵌套体现在 `<Route>` 组件的嵌套规则上
+    * v4 版本则有了一个包含的关系：如匹配 path="/users" 的路由会匹配 path="/"的路由，在页面中这两个模块会同时进行渲染。
+    * v4中多了 `exact` 关键词，表示只对当前的路由进行匹配。
+- 独立路由：`Switch`（排他性路由）
+    * 采用 `<Switch>`，只有一个路由会被渲染，并且总是渲染第一个匹配到的组件
+    * 配合使用 `exact`
+- "Index Routes" 和 "Not Found"
+    * 废弃了 `<IndexRoute>`，而该用 `<Route exact>` 的方式进行代替
+    * 如果没有匹配的路由，也可通过 `<Redirect>` 来进行重定向到默认页面或合理的路径。
+- 嵌套布局
+- 授权路由
+- `<Link>` vs `<NavLink>`
+- URL 查询字符串
+
+
+## 19.React-Router的实现原理是什么？
+依赖 history 库，保证视图和 URL 的同步
+
+用户可以通过手动输入或者与页面进行交互来改变 URL，然后向服务端发送请求获取资源，成功后重新绘制 UI。
+
+
+## 20.React-Router 4的switch有什么用？
+Switch排他性路由，采用 `<Switch>`，只有一个路由会被渲染，并且总是渲染第一个匹配到的组件，更好进行路由匹配。
