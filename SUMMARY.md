@@ -75,7 +75,7 @@
   - [MVVM](框架通识/MVVM.md)
   - [Virtual Dom](框架通识/VirtualDom.md)
   - [VirtualDOM算法](框架通识/VirtualDOM算法.md)
-  - [构建一个使用Virtual-DOM的前端模版引擎](框架通识/构建一个使用Virtual-DOM的前端模版引擎.md)
+  - [构建一个使用Virtual-DOM的前端模版引擎](框架通识/构建一个使用VirtualDOM的前端模版引擎.md)
   - [Object.defineProperty方法](框架通识/Object.defineProperty方法.md)
   - [Proxy](框架通识/Proxy.md)
   - [10分钟快速入门rollup(1)](框架通识/10分钟快速入门rollupJs1.md)
