@@ -3,11 +3,11 @@ MVVM
 
 <!-- TOC -->
 
-- [MVVM](#MVVM)
-  - [MVVM](#MVVM-1)
+- [MVVM](#mvvm)
+  - [MVVM](#mvvm-1)
   - [脏数据检测](#脏数据检测)
   - [数据劫持](#数据劫持)
-  - [Proxy 与 Object.defineProperty 对比](#Proxy-与-ObjectdefineProperty-对比)
+  - [Proxy 与 Object.defineProperty 对比](#proxy-与-objectdefineproperty-对比)
 
 <!-- /TOC -->
 
@@ -115,6 +115,7 @@ class Watcher {
     this.cb(this.value)
   }
 }
+
 var data = { name: 'yck' }
 observe(data)
 // 模拟解析到 `{{name}}` 触发的操作
@@ -151,6 +152,8 @@ function defineReactive(obj, key, val) {
 ```
 
 以上实现了一个简易的双向绑定，核心思路就是手动触发一次属性的 `getter` 来实现发布订阅的添加。
+
+
 
 ### Proxy 与 Object.defineProperty 对比
 `Object.defineProperty` 虽然已经能够实现双向绑定了，但是他还是有缺陷的。
