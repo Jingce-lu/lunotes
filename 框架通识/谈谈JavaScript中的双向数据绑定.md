@@ -148,7 +148,7 @@ function DataBinder(object_id){
 
     //PubSub将变化传播到所有绑定元素    
 
-    pubSub.on(message,function(vet,prop_name,new)_val){
+    pubSub.on(message,function(vet,prop_name,new_val){
         var elements = document.querySelectorAll("[" + data_attr + "=" + prop_name + "]"),
                 tah_name;
 
