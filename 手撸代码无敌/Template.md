@@ -9,10 +9,10 @@
     - [2. 基本实现](#2-基本实现)
     - [3. 基本实现 +1](#3-基本实现-1)
     - [4. 实现完整](#4-实现完整)
-  - [`for/in` 循环获取 obj 的 key 值 、 `Object.key()`、 `Object.getOwnPropertyNames()`、 `Reflect.ownKeys()`区别](#forin-循环获取-obj-的-key-值--Objectkey-ObjectgetOwnPropertyNames-ReflectownKeys区别)
+  - [`for/in` 循环获取 obj 的 key 值 、 `Object.key()`、 `Object.getOwnPropertyNames()`、 `Reflect.ownKeys()`区别](#forin-循环获取-obj-的-key-值--objectkey-objectgetownpropertynames-reflectownkeys区别)
     - [demo 理解](#demo-理解)
   - [最后实现](#最后实现)
-    - [MDN `str.replace(regexp|substr, newSubStr|function)`](#MDN-strreplaceregexpsubstr-newSubStrfunction)
+    - [MDN `str.replace(regexp|substr, newSubStr|function)`](#mdn-strreplaceregexpsubstr-newsubstrfunction)
     - [实现code](#实现code)
       - [分析](#分析)
 
