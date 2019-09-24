@@ -3,9 +3,9 @@
 <!-- TOC -->
 
 - [谈谈JavaScript中的双向数据绑定](#谈谈javascript中的双向数据绑定)
-    - [原理](#原理)
-    - [使用jQuery的简单实现](#使用jquery的简单实现)
-    - [不使用jQuery来创建数据双向绑定](#不使用jquery来创建数据双向绑定)
+  - [原理](#原理)
+  - [使用jQuery的简单实现](#使用jquery的简单实现)
+  - [不使用jQuery来创建数据双向绑定](#不使用jquery来创建数据双向绑定)
 
 <!-- /TOC -->
 
@@ -28,10 +28,11 @@ function DataBinder(object_id){
     //使用一个jQuery对象作为简单的订阅者发布者
     var pubSub = jQuery({});
 
-    //我们希望一个data元素可以在表单中指明绑定：data-bind-<object_id>="<property_name>"        
+    //我们希望一个data元素可以在表单中指明绑定：
+    // data-bind-<object_id>="<property_name>"        
 
     var data_attr = "bind-" + object_id,
-            message = object_id + ":change";
+        message = object_id + ":change";
 
     //使用data-binding属性和代理来监听那个元素上的变化事件
     // 以便变化能够“广播”到所有的关联对象   
@@ -47,9 +48,9 @@ function DataBinder(object_id){
         jQuery("[data-" + data_attr + "=" + prop_name + "]").each(function(){
         var $bound = jQuery(this);
 
-        if($bound.is("input,text area,select")){
+        if($bound.is("input,text area,select")) {
             $bound.val(new_val);
-        }else{
+        }else {
             $bound.html(new_val);
         }
         });
