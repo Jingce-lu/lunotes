@@ -53,7 +53,7 @@
   - [搭建一个私有的npm仓库](Node/node基础/搭建一个私有的npm仓库.md)
   - [AnyProxy](Node/node基础/AnyProxy.md)
   - [Node进程管理器PM2](Node/node基础/Node进程管理器PM2.md)
-  - [DOM Mutation Observer API](Node/node基础/DOM-Mutation-Observer-API.md)
+  - [DOM Mutation Observer API](Node/other/DOM-Mutation-Observer-API.md)
   - [Path对路径操作的Api](Node/node基础/Path对路径操作的Api.md)
   - [Node](Node/node基础/node.md)
   - [Babel](Node/node基础/babel.md)
@@ -147,6 +147,7 @@
   - [浅析Lodash 防抖节流原理](know/浅析Lodash防抖节流原理.md)
   - [深入Lodash防抖节流函数实现原理](know/Lodash防抖节流函数实现原理.md)
   - [JavaScript常用八种继承方案](know/JavaScript常用八种继承方案.md)
+  - [如何写出优雅耐看的JavaScript代码](know/如何写出优雅耐看的JavaScript代码.md)
 <!-- 7.手撸代码无敌 -->
 * [手撸代码无敌](手撸代码无敌/README.md)
   - [new](手撸代码无敌/new.md)
