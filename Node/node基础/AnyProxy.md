@@ -32,7 +32,7 @@ anyproxy
 anyproxy --port 1080 
 ```
 
-![AnyProxy](../assets/AnyProxy.jpg)
+![AnyProxy](../../resource/assets/node/AnyProxy.jpg)
 
 ### 作为npm模块使用
 AnyProxy可以作为一个npm模块使用，整合进其他工具。
