@@ -18,7 +18,7 @@
 
 <!-- /TOC -->
 
-![11.png | left | 827x270](https://cdn.yuque.com/yuque/0/2018/png/99990/1527235790396-60b4e794-7049-456b-8ba3-04bad0de5225.png "")
+![11.png | left | 827x270](https://cdn.yuque.com/yuque/0/2018/png/99990/1527235790396-60b4e794-7049-456b-8ba3-04bad0de5225.png)
 
 # 有状态组件、无状态组件、默认属性、Render回调、组件注入、泛型组件、高阶组件、受控组件
 
@@ -138,7 +138,7 @@ this.state = { clicksCount: 2 }
 ### 例子：编译时的State类型安全
 
 
-![22.gif | left | 827x289](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235836807-19f97b80-1fec-4bf6-b450-8557ffd14a4d.gif "")
+![22.gif | left | 827x289](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235836807-19f97b80-1fec-4bf6-b450-8557ffd14a4d.gif)
 
 
 ### 整个容器组件/有状态组件的实现：
@@ -236,7 +236,7 @@ const Button: SFC<Props> = ({ onClick: handleClick, color, children }) => (
 比如我们想对color属性做一些操作，TS将会抛出一个错误，因为它并不知道它在React创建中通过`Component.defaultProps`中已经定义了:
 
 
-![33.gif | left | 813x255](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235850421-2407a4eb-6cf7-4f59-80bf-5b7c3af52f25.gif "")
+![33.gif | left | 813x255](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235850421-2407a4eb-6cf7-4f59-80bf-5b7c3af52f25.gif)
 
 
 为了满足TS编译器，我们可以使用下面3种技术：
@@ -310,7 +310,7 @@ const ButtonWithDefaultProps = withDefaultProps<Props>(
 
 
 
-![44.png | left | 827x83](https://cdn.yuque.com/yuque/0/2018/png/99990/1527235868723-883e7323-f82b-4411-9d4f-085b2414487c.png "")
+![44.png | left | 827x83](https://cdn.yuque.com/yuque/0/2018/png/99990/1527235868723-883e7323-f82b-4411-9d4f-085b2414487c.png)
 
 
 组件使用方法仍然是一样的：
@@ -515,7 +515,7 @@ export class Toggleable extends Component<Props, State> {
 感谢TypeScript，我们在render属性的参数有了智能提示和正确的类型检查：
 
 
-![55.gif | left | 674x370](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235886904-be6bc7f6-e11a-4655-a0c4-aeea4c2e5ee5.gif "")
+![55.gif | left | 674x370](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235886904-be6bc7f6-e11a-4655-a0c4-aeea4c2e5ee5.gif)
 
 
 如果我们想复用它（比如用在多个菜单组件中），我们只需要创建一个使用Toggleable逻辑的心组件：
@@ -555,7 +555,7 @@ export class Menu extends Component {
 并且它也像我们期望的那样工作了：
 
 
-![66.gif | left | 647x479](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235899512-b4cca522-22ab-4d61-a89d-98893679e2c8.gif "")
+![66.gif | left | 647x479](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235899512-b4cca522-22ab-4d61-a89d-98893679e2c8.gif)
 
 
 *这中模式在我们想更改渲染的内容，而不关心状态改变的情况下非常有用：可以看到，我们将渲染逻辑移到ToggleableMenu组件的额children函数中了，但把状态管理逻辑保留在我们的Toggleable组件中！*
@@ -747,7 +747,7 @@ const ToggleableMenuViaComponentInjection: SFC<ToggleableMenuProps> = ({
 __请注意__，这里我们的`props`属性没有严格的类型安全检查，因为它被定义成索引对象类型`{ [name: string]: any }`:
 
 
-![77.gif | left | 827x279](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235918861-6dcb910f-df50-4e11-a84e-ed5b40773e80.gif "")
+![77.gif | left | 827x279](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235918861-6dcb910f-df50-4e11-a84e-ed5b40773e80.gif)
 
 
 我们可以还是像之前一样使用`ToggleableMenuViaComponentInjection`组件来实现菜单渲染：
@@ -917,7 +917,7 @@ const ToggleableMenuViaComponentInjection: SFC<ToggleableMenuProps> = ({
 
 
 
-![Type Safe | left](https://cdn-images-1.medium.com/max/1600/1*cafUgvdK5GHafMKy3ZhWUQ.gif "")
+![Type Safe | left](https://cdn-images-1.medium.com/max/1600/1*cafUgvdK5GHafMKy3ZhWUQ.gi")
 
 
 ## 高阶组件
@@ -987,7 +987,7 @@ const ToggleableMenuViaHOC = withToggleable(MenuItem)
 *一切正常，还有类型安全检查！好极了！*
 
 
-![99.gif | left | 812x293](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235945932-3b808e24-17c6-4911-92f8-f054279dfe6f.gif "")
+![99.gif | left | 812x293](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235945932-3b808e24-17c6-4911-92f8-f054279dfe6f.gif)
 
 
 ## 受控组件
@@ -998,7 +998,7 @@ const ToggleableMenuViaHOC = withToggleable(MenuItem)
 
 
 
-![100.gif | left | 656x512](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235954911-5ce75b6c-1b57-4d22-a6b2-cea2437729db.gif "")
+![100.gif | left | 656x512](https://cdn.yuque.com/yuque/0/2018/gif/99990/1527235954911-5ce75b6c-1b57-4d22-a6b2-cea2437729db.gif)
 
 
 我们需要像这样更新我们的`ToggleableMenu`组件的实现：
