@@ -85,7 +85,7 @@
   - [路由实现](框架通识/路由实现.md)
   - [使用EventEmitter2(观察者模式)构建前端应用](框架通识/使用EventEmitter2[观察者模式]构建前端应用.md)
   - [一行代码实现一个简单的模板字符串替换](手撸代码无敌/Template.md)
-  - [JavaScript模板引y原理](框架通识/JavaScript模板引擎原理.md)
+  - [JavaScript模板引擎原理](框架通识/JavaScript模板引擎原理.md)
   - [37行代码构建无状态组件通信工具](框架通识/37行代码构建无状态组件通信工具.md)
 <!-- 2.安全XSS-CSRF -->
 * [安全XSS-CSRF](安全/安全.md)
