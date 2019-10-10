@@ -5,6 +5,7 @@
 2. [instanceof](./instanceof.md)
 3. [防抖和节流](./防抖和节流.md)
 4. [Promise 实现](./Promise实现.md)
+4. [模拟实现一个 Promise.finally](./Promise.finally.md)
 5. [Generator 实现](./Generator实现.md)
 6. [Proxy](./Proxy.md)
 7. [call, apply, bind](./call-apply-bind.md)
@@ -38,3 +39,4 @@
 35. [实现一个only函数](实现一个only函数.md)
 36. [用js实现map](map.md)
 40. [Object.assign 原理及其实现](Object.assign原理及其实现.md)
+41. [compose 函数](compose.md)

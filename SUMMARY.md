@@ -166,6 +166,7 @@
   - [防抖和节流](手撸代码无敌/防抖和节流.md)
   - [Proxy](手撸代码无敌/Proxy.md)
   - [Promise 实现](手撸代码无敌/Promise实现.md)
+  - [Promise.finally实现](手撸代码无敌/Promise.finally.md)
   - [Generator实现](手撸代码无敌/Generator实现.md)
   - [call, apply, bind](手撸代码无敌/call-apply-bind.md)
   - [不用call和apply方法模拟实现ES5的bind方法](手撸代码无敌/不用call和apply方法模拟实现ES5的bind方法.md)
@@ -198,6 +199,7 @@
   - [实现一个only函数](手撸代码无敌/实现一个only函数.md)
   - [用js实现map](手撸代码无敌/map.md)
   - [Object.assign 原理及其实现](手撸代码无敌/Object.assign原理及其实现.md)
+  - [compose 函数](手撸代码无敌/compose.md)
 <!-- 8.设计模式 -->
 * [设计模式](设计模式/README.md)
   - [单例模式](设计模式/单例模式.md)
