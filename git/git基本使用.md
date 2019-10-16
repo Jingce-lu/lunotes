@@ -12,6 +12,8 @@
     - [git合并一个分支上改动的部分文件到另外一个分支](#git合并一个分支上改动的部分文件到另外一个分支)
     - [git远程分支强制覆盖本地文件](#git远程分支强制覆盖本地文件)
     - [公共远程分支版本回退的方法](#公共远程分支版本回退的方法)
+    - [更换git远程仓库地址](#更换git远程仓库地址)
+    - [git删除分支](#git删除分支)
   - [6. 附：](#6-附)
 
 <!-- /TOC -->
@@ -104,6 +106,33 @@ $ git revert 0ffaacc    # 撤销0ffaacc这次提交
 
 自己的分支回滚直接用reset  
 公共分支回滚用revert  
+
+### 更换git远程仓库地址
+方法一 ： 通过命令直接修改远程仓库地址
+```js
+git remote 查看所有远程仓库
+git remote xxx 查看指定远程仓库地址
+git remote set-url origin 你新的远程仓库地址
+```
+
+方法二： 先删除在添加你的远程仓库
+```js
+git remote rm origin
+git remote add origin 你的新远程仓库地址
+```
+
+方法三： 直接修改你本地的.git文件
+- 进入.git文件编辑.git文件中的config文件修改config文件中的url路径为你的新远程仓库地址路径。
+
+
+### git删除分支
+- `git branch -d <branch_name>` 删除一个已被终止的分支
+- `git branch -D <branch_name>` 删除一个正打开的分支
+- 恢复被删除的分支 -- Git会自行负责分支的管理，所以当我们删除一个分支时，Git只是删除了指向相关提交的指针，但该提交对象依然会留在版本库中。 
+因此，如果我们知道删除分支时的散列值，就可以将某个删除的分支恢复过来。在已知提交的散列值的情况下恢复某个分支：
+`git branch <branch_name> <hash_val>`  
+如果我们不知道想要恢复的分支的散列值，可以用`git reflog`命令将它找出来。
+- `git push origin --delete <branch_name>` 删除远程分支
 
 ## 6. 附：
 git配置，供参考（~/.gitconfig）
